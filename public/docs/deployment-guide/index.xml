@@ -1,0 +1,443 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – Deployment Guide</title>
+    <link>/docs/deployment-guide/</link>
+    <description>Recent content in Deployment Guide on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/deployment-guide/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: イントロダクション</title>
+      <link>/docs/deployment-guide/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/deployment-guide/introduction/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;go-global&#34;&gt;GO-Global&lt;/h2&gt;
+&lt;p&gt;GO-Globalを使用すると、WindowsサーバOSは、PCデバイスおよびPC以外のデバイスで実行されているデスクトップ、端末、Webブラウザに32ビットおよび64ビットのWindowsベースのアプリケーションを提供できます。GO-Globalクライアントはいくつかのプラットフォームで利用可能であるため、ユーザーはさまざまなクライアントデスクトップからWindowsアプリケーションにアクセスすることができます。シンクライアント、サーバーベースのアーキテクチャで、GO-Globalは信頼性があり、安全で、そしてスケーラブルなアプリケーション配信のために最適化されています。
+従来のクライアント/サーバー環境とは異なり、アプリケーションはGO-Globalホスト環境のホスト上でのみ動作します。GO-Globalクライアントは、アプリケーションのローカル処理を事実上行わない。 GO-Globalホストは、アプリケーションのプレゼンテーション(Graphical User Interface(GUI))のみをクライアントに送信します。各ユーザはログオンし、自分のセッションのみを認識します。これはサーバOSによって管理され、他のクライアントセッションからは独立しています。
+アプリケーション開発の観点からすると、GO-Globalの最大の利点の1つは、既存のアプリケーションプログラムの大部分が「そのまま」実行されることです。GO-Globalホスト上で実行するためにプログラミングの変更は必要ありません。これは、既存のアプリケーションがすべてGO-Globalの下で同等に機能することを意味するのではありません。新しいオペレーティングシステムサービスの追加と同様に、これらの新しい機能を利用するアプリケーションを設計する方法を理解することは、展開を成功させるために重要です。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: アプリケーション設計の検討事項</title>
+      <link>/docs/deployment-guide/application-design-considerations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/deployment-guide/application-design-considerations/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;検討事項&#34;&gt;検討事項&lt;/h2&gt;
+&lt;p&gt;標準のWindowsサーバ環境とGO-Globalホスト環境の重要な違いは、これらの環境で動作するアプリケーションの設計です。集中ホスト環境では、アプリケーションはその環境で動作するように特別に設計されています。GO-Globalを利用すると、WindowsベースのPC用に設計されたアプリケーションは、GO-Globalホスト環境用に明示的に開発する必要なく動作します。今日のWindowsサーバ上で動作するアプリケーションは、変更なしでGO-Globalホスト上で動作します。&lt;/p&gt;
+&lt;p&gt;これは、複数のユーザが共通のWindowsサーバーシステムを同時に共有することの影響を考慮するときに重要です。異なるユーザが自分のローカルハードウェアリソース(CPU、メモリ、ディスクなど)とローカルソフトウェアリソース(レジストリ設定、設定ファイル、ダイナミックリンクライブラリなど)を使用してアプリケーションを実行する代わりに、GO-Globalホスト環境のユーザは共有します。同じハードウェアリソースとソフトウェアリソース、たとえば、GO-Globalホスト環境で2人のユーザが同じアプリケーションを実行している場合、そのアプリケーションの2つのコピーが同じシステムで起動され、それぞれ異なるユーザコンテキストで動作します。これらすべては、オペレーティングシステムによって舞台裏で管理されています。&lt;/p&gt;
+&lt;p&gt;ただし、複数のユーザに共通のシステム内の同じ一連のアプリケーションにアクセスさせると、多くの競合領域が生じる可能性があります。これらの分野は次のとおりです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるCPU時間の競合&lt;/strong&gt; GO-Globalホスト環境では、各ユーザは自分のアプリケーション環境を持ち、そのユーザが利用できるアプリケーションは何でも実行できます。ただし、すべてのユーザによって実行されるすべてのアプリケーションは、サーバマシン上で利用可能な中央CPUリソースについて競合しています。1人のユーザが不十分に書かれた、CPU集中型のアプリケーションを実行すると、そのサーバ上の他のユーザはかなりのパフォーマンス低下を経験する可能性があります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるディスクアクセスを求めて競合&lt;/strong&gt; これは、従来のクライアント/サーバネットワーク接続を使用してユーザがディスクアクセスを競合する方法と似ています。GO-Globalホスト環境では、ユーザはアプリケーションや関連するアプリケーションファイルへのアクセスだけでなく、サーバオペレーティングシステムのディスクアクセスについても競合するため、入出力の要求がより厳しくなります。たとえば、複数のユーザが同時に異なるダイナミックリンクライブラリ(DLL)を呼び出したり、実メモリ領域と仮想メモリ領域を交換したりすることがあります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるランダムアクセスメモリ(RAM)の競合&lt;/strong&gt; 各ユーザは独立したセッションを持っています。このセッションは、ユーザが自由に使用できるように、メモリを大量に消費するすべてのアプリケーションで満たすことができます。できる限り多くのアプリケーションを開こうとするユーザもいれば、より保守的なアプローチを取って必要なアプリケーションだけを実行するユーザもいます。それにもかかわらず、すべてのユーザのニーズは、サーバメモリリソースの同じコアセットから満たされています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるネットワークアクセスの競合&lt;/strong&gt; 他の分散処理環境と同様に、ネットワークはデスクトップとサーバ間の通信のためのパイプラインを提供します。GO-Globalホスト環境では、すべてのデスクトップアクティビティのグラフィカル出力とマウス/キーボード入力がデスクトップとサーバ間のネットワークリンクを介して流れるため、ネットワークアクセスの必要性は従来の分散型クライアント/サーバアーキテクチャよりも重要です。サーバへのネットワーク接続が機能していないと、GO-Globalクライアントはまったく機能できません。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるサーバ側のハードウェアコンポーネントを求めて競合&lt;/strong&gt; CD-ROM、ディスクドライブ、シリアルポート、パラレルポートなどのハードウェアコンポーネントは、通常クライアントベースではなくサーバベースです。したがって、ユーザがサーバ側のハードウェアコンポーネントにアクセスしようとすると、他のユーザが同じような要求をして競合する可能性があります。これらの伝統的に非共有のコンポーネントを共有することは、ユーザにとっても、これらのコンポーネントにアクセスするアプリケーションにとっても、新たな考慮事項を生み出します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マルチユーザによるグローバルWindowsオブジェクトとリソースへのアクセスの競合&lt;/strong&gt; GO-Globalホスト環境では、ユーザはWindowsサーバの個々のコピーを実行しません。コアコンポーネントのいくつかは複製されていますが、残りのコンポーネントはGO-Globalユーザ間で共有されています。そのため、ユーザはレジストリ、ページングファイル、システムサービス、その他のグローバルオブジェクトおよびリソースへのアクセスを競合します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの競合点の多くは、GO-Globalホストシステムのサイズをクライアントの要求を処理するのに十分なCPU、メモリ、ディスクリソースでサイジングすることで軽減できます。たとえば、マルチプロセッサ構成では、CPUの可用性を最大限に高めることができます。追加の物理メモリを取り付けることで、メモリの可用性を最大限に高めることができます。最後に、複数のSCSIチャネルを構成し、オペレーティングシステムとアプリケーションの負荷を異なる物理ドライブに分散させることで、ディスクアクセスのパフォーマンスを最大限に引き出すことができます。GO-Globalホストを正しく設定することは、最適なアプリケーションパフォーマンスを得るための重要な要素です。&lt;/p&gt;
+&lt;h2 id=&#34;重要なパフォーマンス要因&#34;&gt;重要なパフォーマンス要因&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;あなたのアプリケーションを知っている
+アプリケーションを知っているためには、次の質問をする必要があるかもしれません。どのくらいのメモリが必要ですか？ユーザがアプリケーションのメモリをどれだけ共有できるかアプリケーションはどのように画面を更新しますか？それは多くのユーザ入力を必要としますか？許容できる性能とは何ですか？&lt;/li&gt;
+&lt;li&gt;あなたのユーザを知っている
+ユーザを知っているためには、次の質問をする必要があります。ユーザはアプリケーションを開いたままにしますか？ユーザはいつログオンしますか？ユーザは1日を通してログオンしたままですか？ログオンは1日を通して均等に分散されていますか？それとも、ほとんどのログオンはその日の特定の時間に行われていますか？&lt;/li&gt;
+&lt;li&gt;あなたのネットワークを知る
+GO-Globalはユーザにアプリケーションセッションを提供するため、ネットワーク通信は非常に重要です。まれにネットワークの速度が低下しても、許容できないパフォーマンスがユーザにもたらされる可能性があります。あなたのネットワークを知ることは次の質問を含むかもしれません：あなたのユーザはどれくらい速くタイプしますか？アプリケーションはグラフィックを多用しますか。クライアントワークステーションの典型的なディスプレイ解像度は何ですか？アプリケーションを実行しているユーザに必要なネットワーク帯域幅はいくつですか？&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global必要条件</title>
+      <link>/docs/deployment-guide/host-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/deployment-guide/host-requirements/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;go-global必要条件&#34;&gt;GO-Global必要条件&lt;/h2&gt;
+&lt;p&gt;GO-Globalホスト*には、以下の64ビットWindows OSのいずれかが必要です。
+GO-Globalホストは、以下のWindowsオペレーティングシステムをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2019 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2016 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2012 R2 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 SP1 : Standard または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 10 : Professional または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 8.1 : Professional または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 7 SP1 : Professional または Ultimate または Enterprise
+※マルチユーザー環境では、Windows Serverの利用を強く推奨します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ディスクとメモリの要件&#34;&gt;ディスクとメモリの要件&lt;/h2&gt;
+&lt;p&gt;ご使用のサーバーのWindowsオペレーティングシステム要件に加えて、GO-Globalには以下が必要です。
+管理コンソールを含む、標準のGO-Globalホストのインストール用に70MBのディスク容量
+Webファイル用に85MB
+GO-Globalクライアントファイル用に50 MBのディスク容量&lt;/p&gt;
+&lt;h2 id=&#34;ネットワークとモデム&#34;&gt;ネットワークとモデム&lt;/h2&gt;
+&lt;p&gt;LANまたはWANベースのネットワークを介した接続に加えて、GO-GlobalはモデムおよびVPN接続を利用したダイヤルアップネットワークをサポートします。TCP / IP接続は最小要件です。
+最良の結果を得るために、GraphOnはデュアルプロセッサシステム、1 GBのRAM、および少なくとも256 MBの空き容量のあるハードディスクを推奨します。&lt;/p&gt;
+&lt;h2 id=&#34;プロセッサバスメモリ&#34;&gt;プロセッサ、バス、メモリ&lt;/h2&gt;
+&lt;p&gt;プロセッサとバスのアーキテクチャは、GO-Globalホストのパフォーマンスの基本です。ISA(ATバス)アーキテクチャは低帯域幅であり、GO-Globalホストにはお勧めできません。最高のパフォーマンスを得るには、EISAやPCIなどのより高性能なバスを使用してください。これらのバスはGO-Globalホストの持続的なデータ転送速度をサポートします。
+GO-Globalのメモリ(RAM)要件は、16MBと各標準ユーザの4MB、または各パワーユーザの8MBです。多くの場合、RAMの増設は、高速プロセッサへのアップグレードよりもシステムパフォーマンスに大きな影響を与えます。一般に、GO-GlobalのプロセッサとRAMの要件は直線的に拡大します。プロセッサ数を2倍にし、RAMの量を2倍にすることで、マルチプロセッサ対応システムでサポートされるユーザ数を約2倍にすることができます。マルチプロセッサ対応システムを購入すると(最初に購入したプロセッサが1つだけの場合でも)、要件が増えるにつれてシステムの拡張が容易になります。&lt;/p&gt;
+&lt;h2 id=&#34;ハードディスク&#34;&gt;ハードディスク&lt;/h2&gt;
+&lt;p&gt;サーバのハードディスクサブシステムは、システムのスループットにおける重要な要素です。 SCSI(Small Computer System Interface)ディスクドライブおよびアダプタ、特にFast Narrow SCSI(SCSI-2)、Fast Wide SCSI、Wide Ultra SCSI、Wide Ultra 2 SCSIデバイスは、ST506のIntegrated Device Electronics(IDE)よりもはるかに優れたスループットを持ちます。または拡張小型デバイスインターフェイス(ESDI)ディスクドライブとアダプタも推奨されます。
+最高のディスクパフォ​​ーマンスを得るために、SCSIベースのRAID(冗長アレイ)コントローラの使用を検討してください。RAIDコントローラは自動的にデータを複数のディスクドライブに配置し、ディスクのパフォーマンスを向上させ、データの信頼性を向上させることができます。GO-GlobalホストのすべてのディスクパーティションにNTFSを使用してください。NTFSを使用すると、セキュリティ設定、パフォーマンスの向上、および耐障害性の向上が可能になります。&lt;/p&gt;
+&lt;h2 id=&#34;ネットワークインタフェース&#34;&gt;ネットワークインタフェース&lt;/h2&gt;
+&lt;p&gt;RXPプロトコルは高度に圧縮されており、ネットワークへの負荷はごくわずかですが、GO-Globalホストがすべてのネットワーク要求を処理するため、高性能のネットワークインターフェイスカード(NIC)をお勧めします。&lt;/p&gt;
+&lt;h2 id=&#34;パフォーマンス監視ツールの使用&#34;&gt;パフォーマンス監視ツールの使用&lt;/h2&gt;
+&lt;p&gt;GraphOnは、パフォーマンスモニタリングツールを使用して、システムパフォーマンスとシステムスループットに対する構成変更の影響を正確に把握することをお勧めします。パフォーマンス監視の最も重要な測定値は、合計プロセッサ時間の割合、1秒あたりのメモリページ数、ネットワーク使用率の割合、およびハードディスクのI/O率です。1人のサーバが何人のユーザをサポートできるかを見積もるための効果的な方法は、システム上の2人から5人のユーザでシステムのパフォーマンスを測定し、その結果をスケールすることです。この方法は信頼できる結果をもたらすことがわかった。&lt;/p&gt;
+&lt;h2 id=&#34;admin-console&#34;&gt;Admin Console&lt;/h2&gt;
+&lt;p&gt;Admin Consoleは集中管理および監視ユーティリティです。管理者はこれを使用して、ユーザセッション、サーバプロセスを監視または管理し、GO-Globalホストにアプリケーションを登録および管理します。Admin Consoleは、中央の場所からすべてのGO-Globalホストのリモート管理を可能にします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: キャパシティプランニング</title>
+      <link>/docs/deployment-guide/capacity-planning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/deployment-guide/capacity-planning/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、Windowsサーバ上の複数のユーザをサポートします。マルチユーザシステムは、シングルユーザシステムよりも多くのシステムリソースを必要とします。このセクションでは、ユーザを最適なパフォーマンスでサポートするためのハードウェア構成を決定するのに役立つ、システムサイズのガイドラインをいくつか示します。ほとんどの企業は、自分のユーザを一般ユーザとパワーユーザのどちらにも分類できると考えています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;一般的なユーザ&lt;/strong&gt;
+一般的なユーザーは通常1つか2つのアプリケーションを使用します。通常は一度に1つだけです。実際のプログラムデータは、クライアントとサーバ間で転送されることはほとんどなく、ユーザがOLE(Object Linking and Embedding)を使用することはめったにありません。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;&lt;strong&gt;パワーユーザ&lt;/strong&gt;
+パワーユーザは、3つ以上のアプリケーションを使用し、同時に複数のアプリケーションを同時に使用する、より高度なユーザです。データはローカルアプリケーションとリモートアプリケーションの間でカットアンドペーストされることが多く、OLEは頻繁に使用されています。パワーユーザは通常のユーザよりも多くのリソースを消費します。経験則として、1人のパワーユーザは2人の典型的なユーザのプロセッサ使用率とRAM要件に相当します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;メモリ計算例&#34;&gt;メモリ計算例&lt;/h2&gt;
+&lt;p&gt;基本的なGO-Globalホストは、次のようにメモリを割り当てます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+以降のアプリケーションメモリは、基本的なGO-Globalホスト設定に追加されることを認識することが重要です。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;基本配分の例&#34;&gt;基本配分の例&lt;/h2&gt;
+&lt;p&gt;次の例では、ログオンサービスやライセンスなどに基づいて、GO-Globalホストの総使用量とそれに続くユーザ割り当てを計算します。Microsoft Wordなどのサンプルアプリケーションは、最終的な計算式に組み込まれています。Word 2003を使用する場合、平均的なドキュメント用に追加で割り当てられるRAMは、1ユーザあたり最大25MBです。&lt;/p&gt;
+&lt;p&gt;上記の例は、サーバ上でMicrosoft Wordを使用している15人のユーザをサポートするには、合計529MBのRAMが必要であることを示しています。これらの数値は概数であり、特定のシステムおよびハードウェア構成に応じて変更されることがあります。これらの数値はGO-Globalのシステムサービスのみを反映しており、Webサーバなどの他のアプリケーションやシステムサービスは考慮に入れていません。標準のシステムオーバーヘッドは、GO-Globalサービスに加えて発生します。&lt;/p&gt;
+&lt;h2 id=&#34;go-globalホストのサイズ設定&#34;&gt;GO-Globalホストのサイズ設定&lt;/h2&gt;
+&lt;p&gt;次のセクションでは、GO-Globalホストでサポートできる最大ユーザ数を決定するためのより高度な方法について説明します。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストからサポートできるユーザの数は、以下のような多くの要因の影響を受けます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;プロセッサの数と速度&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;物理メモリ量&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;アプリケーションのメモリ要件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;アプリケーションのプロセッサ使用率要件&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ハードウェアデバイスのカーネルメモリ要件(たとえば、RAIDハードディスクコントローラ、ビデオカードなど)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;これらの要素の組み合わせによって、通常、GO-Globalホストから効率的に実行できるユーザの数が決まります。このセクションでは、これらの要因によるスケーラビリティへの影響を評価し、GO-Globalホストからサポートできる最大ユーザ数を見積もる方法について説明します。&lt;/p&gt;
+&lt;p&gt;特定のGO-Globalホストでサポートできるユーザ数は、通常、以下のシステムリソースの1つ以上によって制限されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;プロセッサ(CPU)使用率：サーバのプロセッサが非アイドルスレッドを実行している時間の割合。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;物理メモリ：コンピュータ上で実行されているプロセスによって使用されている物理メモリの量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;コミットされたメモリ：ディスクページングファイルで予約されているスペースのメモリ量。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;ページプールメモリ：ページプール内に割り当てられたメモリの量。オペレーティングシステムや他のカーネルモードモジュールのデータを格納するために使用されるカーネルモードメモリの領域。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;システムページテーブルエントリ(PTE)：システムページテーブルエントリ(PTE)領域、カーネルスタックを格納するためにオペレーティングシステムによって使用されるカーネルモードメモリの領域、およびデバイスドライバ(たとえば、 RAIDハードディスクコントローラ、ビデオカードなど) デバイス固有のデータのビューをカーネルアドレス空間にマッピングするため。&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;特定のサーバから効率的に実行できるユーザーの数を判断する方法&#34;&gt;特定のサーバから効率的に実行できるユーザーの数を判断する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;平均的なユーザーに必要な上記の各リソースの量を決定します。&lt;/li&gt;
+&lt;li&gt;各リソースのうち最初にサーバコンピュータで使用可能な量を決定します。&lt;/li&gt;
+&lt;li&gt;手順1と2からの情報を使用してユーザ制限を計算します。&lt;/li&gt;
+&lt;li&gt;実稼働環境で計算結果を確認してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;このプロセスの詳細は以下のページで説明されています。&lt;/p&gt;
+&lt;h2 id=&#34;1ユーザリソース要件の決定&#34;&gt;&lt;strong&gt;1.ユーザリソース要件の決定&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;ユーザのリソース要件は、通常、ユーザがサーバ上で実行するアプリケーションによって決まります。アプリケーションサプライヤがGO-Globalを使用してアプリケーションをテストした場合、それらはそのアプリケーションのユーザごとのリソース要件を提供できる可能性があります。それ以外の場合、ユーザの要件を判断するための最善の方法は、一般的なユーザがサーバ上で実行する操作をシミュレートするマルチユーザテストを実行することです。&lt;/p&gt;
+&lt;h3 id=&#34;特定のアプリケーションセットに対するユーザごとのリソース要件を判断する方法&#34;&gt;特定のアプリケーションセットに対するユーザごとのリソース要件を判断する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;サーバコンピュータを再起動します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Windowsパフォーマンスモニタを使用してシステムリソースの記録を開始する。&lt;br&gt;
+a. 別のWindowsコンピュータで、Windowsパフォーマンスモニタを起動します。&lt;br&gt;
+b. Performance Logs とAlerts\Counter Logsを右クリックします。&lt;br&gt;
+c. 新規ログ設定を選択します。&lt;br&gt;
+d. ログの名前を入力してください。&lt;br&gt;
+e. 追加をクリックします。&lt;br&gt;
+f. [コンピュータからカウンタを選択する]フィールドにサーバコンピュータの名前を入力します。&lt;br&gt;
+g. 以下のカウンタを追加してください。&lt;br&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;\Processor% Processor Time&lt;/li&gt;
+&lt;li&gt;\Memory\Available Bytes&lt;/li&gt;
+&lt;li&gt;\Memory\Committed Bytes&lt;/li&gt;
+&lt;li&gt;\Memory\Pool Paged Bytes&lt;/li&gt;
+&lt;li&gt;\Memory\Free System Page Table Entries&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;h. サンプル間隔を10秒に設定します。&lt;br&gt;
+i. ログファイルタブを選択します。&lt;br&gt;
+j. ログファイルの種類をテキストファイル .CSVに変更します。&lt;br&gt;
+k. OKをクリックします。&lt;br&gt;
+l. 新しいログのアイコンを右クリックして、「開始」を選択します。&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;GO-Globalホストに10人のユーザをログオンさせます。各ユーザは別々のクライアントコンピュータで実行する必要があります。&lt;/li&gt;
+&lt;li&gt;各セッションで、通常のセッション中にユーザが実行すると予想されるすべてのプログラムを起動します。各セッションで、一般的なユーザのアプリケーションとのやり取りをシミュレートします。これは、各セッションを実行しているライブユーザ、またはサードパーティの自動テストツールを使用して各クライアントで記録および再生されるスクリプトを使用して行うことができます。&lt;/li&gt;
+&lt;li&gt;15〜30分間テストを実行します。&lt;/li&gt;
+&lt;li&gt;パフォーマンスモニタログを停止します。&lt;/li&gt;
+&lt;li&gt;ログのアイコンを右クリックして、「停止」を選択します。&lt;/li&gt;
+&lt;li&gt;Microsoft Excelなどのスプレッドシートプログラムでログファイルを開き、結果をグラフ化します。&lt;/li&gt;
+&lt;li&gt;次のように、データからユーザごとのリソース要件を決定します。&lt;br&gt;
+a. ユーザ辺りの平均プロセッサー使用率&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;AverageProcessorUtilizationPerUser =（AveragePercentProcessorTime * NumberOfProcessors）/ 10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ここで、AveragePercentProcessorTimeは、Processor\％Processorの平均値です。一般的なユーザ操作がシミュレートされた期間中の合計カウンタ NumberOfProcessorsは、コンピュータに取り付けられているプロセッサの数です。&lt;br&gt;
+b. ユーザごとに必要な物理メモリ&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PhysicalMemoryPerUser =（InitialAvailableBytes - MinimumAvailableBytes）/ 10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;InitialAvailableBytesとMinimumAvailableBytesは、それぞれ Memory Available Bytesカウンタの初期値と最小値です。&lt;br&gt;
+c. ユーザごとに必要なコミット済みメモリ&lt;br&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CommittedMemoryPerUser =（MaximumCommittedBytes - InitialCommittedBytes）/ 10 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;MaximumCommittedBytesとInitialCommittedBytesは、それぞれ Memory  Committed Bytesカウンタの最大値と初期値です。&lt;br&gt;
+d. ユーザごとに必要なページプールメモリ　&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PagedPoolMemoryPerUser =（MaximumPagedPoolBytes - InitialPagedPoolBytes）/ 10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;MaximumPagedPoolBytesとInitialPagedPoolBytesは、それぞれ Memory Pool Paged Bytesカウンタの最大値と初期値です。&lt;br&gt;
+e. ユーザごとに必要なシステムPTEの数&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SystemPTEsPerUser =（InitialFreeSystemPTEs - MinimumFreeSystemPTEs）/ 10
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;InitialFreeSystemPTEおよびMinimumFreeSystemPTEは、それぞれ Memory Free System Page Tableエントリエントリの初期値および最小値です。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;2利用可能なリソースの決定&#34;&gt;&lt;strong&gt;2.利用可能なリソースの決定&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;目的のアプリケーションのセットに対するユーザの要件がわかったら、次のステップは、アプリケーションの実行に使用されるコンピュータの利用可能なリソースを測定することです。これは次のようにして行うことができます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;まだインストールされていない場合は、サーバコンピュータにGO-Globalをインストールします。&lt;/li&gt;
+&lt;li&gt;コンピュータを再起動してください。&lt;/li&gt;
+&lt;li&gt;Windowsパフォーマンスモニタを使用して、次のパフォーマンスカウンタの初期値を取得します。
+a. \Memory\Available Bytes&lt;br&gt;
+b. \Memory\Committed Bytes&lt;br&gt;
+c. \Memory\Commit Limit&lt;br&gt;
+d. \Memory\Pool Paged Bytes&lt;br&gt;
+e. \Memory\Free System Page Table Entries&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;このデータを使用して、コンピュータで利用可能な次のリソースを計算します。&lt;br&gt;
+a. 利用可能な処理能力:
+&lt;pre&gt;&lt;code&gt;AvailableProcessorUtilization = (NumberOfProcessors  ProcessorSpeed  MaximumPercentUtilizationAllowed) / BaseProcessorSpeed      
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;NumberOfProcessorsはサーバにインストールされているプロセッサの数、ProcessorSpeedはサーバのプロセッサのMHz単位の速度、BaseProcessorSpeedは上記のステップ1.8.aでAverageProcessorUtilizationPerUserを決定するために使用されるプロセッサの速度です。MaximumPercentUtilizationは、通常の操作中に発生するはずのプロセッサ使用率の最大パーセンテージです。 MaximumPercentUtilizationの推奨値は0.80（80％）です。&lt;br&gt;
+b. 利用可能な物理メモリ:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AvailablePhysicalMemory = InitialAvailableBytes - MinimumAvailableBytesAllowed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ここで、InitialAvailableBytesは Memory Available Bytesカウンタの初期値で、MinimumAvailableBytesAllowedは通常の操作中に使用可能な物理メモリの最小バイト数です。MinimumAvailableBytesAllowedの推奨値は41943040バイト(40 MB)です。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;　 c. 利用可能なコミット済みメモリ(すなわち、ディスクページングファイル内の利用可能なスペース):&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AvailableCommittedMemory = CommitLimit - InitialCommittedBytes - MinimumAvailableCommittedBytesAllowed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ここで、CommitLimitとInitialCommittedBytesは、それぞれ Memory Commit LimitとMemory Committed Bytesカウンタの値です。MinimumAvailableCommittedBytesAllowedは、通常の操作中に使用可能なコミット済みメモリの最小バイト数です。MinimumAvailableCommittedBytesAllowedの推奨値は、コミット限度の0.20倍です。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;d. 利用可能なページプールメモリ:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AvailablePagedPoolMemory = SizeOfPagedPool - InitialPagedPoolBytes - MinimumAvailablePagedPoolBytesAllowed
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;SizeOfPagedPoolはバイト単位のページプールのサイズ(通常、Windows 2000サーバでは0x0A000000(167772160)バイト)で、InitialPagedPoolBytesは Memory Pool Paged Bytesカウンタの初期値です。MinimumAvailablePagedPoolBytesAllowedは、通常の操作中に利用可能であるべきページプールの最小バイト数です。MinimumAvailablePagedPoolBytesAllowedの推奨値は1048576バイト(10 MB)です。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;ページプールの実際のサイズは、次のようにカーネルデバッガを使用して決定できます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;デバッガに侵入します。&lt;/li&gt;
+&lt;li&gt;!vmと入力します。次にENTERを押します。&lt;/li&gt;
+&lt;li&gt;コンピュータの仮想メモリに関する情報が表示されます。ページプールのサイズは、PagedPool Maximumとして表示されます。
+カーネルデバッガの使用方法については、マイクロソフトサポート技術情報の記事151981を参照してください。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;
+
+&lt;br&gt;
+e. 利用可能なシステムPTE:&lt;br&gt;
+&lt;code&gt;&amp;lt;br&amp;gt; AvailableSystemPTEs = InitialFreeSystemPTEs - MinimumAvailableSystemPTEsAllowed&amp;lt;br&amp;gt;&lt;/code&gt;&lt;br&gt;
+ここで、InitialFreeSystemPTEsはMemory Free System Page Tableエントリエントリの値であり、MinimumAvailableSystemPTEsAllowedは通常の操作中に利用可能であるべきSystemPTEの最小数です。MinimumAvailableSystemPTEsAllowedの推奨値は4000です。&lt;/p&gt;
+&lt;h2 id=&#34;3ユーザ制限の計算&#34;&gt;&lt;strong&gt;3.ユーザ制限の計算&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;ステップ1と2で取得した値を使用して、コンピュータのユーザ制限を次のように見積もることができます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;各コンピュータのリソースでサポートできる最大ユーザ数を計算します。
+a. コンピュータのプロセッサでサポートできる最大ユーザ数を計算します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;ProcessorUserLimit = AvailableProcessorUtilization / AverageProcessorUtilizationPerUser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;b. コンピュータの利用可能な物理メモリでサポートできる最大ユーザー数を計算します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PhysicalMemoryUserLimit = AvailablePhysicalMemory / PhysicalMemoryPerUser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;c. コンピュータの使用可能なコミット済みメモリでサポートできる最大ユーザ数を計算します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;CommittedMemoryUserLimit = AvailableCommittedMemory / CommittedMemoryPerUser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;d. コンピュータの利用可能なページプールメモリでサポートできる最大ユーザ数を計算します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;PagePoolMemoryUserLimit = AvailablePagedPoolMemory / PagedPoolMemoryPerUser
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;e. コンピュータの利用可能なシステムPTEでサポートできる最大ユーザ数を計算します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SystemPTEUserLimit = AvailableSystemPTEs / SystemPTEsPerUser
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;以下の式を使用して、コンピュータの最大ユーザ数を計算します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;MaximumNumberOfUsers = Minimum ( ProcessorUserLimit, PhysicalMemoryUserLimit, CommittedMemoryUserLimit, PagePoolMemoryUserLimit, SystemPTEUserLimit)
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;最大ユーザ数が必要数より少ない場合は、制限されているリソースの可用性を高めるためにコンピュータの構成を変更します。
+a. プロセッサ使用率がリソースを制限している場合は、サーバの数を増やすか、またはより高速のプロセッサやより多数のプロセッサを搭載したサーバを使用します。
+b. 物理メモリがリソースを制限している場合は、コンピュータにメモリを増設します。 Windows 2000サーバにインストールできる最大メモリ容量は4 GBです。
+c. コミットメモリがリソースを制限している場合は、ディスクページングファイルのサイズを大きくします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ⅰ. マイコンピュータを右クリックして、プロパティを選択します。&lt;br&gt;
+ⅱ. 詳細をクリックします。&lt;br&gt;
+ⅲ. パフォーマンスオプション変化する。&lt;br&gt;
+ⅳ. ページングファイルの最大サイズを増やします。&lt;br&gt;
+ⅴ. 設定をクリックします。&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;警告&lt;/h4&gt;
+&lt;p&gt;ディスクページングファイルの推奨サイズは、通常、コンピュータに搭載されている物理メモリの2倍以下です。ページングファイルのサイズを推奨サイズより大きくするときは注意してください。コミットされたメモリの量が物理メモリの量をはるかに超えることが許可されている場合、システムはページングファイルからデータを取得するために過剰な数のディスクI / O操作を実行し始める可能性があります。これはシステムのパフォーマンスを著しく低下させる可能性があります。&lt;/p&gt;
+&lt;p&gt;次の情報は、Windowsレジストリを開いて操作することを含みます。ここで説明した以外の操作を実行すると、設定エラーが発生し、システムが使用できなくなる可能性があります。レジストリで作業するときはいつでも細心の注意を払ってください。&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;d. ページプールメモリがリソースを制限している場合は、ページプールのサイズを大きくします。&lt;/p&gt;
+&lt;p&gt;ⅰ. スタートを選択します。実行します。&lt;br&gt;
+ⅱ. regeditと入力し、Enterキーを押します。&lt;br&gt;
+ⅲ. 次のレジストリ値を選択してください。\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\SystemPages.&lt;br&gt;
+ⅳ. 編集を選択します。修正します。&lt;br&gt;
+ⅴ. 値のデータフィールドに0を入力します。これにより、システムPTEの数がシステムのデフォルト値まで減少し、ページプールのサイズが大きくなります。&lt;br&gt;
+ⅵ. OKをクリックしてください。&lt;br&gt;
+ⅶ. コンピュータを再起動してください。&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;次のように、ユーザがホストにログオンするために必要なページプールメモリの最小量を指定します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;サーバ上でレジストリエディタ(regedit)を実行します。&lt;/li&gt;
+&lt;li&gt;次のレジストリ値を選択します。\HKEY_LOCAL_MACHINE\Software\GraphOn\Bridges\1.0.0\AppServer\SessionPaged PoolMemory.&lt;/li&gt;
+&lt;li&gt;[編集 | 修正]をクリックします。修正します。&lt;/li&gt;
+&lt;li&gt;16進数を選択します。&lt;/li&gt;
+&lt;li&gt;[値のデータ]フィールドに、セッションを開始するために必要なバイト数を入力します(例：10000)。&lt;/li&gt;
+&lt;li&gt;OKをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;e. システムPTEの数が制限リソースである場合は、システムPTEの数が最大になるようにシステムが構成されていることを確認してください。&lt;br&gt;
+&lt;br&gt;
+ⅰ. 次のレジストリ値をダブルクリックします。\HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Session Manager\Memory Management\SystemPages.&lt;br&gt;
+ⅱ. 16進数を選択します。&lt;br&gt;
+ⅲ. 値を確認してください。FFFFFFFFです。GO-Global Setup Programは、製品のインストール時にこのフィールドをこの値に設定します。その後値が変更された場合は、FFFFFFFFに再設定してください。&lt;br&gt;
+ⅳ. PagedPoolSize値(やはりMemory Managementキーの下にあります)の値を確認してください。それはゼロ(0)であるはずです。 &lt;br&gt;
+ⅴ. システムがシステムPTEの数を最大にするように構成されている場合は、コンピューターに取り付けられているハードウェア装置の要件を確認してください。RAIDディスクコントローラやビデオカードなどの一部のデバイスは、多数のSystem PTEを消費する可能性があります。そのようなデバイスがサーバにインストールされている場合はそれが必要であることを確認し、必要でない場合はそのデバイスをアンインストールします。&lt;br&gt;
+ⅵ. 上記のステップ3.3で設定を変更した場合は、影響を受ける利用可能なリソース、リソースユーザの制限、およびサーバコンピュータの最大ユーザ制限を再計算してください。&lt;br&gt;&lt;/p&gt;
+&lt;h2 id=&#34;4結果を確認する&#34;&gt;&lt;strong&gt;4.結果を確認する&lt;/strong&gt;&lt;/h2&gt;
+&lt;p&gt;手順1〜3で概説した手順の結果は、特定のGO-Globalホストでサポートできる最大ユーザ数の見積もりです。この結果に達するためにいくつかの仮定がなされている。たとえば、マルチユーザリソース要件テスト中に実行される操作は、実環境で製品を使用するときに実際のユーザが実行する操作を表していると想定されます。テストで測定されたシステムリソースの1つによってユーザ数が制限されることも想定されています。&lt;/p&gt;
+&lt;p&gt;これらの前提の正確性と最終結果を確実にするために、サーバ構成は、通常は上で計算したユーザ数へのパイロット展開の一環として、実稼働環境でテストする必要があります。この展開中は、Windowsパフォーマンスモニタを使用してシステムリソースを監視する必要があります。また、ユーザは自分が観察した問題の性質と時間を報告するように求められます。上記のリソースのパフォーマンスカウンタに加えて、次のパフォーマンスカウンタも監視する必要があります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;System Processor Queue Length:&lt;/strong&gt; Processor Queue Lengthは、使用可能だが他のアクティブスレッドのために実行できないアクティブスレッドの数です。プロセッサのボトルネックを明確に示す指標の1つは、プロセッサあたり1〜3スレッドを超える持続的なプロセッサキュー長です。一般に、プロセッサ使用率が高い場合はプロセッサキューの長さが長くなりますが、プロセッサ使用率が90％をかなり下回る場合にはプロセッサキューの長さが長くなることがあります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Memory Pages/sec:&lt;/strong&gt; Pages/secパフォーマンスカウンタは、ハードページフォルトを解決するためにディスクから読み書きされたページ数を測定します。ハードページフォールトは、メモリをディスクページングファイルから読み書きする必要があるときに発生します。 CPU使用率が低くても、ハードページフォールトの数が多いと、システム全体のパフォーマンスが低下する可能性があります。&lt;/p&gt;
+&lt;h2 id=&#34;トラブルシューティング&#34;&gt;トラブルシューティング&lt;/h2&gt;
+&lt;p&gt;問題が報告された場合：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;
+&lt;p&gt;問題が発生したときにWindowsパフォーマンスログのデータを調べて、問題の原因となっているリソースを特定します。&lt;br&gt;
+a. ユーザがパフォーマンスの低下を報告した場合は、次の点を確認してください。&lt;br&gt;
+ⅰ. %プロセッサ使用率：90%を超えると、コンピュータのプロセッサがボトルネックになる可能性があります。 &lt;br&gt;
+ⅱ. プロセッサキュの長さ：長期間にわたってプロセッサあたり1〜3スレッドを超える場合、コンピュータのプロセッサがボトルネックになる可能性があります。&lt;br&gt;
+ⅲ. 利用可能なバイト数：この値が小さい場合(例えば、インストールされている物理メモリの10％未満)、Pages / secカウンタを確認してください。Pages / secの値が通常よりもかなり高い場合、システムは頻繁にディスクとの間でメモリを交換しています。この問題は一般に、不十分な物理メモリがあることが原因で発生します。&lt;br&gt;
+b. ユーザがサーバに接続できないことを報告した場合、またはアプリケーションの実行中にエラーを報告した場合は、次の点を確認してください。&lt;br&gt;
+ⅰ. Available Bytes：Available Physical Memoryが20MB未満の場合、GO-Globalは新しいユーザがサーバに接続するのを防ぎます。&lt;br&gt;
+ⅱ. Committed Bytes：このカウンタの値がCommit Limitに近いと、すべてのセッションでランダムエラーが発生する可能性があります。また、Committed Memoryの高い値は、多くの場合、高いディスクページング(Pages / second)値およびパフォーマンスの低下と同時に発生します。&lt;br&gt;
+ⅲ. ページプールバイト数：最大値(Windows 2000サーバでは0x0A000000(167772160)バイト)に近い場合、システムはページプールメモリを使い果たしている可能性があります。この場合、実行中のすべてのセッションでランダムエラーが発生します。&lt;br&gt;
+ⅳ. 空きシステムページテーブルエントリ：空きシステムPTEの数が2000未満の場合、GO-Globalは新規ユーザがサーバに接続できないようにします。空きシステムPTEの数が1000を下回ると、実行中のすべてのセッションでランダムエラーが発生します。&lt;br&gt;&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;問題の原因となっているリソースを特定したら、&lt;br&gt;
+a. ステップ3.3で説明されているようにリソースの可用性を高めることを試みます&lt;/p&gt;
+&lt;p&gt;－または－&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;b. 指定されたリソースの最大ユーザ数を安全な値に減らします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global Host  DEPLOYMENT CHECKLIST</title>
+      <link>/docs/deployment-guide/appendix/checklist/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/deployment-guide/appendix/checklist/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ハードウェアの設定&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; オペレーティングシステムの設定&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 国際的なキーボードサポートの追加(オプション)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; サーバをネットワークに接続する&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ホストのDNSレコードを追加する&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Webサーバのインストール(オプション)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; アプリケーションのインストール&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; アプリケーションの設定(オプション)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; Windowsのユーザポリシとサーバポリシの作成/変更&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ローカルセキュリティポリシ、ドメインセキュリティポリシで、ユーザアカウントに&amp;quot;ローカルログオン権&amp;quot;があることを確認&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ドメインコントローラのセキュリティポリシ&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GO-Globalホストのソフトウェアインストール&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; GO-Globalライセンスファイルのインストール&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ホストを再起動&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 管理者権限を持つユーザアカウントでログイン&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 管理者コンソールを使用してアプリケーションを公開&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 管理者コンソールにサーバオプションを追加(オプション)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; データ暗号化&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; クライアントドライブ&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; クライアントのクリップボード&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; クライアントプリンタ&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 認証&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; 接続のトランスポートモード(SSLまたはTCP)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; ホストとアプリケーションの保護&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;&lt;input disabled=&#34;&#34; type=&#34;checkbox&#34;&gt; クライアントソフトウェアのデプロイ&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,312 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – GO-Globalの概要</title>
+    <link>/docs/go-global5/go-global-no/</link>
+    <description>Recent content in GO-Globalの概要 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global5/go-global-no/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Global の概要</title>
+      <link>/docs/go-global5/go-global-no/go-global-no/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/go-global-no/go-global-no/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;GO-Global for Windows&lt;/strong&gt;は、既存のWindowsアプリケーションの範囲を企業ネットワークまたはWebにまで拡大する、シンプルで安全なアプリケーション仮想化ソリューションです。GO-Globalを使用すると、従業員、ビジネスパートナー、および顧客は、接続場所やクライアントプラットフォームまたはオペレーティングシステムに関係なく、どこからでも安全にアプリケーションにアクセスできます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 新機能</title>
+      <link>/docs/go-global5/go-global-no/xin-neng/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/go-global-no/xin-neng/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GGW3.X → GGH4.Xでは、アプリケーション配信のアーキテクチャ等が全面的に変更されたため、全く互換性がありませんでした。今回のGGH4.X → GGH5.Xでは、このような全面的な変更はありませんので、新機能や不具合修正の部分等を除き、相互に互換性があります(注意： Windows Server 2008 (32bit/64bit)はサポート対象外となりました。なお、Windows Server 2008 R2(64bit)については従来通りサポート対象です)。GGH5.0の新機能は以下の通りです。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;一般ユーザ向けクライアント GGH5.Xのクライアント(Windows クライアントとアドオン)は、管理者権限を持たない一般ユーザでもインス トール出来るようになりました。新しいインストーラは、ウエッブサーバ上の Web\Clientsディレクトリに配 置されています。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;gg-client.desktop.exe: 従来のWindows クライアントに相当&lt;/li&gt;
+&lt;li&gt;gg-client.chrome.exe: Chrome 用のアドオン&lt;/li&gt;
+&lt;li&gt;gg-client.firefox.exe: Firefox 用のアドオン&lt;/li&gt;
+&lt;li&gt;gg-client.ie.exe: 従来のActiveX クライアントに相当 これらのインストーラは%LOCALAPPDATA%\GraphOn\GO-Global\Clientディレクトリにクライアントの実行ファイルをインストールします。アドオンのインストール完了後にブラウザを再起動すると、以下のようなURL(サンプル)を介してGGサーバーへアクセス出来るようになります。 &lt;a href=&#34;http:/???/logon.html?host=192.168.102.30&amp;amp;user=Administrator&amp;amp;password=myPass&#34;&gt;http://???/logon.html?host=192.168.102.30&amp;amp;user=Administrator&amp;amp;password=myPas&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-1.png&#34; alt=&#34;1-2-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;Windows テーマ対応 Windows 7 またはそれ以降のクライアント環境で、サーバ側で指定されたテーマでアプリケーションが表示されるようになりました。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-2.png&#34; alt=&#34;1-2-2&#34;&gt; &lt;img src=&#34;/image5/1-2-3.png&#34; alt=&#34;1-2-3&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ホスト環境として Windows 10 feature release version 1803のサポート 高解像度ディスプレイ対応 クライアント側の文字等のサイズ設定が、GG上で動作するアプリケーションにも反映されるようになりました(DPIスケーリング)。下記の例では、拡大表示(テキスト等)の設定が、バージョン5.0のみに反映されています。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-4.png&#34; alt=&#34;1-2-4&#34;&gt;&lt;img src=&#34;/image5/1-2-5.png&#34; alt=&#34;1-2-5&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;Windows デスクトップのサポート Windows デスクトップ(スタートメニューやタスクバーなど)にアクセス出来るようになりました。Windows デスクトップにアクセスするには、以下のパラメタを追加して下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;コマンドライン： -desktop&lt;/li&gt;
+&lt;li&gt;アドオン： &amp;amp;desktop=true セッションの切断は、セッションのウインドウ(デスクトップの枠)を閉じて下さい。セッションの終了は、デスクトップで「ログオフ」または「サインアウト」処理を行って下さい。 管理者は、設定ファイルHostProperties.xml中のAllowDesktopプロパティにfalseを指定することで、このWindows デスクトップ機能を無効にすることが出来ます (既定値はfalseです)。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-6.png&#34; alt=&#34;1-2-6&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;オーディオ機能の改良 Windowsの環境で、セッション毎に仮想オーディオディバイスがサポートされました。これにより、メールに添付されたmp3 形式の音声ファイル等を再生することが可能になりました。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-7.png&#34; alt=&#34;1-2-7&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;自動セッション再接続機能 クライアントのパラメタに自動セッション再接続機能が追加されました。下記のパラメタを指定することで、ネットワーク障害等によりサーバ～クライアント間でセッションが切断された時に、自動的にサスペンド状態にあるセッションに所定回数だけ(xで回数を指定)再接続を試みます。再接続の試行時に、下記の再接続ダイアログは表示されません。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;コマンドライン： -autoreconnect x&lt;/li&gt;
+&lt;li&gt;アドオン： &amp;amp;autoreconnect=x&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-8.png&#34; alt=&#34;1-2-8&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;7&#34;&gt;
+&lt;li&gt;通信品質監視機能 サーバ～クライアント間の通信 「品質」 を監視する機能が追加されました。この機能により一時的なネットワークの遅延やサーバやクライアントの過負荷による遅延等に関する情報もAPS ログに記録されますので、障害解析等を効率的に行えるようになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-9.png&#34; alt=&#34;1-2-9&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;8&#34;&gt;
+&lt;li&gt;クライアント側ログファイル 従来のクライアントではクライアントのログをサーバ側に保存していましたが、接続障害等が発生した場合に情報が記録されないという問題がありました。GGH5.Xのクライアントでは、 %APPDATA%¥GraphOn¥Logs ディレクトリにログファイルを作成するようになりました。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/image5/1-2-10.png&#34; alt=&#34;1-2-10&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 変更履歴</title>
+      <link>/docs/go-global5/go-global-no/geng-lv/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/go-global-no/geng-lv/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;ggh502-patch-10-release-version-50227327&#34;&gt;GGH5.0.2 Patch 10 release (Version 5.0.2.27327)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 9 release (Version 5.0.2.26287) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ホスト環境として Windows Server 2019 のサポート&lt;/li&gt;
+&lt;li&gt;セキュアブート環境への対応&lt;/li&gt;
+&lt;li&gt;Borland のアプリケーションでセッション開始に時間がかかる問題の修正&lt;/li&gt;
+&lt;li&gt;Windows 10 (version 1803) で32 ビット版の Microsoft Office365 および Adobe Acrobat が起動した時に ホストがクラッシュする問題の修正&lt;/li&gt;
+&lt;li&gt;GG のセッション上で Oracle Forms 6i が動作した時にホストがクラッシュする問題の修正&lt;/li&gt;
+&lt;li&gt;GG のセッション上で PDFCreator が開始しない問題の修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-9-release-version-50226287&#34;&gt;GGH5.0.2 Patch 9 release (Version 5.0.2.26287)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 8 release (Version 5.0.2.26121) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ホスト環境として Windows 10 feature release version 1803 のサポート&lt;/li&gt;
+&lt;li&gt;iSCSI ドライブにインストールされた時APS が開始しない問題の修正&lt;/li&gt;
+&lt;li&gt;クライアントの拡大表示が100%を越えて200%未満の環境でのテキスト表示の品質不良を修正 ※ 関連情報: KGTN#2018020701, CASE#51063 ※ クライアント側のアップグレードも必要です．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-8-release-version-50226121&#34;&gt;GGH5.0.2 Patch 8 release (Version 5.0.2.26121)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 7 release (Version 5.0.2.25851) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;稀にクライアント印刷機能が利用出来ない問題を修正&lt;/li&gt;
+&lt;li&gt;ホストからクライアントへ連続して2 分以上データが送信された時にセッションが切断される可能性を修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-7-release-version-50225851&#34;&gt;GGH5.0.2 Patch 7 release (Version 5.0.2.25851)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 6 release (Version 5.0.2.25556) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;2018 年1 月の更新プログラムのSpectre およびMeltdown の脆弱性の修正に対応&lt;/li&gt;
+&lt;li&gt;スクリーンに直接かつ大量に描画するアプリケーションの動作が遅い問題を修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-6-release-version-50225556&#34;&gt;GGH5.0.2 Patch 6 release (Version 5.0.2.25556)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 5 release (Version 5.0.2.25362) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;クライアント環境として Ubuntu Linux 16.04 LTS (64-bit) への対応&lt;/li&gt;
+&lt;li&gt;クライアント印刷で 「極めて希に」 他のプリンターへ出力される問題の修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-5-release-version-50225362&#34;&gt;GGH5.0.2 Patch 5 release (Version 5.0.2.25362)&lt;/h2&gt;
+&lt;p&gt;GGH5.0.2 Patch 3 release (Version 5.0.2.25148) からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ホスト環境として Windows Server 2016 への対応&lt;/li&gt;
+&lt;li&gt;ホスト環境として Windows 10 Fall Creators Update への対応&lt;/li&gt;
+&lt;li&gt;クライアント環境として Oracle Linux 7 への対応&lt;/li&gt;
+&lt;li&gt;PowerPoint のスライドショーが動作しない問題の修正 (CASE#49869)&lt;/li&gt;
+&lt;li&gt;PrintersApplet.exe が存在すると切断した直後にセッションが終了する問題の修正 (CASE#50015)&lt;/li&gt;
+&lt;li&gt;ＩＥ でツールチップが表示されない問題の修正 (CASE#49765)&lt;/li&gt;
+&lt;li&gt;デスクトップ機能利用時にサインアウトした時にBSOD が発生する問題の修正 (CASE#49757)&lt;/li&gt;
+&lt;li&gt;5.0.24620 でホストがBSOD する問題の修正 ※ GGH5.0.2 Patch 4 release は，限定的にリリースされたため，一般には存在しません．&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-3-release-version-50225148&#34;&gt;GGH5.0.2 Patch 3 release (Version 5.0.2.25148)&lt;/h2&gt;
+&lt;p&gt;5.0.2.24304 からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DPI 非対応アプリケーションへの高解像度ディスプレイ対応 ※クライアント側に5K 以上のモニターと新しいクライアント （ソフトウエア） が必要です．&lt;/li&gt;
+&lt;li&gt;Desktop クライアントインストール時に Chrome のアドオンのページが開く問題の修正 ※サイレントモード cmd /c gg-client.desktop.exe /s /v&amp;quot;/qn での起動が必要です．&lt;/li&gt;
+&lt;li&gt;ホスト機能の Windows 10 Creators Update (OS Build 15063) への対応  サービス GGAPS が稀にメモリを大量消費する問題の修正&lt;/li&gt;
+&lt;li&gt;Windows 10 環境での更新プログラム KB4025342 のサポート&lt;/li&gt;
+&lt;li&gt;環境によりアップグレード時にディスプレイ・ドライバーが開始しない問題の修正&lt;/li&gt;
+&lt;li&gt;Windows 10 Creators Update 環境での Norton AntiVirus のサポート&lt;/li&gt;
+&lt;li&gt;Windows 10 Creators Update 環境での Avast Antivirus のサポート&lt;/li&gt;
+&lt;li&gt;Windows 10 Creators Update 環境での Symantec Endpoint Protection 14 のサポート  Windows 10 Creators Update 環境でクライアント・サウンドが動作しない問題の修正&lt;/li&gt;
+&lt;li&gt;Sophos Anti-Virus がインストールされた環境でログオンダイアログの表示までに２分要する問題の修正&lt;/li&gt;
+&lt;li&gt;F-Secure Server Security / F-Secure DeepGuard がインストールされた環境でクライアントの接続時にクラッシュする問題の修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh502-patch-2-release-version-50224304&#34;&gt;GGH5.0.2 Patch 2 release (Version 5.0.2.24304)&lt;/h2&gt;
+&lt;p&gt;5.0.2.23814 からの主な変更点は次の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;サーバー環境としての Windows 10 Creators Update (OS Build 15063) への対応．&lt;/li&gt;
+&lt;li&gt;ユーザーID とパスワードを指定してログオンした時，環境変数 CLIENTCOMPUTERNAME 等が正しくない問題 の修正&lt;/li&gt;
+&lt;li&gt;Windows クライアントインストール時に Chrome のアドオンのページが開く問題の修正 ※ gg-client.windows.exe のみの対応で， gg-client.desktop.exe ではアドオンのページが開きます．&lt;/li&gt;
+&lt;li&gt;セッションが終了しない，セッションを強制終了できない等の現象が発生する問題の修正&lt;/li&gt;
+&lt;li&gt;プリンター名のカスタマイズで変数 %I が unknown になる問題の修正&lt;/li&gt;
+&lt;li&gt;環境変数 USERNAME が設定されない問題の修正&lt;/li&gt;
+&lt;li&gt;APS ログに &amp;ldquo;Keep-alive not received&amp;hellip;&amp;rdquo; が繰り返し記録される問題の修正&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;ggh500ggh501-の主な変更点&#34;&gt;GGH5.0.0～GGH5.0.1 の主な変更点&lt;/h2&gt;
+&lt;p&gt;GGH5.0.0～GGH5.0.1の主な変更点(修正点)は、以下の通りです．&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ホスト環境での32 ビットWindows （Windows Server 2003 / Windows XP） のサポート終了．&lt;/li&gt;
+&lt;li&gt;iOS クライアントの改良 （新しいユーザー インターフェイス，操作性向上，タスク切り替え） ．&lt;/li&gt;
+&lt;li&gt;Android クライアントの改良 （新しいユーザー インターフェイス，操作性向上，タスク切り替え）．&lt;/li&gt;
+&lt;li&gt;モバイルクライアント環境 （iOS/Android） での hopTo MAX のサポート （オプション） ．&lt;/li&gt;
+&lt;li&gt;ホスト環境での自動更新機能の追加．&lt;/li&gt;
+&lt;li&gt;Windows 更新プログラムによる非互換性の低減．&lt;/li&gt;
+&lt;li&gt;クライアント環境での Mac OS X 10.11 El Capitan のサポート．&lt;/li&gt;
+&lt;li&gt;サーバー環境での安定性の向上 （Watchdog Timer でのBSOD 等） ．&lt;/li&gt;
+&lt;li&gt;Microsoft Office 2016 のサポート．&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalの機能</title>
+      <link>/docs/go-global5/go-global-no/go-global-no-1/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/go-global-no/go-global-no-1/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ネットワーク、リモートダイヤルアップ、リモートWebへのアクセス&lt;/strong&gt;: GO-Globalでは、ネットワーク、リモートダイヤルアップ、リモートWebを介して、GO-Globalホスト上で動作する32ビットおよび64ビットのWindowsアプリケーションへのアクセスを実現します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プラットフォーム間の互換性&lt;/strong&gt; : GO-Globalにより、実質上任意のクライアントプラットフォームから、任意のWindowsアプリケーションへのアクセスが実現します。Macintosh、Windows、Linuxなどのデスクトップコンピュータからアプリケーションを実行することができるため、ユーザは望ましい計算機環境に止まったままで作業を行うことが可能です。GO-Globalを介して展開された Windowsベースのアプリケーションは、クライアントプラットフォームに関係なく、まるで Windowsオペレーティングシステム上で稼働しているような操作性や機能性を提供します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントのファイルアクセス&lt;/strong&gt; : GO-Globalでは、ハードディスク、マッピングされたネットワークドライブなどのクライアントドライブのシームレスな統合をサポートしています。これにより、ユーザはクライアントコンピュータ上に保存されるファイルにアクセスし、ローカル環境内にこれらのファイルを保存することが可能となります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;サーバの監視&lt;/strong&gt; : GO-Globalでは、GO-Globalホストのリアルタイムでの監視、各クライアントとプロセスの制御、各ユーザのログアウトとシャットダウンの機能を提供しています。また、kitASPが開発した「GO-Global拡張パック」を利用することで、Webでユーザやセッションの監視を行うことも可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsアップデートと修正プログラムの互換性自動確認 :&lt;/strong&gt; この機能は、GO-Globalが使用する内部オペレーティングシステム変数と関数の位置を自動的に検出します。これにより、システムが起動されるたびに、Windows UpdateとHotfixがシステムにインストールされているかどうかに関係なく、ユーザーはセッションを開始して公開アプリケーションを実行できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;セッションのシャドウイング&lt;/strong&gt; : セッションシャドウイング機能により、1つのセッションとそのアプリケーションを複数のユーザが閲覧および制御できます。この機能は、ヘルプデスク担当者やシステム管理者が、ユーザのシステム障害のトラブルシューティングやデバッグを行う際に大変有効です。セッションシャドウイングは、ライブ環境でのコラボレーション作業にも活用できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ロードバランス&lt;/strong&gt; : ロードバランス機能(リレーサーバの設置が必要です)によって、ユーザのセッションが複数のGO-Globalホストに分散されます。ロードバランスを有効にすると、ロードバランスが有効となっているいずれかのホスト上で中断されたセッションへの再接続が可能となります。また、kitASPが開発した「GO-Global拡張パック」を利用することで、Webを利用した負荷分散処理を行うことも可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;セッションの再接続&lt;/strong&gt;: セッションの再接続機能を有効にすると、GO-Globalはクライアント接続が失われてもサーバ上のクライアントセッションを維持します。ユーザが意図的にサーバから切断、またはクライアント接続がネットワーク障害によっ て切断された場合にも、そのユーザのセッションとアプリケーションは、システム管理者の指定した時間ホスト上で稼働し続 けます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;パフォーマンスカウンタ&lt;/strong&gt; : 新しいパフォーマンスカウンタをWindowsパフォーマンスモニタに追加すれば、活動中のセッション数とサーバに接続しているクライアント数を追跡できます。GO-Globalホストのパフォーマンスカウンタ機能により、システム管理者はGO-Globalホストへアクセスが可能な任意のマシンからホストのアクティビティを監視できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プロキシのトンネリング&lt;/strong&gt; : プロキシのトンネリングにより、ユーザはインターネット上のGO-Global ホストにプロキシサーバ環境から接続できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;グループポリシーのサポート&lt;/strong&gt; : システム管理者は、Microsoftのグループポリシーとその拡張機能を使用して、レジストリベースのポリシー管理、スクリプトの割り当て、フォルダのリダイレクト、アプリケーションの管理、およびセキュリティオプションの指定を行えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SSLセキュリティ&lt;/strong&gt; : GO-Globalは、GO-Globalのクライアントとサーバ間の通信方法としてSecure Socket Layer (SSL) をサポートしています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;タイムゾーンのリダイレクト&lt;/strong&gt; : この機能を有効にすると、GO-Globalホストに設定されているタイムゾーンではなく、クライアントで設定されているタイムゾーンで公開されたアプリケーションを利用できるようになります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下位互換性のあるクライアントおよびホスト&lt;/strong&gt;: ホストとクライアントのメジャーバージョンとマイナーバージョンが同じであれば、リビジョン(サービスパック)やビルド番号が異なっていても相互に接続することが可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;自動ライセンス取得とインストール&lt;/strong&gt;：GO-Globalのライセンス取得ウィザードを使用すると、管理者はGraphOnライセンスサーバーからライセンスファイルを自動的に取得してインストールすることができます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントの自動アップデート機能&lt;/strong&gt; : システム管理者はクラスターマネージャーを使用して、ユーザがGO-Globalホストへ接続して来た時、それが古いバージョンのクライアントからであれば、新しいバージョンのクライアントへ自動的にバージョンアップさせることが出来ます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアント印刷機能&lt;/strong&gt; : ユーザは、GO-Globalホスト上で動作するアプリケーションから、クライアントのプリンタフォルダにあるプリンタへ印刷することが出来ます。GO-Globalのユニバーサルプリンタドライバを使用することで、ほぼ全てのプリンタへ印刷することが出来ます。プリンタ固有の機能を使いたい場合は、管理者が設定を行うことで、プリンタ専用のネイティブプリンタドライバを使用するようにGOGlobalホストを設定できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;動的な解像度調整&lt;/strong&gt; : GO-Globalはセッション再接続時に、クライアントの画面の解像度に合わせて、セッションのデスクトップのサイズを調整するようになりました。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高解像度モニターのサポート&lt;/strong&gt; : GO-Globalは高解像度モニタをサポートします。クライアントが Windowsの環境で動作する場合、GO-Globalはクライアント側のDPIスケーリングの設定を使用します。クライアントがWindows以外の環境の場合は、ホスト側のDPIスケーリングを使用します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアント側サウンド機能&lt;/strong&gt; : Windows7またはそれ以降のクライアント環境では、GO-Globalホスト上で動作するアプリケーションからクライアントへ音を流すことが出来ます 。それよりも古いWindows環境では、PlaySound、sndPlaySound、WaveOutをサポートします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントのシリアルポートとパラレルポート :&lt;/strong&gt; GO-Globalはホスト上で実行されているアプリケーションがクライアントマシンのシリアルポートとパラレルポートにアクセスすることを可能にします。この機能はWindowsクライアントでのみサポートされています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;スマートカード認証 :&lt;/strong&gt; GO-Globalはスマートカード文書の署名とスマートカード認証をサポートしています。これらの機能はWindowsクライアントでのみサポートされています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsテーマのサポート&lt;/strong&gt;: Windows7 またはそれ以降のクライアント環境では、GO-Globalはホスト側で設定されたテーマを使用してアプリケーションを表示します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsデスクトップのサポート&lt;/strong&gt;：GO-Globalは、デフォルトで管理者がホストから公開している特定のアプリケーションへのリモートアクセスをユーザーに提供しています。この機能ではGO-Globalホストのデスクトップ(スタートメニュー、タスクバーなど)へのリモートアクセスを提供することができます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;デスクトップ機能はWindows2012R2でのみの提供になります。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;自動ホストアップデート :&lt;/strong&gt; 管理者はGO-Globalホストアップデートで自動的にダウンロードしてインストールするようにGO-Globalホストを設定できます。管理者は自動的にインストールされる更新プログラムの種類を制御できます。 GO-Globalは、必須、推奨、オプションのホストアップデートをサポートします。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: システム要件</title>
+      <link>/docs/go-global5/go-global-no/shisutemu/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/go-global-no/shisutemu/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;go-global-server&#34;&gt;GO-Global Server&lt;/h2&gt;
+&lt;p&gt;GO-Globalホストの稼働には、以下の Windowsオペレーティングシステムのいずれかが必要です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windows 10&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Professional Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Enterprise Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows 8.1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Professional Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Enterprise Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows 8&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Professional Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Enterprise Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows 7 with Service Pack 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Professional Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Ultimate Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Enterprise Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows Server 2012 R2&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Standard Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Datacenter Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows Server 2012&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Standard Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Windows Server 2008 R2 with Service Pack 1&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Standard Edition(64-bit)&lt;/li&gt;
+&lt;li&gt;Enterprise Edition(64-bit)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;※マルチユーザ環境では、Windows Serverの利用を強く推奨します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;これらのプラットフォームは Security Rollup Package付きでも無しでもサポートされます。&lt;/li&gt;
+&lt;li&gt;右から左へ表記される言語はサポートされません。&lt;/li&gt;
+&lt;li&gt;GO-Global管理者は、インストールを実行するためにホスト上の管理者権限が必要で、そのホストにはTCP/IPネットワークプロトコルが必要です。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、指定されたポート番号491を使用します。ファイアウォール等がある場合は、このポート番号491を通過させるように設定してください。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、VMWare ESXiとMicrosoft Hyper-Vをサポートします。&lt;/li&gt;
+&lt;li&gt;GO-Globalのブラウザ展開用にホストを設定するためには、Web Server(例:Microsoft Internet Information Server(IIS)、Apache HTTP Serverなど)も必要です。&lt;/li&gt;
+&lt;li&gt;ホストおよびクライアントは256色以下の色深度では利用できません。1600万色またはそれ以上を推奨します。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストが必要とするメモリとCPUは、公開されるアプリケーションとシステムにアクセスするユーザ数によって決まります。通常、GO-Globalホストは、500 MHz CPUにつき12の「ヘビー ユーザ」、または25の「ライトユーザ」をサポートできます。(「ヘビーユーザ」とは、1つ以上の大容量アプリケーションを実行して常時対話を行うユーザです。「ライトユーザ」は、1つのアプリケーションを実行して断続的に対話を行うユーザです)。&lt;/li&gt;
+&lt;li&gt;GO-Globalはラウンドトリップタイム(RTT)が500ms以下の環境をサポートします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;go-globalクライアント&#34;&gt;GO-Globalクライアント&lt;/h2&gt;
+&lt;p&gt;ユーザは、GO-Globalクライアントをサポートする任意のコンピュータからGO-Globalホストへ接続できます。GO-Globalクライアントは、以下のプラットフォームをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10(32-bit/64-bit)、Windows 8.1 Standard と Pro(32-bit/64-bit)、Windows 8 Standard と Pro(32-bit/64-bit)、Windows 7 with Service Pack 1(32-bit/64-bit)、Windows XP with Service Pack 3 (32-bit)&lt;/li&gt;
+&lt;li&gt;Mac OS X 10.6以降&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux 5と6(64-bit);CentOS 5と6(64-bit);SUSE Linux Enterprise Desktop 11(64-bit);  Ubuntu 12.04 LTS(64-bit)&lt;/li&gt;
+&lt;li&gt;iOS 8.0以降でiPad、iPhone、iPod Touch&lt;/li&gt;
+&lt;li&gt;Android 4.0以降でARMプロセッサのみをサポート&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GO-Globalは以下のブラウザをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Internet Explorer 10と11(32-bit)&lt;/li&gt;
+&lt;li&gt;WindowsのMozilla Firefox 38 ESR(32-bit)&lt;/li&gt;
+&lt;li&gt;Mac OS XのApple Safari 5.0.6以降&lt;/li&gt;
+&lt;li&gt;Windows XP、Windows 7、Windows 8、Windows 8.1、Windows 10で動作するChrome&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

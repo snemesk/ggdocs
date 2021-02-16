@@ -1,0 +1,91 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – ユーザーアカウントの管理</title>
+    <link>/docs/go-global6/administering-user-accounts/</link>
+    <description>Recent content in ユーザーアカウントの管理 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global6/administering-user-accounts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ユーザーアカウントの管理</title>
+      <link>/docs/go-global6/administering-user-accounts/administering-user-accounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/administering-user-accounts/administering-user-accounts/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホスト上のアプリケーションにアクセスするには、クライアントはホストマシンにサインインする必要があります。ユーザがGO-Globalクライアントを起動すると、ユーザ名、パスワード、アクセスしたいホストの名前の入力を求められます。この情報はオプションで暗号化され、GO-Globalホスト上で動作しているApplication Publishing Serviceに渡されます。その後、Application Publishing Serviceは、Windowsの標準のマルチユーザー機能を使用してログオン操作を実行します。&lt;/p&gt;
+&lt;p&gt;ユーザがホストにサインインし、ドメインが指定されていない場合、GO-Globalホストは最初にローカルマシンのアカウントを認証し、次にマシンのドメイン、最後に信頼されるドメインを認証しようとします。ユーザはこのデフォルトの動作を無効にして、[Sign In]ダイアログの[User Name]ボックスにドメイン名に続けて円記号( \ )とネットワークユーザ名を入力してドメインを指定できます。たとえば、NORTH\  johngです。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/GG6-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/GG6-2.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザのログオン完了後、GO-Global における、マルチユーザ環境でアプリケーションを安全に稼働するために必要なセキュリティ機能は、サーバのオペレーティング システムに依存します。アプリケーションをクライアントユーザーのセキュリティコンテキス ト内で実行することで、プライベートなセッションを確保します｡すべてのマシンやネットワーク リソースへのアクセスは、オペレーティ ングシステムおよび各ユーザのセッションに認められている権限によって管理されます。 ユーザは、GO-Global サーバに対話的(ローカル)にログオンできなければなりません。ローカルセキュリティポリシー、ドメイン セキュリティポリシー、およびドメインコントローラセキュリティポリシーで、ユーザにローカルログオン権限を割り当てます。 この章では、GO-Globalサーバのユーザアカウントの管理方法に関する基本情報を説明します。&lt;/p&gt;
+&lt;p&gt;GO-Globalホスト上のローカルユーザ名がドメインアカウントと同じユーザ名で、それぞれが異なるパスワードを持つ場合、GO-Globalはそれらを2つの別々のアカウントとして扱います。たとえば、次のようなシナリオを考えます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホスト上のローカルアカウントjohngで、localのパスワード&lt;/li&gt;
+&lt;li&gt;ドメインアカウントのjohngで、domainのパスワード&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Sign Inダイアログでユーザ名johngとパスワードlocalを入力すると、アカウントはローカルのGO-Globalホストで認証されます。Sign Inダイアログでパスワードdomainと一緒にユーザ名johngを入力すると、GO-Globalはドメインで認証を試みませんが、無効なユーザ名またはパスワードで失敗します。Sign Inダイアログの「ユーザ名」フィールドにドメイン名を指定する必要があります。たとえば、NORTH\johngです。&lt;/p&gt;
+&lt;p&gt;ホストのログオン完了後、GO-Globalにおける、マルチユーザ環境でアプリケーションを安全に稼働するために必要なセキュリティ機能は、ホストのオペレーティングシステムに依存します。アプリケーションをクライアントユーザのセキュリティコンテキスト内で実行することで、プライベートなセッションを確保します｡すべてのマシンやネットワークリソースへのアクセスは、オペレーティングシステムおよび各ユーザのセッションに認められている権限によって管理されます。&lt;/p&gt;
+&lt;p&gt;ユーザは、GO-Globalホストに対話的(ローカル)にログオンできなければなりません。ローカルセキュリティポリシー、ドメインセキュリティポリシー、およびドメインコントローラセキュリティポリシーで、ユーザにローカルログオン権限を割り当てます。&lt;/p&gt;
+&lt;p&gt;この章では、GO-Globalホスト上のユーザアカウントの管理方法に関する基本情報を説明します。さらに詳しい情報については、Windows のヘルプ(スタート メニューからアクセス可能)を参照してください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ユーザプロファイルの設定</title>
+      <link>/docs/go-global6/administering-user-accounts/setting-up-user-profiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/administering-user-accounts/setting-up-user-profiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ほとんどの Windowsアプリケーションでは、ユーザ固有の設定やファイルをユーザの Windowsプロファイル内に保存します。 デフォルトでWindowsは、システムにログオンする各ユーザのローカルプロファイルを作成します。ローカルプロファイルは特定コンピュータに対して固有のもので、複数のGO-Globalサーバを稼働していると正常に動作しません。マルチサーバ環境の場合は、移動ユーザプロファイルを設定します。移動ユーザプロファイルはADで設定された環境に保管され、そのプロファイルが有効な任意のネットワークコンピュータからアクセス可能です。移動プロファイルを持つユーザが任意のネットワーク コンピュータへログオンすると、そのユーザが前回ログオフした時とまったく同じ状態でデスクトップが表示されます。マルチサーバ環境では、移動ユーザプロファイルの利用が、ユーザ固有設定へのアクセスを常時可能とするための唯一の方法です。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;プロファイルは、それが作成されたプラットフォーム上でのみ有効です。たとえば、Windows 7 プロファイ ルは、Windows 7 コンピュータ上でのみ使用可能です。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;ファイルアクセス許可の設定&#34;&gt;ファイルアクセス許可の設定&lt;/h2&gt;
+&lt;p&gt;システム管理者は、特定のファイルやリソースに対するユーザのアクセスを制限しなければならない場合があります。この際、ホストにアクセスするユーザは複数いることを念頭におく必要があります。特にロードバランス機能を備えたホスト環境では、ユーザがローカルのGO-Globalホスト上にファイルを保存できないように、システムおよびアプリケーションフォルダを書き込み禁止にすることが推奨されています。書き込み禁止にしなければ、次にユーザがGO-Globalにログオンして別のサーバにルーティングされた時に、そのファイルやフォルダへアクセスできなくなります。&lt;/p&gt;
+&lt;p&gt;サーバ上のファイルにアクセス許可を設定する際は、必ずWindows Explorerを使用します｡ファイルのアクセス許可を設定することにより、アプリケーション、プリンタ、フォルダへのユーザのアクセスを制限できます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Windows Explorerを実行中に[Help]ボタンまたはF1キーを押すと、ファイルアクセス許可の設定に関する詳細情報を参照できます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ネットワークプリンタの設定</title>
+      <link>/docs/go-global6/administering-user-accounts/setting-up-a-network-printer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/administering-user-accounts/setting-up-a-network-printer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;システム管理者は、GO-Globalクライアントが使用できるネットワーク プリンタを設定できます。まず GO-Globalホスト上にホストに直接接続できるポートを作成し、プリンタを各ローカル環境にインストールします。これにより、プリンタへの直接アクセスが可能となります。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストにポートを追加する方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;[スタート | 設定 | プリンタ] の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プリンターの追加&lt;/strong&gt;をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;ローカル プリンタを選択し、 &lt;strong&gt;次へ&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;新しいポートの作成&lt;/strong&gt;をクリックし、種類として[Standard TCP/IP Port]を選択します&lt;strong&gt;次へ&lt;/strong&gt;をクリックしま す。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ポート名&lt;/strong&gt;ダイアログボックスに、プリンターの UNC パス（\PRINTSERVER\LASERPRINTER など）またはプリンタ の IP アドレスを入力します。&lt;/li&gt;
+&lt;li&gt;左側でプリンタの製造元を選択し、右側でプリンタのモデルを選択するか、 &lt;strong&gt;ディスク使用&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プリンターの追加&lt;/strong&gt;ウィザードの指示に従って、適切なプリンタドライバをインストールします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

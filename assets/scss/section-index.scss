@@ -1,0 +1,45 @@
+.section-index {
+
+    .entry {
+        padding: .75rem;
+        width: 50%;
+    }
+    .waku{
+        display:flex;
+        flex-wrap:wrap;
+    }
+    
+    .in {
+        background: #30638E;
+        border: 1px solid #000;
+        padding: 20px;
+        width: 45%;
+        margin: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+    @media screen and (max-width:480px) { 
+        .in {
+        background: #30638E;
+        border: 1px solid #000;
+        padding: 20px;
+        width: 100%;
+        margin: 10px;
+        box-sizing: border-box;
+        text-align: center;
+    }
+}
+
+    h5 {
+        margin-bottom: 0;
+
+        a {
+            font-weight: 700;
+            color: white;
+        }
+    }
+
+    p {
+        margin-top: 0;
+    }
+}

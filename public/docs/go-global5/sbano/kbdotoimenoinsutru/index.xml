@@ -1,0 +1,164 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – キーボードとIMEの追加インストール</title>
+    <link>/docs/go-global5/sbano/kbdotoimenoinsutru/</link>
+    <description>Recent content in キーボードとIMEの追加インストール on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global5/sbano/kbdotoimenoinsutru/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalで使用されるキーボード/ IME識別子</title>
+      <link>/docs/go-global5/sbano/kbdotoimenoinsutru/go-globaldesarerukbdo-ime/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/kbdotoimenoinsutru/go-globaldesarerukbdo-ime/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、まとめてGO-Global Input Identifier(GGII)と呼ばれる2つの識別子を使用して、セッションのキーボード/IMEを指定します。最初のキーボードレイアウトです。これらは、WindowsオペレーティングシステムがキーボードドライバとIMEプログラムをロードするために使用する8桁の文字列識別子です。これらはロケールIDと似ていますが、最後の4桁は通常、キーボードでサポートされている言語の4桁のロケールIDと一致します。IMEを指定するキーボードレイアウトは、通常「E」で始まります。使用可能なキーボードレイアウトの一覧は、[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ Keyboard\Layouts]キーの下のレジストリに表示されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalが使用する2番目の識別子はレイアウトテキスト文字列です。これは、各キーボードレイアウトレジストリキーのレジストリ値です。これらの文字列は、入力言語を追加するときにキーボードレイアウト/IMEの下のドロップダウンボックスに表示されます。次の例では、最初のキーボードレイアウトGGIIは00000409、レイアウトテキストGGIIはUSです。2番目の例では、キーボードレイアウトGGIIがE0010411で、レイアウトテキストGGIIが日本語入力システム(MS-IME2002)です。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ 00000409  
+Layout File = KBDUS.DLL  
+Layout Text  = US
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ E0010411  
+Ime File = name81.name  
+Layout File = Kbdjpn.dll  
+Layout Text = Japanese Input System（MS-IME2002）
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;環境変数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_FILE&lt;/td&gt;
+&lt;td&gt;使用するマッピングファイルの完全修飾パスの指定に使用されます。指定すると、他のあらゆるファイル名パスの取得方法に優先します。例 : Linuxの場合 GGW_KBD_FILE=/home/someuser/KeyMappingFiles/MyCustomKeyMappingFile.kmfと指定すると、正しいファイルがロードされます。このファイルが見つからない場合は、us.kbm キーボードマッピングファイルの内部バージョンが使用されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_FILE_ROOT&lt;/td&gt;
+&lt;td&gt;キーボードマッピングファイルへのルートパス名の指定に使用されます。キーボードマッピングファイルを含むkbdディレクトリは、このディレクトリに置きます。例:Linuxの場合、GGW_KBD_FILE_ROOT=/home/someuserと指定すれば、/home/someuser/kbd/xxx.kbmファイルがロードされます。「xxx」は、次に説明するGGW_KBD_FILE_LAYOUT 環境変数から、または直接オペレーティングシステムから取得されたLAYOUTを示します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_LAYOUT&lt;/td&gt;
+&lt;td&gt;どのLAYOUT(またはファイル名のプレフィックス)を使用するかの指定に使用されます。このLAYOUT名に拡張子.kbmが付いたものがファイル名として使用されます。例:GGW_KBD_LAYOUT=MyCustomKeyMappingFile と指定すれば、/ect/ggw/kbd/MyCustomKeyMappingFile.kbmファイルがロードされます。上に説明したGGW_KBD_FILE_ROOTも使用されている場合は、/home/someuser/kbd/MyCustomKeyMappingFile.kbmファイルがロードされます。マッピングファイルへのルートパス名のサブディレクトリを、ここに含めることもできます。例:GGW_KBD_LAYOUT=thinclient/usと指定すれば、別のルートパスが指定されていないかぎり、/etc/ggw/kbd/thinclient/us.kbmファイルがロードされます。これは、オペレーティングシステムから自動取得したLAYOUTに優先します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボードオプションの設定</title>
+      <link>/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdoopushonno/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdoopushonno/</guid>
+      <description>
+        
+        
+        &lt;p&gt;-kbショートカットパラメータまたは「キーボード」ハイパーリンクパラメータを使用して、セッションのキーボード/IMEを指定できます。これらは上記の両方のタイプのGGIIを取ります。Windowsコンピュータでは、-kbショートカットパラメータが指定されていない場合、GO-Globalは現在アクティブなキーボードレイアウトのレイアウトテキストを使用します。Linuxコンピュータでは、コマンドラインでレイアウトテキストが指定されていない場合、GO-Globalはレイアウトテキストをサーバに送信しません。&lt;/p&gt;
+&lt;p&gt;例：キーボードレイアウトを使用したWindowsショートカット&lt;/p&gt;
+&lt;p&gt;gg-client.exe -h server1 -kb 00000409&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以前のバージョンのLinuxクライアントでは、コマンドライン引数-kbとプラグイン/アプレットパラメータ &amp;ldquo;keyboard&amp;quot;を使用して、正しいキーボードレイアウトをサーバーに通知していました。たとえば、 &lt;strong&gt;-kb 0000040C&lt;/strong&gt;と指定すると、環境変数 &lt;strong&gt;LANG = en_US&lt;/strong&gt;が上書きされ、サーバーは &lt;strong&gt;フランス語のキーボードレイアウト&lt;/strong&gt;を使用します。これは推奨されなくなりました。各キーボードマッピングファイルには、サーバーが使用する正しいキーボードレイアウト値が含まれています。コマンドライン引数 &lt;strong&gt;-kb&lt;/strong&gt;またはプラグイン/アプレットパラメータ **&amp;ldquo;keyboard&amp;rdquo;**で別の &lt;strong&gt;キーボードレイアウト&lt;/strong&gt;を指定すると、キーが未定義の方法で動作する可能性があります。&lt;/p&gt;
+&lt;p&gt;コマンドライン引数-kbとプラグイン/アプレットパラメータ &amp;ldquo;keyboard&amp;quot;は、 &lt;strong&gt;レイアウトテキスト&lt;/strong&gt;を指定してIMEを読み込むためにまだ使用できます。たとえば、 **-kb &amp;ldquo;日本語入力システム(MS-IME2002)&amp;quot;**を使用すると、Microsoft Office XPおよびWindows XPで使用可能な日本語IMEを読み込むことができます。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;レイアウトテキスト置換の指定&#34;&gt;レイアウトテキスト置換の指定&lt;/h2&gt;
+&lt;p&gt;クライアントとサーバーのキーボードレイアウト名をマッピングするために、サーバー上でレイアウトテキストの置換を指定できます。それらを使用することができます：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;異なるバージョンのWindowsでのレイアウトテキスト名の違いを克服します。たとえば、Windows 2000のGO-Globalクライアントシステムの **日本語入力システム(MS-IME2000)**レイアウトテキストは、GO-Globalホストの **日本語入力システム(MS IME2002)**レイアウトテキストに置き換えることができます。&lt;/li&gt;
+&lt;li&gt;UNICODE名を持つキーボードレイアウトをANSI名に置き換えます。たとえば、ASCII HTMLページで「keyboard」アプレットパラメータを使用してUNICODE名でキーボードレイアウトを指定するときは、UNICODE名の代わりにASCII名を使用する必要があります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;キーボードレイアウトの置換は、[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\ Keyboard\Layout\Substitutes]レジストリキーで指定されています。このキー内の各REG_SZ値はGGIIの名前を持ち、値はクライアント名の代わりに使用されるべきサーバからのレイアウトテキストの名前です。&lt;/p&gt;
+&lt;h2 id=&#34;代替レイアウトテキストの設定&#34;&gt;代替レイアウトテキストの設定&lt;/h2&gt;
+&lt;p&gt;クライアントからGGIIが指定されていない場合、または指定されたGGIIが有効なキーボードレイアウトをロードできない場合、GO-Globalホストはフォールバックメカニズムを使用してセッションに使用するキーボードレイアウトを決定します。代替レイアウトテキストは、有効なGGIIを渡すクライアントを除いて、サーバに接続しているすべてのクライアントによって使用されるキーボードレイアウトのレイアウトテキストです。アクティブなキーボードレイアウトがIMEの場合、代替レイアウトテキストはインストール中に自動的に設定されます。インストール後に、次のレジストリキーの下にある &lt;strong&gt;Fallback Layout Text&lt;/strong&gt;の値を編集して変更することができます。&lt;/p&gt;
+&lt;p&gt;HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\Keyboard Layout&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中国語のGO-Globalホストに接続すると、ショートカットから[&lt;strong&gt;サインイン&lt;/strong&gt;]ダイアログが、デフォルト言語として中国語を指定しているIMEバーと共に表示されます。Ctrl+スペースバーをクリックしても言語は切り替わりません。ユーザは手動で英語を選択するためにマウスポインタでIMEバーをクリックする必要があります。IMEバーを手動でクリックしないと、ユーザはユーザ名とパスワードを入力できません。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;複数の入力ロケールの設定&#34;&gt;複数の入力ロケールの設定&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントプロファイルは、異なる入力ロケールまたは複数の入力ロケール、あるいはその両方で構成できます。 GO-Globalホストにログオンする新規ユーザのアカウントロファイルは、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントの入力ロケールで自動的に設定されます。ユーザは、自分のアカウントプロファイルで定義されている任意の入力ロケールに切り替えることができます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;移動ユーザプロファイルまたは既にGO-Globalホストに存在するプロファイルを持つユーザは、これらの新しい設定を受け取りません。これらのアカウントは手動で設定する必要があります。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例として、次の手順では英語のWindows Server 2003にドイツ語の入力ロケールをインストールして使用する方法について説明します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;英語版のWindows Server 2003でドイツ語を有効にします。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;入力ローカルを設定したいユーザアカウントでGO-Globalホストに対話的にサインインします。&lt;/li&gt;
+&lt;li&gt;[スタート | コントロールパネル | 地域の言語オプション]をクリック&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;言語&lt;/strong&gt;タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;詳細&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;[テキストサービスと入力言語]ダイアログで、[追加]をクリックします。&lt;/li&gt;
+&lt;li&gt;入力言語の追加]ダイアログで、[入力言語]のリストを展開して[ドイツ語(ドイツ)]を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;キーボードレイアウト/ IME&lt;/strong&gt;ボックスで、これがドイツ語に変更されたことを確認します。これは物理的なキーボードがドイツ語であるべきであることを示しています。物理キーボードがドイツ語ではない場合は、適切なキーボードレイアウトを選択して [&lt;strong&gt;OK&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[テキストサービスと入力言語]ダイアログで、[OK]をクリックします。&lt;/li&gt;
+&lt;li&gt;[地域と言語のオプション]ダイアログで、[詳細設定]タブをクリックします。 [現在のユーザアカウントと既定のユーザプロファイルにすべての設定を適用する]チェックボックスをオンにします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;デフォルトユーザー設定の変更&lt;/strong&gt;]メッセージを読んだ後、 [&lt;strong&gt;OK&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[地域と言語のオプション]ダイアログで、 [&lt;strong&gt;OK&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;入力ロケールが正しくインストールおよび構成されていることを確認してください。&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;この対話型セッションで &lt;strong&gt;メモ帳&lt;/strong&gt;を起動します。&lt;/li&gt;
+&lt;li&gt;英語で数文字を入力してください。&lt;/li&gt;
+&lt;li&gt;左Alt + Shiftを押します。&lt;/li&gt;
+&lt;li&gt;数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これで、ドイツ語の入力ロケールが、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;プロファイルと、ステップ1.1でシステムにログオンしたユーザに対して有効になります。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;3.GO-Globalセッション中に入力ロケールを切り替えます。&lt;/strong&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalクライアントを起動し、手順1.1で使用したアカウントでサーバに接続します。&lt;/li&gt;
+&lt;li&gt;メモ帳を起動します。&lt;/li&gt;
+&lt;li&gt;英語で数文字を入力してください。&lt;/li&gt;
+&lt;li&gt;左Alt + Shiftを押します。&lt;/li&gt;
+&lt;li&gt;数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;サインインダイアログが表示されているときは、ユーザは入力ロケールを切り替えることができません。 GO-Global &lt;strong&gt;ホスト&lt;/strong&gt;のデフォルト言語の入力ロケールが使用されます。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Windowsクライアントでは、サーバベースのアプリケーションの選択された入力ロケールは、クライアントコンピュータのシステムトレイに表示されません。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動クライアントキーボードサポート</title>
+      <link>/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdosapto/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdosapto/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalの新しい自動クライアントキーボードサポートオプションにより、管理者はGO-Globalホストを自動的に任意のクライアントキーボードで動作するように設定できます。このオプションを有効にすると、ユーザはクライアントデバイスのローカルキーボード切り替え機能を使用してキーボードをその場で切り替えることができ、クライアントのローカル入力エディター(IME)を使用することができます。この機能により、GO-Globalホストにキーボードレイアウトをインストールしたり、GO-Globalクライアントにキーボードマッピングファイルをインストールする必要がなくなりました。この機能は、Mac OS Xで埋め込みウィンドウモードで実行されている場合を除き、すべてのGO-Globalクライアントでサポートされています。&lt;/p&gt;
+&lt;p&gt;既存のGO-Globalユーザに一貫したユーザエクスペリエンスを提供するために、自動クライアントキーボードサポートオプションはデフォルトで無効になっています。ユーザごとまたはすべてのユーザに対して有効にできます。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザごとに自動クライアントキーボードサポートを有効にする方法&#34;&gt;ユーザごとに自動クライアントキーボードサポートを有効にする方法&lt;/h3&gt;
+&lt;p&gt;クライアントショートカットに &lt;strong&gt;-kb ClientSideIME&lt;/strong&gt;を追加します。&lt;/p&gt;
+&lt;p&gt;たとえば、Windowsクライアントの場合：&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;C:\Program Files (x86)\GraphOn\GO-Global\Client\gg-client.exe&amp;rdquo; -kb ClientSideIME&lt;/p&gt;
+&lt;p&gt;または、GO-GlobalがWebブラウザから実行されている場合は、logon.htmlページを参照するハイパーリンクに次の引数を追加します。 &lt;strong&gt;&amp;amp;keyboard=ClientSideIME&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;すべてのユーザーに対して自動クライアントキーボードサポートを有効にする方法&#34;&gt;すべてのユーザーに対して自動クライアントキーボードサポートを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;以下のいずれかのディレクトリでHostProperties.xmlファイルを見つけます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;C:\Documents and Settings\All Users\Application Data\GraphOn (On Windows 2003); 
+C:\ProgramData\GraphOn (On Windows 2008).
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ワードパッドでHostProperties.xmlを開き、ClientSideIMEEnabledプロパティを探します。&lt;/li&gt;
+&lt;li&gt;ClientSideIMEEnabledプロパティをtrueに設定します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

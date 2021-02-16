@@ -1,0 +1,486 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – GO-Globalの実行</title>
+    <link>/docs/go-global6/running-go-global/</link>
+    <description>Recent content in GO-Globalの実行 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global6/running-go-global/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalの実行</title>
+      <link>/docs/go-global6/running-go-global/go-global-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/go-global-app/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;go-global-app&#34;&gt;GO-Global App&lt;/h1&gt;
+&lt;p&gt;新しいGO-Global Appは、GO-Global 5のネイティブクライアントとブラウザアドオンの機能を単一のアプリケーションに統合したもので、コンピュータのデスクトップ、モバイルデバイス、またはWebブラウザから起動できます。&lt;/p&gt;
+&lt;h3 id=&#34;go-global-appのインストール方法&#34;&gt;GO-Global Appのインストール方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Webブラウザを起動します。&lt;/li&gt;
+&lt;li&gt;[locatation] ボックス内で、http://に続けてホスト名とGO-Globalログオンページを入力します。例 : &lt;a href=&#34;http://hostname/goglobal/clients.html&#34;&gt;http://hostname/goglobal/logon.html&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;GO-Global Appがインストールされていない場合、GO-Globalは自動的にダウンロードを開始します。 ダウンロードしたファイルを実行してください。 それ以外の場合は、画面に表示される指示に従って、コンピュータのオペレーティングシステムからセットアッププログラムをダウンロードして実行します。(go-global.exe、gg-client.mac.dmg、gg-client.linux.deb、gg-client.linux.rpm.)&lt;/li&gt;
+&lt;li&gt;Mac OS Xでは、gg-client.mac.dmgを開きます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-Global Appをインストールした後、スタートメニュー、ショートカット、またはコンソールウィンドウからGO-Globalを実行できます。&lt;/p&gt;
+&lt;h3 id=&#34;コンピュータのメニューからgo-globalを実行する方法&#34;&gt;コンピュータのメニューからGO-Globalを実行する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalメニューオプションを選択します。
+a. Windowsでは、Windowsタスクバーの &lt;strong&gt;スタート&lt;/strong&gt;ボタンをクリックし、[Programs | GO-Global ]の順に選択します。
+b. Linuxでは、[アプリケーション]メニューから[ネットワーク]または[インターネット]カテゴリを選択し、 [&lt;strong&gt;GO-Global&lt;/strong&gt;]をクリックします。
+c. Mac OS Xでは、[移動]メニューから[Applications]を選択し、 [&lt;strong&gt;GO-Global&lt;/strong&gt;]をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Connection&lt;/strong&gt;]ダイアログ内にホストのアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Connect&lt;/strong&gt;]をクリックします。[&lt;strong&gt;Sign In&lt;/strong&gt;]ダイアログが表示されたら、次の情報を入力します。
+&lt;ul&gt;
+&lt;li&gt;[&lt;strong&gt;User Name&lt;/strong&gt;]ボックスにネットワークユーザー名を入力します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Password&lt;/strong&gt;]ボックスにパスワードを入力します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GO-Globalは、ログオンプロセスをシャットダウンする前に、ユーザーに無効なログオン試行を3回許可します。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Windowsコンピュータでは、GO-Global ConnectionダイアログにGO-Globalホストへのショートカットを作成するオプションがあります。このオプションを使用すると、ホストに接続するときに[接続]ダイアログを迂回することができます。&lt;/p&gt;
+&lt;h3 id=&#34;windowsコンピュータにgo-globalホストへのショートカットを作成する方法&#34;&gt;WindowsコンピュータにGO-Globalホストへのショートカットを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;上記のいずれかの方法でGO-Globalを起動します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Connection&lt;/strong&gt;]ダイアログにサーバのアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;[Create desktop shortcut to this host]チェックボックスをオンにします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Connect&lt;/strong&gt;]をクリックします。ホストへのショートカットがコンピュータのデスクトップに作成されます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;windows上でgo-globalのショートカットを作成する方法&#34;&gt;Windows上でGO-Globalのショートカットを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;デスクトップ上で右クリックします。&lt;/li&gt;
+&lt;li&gt;[ 新規作成 | ショートカットの作成 ]の順に作成します。&lt;/li&gt;
+&lt;li&gt;ショートカットの作成ダイアログボックスで、GO-Global Clientの実行ファイルを参照します。 たとえば、&amp;quot; C:¥Program Files¥GraphOn¥GO-Global Client¥gg-client.exe&amp;quot;のようになります。&lt;/li&gt;
+&lt;li&gt;gg-client.exeへのパスの後にパラメータを追加します。例えば&amp;quot;C:\Program Files\GraphOn\GO-Global\Client\gg-client.exe&amp;quot; –h hostname –a Wordpad –r &amp;ldquo;C:\Users\Public\Public Documents\test.rtf&amp;rdquo;&lt;/li&gt;
+&lt;li&gt;ショートカットの名前を入力して[完了]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global Web App</title>
+      <link>/docs/go-global6/running-go-global/go-global-web-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/go-global-web-app/</guid>
+      <description>
+        
+        
+        &lt;p&gt;JavaScriptとHTML5を使用して開発されたGO-Global Web Appは、Windows、Mac、Linuxコンピュータ上の一般的なWebブラウザからWindowsアプリケーションを実行することを可能にするゼロインストールクライアントです。 さらに、Webアプリケーションをデプロイするために特別なホスト構成は必要ありません。 Webアプリケーションは、クライアント側のパスワードキャッシュ、GO-GlobalのPreview PDFプリンタによるローカルプリンタへの印刷、およびCTRLキーを使用したローカルアプリケーションとリモートアプリケーション間のテキストのコピーアンドペーストをサポートしています。&lt;/p&gt;
+&lt;h2 id=&#34;go-global-web-appの起動&#34;&gt;GO-Global Web Appの起動&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、Microsoft Internet Explorer、Mozilla Firefox、Google Chrome、Apple Safariなどの一般的なWebブラウザから実行できます。&lt;/p&gt;
+&lt;h3 id=&#34;webブラウザからgo-globalを起動方法&#34;&gt;WebブラウザからGO-Globalを起動方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Webブラウザを起動します。&lt;/li&gt;
+&lt;li&gt;[Location box]ボックスに、http://に続けてホスト名と?useApp=falseの順に入力します。次に例を示します。http://hostname/goglobal/?useApp=falseまたはhttps://hostname/goglobal/?useApp=false&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Sign In&lt;/strong&gt;]ダイアログが表示されたら、次の情報を入力します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;User Name&lt;/strong&gt;]ボックスにネットワークユーザー名を入力します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Password&lt;/strong&gt;]ボックスにパスワードを入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[Location box]ボックスにhttps://を指定した場合、Admin Consoleの[Host Options]ダイアログの[Security]タブでSSLトランスポートを有効にし、タブで指定したSSL証明書のコモンネームをURLで指定したホスト名と一致させる必要があります。これらはGO-Global v6の新しい要件です。以前のバージョンでは、GO-Globalのブラウザプラグインとアドオン(ほとんどのブラウザでサポートされなくなったテクノロジを使用)は、ブラウザにダウンロードされたWebページから実行された場合でもTCP転送を使用してGO-Globalホストに接続できます。しかし、GO-GlobalのWeb Appはブラウザのセキュリティ制限を受けているため、WebアプリケーションはHTTPS接続を介してロードされるときにWebSocket Secure接続を使用する必要があります。 詳細については、SSL転送の選択を参照してください。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;デフォルトでは、GO-Globalは自動的にフルGO-Global Appをダウンロードして実行しようとします。 ログオンURLに?useApp = falseを追加すると、GO-GlobalからGO-Global Appをダウンロードできなくなり、代わりにGO-Global Web Appが実行されます。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global Appを利用したWebアプリケーションの実行</title>
+      <link>/docs/go-global6/running-go-global/running-the-go-global-web-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/running-the-go-global-web-app/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Global Web Appを使用すると、ユーザは自分のコンピュータに何もインストールせずにブラウザからアプリケーションを実行できます。しかし、そこに Webアプリケーションのみを実行した場合のいくつかの制限事項があります。 たとえば、Webアプリケーションのみを実行している場合、クライアントファイルアクセス、シリアルポートとパラレルポート、スマートカード、クライアントサウンド、クライアントプリンタへの直接印刷、ルーズウィンドウモードでのGO-Globalの実行などの機能はサポートまたは利用できません。これらの制限は、完全なGO-Global Appをダウンロードしてインストールすることで簡単に克服できます。 Windows、Linux、Macコンピュータに完全なGO-Global Appをインストールすると、WebブラウザからGO-Globalを実行するユーザはこれらすべての機能にアクセスできるようになります。&lt;/p&gt;
+&lt;p&gt;GO-Globalは、GO-Global Appのインストールと実行を制御するための2つのURLパラメータを提供します。 これらのパラメータは以下のとおりです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;useApp　　useApp = trueの場合、Webアプリケーションは完全なGO-Global Appを起動しようとします。useApp = falseの場合、WebアプリケーションはGO-Global Appを起動しようとしません。 デフォルトでuseApp = trueです。&lt;/li&gt;
+&lt;li&gt;installApp　　installApp = trueの場合、まだインストールされていない場合、ユーザは完全なGO-Global Appをインストールするように求められます。 installApp = falseの場合、ユーザはGO-Global Appをインストールするように要求されず、インストールするためのリンクも表示されません。 installApp = addLinkのとき、完全なGO-Global Appがまだインストールされていない場合は、[Get the App]リンクがGO-Global Web Appのツールバーに追加されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;たとえば、URLにこれらのパラメータのどちらも指定されていない場合（URLがhttp://hostname/goglobal/logon.htmlの場合など)、GO-Globalは自動的にGO-Global Appのダウンロードを開始し、ユーザにプロンプトを表示します。インストールして実行します。または、installAppオプションがaddLinkに設定されている場合(たとえば、URLがhttp://hostname/goglobal/logon.html?installApp = addLinkの場合)、Webアプリケーションのツールバーに[Get the App]リンクが追加されます。ユーザがこのリンクをクリックすると、GO-Globalはダウンロードを開始し、GO-Global Appの実行とインストールのプロセスを案内します。&lt;/p&gt;
+&lt;p&gt;GO-Global Appをインストールして有効にすると、「埋め込み」URLパラメータを使用して、アプリケーションをブラウザウィンドウ内で実行するかブラウザウィンドウ外で実行するかを制御できます。 embedパラメータが指定されていないか、または&amp;quot; false&amp;quot;に設定されている場合(たとえば、URLがhttp://hostname/goglobal/logon.html?embed = falseである場合)、ユーザのアプリケーションはGO-Global Appを介してブラウザのウィンドウ外で実行されます。&lt;/p&gt;
+&lt;p&gt;あるいは、埋め込みパラメータが「true」に設定されている場合(例えば、URLが http://hostname/goglobal/logon.html?embed = true)アプリケーションはWebアプリケーションを介してブラウザウィンドウ内で実行されます。この場合、GO-GlobalもGO-Global Appを起動します(インストールされて有効になっている場合)が、GO-Global Appはコンピュータのデバイス(プリンタやドライブなど)へのアクセスを提供する目的でのみ使用されます。セッションのアプリケーションは表示されません。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GO-Global Appがブラウザウィンドウ内で実行されている場合、デフォルトの背景色は白です。背景色は、HostProperties.xmlファイルのDesktopColorプロパティで指定されています。 色は10進数形式のRGB値として指定されます。たとえば、デフォルトの白の色は10進数で16777215です(16進数で0x00FFFFFF)。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GO-Global AppがインストールされていないかuseApp = falseの場合、embedオプションは無視されます。それ以外の場合、embedはデフォルトでfalseに設定されています。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Webアプリケーションを使用しているときは、アプリケーションのメニューまたはツールバーからクリップボードにコピーアンドペーストすることはできません。 代わりに、Windowsでは、コピーにはCTRL + C、貼り付けにはCTRL + Vを使用します。 Macでは、コピーするにはキーボードショートカットCommand-C、貼り付けるにはCommand-Vを使用します。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;accessing-the-host-or-relay-server-directly-from-the-internet&#34;&gt;Accessing the Host or Relay Server Directly from the Internet&lt;/h2&gt;
+&lt;p&gt;If users will be connecting to a GO-Global Host or relay server from the internet, the web server and host addresses in the URL must be public (internet) addresses. When there is no public web server available, GraphOn&amp;rsquo;s web server, apps.graphon.com, can be used.&lt;/p&gt;
+&lt;p&gt;In this case, a URL such as the following would be shared with users: &lt;a href=&#34;http://apps.graphon.com/goglobal/?host=hostname&#34;&gt;http://apps.graphon.com/goglobal/?host=hostname&lt;/a&gt;, where hostname is the public address of the GO-Global Host.&lt;/p&gt;
+&lt;p&gt;When using a web server other than GraphOn&amp;rsquo;s, the URL must use the public address of the web server. For example: &lt;a href=&#34;http://webservername.com/goglobal/?host=hostname&#34;&gt;http://webservername.com/goglobal/?host=hostname&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;If users will be accessing a host or relay server from both the Internet and the internal network, the external and internal DNS should be configured so that the public and internal addresses of the web server are the same, and the public and internal addresses of the host are the same. Alternatively, administrators can provide external and internal users with different URLs, but this may be confusing to users.&lt;/p&gt;
+&lt;p&gt;When hosts are accessed via a third-party load balancer, the URL must include the address of the load-balancer. For example, &lt;a href=&#34;http://loadbalancer.com/goglobal/?host=hostname&amp;amp;app=Notepad&#34;&gt;http://loadbalancer.com/goglobal/?host=hostname&amp;amp;app=Notepad&lt;/a&gt;​&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Mac OS X App</title>
+      <link>/docs/go-global6/running-go-global/mac-os-x-app/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/mac-os-x-app/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalのMac OS X Appは、ネイティブのMac OS X環境とシームレスに統合できる軽量のアプリケーションです。最新のMac OS X APIを使用するように全面的に書き直され、インストールの簡素化、サウンドサポート、マルチモニタサポート、およびMac OS X Gatekeeperサポートを提供します。これにより、マルウェアから保護され、インターネットからダウンロードされたアプリケーションが不正に動作します。&lt;/p&gt;
+&lt;h3 id=&#34;mac-os-x-appのインストール方法&#34;&gt;Mac OS X Appのインストール方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;web browserを起動します。&lt;/li&gt;
+&lt;li&gt;Locationボックスに、http://に続けてホスト名とGO-Globalクライアントのインストールファイルを入力します。たとえば、http://host/goglobal/clients.htmlです。&lt;/li&gt;
+&lt;li&gt;指示に従ってgg-client.mac.dmgをダウンロードしてインストールします。&lt;/li&gt;
+&lt;li&gt;gg-client.mac.dmgを開き、GO-Global.appをアプリケーションにドラッグします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;mac-os-x-appの起動方法&#34;&gt;Mac OS X Appの起動方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;メニューバーから[ Go | Applications ]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;GO-GlobalをダブルクリックをしてGO-Globalを起動します。&lt;/li&gt;
+&lt;li&gt;[Connection]ダイアログにホストアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;[Sign In]ダイアログが表示されたら、次の情報を入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;[&lt;strong&gt;User Name&lt;/strong&gt;]ボックスにネットワークユーザ名を入力します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;Password&lt;/strong&gt;]ボックスにネットワークユーザのパスワードを入力します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Mac OS X Appをアンインストールするには、GO-Global.appをアプリケーションからゴミ箱にドラッグします。&lt;/p&gt;
+&lt;h3 id=&#34;mac-os-x-appで起動パラメータを使用する方法&#34;&gt;Mac OS X Appで起動パラメータを使用する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ターミナルを起動します。&lt;/li&gt;
+&lt;li&gt;/Applications/GO-Global.app/Contents/MacOS/ とディレクトリを変更します。&lt;/li&gt;
+&lt;li&gt;./GO-Globalとスタートパラーメータを入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;例：./GO-Global –h 196.125.101.222 –ac all –hp 443&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalスタートアップパラメータ</title>
+      <link>/docs/go-global6/running-go-global/go-global-startup-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/go-global-startup-parameters/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、次のショートカットとハイパーリンクのパラメータをサポートしています。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Shortcut&lt;/th&gt;
+&lt;th&gt;Parameters&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-u&lt;/td&gt;
+&lt;td&gt;user&lt;/td&gt;
+&lt;td&gt;The name of the user’s account.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-p&lt;/td&gt;
+&lt;td&gt;password&lt;/td&gt;
+&lt;td&gt;The user’s password&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-h&lt;/td&gt;
+&lt;td&gt;host*&lt;/td&gt;
+&lt;td&gt;The network name of the GO-Global Host.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-hp&lt;/td&gt;
+&lt;td&gt;port&lt;/td&gt;
+&lt;td&gt;The port on which the GO-Global Host accepts connections. (491 by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-a&lt;/td&gt;
+&lt;td&gt;app&lt;/td&gt;
+&lt;td&gt;The application to run. This may be a command-line string or the application name, as registered with the Admin Console.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-r&lt;/td&gt;
+&lt;td&gt;args&lt;/td&gt;
+&lt;td&gt;Application arguments.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-c or -nc&lt;/td&gt;
+&lt;td&gt;compression&lt;/td&gt;
+&lt;td&gt;-c enables compression. -nc disables compression. compression= “true” enables compression. compression= “false&amp;quot; disables compression. Compression is enabled by default.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-ac&lt;/td&gt;
+&lt;td&gt;printerconfig&lt;/td&gt;
+&lt;td&gt;Determines how printers are initialized at startup. When printerconfig =&amp;ldquo;all&amp;rdquo; or -ac is followed by all, all printers are automatically configured. When printerconfig = &amp;ldquo;none&amp;rdquo; or -ac is followed by none, printers are not automatically configured. When printerconfig = &amp;ldquo;default&amp;rdquo; or -ac is followed by default, the default printer is configured automatically. This is the default setting.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-f&lt;/td&gt;
+&lt;td&gt;clientframe&lt;/td&gt;
+&lt;td&gt;When set respectively to 1 or “true”, all applications running in the session will be displayed within a bounding window. When set respectively to 0 or “false”, applications will be displayed within their own individual windows.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-autoreconnect&lt;/td&gt;
+&lt;td&gt;autoreconnect&lt;/td&gt;
+&lt;td&gt;Determines how many times the client will automatically attempt to reconnect after a broken connection. When autoreconnect=n in a URL or -autoreconnect is followed by n, the client will automatically attempt to reconnect n number of times. (autoreconnect is set to 20 by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-geometry&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;The width and height of the client window. For example: -geometry 800x600&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;multimonitor&lt;/td&gt;
+&lt;td&gt;When set to “true”, the session’s desktop will span all monitors. When set to “false”, applications will be confined to the primary monitor.  multimonitor = “true” by default.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;width&lt;/td&gt;
+&lt;td&gt;The width of the frame or embedded window. (800 by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;height&lt;/td&gt;
+&lt;td&gt;The height of the frame or embedded window. (600 by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;embed&lt;/td&gt;
+&lt;td&gt;When set to “true” applications run within the browser window. When set to “false” applications run outside the browser window.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;bInBrowser&lt;/td&gt;
+&lt;td&gt;Not supported in version 6.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;noscale&lt;/td&gt;
+&lt;td&gt;When noscale is set to &amp;ldquo;true&amp;rdquo; and the browser is resized, the resolution of the embedded GO-Global session will adjust accordingly, rather than scaling the displayed image on the client. (noscale = &amp;ldquo;false&amp;rdquo; by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;useApp&lt;/td&gt;
+&lt;td&gt;When useApp= “true”, the GO-Global Web App will try to launch the full GO-Global App. When useApp=“false”, the Web App will not try to launch the GO-Global App. (useApp=“true” by default.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;installApp&lt;/td&gt;
+&lt;td&gt;When installApp=“true”, the user will be prompted to install the full GO-Global App, if it is not already installed. If installApp=“false”, the user will NOT be prompted to install the GO-Global App and no link to install it will be displayed. When installApp=“addLink”, the Get the App link will be added to the GO-Global Web App&amp;rsquo;s toolbar if the full GO-Global App is not already installed.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-clientscale&lt;/td&gt;
+&lt;td&gt;clientscale&lt;/td&gt;
+&lt;td&gt;clientscale, followed by the percent scale factor, causes the GO-Global App on Windows to scale the applications running in the session relative to applications running locally on the client computer. For example, adding -clientscale 200 to the command-line will cause applications running in the GO-Global session to appear twice as large as applications running locally on the client computer.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-clientdpi&lt;/td&gt;
+&lt;td&gt;ClientDPIScaling Enabled&lt;/td&gt;
+&lt;td&gt;-clientdpi 1 or ClientDPIScalingEnabled=&amp;ldquo;true&amp;rdquo; enables the GO-Global App&amp;rsquo;s DPI scaling feature. -clientdpi 0 or ClientDPIScalingEnabled=&amp;ldquo;false&amp;rdquo; disables the feature. When these options are specified, they override the value of the ClientDPIScalingEnabled property in the HostProperties.xml file on the host.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-cn&lt;/td&gt;
+&lt;td&gt;computerName&lt;/td&gt;
+&lt;td&gt;When -cn 1 or computerName=1, the Windows client sends the CLIENTNAME environment variable to the host rather than the actual computer name.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-krm&lt;/td&gt;
+&lt;td&gt;keyreportingmethod&lt;/td&gt;
+&lt;td&gt;This option instructs the client to send either unicode or keycode values to the host based on character type. -krm 0 — The client sends alpha keys as unicode and numeric keys as unicode. -krm 1 — The client sends alpha keys as keycode and numeric keys as unicode. -krm 2 — The client sends alpha keys as unicode and numeric keys as keycode. -krm 3 — The client sends alpha keys as keycode and numeric keys as keycode.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;*ログオンHTMLページでホストが指定されていない場合、GO-Globalはログオンファイルのダウンロード元のマシンを検出し、そのホストに接続します。 [&lt;strong&gt;Connection&lt;/strong&gt;]ダイアログは表示されず、ユーザには [&lt;strong&gt;Sign In&lt;/strong&gt;]ダイアログのみが表示されます。&lt;/p&gt;
+&lt;p&gt;host = &amp;ldquo;？&amp;ldquo;の場合ユーザはホストのアドレスの入力を求められます。アプリケーションが指定されていない場合は、Program Windowsが開きます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: logon.htmlページの変更</title>
+      <link>/docs/go-global6/running-go-global/modifying-the-logon-html-page/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/modifying-the-logon-html-page/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalをWebブラウザから実行している場合は、GO-Globalのlogon.htmlページを編集して起動パラメータを指定できます。&lt;/p&gt;
+&lt;h3 id=&#34;logonhtmlページの変更方法&#34;&gt;logon.htmlページの変更方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;HTMLエディタでlogon.htmlを開きます。&lt;/li&gt;
+&lt;li&gt;編集したいパラメータを見つけます。 最も一般的なパラメータは、ログオンページに次のように記載されています。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;//
+// controlArgs.set([ &amp;quot;user&amp;quot;, &amp;quot;testuser1&amp;quot; ]);
+// controlArgs.set([ &amp;quot;password&amp;quot;, &amp;quot;testpassword1&amp;quot; ]);
+// controlArgs.set([ &amp;quot;embed&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;width&amp;quot;, &amp;quot;640&amp;quot; ]);
+// controlArgs.set([ &amp;quot;height&amp;quot;, &amp;quot;480&amp;quot; ]);
+// controlArgs.set([ &amp;quot;desktop&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;app&amp;quot;, &amp;quot;testapp1&amp;quot; ]);
+// controlArgs.set([ &amp;quot;port&amp;quot;, &amp;quot;491&amp;quot; ]);
+// controlArgs.set([ &amp;quot;autoclose&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;printerconfig&amp;quot;, &amp;quot;default&amp;quot; ]);
+// controlArgs.set([ &amp;quot;bInBrowser&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;host&amp;quot;, &amp;quot;testhost1&amp;quot; ]);
+// controlArgs.set([ &amp;quot;compression&amp;quot;, &amp;quot;true&amp;quot; ]);
+// controlArgs.set([ &amp;quot;clientframe&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;multimonitor&amp;quot;, &amp;quot;true&amp;quot; ]);
+// controlArgs.set([ &amp;quot;noscale&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;authority&amp;quot;, &amp;quot;not_specified&amp;quot; ]);
+// controlArgs.set([ &amp;quot;credentials&amp;quot;, &amp;quot;not_specified&amp;quot; ]);
+// controlArgs.set([ &amp;quot;sessionid&amp;quot;, &amp;quot;1234&amp;quot; ]);
+// controlArgs.set([ &amp;quot;autoreconnect&amp;quot;, &amp;quot;0&amp;quot; ]);
+// controlArgs.set([ &amp;quot;windowless&amp;quot;, &amp;quot;false&amp;quot; ]);
+// controlArgs.set([ &amp;quot;maxbpp&amp;quot;, &amp;quot;16&amp;quot; ]);
+// controlArgs.set([ &amp;quot;keyboard&amp;quot;, &amp;quot;ClientSideIME&amp;quot; ]);
+// controlArgs.set([ &amp;quot;args&amp;quot;, &amp;quot;testargs1&amp;quot; ]);
+// controlArgs.set([ &amp;quot;useApp&amp;quot;, &amp;quot;true&amp;quot; ]);
+// controlArgs.set([ &amp;quot;installApp&amp;quot;, &amp;quot;add_link&amp;quot; ]);
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;行の先頭から//を削除して、対応するcontrolArgs.setのコメントを外します。その後、必要に応じて値を編集します。例えば:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;controlArgs.set([ &amp;quot;user&amp;quot;, &amp;quot;johng&amp;quot; ]);
+controlArgs.set([ &amp;quot;embed&amp;quot;, &amp;quot;true&amp;quot; ]);
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;表示されていない起動パラメータを指定するには、各パラメータにcontrolArgs.set()を追加します。 例えば:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;controlArgs.set([ &amp;quot;parameter&amp;quot;, &amp;quot;true&amp;quot; ]);
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;ページを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: URLパラメータの指定</title>
+      <link>/docs/go-global6/running-go-global/specifying-url-parameters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/specifying-url-parameters/</guid>
+      <description>
+        
+        
+        &lt;p&gt;URLに起動パラメータを追加して指定することもできます。&lt;/p&gt;
+&lt;h3 id=&#34;urlパラメータの指定方法&#34;&gt;URLパラメータの指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Webブラウザの[Location]ボックスに、http://に続けてホスト名とGO-Globalディレクトリを入力します。例:http://hostname/goglobal&lt;/li&gt;
+&lt;li&gt;クエスチョンマーク(?)をURLに追加し、その後に目的のパラメータを続けます。例:http://hostname/goglobal/?user=user1&lt;/li&gt;
+&lt;li&gt;追加のパラメータを指定するには、URLにアンパサンド(＆)を追加します。例:http://hostname/goglobal/?user=user1&amp;amp;password=password1&amp;amp; app=wordpad&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Webファイル</title>
+      <link>/docs/go-global6/running-go-global/web-files/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/web-files/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストのセットアップは、C:\Program Files\GraphOn\GO-Global\Webの下にGO-Global Webファイルをインストールします。インストール中にMicrosoftインターネットインフォメーションサービス(IIS)が検出されると、GO-Global Webファイルを指す仮想ディレクトリがIISに作成されます。IISが利用できない場合、管理者は指定されたWebサーバー上でGO-Global Webフォルダの内容を手動でホストする必要があります。&lt;/p&gt;
+&lt;p&gt;管理者はHTMLページを編集してデフォルトオプションを変更したり、どのクライアントをユーザが利用できるようにしたりするかを制限できます。インストール中、初期Webページはlogon.htmlに設定されます。Webブラウザからホストにアクセスするユーザは、次のURLにアクセスする必要があります。http:// hostname/go-global/&lt;/p&gt;
+&lt;p&gt;GO-Globalは自動的にユーザのプラットフォームとブラウザを検出し、適切なGO-Globalクライアントを起動します。allclients.htmlページには、どのクライアントオペレーティングシステムが検出されても、すべてのGO-Globalクライアントが一覧表示されます。&lt;/p&gt;
+&lt;p&gt;Windowsを実行している管理者は、GO-Globalのシングルユーザ版またはAll Users版のいずれかをダウンロードしてインストールできます。シングルユーザ版(go-global.exe)では、現在ログインしているユーザに対してのみGO-Global Appがインストールされます。全ユーザー版(go-global.windows.exe)では、マシン上のすべてのユーザに対してGO-Global Appがインストールされます。&lt;/p&gt;
+&lt;h2 id=&#34;クライアントウィンドウのサイズ変更&#34;&gt;クライアントウィンドウのサイズ変更&lt;/h2&gt;
+&lt;p&gt;コマンドライン引数–fを使用すると、コマンドライン引数–geometryを使用してクライアントウィンドウのサイズを変更できます。コマンドラインに-geometryを指定しないと、クライアントウィンドウは最大化されます。GO-Globalをルーズウィンドウモードで実行した場合、-geometryは効果がありません。クライアントウィンドウのサイズを変更するには、GO-Globalクライアント実行可能ファイルに–geometryを追加し、その後に目的の幅と高さを続けます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalのアンインストール</title>
+      <link>/docs/go-global6/running-go-global/uninstalling-go-global/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/uninstalling-go-global/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのアンインストール方法はプラットフォームとブラウザによって異なります。&lt;/p&gt;
+&lt;h3 id=&#34;windowsのgo-globalクライアントをアンインストールする方法&#34;&gt;WindowsのGO-Globalクライアントをアンインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;コントロールパネルを開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プログラムと機能&lt;/strong&gt;をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Globalクライアント&lt;/strong&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;削除&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;削除&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ユーザがGO-Globalのスクロール速度が遅い場合は、ホストのスムーズスクロールオプションを無効にしてみてください。Internet Explorerで、[ツール]メニューから[ツール]をクリックします。インターネット設定、詳細設定タブをクリックします。[設定]ボックスの[閲覧]で、[スムーズスクロールを使用する]を無効にします。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Automatic Client Updates</title>
+      <link>/docs/go-global6/running-go-global/automatic-client-updates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/running-go-global/automatic-client-updates/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Administrators can configure GO-Global to automatically update the GO-Global Client when users connect to a GO-Global Host that is running a newer version.&lt;/p&gt;
+&lt;h3 id=&#34;to-enable-automatic-client-updates&#34;&gt;To enable Automatic client updates&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Install the GO-Global Client on client computers using the go-global.windows.exe program. (The Automatic client update feature is only available for Windows computers.)&lt;/li&gt;
+&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click the Client Access tab.&lt;/li&gt;
+&lt;li&gt;Enable Automatically update clients.&lt;/li&gt;
+&lt;li&gt;Click OK.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Mac and Linux users can download the updated version of GO-Global by connecting to the GOGlobal logon page (e.g., &lt;a href=&#34;http://hostname/goglobal/logon.html&#34;&gt;http://hostname/goglobal/logon.html&lt;/a&gt;) and installing the full GO-Global App.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/5-10-1.png&#34; alt=&#34;5-10-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;When Automatically update clients is selected in the Admin Console and a user signs in to the host from a Windows computer, GO-Global compares the version of the GO-Global App installed on the client computer to the version in the Updates directory on the Host. If the files in the Updates directory are newer, GO-Global copies the newer files to a temporary directory on the client computer. Then, when GO-Global closes, the GO-Global Update Client service installs the new files so they can be used in subsequent GO-Global sessions. Users will be updated on the screen when the new updates have completed installing.&lt;/p&gt;
+&lt;p&gt;In summary, a new version of GO-Global will be installed via the update client service when the following conditions are met:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Automatically update clients is enabled in the Admin Console.&lt;/li&gt;
+&lt;li&gt;The GO-Global Update Client service is installed and enabled on the client computer.&lt;/li&gt;
+&lt;li&gt;A newer version of the client is available in the Updates directory on the host.&lt;/li&gt;
+&lt;li&gt;All of the files in the new version have been downloaded to the client computer.&lt;/li&gt;
+&lt;li&gt;The user has signed out of his or her GO-Global Client session.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The default location for the Updates folder is C:\Program Files\GraphOn\GO-Global\Updates which is defined in the registry key: HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GOGlobal\Updates.&lt;/p&gt;
+&lt;p&gt;Users are not required to perform any upgrade tasks. They can, however, prevent updates from being installed by disabling the GO-Global Update Client service on the client computer.&lt;/p&gt;
+&lt;h3 id=&#34;to-disable-the-go-global-update-client-service&#34;&gt;To disable the GO-Global Update Client service&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Right-click My Computer.&lt;/li&gt;
+&lt;li&gt;Click Manage.&lt;/li&gt;
+&lt;li&gt;Click Computer Management | Services and Applications | Services.&lt;/li&gt;
+&lt;li&gt;Select GO-Global Update Client.&lt;/li&gt;
+&lt;li&gt;Click Properties.&lt;/li&gt;
+&lt;li&gt;Under Startup type, select Disabled.&lt;/li&gt;
+&lt;li&gt;Click Stop.&lt;/li&gt;
+&lt;li&gt;Click OK.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

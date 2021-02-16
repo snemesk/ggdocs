@@ -1,0 +1,172 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – 概要</title>
+    <link>/docs/go-global6/introduction/</link>
+    <description>Recent content in 概要 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global6/introduction/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalの概要</title>
+      <link>/docs/go-global6/introduction/introducing-go-global/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/introduction/introducing-go-global/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、アプリケーションに一切手を加えることなく仮想化を行うシンプルでセキュアなソリューションです。
+利用者はネットワークを介して、遠隔地等から既存のWindowsアプリケーションを利用することが可能になります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalの機能</title>
+      <link>/docs/go-global6/introduction/go-global-features/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/introduction/go-global-features/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;ネットワーク、リモートダイヤルアップ、Webへのリモートアクセス&lt;/strong&gt;: GO-Globalでは、ネットワーク、リモートダイヤルアップ、Webへのリモートアクセスを介して、GO-Globalホスト上で動作する32ビットおよび64ビットのWindowsアプリケーションへのアクセスを実現します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プラットフォーム間の互換性&lt;/strong&gt; : GO-Globalにより、実質的に任意のクライアントプラットフォームから、任意のWindowsアプリケーションへのアクセスが実現します。Macintosh、Windows、LinuxなどのデスクトップコンピュータおよびiOSとAndroidのモバイルデバイスから実行できます。GO-Globalを介して展開されたWindowsベースのアプリケーションは、クライアントプラットフォームに関係なく、まるでWindowsオペレーティングシステム上で稼働しているような操作性や機能性を提供します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントのファイルアクセス&lt;/strong&gt; : GO-Globalでは、ハードディスク、マッピングされたネットワークドライブなどのクライアントドライブのシームレスな統合をサポートしています。これにより、ユーザはクライアントコンピュータ上に保存されるファイルにアクセスし、ローカル環境内にこれらのファイルを保存することが可能となります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;サーバの監視&lt;/strong&gt; : GO-Globalでは、GO-Globalホストのリアルタイムでの監視、各クライアントとプロセスの制御、各ユ ーザのログアウトとシャットダウンの機能を提供しています。また、kitASPが開発した「GO-Global拡張パック」を利用することで、Webでユーザやセッションの監視を行うことも可能になります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;セッションシャドーウイング&lt;/strong&gt;: セッションシャドーウイング機能により、1つのセッションとそのアプリケーションを複数のユーザが閲覧および制御できます。この機能は、ヘルプデスク担当者やシステム管理者が、ユーザのシステム障害のトラブルシューティングやデバッグを行う際に大変有効です。セッションシャドーウイングは、ライブ環境でのコラボレーション作業にも活用できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ロードバランス&lt;/strong&gt; : ロードバランス機能(Relay Serverの設置が必要です)によって、ユーザのセッションが複数のGO-Globalホストに分散されます。ロードバランスを有効にすると、ロードバランスが有効となっているいずれかのホスト上で中断されたセッションへの再接続が可能となります。また、kitASPが開発した「拡張パッケージ」を利用することで、Webを利用した負荷分散処理を行うことも可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;セッションの再接続&lt;/strong&gt;: セッションの再接続機能を有効にすると、GO-Globalはクライアント接続が失われてもサーバ上のクライアントセッションを維持します。ユーザが意図的にサーバから切断、またはクライアント接続がネットワーク障害によっ て切断された場合にも、そのユーザのセッションとアプリケーションは、システム管理者の指定した時間はホスト上で稼働し続けます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;パフォーマンスカウンタ&lt;/strong&gt; : 新しいパフォーマンスカウンタをWindowsパフォーマンスモニタに追加すれば、活動中のセッション数とサーバに接続しているクライアント数を追跡できます。GO-Globalホストのパフォーマンスカウンタ機能により、システム管理者はGO-Globalホストへアクセスが可能な任意のマシンからホストのアクティビティを監視できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;プロキシのトンネリング&lt;/strong&gt; : プロキシのトンネリングにより、ユーザはインターネット上のGO-Global ホストにプロキシサーバ環境から接続できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;グループポリシーのサポート&lt;/strong&gt; : システム管理者は、Microsoftのグループポリシーとその拡張機能を使用して、レジストリベースのポリシー管理、スクリプトの割り当て、フォルダのリダイレクト、アプリケーションの管理、およびセキュリティオプションの指定を行えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SSLセキュリティ&lt;/strong&gt; : GO-Globalは、GO-Globalのクライアントとサーバ間の通信方法としてSecure Socket Layer(SSL)をサポートしています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;タイムゾーンのリダイレクト&lt;/strong&gt; : この機能を有効にすると、GO-Globalホストに設定されているタイムゾーンではなく、クライアントで設定されているタイムゾーンで公開されたアプリケーションを利用できるようになります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;下位互換性のあるクライアントおよびホスト&lt;/strong&gt;: ホストとクライアントのメジャバージョンとマイナバージョンが同じであれば、リビジョン(サービスパック)やビルド番号が異なっていても相互に接続することが可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントの自動アップデート機能&lt;/strong&gt; : システム管理者は、ユーザが新しいバージョンを実行しているGO-Globalホストに接続したときにWindowsクライアントを自動的に更新するようにGO-Globalを構成できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアント印刷機能&lt;/strong&gt; : ユーザは、GO-Globalホスト上で動作するアプリケーションから、クライアントのプリンタフォルダにあるプリンタへ印刷することが出来ます。GO-Globalのユニバーサルプリンタドライバを使用することで、ほぼ全てのプリンタへ印刷することが出来ます。プリンタ固有の機能を使いたい場合は、管理者が設定を行うことで、プリンタ専用のドライバを使用することも出来ます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;動的な解像度調整&lt;/strong&gt; : GO-Globalはセッション再接続時に、クライアントの画面の解像度に合わせて、セッションのデスクトップのサイズを調整するようになりました。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;高解像度モニタのサポート&lt;/strong&gt; : GO-Globalは高解像度モニタをサポートします。クライアントが Windowsの環境で動作する場合、GO-Globalはクライアント側のDPIスケーリングの設定を使用します。クライアントがWindows以外の環境の場合は、ホスト側のDPIスケーリングを使用します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアント側サウンド機能&lt;/strong&gt; : Windows7またはそれ以降のクライアント環境では、GO-Globalホスト上で動作するアプリケーションからクライアントへ音を流すことが出来ます。それよりも古いWindows環境では、PlaySound、sndPlaySound、WaveOutをサポートします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsのテーマのサポート&lt;/strong&gt;: Windows7またはそれ以降のクライアント環境では、GO-Globalはホスト側で設定されたテーマを使用してアプリケーションを表示します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile App ツールバー・エディター&lt;/strong&gt; : システム管理者は、ユーザがモバイルクライアントからアクセスした時、画面の下段にツールバーのボタンやメニューを表示するように設定することが出来ます。この機能を使用することで、モバイルクライアントからのアクセスでも、Windowsのアプリケーションを容易に使用することが可能となります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Web App&lt;/strong&gt; : Java ScriptとHTML5で開発されたWeb Appは、多くのWindows、Mac、Linux のブラウザで動作するインストール不要のGO-Globalクライアントです。Web Appは、ホストとクライアント間でのコピー＆ペ ースト、クライアント側パスワードキャッシュ、Preview PDFを使用したクライアント印刷機能を提供します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global App&lt;/strong&gt; : 従来のGO-GlobalクライアントとGO-Globalブラウザ用アドオンを統合したクライアントで、 GO-Globalの機能をフルに利用することが出来ます。具体的には、クライアント側にあるドライブへのアクセス、プリンタへの直接印刷、ブラウザのウインドウ外でのアプリケーション実行が可能です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mac OS X App&lt;/strong&gt; : 最新のMac OS XのAPIを使用して実装されたクライアントで、簡素化されたインストール、クライアントサウンド機能、マルチモニタのサポート、Mac OS X Gatekeeper(マルウエアの対策等)のサポート等も実装されております。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Mobile Sense&lt;/strong&gt;: GO-GlobalのMobile Senseテクノロジーにより、Windowsのアプリケーションがモバイルアプリケ ーションのように使い勝手が向上します。具体的には、アプリケーションのウインドウが画面にフィットする大きさで表示され、文字入力フィールドでキーボードが自動的に表示されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows Server 2019 のサポート&lt;/strong&gt; : GO-Globalは、ホスト環境としてWindows Server 2019(Standard and Datacenter)をサポートします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windows Compatibility Assurance&lt;/strong&gt; :「Windows 互換性保証機能」により、GraphOn社が更新プログラ ム(Windows Update)の互換性を確認するまで、更新プログラムの適用を自動的に延期することが出来ます。更新プログラムに互換性がない場合は、それらをサポートする互換アップデートのリリースおよびインストールが行われるまで、その更新プログラムはインストールされません。このプロセスを通じて、Windows互換性保証機能はGO-Globalホストが正常に機能しない非互換問題の発生を最小限に抑え、GO-Globalホストの更新プログラムを管理する管理者の負担を軽減します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Licensing Summary&lt;/strong&gt;: Admin Console(旧Cluster Manager)に加わった新しいタブで、そのホストで使用可能なGO-Globalのライセンス情報が表示されます。各ライセンス情報で、プロダクトコード、シート数、有効期限、ステータスを確認することが出来ます。これに加え、ライセンスの有効期限が迫った場合および超過した場合は、その情報が表示されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalのシステム要件</title>
+      <link>/docs/go-global6/introduction/system-requirements/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/introduction/system-requirements/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;go-globalホスト&#34;&gt;GO-Globalホスト&lt;/h3&gt;
+&lt;p&gt;GO-Globalホストは、以下のWindowsオペレーティングシステムをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2019 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2016 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2012 R2 : Standard または Datacenter&lt;/li&gt;
+&lt;li&gt;Windows Server 2008 R2 SP1 : Standard または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 10 : Professional または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 8.1 : Professional または Enterprise&lt;/li&gt;
+&lt;li&gt;Windows 7 SP1 : Professional または Ultimate または Enterprise&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;※マルチユーザ環境では、Windows Serverの利用を強く推奨します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホストは、最新のWindows Updateがインストールされているコンピューターでサポートされています(該当する場合)。&lt;/li&gt;
+&lt;li&gt;Security Rollup Packageの有無に関係なくこれらの環境がサポートされます。&lt;/li&gt;
+&lt;li&gt;GO-Globalの管理者は、インストールを実行するためにホストの管理者権限が必要で、そのホストには TCP/IP ネッ トワークプロトコルが必要です。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、指定されたポート番号491を使用します。ファイアウォール等がある場合は、このポート番号491を通過させるように設定してください。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、VMware ESXiとMicrosoft Hyper-Vをサポートします。&lt;/li&gt;
+&lt;li&gt;GO-Global は、Device Guardが有効に設定されたWindows 10およびWindows Server 2016の環境で は利用出来ません。&lt;/li&gt;
+&lt;li&gt;ホストおよびクライアントは256 色以下の色深度では利用できません。1600万色またはそれ以上を推奨します。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストが必要とするメモリとCPUは、公開されるアプリケーションとシステムにアクセスするユーザ数によって決まります。通常、GO-Globalホストは、500 MHz CPUにつき12の「ヘビー ユーザ」、または25の「ライトユー ザ」をサポートできます。(「ヘビーユーザ」とは、1つ以上の大容量アプリケーションを実行して常時対話を行うユーザです。「ライトユーザ」は、1つのアプリケーションを実行して断続的に対話を行うユーザです)。&lt;/li&gt;
+&lt;li&gt;GO-Globalはラウンドトリップタイム(RTT)が500ms以下の環境をサポートします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;go-globalクライアント&#34;&gt;GO-Globalクライアント&lt;/h3&gt;
+&lt;p&gt;ユーザは、GO-Globalクライアントをサポートする任意のコンピュータからGO-Globalホストへ接続できます。GO-Globalのクライアントは、以下のプラットフォームをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows 10 : Pro と Enterprise(32-bit/64-bit)GO-Globalは、最新のWindows Updateがインストールされているコンピューターでサポートされています(該当する場合)。&lt;/li&gt;
+&lt;li&gt;Windows 8.1 : Pro と Enterprise(32-bit/64-bit)&lt;/li&gt;
+&lt;li&gt;Windows 7 SP1 : (32-bit/64-bit)&lt;/li&gt;
+&lt;li&gt;Red Hat Enterprise Linux and 6 and 7 : (64-bit)&lt;/li&gt;
+&lt;li&gt;CentOS 6 and 7 : (64-bit)&lt;/li&gt;
+&lt;li&gt;SUSE Linux Enterprise Desktop 12 : (64-bit)&lt;/li&gt;
+&lt;li&gt;Ubuntu 16.04 LTS : (64-bit)&lt;/li&gt;
+&lt;li&gt;iOS 9.0 or later : iPad, iPhone, iPod Touch&lt;/li&gt;
+&lt;li&gt;Android 5.0 or later : ARMプロセッサのみをサポート&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GO-Globalは以下のブラウザをサポートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Internet Explorer 11 : (32-bit)&lt;/li&gt;
+&lt;li&gt;Mozilla Firefox 52 and later : standard and ESR (32-bit/64-bit)&lt;/li&gt;
+&lt;li&gt;Apple Safari 9 or later : Mac OS X&lt;/li&gt;
+&lt;li&gt;Google Chrome : Windows 7, Windows 8.1, Windows 10, Chromebook&lt;/li&gt;
+&lt;li&gt;Microsoft Edge&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 既知の制限事項</title>
+      <link>/docs/go-global6/introduction/install-kn/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/introduction/install-kn/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;以下はgo-globalの既知の制限事項です&#34;&gt;以下はGO-Globalの既知の制限事項です。&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalは、グループポリシーログオンまたはログオフスクリプトをサポートしません。&lt;/li&gt;
+&lt;li&gt;MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてはサポートされていません。&lt;/li&gt;
+&lt;li&gt;既存のファイルを上書きしようとしているときに、GO-Globalホスト上のファイルをコピーしてクライアントに貼り付けると、うまくいかない場合があります。&lt;/li&gt;
+&lt;li&gt;GO-GlobalはParallels Virtuozzoをサポートしません。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、GO-GlobalセッションでAdobe Acrobat 8.0をサポートします。 以前のバージョンのAcrobatはサポートされていません。&lt;/li&gt;
+&lt;li&gt;Macから印刷する場合、AppleのPreviewアプリケーションはサポートされていません。 Mac OS X Appを実行するときに印刷するには、Adobe Readerが必要です。&lt;/li&gt;
+&lt;li&gt;GO-Globalのユニバーサルプリンタドライバはポート9010を使用します。このポートは変更できません。 GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバで印刷できません。&lt;/li&gt;
+&lt;li&gt;ライセンスファイルを追加または削除するたびに、GO-Global License Managerサービスを再起動する必要があります。&lt;/li&gt;
+&lt;li&gt;日本語キーボードは、-kb ClientSideIMEオプションを指定したMac OS Xでのみサポートされています。&lt;/li&gt;
+&lt;li&gt;クライアントのタスクマネージャが[常に手前に表示]に設定されていると、塗装の問題が発生することがあります。&lt;/li&gt;
+&lt;li&gt;クライアントのディスプレイが256色に設定されていると、色が正しく表示されない場合があります。&lt;/li&gt;
+&lt;li&gt;ジャーナルレコードフックはサポートされていません。そのため、マクロはアプリケーションによっては記録に失敗することがあります。&lt;/li&gt;
+&lt;li&gt;クライアントサイドファイルに埋め込まれているOLEオブジェクトは編集できません。 OLEオブジェクトの編集に必要なアプリケーションがホスト上で使用可能な場合は、ファイルをホスト上のドライブにコピーして編集し、必要に応じてそれをクライアントにコピーします。&lt;/li&gt;
+&lt;li&gt;Windows以外のクライアントでは、クライアントで実行されているアプリケーションとホストで実行されているアプリケーションの間でコピーして貼り付けることができるのは、テキストと画像だけです。&lt;/li&gt;
+&lt;li&gt;GO-Global ホストがrelay serverに接続されている場合、そのホストの接続が切断されているという警告は表示されません。設定(公開アプリケーションなど)は、relay server,の設定に置き換えられます。&lt;/li&gt;
+&lt;li&gt;セッションがシャドウされている間、ユーザは切断されたセッションに再接続できません。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、システムアカウント以外のアカウントでのApplication Publishing Serviceの実行をサポートしていません。&lt;/li&gt;
+&lt;li&gt;キーボードマッピングのコマンドライン引数-kbは、LinuxおよびMac OS Xでは大文字と小文字が区別されます。-KBは機能しません。&lt;/li&gt;
+&lt;li&gt;GO-Globalは/ 3GBスイッチをサポートしません。&lt;/li&gt;
+&lt;li&gt;pdfforgeのPDFCreatorはサポートされていません。&lt;/li&gt;
+&lt;li&gt;ユニバーサルプリンタドライバを使用する場合、マイクロソフトのXPSドキュメントライタはクライアントプリンタとしてサポートされていますが、XPSプリンタドライバはサポートされていません。&lt;/li&gt;
+&lt;li&gt;dependent application serverからGO-Globalを管理するとき、異なるアカウントを使用して2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。 代わりに、relay serverでAdmin Consoleを実行してください。&lt;/li&gt;
+&lt;li&gt;GO-Globalは、システムトレイと統合するアプリケーションをサポートしません。&lt;/li&gt;
+&lt;li&gt;Admin Consoleで[Apply Group Policy]が有効になっていると、セッションの開始に時間がかかります。&lt;/li&gt;
+&lt;li&gt;ユーザが統合Windows認証で認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

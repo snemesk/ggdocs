@@ -1,0 +1,508 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – APPENDIX</title>
+    <link>/docs/go-global61rc/appendix/</link>
+    <description>Recent content in APPENDIX on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61rc/appendix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Licensing</title>
+      <link>/docs/go-global61rc/appendix/licensing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/licensing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのライセンスは、必要な同時ユーザ数に基づいており、永続的です。GO-Globalライセンスファイルはノードロックされています。つまり、それらはホストのMACアドレス(ホストID)で明確に識別され、そのホストにインストールされている場合にのみ使用可能です。GO-Globalホストは、ライセンスサーバやアプリケーションサーバとして設定できます。ライセンスも含むGO-Globalホストは、ライセンスサーバと呼ばれます。&lt;/p&gt;
+&lt;p&gt;一般的な小規模エンドユーザサイトは、アプリケーションサーバとライセンスサーバの両方として動作する1つのGO-Globalホストがあるという基本構成で動作します。一般的な大規模サイトでは、ライセンスがネットワーク上の外部参照ライセンスサーバにインストールされ、複数のGO-Globalアプリケーションサーバがネットワーク上の指定された外部参照ライセンスサーバからライセンスをチェックアウトするように設定されています。さらに、GO-Globalライセンスは冗長性と高可用性のためにいくつかの異なるライセンスサーバ設定をサポートします。これらはこのガイドの第2章で説明されています。&lt;/p&gt;
+&lt;p&gt;GraphOnは、ライセンスを購入するたびに、 &lt;strong&gt;ライセンスマスタ&lt;/strong&gt; と呼ばれる固有のライセンスデータベースレコードを作成します。各ライセンスマスタには、ほとんどのセキュリティ関連トランザクションに使用される固有の &lt;strong&gt;製品コード&lt;/strong&gt; と、単純な連続番号である固有の &lt;strong&gt;ライセンスマスタID&lt;/strong&gt; が割り当てられています。ライセンスマスタIDは、ライセンスの簡単な参照としてライセンス管理に使用されます。製品コードはより長く、英数字であり、新しいライセンスの有効化、メンテナンス注文の更新、およびライセンス変更要求(LCR)などのより安全な機能に必要です。ライセンスマスタIDと製品コードはどちらもライセンスファイルで識別され、どちらもライセンスの恒久的な識別子です。&lt;/p&gt;
+&lt;p&gt;新しいバージョンのGO-Globalをサポートするため、または新しいMACアドレス(ホストID)を持つ新しいサーバにライセンスを移動する必要がある場合は、時間の経過とともに、更新されたライセンスファイルを発行する必要があります。各変更イベントで、GraphOnは更新されたライセンスファイルを提供し、古いライセンスファイルを無効にします。ライセンスマスターIDと製品コードは変わりません。それらは恒久的です。発行された新規または更新された各ライセンスファイルには、そのライセンスに対する一意のランダムなライセンスIDがあります。ライセンスIDもライセンスファイル内で識別されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ライセンスファイルの入手</title>
+      <link>/docs/go-global61rc/appendix/obtainingalicensefile/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/obtainingalicensefile/</guid>
+      <description>
+        
+        
+        &lt;p&gt;新しいライセンスの注文が行われると、GraphOnは注文を処理して新しいライセンスマスタを作成します。ライセンス情報は、注文要求で識別された連絡先に電子メールで送信されます。ユーザは、製品コード、電子メールアドレス、ホスト名、およびホストIDを入力して、カスタマーポータルからライセンスをアクティブ化する必要があります。新しいライセンス(.lic)ファイルは添付ファイルとして電子メールで送信されます。ライセンスIDは、ライセンスファイルの名前をフォーマットするために使用されます。(例: &lt;strong&gt;8d73e4k.lic&lt;/strong&gt; 、ここで8d73e4kはライセンスIDです)。 指定されたライセンスサーバに添付されたライセンスをインストールします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ライセンス変更依頼</title>
+      <link>/docs/go-global61rc/appendix/licensechangerequest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/licensechangerequest/</guid>
+      <description>
+        
+        
+        &lt;p&gt;管理者がライセンスファイルを新しいライセンスサーバに移動した場合は、カスタマーポータルからライセンス変更要求(LCR)を行う必要があります。同様に、GO-Globalの新しいバージョンがリリースされたときには、ライセンス変更要求も要求されます。ライセンス変更要求は通常1〜2日以内に処理されますが、処理には最大5営業日かかります。更新されたライセンスは、新しいライセンスIDとともに電子メールの添付ファイルとして送信されます(ライセンスマスターIDと製品コードは変更されません)。GraphOnによって無効にされたか取り消されたため、古いライセンスファイルを削除する必要があります。ライセンスファイルに記載されている手順に従って、更新されたライセンスをインストールする必要があります。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンスデータベース&#34;&gt;ライセンスデータベース&lt;/h2&gt;
+&lt;p&gt;製品コードまたはライセンスIDを使用して、ライセンシーはカスタマーポータルでライセンスの詳細とステータスを確認できます。ライセンスデータベースには、1つ以上のライセンスのステータス、バージョン、製品ファミリ、およびメンテナンスの有効期限が表示されます。&lt;/p&gt;
+&lt;h2 id=&#34;複数のライセンス&#34;&gt;複数のライセンス&lt;/h2&gt;
+&lt;p&gt;顧客が時間をかけて追加のライセンスを注文するのは一般的です。GraphOnは、ライセンスの注文ごとに、アドオンライセンスごとに一意の新しいライセンスマスターを作成します。管理者はすでにインストールされているライセンスを変更または変更する必要はありません。&lt;/p&gt;
+&lt;h3 id=&#34;アドオンライセンスをインストールする方法&#34;&gt;アドオンライセンスをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;アドオンライセンス製品コードを受け取った後。カスタマーポータルからライセンスをアクティベートします。&lt;/li&gt;
+&lt;li&gt;ライセンスファイル内の指示に従って、ライセンスサーバにライセンスをインストールします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global License Manager&lt;/strong&gt; サービスを再起動します。それ以外の場合、アドオンライセンスは認識されません。サービスを再起動しても、アクティブにログインしているエンドユーザが中断されることはありません。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;複数のライセンスがインストールされている場合、小数点の左側の命名は固有でなければなりません。GraphOnは、常に一意のライセンスIDを使用してライセンスファイルを配信します。管理者は調整する必要はなく、受け取ったライセンスをインストールするだけで済みます。ただし、システム管理上の理由から管理者がライセンスファイルの名前を変更する場合は、ライセンスファイル名が一意でファイル拡張子が.licである限り、これは許可されます。拡張子が「.lic」ではない場合、GO-Global License Managerサービスはそのライセンスを認識しません(例:License1.lic、License2.lic、License3.lic)。GraphOnは、「LicenseID.lic」命名規則に従って配布されたとおりにライセンスをインストールすることをお勧めします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: RapidX Protocol (RXP)</title>
+      <link>/docs/go-global61rc/appendix/rapidxprotocolrxp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/rapidxprotocolrxp/</guid>
+      <description>
+        
+        
+        &lt;p&gt;RXPは、GO-Globalのクライアント - ホスト間のすべてのデータ通信に使用される独自のプロトコルです。デフォルトでは、RXPはTCPポート491を介して動作しますが、互換性のある任意のデータポートを介して動作するようにすることもできます。RXPは標準のTCP/IPプロトコルスタックの一部として動作します。低帯域幅接続を処理するように設計および最適化されています。RXP表示プロトコルはほぼ完全に非同期です。つまり、ホストとクライアントがピアからの応答を待つことはめったにありません。&lt;/p&gt;
+&lt;p&gt;RXPは現在、56ビットDESから256ビットAESまでの暗号化レベルを処理するように設計されています。TCPトランスポートが選択されると、GO-GlobalはGraphOnのDES(Data Encryption Standard)の実装を使用します。SSLトランスポートが選択されると、GO-GlobalはOpenSSLのトランスポート層セキュリティ(TLS)の実装とOpenSSLの選択された暗号の実装、例えばAdvanced Encryption Standard(AES)を使用します。&lt;/p&gt;
+&lt;p&gt;クライアントがApplication Publishing Service(APS)への接続を開くと、APSは最初にクライアントとのRXP接続のネゴシエーションを試みます。APSがクライアントから受信するデータがRXPクライアントが送信するデータと一致しない場合、APSはクライアントとのWebSocket(ws://)またはWebSocket Secure(wss://)接続のネゴシエーションを試みます。&lt;/p&gt;
+&lt;p&gt;プロトコルネゴシエーション中に、次のいずれかが発生すると、APSは接続を閉じます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;プロトコルのネゴシエーションに必要な時間がHostProperties.xmlファイルの &lt;strong&gt;ProtocolNegotiationTimeout&lt;/strong&gt; プロパティの値を超えた場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのRXP接続をネゴシエートしようとしているとAPSが判断した後、RXP接続をネゴシエートしようとしているときにエラーが発生した場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのWebSocket(ws://)接続のネゴシエートを試み、ホストがTLS接続を受け入れるように構成されている(SSLトランスポートが選択されている)場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのWebソケットセキュア(wss://)接続のネゴシエートを試み、ホストがTLS接続を受け入れるように構成されていない(TCPトランスポートが選択されている)場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: トランスポート層のセキュリティ</title>
+      <link>/docs/go-global61rc/appendix/transportlayersecurity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/transportlayersecurity/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalにはTLSv1.0、TLSv1.1、およびTLSv1.2が含まれていますが、GO-Globalは最も安全な共有プロトコルをネゴシエートします。したがって、GO-GlobalホストのAdmin ConsoleでSSLトランスポートが選択されている場合、サポートされているすべてのバージョンのGO-Globalクライアントとホスト間の接続にはTLSv1.2が使用されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Encryption and Exportation Regulations</title>
+      <link>/docs/go-global61rc/appendix/encryptionandexportationregulations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/encryptionandexportationregulations/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Global incorporates an open-source, publicly available SSL software encryption module from the OpenSSL project. GO-Global&amp;rsquo;s use of OpenSSL and other encryption technologies has been reviewed by the United States Department of Commerce and classified under the Export Commodity Control Number (ECCN) 5D002. The ECCN 5D002 classification allows GraphOn and its resellers to export and re-export GO-Global with support for up to 256-bit encryption, implemented by OpenSSL, to government and non-government entities, with the exception of USA embargoed countries, and except when GO-Global will be used in the design, development, production or use of nuclear, chemical or biological weapons or missiles.&lt;/p&gt;
+&lt;p&gt;Commodity Classification Automated Tracking System (CCATS) is an alphanumeric code assigned by the United States Bureau of Industry and Security (BIS) to products that it has classified under the Export Administration Regulations (EAR). GraphOn&amp;rsquo;s CCATS number is G066799.&lt;/p&gt;
+&lt;p&gt;For further inquiries regarding GraphOn&amp;rsquo;s CCATS number or ECCN classification, or for a copy of GraphOn&amp;rsquo;s export license, please contact &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動クライアントキーボードを無効にする方法</title>
+      <link>/docs/go-global61rc/appendix/disablingautomaticclientkeyboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/disablingautomaticclientkeyboard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;自動クライアントキーボードを使用すると、管理者はGO-Globalホストを任意のクライアントキーボードで自動的に機能するように設定できます。この機能はデフォルトで有効になっていますが、HostProperties.xmlファイルを編集して無効にすることができます。&lt;/p&gt;
+&lt;h3 id=&#34;自動クライアントキーボードを無効にする方法&#34;&gt;自動クライアントキーボードを無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルを探します(例: &lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; を開き、&lt;strong&gt;ClientSideIMEEnabled&lt;/strong&gt; プロパティを探します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientSideIMEEnabled&lt;/strong&gt; プロパティをfalseに設定します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自動クライアントキーボードがHostProperties.xmlで無効になっている場合でも、次のようにユーザーごとに有効にできます。&lt;/p&gt;
+&lt;p&gt;クライアントショートカットに &lt;strong&gt;-kb ClientSideIME&lt;/strong&gt; を追加します。&lt;/p&gt;
+&lt;p&gt;たとえば、Windowsクライアントの場合:&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -kb ClientSideIME&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;または、GO-GlobalがWebブラウザから実行されている場合は、logon.htmlページを参照するハイパーリンクに次の引数を追加します。 &lt;strong&gt;&lt;code&gt;&amp;amp;keyboard=ClientSideIME&lt;/code&gt;&lt;/strong&gt; たとえば、 &lt;strong&gt;[http://hostname/goglobal/logon.html?direct=true&amp;amp;keyboard=ClientSideIME]&lt;/strong&gt; のようになります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボード/IME 用サポートの設定</title>
+      <link>/docs/go-global61rc/appendix/configuringsupportforclientkeyboardsandorimes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/configuringsupportforclientkeyboardsandorimes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windowsでは、入力言語、キーボードレイアウト、言語入力システム(IME)、コードページを使用して、キーボード上の各キーを画面上の文字にマッピングします。クライアントキーボード上でキーを押すと、GO-Globalからホストにキーコードが送信します。ホストはセッションの有効なキーボードレイアウトを使用して、キーコードをWindowsの入力メッセージに変換します。GO-Globalのセットアップでは、ホストと同じオペレーティングシステム、キーボードおよびIMEを使用するクライアントをサポートするようにホストを設定します。GO-Globalは、キーボードマッピングファイルを使用して、さまざまなオペレーティングシステムとキーボードを持つクライアントをサポートします。&lt;/p&gt;
+&lt;p&gt;次のセクションでは、ホストシステムと異なるクライアントコンピュータ上のセッションにおいてキーボードやIMEを管理するためのしくみと手順を説明します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボードのサポートやIMEの構成</title>
+      <link>/docs/go-global61rc/appendix/installingadditionalkeyboardsandimes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/installingadditionalkeyboardsandimes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;クライアントがホストとは異なるキーボードやIMEを使用する前に、それらをサポートするためのファイルをGO-Globalホストにインストールする必要があります。ほとんどの場合、レイアウトはオペレーティングシステムのインストール中にコピーされますが、東アジア言語と右から左へ表記される言語はコピーされません。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2016-が稼動するサーバにキーボードレイアウトをインストールする方法&#34;&gt;Windows Server 2016 が稼動するサーバにキーボードレイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタートメニューから &lt;strong&gt;[コントロールパネル]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[言語]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;希望する言語(および該当する場合は地域の変更)を選択して、&lt;strong&gt;[追加]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;追加のファイルがあなたのマシンにコピーされます。OSのインストールCDまたはネットワーク共有名を提供する必要があります。新しい言語のサポートは再起動後に利用可能になります。&lt;/p&gt;
+&lt;p&gt;以下に、各GO-Globalクライアントがサポートするキーボードの一覧を示します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linuxクライアント&lt;/strong&gt; は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Linux  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Linux  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;us&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US&lt;/td&gt;
+&lt;td&gt;00000409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Japanese&lt;/td&gt;
+&lt;td&gt;jp&lt;/td&gt;
+&lt;td&gt;日本語&lt;/td&gt;
+&lt;td&gt;日本語 (106/109  キー)&lt;/td&gt;
+&lt;td&gt;E0010411 (IME)&lt;/td&gt;
+&lt;td&gt;jp.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;fr&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;フランス語&lt;/td&gt;
+&lt;td&gt;0000040C&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Belgian  (be-latin1)&lt;/td&gt;
+&lt;td&gt;be&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;0000080C&lt;/td&gt;
+&lt;td&gt;be.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German、 German(Latin1)、 German (Latin1 w/ no  dead keys)&lt;/td&gt;
+&lt;td&gt;de&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;ドイツ語&lt;/td&gt;
+&lt;td&gt;00000407&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polish&lt;/td&gt;
+&lt;td&gt;pl&lt;/td&gt;
+&lt;td&gt;ポーランド語&lt;/td&gt;
+&lt;td&gt;ポーランド語  (214)&lt;/td&gt;
+&lt;td&gt;00010415&lt;/td&gt;
+&lt;td&gt;pl.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazilian (ABNT2)&lt;/td&gt;
+&lt;td&gt;br&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジル)&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジルABNT2)&lt;/td&gt;
+&lt;td&gt;00010416&lt;/td&gt;
+&lt;td&gt;br.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Mac OS Xクライアント&lt;/strong&gt; は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mac OS X  キーボード  レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Mac OS XキーボードとWindowsキーボードの物理的な違いにより、Mac OS Xキーボードマッピングファイルでは、 &lt;strong&gt;米国国際&lt;/strong&gt; Windowsキーボードレイアウトを使用して、キーの大部分をWindowsアプリケーションに変換しています。
+&lt;/div&gt;
+
+&lt;p&gt;Windowsクライアント(ネイティブのWindowsクライアント、ActiveXコントロール、およびプラグインを含む)は、GO-Globalホストにドライバがあるすべてのキーボードをサポートします。&lt;/p&gt;
+&lt;h2 id=&#34;クライアントキーボードマッピングファイル&#34;&gt;クライアントキーボードマッピングファイル&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、LinuxおよびMac OS X上のキーボードマッピングファイルを使用して、適切なキーボードレイアウトがホストにロードされ、正しいキーコードが各キーを押して放すたびに送信されるようにします。キーボードマッピングファイルを使用すると、新しいキーボードマッピングファイルをクライアントにコピーするだけで、新しいキーボードのサポートを追加できます。キーボードマッピングファイルは、Linuxの &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; ディレクトリとMacの &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; ディレクトリにインストールされています。キーボードマッピングファイルが見つからない場合は、us.kbmキーボードマッピングファイルの内部バージョンが使用されます。&lt;/p&gt;
+&lt;p&gt;これらのクライアントは、オペレーティングシステムから取得した情報に基づいてキーボードマッピングファイルを自動的に読み込むことができます。&lt;/p&gt;
+&lt;p&gt;Linuxのキーボードマッピングファイルのインストール場所(つまり、デフォルトのルートパス)は &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; です。デフォルトのレイアウトは米国英語で、環境変数によって取得されるか、オペレーティングシステムから自動的に取得されます。&lt;/p&gt;
+&lt;h2 id=&#34;go-globalで使用されるキーボード-ime識別子&#34;&gt;GO-Globalで使用されるキーボード/ IME識別子&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、まとめて &lt;strong&gt;GO-Global Input Identifier(GGII)&lt;/strong&gt; と呼ばれる2つの識別子を使用して、セッションのキーボード/IMEを指定します。最初のキーボードレイアウトです。これらは、WindowsオペレーティングシステムがキーボードドライバとIMEプログラムをロードするために使用する8桁の文字列識別子です。これらはロケールIDと似ていますが、最後の4桁は通常、キーボードでサポートされている言語の4桁のロケールIDと一致します。IMEを指定するキーボードレイアウトは、通常「E」で始まります。使用可能なキーボードレイアウトの一覧は、[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ Keyboard\Layouts]キーの下のレジストリに表示されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalが使用する2番目の識別子はレイアウトテキスト文字列です。これは、各キーボードレイアウトレジストリキーのレジストリ値です。これらの文字列は、入力言語を追加するときにキーボードレイアウト/IMEの下のドロップダウンボックスに表示されます。次の例では、最初のキーボードレイアウトGGIIは00000409、レイアウトテキストGGIIはUSです。2番目の例では、キーボードレイアウトGGIIがE0010411で、レイアウトテキストGGIIが日本語入力システム(MS-IME2002)です。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ 00000409  
+Layout File = KBDUS.DLL  
+Layout Text  = US
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ E0010411  
+Ime File = name81.name  
+Layout File = Kbdjpn.dll  
+Layout Text = Japanese Input System（MS-IME2002）
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;環境変数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_FILE&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;使用するマッピングファイルの完全修飾パスの指定に使用されます。指定すると、他のあらゆるファイル名パスの取得方法に優先します。例 : Linuxの場合 **&lt;code&gt;APPCONTROLLER_KBD_FILE=/home/someuser/KeyMappingFiles/MyCustomKeyMappingFile.kmf&lt;/code&gt;**と指定すると、正しいファイルがロードされます。このファイルが見つからない場合は、&lt;strong&gt;us.kbm&lt;/strong&gt; キーボードマッピングファイルの内部バージョンが使用されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_FILE_ROOT&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;キーボードマッピングファイルへのルートパス名の指定に使用されます。キーボードマッピングファイルを含む &lt;strong&gt;kbd&lt;/strong&gt; ディレクトリは、このディレクトリに置きます。例:Linuxの場合、**&lt;code&gt;APPCONTROLLER_KBD_FILE_ROOT=/home/someuser&lt;/code&gt;**と指定すれば、&lt;code&gt;/home/someuser/kbd/xxx.kbm&lt;/code&gt;ファイルがロードされます。「xxx」は、次に説明する&lt;code&gt;APPCONTROLLER_KBD_FILE_LAYOUT&lt;/code&gt; 環境変数から、または直接オペレーティングシステムから取得されたLAYOUTを示します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_LAYOUT&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;どのLAYOUT(またはファイル名のプレフィックス)を使用するかの指定に使用されます。このLAYOUT名に拡張子.kbmが付いたものがファイル名として使用されます。例:&lt;strong&gt;&lt;code&gt;APPCONTROLLER_KBD_LAYOUT=MyCustomKeyMappingFile&lt;/code&gt;&lt;/strong&gt; と指定すれば、&lt;code&gt;/ect/AppController/kbd/MyCustomKeyMappingFile.kbm&lt;/code&gt;ファイルがロードされます。上に説明した&lt;code&gt;APPCONTROLLER_KBD_FILE_ROOT&lt;/code&gt;も使用されている場合は、&lt;code&gt;/home/someuser/kbd/MyCustomKeyMappingFile.kbm&lt;/code&gt;ファイルがロードされます。マッピングファイルへのルートパス名のサブディレクトリを、ここに含めることもできます。例:&lt;code&gt;APPCONTROLLER_KBD_LAYOUT=thinclient/us&lt;/code&gt;と指定すれば、別のルートパスが指定されていないかぎり、&lt;code&gt;/etc/AppController/kbd/thinclient/us.kbm&lt;/code&gt;ファイルがロードされます。これは、オペレーティングシステムから自動取得したLAYOUTに優先します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;クライアントキーボードオプションの設定&#34;&gt;クライアントキーボードオプションの設定&lt;/h2&gt;
+&lt;p&gt;-kbショートカットパラメータまたは「キーボード」ハイパーリンクパラメータを使用して、セッションのキーボード/IMEを指定できます。これらは上記の両方のタイプのGGIIを取ります。Windowsコンピュータでは、-kbショートカットパラメータが指定されていない場合、GO-Globalは現在アクティブなキーボードレイアウトのレイアウトテキストを使用します。Linuxコンピュータでは、コマンドラインでレイアウトテキストが指定されていない場合、GO-Globalはレイアウトテキストをサーバに送信しません。&lt;/p&gt;
+&lt;p&gt;例:キーボードレイアウトを使用したWindowsショートカット&lt;br&gt;
+&lt;code&gt;AppController.exe -h server1 -kb 00000409&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&#34;レイアウトテキスト置換の指定&#34;&gt;レイアウトテキスト置換の指定&lt;/h2&gt;
+&lt;p&gt;クライアントとサーバのキーボードレイアウト名をマッピングするために、サーバ上でレイアウトテキストの置換を指定できます。それらを使用することができます：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;異なるバージョンのWindowsでのレイアウトテキスト名の違いを克服します。たとえば、Windows 2000のGO-Globalクライアントシステムの &lt;strong&gt;日本語入力システム(MS-IME2000)&lt;/strong&gt; レイアウトテキストは、GO-Globalホストの &lt;strong&gt;日本語入力システム(MS IME2002)&lt;/strong&gt; レイアウトテキストに置き換えることができます。&lt;/li&gt;
+&lt;li&gt;UNICODE名を持つキーボードレイアウトをANSI名に置き換えます。たとえば、ASCII HTMLページで「keyboard」アプレットパラメータを使用してUNICODE名でキーボードレイアウトを指定するときは、UNICODE名の代わりにASCII名を使用する必要があります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;キーボードレイアウトの置換は、&lt;code&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\AppController\System\Keyboard\Layout\Substitutes]&lt;/code&gt;レジストリキーで指定されています。このキー内の各REG_SZ値はGGIIの名前を持ち、値はクライアント名の代わりに使用されるべきサーバからのレイアウトテキストの名前です。&lt;/p&gt;
+&lt;h2 id=&#34;代替レイアウトテキストの設定&#34;&gt;代替レイアウトテキストの設定&lt;/h2&gt;
+&lt;p&gt;クライアントからGGIIが指定されていない場合、または指定されたGGIIが有効なキーボードレイアウトをロードできない場合、GO-Globalホストはフォールバックメカニズムを使用してセッションに使用するキーボードレイアウトを決定します。代替レイアウトテキストは、有効なGGIIを渡すクライアントを除いて、サーバに接続しているすべてのクライアントによって使用されるキーボードレイアウトのレイアウトテキストです。アクティブなキーボードレイアウトがIMEの場合、代替レイアウトテキストはインストール中に自動的に設定されます。インストール後に、次のレジストリキーの下にあるHKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\AppController\System\Keyboard Layout
+&lt;strong&gt;Fallback Layout Text&lt;/strong&gt; の値を編集して変更することができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+中国語のGO-Globalホストに接続すると、ショートカットから &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログが、デフォルト言語として中国語を指定しているIMEバーと共に表示されます。Ctrl+スペースバーをクリックしても言語は切り替わりません。ユーザは手動で英語を選択するためにマウスポインタでIMEバーをクリックする必要があります。IMEバーを手動でクリックしないと、ユーザはユーザ名とパスワードを入力できません。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;複数の入力ロケールの設定&#34;&gt;複数の入力ロケールの設定&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントプロファイルは、異なる入力ロケールまたは複数の入力ロケール、あるいはその両方で構成できます。GO-Globalホストにログオンする新規ユーザのアカウントロファイルは、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントの入力ロケールで自動的に設定されます。ユーザは、自分のアカウントプロファイルで定義されている任意の入力ロケールに切り替えることができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+移動ユーザプロファイルまたは既にGO-Globalホストに存在するプロファイルを持つユーザは、これらの新しい設定を受け取りません。これらのアカウントは手動で設定する必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;例として、次の手順では英語のWindows Server 2016にドイツ語の入力ロケールをインストールして使用する方法について説明します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 英語版のWindows Server 2016でドイツ語を有効にします。&lt;/strong&gt; &lt;br&gt;
+1.1 入力ローカルを設定したいユーザアカウントでGO-Globalホストに対話的にサインインします。&lt;br&gt;
+1.2 [スタート | コントロールパネル | 地域の言語オプション]をクリックします。&lt;br&gt;
+1.3 言語タブをクリックします。&lt;br&gt;
+1.4 ドイツ語を選択し、&lt;strong&gt;開く&lt;/strong&gt; をクリックします。&lt;br&gt;
+1.5 地域の変更としてDeutsch(Deutschland)を選択し、&lt;strong&gt;追加&lt;/strong&gt; をクリックします。&lt;br&gt;
+&lt;strong&gt;2. 入力ロケールが正しくインストールおよび構成されていることを確認してください。&lt;/strong&gt; &lt;br&gt;
+2.1 この対話型セッションで &lt;strong&gt;メモ帳&lt;/strong&gt;を起動します。&lt;br&gt;
+2.2 英語で数文字を入力してください。&lt;br&gt;
+2.3 左Alt + Shiftを押します。&lt;br&gt;
+2.4 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;これで、ドイツ語の入力ロケールが、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt; プロファイルと、ステップ1.1でシステムにログオンしたユーザに対して有効になります。&lt;/p&gt;
+&lt;p&gt;3.GO-Globalセッション中に入力ロケールを切り替えます。&lt;br&gt;
+3.1 GO-Globalクライアントを起動し、手順1.1で使用したアカウントでサーバに接続します。&lt;br&gt;
+3.2 &lt;strong&gt;メモ帳&lt;/strong&gt; を起動します。&lt;br&gt;
+3.3 英語で数文字を入力してください。&lt;br&gt;
+3.4 左Alt + Shiftを押します。&lt;br&gt;
+3.5 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Sign In&lt;/strong&gt; ダイアログが表示されているときは、ユーザは入力ロケールを切り替えることができません。GO-Globalホストのデフォルト言語の入力ロケールが使用されます。&lt;/p&gt;
+&lt;p&gt;Windowsクライアントでは、サーバベースのアプリケーションの選択された入力ロケールは、クライアントコンピュータのシステムトレイに表示されません。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サードパーティコンポーネント</title>
+      <link>/docs/go-global61rc/appendix/third-partycomponent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/appendix/third-partycomponent/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalには、オープンソース ソフトウェアを含む第三者が提供するソフトウェアが含まれています。これらのコンポーネントは以下に記載されています。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;サードパーティコンポーネント&lt;/th&gt;
+&lt;th&gt;ライセンス契約&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apache Tomcat&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.apache.org/licenses/LICENSE-2.0&#34;&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Adobe Integrated Runtime&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://labs.adobe.com/technologies/eula/air.html&#34;&gt;https://labs.adobe.com/technologies/eula/air.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BlazeDS&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.gnu.org/licenses/lgpl.txt&#34;&gt;http://www.gnu.org/licenses/lgpl.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Codejock Software Xtreme Skinframework&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.codejock.com/products/licensefaq.asp&#34;&gt;http://www.codejock.com/products/licensefaq.asp&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Flex&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://labs.adobe.com/technologies/eula/flexbuilder_linux.html&#34;&gt;https://labs.adobe.com/technologies/eula/flexbuilder_linux.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Java Runtime Environment&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html&#34;&gt;https://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;libpng&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.libpng.org/pub/png/src/libpng-LICENSE.txt&#34;&gt;http://www.libpng.org/pub/png/src/libpng-LICENSE.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OpenSSL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.openssl.org/source/license.html&#34;&gt;http://www.openssl.org/source/license.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PostgreSQL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wiki.postgresql.org/wiki/FAQ#What_is_the_license_of_PostgreSQL.3F&#34;&gt;https://wiki.postgresql.org/wiki/FAQ#What_is_the_license_of_PostgreSQL.3F&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Qt&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.gnu.org/licenses/lgpl.txt&#34;&gt;http://www.gnu.org/licenses/lgpl.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VeryPDF&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.verypdf.com/custom/license_agreement.htm&#34;&gt;http://www.verypdf.com/custom/license_agreement.htm&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;win-acme&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/PKISharp/win-acme/blob/master/LICENSE&#34;&gt;https://github.com/PKISharp/win-acme/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;XML Parser Library&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.applied-mathematics.net/tools/xmlparser_doc/html/index.html&#34;&gt;https://www.applied-mathematics.net/tools/xmlparser_doc/html/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Zlib&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.zlib.net/zlib_license.html&#34;&gt;http://www.zlib.net/zlib_license.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,1878 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – GO-Global Admin Console</title>
+    <link>/docs/go-global61rc/go-globaladminconsole/</link>
+    <description>Recent content in GO-Global Admin Console on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61rc/go-globaladminconsole/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Global Admin Console</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/go-globaladminconsole/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/go-globaladminconsole/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+詳細につきましては弊社提供のメディアにございますDocuments_kitASPフォルダ内のGO-Global_for_Windows_6.0_ユーザーズマニュアルをご参照ください。
+&lt;/div&gt;
+
+&lt;p&gt;Admin Consoleでは、GO-Globalホストの管理、監視、GO-Globalホストへのクライアントアクセスの制御を行うことができます。Admin Consoleには、GO-Globalホストにサインインしているユーザのリストと、ユーザが実行しているアプリケーションが表示されます。Admin Consoleでは、アプリケーションの追加と削除、ユーザセッションの終了、ホスト上で実行されているプロセスの終了など、さまざまな管理タスクを実行できます。&lt;/p&gt;
+&lt;h3 id=&#34;admin-consoleにアクセスする方法&#34;&gt;Admin Consoleにアクセスする方法&lt;/h3&gt;
+&lt;p&gt;デスクトップ上の &lt;strong&gt;GO-Global Admin Console&lt;/strong&gt; アイコンをダブルクリックします。もしくは&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windowsタスクバーの &lt;strong&gt;[スタート]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-28-1.png&#34; alt=&#34;kit4-28-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;[GraphOn GO-Global｜Admin Console］をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-28-2.png&#34; alt=&#34;kit4-28-2&#34;&gt;
+&lt;img src=&#34;/img/kit4-28-3.png&#34; alt=&#34;kit4-28-3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Consoleの左側のパネルには、Application Publishing Serviceを実行しているネットワーク上のホストの一覧が表示されます。デフォルトでは、Application Publishing Serviceには、自分のマシンで実行されているホストの情報が表示されます。他のホストに接続してホストの情報を表示するには、[GO-Global Hosts]の一覧からホスト名をクリックします。
+ホストのアイコンに赤い X &lt;img src=&#34;/img/4-1-1.png&#34; alt=&#34;4-1-1&#34;&gt;が付いている場合、管理者はそのホストの管理者権限を持っていません。ホストのアイコンが赤×でグレー表示されている場合は、そのホストがApplication Publishing Serviceを実行していないか、オフになっています。いずれの場合も、管理者はAdmin Consoleからそのホストにアクセスできません。Admin Consoleの左側パネルの &lt;strong&gt;[All Hosts]&lt;/strong&gt; アイコンをクリックすると、ネットワーク上のすべてのアクティブなセッションのリストが表示されます。これにより、個々のホストに接続することなく、アクティブなGO-Globalセッションを表示することができます。また、特定のセッションのホストを検索するのにも便利です。
+Admin Consoleからそのホストにアクセスするには、各GO-Globalホストの管理者グループに所属している必要があります。ホストの管理者権限がない場合、アプリケーションの追加やプロセスの終了などを行うことができません。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-1-2.png&#34; alt=&#34;4-1-2&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: アプリケーションの管理</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/managingapplications/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/managingapplications/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Admin Consoleを使用すると、アプリケーションを公開して共有できます。&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーションのインストール&#34;&gt;アプリケーションのインストール&lt;/h2&gt;
+&lt;p&gt;GO-Global を介して実行されるアプリケーションをインストールする場合、ベンダ提供の関連文書を参照して、適切なマルチユーザインストール方法を確認してください。ほとんどの場合、管理者アカウントでアプリケーションをインストールする必要がありますが、各アプリケーションによってインストール要件は異なります。またインストールは、マルチユーザ展開に関するMicrosoftのガイドラインに準拠する必要があります&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalを介してアプリケーションを展開しても、各企業が無制限のアクセス権を取得することにはなりません。同時に実行できるアプリケーションの数に関しては、ベンダのライセンス供与規定に準拠する必要があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;アプリケーションの公開&#34;&gt;アプリケーションの公開&lt;/h2&gt;
+&lt;p&gt;アプリケーションはAdmin Consoleを使って公開されます。Admin Consoleを介してアプリケーションを公開するときに、アプリケーションの起動方法を制御する起動パラメータを指定できます。&lt;strong&gt;Interactive Quick Start Guide&lt;/strong&gt; を実行するときは、プロンプトに従ってアプリケーションを公開してください。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションを公開する方法&#34;&gt;アプリケーションを公開する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から、目的のホストを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-30-1.png&#34; alt=&#34;kit4-30-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Applications]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-30-2.png&#34; alt=&#34;kit4-30-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Location]&lt;/strong&gt; ボックスの横にある &lt;strong&gt;[Browse]&lt;/strong&gt; ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-30-3.png&#34; alt=&#34;kit4-30-3&#34;&gt;
+&lt;img src=&#34;/img/kit4-30-4.png&#34; alt=&#34;kit4-30-4&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-30-5.png&#34; alt=&#34;kit4-30-5&#34;&gt;&lt;br&gt;
+&lt;img src=&#34;/img/kit4-30-6.png&#34; alt=&#34;kit4-30-6&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-2-1.png&#34; alt=&#34;4-2-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;デフォルトでは、ブラウズダイアログは&lt;code&gt;PROGRAMDATA\Microsoft\Windows\Start Menu\Programs&lt;/code&gt;ディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーション名の変更&#34;&gt;アプリケーション名の変更&lt;/h3&gt;
+&lt;p&gt;アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に &lt;strong&gt;[Name]&lt;/strong&gt; ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションアイコンの変更&#34;&gt;アプリケーションアイコンの変更&lt;/h3&gt;
+&lt;p&gt;アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、&lt;strong&gt;[Icon]&lt;/strong&gt; ボタンをクリックします。&lt;/p&gt;
+&lt;h3 id=&#34;起動状態の変更&#34;&gt;起動状態の変更&lt;/h3&gt;
+&lt;p&gt;[Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。&lt;/p&gt;
+&lt;h3 id=&#34;開始ディレクトリの変更&#34;&gt;開始ディレクトリの変更&lt;/h3&gt;
+&lt;p&gt;アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に &lt;strong&gt;[Start Directory]&lt;/strong&gt; ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。&lt;/p&gt;
+&lt;h3 id=&#34;コマンドラインオプションの指定&#34;&gt;コマンドラインオプションの指定&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;[Command-Line Options]&lt;/strong&gt; ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;公開アプリケーションへのリンクの共有&#34;&gt;公開アプリケーションへのリンクの共有&lt;/h2&gt;
+&lt;p&gt;Admin Consoleの &lt;strong&gt;[Get Link]&lt;/strong&gt; ボタンをクリックすると、選択したアプリケーションへのリンクをコピーしてユーザと共有し、そのアプリケーションにすばやくアクセスできます。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションリンクを共有する方法&#34;&gt;アプリケーションリンクを共有する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Installed Applications&lt;/strong&gt; のリストから、共有したいアプリケーションを選択します。&lt;/li&gt;
+&lt;li&gt;インストール済みアプリケーションのリストの右側にある &lt;strong&gt;[Get Link]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-1.png&#34; alt=&#34;kit4-32-1&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-2.png&#34; alt=&#34;kit4-32-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Application Link]&lt;/strong&gt; ダイアログで、&lt;strong&gt;[Copy]&lt;/strong&gt; ボタンをクリックしてリンクをクリップボードにコピーします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-3.png&#34; alt=&#34;kit4-32-3&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;リンクを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-2-2.png&#34; alt=&#34;4-2-2&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Admin Consoleがチュートリアルモードで実行されている場合、&lt;strong&gt;[Copy]&lt;/strong&gt; ボタンをクリックすると、次のメッセージが表示されます。&lt;strong&gt;[Copy]&lt;/strong&gt; をクリックしてこのリンクをクリップボードにコピーします。それを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有できます。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ブラウザ外でのアプリケーションの実行&#34;&gt;ブラウザ外でのアプリケーションの実行&lt;/h2&gt;
+&lt;p&gt;ユーザが公開アプリケーションへのリンクをクリックしてGO-Globalホストにサインインすると、アプリケーションが開き、Webブラウザの外部で実行されます。このデフォルト設定を無効にするには、&lt;strong&gt;[Run application outside the browser]&lt;/strong&gt; のチェックを外します。これにより、パラメータ &lt;strong&gt;&amp;amp;embed=true&lt;/strong&gt; がURLに追加されます。このパラメータを追加してユーザがリンクをクリックすると、アプリケーションはユーザのWebブラウザ内で実行されます。&lt;/p&gt;
+&lt;h2 id=&#34;ホストアドレスの編集&#34;&gt;ホストアドレスの編集&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;ホストアドレス&lt;/strong&gt; は、GO-Global AppControllerまたはWeb Appがホストコンピュータへの接続に使用するアドレスを指定します。デフォルトでは、これはGO-Globalホストがインストールされているコンピュータの完全修飾ドメイン名です。クライアントがロードバランサ(GO-Global Relay Load Balancerやthird-party load balancerなど)を介してホストに接続する場合は、&lt;strong&gt;ホストアドレス&lt;/strong&gt; を完全修飾ドメイン名に設定します。&lt;/p&gt;
+&lt;h3 id=&#34;ホストアドレスを編集する方法&#34;&gt;ホストアドレスを編集する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Application Link]&lt;/strong&gt; ダイアログで、&lt;strong&gt;[Host Address]&lt;/strong&gt; ボックスにホストの完全修飾ドメイン名を入力します。アプリケーションリンクは自動的に更新されます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-4.png&#34; alt=&#34;kit4-32-4&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-5.png&#34; alt=&#34;kit4-32-5&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Copy]&lt;/strong&gt; ボタンをクリックしてURLをコピーし、ユーザと共有します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-6.png&#34; alt=&#34;kit4-32-6&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-7.png&#34; alt=&#34;kit4-32-7&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;webサーバアドレスの編集&#34;&gt;Webサーバアドレスの編集&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Webサーバアドレス&lt;/strong&gt; は、GO-Global Web App、GO-Global AppController、それらをサポートするファイルをユーザのブラウザに提供するために使用されるWebサーバのアドレスを指定します。デフォルトのWebサーバアドレスは&lt;strong&gt;apps.graphon.com&lt;/strong&gt; です。これは、GraphOnによってホストされているWebサーバのアドレスです。あなたがあなた自身のWebサーバを使うつもりならば、GO-Global WebコンポーネントをWebサーバにインストールし、&lt;strong&gt;Webサーバアドレス&lt;/strong&gt; をあなたのWebサーバのアドレスに変更してください。たとえば、WebサーバがGO-Globalホストと同じコンピュータにインストールされている場合は、&lt;strong&gt;Webサーバアドレス&lt;/strong&gt; と&lt;strong&gt;ホストアドレス&lt;/strong&gt; を同じアドレスに設定します。&lt;/p&gt;
+&lt;h3 id=&#34;webサーバのアドレスを編集する方法&#34;&gt;Webサーバのアドレスを編集する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Application Link]&lt;/strong&gt; ダイアログで、&lt;strong&gt;[Web Server Address]&lt;/strong&gt; ボックスにWebサーバのアドレスを入力します。アプリケーションリンクは自動的に更新されます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-8.png&#34; alt=&#34;kit4-32-8&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-9.png&#34; alt=&#34;kit4-32-9&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Copy]&lt;/strong&gt; ボタンをクリックしてURLをコピーし、ユーザと共有します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-10.png&#34; alt=&#34;kit4-32-10&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-11.png&#34; alt=&#34;kit4-32-11&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ユーザが内部ネットワークとパブリックネットワークの両方からホストにアクセスする場合、ホストとWebサーバは、&lt;strong&gt;[Host Address]&lt;/strong&gt; フィールドと &lt;strong&gt;[Web Server Address]&lt;/strong&gt; フィールドに指定されたアドレスを介して内部ネットワークとパブリックネットワークの両方からアクセスできる必要があります。これを実現するには、内部DNSエントリが &lt;strong&gt;ホストアドレス&lt;/strong&gt; と &lt;strong&gt;Webサーバアドレス&lt;/strong&gt; をコンピュータの内部IPアドレスにマップし、パブリックDNSエントリが &lt;strong&gt;ホストアドレス&lt;/strong&gt; と &lt;strong&gt;Webサーバアドレス&lt;/strong&gt; をこれらのコンピュータのパブリックIPアドレスにマップする必要があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;デフォルトリンクプロパティの設定&#34;&gt;デフォルトリンクプロパティの設定&lt;/h2&gt;
+&lt;p&gt;デフォルトのアプリケーションリンクプロパティを &lt;strong&gt;[Application Link]&lt;/strong&gt; ダイアログボックスで指定したものに設定して、ホストアドレス、Webサーバアドレス、アプリケーションをブラウザの内部で実行するか外部で実行するかを含めることができます。これらのデフォルトのリンクプロパティは、新しいアプリケーションが公開されたときに適用されます。&lt;/p&gt;
+&lt;h3 id=&#34;デフォルトのリンクプロパティを設定する方法&#34;&gt;デフォルトのリンクプロパティを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Application Link]&lt;/strong&gt; ダイアログで、 &lt;strong&gt;[Set defaults]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-12.png&#34; alt=&#34;kit4-32-12&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-13.png&#34; alt=&#34;kit4-32-13&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Yes]&lt;/strong&gt; をクリックして確定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-32-14.png&#34; alt=&#34;kit4-32-14&#34;&gt;
+&lt;img src=&#34;/img/kit4-32-15.png&#34; alt=&#34;kit4-32-15&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーションの複製&#34;&gt;アプリケーションの複製&lt;/h2&gt;
+&lt;p&gt;アプリケーションの複製では、選択された登録済みアプリケーションの完全なコピーが作成されます。これは、同一のアプリケーションを異なるユーザやグループに対してさまざまな形で利用可能にする場合に便利です。たとえば、 &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログを表示しないコマンド行オプション付きの1つのバージョンのアプリケーションと、クライアントにサインインを要求するコマンド行オプションのない別のバージョンのアプリケーションを登録できます。アプリケーションを複製する場合には、新しい表示名を選択する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションの複製方法&#34;&gt;アプリケーションの複製方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Installed Applications]&lt;/strong&gt; の一覧から複製するアプリケーションを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-1.png&#34; alt=&#34;kit4-33-1&#34;&gt;
+&lt;img src=&#34;/img/kit4-33-2.png&#34; alt=&#34;kit4-33-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;[Tools | Applications | Duplicate]の順にクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-3.png&#34; alt=&#34;kit4-33-3&#34;&gt;
+&lt;img src=&#34;/img/kit4-33-4.png&#34; alt=&#34;kit4-33-4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;－または－&lt;/p&gt;
+&lt;p&gt;[Installed Applications]の一覧の右側にある &lt;strong&gt;[Duplicate]&lt;/strong&gt; ボタンをクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-5.png&#34; alt=&#34;kit4-33-5&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーション名の変更-1&#34;&gt;アプリケーション名の変更&lt;/h2&gt;
+&lt;p&gt;アプリケーションに割り当てる表示名は、エンドユーザのProgram Windowに表示されます。アプリケーションの表示名は常時変更可能です。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションの表示名の変更方法&#34;&gt;アプリケーションの表示名の変更方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Installed Applications]&lt;/strong&gt; の一覧から名前を変更するアプリケーションを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-6.png&#34; alt=&#34;kit4-33-6&#34;&gt;
+&lt;img src=&#34;/img/kit4-33-7.png&#34; alt=&#34;kit4-33-7&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;[Tools | Applications | Rename]の順にクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-8.png&#34; alt=&#34;kit4-33-8&#34;&gt;
+&lt;img src=&#34;/img/kit4-33-9.png&#34; alt=&#34;kit4-33-9&#34;&gt;&lt;/p&gt;
+&lt;p&gt;－または－&lt;/p&gt;
+&lt;p&gt;[Installed Applications]の一覧の右側にある &lt;strong&gt;[Rename]&lt;/strong&gt; ボタンをクリックします。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-10.png&#34; alt=&#34;kit4-33-10&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Rename Application]&lt;/strong&gt; ダイアログの &lt;strong&gt;[New]&lt;/strong&gt; ボックスに名前を入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-11.png&#34; alt=&#34;kit4-33-11&#34;&gt;
+&lt;img src=&#34;/img/kit4-33-12.png&#34; alt=&#34;kit4-33-12&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーションのプロパティの編集&#34;&gt;アプリケーションのプロパティの編集&lt;/h2&gt;
+&lt;p&gt;アプリケーションが公開されたら、いつでもアプリケーションのプロパティを編集できます。たとえば、アプリケーションのスタートアップ状態、実行可能ファイルの場所、アプリケーションを起動するフォルダの編集が可能です。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションのプロパティの編集方法&#34;&gt;アプリケーションのプロパティの編集方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Applications]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-13.png&#34; alt=&#34;kit4-33-13&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Installed Applications]&lt;/strong&gt; の一覧からアプリケーションを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-14.png&#34; alt=&#34;kit4-33-14&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Properties]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-33-15.png&#34; alt=&#34;kit4-33-15&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;以下のいずれかの操作を行います&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Executable Path]&lt;/strong&gt; ボックス内に、新しいパス名を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Start Directory]&lt;/strong&gt; ボックス内に、アプリケーションを起動するディレクトリのフルパス名を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Command-Line Options]&lt;/strong&gt; ボックス内に、そのアプリケーション用のスタートアップパラメータを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Display Name]&lt;/strong&gt; ボックス内に、そのアプリケーションの新しい表示名を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Startup State]&lt;/strong&gt; セクションで、そのアプリケーションの起動モード(Maximized、Minimized、Normal)を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Icon]&lt;/strong&gt; ボタンをクリックして、新しいアプリケーションアイコンを検索します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-2-3.png&#34; alt=&#34;4-2-3&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アプリケーションの削除&#34;&gt;アプリケーションの削除&lt;/h2&gt;
+&lt;p&gt;GO-Globalで展開したアプリケーションは、Admin Consoleで削除します。Admin Consoleでアプリケーションを削除しても、ホストからは削除されません。GO-Globalクライアントがそのアプリケーションにアクセスできなくなるだけです。&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションの削除方法&#34;&gt;アプリケーションの削除方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Applications]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-34-1.png&#34; alt=&#34;kit4-34-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;[Installed Applications]の一覧から削除するアプリケーションを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-34-2.png&#34; alt=&#34;kit4-34-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Remove]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-34-3.png&#34; alt=&#34;kit4-34-3&#34;&gt;
+&lt;img src=&#34;/img/kit4-34-4.png&#34; alt=&#34;kit4-34-4&#34;&gt;
+&lt;img src=&#34;/img/kit4-34-5.png&#34; alt=&#34;kit4-34-5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;－または－&lt;/p&gt;
+&lt;p&gt;　　[Tools | Applications | Remove]の順にクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-34-6.png&#34; alt=&#34;kit4-34-6&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Consoleでインストール済みアプリケーションを削除する時に、あるユーザがそのアプリケーションを実行していた場合、そのユーザのセッションは中断されません。しかし、そのユーザがそのアプリケーションを終了すると、そのアプリケーションは利用不可能になり、Program Window内にアイコンは表示されません。&lt;/p&gt;
+&lt;p&gt;Admin Consoleへのアプリケーションの登録が完了すると、 &lt;strong&gt;[Installed Applications]&lt;/strong&gt; の一覧にそのアプリケーション名とパス名が表示されます。カラムのタイトルをクリックすると、一覧内の項目を昇順または降順で並べ替えできます。Admin Console内の一覧はすべて、この方法で並べ替えできます。&lt;/p&gt;
+&lt;p&gt;ODBCデータソースを使用するアプリケーションを設定する場合は、GO-Globalクライアントがそのデータソースへアクセスできるよう、ODBCドライバをシステムDSNs(データソース名)として設定する必要があります。データソースに関する詳細情報は、Windows ODBC Data Source Administratorのオンラインヘルプを参照してください。&lt;/p&gt;
+&lt;p&gt;アクセス制限により、Admin ConsoleではUNCフォーマットで指定されたパス(例:\Machine Name\Folder Name&amp;hellip;)、またはマッピングされたネットワークドライブ上にあるパスの有効性を検証できません。公開された項目の &lt;strong&gt;Executable Path&lt;/strong&gt; または &lt;strong&gt;Start Directory&lt;/strong&gt; が、マッピングされたドライブを含むか、UNCパスで指定されている場合、Admin Consoleでは、それが有効であるか否かに関わらず、その指定パスを受け付けます。パスが無効な場合、またはクライアントユーザが指定された実行可能ファイルやフォルダへのアクセス権を持たない場合、公開された項目はProgram Windowに表示されません。その項目を選択して、 &lt;strong&gt;[Properties]&lt;/strong&gt; ボタンをクリックします。そこで、その項目の[Executable Path]または [Start Directory]を更新します。その項目がアンインストールまたは新規の場所に移動されていると、Application Publishing Serviceが再開された後には、Admin Console内に表示されません。&lt;/p&gt;
+&lt;p&gt;Admin Consoleでは、UNCフォーマットで指定された、またはマッピングされたドライブにある任意の項目のパスに対するグループやユーザの設定は表示できません。これが当てはまる場合、任意のアプリケーションやファイルに対して、Cluster Managerの[Application Users/Groups]画面に「User/Group settings not available.(ユーザ/グループ設定は利用できません)」というメッセージが表示されます。&lt;/p&gt;
+&lt;p&gt;マッピングされたドライブ上に存在はしていてもGO-Globalでの利用ライセンスが供与されていない項目をAdmin Console内で公開すると、その項目のアイコンがProgram Windowに表示されます。しかし、ユーザはその項目をオープンすることはできず、起動するとエラーメッセージが表示されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+[Installed Applications]の一覧または[Application Users/Groups]の一覧内の項目上でマウスボタンを右クリックすると、最も頻繁に使用されるコマンドのショートカットメニューが表示されます。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ユーザやグループに対するアプリケーション起動パラメータの割り当て&#34;&gt;ユーザやグループに対するアプリケーション起動パラメータの割り当て&lt;/h2&gt;
+&lt;p&gt;Admin Consoleでは、ネットワーク上またはローカルマシン上のユーザやグループに対するアプリケーションの実行方法を指定するパラメータの割り当てが可能です。ユーザやグループに対して設定されたパラメータは、ユーザやグループがそのアプリケーションを起動する度に適用されます。個人に対して設定されたアプリケーション起動パラメータは、グループやアプリケーションに対して設定されたパラメータより優先されます。クライアントがGO-Globalを介してアプリケーションを起動すると、Program Windowは、まず個別ユーザに対して割り当てられた起動パラメータを確認します。何もパラメータが割り当てられていない場合は、Program Windowがシステムから取得した順に、そのユーザが属するグループの一覧を確認します。または、Program Windowは、そのアプリケーションに割り当てられている一般的な起動パラメータを検索します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;[About GraphOn GO-Global]&lt;/strong&gt; ボックスで、ユーザが割り当てられているグループ、システムにおけるそのグループ一覧の順序を確認できます。
+&lt;/div&gt;
+
+&lt;p&gt;ユーザやグループ用のファイルアクセス許可は、サーバのWindows NTファイルシステム(NTFS)セキュリティ設定によって制御されます。ファイルアクセス許可は、Admin Consoleを通して設定することはできません。[Installed Applications]一覧からアプリケーションを選択すると、そのファイルやアプリケーション対してNTFSで指定されたユーザのアクセス許可が、[Application Users/Groups]一覧に表示されます。次に、特定のユーザやグループに対するアプリケーションのプロパティを編集できます。ファイルアクセス許可はNTFSで初期化されたドライブ上でのみ設定可能です。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法&#34;&gt;ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Applications]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-35-1.png&#34; alt=&#34;kit4-35-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Installed Applications]&lt;/strong&gt; の一覧からアプリケーションを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-35-2.png&#34; alt=&#34;kit4-35-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Application Users/Groups]&lt;/strong&gt; の一覧からユーザまたはグループを選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-35-3.png&#34; alt=&#34;kit4-35-3&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[Properties]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit4-35-4.png&#34; alt=&#34;kit4-35-4&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;以下のいずれかの操作を行います。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;[Start Directory]&lt;/strong&gt; ボックス内に、アプリケーションを起動するディレクトリ内のフル パス名を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Startup State]&lt;/strong&gt; セクションで、そのアプリケーションの起動モード (Maximized、Minimized、Normal) を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Command-Line Options]&lt;/strong&gt; ボックス内に、そのアプリケーションの起動時に使用するコマンド行引数を入力します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-2-4.png&#34; alt=&#34;4-2-4&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+ユーザやグループごとにアプリケーションを公開、非公開にする設定はWindowsのOSレベルでアプリケーションのアクセス許可を行います。グループ単位で許可を行う場合は事前にユーザグループを作成して以下の情報を参照してください。&lt;br&gt;
+KGTN 2010121602&lt;br&gt;
+[GGW3.2.1/GGH4.X/GGH5.X] アプリケーションを利用できるユーザーを限定したい。&lt;br&gt;
+KGTN 2016062301&lt;br&gt;
+[GGH4.X-5.X] 特定ユーザーまたは特定クライアントに限り、アプリケーションを利用出来るようにする設定はあるのか？&lt;br&gt;
+KGTN 2016081801&lt;br&gt;
+[GGH5.X] 特定ユーザーに対してアプリケーションのアイコンを表示しない方法は？&lt;br&gt;
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セッションとプロセスの管理</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/managingsessionsandprocesses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/managingsessionsandprocesses/</guid>
+      <description>
+        
+        
+        &lt;p&gt;セッションとプロセスの管理&lt;/p&gt;
+&lt;p&gt;システム管理者は、以下に説明するように、Admin Consoleを介して、セッションの暗号化とシャドウイング、プロセスとセッションの終了を行うことができます。&lt;/p&gt;
+&lt;h2 id=&#34;セッションの終了&#34;&gt;セッションの終了&lt;/h2&gt;
+&lt;p&gt;ユーザのセッションを終了すると、そのユーザが実行中のGO-Global展開アプリケーションがすべて終了し、そのユーザはGO-Globalホストからログオフします。&lt;/p&gt;
+&lt;h3 id=&#34;セッションの終了方法&#34;&gt;セッションの終了方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Sessions]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sessions Name]&lt;/strong&gt; カラムから、終了するセッションを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Sessions | Terminate]の順にクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;プロセスの終了&#34;&gt;プロセスの終了&lt;/h2&gt;
+&lt;p&gt;プロセスとは、GO-Globalホスト上で実行中の処理で、クライアントによって起動されたものを示します。たとえば、クライアントが実行しているアプリケーションはプロセスです。実行中の各アプリケーションには、Windowsタスクマネージャ内で固有名とプロセスIDが割り当てられます。これらのプロセス名とIDは、Admin Console内で複製されます。システム管理者は、Admin Consoleで任意のプロセスを終了できます。&lt;/p&gt;
+&lt;h3 id=&#34;プロセスの終了方法&#34;&gt;プロセスの終了方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Processes]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;終了するプロセス(1つまたは複数)を選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Processes | Terminate]の順にクリックします｡&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ユーザにアプリケーションを終了する時間を与えずに、セッションやプロセスを終了すると、データが失われる場合があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;セッションシャドウイング&#34;&gt;セッションシャドウイング&lt;/h2&gt;
+&lt;p&gt;セッションシャドウイング機能により、単一のセッションおよびそのアプリケーションを複数ユーザが閲覧/制御できます。これにより、テクニカルサポート担当者やシステム管理者は、顧客やユーザに対しリモート操作によるサポートを提供できます。セッションシャドウイングは、ライブ環境でのコラボレーション作業にも活用可能です。 実行中のGO-Globalセッションに接続できるのは管理者のみですが、その場合でも、セッションを実行しているユーザのアクセス許可が必要です。&lt;/p&gt;
+&lt;h3 id=&#34;セッションシャドウイング方法&#34;&gt;セッションシャドウイング方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Sessions]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sessions Name]&lt;/strong&gt; カラムから、シャドーウイングするセッションを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Sessions | Connect]の順にクリックします｡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ーまたはー&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Sessions Name]&lt;/strong&gt; カラムで、シャドウイングするセッションを右クリックします。&lt;/p&gt;
+&lt;p&gt;セッションを選択すると、そのセッションを実行しているユーザに対して、次のようなメッセージが表示されます。ここでは「GerryD」がシステム管理者のユーザ名です。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-3-1.png&#34; alt=&#34;4-3-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが &lt;strong&gt;[Yes]&lt;/strong&gt; をクリックしてセッションへのアクセスを許可すると、即座に接続が確立され、GO-Global クライアントのセッションが新しいウィンドウで表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-3-2.png&#34; alt=&#34;4-3-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが &lt;strong&gt;[No]&lt;/strong&gt; をクリックしてアクセスを拒否すると、ホストに次のメッセージが表示されます。&lt;/p&gt;
+&lt;p&gt;セッションが切断されているとき、セッションがシャットダウンされようとしている、またはシャットダウンプロセスにあるとき、ユーザが1分以内に応答を返さなかったときも、セッションシャドウイングは拒否されます。また、GO-Globalの通信障害時にも接続は拒否されます。&lt;/p&gt;
+&lt;p&gt;Admin Consoleの &lt;strong&gt;[Sessions]&lt;/strong&gt; タブには、セッションに接続しているクライアントの数が表示されます。その &lt;strong&gt;[Connected Clients]&lt;/strong&gt; カラムに2以上の値が表示されている場合、そのセッションはシャドウイングされています。切断済みのセッションでは、接続しているクライアント数は0です。セッションから切断してシャドウイングを終了するには、そのセッションが表示されているフレーム画面を閉じてください。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalセッションがシャドウイングされているとき、ホストのカーソルはセッションが終了するまでクライアント上に留まります。セッションのシャドウイングが終了しても動きません。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalライセンスの管理</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/managinggo-globallicenses/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/managinggo-globallicenses/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Admin Consoleには、ホストで利用可能なすべてのGO-Globalライセンスが一覧表示され、各ライセンスの製品コード、座席数、有効期限、ステータスなどが表示されます。有効期限が近づいているとき、ライセンスとサポート契約が期限切れになったときにGO-Globalは管理者に警告します。&lt;/p&gt;
+&lt;h3 id=&#34;ライセンスの表示方法&#34;&gt;ライセンスの表示方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、GO-Globalホストのリストから適切なホストを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[License]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;各ライセンスについて、次の情報が表示されます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Column&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Status&lt;/td&gt;
+&lt;td&gt;ライセンスステータスを一覧表示できます。Active,Expired,Expires soon,Maint.Expired,Maint.Expires soon,Old version,Revoked,Trial.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;License Master ID&lt;/td&gt;
+&lt;td&gt;GraphOnのライセンスの記録（例：LIC-122689）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Product Code:&lt;/td&gt;
+&lt;td&gt;ライセンスファイルに表示され、ライセンスを一意に識別し、安全なトランザクションに使用される28桁の英数字コード（例：171205182219607CJs4ndny07Auu）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;License ID&lt;/td&gt;
+&lt;td&gt;ライセンスファイルを表す一意のエンコードされた英数字ID(例：GHPc7uを含むライセンスファイルGHPc7u.lic）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Seats&lt;/td&gt;
+&lt;td&gt;ライセンスで許可されている同時ユーザーの数。制限がない場合、シート数に制限はありません。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Expiration Date&lt;/td&gt;
+&lt;td&gt;ライセンスの有効期限(ほとんどの場合、試用ライセンス)。ライセンスに有効期限がない場合、有効期限はpermanentとして表示されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Support Expiration Date&lt;/td&gt;
+&lt;td&gt;サポート契約の有効期限。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Version&lt;/td&gt;
+&lt;td&gt;ライセンスのGO-Globalバージョン番号(例：5.0および6.0)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;License Server&lt;/td&gt;
+&lt;td&gt;ホストが使用しているライセンスサーバの名前&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;選択した列に応じて、ライセンスは昇順で英数字順にソートされます。
+列ヘッダーをクリックして、降順で並べ替えます。 GO-Globalは、[License]タブの下部に、選択したコンピュータにリストされているすべての有効なライセンスの &lt;strong&gt;合計シート数&lt;/strong&gt; を表示します。また、リストされているライセンスから現在チェックアウトされているシートの数である &lt;strong&gt;使用中のシート&lt;/strong&gt; の数が表示され、選択したコンピュータおよび同じライセンスを使用している他のGO-Globalホストからチェックアウトされたライセンスが含まれます。ホストがクラウドライセンスを使用するように構成されている場合、&lt;strong&gt;予約済みシート&lt;/strong&gt; も表示されます。
+予約されたシートは、ホストがクラウドライセンスサービスへの接続を失った場合にホストが利用できるシートの数です。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-4-1.png&#34; alt=&#34;4-4-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;有効なGO-Globalサポート契約を結んでいるお客様は、ライセンスを取得したホストで発生した問題についてテクニカルサポートを受けることができます。サポート契約の期限が切れると( &lt;strong&gt;[Support Expiration Date]&lt;/strong&gt; 列に示されているように)、重要なGO-Globalアップデートのみをホストにインストールできます。重要でないGO-Globalアップデートはインストールできません。お客様はサポートをリクエストする資格がありません。有効期限の警告は、有効期限の30日前から7日に1回表示されます。&lt;strong&gt;[Don&amp;rsquo;t display this message again]&lt;/strong&gt; をオンにすると、有効期限の警告を無効にすることができます。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストで利用可能ないずれかのライセンスのサポート契約の期限が切れた後にGO-Global Updateがリリースされた場合は、ホストにアップデートをインストールするためにサポート契約を更新する必要があります。すべてではなく一部のライセンスのサポート契約の期限が切れた後にアップデートがリリースされた場合は、期限切れのサポート契約のあるライセンスを削除するか、期限切れのサポート契約を更新することができます。&lt;/p&gt;
+&lt;p&gt;サポート契約を更新するには、KitASP販売窓口に連絡してください。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalホストが利用できるライセンスのサポート契約の有効期限がGO-Globalホストのビルド日より早い場合、&lt;strong&gt;Application Publishing Service&lt;/strong&gt; は実行されません。
+&lt;/div&gt;
+
+&lt;p&gt;GO-Globalのトライアルライセンスでは、ライセンスマスターID、ライセンスID、およびメンテナンス有効期限が適用外として表示されます。&lt;strong&gt;[Expiration Date]&lt;/strong&gt; 列は、トライアルが機能しなくなる日を示します。試用ライセンスの有効期限が切れると、ユーザはそのコンピュータでGO-Globalを実行できなくなります。&lt;/p&gt;
+&lt;p&gt;ライセンスが失効として表示されている場合、そのライセンスは無効であり、システムから削除する必要があります。また、Application Publishing Serviceを再起動する必要があります。さらに支援が必要な場合は、KitASP技術支援センターにお問い合わせください。ライセンスがOld versionと表示されている場合、そのライセンスのバージョンは、ホストが要求しているライセンスバージョンよりも古いものです。それがホスト上の唯一のライセンスである場合は、アップグレードする必要があります。他のライセンスが機能するため削除する必要はありません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ライセンスの一覧を更新するには、右クリックして &lt;strong&gt;[Refresh]&lt;/strong&gt; を選択するか、キーボードの &lt;strong&gt;F5&lt;/strong&gt; キーを押します。
+&lt;/div&gt;
+
+&lt;p&gt;GO-Globalライセンスの詳細については、&lt;a href=&#34;/docs/go-globalrc61/appendix/licensing/&#34;&gt;Appendix&lt;/a&gt;を参照してください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セキュリティオプション</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/securityoptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/securityoptions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;システム管理者は、&lt;strong&gt;[Host Options]&lt;/strong&gt; ダイアログの &lt;strong&gt;[Security]&lt;/strong&gt; タブを使用して、クライアントとGO-Globalホスト間の通信の転送モードとクライアントとホスト間で転送されるデータの暗号化レベルを選択できます。また、ホストのポート設定を修正したり、統合Windows認証やパスワードのキャッシュを有効にすることも可能です。&lt;/p&gt;
+&lt;h2 id=&#34;サーバポート設定の変更&#34;&gt;サーバポート設定の変更&lt;/h2&gt;
+&lt;p&gt;ユーザがファイアウォールやルーターを介してGO-Globalにアクセスするためには、システム管理者が Application Publishing Service 用のホストポート設定を変更する必要があります。Application Publishing Serviceの実行には専用ポートが必要です。同じポートで別のサービスを実行するとコンフリクトが起きる場合があります。TCPとSSLのデフォルトのポート番号はどちらも491です。&lt;/p&gt;
+&lt;h3 id=&#34;サーバポート設定の変更方法&#34;&gt;サーバポート設定の変更方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から、目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Port]&lt;/strong&gt; ボックスに新しいポート番号を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+HTTPS接続を受け入れるように設定されたコンピュータにWebサーバがない場合にのみ、ポートを443に設定できます。&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; がポート443での接続を許可する必要がある場合(たとえば、プロキシサーバを介した接続を許可する場合)、Webサーバは別のコンピュータで実行する必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/4-5-1.png&#34; alt=&#34;4-5-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ホストポートの設定を変更したら、GO-Globalハイパーリンクからportパラメータを変更する必要があります。portパラメータに続けて新しいポート番号を使用します。 例えば、 &lt;strong&gt;&lt;code&gt;http://hostname/goglobal/logon.html?port=1667&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;ショートカットからGO-Globalを実行しているユーザは、ショートカットに-hp引数(新しいポート番号が続く)を追加する必要があります。たとえば、&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -h server1 -hp 1667&lt;/code&gt;のようになります。&lt;/p&gt;
+&lt;p&gt;ポート番号は、GO-Globalにログオンしたときに &lt;strong&gt;[Connection]&lt;/strong&gt; ダイアログで指定することも可能です。この場合は、 &lt;strong&gt;[Host address]&lt;/strong&gt; ボックス内に、ホスト名またはIPアドレス、コロン、ポート番号の順に入力します(例:&lt;code&gt;server1:1667&lt;/code&gt;)。IPv6アドレスを指定する場合は、ホストのIPアドレスをブラケットで囲ってください。たとえば[fe80::29c:29ff:fe95:519a]:491というように指定します。&lt;/p&gt;
+&lt;p&gt;どちらの方法でも新しいポート番号が指定されていない場合、ユーザはGO-Globalにサインインできません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ホストポートを変更した後、デフォルトポート491以外のポートでクライアント印刷を機能させるには、 &lt;strong&gt;Print Spooler&lt;/strong&gt; サービスと &lt;strong&gt;GO-Global Application Publishing&lt;/strong&gt; サービスを再起動する必要があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;セッションの暗号化&#34;&gt;セッションの暗号化&lt;/h2&gt;
+&lt;p&gt;セキュリティ上の理由で、システム管理者はクライアントとホスト間で転送されるすべてのデータをオプションで暗号化できます。暗号化できるデータには、ログオン時に提供されるクライアントのユーザ名とパスワードおよび、クライアントが送信またはホストが返した任意のアプリケーションデータが含まれます。TCP転送モードを選択した場合、GO-Globalは &lt;strong&gt;[56-bit DES]&lt;/strong&gt; 暗号化を使用します。DESキーは、RSA公開鍵暗号化標準を使用して受け渡しされます。RSAキーは512ビットです。SSL転送モードを選択した場合、 &lt;strong&gt;[128-bit RC4]、[168-bit 3DES]、[256-bit AES]&lt;/strong&gt; の3つの暗号化アルゴリズムから選択できます。&lt;/p&gt;
+&lt;h3 id=&#34;サーバセッションの暗号化方法&#34;&gt;サーバセッションの暗号化方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options] の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Encryption]&lt;/strong&gt; の一覧から、暗号化レベルを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-5-2.png&#34; alt=&#34;4-5-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;暗号化を有効にすると、その後のGO-Globalセッションがすべて暗号化されます。暗号化を有効に設定した時点ですでに実行中のセッションは暗号化されないままです。ただし、GO-Globalホストに次にログオンした時には、そのセッションは暗号化されます。セッションを暗号化するには、ユーザは一度GO-Globalホストからログオフし、再びログオンする必要があります。&lt;/p&gt;
+&lt;p&gt;暗号化が有効になっている場合、そのGO-Globalホストへのすべての接続は、Admin Console、クライアント、 Dependent Hostsからの接続を含め、選択されたトランスポートおよび暗号化アルゴリズムを使用します。Relay Load Balancerを使用する場合、GO-Globalはリンクされた暗号化を提供します。具体的には、Relay Load BalancerのApplication Publishing Serviceは、クライアントから受信したデータを復号化し、データをDependent Hostに転送する前に再暗号化します。同様に、Dependent Hostから受信したデータを復号化し、クライアントに転送する前に再暗号化します。&lt;/p&gt;
+&lt;h2 id=&#34;接続がセキュリティで保護されたユーザへの通知&#34;&gt;接続がセキュリティで保護されたユーザへの通知&lt;/h2&gt;
+&lt;p&gt;SSL転送が選択されている場合は、接続が安全なときにセキュリティ警告をユーザに通知するように選択できます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-5-3.png&#34; alt=&#34;4-5-3&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;接続がセキュリティで保護されていることをユーザに通知する方法&#34;&gt;接続がセキュリティで保護されていることをユーザに通知する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Transport]&lt;/strong&gt; の一覧で、SSLを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[SSL Certificate]&lt;/strong&gt; ボックスにサーバの証明書ファイルへのパスを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Notify users when connections are secure]&lt;/strong&gt; オプションをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ssl転送の選択&#34;&gt;SSL転送の選択&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、WindowsとGO-Globalホスト間の通信方法として、Transmission Control Protocol(TCP)と Secure Socket Layer(SSL)の両方をサポートしています。SSL転送を選択する場合は、SSL証明書ファイルを指定する必要があります。GO-Globalのクライアントとホスト間の通信を保護するには、SSL証明書が必要です。強力な暗号化証明書ウィザードを使用して、GO-Globalホストの信頼できるSSL証明書を生成できます。これにより、管理者はサードパーティの認証局から証明書を購入しなくても、強力な暗号化とSSL/TLSセキュリティを有効にできます。詳細については、以下のセクション &lt;strong&gt;&lt;a href=&#34;/docs/go-globalrc61/go-globaladminconsole/strongencryptioncertificatewizard/&#34;&gt;強力な暗号化証明書ウィザード&lt;/a&gt;&lt;/strong&gt; を参照してください。証明書は、VerisignやThawteなどの信頼されている認証局(CA)から入手できます。また、独自に認証局を作成して、その認証局からサーバ証明書に署名することもできます。ワイルドカードSSL証明書もサポートされます。詳細については、 &lt;strong&gt;&lt;a href=&#34;/docs/go-globalrc61/go-globaladminconsole/obtainingatrustedservercertificate/&#34;&gt;信頼されたサーバー証明書の取得&lt;/a&gt;&lt;/strong&gt; を参照してください。&lt;/p&gt;
+&lt;h3 id=&#34;ssl転送を選択する方法&#34;&gt;SSL転送を選択する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin で、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Transport]&lt;/strong&gt; の一覧で、&lt;strong&gt;SSL&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[SSL Certificate]&lt;/strong&gt; ボックスにサーバの証明書ファイルへのパスを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;[SSLトランスポート]&lt;/strong&gt; を選択した場合、ユーザがWebブラウザを使用してGO-Globalホストにアクセスする場合は、WebサーバでHTTPSを有効にする必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;When a Relay Load Balancer is used:&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The certificate must be installed on the Relay Load Balancer but does not need to be installed on the Dependent Hosts.&lt;/li&gt;
+&lt;li&gt;On the Dependent Hosts, the value in the &lt;strong&gt;Relay Load Balancer&lt;/strong&gt; address field on the &lt;strong&gt;Configuration&lt;/strong&gt; tab of the &lt;strong&gt;Host Options&lt;/strong&gt; dialog must match the certificate&amp;rsquo;s Common Name.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;ファームマネージャを使用する場合：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;証明書は、ファームマネージャと各ファームホストにインストールする必要があります。&lt;/li&gt;
+&lt;li&gt;ファームホストでは、 &lt;strong&gt;ファームマネージャのアドレスフィールド&lt;/strong&gt; の値が証明書のコモンネームと一致する必要があります。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 強力な暗号化証明書ウィザード</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/strongencryptioncertificatewizard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/strongencryptioncertificatewizard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;強力な暗号化証明書ウィザード&lt;/strong&gt; を使用して、管理者はGO-Globalホスト用の信頼できるSSL証明書を生成することができます。これにより、管理者はサードパーティの認証局から証明書を購入することなく、強力な暗号化とSSL/TLSセキュリティを有効にすることができます。&lt;/p&gt;
+&lt;h3 id=&#34;ssl証明書を生成する方法&#34;&gt;SSL証明書を生成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[Transport]メニューから &lt;strong&gt;[SSL]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Generate Certigicate]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Common Name]&lt;/strong&gt; および &lt;strong&gt;[Subject Alternative Name]&lt;/strong&gt; フィールドで指定したアドレスがコンピュータに解決されていることを確認するために使用する &lt;strong&gt;[Validation Method]&lt;/strong&gt; を選択します。ワイルドカード証明書およびインターネットからアクセスできないコンピューターの &lt;strong&gt;[DNS]&lt;/strong&gt; validationを選択します。それ以外の場合は、&lt;strong&gt;[HTTP]&lt;/strong&gt; validation を選択します。&lt;/li&gt;
+&lt;li&gt;必要に応じて、&lt;strong&gt;[Common Name]&lt;/strong&gt; を編集します。これは、GO-Globalの使用時にユーザが接続するホストの正確なアドレス(Fully Qualified Doman Name)です。&lt;/li&gt;
+&lt;li&gt;必要に応じて、件名の代替名を編集します。これは、ユーザがGO-Globalを使用する際に接続するホストの &lt;strong&gt;代替アドレス&lt;/strong&gt; です。&lt;/li&gt;
+&lt;li&gt;証明書更新通知が送信される &lt;strong&gt;電子メールアドレス&lt;/strong&gt; を指定します。&lt;/li&gt;
+&lt;li&gt;生成された証明書は、インターネットインフォメーションサーバ(IIS)で使用するように自動的に構成されます。このオプションを無効にするには、&lt;strong&gt;[Configure IIS to use Certificate]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Generate Certificate]&lt;/strong&gt; をクリックして、信頼できる SSLを生成し、ホストにインストールします。&lt;/li&gt;
+&lt;li&gt;DNS方式を選択した場合は、&lt;strong&gt;[Validation Tokens]&lt;/strong&gt; ダイアログで提供されているように、ドメイン、名前、値のDNS TXTレコードを作成します。値を選択してコピーできます。次に、&lt;strong&gt;[Validate]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+強力暗号化証明書ウィザードは、&lt;strong&gt;Common Name&lt;/strong&gt; フィールドにホストコンピュータの &lt;strong&gt;完全修飾ドメイン名(FQDN)&lt;/strong&gt; を入力します。Common Nameは、ユーザがGO-Globalホストへの接続に使用する正確な値(アドレス)に設定する必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/4-6-1.png&#34; alt=&#34;4-6-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;証明書の生成に成功すると、GO-Globalホストは証明書とそのキーを以下の場所にインストールします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;証明書/鍵ディレクトリ&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;C:\ProgramData\GraphOn\GO-Global\ks\certs&lt;/td&gt;
+&lt;td&gt;win-acme または Posh-ACME のいずれかで正常に生成された後、証明書/キーがコピーされる場所になります。これらはそのままにして、元の命名規則に従います。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C:\ProgramData\GraphOn\GO-Global\ks&lt;/td&gt;
+&lt;td&gt;証明書/キーがコピーされ、名前が変更された場所で、GO-Globalが利用できるようになります。(gg_cert.key および gg_cert.pem)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C:\Windows\System32\config\systemprofile\AppData\Local\Posh-ACME&lt;/td&gt;
+&lt;td&gt;Posh-ACMEがキャッシュされた証明書/キー、および以前のリクエストに関するその他のメタデータを保存している場所 (例: 注文データやアカウントデータ)。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;C:\ProgramData\GraphOn\GO-Global\ks\win-acme-cache&lt;/td&gt;
+&lt;td&gt;ここでは、win-acmeがキャッシュされた証明書/キーを保持するように設定しています。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 信頼されたサーバ証明書の取得</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/obtainingatrustedservercertificate/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/obtainingatrustedservercertificate/</guid>
+      <description>
+        
+        
+        &lt;p&gt;クライアントのオペレーティングシステムによって信頼されているCAからサーバ証明書を取得する方法については、以下の情報と選択したCAのマニュアルを参照してください。CAは、証明書署名要求(CSR)を必要とします。&lt;/p&gt;
+&lt;h3 id=&#34;csrを生成する方法&#34;&gt;CSRを生成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.openssl.org/related/binaries.html&#34;&gt;http://www.openssl.org/related/binaries.html&lt;/a&gt;から &lt;strong&gt;OpenSSL&lt;/strong&gt; をダウンロードします。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストに &lt;strong&gt;OpenSSL&lt;/strong&gt;をインストールします。&lt;/li&gt;
+&lt;li&gt;[スタート | ファイル名を指定して実行 ]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;cmd&lt;/strong&gt; と入力し、&lt;strong&gt;Enter&lt;/strong&gt; キーを押します。&lt;/li&gt;
+&lt;li&gt;以下のコマンドを入力して、サーバの秘密鍵を生成します。OPENSSL_DIRとは、OpenSSLがインストールされているディレクトリへのパスです(たとえば、&lt;code&gt;C:\openSSL&lt;/code&gt;)。 ​&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl genrsa –out server.key 2048
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;6&#34;&gt;
+&lt;li&gt;次のコマンドを入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl req –sha256 –new –key server.key –out server.csr
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドを実行すると、以下のように、証明書に含める属性の入力を求められます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Country Name:JP 
+State:都道府県名 
+Locality:市区町村名 
+Organization:会社名 Organizational 
+Unit:部署名 
+Common Name:サーバ名 
+E-mail Address:電子メールアドレス
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ワイルドカードSSL証明書を使用しない場合Common Nameは、GO-Globalホストのホスト名(ホストに接続するときに指定する名前)と一致している必要があります。異なる名前を使用すると、接続時にクライアントから警告が発せられます。上のコマンドの出力は、 &lt;strong&gt;server.csr&lt;/strong&gt;という名前のファイルに保存されます。このファイルをCAに送信します。GO-Globalでは、OpenSSLツールキットに基づいてSSLが実装されているため、使用するツールは、Apache mod_sslパッケージなどのOpenSSLベースの製品で使用されているツールと同じです。mod_sslパッケージを使用してサーバの証明書を取得する方法については、CA の指示に従ってください。&lt;/p&gt;
+&lt;p&gt;認証局(CA)から署名された証明書ファイルが届いた時、それを &lt;strong&gt;server.crt&lt;/strong&gt; というファイル名で保存してください。このファイルと上記ステップ5で生成されたファイル &lt;strong&gt;server.key&lt;/strong&gt; をGO-Globalホスト上のシステムアカウントおよびAdministratorグループのアカウントでのみアクセス可能なフォルダへコピーしてください。この時、通常のユーザアカウントでアクセス出来ないことを必ず確認してください。最後に、Admin Consoleで署名された証明書ファイルを選択してください。&lt;/p&gt;
+&lt;h3 id=&#34;サーバ証明書の選択方法&#34;&gt;サーバ証明書の選択方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Security&lt;/strong&gt;タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Transport&lt;/strong&gt;リストの中から &lt;strong&gt;SSL&lt;/strong&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[SSL Certificate]&lt;/strong&gt; ボックスに、サーバの証明書(server.crtなど)ファイルへのパスを入力または参照します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-Globalは、証明書とその鍵がPEM形式であることを要求しています。第三者のCAに証明書を要求する場合、GraphOnはPEM形式で証明書を要求することをお勧めします。これが不可能で、証明書をDER形式でしか配信できない場合は、次のコマンドを使用してPEM形式に変換できます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openssl x509 -inform der -in MYCERT&amp;gt;cer -out MYCERT.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;MYCERT.pemファイルは、GO-Globalで使用するためにMYCERT.crtに名前を変更できます。&lt;/p&gt;
+&lt;h2 id=&#34;go-globalでの中間ssl証明書の使用&#34;&gt;GO-Globalでの中間SSL証明書の使用&lt;/h2&gt;
+&lt;p&gt;GO-Globalで中間SSL証明書を使用するときは、既存の証明書と中間証明書を連結する必要があります。次の例では、Go Daddy中間証明書を使用しています。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalホストで使用されている.crtファイルと.keyファイルを取り出します。&lt;/li&gt;
+&lt;li&gt;Go Daddy中間証明書(GODaddyCA.crtなど)をダウンロードしてください。これは元の証明書の購入に付属しているはずですが、次の&lt;a href=&#34;https://certs.godaddy.com/Repository.go&#34;&gt;Go Daddyサイト&lt;/a&gt;にもあります。&lt;/li&gt;
+&lt;li&gt;あなたの.crtファイルと中間の.crtファイルを連結します(それらを次のように3番目のファイルにまとめます。test_server.crt + GODaddyCA.crt server.crtをコピーします。)&lt;/li&gt;
+&lt;li&gt;新しく作成したserver.crtファイルと一致するように、手順1のキーファイルの名前をserver.keyに変更します。&lt;/li&gt;
+&lt;li&gt;これら2つのファイルをGO-Globalホストにコピーします(例:&lt;code&gt;C:\data&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;Admin Consoleを起動します。[Tool | Host Options ]の順にクリックします。 &lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;高度な暗号化ライセンスをお持ちの場合は、トランスポートをSSLに変更し、暗号化レベルを256ビットAESに上げます。そうでない場合は、56ビットのままにしてください。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\data&lt;/code&gt;にあるSSL証明書server.crtを参照して、 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。.crtファイルと.keyファイルに同じプレフィックスが付いている場合は、この時点でエラーメッセージは表示されません&lt;/li&gt;
+&lt;li&gt;テスト目的で &lt;strong&gt;接続が安全な場合にユーザに通知する&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;別のシステムからGO-Globalセッションを開始してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;iosおよびandroidクライアントでの中間ssl証明書の使用&#34;&gt;iOSおよびAndroidクライアントでの中間SSL証明書の使用&lt;/h2&gt;
+&lt;p&gt;iOSまたはAndroid上のGO-Global AppControllerがサーバ証明書を信頼するためには、中間証明書とすべてのルート証明書を含むSSL証明書チェーン全体を信頼できる必要があります。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;証明書チェーンに含まれているすべての.crtファイルと、GO-Globalホストで使用されている.keyファイルを入手します。&lt;/li&gt;
+&lt;li&gt;あなたの.crtとすべての中間およびルートの.crtファイルを連結します(これらを次のようにして最終ファイルにまとめます。copy test_server.crt + intermediate.crt + root1.crt + root2.crt server.crt)。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+0個以上の中間ファイルと1個以上のルートファイルがあります。.crtファイルが自己署名されている場合は、.crtファイルの名前をserver.crtに変更する必要があります。
+&lt;/div&gt;
+
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;新しく作成した &lt;strong&gt;server.crt&lt;/strong&gt; ファイルと一致するように、手順1のキーファイルの名前を &lt;strong&gt;server.key&lt;/strong&gt; に変更します。&lt;/li&gt;
+&lt;li&gt;これら2つのファイルをGO-Globalホストにコピーします(&lt;code&gt;C:\Data&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;Admin Consoleを起動します。[Tool | Host Options]の順にクリックします。&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;高度な暗号化ライセンスをお持ちの場合は、トランスポートを &lt;strong&gt;SSL&lt;/strong&gt;に変更し、暗号化レベルを256ビットAESに上げます。そうでない場合は、56ビットのままにしてください。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\data&lt;/code&gt;にあるSSL証明書 &lt;strong&gt;server.crt&lt;/strong&gt; を参照して、 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。.crtファイルと.keyファイルに同じプレフィックスが付いている場合は、この時点でエラーメッセージは表示されません。&lt;/li&gt;
+&lt;li&gt;テスト目的で &lt;strong&gt;Notify users when connections are secure&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;iOSまたはAndroidデバイスからGO-Globalセッションを開始します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;resolving-sll-issues&#34;&gt;Resolving SLL Issues&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;p&gt;When a relay server is configured to use SSL, the name entered into the &lt;strong&gt;Relay Server&lt;/strong&gt; field on the Dependent Hosts must match the &lt;strong&gt;Common Name&lt;/strong&gt; of the relay server&amp;rsquo;s certificate. (The name entered into the &lt;strong&gt;Relay Server&lt;/strong&gt; field on the relay server does not need to match the &lt;strong&gt;Common Name&lt;/strong&gt; of the relay server&amp;rsquo;s certificate.)&lt;/p&gt;
+&lt;h3 id=&#34;to-verify-that-the-relay-server-and-dependent-host-are-properly-configured&#34;&gt;To verify that the relay server and Dependent Host are properly configured&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Run the Admin Console and verify that the Dependent Host appears below the relay server in the tree view. If it does not, the Dependent Host is not connected to the relay server.&lt;/li&gt;
+&lt;li&gt;If the Dependent Host does not appear below the relay server in the tree view, check the &lt;strong&gt;Application Publishing Service&lt;/strong&gt; log on the Dependent Host. If it contains a message that the certificate is invalid, there is an SSL configuration problem.&lt;/li&gt;
+&lt;li&gt;If there is an SSL certificate error message in the Dependent Host&amp;rsquo;s Application Publishing Service log, browse to the GO-Global\Programs directory on the Dependent Host and double-click &lt;strong&gt;AppController.exe&lt;/strong&gt; to run the GO-Global client.&lt;/li&gt;
+&lt;li&gt;Type the address of the relay server into the &lt;strong&gt;Connection&lt;/strong&gt; dialog. Type the address exactly as it is specified in the &lt;strong&gt;Relay Server&lt;/strong&gt; field of the &lt;strong&gt;Host Options&lt;/strong&gt; dialog on the Dependent Host.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Connect.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;If an SSL warning message is displayed, the Dependent Host will not be able to connect to the relay server. Resolve the issue described in the SSL warning message. Then the Dependent Host should be able to connect to the relay server.
+If no SSL warning dialog is displayed, but a different error message is displayed (e.g., No available hosts), the SSL configuration is fine. For the purposes of this test, you can disregard any error messages that do not pertain to the ability of the client to open a connection to the relay server.&lt;/p&gt;
+&lt;h2 id=&#34;標準認証&#34;&gt;標準認証&lt;/h2&gt;
+&lt;p&gt;標準認証は、GO-Globalホストでデフォルトのユーザ認証方式です。標準認証では、ユーザは &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログでユーザ名とパスワードを入力して GO-Globalにログオンします。認証されると、ユーザはホストのINTERACTIVEグループ に追加され、コンソールからホストにログオンした場合と同じアクセス権を付与されます。&lt;/p&gt;
+&lt;h3 id=&#34;標準認証を有効にする方法&#34;&gt;標準認証を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[Standard authentication(prompt for user name and password)] をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;統合-windows-認証&#34;&gt;統合 Windows 認証&lt;/h2&gt;
+&lt;p&gt;統合Windows認証を使用すれば、ユーザは、ホストにログオンしてユーザ名とパスワードを再入力する必要なく GO-Globalホストに接続しセッションを開始できます。統合Windows認証のみが認証オプションとして有効となっている場合、ユーザ名とパスワードがネットワークを通じて転送されることはありません。GO-Globalは、GO-Globalクライアントと同じセキュリティコンテキストでユーザのセッションを実行します。ユーザはサーバのINTERACTIVEグループではなく、NETWORKグループに追加されます。そのため、いくつかのリソースに対してはアクセスが拒否される場合があります。&lt;/p&gt;
+&lt;p&gt;統合Windows認証を使用してGO-Globalホストに接続すると、ホストに対話的にログオンした場合とほとんど同じリソースにアクセスできます。しかし、クライアントおよびホストのオペレーティングシステムやネットワークがサポートしている認証プロトコルによっては、ユーザがネットワーク上の他のコンピュータ内にあるリソースにアクセスすると、ユーザ名とパスワードの再入力を求められる場合があります。ネットワークリソースがユーザ名とパスワードを要求できないものである場合は、アクセスは拒否される場合があります。&lt;/p&gt;
+&lt;p&gt;ネットワーク上の他のコンピューターにアクセスするには、認証資格情報を他のコンピューターに渡すことができるようにActive Directoryを構成する必要があります。マイクロソフトでは、認証資格情報を3つ以上のコンピューターに &amp;ldquo;委任&amp;quot;として渡す権利を示しています。委任は、Active Directoryネットワークで適切な設定でサポートされています。Active Directoryドメインコントローラを正しく設定する手順については、Microsoft Windowsオペレーティングシステムのマニュアルを参照してください。詳細については、第7章の &lt;strong&gt;&lt;a href=&#34;/docs/go-globalrc61/advancedtopics/configurationrequirementsfordelegationsupport/&#34;&gt;委任サポートの構成要件&lt;/a&gt;&lt;/strong&gt; を参照してください。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;[サーバサイドのパスワードキャッシュ]&lt;/strong&gt; オプションを有効にすると、統合Windows認証を使用した場合でもINTERACTIVEグループメンバとしてログオンできます。
+&lt;/div&gt;
+
+&lt;p&gt;統合Windows認証は、GO-Globalホストと同じドメインのメンバであるWindowsコンピュータからサインインするユーザと、GO-Globalホストの信頼されるドメインのメンバであるWindowsコンピュータからサインインするユーザが利用できます。&lt;/p&gt;
+&lt;h3 id=&#34;統合windows認証を有効にする方法&#34;&gt;統合Windows認証を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[Integrated Windows authentication]を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-Globalでは、標準認証または統合Windows認証のいずれかが有効になっている必要があります。これらの認証方式のいずれも選択されていない状態で &lt;strong&gt;[OK]&lt;/strong&gt; をクリックしダイアログを閉じると、次のエラーメッセージが表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-7-1.png&#34; alt=&#34;4-7-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;標準認証と統合Windows認証が両方とも有効になっている場合、GO-Globalホストはまず統合Windows認証によってユーザのログオンを試みます。これに失敗した場合は、 &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログを表示してユーザ名とパスワードの入力を求め、標準認証でユーザのログオンを試みます。&lt;/p&gt;
+&lt;h2 id=&#34;ホストでのパスワードキャッシュ&#34;&gt;ホストでのパスワードキャッシュ&lt;/h2&gt;
+&lt;p&gt;ユーザが標準の認証でGO-Globalホストにサインインすると( &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログ、パラメータ、またはコマンドライン引数で指定されたユーザー名とパスワードのどちらかを使用)、そのユーザはホストのINTERACTIVEグループに追加されます。一方、統合Windows認証を使用してGO-Globalホストにサインインしたユーザは、サーバのNETWORKグループに追加されます。デフォルトでは、INTERACTIVEグループのメンバは、NETWORKグループのメンバより多くのホストのリソースにアクセスできます。このため、統合Windows認証を使用してログオンしたユーザの場合、さまざまな条件により「アクセス拒否」エラーが発生することがあります。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+NETWORKグループのメンバがアクセスを制限されている分野には、DCOM(別名OLEおよびCOM/COM+)のセキュリティ制限、ファイルのセキュリティ制限、アプリケーション固有のセキュリティ確認があります。システム管理者は、統合Windows認証でログオンしたユーザがアクセスする必要のあるすべてのリソース(ファイル、サービスなど)が、そのアクセスを許可するよう正しく設定されているか確認してください。
+&lt;/div&gt;
+
+&lt;p&gt;システム管理者は、 &lt;strong&gt;[ホストにパスワードをキャッシュする]&lt;/strong&gt; オプションを有効にして、これらのエラーを回避することができます。そうすることで、ユーザは接続するたびにユーザ名とパスワードを入力しなくても、完全なINTERACTIVEアクセス権でサインインできます。ユーザは、最初にホストに接続したとき、またはパスワードの変更後にパスワードの入力を求められます。パスワードは暗号化され、それぞれのプロファイルに保存されています。その後GO-Globalに接続すると、ユーザは自動的にサインインしてホストのINTERACTIVEグループに追加されます。コンソールでホストにサインインした場合と同じアクセス権が付与されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalは、ホストに保存されている512ビットキーを使用してRSAアルゴリズムを使用してパスワードを暗号化します。暗号化キーは、&lt;code&gt;%ALLUSERSPROFILE%\GraphOn\AppController\ks\ks.dat&lt;/code&gt;ファイルに格納されています。このファイルを読み取ることができるのは、ホストのAdministratorsグループおよびSYSTEMアカウントのメンバだけです。&lt;/p&gt;
+&lt;h3 id=&#34;ホストでパスワードキャッシュを有効にする方法&#34;&gt;ホストでパスワードキャッシュを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools]メニューから[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;[Security]タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Integrated Windows authentication]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Cache passwords on the host]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+移動プロファイルが使用されるGO-Globalホストのクラスタでは、1つのホストからのキーファイルをクラスタ内のすべてのホストにコピーする必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/4-7-2.png&#34; alt=&#34;4-7-2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;クライアントでのパスワードキャッシュ&#34;&gt;クライアントでのパスワードキャッシュ&lt;/h2&gt;
+&lt;p&gt;クライアント側のパスワードキャッシュにより、GO-Globalホストのドメインのメンバではないユーザは、サーバに接続するたびにユーザ名とパスワードを入力する必要なしにGO-Globalにサインインすることができます。&lt;strong&gt;[Cache passwords on the client]&lt;/strong&gt; が有効になっていると、&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログに &lt;strong&gt;[Remember me on this computer]&lt;/strong&gt; チェックボックスが表示されます。ユーザがこれを有効にした場合、最初の手動認証の後、ユーザのログオン資格情報はホスト上で暗号化され、ネットワーク経由で送信され、ユーザのプライベートディレクトリのクライアントコンピュータに保存されます。&lt;/p&gt;
+&lt;p&gt;ユーザがその後サーバに接続すると、キャッシュされたパスワードがホストに送信され、そこで復号化されます。&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログに、ユーザ名とパスワード、&lt;strong&gt;[Remember me on this computer]&lt;/strong&gt; チェックボックスをオンにした状態で表示されます。ユーザが &lt;strong&gt;[Remember me on this computer]&lt;/strong&gt; オプションを無効にすると、ユーザの資格情報はクライアントコンピュータから削除されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalは、ホストに格納されている512ビットキーを使用してRSAアルゴリズムを使用して、クライアントにパスワードをキャッシュします。暗号化キーは、&lt;code&gt;%ALLUSERSPROFILE%\GraphOn\AppController\ks\ks.dat&lt;/code&gt;ファイルに格納されています。このファイルを読み取ることができるのは、サーバのAdministratorsグループおよびSYSTEMアカウントのメンバだけです。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalホストのクラスタでは、1つのホストからのキーファイルをクラスタ内のすべてのホストにコピーする必要があります。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;クライアントサイドのパスワードキャッシュを有効にする方法&#34;&gt;クライアントサイドのパスワードキャッシュを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Server Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[Standard authentication(prompt user for user name and password)]を有効にします。&lt;/li&gt;
+&lt;li&gt;[Cache passwords on the client]を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ほとんどのプラットフォームにおいて、パスワードのキャッシュは、ユーザのホームディレクトリにあるGO-Globalホストの名前の付いた .datファイルに保存されます。下記の表は、各GO-Globalクライアントにおけるパスワードのキャッシュの保存先の例を示します。例では、user1はユーザ名、hostname.domain.comはGO-Globalホストのアドレスです。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Platform&lt;/th&gt;
+&lt;th&gt;Password Locations&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Mac OS X&lt;/td&gt;
+&lt;td&gt;/Users/user1/.AppController/hostname.domain.com.dat&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Windows&lt;/td&gt;
+&lt;td&gt;\Users\user1\AppData\Roaming\GraphOn\AppController&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;/home/user1/.AppController/hostname.domain.com.dat&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;クライアントサイドのパスワードキャッシュはすべてのGO-Globalクライアントでサポートされています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: パスワードの変更</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/passwordcachingonthehost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/passwordcachingonthehost/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ユーザは、以下の場合にパスワードを変更できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;システム管理者がユーザに次回ログオン時にパスワードを変更するよう求めている場合。&lt;/li&gt;
+&lt;li&gt;セキュリティポリシーが、パスワードの有効期限が切れる前にユーザにパスワードの変更を求めるように設定されている場合。&lt;/li&gt;
+&lt;li&gt;ユーザのパスワードが失効している場合。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;次回ログオン時のパスワード変更&#34;&gt;次回ログオン時のパスワード変更&lt;/h2&gt;
+&lt;p&gt;管理者は、 &lt;strong&gt;[管理者のプロパティ]&lt;/strong&gt; ダイアログの &lt;strong&gt;[次回のログオン時にパスワードを変更が必要]&lt;/strong&gt; オプションをオンにして、ユーザに自分のパスワードの変更を要求することができます。(ローカルアカウントの場合、このダイアログにアクセスするには、[マイコンピュータ | 管理 | ローカルユーザとグループ | ユーザ | プロパティ]の順にクリックします)。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザアカウントに対しユーザは次回ログオン時にパスワードの変更が必要オプションが有効になっている場合のサインイン方法&#34;&gt;ユーザアカウントに対し[ユーザは次回ログオン時にパスワードの変更が必要]オプションが有効になっている場合のサインイン方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalクライアントを起動します(&lt;code&gt;http://hostname/goglobal/&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sign In]&lt;strong&gt;ダイアログにユーザ名とパスワードを入力します。GO-Globalホストが置かれているドメインにクライアントアカウントが存在しない場合は、&lt;/strong&gt;[Use name]&lt;/strong&gt; フィールドにドメイン名をプレフィックスとして入力します(例:&lt;code&gt;domain\username&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;初回ログオン時にパスワードを変更する必要があります。&amp;ldquo;のメッセージが示されたら &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[パスワードの変更]&lt;/strong&gt; ダイアログの &lt;strong&gt;[新しいパスワード]&lt;/strong&gt; フィールドと &lt;strong&gt;[新しいパスワードの確認]&lt;/strong&gt; フィールドに新しいパスワードを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-8-1.png&#34; alt=&#34;4-8-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;有効期限前にパスワードの変更を求めるメッセージの表示&#34;&gt;有効期限前にパスワードの変更を求めるメッセージの表示&lt;/h2&gt;
+&lt;p&gt;デフォルトでは、ユーザには、パスワードの予定有効期限日の14日以内にログオンしたときにパスワードの変更を求めるメッセージが表示されます。システム管理者は、 &lt;strong&gt;[パスワードが無効になる前にユーザに変更を促す]&lt;/strong&gt; セキュリティ設定を編集して、パスワード変更の「プロンプト」期間を変更できます。たとえば、ローカルセキュリティ設定を表示し、変更するには、[スタート | コントロールパネル | 管理ツール | ローカルセキュリティポリシー | ローカル ポリシー | セキュリティオプション] の順にクリックします。&lt;/p&gt;
+&lt;h3 id=&#34;パスワード変更のプロンプト期間中にログオンする方法&#34;&gt;パスワード変更の「プロンプト」期間中にログオンする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalクライアントを起動します (&lt;code&gt;http://hostname/goglobal/&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログにユーザ名とパスワードを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;以下のメッセージが表示されます。Your password will expire in x day(s). Do you want to change your password now? Yes/No&amp;rdquo;(パスワードはあとx日で有効期限が切れます。パスワードを今すぐ変更しますか。(はい/いいえ)) &lt;strong&gt;[No]&lt;/strong&gt; をクリックすると、GO-Globalセッションが開始します。 &lt;strong&gt;[Yes]&lt;/strong&gt; をクリックすると、 &lt;strong&gt;[パスワード変更]&lt;/strong&gt; ダイアログが表示されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[新しいパスワード]&lt;/strong&gt; フィールドと &lt;strong&gt;[新しいパスワードの確認]&lt;/strong&gt; フィールドに新しいパスワードを入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;有効期限が切れた後にパスワードの変更を求めるメッセージの表示&#34;&gt;有効期限が切れた後にパスワードの変更を求めるメッセージの表示&lt;/h2&gt;
+&lt;h3 id=&#34;パスワードの有効期限が切れた後にログオンする方法&#34;&gt;パスワードの有効期限が切れた後にログオンする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalクライアントを起動します(&lt;code&gt;http://hostname/goglobal/&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログにユーザ名とパスワードを入力します。GO-Globalホストが置かれているドメインにクライアントアカウントが存在しない場合は、 &lt;strong&gt;[Use name]&lt;/strong&gt; フィールドにドメイン名をプレフィックスとして入力します(例:&lt;code&gt;domain\username&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&amp;ldquo;Your password has expired and must be changed.&amp;ldquo;のメッセージが表示されたら &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[パスワード変更]&lt;/strong&gt; ダイアログの &lt;strong&gt;[新しいパスワード]&lt;/strong&gt; および &lt;strong&gt;[新しいパスワードの確認]&lt;/strong&gt; フィールドに新しいパスワードを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;パスワードの変更と統合windows認証&#34;&gt;パスワードの変更と統合Windows認証&lt;/h2&gt;
+&lt;p&gt;統合Windows認証が有効に設定されている場合、GO-Globalは、クライアントのオペレーティングシステムの設定に基づいてパスワードを変更します。たとえば、GO-Globalは以下のシナリオをサポートしています。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;システム管理者はユーザの設定を編集して、 &lt;strong&gt;[ユーザは次回ログオン時にパスワードの変更が必要]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;ユーザがログオンすると、パスワードの変更を求めるメッセージが表示されます。&lt;/li&gt;
+&lt;li&gt;ユーザはパスワードを変更し、クライアントコンピュータにログオンします。&lt;/li&gt;
+&lt;li&gt;ユーザはGO-Globalクライアントを起動し、GO-Globalホストに接続します。&lt;/li&gt;
+&lt;li&gt;パスワードはすでに変更されているため、 &lt;strong&gt;[ホストのパスワードキャッシュ]&lt;/strong&gt; オプションが有効になっていない限り、ユーザはパスワードの入力を求められることなくホストで認証されます。このオプションが有効になっている場合、ユーザは新しいパスワードの入力を求められます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ただし、ユーザがクライアントコンピュータにログオンした後に、システム管理者が &lt;strong&gt;[ユーザは次回ログオン時にパスワードの変更が必要]&lt;/strong&gt; を有効にした場合、ユーザが次に統合Windows認証が有効なGO-Globalホストに接続したとき、認証に失敗する可能性があります。認証に失敗し、 &lt;strong&gt;統合Windows認証&lt;/strong&gt; と &lt;strong&gt;[ホストのパスワードキャッシュ]&lt;/strong&gt; オプションが有効になっている場合、ユーザは上述の手順でログオンしてパスワードを変更するよう求められます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Admin Consoleのダイアログボックス内で、項目を右クリックして &lt;strong&gt;[What&amp;rsquo;s This?]&lt;/strong&gt; をクリックすると、簡単にヘルプを表示できます。その項目について簡単に説明するポップアップ画面が表示されます。ダイアログボックスのタイトルバー上の&lt;img src=&#34;/img/4-8-2.png&#34; alt=&#34;4-8-2&#34;&gt;をクリックしてから項目を選択して、ヘルプを表示することもできます。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 2要素認証</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/two-factorauthentication/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/two-factorauthentication/</guid>
+      <description>
+        
+        
+        &lt;p&gt;2要素認証では、ユーザ名とパスワードに加えて、ユーザがスマートフォンの認証アプリから6桁のコードを入力することをオプションで要求することにより、追加のセキュリティ層が提供されます。GO-Globalの2要素認証機能は、外部サービスを必要としません。&lt;/p&gt;
+&lt;p&gt;すべてのユーザが、Google AuthenticatorやAuthyなどの認証アプリがインストールされたスマートフォンを持っている必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;2要素認証を有効にする方法&#34;&gt;2要素認証を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[ Tools | Host Options ]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Require two-factor authentication]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-1.png&#34; alt=&#34;4-10-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが2要素認証を必要とするGO-Globalホストに接続すると、&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログからユーザ名とパスワードを入力するように求められます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-2.png&#34; alt=&#34;4-10-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;その後、2段階認証のための登録を求められます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-3.png&#34; alt=&#34;4-10-3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;続いて、携帯電話の認証アプリを使ってQRコードをスキャンします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-4.png&#34; alt=&#34;4-10-4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;QRコードをスキャンし、2段階認証ダイアログで &lt;strong&gt;[Next]&lt;/strong&gt; をクリックすると、ユーザは、携帯電話のアプリから 6桁のコードを入力するように求められます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-5.png&#34; alt=&#34;4-10-5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;2段階認証に登録済みのユーザーがGO-Globalホストに接続すると、まず &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログでユーザ名とパスワードの入力を求められ、次に認証アプリから6桁のコードを入力するよう求められます。&lt;/p&gt;
+&lt;h2 id=&#34;ユーザ確認コードのリセット&#34;&gt;ユーザ確認コードのリセット&lt;/h2&gt;
+&lt;p&gt;Admin Consoleを使用すると、管理者は特定のユーザの認証コードをリセットできます。たとえば、そのユーザが認証アプリを削除したり、スマートフォンを紛失したりした場合などです。管理者は、すべてのユーザの確認コードをリセットすることもできます。&lt;/p&gt;
+&lt;h3 id=&#34;特定のユーザのユーザ確認コードをリセットする方法&#34;&gt;特定のユーザのユーザ確認コードをリセットする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[ Tools | Host Options ]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset Verification Code]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset the verification codes of specific users]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;a href=&#34;mailto:user@example.com&#34;&gt;user@example.com&lt;/a&gt;の形式でユーザの &lt;strong&gt;ユーザプリンシパル名(UPN)&lt;/strong&gt; を入力します。複数のユーザの確認コードをリセットするには、ユーザプリンシパル名をカンマで区切って入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-10-6.png&#34; alt=&#34;4-10-6&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;すべてのユーザのユーザ確認コードをリセットする方法&#34;&gt;すべてのユーザのユーザ確認コードをリセットする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[ Tools | Host Options ]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset Verification Code]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset the verification codes for all users]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セッションの再接続</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/sessionreconnect/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/sessionreconnect/</guid>
+      <description>
+        
+        
+        &lt;p&gt;セッション再接続により、クライアント接続がなくてもGO-Globalホスト上のセッションが維持されます。ユーザが意図的にホストから切断、またはクライアント接続がネットワーク障害によって切断された場合にも、そのユーザのセッションとアプリケーションは、Admin Consoleで指定されたセッションタイムアウトの期間中GO-Globalホスト上で稼働し続けます。セッションの再接続により、ユーザは前回切断した時点と全く同じ状態でGO-Globalセッションへ戻ることができます。ユーザは、GO-Globalを終了する代わりに、Program Windowで切断し、その後、切断した時と全く同じ状態でセッションに戻ることが可能です。この時、開いているアプリケーションや実行中のプロセスをシャットダウンする必要はありません｡&lt;/p&gt;
+&lt;p&gt;ネットワークへの接続が切断されたり、ユーザがGO-Globalから偶発的に切断してしまった場合、そのユーザのセッションの状態は、Admin Consoleで指定された期間中維持されます。GO-Globalでは、ユーザを通常のログオン手順で認証した後、そのユーザがアクティブなセッションを持っているか確認します。セッションがあれば、そのセッションは切断前と全く同じ状態で再開され表示されます。セッションがなければ、新しいセッションが開始されます。またユーザは、セッションを特定のクライアントから切断し、別のクライアントから再接続することもできます。&lt;/p&gt;
+&lt;p&gt;切断されたセッションへ再接続する場合、ユーザは各自のログオン資格情報の提示を要求されます。ホストは資格情報を検証した後、切断されたセッションに再接続します。セッションがロードバランス構成に含まれているホスト上にある場合、そのセッションがロードバランスサーバ上にあることを意識することなく、ユーザは各自のセッションへルーティングされます。統合Windows認証が有効な場合、ユーザは自動的に再認証され、各自のセッションに再接続されます。&lt;/p&gt;
+&lt;h2 id=&#34;セッション終了オプションの設定&#34;&gt;セッション終了オプションの設定&lt;/h2&gt;
+&lt;p&gt;システム管理者は、クライアントのセッションやアプリケーションが GO-Globalホスト上で実行される期間を、Admin Consoleの &lt;strong&gt;[Host Options]&lt;/strong&gt; ダイアログで制御できます。クライアントの切断後、直ちにセッションを終了する場合は、 &lt;strong&gt;[Immediately]&lt;/strong&gt; を選択します。これがデフォルトの設定です。ユーザがセッション内で稼働するすべてのアプリケーションを手動で閉じた時、またはシステム管理者がAdmin Consoleを使用して手動でセッションを終了した時にのみセッションを終了する場合は、 &lt;strong&gt;[Never]&lt;/strong&gt; を選択します。クライアントがセッションから切断後、そのセッションの稼働を維持する期間を分単位で指定する場合は、 &lt;strong&gt;[After __ minutes]&lt;/strong&gt; を選択します。クライアントの切断後にセッションの稼働を維持する期間を分単位の値で編集フィールド内に入力します。&lt;/p&gt;
+&lt;p&gt;Admin Consoleの &lt;strong&gt;[Sessions]&lt;/strong&gt; タブには、特定のセッションに接続しているクライアントの数が表示されます。切断済みのセッションでは、接続クライアント数は0です。&lt;/p&gt;
+&lt;h3 id=&#34;セッション終了オプションの設定方法&#34;&gt;セッション終了オプションの設定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools |  Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Disconnected sessions terminate]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;以下のセッション終了オプションから1つ選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;Immediately Never After _ minutes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;編集ボックスに、クライアントとの切断後もセッションを継続する分数を入力します。&lt;br&gt;
+5. &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-11-1.png&#34; alt=&#34;4-11-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;セッションの切断&#34;&gt;セッションの切断&lt;/h2&gt;
+&lt;p&gt;セッションが終了しないように、または指定した時間が経過しても終了するように設定されている場合は、Program Windowの[File]メニューに &lt;strong&gt;[Disconnect]&lt;/strong&gt; オプションが表示されます。セッションがすぐに終了するように設定されている場合、[Disconnect]オプションはProgram Windowの[File]メニューに表示されません。&lt;/p&gt;
+&lt;h3 id=&#34;セッションの切断方法&#34;&gt;セッションの切断方法&lt;/h3&gt;
+&lt;p&gt;Program Windowで、[ File | Disconnect ]の順にクリックします。&lt;/p&gt;
+&lt;p&gt;セッションの終了を &lt;strong&gt;[Never]&lt;/strong&gt; に設定している場合、GO-Globalからの切断時に以下のメッセージがユーザに提示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-11-2.png&#34; alt=&#34;4-11-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;指定した時間(たとえば20分)後にセッションが終了するように設定されている場合、GO-Globalから切断すると、次のようなメッセージがユーザに表示されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-11-3.png&#34; alt=&#34;4-11-3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザがセッションを切断する際に、すでに切断済みのセッションがある場合、以下のメッセージが表示されます。&lt;br&gt;
+&lt;strong&gt;You already have a session (session_name) that is disconnected. If you disconnect the current session, that previous session will be terminated. Do you want to continue?&lt;/strong&gt; &lt;br&gt;
+(すでに切断済みのセッション(セッション名)があります。現行のセッションを切断すると、その前回のセッションは終了されます。操作を継続しますか?) &lt;br&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが &lt;strong&gt;[Yes]&lt;/strong&gt; をクリックすると、切断済みのセッションは終了されます。 &lt;strong&gt;[No]&lt;/strong&gt; の場合、ユーザは実行中のセッションに戻ります。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ユーザーがセッションに再接続すると、コマンドライン引数-a、-r、および-acは無視されます。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;共有アカウント&#34;&gt;共有アカウント&lt;/h2&gt;
+&lt;p&gt;共有アカウントは、GO-Globalセッションを開始するために複数のユーザが同じアカウントを使用しているときに指定する必要があります。共有アカウントでGO-Globalにサインインしたユーザは、切断してからGO-Globalに再接続することはできません。これにより、ユーザは他のユーザのセッションに再接続できなくなります。&lt;/p&gt;
+&lt;p&gt;共有アカウントでGO-Globalホストにログオンすると、Admin Consoleの &lt;strong&gt;Disconnected sessions terminate&lt;/strong&gt; オプションは無視され、動作は &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;SessionTimeoutBrokenConnection&lt;/strong&gt; プロパティによって決まります(HostProperties.xmlは、&lt;code&gt;C:\ProgramData\GraphOn&lt;/code&gt;にあります)。&lt;/p&gt;
+&lt;p&gt;このプロパティの値が0に設定されている場合、セッションはただちに終了します。値が0より大きい場合、セッションは中断され、指定された分数の間サーバ上で実行されたままになります。後者の場合、セッションを開始したユーザだけが中断されたセッションに再接続できます。デフォルトでは、 &lt;strong&gt;SessionTimeoutBrokenConnection&lt;/strong&gt; は0分に設定されています。&lt;/p&gt;
+&lt;h3 id=&#34;共有アカウントの指定方法&#34;&gt;共有アカウントの指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Shared account]&lt;/strong&gt; 編集ボックスに共有アカウントのユーザ名を入力します。複数の共有アカウントが必要な場合は、アカウントのユーザ名をセミコロンで区切ります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;そのユーザが自分のセッションから切断されている間に管理者が既存のユーザ名を共有アカウントとして指定した場合、そのセッションは終了制限に達するまでサーバ上で実行されたままになります。その後セッションは終了します。共有アカウントを指定する前に、そのアカウントを使用して接続または切断されたセッションがないことをAdmin Consoleで確認してください。&lt;/p&gt;
+&lt;p&gt;GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngなど)の使用をサポートしていません。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-11-4.png&#34; alt=&#34;4-11-4&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントのタイムゾーン</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/clienttimezone/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/clienttimezone/</guid>
+      <description>
+        
+        
+        &lt;p&gt;デフォルトでは、すべてのGO-GlobalセッションはGO-Globalホストに設定されたタイムゾーンで実行されます。システム管理者は、Admin Consoleの &lt;strong&gt;[Use client&amp;rsquo;s time zone]&lt;/strong&gt; オプションを有効にすることで、GO-Globalセッションをクライアントコンピュータのタイムゾーンで実行するように選択できます。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントのタイムゾーンを有効にする方法&#34;&gt;クライアントのタイムゾーンを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Use client&amp;rsquo;s time zone]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-12-1.png&#34; alt=&#34;4-12-1&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ホストの活動監視</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/monitoringhostactivity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/monitoringhostactivity/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Admin Consoleは、ホストの活動とホストで行われているプロセスに関する情報を表示します。管理者はこの情報を使用して、使用されなくなったアプリケーションと追加のホストが必要かどうかを判断できます。&lt;/p&gt;
+&lt;h2 id=&#34;セッション情報の閲覧&#34;&gt;セッション情報の閲覧&lt;/h2&gt;
+&lt;p&gt;Admin Consoleは次のセッション情報を表示します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Column&lt;/th&gt;
+&lt;th&gt;Displays the…&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Session Name&lt;/td&gt;
+&lt;td&gt;セッションに割り当てられた一意の識別子。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User&lt;/td&gt;
+&lt;td&gt;ホスト上のアプリケーションにアクセスするユーザのネットワークユーザ名。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Connected Clients&lt;/td&gt;
+&lt;td&gt;セッションに接続しているクライアントの数。0は、セッションに接続されているクライアントがいないことを示します（クライアントは切断されています）。1は、クライアントが接続されており、セッションがアクティブであることを示します。2以上の場合は、セッションがシャドウイングされていることを示します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;IP Address&lt;/td&gt;
+&lt;td&gt;ユーザがホストにアクセスしているクライアントコンピュータのIPアドレス。(ネットワーク上の各コンピュータには固有のIPアドレスがあります)。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Startup Time&lt;/td&gt;
+&lt;td&gt;ユーザがアプリケーションを起動した日時。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Applications&lt;/td&gt;
+&lt;td&gt;ユーザがアクセスしているアプリケーションの数。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;セッション情報の閲覧方法&#34;&gt;セッション情報の閲覧方法&lt;/h3&gt;
+&lt;p&gt;[Sessions]タブをクリックします。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+管理コンソールの左パネルにある &lt;strong&gt;[All Hosts]&lt;/strong&gt; アイコンをクリックして、ネットワーク上のすべてのアクティブセッションのリストを表示します。これにより、個々のホストに接続しなくてもアクティブなGO-Globalセッションを表示できます。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;プロセス情報の閲覧&#34;&gt;プロセス情報の閲覧&lt;/h2&gt;
+&lt;p&gt;プロセスとは、ユーザがホストから実行している特定のアプリケーションを指します。 Admin Consoleは次のプロセス情報を表示します。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Column&lt;/th&gt;
+&lt;th&gt;Displays the…&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Name&lt;/td&gt;
+&lt;td&gt;ホスト上で実行されているアプリケーションの名前。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;User&lt;/td&gt;
+&lt;td&gt;アプリケーションにアクセスしているユーザのネットワークユーザ名。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Startup Time&lt;/td&gt;
+&lt;td&gt;ユーザがアプリケーションを起動した日時。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Process ID&lt;/td&gt;
+&lt;td&gt;ホストのオペレーティングシステムによって割り当てられたプロセス識別番号。(各実行中のアプリケーションの番号は、Windowsタスクマネージャに表示されるプロセス識別番号と一致します)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;プロセス情報の閲覧方法&#34;&gt;プロセス情報の閲覧方法&lt;/h3&gt;
+&lt;p&gt;[Processes] タブをクリックします。&lt;/p&gt;
+&lt;h2 id=&#34;admin-consoleのリフレッシュ&#34;&gt;Admin Consoleのリフレッシュ&lt;/h2&gt;
+&lt;p&gt;Admin Consoleに表示されるセッション、プロセス、アプリケーションの情報を手動で更新することも、自動的に更新するように設定することもできます。Admin Consoleが自動的に更新されるように設定されている場合でも、いつでも手動で更新できます。&lt;/p&gt;
+&lt;h3 id=&#34;admin-consoleのリフレッシュ方法&#34;&gt;Admin Consoleのリフレッシュ方法&lt;/h3&gt;
+&lt;p&gt;[View | Refresh]の順にクリックします。&lt;/p&gt;
+&lt;h2 id=&#34;リフレッシュレートの設定&#34;&gt;リフレッシュレートの設定&lt;/h2&gt;
+&lt;p&gt;Admin Consoleの[セッション]、[プロセス]、[アプリケーション]タブを手動でリフレッシュ、または指定した頻度で自動的にリフレッシュするよう設定できます。&lt;/p&gt;
+&lt;h3 id=&#34;手動リフレッシュのみを行うようにリフレッシュレートを設定する方法&#34;&gt;手動リフレッシュのみを行うようにリフレッシュレートを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[View | Options]の順にクリックします｡&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Manual]&lt;/strong&gt; をクリックします｡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-13-1.png&#34; alt=&#34;4-13-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;自動的にリフレッシュするようにリフレッシュレートを設定する方法&#34;&gt;自動的にリフレッシュするようにリフレッシュレートを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[View | Options]の順にクリックします｡&lt;/li&gt;
+&lt;li&gt;[Refresh every x seconds]オプションをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[seconds]&lt;/strong&gt; ボックスに値を入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;status-bar&#34;&gt;Status Bar&lt;/h2&gt;
+&lt;p&gt;Status Barは、Admin Consoleの画面下部に表示されています。マウスのポインタをメニュー内の特定項目上に移動すると、そのメニューコマンドの簡易説明がStatus Barに表示されます。Status Barは、現在アクセスされているGO-Globalホストの名称、およびそのホストのMemory使用法とCPU使用率(Windows Task Managerが算出)を表示します。&lt;/p&gt;
+&lt;p&gt;Status Barの最後の2項目、 &lt;strong&gt;Sessions&lt;/strong&gt;と &lt;strong&gt;Procs&lt;/strong&gt; は、アクティブなGO-Globalホストで実行中のセッション数およびプロセス数です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[All Host]&lt;/strong&gt; を選択すると、 &lt;strong&gt;[Sessions]&lt;/strong&gt; 数にはネットワーク上で実行中のすべてのセッションが表示され、 &lt;strong&gt;[Procs]&lt;/strong&gt; 数にはネットワーク上のすべてのプロセスが表示されます。‌&lt;/p&gt;
+&lt;h3 id=&#34;ステータスバーをオンまたはオフにする方法&#34;&gt;ステータスバーをオンまたはオフにする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[View | Options]の順にクリックします｡&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Status Bar]&lt;/strong&gt; チェックボックスをオンまたはオフにします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ブロードキャスト間隔の設定&#34;&gt;ブロードキャスト間隔の設定&lt;/h2&gt;
+&lt;p&gt;Broadcast Interval値を変更して、ホスト情報がAdmin Consoleに送信される頻度を指定できます。この値は各ブロードキャストの間隔(秒数)を示し、ホストのCPU、Memory、Sessions、Processes、Status Bar の更新頻度と &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧にホストが表示されるまでにかかる時間に影響します。ブロードキャストはUDPを介して送信され、そのパケットサイズは約25～37バイトです。&lt;/p&gt;
+&lt;h3 id=&#34;ブロードキャスト間隔の設定方法&#34;&gt;ブロードキャスト間隔の設定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;次のいずれかのディレクトリで &lt;strong&gt;HostProperties.xml&lt;/strong&gt;ファイルを見つけます。&lt;code&gt;C:\ProgramData\GraphOn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/property&amp;gt; 
+&amp;lt;property id=&amp;quot;BroadcastInterval&amp;quot; group=&amp;quot;Miscellaneous&amp;quot; type=&amp;quot;UINT32&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;300&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;値に必要なミリ秒数を入力します(この値は1以上の整数でなければなりません。値を0に設定すると、他のGO-GlobalホストがAdmin Consoleに表示されなくなります。Broadcast Intervalのデフォルト値は300です)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt;を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セッションの起動オプション</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/sessionstartupoptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/sessionstartupoptions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Admin Consoleの &lt;strong&gt;[Host Options]&lt;/strong&gt; ダイアログの &lt;strong&gt;[Session Startup]&lt;/strong&gt; タブで、管理者はグループポリシー、進捗メッセージ、ログオンスクリプトなどの起動オプションを有効にできます。管理者はさまざまなリソース制限を設定することもできます。&lt;/p&gt;
+&lt;h2 id=&#34;グループポリシーを適用する&#34;&gt;グループポリシーを適用する&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、マイクロソフトのグループポリシーをサポートしています。グループポリシーとその拡張機能を使用して、管理者はレジストリベースのポリシーの管理、スクリプトの割り当て、フォルダのリダイレクト、アプリケーションの管理、およびセキュリティオプションの指定を行うことができます。この機能の詳細については、以下のURLにアクセスしてください。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://technet.microsoft.com/en-us/windowsserver/bb310732.aspx.&#34;&gt;http://technet.microsoft.com/en-us/windowsserver/bb310732.aspx.&lt;/a&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+マイクロソフトから公開されている最新のリファレンスは以下になります。
+&lt;a href=&#34;https://www.microsoft.com/en-us/download/details.aspx?id=56946&#34;&gt;Group Policy Settings Reference Spreadsheet Windows 1803&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h3 id=&#34;go-globalサーバでのグループポリシーの適用方法&#34;&gt;GO-Globalサーバでのグループポリシーの適用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply Group Policy]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+グループポリシーを有効にすると、GO-Globalへのログオンに時間がかかることがあります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;進行状況メッセージの表示&#34;&gt;進行状況メッセージの表示&lt;/h2&gt;
+&lt;p&gt;ユーザの認証後、セッションのスタートアップの進行状況を報告するダイアログをユーザに表示できます。この機能を有効にすると、ユーザには以下の実行時にダイアログが表示されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;個人設定のロード&lt;/li&gt;
+&lt;li&gt;グループポリシーの適用&lt;/li&gt;
+&lt;li&gt;ネットワークドライブの接続&lt;/li&gt;
+&lt;li&gt;ログオンスクリプトの実行&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;セッションのスタートアップの進行状況メッセージをユーザに表示する方法&#34;&gt;セッションのスタートアップの進行状況メッセージをユーザに表示する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Display progress messages]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;メッセージを他のすべてのウィンドウの手前に表示する場合は、 &lt;strong&gt;[Always in front]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ログオンスクリプトに、ユーザにユーザインタフェースを表示する機能がある場合は、 &lt;strong&gt;[Always in front]&lt;/strong&gt; オプションを有効にしないでください。有効にすると、ログオンスクリプトのユーザインタフェースの一部が進行状況メッセージの下に隠れることがあります。
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/4-14-1.png&#34; alt=&#34;4-14-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;ログオンスクリプト&#34;&gt;ログオンスクリプト&lt;/h2&gt;
+&lt;p&gt;システム管理者はログオンスクリプトを使用して、GO-Globalユーザの操作環境を設定することができます。スクリプトは、ユーザ固有環境変数やドライブ文字のマッピングの定義など、一連の任意のタスクを実行します。&lt;/p&gt;
+&lt;p&gt;GO-Globalは次の 2 つのタイプのログオンスクリプトをサポートしています。ホストにログオンするすべてのユーザが実行できるグローバルスクリプトと、個々のユーザが実行できるユーザ固有スクリプトです。ユーザのプロファイルをロードしてProgram Windowを起動する前に、GO-GlobalのLogon Manager は、どちらか(または両方)のタイプのスクリプトが指定されていないか確認します。指定されている場合、Logon Managerはユーザが認証されるたびに、ユーザのセキュリティコンテキスト内でスクリプトを実行します。&lt;/p&gt;
+&lt;p&gt;ユーザー固有のログオンスクリプトは、オペレーティングシステムが提供する機能を使用して指定されます。たとえば、Windows Server 2016のローカルユーザー用のログオンスクリプトは次のように指定されます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;[コントロールパネル]から、[ 管理ツール | コンピュータ管理 | ローカルユーザーとグループ | ユーザ]の順に移動します。&lt;/li&gt;
+&lt;li&gt;ユーザを選択し、 &lt;strong&gt;[Properties]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;[Profiles]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Logon script]&lt;/strong&gt; ボックスに、ユーザのログオンスクリプトのファイル名を入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;[Logon Script]&lt;/strong&gt; ボックスに入力する値としてファイル名と拡張子のみを指定すると、GO-Globalは以下のディレクトリでそのファイルを以下の順序で検索します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;ユーザのアカウントがドメインアカウントの場合 :&lt;br&gt;
+　　　　a. \pdcname\NETLOGON(プライマリドメインコントローラのNETLOGON共有)&lt;br&gt;
+　　　　b. \pdcname\SYSVOL\domainname(プライマリドメインコントローラのSYSVOL共有のドメインのサブディレクトリなど)&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;ユーザのアカウントがローカルアカウントの場合 :&lt;br&gt;
+　　　　a. systemroot\System32\Repl\Import\Scripts&lt;br&gt;
+　　　　b. systemroot\sysvol\sysvol\domainname&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ログオンスクリプトが上述のいずれかのディレクトリのサブディレクトリに保存されている場合、ファイル名の前にそのサブディレクトリの相対パスを入力します。たとえば、Admins\JohnG.bat のように入力します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-14-2.png&#34; alt=&#34;4-14-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;システム管理者は、Admin Consoleの &lt;strong&gt;[Session Startup]&lt;/strong&gt; ダイアログを使用してグローバルログオンスクリプトやユーザ固有ログオンスクリプトを指定します。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザ固有ログオンスクリプトの実行方法&#34;&gt;ユーザ固有ログオンスクリプトの実行方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[User-specific]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;グローバルログオンスクリプトの実行方法&#34;&gt;グローバルログオンスクリプトの実行方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Global]&lt;/strong&gt; を選択し、グローバルスクリプトファイルのパスを指定します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+認証されたユーザには、ログオンスクリプトファイルの読み取りおよび実行アクセス権が必要です。
+&lt;/div&gt;
+
+&lt;p&gt;ログオンスクリプトの実行に失敗すると、エラーメッセージが表示されます。ログオンスクリプトの場所を確認してください。&lt;/p&gt;
+&lt;p&gt;ユーザのアカウントがドメインアカウントの場合 :&lt;br&gt;
+　　　a. \pdcname\NETLOGON(プライマリドメインコントローラのNETLOGON共有)&lt;br&gt;
+　　　b. \pdcname\SYSVOL\domainname(プライマリドメインコントローラのSYSVOL共有のドメインのサブディレクトリなど)&lt;br&gt;
+ユーザのアカウントがローカルアカウントの場合 :&lt;br&gt;
+a. systemroot\System32\Repl\Import\Scripts&lt;br&gt;
+b. systemroot\sysvol\sysvol\domainname&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;また、DebugView(&lt;a href=&#34;https://technet.microsoft.com/en-us/sysinternals/bb896647.aspx&#34;&gt;https://technet.microsoft.com/en-us/sysinternals/bb896647.aspx&lt;/a&gt;などのツールも、このようなエラー発生時における原因追跡に役立ちます。DebugViewの実行可能ファイルをサーバ上で開けば、スクリプトの保存場所が不正確なために発生したエラーを確認できます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;リソース制限の設定&#34;&gt;リソース制限の設定&lt;/h2&gt;
+&lt;p&gt;GO-Globalでは、システム管理者はGO-Globalホストで特定のリソース制限値を超えた場合にユーザが新しいセッションを開始できないようにすることができます。システム管理者はこれらの制限値を使用して、サーバに過度な負荷がかかり、ユーザにパフォーマンス上の問題やリソースの割り当ての失敗がランダムに発生するのを防ぐことができます。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザあたりのセッション数の制限方法&#34;&gt;ユーザあたりのセッション数の制限方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Maximum sessions per user]&lt;/strong&gt; を選択し、編集ボックスに1人のユーザが実行できるセッションの最大数を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;セッションの最大数の指定&#34;&gt;セッションの最大数の指定&lt;/h2&gt;
+&lt;p&gt;ホストからサポートできるセッションの最大数はデフォルトで50に設定されています。システム管理者は、この値をホストの容量に適した値に調整する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;ホスト単位のセッションの最大数の編集方法&#34;&gt;ホスト単位のセッションの最大数の編集方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[All Host]&lt;/strong&gt; の一覧から、目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Maximum sessions on this host]&lt;/strong&gt; ボックス内の数値を編集します。これにより、ホストがサポートできるセッション数の上限が設定されます。たとえば、最大セッション数が11の場合、12番目のセッションを開始しようとするユーザはログオンを拒否されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;中継サーバ設定では、GO-Globalは中継サーバとその依存ホストの最大セッション設定を確認します。中継サーバで指定された &lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; は、その中継サーバに割り当てられているすべての依存ホストで同時に実行できるセッションの最大数です。&lt;/p&gt;
+&lt;h2 id=&#34;物理メモリおよび仮想メモリの指定&#34;&gt;物理メモリおよび仮想メモリの指定&lt;/h2&gt;
+&lt;p&gt;物理メモリおよび仮想メモリが不足した状態でログオン出来ないように、下限値を指定することができます。 &lt;strong&gt;[Minimum available physical memory]&lt;/strong&gt; ボックスには最小物理メモリ(MB)を入力します。 &lt;strong&gt;[Minimum available virtual memory]&lt;/strong&gt; ボックスには最小仮想メモリ(MB)を入力します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セッションのシャットオプション</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/sessionshutdownoptions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/sessionshutdownoptions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;システム管理者は、Admin Consoleから、クライアントをアイドル状態にしておける制限時間と、サーバでセッションを実行できる時間を分数で指定できます。アイドル状態の制限時間に達したときにユーザを切断またはログオフするかどうか、切断またはログオフに関する警告メッセージをいつユーザに表示するかも指定できます。ユーザがファイルの保存やアプリケーションの終了を行えるように、ログオフ期間中に猶予期間を指定することもできます。&lt;/p&gt;
+&lt;h2 id=&#34;セッションの制限時間の指定&#34;&gt;セッションの制限時間の指定&lt;/h2&gt;
+&lt;p&gt;セッションの制限時間とは、セッションをGO-Globalホストで実行できる分数です。&lt;/p&gt;
+&lt;h3 id=&#34;セッションの制限時間の指定方法&#34;&gt;セッションの制限時間の指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;編集ボックスに、ユーザがログオフされるまでにホストでセッションを実行できる分数を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;セッション時間の最小値は1分、最大値は44640 分(31日)です。この機能はデフォルトでは無効になっています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-14-1.png&#34; alt=&#34;4-14-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;アイドル状態の制限時間の指定&#34;&gt;アイドル状態の制限時間の指定&lt;/h2&gt;
+&lt;p&gt;アイドル時間とは、セッションで最後のマウスまたはキーボード入力イベントを受け取ってから経過した時間です。アイドル状態の制限時間は、GO-Globalホストで許容されるアイドル時間の分数です。&lt;/p&gt;
+&lt;h3 id=&#34;アイドル状態の制限時間の指定方法&#34;&gt;アイドル状態の制限時間の指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Idle]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;編集ボックスに、サーバで許容されるアイドル時間の分数を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Action]&lt;/strong&gt; の一覧から、アイドル状態の制限時間に達したらユーザを切断する場合は &lt;strong&gt;[Disconnect]&lt;/strong&gt; を、ユーザをログオフする場合は &lt;strong&gt;[Log off]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;アイドル時間の最小値は1分、最大値は44640分(31日)です。この機能はデフォルトでは無効になっています。&lt;/p&gt;
+&lt;h2 id=&#34;警告期間の指定&#34;&gt;警告期間の指定&lt;/h2&gt;
+&lt;p&gt;警告期間とは、ユーザに切断またはログオフの警告メッセージが表示されてから、セッションまたはアイドル状態の制限時間に達するまでの分数です。たとえば、警告期間が2に設定されている場合、ユーザには、セッションまたはアイドル状態の制限時間に達する2分前に警告メッセージが表示されます。この機能はデフォルトでは無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;警告期間の指定方法&#34;&gt;警告期間の指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Warning period]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;編集ボックスに、ユーザに切断またはログオフの警告メッセージが表示されてから、セッションまたはアイドル状態の制限時間に達するまでの分数を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+警告期間には、セッションまたはアイドル状態の制限時間の設定より小さな値を指定する必要があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;猶予期間の指定&#34;&gt;猶予期間の指定&lt;/h2&gt;
+&lt;p&gt;猶予期間とは、ログオフが開始されてからユーザがファイルを保存したり、アプリケーションを閉じたりするまでの時間(分)を指します。猶予期間は有効で、デフォルトでは1分に設定されています。猶予期間の最小値は1分、最大値は15です。&lt;/p&gt;
+&lt;h3 id=&#34;猶予期間の指定方法&#34;&gt;猶予期間の指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Shutdown]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Grace period]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;編集ボックスに、ログオフの開始後、ユーザがファイルの保存やアプリケーションの終了などを行える時間を分数で指定します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2018082102&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2015090801&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2012062903&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2010091703&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global Updates</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/go-globalupdates/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/go-globalupdates/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 20200040702&lt;/li&gt;
+&lt;li&gt;KGTN 20200040801&lt;/li&gt;
+&lt;li&gt;KGTN 20200040802&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;There are three types of GO-Global Updates:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Critical&lt;/li&gt;
+&lt;li&gt;Recommended&lt;/li&gt;
+&lt;li&gt;Optional&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Critical updates are changes that are required for GO-Global to run on the latest releases of Microsoft Windows. Critical updates do not include functionality changes. They generally only replace a few binary files on the host. Recommended updates are changes that fix GO-Global defects and usability issues. They generally do not include user interface changes unless a user interface change is necessary to fix an important defect. Recommended updates generally replace all of GO-Global&amp;rsquo;s binary files. Optional updates are changes that add new features and functionality to GO-Global. Optional updates include major upgrades and minor upgrades. Optional updates generally replace all of GO-Global&amp;rsquo;s binary files.&lt;/p&gt;
+&lt;p&gt;GO-Global will only automatically download and install critical GO-Global Updates if the Windows Compatibility Assurance option is enabled. By default, GO-Global defers installation of Windows Updates until they have been certified by GraphOn.&lt;/p&gt;
+&lt;h3 id=&#34;installing-a-go-global-update-go-global&#34;&gt;Installing a GO-Global Update GO-Global&lt;/h3&gt;
+&lt;p&gt;GO-Global displays the available GO-Global updates in the Updates tab of the Host Options dialog, and allows administrators to select an update and install it.
+In the example below, there are two available GO-Global updates: host_6.0.1.27736.msi and web_6.0.1.27736.msi. Both are recommended updates.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-17-1.png&#34; alt=&#34;4-17-1&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click the Updates tab.&lt;/li&gt;
+&lt;li&gt;Select an update from the list of available GO-Global updates.&lt;/li&gt;
+&lt;li&gt;Click the Install button.&lt;/li&gt;
+&lt;li&gt;Click Yes to confirm.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After confirming installation of the updates, the following message is displayed:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-17-2.png&#34; alt=&#34;4-17-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;The installed updates will be enabled when the computer is restarted. GraphOn recommends restarting the computer at the first opportunity, when users will not be affected.&lt;/p&gt;
+&lt;h2 id=&#34;reviewing-pending-and-installed-updates&#34;&gt;Reviewing Pending and Installed Updates&lt;/h2&gt;
+&lt;p&gt;When performing update checks, the Application Publishing Service looks for updates that support:&lt;/p&gt;
+&lt;p&gt;　a. the version of GO-Global that is installed on the computer,&lt;/p&gt;
+&lt;p&gt;　b. the version of the computer&amp;rsquo;s operating system, and&lt;/p&gt;
+&lt;p&gt;　c. the type of updates that are approved to be downloaded and installed on the host.&lt;/p&gt;
+&lt;p&gt;When the Application Publishing Service finds a match, it downloads the update&amp;rsquo;s installer and runs it. After the update&amp;rsquo;s installer has been run, the update is pending but not yet fully installed. Pending updates are installed and activated the next time the computer is restarted. Administrators can view the pending and installed updates on the Updates tab of the Admin Console&amp;rsquo;s &lt;strong&gt;Host Options&lt;/strong&gt; dialog.&lt;/p&gt;
+&lt;h3 id=&#34;to-review-pending-and-installed-updates&#34;&gt;To review pending and installed updates&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Updates.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The following GO-Global updates will be enabled&lt;/strong&gt; the next time the computer restarts group box lists the updates that have been downloaded but are not yet fully installed.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;The following GO-Global updates have been installed&lt;/strong&gt; group box lists the updates that are installed and active on the host.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Windows Compatibility Assurance</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/windowscompatibilityassurance/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/windowscompatibilityassurance/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+本項目の設定については弊社から各代理店様宛に「【重要】きっとエイエスピー技術支援センターからのお知らせ 20yy年mm月のWindows Update互換性情報に関して」というご案内を出させておりますのでそちらをご参照ください。
+&lt;/div&gt;
+
+&lt;p&gt;To provide multi-user remote access on all versions of Windows, GO-Global must access internal functions and data structures in Windows. When a computer running the GO-Global Host starts, GO-Global analyzes some of the operating system&amp;rsquo;s binary files and automatically identifies the addresses of the operating system functions and variables that GO-Global requires.&lt;/p&gt;
+&lt;p&gt;In most cases, GO-Global is able to identify the required operating system addresses regardless of the version of Windows and the Windows Updates that are installed on the computer. In rare cases, however, Windows Updates include changes to the operating system that either prevent GO-Global from locating a required address or are incompatible with GO-Global&amp;rsquo;s interface to the operating system. When this happens, GO-Global is unable to start sessions on a computer. To prevent this from occurring, GO-Global v6 provides Windows Compatibility Assurance.&lt;/p&gt;
+&lt;p&gt;The Windows Compatibility Assurance feature gives administrators the option to automatically defer installation of Windows Updates until GraphOn has verified that the updates are compatible with GO-Global. To do this, GraphOn continuously monitors Microsoft&amp;rsquo;s Windows Update service for new updates. When Microsoft releases one or more Windows Updates, GO-Global suspends installation of all Windows Updates on affected GO-Global hosts until GraphOn has verified that the newly released Windows Updates are compatible.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;To ensure GO-Global Hosts do not download newly released Windows Updates during the short window of time between when Microsoft releases a new update and GraphOn detects that the update has been released, GO-Global controls when Windows Updates can be installed on GO-Global Hosts. On Windows 10 and later, GO-Global delays Windows Updates by the number of days specified by the value of the DelayWindowsUpdates property in the HostProperties.xml file. (This is set to 1 day, by default).&lt;/p&gt;
+&lt;p&gt;On earlier versions of Windows, GO-Global only allows Windows Updates to be installed during the time period specified by the value of the AllowWindowsUpdates property in the HostProperties.xml file. (The default value is 02:00-14:00 UTC, which means Windows Updates can install new updates between 6:00 p.m. and 6:00 a.m. PST.)&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;p&gt;If an incompatibility is identified, GO-Global prevents installation of all Windows Updates on affected hosts until it has automatically downloaded and installed an update that is compatible with all Windows Update releases. GO-Global notifies the administrator when a compatibility update is downloaded and installed. After the compatibility update is successfully installed and the computer is restarted, GO-Global will resume Windows Updates.&lt;/p&gt;
+&lt;p&gt;When enabled, Windows Compatibility Assurance minimizes the risk of incompatibilities. Windows Compatibility Assurance is enabled by default, but can be disabled through the Host Options dialog. However, if a Windows Update is incompatible with GO-Global, and it is installed on the host, GO-Global and/or the host machine will stop working. GraphOn recommends that this option is not disabled. However, if GO-Global is running on a closed network, and is unable to communicate with GraphOn&amp;rsquo;s Update server, this feature can be disabled to prevent warning messages from being displayed.&lt;/p&gt;
+&lt;h3 id=&#34;to-disable-windows-compatibility-assurance&#34;&gt;To disable Windows Compatibility Assurance&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click the Updates tab.&lt;/li&gt;
+&lt;li&gt;Click the checkbox next to Defer Windows Updates until they have been certified by GraphOn.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-16-1.png&#34; alt=&#34;4-16-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;GO-Global displays messages describing an update&amp;rsquo;s certification status when the Admin Console first opens and when selecting a host from the All Hosts list. Certification status messages display as follows:&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;/th&gt;
+&lt;th&gt;Message displayed:&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;If Windows Updates have been certified by GraphOn…&lt;/td&gt;
+&lt;td&gt;GO-Global is compatible with the latest Windows Updates, which were released on [date of release].&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;If certification by GraphOn is pending…&lt;/td&gt;
+&lt;td&gt;GraphOn is testing Windows Updates released on [date of release]. GO-Global is delaying installation of Windows Updates until GraphOn certifies that these Windows updates are compatible with GO-Global.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;If certification by GraphOn is pending, but the Windows Compatibility Assurance option is disabled…&lt;/td&gt;
+&lt;td&gt;GraphOn is testing Windows Updates released on [date of release] to see if they are compatible with GO-Global.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;If GraphOn determines that Windows Updates are incompatible…&lt;/td&gt;
+&lt;td&gt;GO-Global is incompatible with Windows Updates released on [date of release]. GO-Global is delaying installation of Windows Updates until a GO-Global Compatibility Update is available.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;If Windows Updates are incompatible but the Windows Compatibility Assurance option is disabled…&lt;/td&gt;
+&lt;td&gt;GO-Global is incompatible with Windows Updates released on [date of release]. If these Windows Updates are installed on this computer, GO-Global and/or this computer will stop working.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;GO-Global verifies that all the licenses the computer is using support the selected GO-Global update. If any of the licenses do not support the update, the GO-Global update will not be installed. For example, if the host is using a version 5 license and the selected GO-Global update is version 6, the GO-Global license(s) that this computer is using must be upgraded before the update can be installed. Contact your GO-Global reseller or &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt; to upgrade licenses.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントマシンからのGO-Globalホストの管理</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/managinggo-globalhostsfromclientmachines/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/managinggo-globalhostsfromclientmachines/</guid>
+      <description>
+        
+        
+        &lt;p&gt;システム管理者は、任意のクライアントマシンからAdmin Consoleに接続できます。これによりシステム管理者は、GO-Globalクライアントを実行する任意のマシンから、プロセスの終了、セッションの終了、アプリケーションの管理ができます。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントマシンからadmin-consoleへのアクセス方法&#34;&gt;クライアントマシンからAdmin Consoleへのアクセス方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Global Administratorのみがそのアプリケーションにアクセスできるよう、Admin Consoleのアクセス許可を設定します。&lt;/li&gt;
+&lt;li&gt;Windows Explorer内でフォルダGO-Global\Programsから &lt;strong&gt;AdminConsole.exe&lt;/strong&gt; を検索します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AdminConsole.exe&lt;/strong&gt; を右クリックし、 &lt;strong&gt;[Properties]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Properties]&lt;/strong&gt; ダイアログ ボックス内で &lt;strong&gt;[Security]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Security]&lt;/strong&gt; ダイアログ ボックス内で &lt;strong&gt;[Permission]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[File Permission]&lt;/strong&gt; ダイアログボックス内で、GO-Global Administratorsのみがそのアプリケーションを実行できるよう、アクセス許可を設定します(Windows Explorerでのアクセス許可設定についてのヘルプを参照するには、[File Permission]ボックス内で[Help]ボタンをクリックするか、Explorerの実行中にF1キーを押してください)。&lt;/li&gt;
+&lt;li&gt;Admin ConsoleでAdminConsole(AdminConsole.exe)を登録アプリケーションとして追加します。&lt;/li&gt;
+&lt;li&gt;クライアントマシンから、GO-Global Administrator またはそのホストの管理者権限を持つユーザとして、GO-Globalホストへログオンします。これによりProgram Windowが起動します。&lt;/li&gt;
+&lt;li&gt;そのProgram Windowから、Admin ConsoleアイコンをクリックしてAdmin Consoleを起動します。このアイコンは、ユーザがそのホスト上での管理者権限を持つ場合にのみ、Program Window内に表示されます。これにより、Admin ConsoleをGO-Globalホストから実行しているのと同じように、アプリケーションやユーザのアクセスを管理できます｡&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;ブランディング&#34;&gt;ブランディング&lt;/h2&gt;
+&lt;p&gt;ブランディングでは、管理者は、&lt;strong&gt;Sign In&lt;/strong&gt; ダイアログ、プログラムウィンドウ、GO-Global AppControllerでエンドユーザが表示するテキスト、ラベル、画像を編集やカスタマイズすることができます。たとえば、サインインダイアログでは、ダイアログのタイトルバー、フィールドラベル、ボタン、テキスト、画像をすべてパーソナライズまたはローカライズできます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-18-1.png&#34; alt=&#34;4-18-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;サインインダイアログをブランディングする方法&#34;&gt;サインインダイアログをブランディングする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleから、[Tools | Branding] をクリックします。&lt;/li&gt;
+&lt;li&gt;[Sign In]をクリックします。&lt;/li&gt;
+&lt;li&gt;次のいずれかを編集します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Title bar&lt;/strong&gt; のテキスト&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sign in to&lt;/strong&gt; のテキスト&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;User name field&lt;/strong&gt; のラベル&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Sign In&lt;/strong&gt; ボタンのラベル&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Cancel&lt;/strong&gt; のラベル&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;新しい画像を参照するには、&lt;strong&gt;[Image]&lt;/strong&gt; ボタンをクリックします。次の形式.jpg、.jpeg、.bmp、.ico、.png、.gif、.tifがサポートされています。代替画像は40x40ピクセルにリサイズされます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Display host name in sign in to]&lt;/strong&gt; テキストをクリックすると、ユーザーがサインインするホスト名が非表示になります。デフォルトでは、ログオンダイアログにホスト名が表示されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Clear all to restore defaults]&lt;/strong&gt; ボタンをクリックすると、元のテキストと画像に戻ります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-18-2.png&#34; alt=&#34;4-18-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;以下の例では、タイトルバーのテキスト、「サインイン」テキスト、ユーザ名とパスワードのラベル、サインインボタンとキャンセルボタン、および画像がすべてブランド化され、ローカライズされています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-18-3.png&#34; alt=&#34;4-18-3&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Program Windowのブランディング</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/brandingtheprogramwindow/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/brandingtheprogramwindow/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Program Windowは、GO-Globalを介してアプリケーションを起動するためのユーザインターフェイスを含むアプリケーションです。Program Windowには、ユーザが実行を許可されているWindowsアプリケーションのリストが表示されます。&lt;/p&gt;
+&lt;h3 id=&#34;program-windowをブランディングする方法&#34;&gt;Program Windowをブランディングする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleから、[Tools | Branding] をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Program Window]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;次のいずれかを編集します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Program Windowのタイトルバーのテキスト。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;メニューオプション&lt;/strong&gt; のテキスト(例:「Widgitsについて」)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ダイアログのタイトルバー&lt;/strong&gt; に表示されるテキスト。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;&lt;strong&gt;Display host name in title bar&lt;/strong&gt; をクリックすると、ユーザがサインインするホスト名が非表示になります。デフォルトでは、ホスト名はProgram Windowのタイトルバーに表示されます。&lt;/li&gt;
+&lt;li&gt;新しいタイトルバーアイコンを参照するには、&lt;strong&gt;[Title bar]&lt;/strong&gt; ボタンをクリックします。これは.icoファイルでなければなりません。&lt;/li&gt;
+&lt;li&gt;新しい背景画像を参照するには、&lt;strong&gt;[Background Image]&lt;/strong&gt; ボタンをクリックします。次の形式がサポートされています。.jpg、.jpeg、.bmp、.ico、.png、.gif、および.tifです。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Help Topics]&lt;/strong&gt; メニュー項目をクリックして、メニューからヘルプトピックを削除します。デフォルトでは、ヘルプトピックが表示されています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Restore defaults]&lt;/strong&gt; ボタンをクリックして、元のテキストと画像に戻します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-19-1.png&#34; alt=&#34;4-19-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;デフォルトでは、ユーザはProgram Windowで独自の表示オプションを設定できます。ユーザが独自の表示オプションを設定できないようにするには、&lt;strong&gt;[Allow users to set their options]&lt;/strong&gt; チェックボックスをオフにします。&lt;/p&gt;
+&lt;p&gt;Program Windowタブの &lt;strong&gt;[View Options]&lt;/strong&gt; ボタンをクリックすると、Program Windowのデフォルト表示を表示したり、カスタマイズしたりすることができます。タイトルバー、メニュー、ツールバー、ステータスバーのオン/オフを切り替えたり、これらのオプションを選択したりすることができます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;One-Click Activation of Any Item:&lt;/strong&gt; マウスのワンクリックでアイテムを開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;One-Click Activation of Selected Item:&lt;/strong&gt; マウスのワンクリックで選択したアイテムを開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Hot-Track Selection:&lt;/strong&gt; カーソルがアイテムの上に置かれると、自動的にアイテムが選択されます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-19-2.png&#34; alt=&#34;4-19-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;詳細表示で項目を表示する際に、以下のオプションを表示することができます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Column Header:&lt;/strong&gt; 列のヘッダーを表示します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Drag-and-Drop Column Reordering:&lt;/strong&gt; ドラッグ＆ドロップで列の並び替えを有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Full Row Selection:&lt;/strong&gt; 項目が選択されているときに、項目の全行をハイライトします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Gridlines:&lt;/strong&gt; アイテムやサブアイテムの周りにグリッドラインを表示します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Program Windowの背景とテキストのデフォルトの色を選択するには、&lt;strong&gt;[Background]&lt;/strong&gt; ボタンまたは &lt;strong&gt;[Text]&lt;/strong&gt; ボタンをクリックして、色のパレットを含むダイアログボックスにアクセスします。
+また、Program Windowのデフォルトの &lt;strong&gt;[View]&lt;/strong&gt; を選択して、アイテムを大きなアイコン、小さなアイコン、小さなアイコンを含むリスト、または詳細なリストとして表示することもできます。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[Arrange Items]&lt;/strong&gt; オプションを使用すると、Program Windowでアイテムのデフォルトの並べ替え順序を選択することができます。アイテムを以下の順序でソートします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;By Name:&lt;/strong&gt; 名前をアルファベット順に並べ替えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Location:&lt;/strong&gt; アイテムを場所別に並べ替えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Type:&lt;/strong&gt; アイテムをタイプ別に並べ替えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Size:&lt;/strong&gt; サイズが小さいものから大きいものまで、サイズでソートします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Date Accessed:&lt;/strong&gt; 最後にアクセスした日付でアイテムをソートします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Date Created:&lt;/strong&gt; アイテムを作成日順に、最も古いものから最新のものまで並べ替えます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;By Date Modified:&lt;/strong&gt; 最後に変更された日付でアイテムをソートします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;終了したら、&lt;strong&gt;[OK]&lt;/strong&gt; ボタンをクリックしてオプションダイアログを閉じ、選択した内容を有効にします。&lt;strong&gt;Cancel&lt;/strong&gt; ボタンをクリックすると、変更を保存せずにダイアログを閉じます。&lt;strong&gt;[Refresh]&lt;/strong&gt; ボタンは最近保存した設定に戻り、&lt;strong&gt;[Defaults]&lt;/strong&gt; ボタンはレジストリに保存された設定に戻ります。
+Program Windowの &lt;strong&gt;[View Options]&lt;/strong&gt; ダイアログへの変更は、GO-Globalにまだサインインしていないユーザにのみ適用されます。これらの変更は、すでにサインインしていて、既存のGO-Globalユーザプロファイルを持っているユーザには適用されません。
+Program Windowを実行しているとき、ユーザは[View | Options]をクリックしてProgram Windowの表示をカスタマイズできます。
+ただし、&lt;strong&gt;[Allow users to set their options]&lt;/strong&gt; が無効になっている場合、すべてのユーザのProgram Windowの &lt;strong&gt;View&lt;/strong&gt; は、Admin Consoleで指定されたものになります。ユーザがProgram Windowを実行すると、メニューバーに &lt;strong&gt;View&lt;/strong&gt; オプションが表示されず、右クリックコンテキストメニューに表示オプションも表示されません。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globlal AppController Web Interfaceのブランディング</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/brandingtheappcontrollerwebinterface/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/brandingtheappcontrollerwebinterface/</guid>
+      <description>
+        
+        
+        &lt;p&gt;AppControllerは、コンピュータのデスクトップ、モバイルデバイス、またはWebブラウザから起動できる、ブランド化されていないカスタマイズ可能なアプリケーションです。AppControllerは、顧客の名前とロゴでブランド化できます。&lt;/p&gt;
+&lt;h3 id=&#34;appcontrollerのブランディング&#34;&gt;AppControllerのブランディング&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleから、[Tools | Branding] をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;AppController&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;次のいずれかをパーソナライズします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;Company Name&lt;/li&gt;
+&lt;li&gt;Product Name&lt;/li&gt;
+&lt;li&gt;Installer Name&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;AppControllerがブラウザウィンドウ内で実行されるときの &lt;strong&gt;デスクトップ&lt;/strong&gt; の色を選択するには、色のRGB値を10進形式で入力します。白のデフォルト色は10進数で16777215です。たとえば、背景色を青に変更するには、16711680と入力します。背景色を緑に変更するには、65280と入力します。背景色を赤に変更するには、255と入力します。&lt;/li&gt;
+&lt;li&gt;新しい &lt;strong&gt;Product Logo&lt;/strong&gt; を参照するには、[browse]ボタンをクリックします。次の形式.jpg.、jpeg、.pngがサポートされています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Clear all to restore defaults]&lt;/strong&gt; ボタンをクリックして、元のテキストと画像に戻します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/4-20-1.png&#34; alt=&#34;4-20-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ブランディングオプションは、group=&amp;ldquo;Branding&amp;quot;の下の&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\HostProperties.xml&lt;/code&gt;ファイルに保存されます。画像は&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\images&lt;/code&gt;に保存されます。
+relay serverまたはセッションマネージャを使用すると、クラスタ内のすべてのホストで設定の変更が自動的に行われます。relay serverまたはセッションマネージャを使用しない場合、ブランドオプションをコンピュータ間で手動でコピーできます。詳細については、&lt;a href=&#34;/docs/go-globalrc61/advancedtopics/configuringafarmhost/#%E3%81%82%E3%82%8B%E3%83%9B%E3%82%B9%E3%83%88%E3%81%8B%E3%82%89%E5%88%A5%E3%81%AE%E3%83%9B%E3%82%B9%E3%83%88%E3%81%B8%E3%81%AE%E6%A7%8B%E6%88%90%E8%A8%AD%E5%AE%9A%E3%81%AE%E6%89%8B%E5%8B%95%E3%82%B3%E3%83%94%E3%83%BC&#34;&gt;あるホストから別のホストへの構成設定の手動コピー&lt;/a&gt;を参照してください。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Admin Consoleのキーボードショートカット</title>
+      <link>/docs/go-global61rc/go-globaladminconsole/keyboardshortcutsfortheadminconsole/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/go-globaladminconsole/keyboardshortcutsfortheadminconsole/</guid>
+      <description>
+        
+        
+        &lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Action&lt;/th&gt;
+&lt;th&gt;Result&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Applications Tab&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Double-click the application&lt;/td&gt;
+&lt;td&gt;アプリケーションのプロパティダイアログを表示します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE*&lt;/td&gt;
+&lt;td&gt;選択したアプリケーションを削除します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+A*&lt;/td&gt;
+&lt;td&gt;アプリケーションのプロパティダイアログを表示します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+S&lt;/td&gt;
+&lt;td&gt;[ユーザー/グループ]ダイアログの[アプリケーションプロパティ]を表示します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Sessions Tab&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;選択したセッションを終了します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Processes Tab&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;DELETE&lt;/td&gt;
+&lt;td&gt;選択したプロセスを終了します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;General&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+TAB&lt;/td&gt;
+&lt;td&gt;タブを切り替える&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+SHIFT+TAB&lt;/td&gt;
+&lt;td&gt;タブを逆回転させる&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+P&lt;/td&gt;
+&lt;td&gt;オプションダイアログを表示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;CTRL+B&lt;/td&gt;
+&lt;td&gt;ステータスバーをオンまたはオフにします&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;ALT+F4&lt;/td&gt;
+&lt;td&gt;Admin Consoleを終了します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F1&lt;/td&gt;
+&lt;td&gt;Admin Consoleのヘルプを表示します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;F5&lt;/td&gt;
+&lt;td&gt;セッション、プロセス、およびアプリケーションのタブを更新します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;INSERT&lt;/td&gt;
+&lt;td&gt;[アプリケーションの追加]ダイアログボックスを表示します&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;*これらのショートカットを有効にするには、[Installed Applications]の一覧からアプリケーションを選択する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

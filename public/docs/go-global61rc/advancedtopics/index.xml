@@ -1,0 +1,1776 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – Advanced Topics</title>
+    <link>/docs/go-global61rc/advancedtopics/</link>
+    <description>Recent content in Advanced Topics on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61rc/advancedtopics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Load Balancing</title>
+      <link>/docs/go-global61rc/advancedtopics/loadbalancing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/loadbalancing/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。負荷分散設定を行いたい場合はkitASP作成の拡張パッケージGGEasyMonitorの項を参照ください。
+&lt;/div&gt;
+
+&lt;p&gt;Load balancing allows GO-Global sessions to be distributed across multiple hosts. Load balancing is required when the host resource requirements for a deployment exceed the capacity of a single host computer. Load balancing is done automatically and is transparent to the user. GOGlobal can also be used with any third party TCP/IP based load-balancing service.&lt;/p&gt;
+&lt;h3 id=&#34;load-balancing-requirements&#34;&gt;Load Balancing Requirements&lt;/h3&gt;
+&lt;ul&gt;
+&lt;li&gt;A GO-Global Host must be installed on each of the hosts in the cluster.&lt;/li&gt;
+&lt;li&gt;For Web deployment, if the load balancer is balancing connections to both the Web server (e.g., port 80) and the GO-Global Host (e.g., port 491), each of the GO-Global Hosts in the Admin Console have a Web server running and the Web server home directory should contain the GO-Global Web files. If the load balancer is only balancing connections to the GO-Global Host, the GO-Global Web files do not need to be located on each GO-Global Host. Web files can be installed on the machine running the Web server.&lt;/li&gt;
+&lt;li&gt;If an application saves any user specific settings in the registry (e.g., Microsoft Word), it is strongly recommend that users operate with roaming profiles rather than local profiles.Since there is no way of predicting which server the user will actually be logged onto in a balanced server farm, working with roaming profiles is the only way to ensure that user specific settings are available to the user at all times.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;A GO-Global Host can be configured to operate as an independent host, a dependent host, or as a Relay Load Balancer. Please note that a Relay Load Balancer cannot be an application host.&lt;/p&gt;
+&lt;p&gt;When setting up a load-balanced Relay Load Balancer configuration, GraphOn recommends using a license server. For more information, see the following sections from Chapter 2: &lt;a href=&#34;/docs/go-globalrc61/configuringthehost/configuringgo-globaltouseacentrallicenseserver/&#34;&gt;&lt;strong&gt;Configuring GO-Global to use a Central License Server&lt;/strong&gt;&lt;/a&gt; , &lt;a href=&#34;/docs/go-globalrc61/configuringthehost/redundantlicenseservers/#three-server-redundancy&#34;&gt;&lt;strong&gt;Three-Server Redundancy&lt;/strong&gt;&lt;/a&gt; , and &lt;a href=&#34;/docs/go-globalrc61/configuringthehost/redundantlicenseservers/#license-file-list-redundancy&#34;&gt;&lt;strong&gt;License-File List Redundancy.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h2 id=&#34;independent-hosts&#34;&gt;Independent Hosts&lt;/h2&gt;
+&lt;p&gt;Independent hosts are GO-Global Hosts that do not interact with other GO-Global Hosts running on the network. Independent hosts appear in the Admin Console on the first level of the GO-Global Hosts tree view as an independent node. The GO-Global setup program configures GO-Global Hosts to operate as independent hosts. GO-Global clients can connect to independent hosts directly by specifying the name or IP address of the server in the &lt;strong&gt;Connection&lt;/strong&gt; dialog or the location box of a Web browser. Clients can also connect to independent hosts through a third party network load balancer that distributes client connections among several servers. However, session reconnect is not supported in the latter configuration and must be disabled.&lt;/p&gt;
+&lt;h2 id=&#34;go-global-hosts&#34;&gt;GO-Global Hosts&lt;/h2&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-1-1.png&#34; alt=&#34;7-1-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;relay-load-balancers&#34;&gt;Relay Load Balancers&lt;/h2&gt;
+&lt;p&gt;A Relay Load Balanceris a GO-Global Host that provides centralized control over one or more hosts. Relay Load Balancers maintain client connections and distribute GO-Global sessions across a set of load-balanced application hosts. Relay Load Balancers appear in the Admin Console on the first level of the list of All Hosts as nodes with one or more Dependent Hosts.&lt;/p&gt;
+&lt;h3 id=&#34;to-configure-a-go-global-host-to-operate-as-a-relay-load-balancer&#34;&gt;To configure a GO-Global Host to operate as a Relay Load Balancer&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Select the desired host from the list of &lt;strong&gt;All Hosts.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Configuration&lt;/strong&gt;tab.&lt;/li&gt;
+&lt;li&gt;Type the name or IP address of the computer in the &lt;strong&gt;Relay Load Balancer address&lt;/strong&gt; box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;A message box is displayed indicating that the change will not take effect until the &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; on the Relay Load Balancer has been restarted. Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Stop and restart the &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; from the Services option in the Control Panel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After configuring a host to run as a Relay Load Balancerwith one or more dependent hosts, GO-Global load-balances client connections and ensures that sessions start successfully. If a session fails to start on the selected host, the Relay Load Balancer selects another host and tries again until it finds one that can support the session.&lt;/p&gt;
+&lt;p&gt;When setting up a Relay Load Balancer environment, be sure the same &lt;strong&gt;Log Folder&lt;/strong&gt; path for the Relay Load Balancerexists on the dependent hosts. Otherwise, the &lt;strong&gt;Sign In&lt;/strong&gt; dialog will not appear when users attempt to sign in to GO-Global. Create a log directory on the C: drive of each Relay Load Balancer (e.g.,&lt;code&gt;C:\Data\APS_LOGS&lt;/code&gt;) or use &lt;code&gt;C:\Program Files\GraphOn\GO-Global\Log&lt;/code&gt; which already exists on the dependent host.Make sure this same path exists on the dependent host. In addition to changing the &lt;strong&gt;Log Folder&lt;/strong&gt; path in the Admin Console, the &lt;code&gt;\Log\Codes&lt;/code&gt; and &lt;code&gt;\Log\Templates&lt;/code&gt; directories must be copied to the new location.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+When a Relay Load Balanceris selected in the Admin Console, the number of processes running on all dependent hosts is not listed in the Admin Console&amp;rsquo;s status bar.
+&lt;/div&gt;
+
+&lt;p&gt;A Relay Load Balancerrequires a minimum of 512MB of RAM. For most deployments and for best results, 1GB with a multiprocessor server is recommended. Depending on the number of dependent hosts attached to the Relay Load Balancer, more RAM may be required.&lt;/p&gt;
+&lt;p&gt;Memory and CPU requirements for the dependent hosts are determined by the applications that are published and the number of users accessing the system. In general, a dependent host can support 12 &amp;ldquo;heavy&amp;rdquo; users/500 MHz CPU and 25 &amp;ldquo;light&amp;rdquo; users/500 MHz CPU. (&amp;ldquo;Heavy&amp;rdquo; is defined as a user running one or more large applications with continuous user interaction. &amp;ldquo;Light&amp;rdquo; is defined as a user running one application with intermittent user interaction.)&lt;/p&gt;
+&lt;h2 id=&#34;dependent-hosts&#34;&gt;Dependent Hosts&lt;/h2&gt;
+&lt;p&gt;A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.&lt;/p&gt;
+&lt;h3 id=&#34;to-configure-a-go-global-host-to-operate-as-a-dependent-host&#34;&gt;To configure a GO-Global Host to operate as a dependent host&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Select the desired host from the list of &lt;strong&gt;All Hosts.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click Tools | Host Options.&lt;/li&gt;
+&lt;li&gt;Click the &lt;strong&gt;Configuration&lt;/strong&gt; tab.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Application Host.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Dependent Host.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type the name or IP address of the Relay Load Balancer in &lt;strong&gt;Relay Load Balancer address&lt;/strong&gt; edit box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;A message box is displayed indicating that the change will not take effect until the &lt;strong&gt;Application Publishing Service&lt;/strong&gt; has been restarted. Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Stop and restart the &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; from the Services option in the Control Panel.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;When the Application Publishing Service is restarted, the dependent host will appear beneath the Relay Load Balancer in the Admin Console&amp;rsquo;s list of GO-Global Hosts. A dependent host with a yellow x indicates that the host has been &amp;ldquo;orphaned;&amp;rdquo; in other words, that its Relay Load Balancer has gone down. If a host&amp;rsquo;s icon has a red X, the administrator does not have administrative rights on the host. If the host&amp;rsquo;s icon has a red X and is grayed out, the host is no longer running the Application Publishing Service or it has been turned off. In either case, the administrator is unable to access that host from the Admin Console.&lt;/p&gt;
+&lt;p&gt;Users are authenticated on dependent hosts, not on Relay Load Balancers. As a result, dependent hosts can be located on a different network than their associated Relay Load Balancer. For example, dependent hosts can be located behind a firewall on an internal, Active Directory network, and the associated Relay Load Balancer can be located in a demilitarized zone(DMZ)that is outside the firewall. If &lt;strong&gt;Integrated Windows authentication&lt;/strong&gt; is used, clients and dependent hosts must be located on the same domain, but the Relay Load Balancer can be located on a different domain.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+We recommend installing the same set of applications on each dependent host and using the same installation path.
+&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&#34;/img/7-1-2.png&#34; alt=&#34;7-1-2&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Support for Third-Party Load Balancers</title>
+      <link>/docs/go-global61rc/advancedtopics/supportforthird-partyloadbalancers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/supportforthird-partyloadbalancers/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。負荷分散設定を行いたい場合はkitASP作成の拡張パッケージGGEasyMonitorの項を参照ください。
+&lt;/div&gt;
+
+&lt;p&gt;GO-Global&amp;rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm.&lt;/p&gt;
+&lt;p&gt;In addition, these new roles enable users who connect to GO-Global Hosts via third-party load balancers to disconnect from their sessions from one device, and reconnect to their sessions from a different device. GO-Global automatically reconnects users to their sessions, even when the load balancer fails to connect a user to the host on which the user’s session is running. For example, if a user with a session running on Host A disconnects from the session while at work, goes home, and then reconnects to the session from a home computer, GO-Global will ensure that the user is reconnected to his or her session. If the load balancer routes the user&amp;rsquo;s connection to Host B, Host B will open a connection to Host A and relay the data between the GO-Global AppController and Host A.&lt;/p&gt;
+&lt;h3 id=&#34;to-enable-these-capabilities&#34;&gt;To enable these capabilities:&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a GO-Global Farm Manager:&lt;br&gt;
+a. Install the GO-Global Host on a computer that is &lt;strong&gt;not&lt;/strong&gt; connected to the third-party load balancer.&lt;br&gt;
+b. Run the Admin Console and set the Server Role to &lt;strong&gt;Farm Manager.&lt;/strong&gt; &lt;br&gt;
+c. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;On each GO-Global Application Host that is accessible from the load balancer:&lt;br&gt;
+a. Run the Admin Console and set the Server Role to Farm Host.&lt;br&gt;
+b. Enter the address of the Farm Manager configured in step 1 in the &lt;strong&gt;Farm Manager address&lt;/strong&gt; field.&lt;br&gt;
+c. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt;&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Administrators can provide High Availability for a farm by configuring a failover Farm Manager as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Create a failover Farm Manager:&lt;br&gt;
+a. Install the GO-Global Host on another computer that is not connected to the third-party load balancer.&lt;br&gt;
+b. Run the Admin Console and set the Server Role to &lt;strong&gt;Farm Manager.&lt;/strong&gt; &lt;br&gt;
+c. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;On each GO-Global Application Host that is accessible from the load balancer:&lt;br&gt;
+a. Run the Admin Console and append a semicolon and the address of the failover Farm Manager to the address of the primary Farm Manager in the &lt;strong&gt;Farm Manager address&lt;/strong&gt; field.&lt;br&gt;
+b. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The new Farm Manager and Farm Host server roles are supported by the same infrastructure and design that has supported the GO-Global Relay Server and Dependent Host roles for many years.Unlike a Relay Server, however, a Farm Manager does not relay data between GO-Global clients and hosts and is, therefore, not subject to the same scalability limits as a Relay Server. A Farm Manager keeps track of all sessions running in a farm, but unless an administrator is shadowing a session, no data from applications running in a session passes through the Farm Manager.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ファームマネージャの構成</title>
+      <link>/docs/go-global61rc/advancedtopics/configuringafarmmanager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/configuringafarmmanager/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ファームマネージャは、ファームホストのクラスタを集中管理するために使用されるGO-Globalホストです。Relay Load Balancerとは異なり、ファームマネージャはファームホストへの接続の負荷を分散せず、クライアントとファームホストの間でデータを中継しません。ファームマネージャは、サードパーティのロードバランサを使用してファームホストへの接続を管理します。ファームホストを構成する前に、ファームマネージャを構成する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;ファームマネージャを構成する方法&#34;&gt;ファームマネージャを構成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[Tools | Host Options]&lt;/strong&gt; の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Configuration]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Application Host Manager]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Farm Manager]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ファームホストの構成</title>
+      <link>/docs/go-global61rc/advancedtopics/configuringafarmhost/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/configuringafarmhost/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ファームホストは、ファームマネージャに接続されているGO-Globalホストです。GO-Globalクライアントは、ファームホストに直接接続します。&lt;/p&gt;
+&lt;h3 id=&#34;ファームホストを構成する方法&#34;&gt;ファームホストを構成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[Tools | Host Options]&lt;/strong&gt; の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Configuration]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Application Host]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Farm Host]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Farm Manager address field]&lt;/strong&gt; フィールドに、Farm ManagerのIPアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-4-1.png&#34; alt=&#34;7-4-1&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;license-server-configuration&#34;&gt;License Server Configuration&lt;/h2&gt;
+
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;p&gt;When an independent host is configured to run as a Relay Load Balancer or a dependent host, GO-Global does not automatically make any changes to the host&amp;rsquo;s licensing configuration. For example, if an independent host is configured to use the license server that is installed on the same computer as the host, the host will continue to use the computer&amp;rsquo;s local license server after the host is connected to a Relay Load Balancer. This is the default configuration, but not typically the best licensing configuration. A Relay Load Balancer and its dependent hosts should all be configured to use the same license server(s).&lt;/p&gt;
+&lt;p&gt;If high-availability is not required, GraphOn recommends configuring the dependent hosts to use the license server on the Relay Load Balancer as a Central License Server. (See &lt;a href=&#34;/docs/go-globalrc61/configuringthehost/configuringgo-globaltouseacentrallicenseserver/&#34;&gt;&lt;strong&gt;Configuring GO-Global to use a Central License Server&lt;/strong&gt;&lt;/a&gt; and ensure that the dependent hosts are able to connect to the license server&amp;rsquo;s port on the Relay Load Balancer.)&lt;/p&gt;
+&lt;p&gt;If high-availability is required, GraphOn recommends configuring the Relay Load Balancer and its dependent hosts to use a set of &lt;a href=&#34;/docs/go-globalrc61/configuringthehost/redundantlicenseservers/&#34;&gt;&lt;strong&gt;Three-Server Redundant License Servers.&lt;/strong&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;With both of these configurations, the &lt;strong&gt;Licenses&lt;/strong&gt; tab on the Admin Console will report the same license information, regardless of which computer is selected.&lt;/p&gt;
+&lt;p&gt;Prior to version 6.1, GO-Global managed licenses from Dependent Hosts by default. With this configuration, administrators had to configure each Dependent Host to use a central license manager. Beginning with version 6.1, administrators no longer need to do this. GO-Global now manages licenses from the Relay Load Balancer by default. This enables administrators to add and remove Dependent Hosts from the Relay Load Balancer without having to make any licensing configuration changes.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Dependent Hosts that are upgraded to version 6.1 from older versions will continue to manage licenses from the Dependent Host. Administrators can change this after the upgrade by editing the value of the &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; property in the &lt;strong&gt;HostProperties.xml&lt;/strong&gt; file from Host to Relay on all the Dependent &lt;strong&gt;Hosts&lt;/strong&gt; and the &lt;strong&gt;Relay&lt;/strong&gt; Load Balancer.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;administering-relay-load-balancers-and-dependent-hosts-on-different-networks&#34;&gt;Administering Relay Load Balancers and Dependent Hosts on Different Networks&lt;/h2&gt;
+&lt;p&gt;When a user starts the Admin Console on a Relay Load Balancer or a dependent host, the Admin Console connects to the Relay Load Balancer and attempts to authenticate the user using Integrated Windows authentication. If the Admin Console is running on a dependent host and the associated Relay Load Balancer is located on a different network, a message such as the following is displayed:&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;Failed to log you on to Server8. This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;Clicking &lt;strong&gt;No&lt;/strong&gt; will return you to the &lt;strong&gt;All Hosts&lt;/strong&gt; node of the Admin Console. Clicking &lt;strong&gt;Yes&lt;/strong&gt; will initiate a special remote administration session on the Relay Load Balancer as follows:&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;The Admin Console on the dependent host starts the GO-Global Client.&lt;/li&gt;
+&lt;li&gt;The client connects to the Relay Load Balancer and starts a session. The &lt;strong&gt;Sign In&lt;/strong&gt;dialog is displayed to the user.&lt;/li&gt;
+&lt;li&gt;The user signs in, specifying the user name and password of an account that is a member of the Administrators group on the Relay Load Balancer.&lt;/li&gt;
+&lt;li&gt;The Admin Console starts on the Relay Load Balancer. The user can now administer the Relay Load Balancer and all of its dependent hosts.&lt;/li&gt;
+&lt;li&gt;A maximum of two administration sessions can run on the Relay Load Balancer at any given time, regardless of the &lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; setting in the Admin Console and regardless of license restrictions.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Dependent hosts inherit their list of published applications, server settings, and user settings from the Relay Load Balancer. Applications must be installed in the same directory on all dependent hosts. Applications do not need to be installed on the Relay Load Balancer. When a GO-Global Host is connected to a Relay Load Balancer all of its server settings are synchronized with those of the Relay Load Balancer.&lt;/p&gt;
+&lt;p&gt;When any changes are made to the Relay Load Balancer&amp;rsquo;s settings, they are also made to &lt;strong&gt;All Hosts&lt;/strong&gt; connected to that Relay Load Balancer. The only settings that are allowed to vary are the maximum number of sessions and the name of the Relay Load Balancer. All other settings in the &lt;strong&gt;Host Options&lt;/strong&gt; and &lt;strong&gt;Application Properties&lt;/strong&gt; dialogs are grayed out and cannot be modified.&lt;/p&gt;
+&lt;p&gt;When setting up a Relay Load Balancer, if an application is installed but not published on the dependent host, you will need to publish the application on the Relay Load Balancer through the Admin Console. For example, if Adobe Reader 7.0 is installed on the dependent host at &lt;code&gt;C:\Program Files\Adobe\Acrobat 8.0\Reader\AcroRd32.exe,&lt;/code&gt; open the Admin Console on the Relay Load Balancer and type this path &lt;strong&gt;location&lt;/strong&gt; in the Location box in the &lt;strong&gt;Add Application&lt;/strong&gt; dialog.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Before publishing an item on a mapped drive, verify that the drive is mapped to the same drive letter and location on the dependent hosts as it is on the Relay Load Balancer.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;host-selection&#34;&gt;Host Selection&lt;/h2&gt;
+&lt;p&gt;When a client connects to a Relay Load Balancer, the Relay Load Balancer attempts to start a session on the dependent host that has the lowest number of running sessions as a percentage of the maximum number of sessions allowed for the host.&lt;/p&gt;
+&lt;p&gt;If the session fails to start on the selected host, the Relay Load Balancer successively attempts to start the session on other available hosts until it finds one that can support the session.&lt;/p&gt;
+&lt;p&gt;If there are no available hosts (i.e., if the number of running sessions on All Hosts equals the maximum number allowed), GO-Global displays a message to the user:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You are already running as many sessions as you are allowed&lt;/strong&gt;.&lt;/p&gt;
+&lt;p&gt;Otherwise, if the session cannot be started on any of the available hosts, the following message is displayed to the user:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GO-Global failed to launch the Program Window for your session.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;In a Relay Load Balancer setting, GO-Global checks the maximum sessions settings on the Relay Load Balancer and its dependent hosts. The maximum sessions value on the Relay Load Balancer is the maximum number of sessions that can be run concurrently on all dependent hosts assigned to that Relay Load Balancer.&lt;/p&gt;
+&lt;p&gt;To modify the &lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; setting, open the Admin Console on the host, click Host Options | Session Startup.&lt;/p&gt;
+&lt;h2 id=&#34;relay-load-balancer-in-a-dmz&#34;&gt;Relay Load Balancer in a DMZ&lt;/h2&gt;
+&lt;p&gt;A Relay Load Balancer in a DMZ can be separated from its dependent application servers by a firewall, with the following requirements:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;The dependent application server must be able to connect to the Relay Load Balancer from behind the firewall. Please note that the reverse is not required. The Relay Load Balancer does not need to be able to connect to the dependent application server.&lt;/li&gt;
+&lt;li&gt;The client must be able to connect to the Relay Load Balancer in the DMZ.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;When a session starts on a dependent application server, the dependent application server opens a connection to the Relay Load Balancer. When the Relay Load Balancer receives data from the session&amp;rsquo;s clients, it forwards the data to the session over this connection. Similarly, when the Relay Load Balancer receives data from the session over this connection, it forwards the data to the session&amp;rsquo;s clients.&lt;/p&gt;
+&lt;p&gt;The Relay Load Balancer generally has two network interfaces: one that is accessible from clients outside the DMZ, and one that is accessible from dependent application servers behind the firewall.&lt;/p&gt;
+&lt;p&gt;The diagram below illustrates the recommended configuration for providing access to hosts on an internal network. The arrows show the direction in which the connections are made. Hosts connect to the Relay Load Balancer, not the other way around. As a result, the internal firewall does not need to allow any connections from the DMZ to the internal network. With this configuration, neither machines on the internet nor machines in the DMZ can connect directly to the hosts on the internal network. It is a highly secure configuration.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-4-2.png&#34; alt=&#34;7-4-2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;application-host-manager-recovery&#34;&gt;Application Host Manager Recovery&lt;/h2&gt;
+&lt;p&gt;The Application Publishing Service can be configured to automatically restart if the service fails. If the Application Publishing Service stops on a Relay Load Balancer, clients are disconnected but sessions continue to run on the dependent hosts that were connected to the Relay Load Balancer. These dependent hosts will attempt to reconnect to the Relay Load Balancer every 15 seconds. When a dependent host reconnects to the Relay Load Balancer, it re-adds its sessions to the Relay Load Balancer and restores any state information associated with the disconnected sessions. Clients are then able to reconnect to their sessions. By default, clients automatically attempt to reconnect to the Relay Load Balancer 5 times. In order to provide higher service availability, a failover Relay Load Balancer can be configured.&lt;/p&gt;
+&lt;h3 id=&#34;to-configure-a-failover-application-host-manager&#34;&gt;To configure a Failover Application Host Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Install the GO-Global Host on a separate computer, on the same network as the Application Host Manager. This computer will be the failover Application Host Manager. All clients and Dependent Hosts (or Farm Managers) must be able to connect to the failover Application Host Manager.If clients connect to the cluster from the internet, the failover Application Host Manager must have a public address.&lt;/li&gt;
+&lt;li&gt;Configure the GO-Global Host to run as an Application Host Manager:&lt;br&gt;
+a. Run the &lt;strong&gt;Admin Console&lt;/strong&gt; on the computer.&lt;br&gt;
+b. Click Tools | Host Options.&lt;br&gt;
+c. Click the &lt;strong&gt;Configuration tab.&lt;/strong&gt; &lt;br&gt;
+d. Click &lt;strong&gt;Application Host Manager.&lt;/strong&gt; &lt;br&gt;
+e. If the primary Application Host Manager is a Relay Load Balancer, click &lt;strong&gt;Relay Load Balancer.&lt;/strong&gt; If the primary Application Host Manager is a &lt;strong&gt;Farm Manager,&lt;/strong&gt; click Farm Manager.&lt;br&gt;
+f. Click &lt;strong&gt;OK.&lt;/strong&gt; &lt;br&gt;
+g. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Export the published applications from the primary Application Host Manager and import them into the failover Application HostManager:&lt;br&gt;
+a. On the primary Application Host Manager, run Regedit as administrator.&lt;br&gt;
+b. Select the following registry key:&lt;code&gt;\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer&lt;/code&gt;&lt;br&gt;
+c. Click &lt;strong&gt;File | Export…&lt;/strong&gt; &lt;br&gt;
+d. Type a name for the file (e.g., Appserver.reg).&lt;br&gt;
+e. Click &lt;strong&gt;Save.&lt;/strong&gt; &lt;br&gt;
+f. Copy the file to the failover Application Host Manager.&lt;br&gt; 
+g. Double-click the file.&lt;br&gt;
+h. Click &lt;strong&gt;Yes&lt;/strong&gt; to import the file.&lt;br&gt;
+i. Click &lt;strong&gt;OK.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Configure each Dependent Host so it will connect to the failover Relay Load Balancer when it is unable to connect to the primary Relay Load Balancer:&lt;br&gt;
+a. Run the Admin Console&lt;br&gt;
+b. Click Tools | Host Options.&lt;br&gt;
+c. Click the &lt;strong&gt;Configuration&lt;/strong&gt; tab.&lt;br&gt;
+d. Enter the addresses of both Relay Load Balancers in the &lt;strong&gt;Relay Load Balancer address&lt;/strong&gt; field, with their fully-qualified domain names. Enter the address of the primary Relay Load Balancer first, followed by a semi-colon, followed by the address of the failover Relay Load Balancer. For example: primary_relay_loadbalancer.graphon.com;failover_relay_load_balancer.graphon.com&lt;br&gt;
+e. Click &lt;strong&gt;OK.&lt;/strong&gt; &lt;br&gt;&lt;/li&gt;
+&lt;li&gt;Specify the addresses of both the primary and the failover Relay Load Balancers in the URLs and shortcuts that are used to start the clients:&lt;br&gt;
+a. Provide users that connect via a browser with an HTML page or URL that sets the &lt;strong&gt;host&lt;/strong&gt; parameter to the address of the primary relay server, followed by a semicolon, followed by the address of the failover relay server (e.g.,host=primary_relay_load-balancer_address;failover_relay_load_balancer_address).&lt;br&gt;
+b. Provide users that connect via an installed client, with a shortcut that sets the &lt;strong&gt;–h&lt;/strong&gt; command line argument equal to the address of the primary relay server, followed by a semi-colon, followed by the address of the failover relay server (e.g., -h primary_relay_load_balancer_address;failover_relay_load_balancer_address).&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;In this configuration, if the primary Relay Load Balancer fails for any reason, dependent hosts and clients automatically reconnect to the failover server and users are generally reconnected to their sessions within 1-2 minutes of the primary Relay Load Balancer failure. This is illustrated in the diagram below.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-4-3.png&#34; alt=&#34;7-4-3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;If users&#39; sessions fail to reconnect automatically, increase the value of the &lt;strong&gt;autoreconnect&lt;/strong&gt; parameter in client URLs, web pages and shortcuts to a number greater than 5 (the default).&lt;/p&gt;
+&lt;p&gt;When the failover Relay Load Balancer is active (i.e., when dependent hosts are connected to the failover Relay Load Balancer), users&#39; sessions will take longer to start. For this reason, the primary Relay Load Balancer should be re-activated when it comes back online. To re-activate the primary Relay Load Balancer, terminate the aps.exe process on the failover Relay Load Balancer using Task Manager at a time when users are unlikely to be connected to the cluster. When the aps.exe process is terminated on the failover Relay Load Balancer, dependent hosts and clients will reconnect to the primary Relay Load Balancer. Then, after the cluster&amp;rsquo;s dependent hosts have reconnected to the primary Relay Load Balancer, restart the Application Publishing Service on the failover Relay Load Balancer.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+When the &lt;strong&gt;Application Publishing Service&lt;/strong&gt; is stopped or restarted on a Relay Load Balancer via &lt;strong&gt;Services,&lt;/strong&gt; GO-Global closes all the sessions that are running on the Relay Load Balancer&amp;rsquo;s dependent hosts. Therefore, if you need to re-activate a primary Relay Load Balancer when there are sessions running on the cluster&amp;rsquo;s dependent hosts, don&amp;rsquo;t restart the Application Publishing Service on the failover Relay Load Balancer via Services; instead, terminate the aps.exe process on the failover Relay Load Balancer using Task Manager, as described above.
+&lt;/div&gt;
+
+&lt;h2 id=&#34;あるホストから別のホストへの構成設定の手動コピー&#34;&gt;あるホストから別のホストへの構成設定の手動コピー&lt;/h2&gt;
+&lt;p&gt;アプリケーションホストマネージャ(Relay Load BalancerまたはFarm Manager)を使用すると、クラスター内のすべてのホストで設定の変更が自動的に行われます。ただし、アプリケーションホストマネージャを使用しない場合は、ブランド設定ダイアログで指定したものなどのホスト構成設定を、あるコンピュータから別のコンピュータに手動でコピーできます。&lt;/p&gt;
+&lt;h3 id=&#34;構成設定を手動でコピーする方法&#34;&gt;構成設定を手動でコピーする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;必要に応じて、サンプルホストですべての設定を構成します。&lt;/li&gt;
+&lt;li&gt;次のレジストリキーをエクスポートします。&lt;code&gt;HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ターゲットホストで &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;次のファイルをサンプルホストからターゲットホストにコピーします。&lt;br&gt;
+&lt;code&gt;％PROGRAMDATA％\Graphon\GO-Global\HostProperties.xml&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;％PROGRAMDATA％\Graphon\GO-Global\DefaultWorkspaceProperties.xml&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;％PROGRAMDATA％\Graphon\GO-Global\images\*.*&lt;/code&gt;&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;手順2で作成した.regファイルを実行します。&lt;/li&gt;
+&lt;li&gt;ターゲットホストで &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;li&gt;他のホストについて、手順2〜6を繰り返します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalホストパフォーマンスカウンタ</title>
+      <link>/docs/go-global61rc/advancedtopics/go-globalhostperformancecounters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/go-globalhostperformancecounters/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalホストパフォーマンスカウンタをWindowsパフォーマンスモニタに追加して、アクティブセッションの数とホストに接続されているクライアントの数を追跡できます。パフォーマンスカウンタを追加して、relay serverに接続されているホストの数を追跡し、ホスト上で許可されているセッションの最大数を特定することもできます。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストパフォーマンスカウンタを使用すると、管理者はGO-Globalホストへのネットワークアクセスを持つ任意のマシンからホストのアクティビティを監視できます。リモートパフォーマンス監視を機能させるには、リモートレジストリサービス(Regsvc.exe)を有効にする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalホストパフォーマンスカウンタをパフォーマンスモニタに追加する方法&#34;&gt;GO-Globalホストパフォーマンスカウンタをパフォーマンスモニタに追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[スタート | プログラム | 管理ツール | パフォーマンス]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;パフォーマンスモニタ&lt;/strong&gt; をクリックした後 &lt;strong&gt;+&lt;/strong&gt; ボタンをクリックして、カウンタを追加します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[使用可能なカウンタ]&lt;/strong&gt; 一覧から、&lt;strong&gt;GO-Globalホスト&lt;/strong&gt; を探してクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[追加&amp;raquo;]&lt;/strong&gt; ボタンをクリックして、4つのカウンタ(Active Sessions、Client Connections、Maximum Sessions、Server Connections)を追加します。&lt;/li&gt;
+&lt;li&gt;[OK]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-5-1.png&#34; alt=&#34;7-5-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;GO-Global ホストパフォーマンスカウンタには、次のものがあります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Client Connections&lt;/strong&gt; － independent hostsまたはrelay server上のクライアント接続の総数。この値は、dependent hostsでは常に 0 です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server Connections&lt;/strong&gt;－ relay serverに接続しているdependent hostsの総数。この値は、independent hostsまたはdependent hostsでは常に 0 です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Active Sessions&lt;/strong&gt; － independent hostsまたはdependent hostsの場合、これはホスト上で実行されているセッションの数です。relay serverの場合、これは接続されているすべてのdependent hostsでホストされているセッションの総数です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maximum Sessions&lt;/strong&gt; － Admin Consoieの **[Host Options]**ダイアログで設定した &lt;strong&gt;セッションの最大数&lt;/strong&gt;を表示します。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 委任サポートの構成要件</title>
+      <link>/docs/go-global61rc/advancedtopics/configurationrequirementsfordelegationsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/configurationrequirementsfordelegationsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;第4章で説明したように、統合Windows認証を &lt;strong&gt;ホストのキャッシュパスワード&lt;/strong&gt;なしで使用すると、一部のネットワークリソースにアクセスするためにWindows委任が必要になる場合があります。たとえば、委任が有効になっていないと、グループポリシーが正しく適用されないことがあります。&lt;/p&gt;
+&lt;p&gt;委任サポートの構成要件は次のとおりです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;委任には、Kerberos認証プロトコルとActive Directoryドメインが必要です。&lt;/li&gt;
+&lt;li&gt;ドメインネームシステム(DNS)サーバは、サービスロケーション(SRV)リソースレコードをサポートする必要があります。 また、DNSサーバがDNS動的更新をサポートすることをお勧めします。 DNS動的更新プロトコルがないと、管理者はドメインコントローラによって作成され、DNSサーバによって保存されたレコードを手動で構成する必要があります。Windows 2000以降で提供されるDNSサービスは、これら両方の要件をサポートしています。&lt;/li&gt;
+&lt;li&gt;GO-Globalクライアント、GO-Globalホスト、および電子メールやデータベースなどのバックエンドサービスをホストしているコンピュータは、Kerberosをサポートしている必要があります。&lt;/li&gt;
+&lt;li&gt;クライアントのユーザーアカウントは、GO-Global Application Publishing Serviceによる委任をサポートしている必要があります。 &lt;strong&gt;Active Directoryユーザとコンピュータの管理コンソール&lt;/strong&gt; で、ユーザを選択して &lt;strong&gt;[アクション | コンピュータ]&lt;/strong&gt; の順にクリックします。プロパティ &lt;strong&gt;アカウント&lt;/strong&gt; タブをクリックします。[アカウントオプション]リストボックスを下にスクロールして、 &lt;strong&gt;[アカウントが機密で委任できない]&lt;/strong&gt; オプションが無効になっていることを確認します。 &lt;strong&gt;[アカウントは委任に対して信頼されている]&lt;/strong&gt; オプションを有効にします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-1.png&#34; alt=&#34;7-6-1&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2008の[プロパティ]ダイアログに[委任]タブが表示されない場合は、これは仕様によるものです。[委任]タブは、サービスアカウント名(SPN)がユーザアカウントに対して作成された後にのみ表示されます。昇格したコマンドプロンプトで、以下を実行します。Active DirectoryでDOMAIN Accountを検索します。&lt;strong&gt;[委任]&lt;/strong&gt; タブが[プロパティ]ダイアログに表示されます。&lt;strong&gt;[任意のサービスへの委任でこのユーザを信頼する]&lt;/strong&gt; を選択します &lt;strong&gt;(Kerberosのみ)。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;setspn -A HTTP / intranet.domain.local DOMAIN\Account
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;/img/7-6-2.png&#34; alt=&#34;7-6-2&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホストは、ユーザのアカウントを他のコンピュータに委任する権限を持っている必要があります。 &lt;strong&gt;Active Directoryユーザとコンピュータの管理&lt;/strong&gt; コンソールで、コンピュータを選択して**[アクション | プロパティ]** の順にクリックします。プロパティ[委任]タブをクリックします。 **[任意のサービスへの委任に対してコンピュータを信頼する]** を有効にします(Kerberos)。これらの委任権限を適用するには、GO-Global Application Publishing Serviceをローカルシステムアカウントで実行するように構成する必要があります。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-3.png&#34; alt=&#34;7-6-3&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Active Directory内の任意のサービス(Kerberosのみ)への &lt;strong&gt;[コンピュータを委任に対して信頼する]&lt;/strong&gt; を有効にしたら、委任を有効にするためにGO-Globalホストを再起動する必要があります。
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; のService Principle Name(SPN)をActive Directoryに登録できるようにする必要があります。GO-Global Application Publishing Serviceは、サービスが再実行されるたびにこれを試みます。 &lt;strong&gt;setspn.exe&lt;/strong&gt; ユーティリティ(Microsoft Resource Kitに収録。Microsoftからも個別にダウンロード可能)を使用して、SPNが正しく設定されているかどうかを確認できます。下の図は、setspn.exeをGO-Globalホストで実行したときに表示されるコマンドウィンドウです。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-4.png&#34; alt=&#34;7-6-4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;adlab-ggserverを、GO-Globalホストのコンピュータ名に置き換えます。{54094C05-F977-4987-BFC9-E8B90E088973} Globally Unique Identifier(GUID)は、GO-Global Application Publishing Serviceが {54094C05-F977-4987-BFC9-E8B90E088973}/adlab-ggserver.adlab.graphon.com SPNを作成するときに使用します。&lt;/p&gt;
+&lt;p&gt;次のコマンドウィンドウは、GO-Globalホストで &lt;strong&gt;setspn.exe&lt;/strong&gt;を実行したときに表示される出力画面で、ネットワーク設定にエラーがあることを示しています。上述のすべての要件が満たされている場合、この画面は表示されません。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-5.png&#34; alt=&#34;7-6-5&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントの印刷処理</title>
+      <link>/docs/go-global61rc/advancedtopics/clientprinting/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/clientprinting/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、すべてのクライアントでクライアント側の印刷をサポートします。デフォルトでは、GO-Globalは、ユーザがGO-Globalホストにサインインすると、クライアントのデフォルトプリンタ情報を自動的に検出します。これには、デフォルトのプリンタのポートとプリンタドライバが含まれます。プリンタドライバがGO-Globalホストにインストールされていない場合、GO-Globalはドライバを見つけて自動的にインストールしようとします。&lt;/p&gt;
+&lt;p&gt;GO-Globalホスト上でアプリケーションを実行すると、ネットワークプリンタやコンピュータに直接接続されているプリンタ(シリアルポート、パラレルポート、USBポートなど)で印刷できます。&lt;/p&gt;
+&lt;p&gt;管理者は、 &lt;strong&gt;-ac&lt;/strong&gt;および &lt;strong&gt;printerconfig&lt;/strong&gt;のGO-Global起動パラメータを使用して、使用可能なプリンタを制御できます。&lt;/p&gt;
+&lt;p&gt;ショートカットからGO-Globalを実行する場合は、GO-Globalホスト上で実行されているアプリケーションから&amp;quot;all&amp;quot;、&amp;ldquo;none&amp;rdquo;、&amp;ldquo;default&amp;quot;を指定して-acパラメータを使用します。例えば全てのプリンタを使用できるようにするには、ターゲットを次のように指定してショートカットを作成します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;C：¥Program Files¥GraphOn¥GraphOn\AppController\AppController.exe&amp;quot; -ac all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と指定したターゲットでショートカットを作成します。&lt;/p&gt;
+&lt;p&gt;同様に、ハイパーリンクからGO-Globalを実行する場合は、&lt;strong&gt;printerconfig&lt;/strong&gt;パラメータに &amp;ldquo;all&amp;rdquo;、 &amp;ldquo;none&amp;rdquo;、 &amp;ldquo;default&amp;quot;を指定します。たとえば、次のハイパーリンクを使用すると、すべてのプリンタが使用可能になります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?printerconfig=all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;オプションを指定しない場合、GO-Globalは自動的にユーザのデフォルトプリンタのみを設定します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+クライアントプリンタを設定するには、 &lt;strong&gt;印刷スプーラサービス&lt;/strong&gt;がGO-Globalホスト上で実行されている必要があります。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタドライバへのアクセスを指定する</title>
+      <link>/docs/go-global61rc/advancedtopics/designatingaccesstoprinterdrivers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/designatingaccesstoprinterdrivers/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、次のソースからプリンタドライバを入手できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Universalプリンタドライバ:&lt;/strong&gt; GO-Globalには、任意のクライアントプリンタに印刷できる &lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt; が含まれています。このオプションを有効にすると、Universalプリンタドライバを使用してクライアントプリンタを設定できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsプリンタドライバ:&lt;/strong&gt; 既にインストールされているネイティブドライバを使用してプリンタを構成できるようにするには、 &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; オプションを有効にします。GO-GlobalがMicrosoft Windowsに付属のネイティブプリンタドライバを自動的にインストールできるようにするには、自動的にドライバをインストールします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;のみが有効な場合、Universalプリンタドライバのみがプリンタドライバとして使用されます。ネイティブドライバは使用されません。これがデフォルト設定です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; を有効にすると、ホストにインストールされているネイティブプリンタドライバが使用されます。プリンタのネイティブドライバがインストールされていない場合、またはプリンタのネイティブドライバがType4プリンタドライバ(GO-Globalはサポートしていない)である場合、&lt;strong&gt;[Universal Printer Driver option]&lt;/strong&gt; オプションがオンになっていると、そのプリンタはUniversalプリンタドライバを使用するように構成されます。そうしないと、Universalプリンタドライバーオプションがチェックされていない場合、ユーザはプリンタを使用できません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;または &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt;が有効になっていない場合、プリンタは設定されず、クライアントの印刷は無効になります。&lt;/p&gt;
+&lt;p&gt;Universalプリンタドライバは、Windows、Linux、およびMac OS Xでサポートされています。Universalプリンタドライバで印刷する場合、ユーザ(またはグループ)はTempディレクトリにフルアクセスする必要があります。&lt;/p&gt;
+&lt;p&gt;Universalプリンタドライバを有効にすると、 &lt;strong&gt;Preview PDF&lt;/strong&gt;というプリンタが各セッションで構成されます。このプリンタに印刷されたドキュメントは自動的に.pdfファイルに変換され、クライアントコンピュータに表示されます。ユーザは、自由に文書を保存、印刷、電子メールで送信できます。UniversalプリンタドライバのPDF変換機能を使用するには、Adobe ReaderなどのPDFリーダーがクライアントコンピュータに必要です&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt; は標準の印刷プロパティダイアログを使用し、他のドライバが提供するより高度な印刷オプションのいくつかを提供しないかもしれません。
+&lt;/div&gt;
+
+&lt;p&gt;管理者は、 &lt;strong&gt;Host Option&lt;/strong&gt;ダイアログを使用して、プリンタドライバソースへのアクセスを設定します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-8-1.png&#34; alt=&#34;7-8-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;プリンタドライバへのアクセスの指定方法&#34;&gt;プリンタドライバへのアクセスの指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Printers]&lt;/strong&gt; チェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;目的のドライバソースの横にあるチェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;クライアント側の印刷は、デフォルトで有効になっています。管理者は、Admin Consoleの &lt;strong&gt;Host Options&lt;/strong&gt; ダイアログを使用してクライアント側の印刷を無効にします。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントプリンタのサポートの無効方法&#34;&gt;クライアントプリンタのサポートの無効方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、&lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;と &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt;を無効にします。これらのオプションのいずれも選択されていない場合、クライアントの印刷は無効になります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタの構成</title>
+      <link>/docs/go-global61rc/advancedtopics/printerconfiguration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/printerconfiguration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalクライアントがホストに接続すると、 &lt;strong&gt;プロキシプリンタ&lt;/strong&gt;が自動的にホスト上に作成され、クライアントプリンタに印刷するためのインタフェースとして機能します。プロキシプリンタは、GO-Globalセッションで実行されているアプリケーションとクライアントプリンタ間のブリッジとしてGO-Globalがホスト上に設定するプリンタです。プロキシプリンタは自動または手動で設定できます。プロキシプリンタを設定する場合は、ネイティブプリンタドライバが優先されます。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタを設定する場合は、ネイティブプリンタドライバが推奨されます(使用可能で、設定によって使用可能な場合)。ネイティブドライバが利用できないとき、代わりに &lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;が使用できます。&lt;/p&gt;
+&lt;p&gt;管理者がプロキシプリンタを作成するときに使用するプリンタドライバを管理する方法はいくつかあります。クライアントプリンタからの設定は、プロキシプリンタにも反映されます。セッションが終了すると、セッションのプロキシプリンタは削除されます。セッションが切断されても、プロキシプリンタは削除されません。システム上のすべてのプロキシプリンタは、Application Publishing Serviceの起動時に削除されます。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタが設定されている場合、ネイティブプリンタドライバを選択するときの優先順位の階層があります。 &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; オプションがAdmin Consoleで無効になっている場合、この階層は適用されません。&lt;/p&gt;
+&lt;p&gt;ネイティブドライバは次の順序で選択されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;プリンタアプレット&lt;/strong&gt; プリンタアプレットでユーザーが手動でプリンタドライバを選択すると、他のすべてのドライバ選択方法よりも優先されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マップされたプリンタドライバ&lt;/strong&gt; MappedPrinterDrivers.xmlには、各ドライバに使用できるドライバ名のリストが含まれています。このファイルはApplication Publishing Serviceによって生成されますが、管理者が手動で編集することもできます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントドライバ名&lt;/strong&gt; クライアントにインストールされているドライバの正確な名前のドライバが、プロキシプリンタの設定に使用されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタアプレット</title>
+      <link>/docs/go-global61rc/advancedtopics/printersapplet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/printersapplet/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのプリンタアプレットを使うと、プリンタの追加と削除、プリンタのプロパティの編集、デフォルトプリンタの設定、プリンタドライバの選択、テストページの印刷ができます。プリンタアプレットはプログラムウィンドウからアクセスできます。構成されているすべてのクライアントプリンタと、ユーザがアクセスできるすべてのホストプリンタが一覧表示されます。プリンタのリストは、-acパラメータとprinterconfigパラメータだけでなく、Admin Consoleのプリンタドライバ設定によっても異なります。&lt;/p&gt;
+&lt;p&gt;プリンタアプレットのアイコンについては後述します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-10-1.png&#34; alt=&#34;7-10-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが次回GO-Globalにサインインしたときに、プリンタアプレットで行った設定は保存されます。これらの設定はコマンドラインオプションよりも優先されます。プリンタアプレットで行ったプリンタの変更はすぐに有効になります。ユーザはセッションを再開する必要はありません。&lt;/p&gt;
+&lt;h2 id=&#34;プリンタの追加と削除&#34;&gt;プリンタの追加と削除&lt;/h2&gt;
+&lt;p&gt;プリンタは、プリンタアプレットを介して追加または削除されても、クライアントコンピュータに対して追加または削除されず、GO-Globalで使用するように設定されているプリンタのみが判断されます。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントプリンタを追加する方法&#34;&gt;クライアントプリンタを追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add Printer&lt;/strong&gt; ダイアログから目的のプリンタを選択し、 &lt;strong&gt;Add&lt;/strong&gt; をクリックします。これにより、設定済みプリンタのリストにそのプリンタが追加され、使用可能になります。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プリンタがプリンタアプレットから追加されると、-acコマンドラインオプションやprinterconfigパラメータに関係なく、起動時にプリンタが設定されます。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;プリンタを削除する方法&#34;&gt;プリンタを削除する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Remove&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;リストからプリンタを削除すると、次にユーザがGO-Globalセッションを開始したときにそのプリンタが設定されなくなります。&lt;strong&gt;[追加]&lt;/strong&gt; ボタンをクリックしてリストから選択することで、プリンタをいつでもリストに追加できます。&lt;/p&gt;
+&lt;h2 id=&#34;デフォルトプリンタの設定&#34;&gt;デフォルトプリンタの設定&lt;/h2&gt;
+&lt;p&gt;ユーザは、プリンタアプレットでデフォルトのプリンタを指定できます。デフォルトプリンタは、黒い丸とプリンタ上のチェックマークで示されます。サーバプリンタを含むすべてのプリンタをデフォルトとして指定できます。&lt;/p&gt;
+&lt;h3 id=&#34;デフォルトプリンタを設定する方法&#34;&gt;デフォルトプリンタを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set Default&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;プリンタ設定の編集&#34;&gt;プリンタ設定の編集&lt;/h2&gt;
+&lt;p&gt;プリンタアプレットを通じて、ユーザはレイアウトの向きや用紙サイズなどのプリンタ設定を編集できます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタ設定を編集する方法&#34;&gt;プリンタ設定を編集する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Edit]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;必要に応じてプロパティを編集し、&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プリンタ設定は、ユーザのユーザプロファイルに保存されます。relay serverまたはロードバランサが使用されているマルチホスト環境では、ユーザのプリンタ設定がクラスタ内のすべてのホスト間で確実に複製されるように、移動プロファイルを有効にする必要があります。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;テストページの印刷&#34;&gt;テストページの印刷&lt;/h2&gt;
+&lt;p&gt;ユーザは、プリンタアプレットからテストページを印刷して、プリンタが正しく設定されていることを確認し、プリンタがグラフィックとテキストを正しく印刷しているかどうかを確認できます。テストページには、プリンタ名、モデル、ドライバソフトウェアのバージョンなどの情報も表示されます。これは、プリンタの問題のトラブルシューティングに役立つ場合があります。&lt;/p&gt;
+&lt;h3 id=&#34;テストページを印刷する方法&#34;&gt;テストページを印刷する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Page&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;プリンタドライバの変更&#34;&gt;プリンタドライバの変更&lt;/h2&gt;
+&lt;p&gt;プリンタアプレットを通じて、ユーザは自分のプリンタ用に異なるドライバを選択できます。これは、ドライバが正しく機能していない場合や、ユーザがネイティブドライバとユニバーサルプリンタドライバを切り替えたい場合に便利です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Driver]&lt;/strong&gt; ボタンをクリックして &lt;strong&gt;[Select Printer Driver]&lt;/strong&gt; ダイアログを開き、GO-Globalホストマシンに現在インストールされているドライバを一覧表示します。&lt;/li&gt;
+&lt;li&gt;新しいドライバを選択して &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。これで、プリンタは新しいドライバで設定されました。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UniversalプリンタドライバのみがAdmin Consoleでドライバソースとして指定されている場合、ユーザはドライバを変更できません。ユーザはGO-GlobalのPreview PDFプリンタまたはサーバベースのプリンタのドライバを変更できません。&lt;/p&gt;
+&lt;h2 id=&#34;プリンタ設定のリセット&#34;&gt;プリンタ設定のリセット&lt;/h2&gt;
+&lt;p&gt;ユーザはいつでも、設定やプリンタ設定など、プリンタデータをデフォルト設定にリセットできます。これは、プリンタが正しく設定されていない場合や、ユーザにプリンタの問題が発生している場合に便利です。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタの設定をリセットする方法&#34;&gt;プリンタの設定をリセットする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset Printers]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;プリンタ設定をリセットすると、セッションからすべてのプロキシプリンタが削除されます。クライアントプリンタに再度印刷するには、セッションを再開する必要があります。これにより、デフォルトプリンタが元のデフォルト設定にリセットされます。&lt;/p&gt;
+&lt;h2 id=&#34;プリンタドライブマッピング&#34;&gt;プリンタドライブマッピング&lt;/h2&gt;
+&lt;p&gt;管理者は、 &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を編集してプリンタドライバをマップできます。ほとんどのGO-Globalの構築では、管理者はこのファイルを編集する必要はありません。これは、ホストのドライバ名がクライアントの名前と完全に一致しない場合、または管理者がネイティブドライバを上書きしてクライアントに別のプリンタドライバまたはUniversalプリンタドライバを使用させたい場合に使用するドライバを指定するために使用されます。&lt;/p&gt;
+&lt;h3 id=&#34;別のプリンタドライバを指定する方法&#34;&gt;別のプリンタドライバを指定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;値フィールドからドライバ名を削除します。上記の例では、HP LaserJet 2100 Series PSを削除し、目的のプリンタドライバと交換します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。この変更は、次にユーザがGO-Globalセッションを開始したときに有効になります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上記の例では&lt;property id=&#34;HP LaserJet 2100 Series PS&#34; type=&#34;STRING&#34;&gt;がクライアントで使用されているドライバです。&lt;/p&gt;
+&lt;p&gt;&lt;value&gt;HP LaserJet 2100 Series PS&lt;/value&gt;は、ホスト上でマッピングされるべきドライバです。&lt;/p&gt;
+&lt;p&gt;マッピングプリンタドライバを使用して、プリンタにUniversalプリンタドライバを使用させることもできます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタにuniversalプリンタドライバの使用を強制する方法&#34;&gt;プリンタにUniversalプリンタドライバの使用を強制する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;値フィールドからドライバ名を削除します。上記の例では、HP LaserJet 2100 Series PSを削除し、それをUniversalリモートプリンタに置き換えます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;Universal Remote Printer&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;次回ユーザがホストに接続したときには、Universalプリンタドライバを使用してプリンタが設定されます。&lt;/p&gt;
+&lt;p&gt;複数のドライバをセミコロンで区切ることによって、&amp;lt;値&amp;gt;フィールドに指定できます。&lt;/p&gt;
+&lt;h3 id=&#34;追加のドライバを指定する方法&#34;&gt;追加のドライバを指定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;追加のドライバを指定してください。たとえば、HP LaserJet 2100 Series PSをリストに追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2200 Series PS;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;管理者は、無制限の数のドライバ名を値に追加できます。GO-Globalは、指定された順序でドライバを使用してクライアントプリンタを設定しようとします。セミコロンで区切られたドライバは、プロキシプリンタをインストールするときに使用されるドライバの優先順位を指定します。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタドライバマッピングを削除する方法&#34;&gt;プリンタドライバマッピングを削除する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;テキストエディタで &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を開き、変更された行全体を削除します。たとえば、次のように削除します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; ファイルを削除して、以前の変更を削除することができます。ユーザがホストにサインインすると、ファイルが再作成されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;クライアントプリンタは、クライアントのセッション中に一時的にGO-Globalホストにインストールされます。プリンタドライバは恒久的にインストールされています。管理者は、GO-GlobalホストのPrintersフォルダにあるプリンタとドライバのリストを表示できます。&lt;/p&gt;
+&lt;p&gt;すべての新規ユーザにデフォルトのプリンタを追加するには、次の記事を参照してください。&lt;/p&gt;
+&lt;p&gt;[https://support.microsoft.com/en-us/kb/252388#%2Fen-us%2Fkb%2F252388]&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;プリンタ設定をファイルへエクスポート&#34;&gt;プリンタ設定をファイルへエクスポート&lt;/h2&gt;
+&lt;p&gt;ほとんどのプリンタは、WindowsのDEVMODE構造体に設定を保存しています。GO-Globalは、ユーザがサインアウトしたときに各プリンタのDEVMODE構造体の内容を保存し、ユーザがサインインしてプリンタが再作成されたときにこれらの設定を復元します。&lt;/p&gt;
+&lt;p&gt;管理者はエントリ &lt;strong&gt;&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;&lt;/strong&gt; を &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; に追加できるため、ユーザがプリンタの設定を保存すると、その設定はWindowsのDEVMODE構造体ではなくファイルに書き込まれます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタ設定をファイルへエクスポートする方法&#34;&gt;プリンタ設定をファイルへエクスポートする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を見つけます。&lt;/li&gt;
+&lt;li&gt;ファイルをテキストエディタで開き、クライアントプリンタドライバの名前を検索します。次に例を示します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;alternate_driver_name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt; &amp;lt;/alternate_driver_name&amp;gt;
+&amp;lt;/driver&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;次のように、エントリ &amp;lt;export_printer_settings&amp;gt; true &amp;lt;/export_printer_settings&amp;gt;を追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;alternate_driver_name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;/alternate_driver_name&amp;gt;
+&amp;lt;/driver&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;プリンタマッピングのデフォルトプリンタ設定ファイルの作成&#34;&gt;プリンタマッピングのデフォルトプリンタ設定ファイルの作成&lt;/h2&gt;
+&lt;p&gt;管理者は、マップされたプリンタのデフォルトプリンタ設定を含むファイルを作成できます。エントリ &lt;strong&gt;&amp;lt;default_printer_settings_file&amp;gt;&lt;/strong&gt; を追加して &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; にプリンタ設定ファイルを指定すると、 &lt;strong&gt;&amp;lt;export_printer_settings&amp;gt;&lt;/strong&gt; がfalseに設定されているかどうかにかかわらず、管理者がユーザの個別ファイルが存在しない場合にプリンタのデフォルト設定を指定できます。ユーザはまだプリンタ設定を変更していません。プリンタ設定を設定したら、設定をファイルにエクスポートしてから、デフォルトのプリンタ設定ファイルを &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; に追加します。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタの環境設定を設定する方法&#34;&gt;プリンタの環境設定を設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;コントロールパネルから、 &lt;strong&gt;デバイスとプリンタ&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;目的のプリンタを右クリックして &lt;strong&gt;[印刷設定]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;プリンタの設定を編集して、 &lt;strong&gt;[適用]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックして &lt;strong&gt;[印刷設定]&lt;/strong&gt; ダイアログを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-10-2.png&#34; alt=&#34;7-10-2&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新しい印刷設定をファイルにエクスポートする方法&#34;&gt;新しい印刷設定をファイルにエクスポートする方法&lt;/h3&gt;
+&lt;p&gt;管理者としてコマンドプロンプトを実行し、次のコマンドを入力します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rundll32.exe printui.dll PrintUIEntry /Ss /n &amp;quot;printer name&amp;quot; /a &amp;quot;full path to settings file&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;例:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rundll32.exe printui.dll PrintUIEntry /Ss /n &amp;quot;HP Officejet Pro 8600&amp;quot; /a
+&amp;quot;C:\printersettings\Officejet.dat&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;mappedprinterdriversxmlにデフォルトのプリンタ設定ファイルを作成する方法&#34;&gt;MappedPrinterDrivers.xmlにデフォルトのプリンタ設定ファイルを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を見つけます。&lt;/li&gt;
+&lt;li&gt;以下を追加してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;printer driver name&amp;quot;&amp;gt;
+&amp;lt;alternate_driver name=&amp;quot;alternate driver name&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;default_printer_settings_file&amp;gt;&amp;quot;full path to settings file” &amp;lt;/default_printer_settings_file&amp;gt;
+&amp;lt;/alternate_driver&amp;gt;
+&amp;lt;/driver&amp;gt;
+For example:
+&amp;lt;driver name=&amp;quot;HP Officejet Pro 8600&amp;quot;&amp;gt;
+&amp;lt;alternate_driver name=&amp;quot;OfficeJet Driver 1&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;default_printer_settings_file&amp;gt;&amp;quot;C:\printersettings\Officejet.dat.&amp;quot;&amp;lt;/default_printer_settings_file&amp;gt;
+&amp;lt;/&amp;lt;alternate_driver&amp;gt;
+&amp;lt;/driver&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存してください。この変更は、次にユーザがGO-Globalセッションを開始したときに有効になります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;クライアントプリンタ名のカスタマイズ&#34;&gt;クライアントプリンタ名のカスタマイズ&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、クライアントマシンに設定されている各プリンタについて、ホストにプリンタをインストールします。これらのプリンタはプロキシプリンタと呼ばれ、GO-Global経由で印刷するときにユーザに表示されるプリンタです。複数のユーザがGO-Globalホストに接続するので、これらのプリンタは、ユーザが自分のプリンタだけを見ることができるようにフィルタリングする必要があります。これには、各プリンタに一意の識別子を割り当てる必要があります。&lt;/p&gt;
+&lt;p&gt;レジストリを通じて、管理者はこれらのプロキシプリンタ名の形式を指定し、ユーザ名、クライアントコンピュータのIPアドレス、クライアントマシン名などの情報を含めることができます。 &lt;strong&gt;PrinterNameFormat&lt;/strong&gt; レジストリキーは、GO-Globalセッションの開始後に作成されます。&lt;/p&gt;
+&lt;p&gt;管理者は、次のトークンからプリンタ文字列名のサフィックスを作成できます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;トークン&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%U&lt;/td&gt;
+&lt;td&gt;ユーザ名&lt;/td&gt;
+&lt;td&gt;Wilson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%I&lt;/td&gt;
+&lt;td&gt;クライアントの IP アドレス&lt;/td&gt;
+&lt;td&gt;192.168.100.147&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%M&lt;/td&gt;
+&lt;td&gt;クライアントの MAC アドレス&lt;/td&gt;
+&lt;td&gt;001122334455&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%C&lt;/td&gt;
+&lt;td&gt;クライアントのマシン名&lt;/td&gt;
+&lt;td&gt;HRWorkstation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%S&lt;/td&gt;
+&lt;td&gt;サーバのマシン名&lt;/td&gt;
+&lt;td&gt;Server1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;クライアントプリンタ名のカスタマイズ方法&#34;&gt;クライアントプリンタ名のカスタマイズ方法&lt;/h3&gt;
+&lt;p&gt;1.レジストリエディタ(regedit.exe)を実行します。
+2. レジストリエディタで、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。
+3. &lt;strong&gt;PrinterNameFormat&lt;/strong&gt;キーを見つけます。&lt;code&gt;[HKLM\Software\GraphOn\GO-Global\AppServer\PrinterNameFormat]&lt;/code&gt;
+4. **[PrinterNameFormat]**を右クリックして、 &lt;strong&gt;[Modify]&lt;/strong&gt; を選択します。
+5. &lt;strong&gt;[値のデータ]&lt;/strong&gt; フィールドに、1つまたは複数のクライアントプリンタカスタマイズトークンを入力します。
+6. レジストリエディタを終了します。&lt;/p&gt;
+&lt;p&gt;PrinterNameFormatキーは、デフォルトで(from ％C)に設定されています。上記の例を使用すると、プリンタ名は次のようになります。PrinterName(from HRWorkstation)&lt;/p&gt;
+&lt;p&gt;PrinterNameFormatストリング内の％以外の特殊文字はトークンではないため、文字通りに使用されます。&lt;/p&gt;
+&lt;p&gt;許可されていない12文字があります。! ,  = / : * ? &amp;quot; &amp;lt; &amp;gt; and |.これらの文字のいずれかが文字列で使用されている場合、それらはハイフンに置き換えられます。&lt;/p&gt;
+&lt;h2 id=&#34;印刷可能領域を調整する&#34;&gt;印刷可能領域を調整する&lt;/h2&gt;
+&lt;p&gt;場合によっては、GO-Global Universal Printer Driver(UPD)を使用して印刷するアプリケーションでは、ページの端の近くにあるドキュメントの一部が印刷されない場合、ドキュメントの一部が切り取られることがあります。この問題に対処する方法は2つあります。代替の.PPDファイルを使用してドキュメントの印刷可能領域を定義する方法と、印刷ジョブの拡大縮小を有効にする方法です。&lt;/p&gt;
+&lt;p&gt;1番目の方法は、代替.PPDファイルをインストールする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;代替のppdファイルをインストールする方法&#34;&gt;代替の.PPDファイルをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;以下から &lt;strong&gt;UniversalRemotePrinter.ppd&lt;/strong&gt; をダウンロードします。&lt;code&gt;ftp.graphon.com/private/gg6/6.0.0.xxxxx/UniversalRemotePrinter.ppd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniversalRemotePrinter.ppd&lt;/strong&gt; を次のフォルダにコピーします。&lt;code&gt;C:\Windows\System32\spool\drivers\x64\3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniversalRemotePrinter.bpd&lt;/strong&gt; が存在する場合は削除します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UniversalRemotePrinter.ppdファイルは、Universalプリンタドライバのドライバ設定を定義します。このファイルのデフォルトバージョンでは、ドライバが印刷できる領域はページ全体です。これは、テキストまたはイメージをページの端に印刷できることを意味します。ほとんどのプリンタは物理的にこれに対応していません。代替.PPDファイルは、定義された用紙サイズに対して1/4インチ(6.35 mm)の余白を定義します。これにより、アプリケーションは印刷可能領域を予測し、それによってクリッピングすることなく印刷ジョブをレイアウトすることができます。&lt;/p&gt;
+&lt;p&gt;2番目の方法は、 &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルで &lt;strong&gt;EnablePrintOptions&lt;/strong&gt; プロパティをtrueに設定して、印刷ジョブの拡大縮小を有効にする必要があります。または、ホストがアップグレードされている場合は、 &lt;strong&gt;HostPropertyDefinitions.xml&lt;/strong&gt; を編集します。&lt;/p&gt;
+&lt;h3 id=&#34;印刷ジョブの拡大縮小を有効にする方法&#34;&gt;印刷ジョブの拡大縮小を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;テキストエディタで&lt;code&gt;%PROGRAMDATA%\GraphOn\GO-Global\HostProperties.xml&lt;/code&gt;を開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EnablePrintOptions&lt;/strong&gt; プロパティを見つけて、それに関連付けられた値を &amp;ldquo;true&amp;quot;に変更します。&lt;/li&gt;
+&lt;li&gt;PrintOptionsプロパティの値が &amp;ldquo;-printermargins -xoffset 50 -yoffset 30&amp;quot;であることを確認してください。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HostProperties.xml&lt;/strong&gt; を保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;印刷ジョブのスケーリングを有効にすると、印刷可能領域内に収まらない印刷ジョブが縮小され、画像またはテキストが定義された用紙サイズに収まるようになります。スケーリング操作は、GO-Globalクライアントアプリケーションで実行されます。これは、Universalプリンタドライバを使用するように構成されたプリンタにのみ影響します。PDFのプレビュープリンタには影響しません。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントクリップボード</title>
+      <link>/docs/go-global61rc/advancedtopics/clientclipboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/clientclipboard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、クライアントとホストベースのアプリケーションがクリップボードを使って情報を交換することを可能にします。ユーザは、クライアント上で実行されているアプリケーションから情報をカットアンドコピーして、GO-Globalホスト上で実行されているアプリケーションに貼り付けることができます。クリップボードのサポートはデフォルトで無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントクリップボードを有効にする方法&#34;&gt;クライアントクリップボードを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Clipboard]&lt;/strong&gt; チェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;/p&gt;
+&lt;p&gt;KGTN 2012052903&lt;br&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントサウンド</title>
+      <link>/docs/go-global61rc/advancedtopics/clientsound/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/clientsound/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windows 7以降では、GO-Globalホストは、GO-Globalセッションごとにプライベートミキサーを作成する仮想オーディオデバイスをサポートしています。これらのコンポーネントは、GO-Globalセッションで実行されているアプリケーションによって再生されるオーディオをミックスし、それをOgg Vorbisフォーマットでエンコードします。ホストはOgg Vorbisデータをクライアントにストリーミングし、クライアントはオーディオを再生します。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントのサウンドのサポートを有効にする方法&#34;&gt;クライアントのサウンドのサポートを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Sound]&lt;/strong&gt; チェック ボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;サウンドカードをホストに取り付ける必要があります。スピーカはホストには必要ありません。クライアントサウンドは、WindowsとMac OS X Appでサポートされています。クライアントマシンにはサウンドカードとスピーカが必要です。オーディオサポートはデフォルトで無効になっています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントのシリアルポートとパラレルポート</title>
+      <link>/docs/go-global61rc/advancedtopics/clientserialandparallelports/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/clientserialandparallelports/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、ホスト上で実行されているアプリケーションがクライアントマシンのシリアルポートとパラレルポートにアクセスすることを可能にします。シリアルポートとパラレルポートはデフォルトで無効になっています。クライアントのシリアルポートとパラレルポートへのアクセスは、Windowsでのみサポートされています。&lt;/p&gt;
+&lt;h3 id=&#34;シリアルポートとパラレルポートを有効にする方法&#34;&gt;シリアルポートとパラレルポートを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; のリストから目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[シリアルとパラレルポート]&lt;/strong&gt; チェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;クライアントシリアルポートとパラレルポートでは、セッションプロセスにGO-Globalライブラリをロードする必要があります。これは、プロセスの起動に影響を与えたり、一部のプロセスをGO-Globalと互換性を持たせたり、中断/再開操作中に致命的な結果を招く可能性があります。高度なセッションプロセス設定については、このガイドの高度なセッションプロセス設定を参照してください。&lt;/p&gt;
+&lt;p&gt;※高度なセッションプロセス設定については推奨設定はございません。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントのファイルアクセス</title>
+      <link>/docs/go-global61rc/advancedtopics/clientfileaccess/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/clientfileaccess/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalでは、ユーザはクライアントコンピュータに保存されているファイルにアクセスして、それをローカル環境内に保存できます。アプリケーションの &lt;strong&gt;[Open]&lt;/strong&gt; および &lt;strong&gt;[Save as]&lt;/strong&gt; ダイアログボックス内にクライアントドライブが一覧表示されます。この「Client」プレフィックスが付いています(例:Client C (K:)、Client D (L:))&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-14-1.png&#34; alt=&#34;7-14-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;これらのダイアログボックスでは、クライアントドライブとホストドライブの両方の一覧が表示されます。デフォルトでクライアントドライブのサポートは無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントドライブのサポートを有効にする方法&#34;&gt;クライアントドライブのサポートを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Drives]&lt;/strong&gt; チェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-Globalは、ユーザがUSBドライブにアクセスできます。フロッピーディスク、CD-ROM、DVD-ROMなどのリムーバブルドライブはクライアントドライブとしてサポートされていません。&lt;/p&gt;
+&lt;h2 id=&#34;クライアントドライブの再マッピング&#34;&gt;クライアントドライブの再マッピング&lt;/h2&gt;
+&lt;p&gt;クライアントの[Drives]機能を有効にしてGO-Globalセッションでアプリケーションを実行する場合、GO-Globalで、ドライブ文字とクライアントおよびホストコンピュータのドライブ間で1対1のマッピングが存在することを確認する必要があります。クライアントのドライブとホストのドライブに同じドライブ文字が割り当てられている場合、GO-Globalでドライブのどちらかに新しいドライブ文字を割り当てる必要があります。クライアントドライブは、指定したドライブ文字から順番にリストするか、指定した値でドライブ文字を増分する方法で再マッピングできます。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントドライブに特定のドライブ文字から順番にドライブ文字を割り当てる方法&#34;&gt;クライアントドライブに特定のドライブ文字から順番にドライブ文字を割り当てる方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;クライアントの &lt;strong&gt;[Drives]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Assign consecutive letters starting at:___]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;編集フィールドに、シーケンスの始まりのドライブ文字を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;たとえば、クライアントコンピュータにA、C、D、およびHのドライブがあり、開始点がドライブ文字Mに設定されている場合、クライアントのドライブはそれぞれM、N、O、およびPに再マップされます。ドライブにすでに割り当てられている場合は、次に使用可能な文字が使用されます。この機能はデフォルトで無効になっています。有効にすると、デフォルトのドライブ名はMです。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントのドライブ文字を固定値で増分する方法&#34;&gt;クライアントのドライブ文字を固定値で増分する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Console で、[Tools | Server Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;クライアントの &lt;strong&gt;[Drives]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Increment by:&lt;/strong&gt; &lt;strong&gt;___&lt;/strong&gt; &lt;strong&gt;letters]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;編集フィールドに、オフセットとなる 1 以上の数字を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;たとえば、クライアントコンピュータに上の例と同じドライブ(A、C、D、H)があり、オフセットを12に指定すると、クライアントの各ドライブには12文字後ろの文字が割り当てられます。ドライブはそれぞれM、O、P、Tに再マッピングされます。 この設定のデフォルト値は12です。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-14-2.png&#34; alt=&#34;7-14-2&#34;&gt;&lt;/p&gt;
+&lt;h2 id=&#34;クライアントドライブを非表示にする&#34;&gt;クライアントドライブを非表示にする&lt;/h2&gt;
+&lt;p&gt;システム管理者は、Admin Consoleを使用して、クライアントのオペレーティングシステムドライブ、フロッピードライブ、CD-ROMドライブなどのクライアントドライブを非表示にして、ユーザがGO-Globalからアクセスできないようにすることができます。&lt;/p&gt;
+&lt;h3 id=&#34;1-つ以上のサーバドライブを非表示にする方法&#34;&gt;1 つ以上のサーバドライブを非表示にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;クライアントの &lt;strong&gt;[Drives]&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Hide]&lt;/strong&gt; ボックスに、非表示にするクライアントドライブ文字を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;デフォルトでは、すべてのクライアントドライブがマッピングされます。[Hide]ボックスでは、ドライブを任意の順序で指定できます。Linux Client または Mac OS X Clientでクライアントドライブを非表示にする場合は、ルートドライブとフロッピードライブに加えて、ユーザのホームディレクトリが次のようにマッピングされます。&lt;br&gt;
+例:)&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;クライアントのフロッピードライブ(M:)&lt;/li&gt;
+&lt;li&gt;クライアントのホームドライブ(N:)&lt;/li&gt;
+&lt;li&gt;クライアントのルートドライブ(O:)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&#34;サーバドライブの非表示&#34;&gt;サーバドライブの非表示&lt;/h2&gt;
+&lt;p&gt;Microsoftのグループポリシーオブジェクトを使用すると、特定のホストドライブを隠すことができます。手順については、http://support.microsoft.com/kb/231289を参照してください。ホストドライブを非表示にするには、Admin Consoleの &lt;strong&gt;[Server Options]&lt;/strong&gt; ダイアログで &lt;strong&gt;[Apply Group Policy]&lt;/strong&gt; オプションを有効にする必要があります。 &lt;strong&gt;[Session Startup]&lt;/strong&gt; タブをクリックし、 &lt;strong&gt;[Apply Group Policy]&lt;/strong&gt; をクリックします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: マッピングされたドライブ</title>
+      <link>/docs/go-global61rc/advancedtopics/mappeddrives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/mappeddrives/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ドライブマッピングは、各GO-Globalセッション内でプライベートです。たとえば、GO-Globalホストで2つのセッションが実行されている場合、ドライブ文字(たとえばH)をセッション1の1つのネットワーク共有(例:\servername\session1)にマッピングし、同じドライブ文字を割り当てることができます。セッション2で別のネットワーク共有にマッピングすることができます(例:\servername\session2)。&lt;/p&gt;
+&lt;p&gt;ログオンスクリプトを使用してドライブ文字のマッピングを定義します。この機能を提供するアプリケーションを公開することによって、ユーザに独自のドライブマッピングの定義を許可することもできます。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストの対話型セッション内で定義されたドライブマッピングは、リモートユーザには使用できません。すべてのユーザがドライブマッピングを介して同じネットワーク共有へのアクセスを必要とする場合、ドライブマッピングは通常ログオンスクリプトで定義する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: マルチモニタのサポート</title>
+      <link>/docs/go-global61rc/advancedtopics/multi-monitorsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/multi-monitorsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Globalクライアントは、Windows上でマルチモニタをサポートします。マルチモニタのサポートは、デフォルトで有効になっていますが、手動で無効にすることもできます。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalショートカットを使用してマルチモニタを無効にする方法&#34;&gt;GO-Globalショートカットを使用してマルチモニタを無効にする方法&lt;/h3&gt;
+&lt;p&gt;AppControllerショートカットに引数-mm 0を追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe -h server1 -mm 0
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;appcontrollerショートカットを使用してマルチモニタを有効にする方法&#34;&gt;AppControllerショートカットを使用してマルチモニタを有効にする方法&lt;/h3&gt;
+&lt;p&gt;AppControllerショートカットに引数-mm 1を追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe -h server1 -mm 1
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;go-globalハイパーリンク経由でマルチモニタを無効にする方法&#34;&gt;GO-Globalハイパーリンク経由でマルチモニタを無効にする方法&lt;/h3&gt;
+&lt;p&gt;GO-Globalハイパーリンクでマルチモニタパラメータをfalseに設定します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?multimonitor=false 
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;go-globalハイパーリンク経由でマルチモニタを有効にする方法&#34;&gt;GO-Globalハイパーリンク経由でマルチモニタを有効にする方法&lt;/h3&gt;
+&lt;p&gt;GO-Globalハイパーリンクでマルチモニタパラメータをtrueに設定します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?multimonitor=true 
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalセッションの最大色数の指定</title>
+      <link>/docs/go-global61rc/advancedtopics/specifyingthemaximumcolordepthforgo-globalsessions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/specifyingthemaximumcolordepthforgo-globalsessions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalセッションの色深度(または色品質)は、アプリケーションによっては画像の品質に影響を与える可能性があります。GO-Globalセッションは、最大値までクライアントシステムの色深度で実行されます。デフォルトでは、最大深度は1ピクセルあたり16ビットに設定されています。&lt;/p&gt;
+&lt;p&gt;GO-Globalセッションの最大色数を増減するには、ショートカットからGO-Globalを実行するときに–mxオプションを使用します。最大色数は、次のように-mx 32、-mx 24、-mx 16、-mx 8と指定できます。GO-Globalセッションは、-mxオプションの最小値とクライアントシステムの色数を使用します。たとえば、GO-Globalセッションを1ピクセルあたり32ビットで実行するには、-mx 32をコマンドラインに追加し、クライアントシステムを1ピクセルあたり32ビットで実行する必要があります。&lt;/p&gt;
+&lt;p&gt;例:&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -mx 32&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-17-1.png&#34; alt=&#34;7-17-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ハイパーリンクからGO-Globalを実行するときは、&lt;strong&gt;maxbpp&lt;/strong&gt; パラメータを8、16、24、32の値で使用します。次の例では、ハイパーリンクは最大色数を1ピクセルあたり24ビットに設定します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[http://hostname/goglobal/logon.html?maxbpp=24]&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 画像圧縮を無効にする</title>
+      <link>/docs/go-global61rc/advancedtopics/disablingimagecompression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/disablingimagecompression/</guid>
+      <description>
+        
+        
+        &lt;p&gt;デフォルトでは、GO-Globalはすべての画像を1画像あたり最大256色に圧縮します。その結果、複雑な画像は鮮明さを失う可能性があります。GO-Globalクライアントで画像圧縮を無効にするには、次のようにショートカットに-qt 0を追加します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -qt 0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;ハイパーリンクからGO-Globalを実行する場合は、quantizeパラメータをfalseに設定してイメージ圧縮を無効にします&lt;/p&gt;
+&lt;p&gt;例:&lt;strong&gt;&lt;code&gt;[http://hostname/goglobal/logon.html?quantize=false]&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;画像圧縮の機能を無効にすると、GO-Globalホストから送信されるデータの帯域幅が大幅に増加する可能性があるので注意して下さい。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: fontContrastプロパティを変更する</title>
+      <link>/docs/go-global61rc/advancedtopics/modifyingthefontcontrastproperty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/modifyingthefontcontrastproperty/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;fontContrast&lt;/strong&gt; プロパティの値を変更することで、フォントとテキストの明瞭さを調整できます。 &lt;strong&gt;fontContrast&lt;/strong&gt; の最大値は2200、最小値は1000です。このプロパティはデフォルトで1400に設定されています。&lt;/p&gt;
+&lt;h3 id=&#34;fontcontrastプロパティを変更する方法&#34;&gt;fontContrastプロパティを変更する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GOGlobal&lt;/code&gt;ディレクトリで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/property&amp;gt;
+&amp;lt;property type=&amp;quot;UINT32&amp;quot; group=&amp;quot;Miscellaneous&amp;quot; id=&amp;quot;fontContrast&amp;quot;&amp;gt;
+&amp;lt;value&amp;gt;1400&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;1400を希望の値に置き換えます。&lt;/li&gt;
+&lt;li&gt;編集した.xmlファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントコンピュータの名前を取得する</title>
+      <link>/docs/go-global61rc/advancedtopics/obtainingthenameoftheclientcomputer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/obtainingthenameoftheclientcomputer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストではなくクライアントのコンピュータ名を必要とするアプリケーションの場合、管理者はその実行可能ファイルの名前をレジストリキー&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\Compatibility\GetComputerName&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;の下にDWORDとして追加し、データ値 &lt;strong&gt;0x00000001&lt;/strong&gt;データ値0x00000001で追加できます。このレジストリキーの下にリストされているデータ値が &lt;strong&gt;0x00000001&lt;/strong&gt;のいずれかの名前に一致する実行可能ファイルがWindows &lt;strong&gt;GetComputerName&lt;/strong&gt; APIを呼び出すと、指定されたバッファにホスト名ではなくクライアントコンピュータ名が書き込まれます。&lt;/p&gt;
+&lt;p&gt;さらに、公開アプリケーションの実行環境の一部として存在する &lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt;という名前の環境変数があります。&lt;/p&gt;
+&lt;p&gt;この環境変数には、クライアントのコンピュータ名が含まれています。 &lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;環境変数は、コンピュータ名ではなくクライアントコンピュータのIPアドレスを含むことを除いて、同じ機能を実行します。標準のWindows環境変数 &lt;strong&gt;COMPUTERNAME&lt;/strong&gt;は変更されていません。その値はホストのコンピュータ名です。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントコンピュータ名の取得方法&#34;&gt;クライアントコンピュータ名の取得方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ (regedit.exe) を実行します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタ で、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。&lt;/li&gt;
+&lt;li&gt;次の &lt;strong&gt;GetComputerName&lt;/strong&gt; キーを検索します。 [SOFTWARE\GraphOn\GO-Global\Compatibility\GetComputerName]&lt;/li&gt;
+&lt;li&gt;この実行可能ファイルの &lt;strong&gt;DWORD&lt;/strong&gt;エントリを作成します (例 : pw.exe)。&lt;/li&gt;
+&lt;li&gt;新しいエントリの値を &lt;strong&gt;0x00000001&lt;/strong&gt;に設定します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを終了します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;さらに、公開されたアプリケーションの実行環境の一部として存在する &lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt; という名前の環境変数があります。この環境変数には、クライアントのコンピュータ名が含まれています。&lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;、&lt;strong&gt;CLIENTNETWORKADDRESS&lt;/strong&gt;環境変数は、同様の機能を実行します。前者にはクライアントコンピュータのローカルIPアドレスが含まれ、後者にはクライアントコンピュータのパブリックIPアドレスが含まれます&lt;/p&gt;
+&lt;p&gt;クライアントがセッションに再接続すると、&lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt;、&lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;、&lt;strong&gt;CLIENTNETWORKADDRESS&lt;/strong&gt; 環境変数は、環境変数を取得するためのAPI呼び出しを行うと、既存の各プロセスで更新されます。セッションプロセスがこれらのAPIの1つを呼び出す前に、別のプロセスがセッションプロセスの環境変数を取得しようとした場合、これらの環境変数の値は更新されて表示されません。更新をトリガーする正確なAPI呼び出しは次のとおりです。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UserEnv!CreateEnvironmentBlock()
+Kernel32!ExpandEnvironmentStringsA/W()
+Kernel32!GetEnvironmentStringsA/W()
+Kernel32!GetEnvironmentVariableA/W()
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: アプリケーションスクリプトのサポート</title>
+      <link>/docs/go-global61rc/advancedtopics/applicationscriptsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/applicationscriptsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;多くのWin32アプリケーションは、クライアントPCにインストールするように設計されており、1人のユーザだけで実行されます。アプリケーションがGO-Globalホストからデプロイされると、複数のユーザが同時にそのアプリケーションを実行できるようにする必要があり、アプリケーションが「マルチユーザ対応」でない場合は、いくつかの問題が発生する可能性があります。&lt;/p&gt;
+&lt;p&gt;アプリケーションでのマルチユーザ配置の問題を解決する最善の方法は、アプリケーションが複数のユーザを適切にサポートするようにアプリケーションを変更することです。アプリケーションを変更できない場合は、起動前の設定とシャットダウン後のクリーンアップを実行するためにアプリケーションスクリプトを使用します。これは、アプリケーションをマルチユーザ環境で実行できるようにするために必要です。アプリケーションスクリプトを作成およびデプロイするプロセスは次のとおりです。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以下の処理を行うバッチファイルを作成します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザのアプリケーション環境を準備するために必要なタスクの実行&lt;/li&gt;
+&lt;li&gt;アプリケーションの起動&lt;/li&gt;
+&lt;li&gt;アプリケーションのシャットダウン後に必要なクリーンアップタスクの実行。バッチファイルはEXITコマンドで終了します。このコマンドがない場合、CMD.EXEプロセスはシャットダウンしません。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;アプリケーションスクリプトを公開します。&lt;br&gt;
+a. Cluster Manager を開きます。&lt;br&gt;
+b. [Tools | Applications | Add]の順にクリックします。&lt;br&gt;
+c. &lt;strong&gt;[Application Path]&lt;/strong&gt; フィールドに CMD.EXE へのパスを入力します。&lt;br&gt;
+d. &lt;strong&gt;[Command Line Options]&lt;/strong&gt; フィールドで&amp;quot;/K filename&amp;quot;を指定します。filenameは実行するバッチファイルのフルパスです。&lt;br&gt;
+e. アプリケーションの表示名を入力し、アイコンを指定します。&lt;br&gt;
+f. &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;アプリケーションスクリプトをテストします。&lt;br&gt;
+a. GO-Globalクライアントの 1 つを起動し、GO-Globalホストに接続します。&lt;br&gt;
+b. アプリケーションスクリプトのアイコンをダブルクリックします。アプリケーションのユーザインタフェースがクライアント画面上に表示され、アプリケーションスクリプトによって設定された環境下でアプリケーションが実行されます。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalを使用してアプリケーションスクリプトを起動すると、CMD.EXE 画面は表示されません。したがって、アプリケーションスクリプトにはユーザ入力用のプロンプトは組み込めません。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Advanced Session Process Configuration</title>
+      <link>/docs/go-global61rc/advancedtopics/advancedsessionprocessconfiguration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/advancedsessionprocessconfiguration/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+この項目はKitASPでのサポート項目ではございません。
+&lt;/div&gt;
+
+&lt;p&gt;This section covers some of the advanced configuration options that can be set for processes running within GO-Global sessions. These settings can be applied to specific executable (.exe) applications or as default settings applied to applications without specific configurations. Care should be taken when making any changes discussed in this section. An incorrect configuration can affect the startup of a process, make a process incompatible with GO-Global, or have fatal consequences during suspend/resume operations. Most applications that run within a GO-Global session will have GO-Global libraries loaded within them to perform redirection in order to obtain desired behavior. There are two levels of redirection that these libraries can initialize. The first level configures application and system modules to behave in a particular way. Most applications will need one or more level one settings enabled. Level one settings include Client Time Zone, Client Printing, and altered Windows API behavior. The second level creates a communications channel between the application and client for duplex transmission of session related information. For the highest level of application compatibility with GO-Global, level two settings should be enabled in as few applications as possible. Level two settings include Client Sound and Client Serial and Parallel Ports. The different configuration settings employed by the GO-Global libraries that redirect session processes are controlled by hexadecimal bit values within the registry. The desired bit values are logically ORed together to create a QWORD registry value. Here is the documented list of process redirector bits and a description of what they configure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000001&lt;/strong&gt; *- Prohibit a process from running within a session&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000002&lt;/strong&gt;- Disable the loading of GO-Global libraries. All redirection will be disabled. The time required to perform the redirection operations is generally a small percentage of the time required to launch typical Windows applications, but it can be a large percentage of the time required to launch and run simple console applications. Some console applications do not require redirection and performing these tasks can significantly extend the time required to execute logon scripts. Including this bit allows administrators to bypass redirection of a process. Applications execute faster since the GO-Global libraries are not loaded and initialized. This bit can also be used for applications that, for one reason or another, are incompatible with some or all of the GO-Global redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000004&lt;/strong&gt;- Disable Client Time Zone. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Time Zone redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000008&lt;/strong&gt;- Disable Client Printing. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Printing redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000040&lt;/strong&gt; *- Enable the Windows ProcessIdToSessionId() API to return the GO-Global session ID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000200&lt;/strong&gt;- Disable Client Sound. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Sound redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000400&lt;/strong&gt;- Disable client Serial and Parallel Ports. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Serial and Parallel Ports redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000800&lt;/strong&gt; *- Enable the Windows GetComputerName() API to return the client computer name. See also: Obtaining the Name of the Client Computer. Disable the updating of the client environment variables (CLIENTCOMPUTERNAME and CLIENTCOMPUTERIPADDRESS) when a client reconnects to a suspended session.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000001000&lt;/strong&gt; *- Disable, for optimization purposes, some of the normal processing performed when Explorer.exe is launched. This bit prevents Explorer.exe from launching processes listed under the HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run, RunOnce and RunOnceEx registry keys. This reduces the system resources needed to run Explorer in a session.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000080000000&lt;/strong&gt; *- Enable application produced with Delphi to use the Client Serial and Parallel Ports feature. Applications built with Delphi do not properly process all return values from the Windows GetOverlappedResult() API. This bit prevents the returning of WAITTIMEOUT and instead returns WAITOBJECT0.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000800000000&lt;/strong&gt; *- Enable the NtQuerySystemInformation function to return the GO-Global session ID. This option may be required for .NET applications that make use of the Windows Session ID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000040000000000&lt;/strong&gt;- Make specific named pipes that the process creates or accesses session-private.&lt;/p&gt;
+&lt;p&gt;*Indicates advanced options that should only be used if instructed to by your support contact.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+All the unlisted bits are purposely undocumented and reserved for internal GraphOn use only. Do not alter any registry values that contain any unlisted bits and do not apply any unlisted bits to any registry values you add. GO-Global Host operation will be compromised if this is done.
+&lt;/div&gt;
+
+&lt;p&gt;These bits can be combined to customize the redirector settings of specific applications or to change the default settings used by applications that do not have a registry entry. In either case always include the default value bits set by the initial install of GO-Global, unless instructed otherwise by a support engineer.&lt;/p&gt;
+&lt;h3 id=&#34;to-add-custom-redirector-settings-for-a-specific-application&#34;&gt;To add custom redirector settings for a specific application&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Start | Run.&lt;/li&gt;
+&lt;li&gt;Type Regedit.&lt;/li&gt;
+&lt;li&gt;Browse to the registry key:&lt;code&gt;HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit | New | QWORD value.&lt;/li&gt;
+&lt;li&gt;Type the name of the application&amp;rsquo;s executable file. (For example, Beeps.exe.) The application&amp;rsquo;s name can be specified as either a fully qualified path or as the file&amp;rsquo;s base name and extension.&lt;/li&gt;
+&lt;li&gt;Select the new registry value.&lt;/li&gt;
+&lt;li&gt;Click Edit | Modify.&lt;/li&gt;
+&lt;li&gt;Verify that the Base selection is Hexadecimal.&lt;/li&gt;
+&lt;li&gt;Type the combined bits in the &lt;strong&gt;Value data&lt;/strong&gt; edit box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;to-make-a-named-pipe-session-private&#34;&gt;To make a named pipe session-private&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add a custom redirector setting for each process that uses the named pipe that includes the &lt;strong&gt;0x0000040000000000&lt;/strong&gt; bit.&lt;/li&gt;
+&lt;li&gt;Create a DWORD registry value under the &lt;code&gt;KEYLOCALMACHINE\SOFTWARE\GraphOn\GOGlobal\System\Namedpipes&lt;/code&gt; registry key that identifies the named pipes that should be made session-private.&lt;/li&gt;
+&lt;li&gt;Set the name of the registry value equal to the string that will be compared to the name of the named pipes, and set the registry value to one of the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;1 - Make a named pipe session-private when the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;li&gt;2 - Make a named pipe session-private when the beginning of the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;li&gt;4 - Make a named pipe session-private when any part of the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Comparison types 1 and 2 must be in the form of .\pipe\pipename and are made with a caseinsensitive test. Comparison type 4 is case-sensitive.&lt;/p&gt;
+&lt;h3 id=&#34;to-change-the-default-redirection-settings&#34;&gt;To change the default redirection settings&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Start | Run&lt;/li&gt;
+&lt;li&gt;Type Regedit.&lt;/li&gt;
+&lt;li&gt;Browse to the registry key:&lt;code&gt;HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select the existing &lt;strong&gt;DefaultLoaderOptions&lt;/strong&gt; registry value.&lt;/li&gt;
+&lt;li&gt;Click Edit | Modify.&lt;/li&gt;
+&lt;li&gt;Verify that the Base selection is &lt;strong&gt;Hexadecimal.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type the new setting in the &lt;strong&gt;Value data&lt;/strong&gt; edit box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Example Configuration&lt;/p&gt;
+&lt;p&gt;A GO-Global host has the following applications installed and registered in the Cluster Manager.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DataDownloader.exe&lt;/li&gt;
+&lt;li&gt;DataProcessor.exe&lt;/li&gt;
+&lt;li&gt;DataViewer.exe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;strong&gt;DataDownloader.exe&lt;/strong&gt; executable is a Windows application that reads data from a serial device and saves it to a file. Client Sound is needed for error conditions alerts that can be signaled while data is being downloaded. Client Files Access will be used to store the data file on the client system. The Windows GetComputerName() API must be redirected so that the client computer name can be used to indicate the source of the data within the data file.&lt;/p&gt;
+&lt;p&gt;Because the serial device that contains the data is connected to the client computer, Client Serial and Parallel Ports will need to be enabled. Because this is the only process that will access Client Serial and Parallel Ports on this system, a registry entry specifically for DataDownloader.exe has been added. This minimizes the risks and overhead associated with this level two redirector setting by disabling Client Serial and Parallel Ports in all other applications.&lt;/p&gt;
+&lt;p&gt;The settings for this application are calculated as follows:&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000800 - This is the bit that enables the Windows GetComputerName() API redirection. 0x0000000000000900 – This is the hexadecimal QWORD to be set in the DataDownloader.exe registry value. The DataProcessor.exe executable is a console application that needs Client File Access to read in the serial data file from the client and write out the processed data file to the client. It will also use Client Time Zone to properly process the times recorded in the serial data file. All other settings will be disabled to minimize the risks and overhead associated with redirector settings. The settings for this application are calculated as follows:&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000008 - This is the bit that disables Client Printing.&lt;/p&gt;
+&lt;p&gt;0x0000000000000200 - This is the bit that disables Client Sound.&lt;/p&gt;
+&lt;p&gt;0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.&lt;/p&gt;
+&lt;p&gt;0x0000000000000708 – This is the hexadecimal QWORD to be set in the DataProcessor.exe registry value.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;DataViewer.exe&lt;/strong&gt; executable is a Windows application that displays the data so that it can be analyzed. It needs Client File Access to read in the processed data file from the client. It needs Client Sound so that application sounds can be heard. It needs Client Printing so that the analyzed data can be printed on paper. These are some of the settings needed by most applications, so the &lt;strong&gt;DefaultLoaderOptions&lt;/strong&gt; registry value is used for the calculation below.&lt;/p&gt;
+&lt;p&gt;The default setting will be changed to disable the Client Serial and Parallel Ports. This can be done because the only application that uses Client Serial and Parallel Ports, DataDownloader.exe, has its own registry setting that specifically enables it.&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.&lt;/p&gt;
+&lt;p&gt;0x0000000000000500 – This is the hexadecimal QWORD to be set in the DefaultLoaderOptions registry value.&lt;/p&gt;
+&lt;p&gt;This example demonstrates how a combination of application specific and the default settings can be used to minimize the risk of application incompatibilities and allow an optimal environment to run in.&lt;/p&gt;
+&lt;h3 id=&#34;running-the-windows-desktop-explorerexe-in-the-background-of-go-global-sessions&#34;&gt;Running the Windows desktop (explorer.exe) in the background of GO-Global sessions&lt;/h3&gt;
+&lt;p&gt;Some Windows applications use features and services that are provided by the Windows desktop (explorer.exe). Most applications run without the desktop, but some fail to start or run properly when the desktop is not running in the same session as the application. By default, the desktop does not run in GO-Global sessions. If an application fails to start or work properly in a GO-Global session, it may have a dependency on the desktop.&lt;/p&gt;
+&lt;h3 id=&#34;to-register-the-windows-desktop-explorerexe-to-run-in-go-global-sessions&#34;&gt;To register the Windows desktop (explorer.exe) to run in GO-Global sessions&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;From the Registry Editor, expand the HKEYLOCALMACHINE key.&lt;/li&gt;
+&lt;li&gt;Expand &lt;code&gt;\SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachine.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a DWORD value and name it explorer.exe.&lt;/li&gt;
+&lt;li&gt;Set the value to&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;With this configuration, the desktop will run in GO-Global sessions but will not be visible.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;Registering the Windows desktop to run in the background of a GO-Global session adds significant overhead. Sessions will take longer to start and will consume more memory. Additional overhead can also result from other processes that are registered to run when the desktop starts up. Care should be taken to ensure that unnecessary processes are not registered in users&#39; Startup folders or under the various Run commands in the Registry (e.g., &lt;code&gt;HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code&gt;).&lt;/p&gt;
+&lt;p&gt;Explorer.exe will run in the session the first time that a user signs on to a host. This is done to fully initialize the user profile. Explorer.exe will not run in subsequent sessions started by the same user on the same host, unless configured to do so as described above.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;システムプロセスの登録&#34;&gt;システムプロセスの登録&lt;/h2&gt;
+&lt;p&gt;GO-Globalアーキテクチャでは、1つのセッション内で複数のプロセスを実行できます。常に最低1つのプロセスが実行されている必要があります。すべてのプロセスが終了すると、GO-Globalセッションが閉じられ、すべてのリソースが割り当て解除され、クライアント接続が切断されます。&lt;/p&gt;
+&lt;p&gt;通常のプログラムの実行中に、ほとんどのアプリケーションでは、外部操作を実行するための子プロセスが作成されます。これらのアプリケーションの中には、例えばWindowsヘルプなど、独自のユーザインターフェイスを提供するものがあり、必要なくなるとユーザによって閉じられます。他には、ユーザインターフェイスを提供せず、固定の操作を行ってから終了するヘルパープロセスもあります。アプリケーションは、終了する前に作成した子プロセスを制御して終了させることもできます。&lt;/p&gt;
+&lt;p&gt;問題は、プロセスがユーザインターフェースを持たず、自分自身で終了せず、親プロセスが直接終了させない場合にまれに発生します。既定の構成では、これらのプロセスは、他のすべてのプロセスが終了すると、ハングした GO-Globalセッションを作成します。残りのプロセスはセッションをアクティブに保ちますが、クライアントにはセッションを完全に閉じるためのユーザインターフェイスがありません。&lt;/p&gt;
+&lt;p&gt;この問題を解決するために、GO-Globalホストでは、システムプロセスとして実行する特定の実行可能ファイルの登録をサポートしています。セッション内に残っているプロセスがシステムプロセスのみの場合、GO-Globalセッションは終了します。&lt;/p&gt;
+&lt;p&gt;ほとんどのアプリケーションでは、デフォルトの構成で十分です。プロセスが終了する手段を持たずに作成された特別なケースでは、待機中のプロセスの実行可能ファイルを登録することで、GO-Globalセッションを適切に終了させることができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;警告&lt;/h4&gt;
+以下の情報には、Windowsレジストリを開いて操作することが含まれています。ここで説明されている操作以外の操作を行うと、構成エラーが発生し、システムが使用できなくなる可能性があります。レジストリを操作する際には、細心の注意を払ってください。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;実行ファイルをシステムプロセスを作成するものとして登録する方法&#34;&gt;実行ファイルをシステムプロセスを作成するものとして登録する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global\System\Processes&lt;/code&gt;にブラウズする。&lt;/li&gt;
+&lt;li&gt;登録される実行可能ファイルの名前(例えば、AGENTSVR.EXE)を持つ &lt;strong&gt;DWORD&lt;/strong&gt; エントリを作成してください。&lt;/li&gt;
+&lt;li&gt;新しいエントリの値を、実行ファイルへのフルパスが指定されている場合は1に、ベース名のみが指定されている場合は2に設定します(フルパスを含めることで、同じ実行ファイルイメージの異なるバージョンを異なる方法で実行することができます)。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;この設定は、将来のセッションに加えて、現在のすべてのGO-Globalセッションに影響します。これには、すでに「ハング」状態にあるセッションは含まれません。このようなセッションは、Admin Consolから終了する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プロキシのトンネリング</title>
+      <link>/docs/go-global61rc/advancedtopics/proxytunneling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/proxytunneling/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;HTTP CONNECT&lt;/strong&gt; メソッドを介したプロキシトンネリングでは、プロキシサーバを介してインターネットにアクセスするユーザは、次の条件が満たされたときにインターネット上のGO-Globalホストに接続できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザはWindowsコンピュータ上でGO-Globalクライアントを実行している。&lt;/li&gt;
+&lt;li&gt;プロキシサーバのアドレスとポートが、クライアントコンピュータの[インターネットオプション]に保存されている。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストが設定されているポートへのHTTP CONNECTメソッドのトンネルで、Rapid-X Protocol(RXP)接続を受け入れられるように、プロキシサーバが設定されている。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;http-connectメソッドによるプロキシのトンネリング&#34;&gt;HTTP CONNECTメソッドによるプロキシのトンネリング&lt;/h3&gt;
+&lt;p&gt;Windowsコンピュータ上のユーザがGO-Globalホストとの直接接続を確立できず、クライアントコンピュータが[インターネットオプション]でプロキシサーバを使用するように設定されている場合、クライアントは GO-GlobalホストとのHTTP CONNECTメソッドトンネルの確立を試みます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;クライアントコンピュータの &lt;strong&gt;[インターネットオプション]&lt;/strong&gt; で指定されたアドレスとポートを使用してプロキシサーバに接続します。&lt;/li&gt;
+&lt;li&gt;プロキシサーバにCONNECT要求(CONNECT address:port HTTP/1.0)を送信します。addressとport は、それぞれGO-GlobalホストのIPアドレスと、ホストがRXP接続を受け入れるポート(デフォルトでは491)です。&lt;/li&gt;
+&lt;li&gt;プロキシサーバからの応答を読み取ります。&lt;/li&gt;
+&lt;li&gt;プロキシサーバの応答に、以下のように応答します。&lt;br&gt;
+a.Basic認証が必要な場合、GO-Globalはユーザにユーザ名とパスワードの入力を求め、手順2を繰り返します。ここではユーザの資格情報を提供します。&lt;br&gt;
+b.要求に失敗すると、以下のメッセージが表示されます。「Failed to connect to serverAddress via the proxy server at proxyAddress.(proxyAddressのプロキシサーバからserverAddressに接続できませんでした)[reason for failure (失敗の理由)]&lt;br&gt;
+c. 要求に成功すると、GO-GlobalはRXP接続を初期化し、セッションを開始します。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ポート-443を使用してhttp-connectメソッドトンネルを許可する方法&#34;&gt;ポート 443を使用してHTTP CONNECTメソッドトンネルを許可する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ポート443での接続を受け入れるようにGO-Globalホストを設定します。&lt;/li&gt;
+&lt;li&gt;ホストへのアクセスに使用するWebページでポート443を指定します。&lt;/li&gt;
+&lt;li&gt;必要に応じて、ポート80(HTTP)およびポート443(HTTPS)でGO-Globalホストへの接続を許可するようにプロキシサーバを設定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-GlobalホストとそのWebページの設定を完了すると、上述の3つの要件を満たすユーザはホストに接続できます。ショートカットを使用するユーザは、コマンド行に -hp 引数と 443を追加する必要があります(例: &amp;ldquo;..\ggclient.exe&amp;rdquo; -h server -hp 443)。そうしなければ、これらのユーザはGO-Globalにログオンできません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;GO-Globalクライアントは、ポート443のトラフィックがHTTPSかどうかを確認するように設定されているプロキシサーバからGO-Globalホストに接続することはできません。&lt;/p&gt;
+&lt;p&gt;プロキシサーバでは、GO-Globalは基本認証のみをサポートします。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: IPv6のサポート</title>
+      <link>/docs/go-global61rc/advancedtopics/supportforinternetprotocolversion6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/supportforinternetprotocolversion6/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、主要なインターネットレイヤプロトコルであるIPv4の後継であるインターネットプロトコルバージョン6(IPv6)をサポートしています。IPv6はIPv4よりもはるかに広いアドレス空間を持ち、アドレスの割り当てやトラフィックのルーティングを柔軟に行うことができます。&lt;/p&gt;
+&lt;p&gt;GO-Globalは以下をサポートしています：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホストは、IPv4およびIPv6クライアントからの接続を受け入れます。&lt;/li&gt;
+&lt;li&gt;GO-Global relay serversは、IPv4およびIPv6にdependent hostsからの接続を受け入れます。&lt;/li&gt;
+&lt;li&gt;管理者は、ホスト名、IPv4アドレス、またはIPv6アドレスを使用して、Admin Consoleでrelay serverを指定できます。&lt;/li&gt;
+&lt;li&gt;ユーザは、ホスト名、IPv4アドレス、またはIPv6アドレスを使用してGO-Globalホストに接続できます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-24-1.png&#34; alt=&#34;7-24-1&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: スマートカードのサポート</title>
+      <link>/docs/go-global61rc/advancedtopics/smartcarddocumentsigning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/smartcarddocumentsigning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、Windows上でのみスマートカード文書の署名をサポートします。スマートカード文書の署名は、Admin Consoleの**[Host Options]** ダイアログの**[Client Access]** タブにある**[Smart card]** オプションを使用して、クライアントに接続されたスマートカードへのアクセスをアプリケーションに許可することで有効になります。SafeSign、SafeNet、Aladdinをクライアントにインストールする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;スマートカード文書の署名を有効にする方法&#34;&gt;スマートカード文書の署名を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleを起動します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options | Security]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Smart card&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;スマートカード文書の署名をサポートするためには、Aladdin、SafeSafeSafe、またはSafeNetがクライアントにインストールされている必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;aladdinスマートカードを設定する方法&#34;&gt;Aladdinスマートカードを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;上記のように &lt;strong&gt;スマートカード&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;クライアントとホストにAladdinソフトウェアをインストールします(SafeNetAuthenticationClient-x32-x64-8.1-SP2.exe)。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストに以下のレジストリ設定を追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-GlobalAppServer]
+&lt;strong&gt;&amp;ldquo;SmartCardOptimization&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINESOFTWARE\MicrosoftWindows\CurrentVersion\WinlogonNotify\ScCertProp]
+&lt;strong&gt;&amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt; =dword:00000001&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\SafeNetAuthentication\SAC\CertStore]
+&lt;strong&gt;&amp;ldquo;PropagateUserCertificates&amp;rdquo;&lt;/strong&gt; =dword:00000000
+&lt;strong&gt;&amp;ldquo;PropagateCACertificates&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachine]
+&lt;strong&gt;&amp;ldquo;SafeNetCertMngr&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\Processes]
+&lt;strong&gt;&amp;ldquo;SACMonitor.exe&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;GO-Globalホストを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;safesignスマートカードを設定する方法&#34;&gt;SafeSignスマートカードを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;上記のように &lt;strong&gt;スマートカード&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;クライアントとホストに &lt;strong&gt;SafeSign&lt;/strong&gt; ソフトウェアをインストールします。
+64ビットOSの場合：gemccid_en-us_64.msi
+-或いは
+32 ビットOSでは。SafeSign-Identity-Client-3.0.45-admin-eval.exe
+64 ビットOSでは。SafeSign-Identity-Client-x64-3.0.45-admin-eval.exe
+(ユーザevalパッケージではなく、必ずadmin evalパッケージをインストールしてください)。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;safenetスマートカードを設定する方法&#34;&gt;SafeNetスマートカードを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;上記のように &lt;strong&gt;スマートカード&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;クライアントとホストに &lt;strong&gt;SafeNet&lt;/strong&gt; ソフトウェアをインストールします。SafeNet High Assurance(x32)2.7.005.exe
+64ビットOSではSafeNet High Assurance(x64)2.7.005.exe&lt;/li&gt;
+&lt;li&gt;GO-Globalホストにこれらのレジストリ設定を追加してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-GlobalAppServer]
+&lt;strong&gt;&amp;ldquo;SmartCardOptimization&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINESOFTWARE\MicrosoftWindows\CurrentVersion\WinlogonNotify\ScCertProp]
+&lt;strong&gt;&amp;ldquo;Enabled&amp;rdquo;&lt;/strong&gt; =dword:00000001&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\SafeNetAuthentication\SHAC\CertStore]
+&lt;strong&gt;&amp;ldquo;PropagateUserCertificates&amp;rdquo;&lt;/strong&gt; =dword:00000000
+&lt;strong&gt;&amp;ldquo;PropagateCACertificates&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachine]
+&lt;strong&gt;&amp;ldquo;SHACMonitor&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;p&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\Processes]
+&lt;strong&gt;&amp;ldquo;SHACMonitor.exe&amp;rdquo;&lt;/strong&gt; =dword:00000000&lt;/p&gt;
+&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ホストを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ビデオサポート</title>
+      <link>/docs/go-global61rc/advancedtopics/videosupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/videosupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ビデオサポートが有効になっている場合、GO-Globalセッションで実行されているアプリケーションおよびWebブラウザは、ビデオコンテンツをGO-Globalクライアントにリダイレクトします。ビデオサポートはデフォルトで無効になっています。&lt;/p&gt;
+&lt;p&gt;管理者は、&lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; の &lt;strong&gt;H264Video&lt;/strong&gt; プロパティID値を編集することにより、ビデオサポートを有効にできます。デフォルトでは、H264Videoプロパティは0に設定されており、ショートカットに追加されたコマンドライン引数や、ログオンHTMLページを開くハイパーリンクに関係なく、ビデオのサポートが無効になります。H264Videoを &lt;strong&gt;1&lt;/strong&gt; に設定すると、コマンドライン引数に関係なくビデオサポートが有効になります。H264Videoが &lt;strong&gt;2&lt;/strong&gt; に設定されている場合、ショートカットに &lt;strong&gt;-video&lt;/strong&gt; が追加されるか、ハイパーリンクに &lt;strong&gt;video=1&lt;/strong&gt; が追加されない限り、ビデオは無効になります。H264Videoが &lt;strong&gt;3&lt;/strong&gt; に設定されている場合、ショートカットに &lt;strong&gt;-novideo&lt;/strong&gt; が追加されているか、ハイパーリンクに &lt;strong&gt;video=0&lt;/strong&gt; が追加されていない限り、ビデオは有効です。&lt;/p&gt;
+&lt;p&gt;H264Videoプロパティが2に設定されている場合、ユーザはコマンドライン引数 &lt;strong&gt;-video&lt;/strong&gt; をGO-Globalショートカットに追加することにより、ビデオサポートを有効にできます。たとえば、&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -h server1 -video&lt;/code&gt;です。H264Videoプロパティが3に設定されている場合、ビデオサポートを無効にするには、ショートカットに &lt;strong&gt;-novideo&lt;/strong&gt; を追加します。&lt;/p&gt;
+&lt;h3 id=&#34;ビデオのサポートを有効無効にする方法&#34;&gt;ビデオのサポートを有効/無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Application Publishing Serviceを停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルを&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;ディレクトリ内に配置してください。&lt;/li&gt;
+&lt;li&gt;WordpadでDefaultWorkspaceProperties.xmlを開き、次のセクションを探します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/property&amp;gt; 
+&amp;lt;property type=&amp;quot;UINT32&amp;quot; group=&amp;quot;Miscellaneous&amp;quot; id=&amp;quot;H264Video&amp;quot;&amp;gt;
+&amp;lt;value&amp;gt;0&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;0を希望の値に置き換えます(例:1、2、3)。&lt;/li&gt;
+&lt;li&gt;編集した.xmlファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ビデオサポートは、GO-Global AppControllerログオンページに &lt;strong&gt;video=1&lt;/strong&gt; または &lt;strong&gt;video=0&lt;/strong&gt; を追加することで有効または無効にすることもできます。
+例えば：
+&lt;code&gt;http://hostname/goglobal/?video=1&lt;/code&gt;は、H264Videoワークスペースプロパティが2に設定されている場合にビデオサポートを有効にします。
+&lt;code&gt;http://hostname/goglobal/?video=0&lt;/code&gt;は、H264Videoワークスペースプロパティが3に設定されている場合にビデオサポートを無効にします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ファイルオープンリダイレクト</title>
+      <link>/docs/go-global61rc/advancedtopics/fileopenredirection/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/fileopenredirection/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ファイルオープンリダイレクトは、クライアントドライブ機能を補完します。これにより、ユーザは、ホストで実行されているアプリケーションでクライアント上のファイルを開くことができます。ファイルオープンリダイレクトを使用すると、ユーザは、クライアントで実行されているアプリケーションで、ホストまたはクライアントにあるファイルを開くことができます。ホストファイルリダイレクトはデフォルトで有効になっており、AppControllerがWindowsで実行されている場合にのみサポートされます。
+クライアントでファイルを開く &lt;strong&gt;[Open files on client]&lt;/strong&gt; オプションを使用すると、クライアントで実行されているアプリケーションで、ホストまたはクライアントにあるファイルを開くことができます。たとえば、ユーザがGO-Global経由でアプリケーションを実行していて、アプリケーションでサポートされていないファイル形式を開いた場合、GO-Globalはファイルをユーザのコンピュータに自動的にダウンロードし、ファイル形式をサポートするユーザのコンピュータ上のアプリケーションを使用してファイルを開きます。
+&lt;strong&gt;[Open files on client]&lt;/strong&gt; オプションは、オーディオファイル、ビデオファイル、テキストファイル、PDF、およびMicrosoft Officeファイルに対してデフォルトで有効になっています。この機能は、AppControllerがWindowsで実行されている場合にのみサポートされます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-27-1.png&#34; alt=&#34;7-27-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;open-files-on-clientを無効にする方法&#34;&gt;Open files on clientを無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consolで、&lt;strong&gt;[All Hosts]&lt;/strong&gt; のリストから目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options] を順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Open files on client]&lt;/strong&gt; を無効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;クライアントでファイルを開くことは、Windowsエクスプローラや、Windowsの &lt;strong&gt;[プログラムから開く]&lt;/strong&gt; 機能を介してファイルを開くアプリケーションではサポートされていません。ユーザがGO-Globalセッションでエクスプローラを実行し、ファイルを右クリックして[開く]を選択すると、ファイルの種類が[ファイルの種類]ダイアログで選択されている場合でも、ホスト上のアプリケーションでファイルが開きます。&lt;/p&gt;
+&lt;h2 id=&#34;urlリダイレクション&#34;&gt;URLリダイレクション&lt;/h2&gt;
+&lt;p&gt;URLリダイレクションでは、GO-Globalのユーザがホストのデフォルトブラウザではなく、ユーザのクライアントのデフォルトブラウザで開くWebリンクをクリックすることができます。これにより、ユーザはGO-Globalセッションで実行されているWebコンテンツや動画に効率的にアクセスすることができます。URLリダイレクトはデフォルトで有効になっています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-27-2.png&#34; alt=&#34;7-27-2&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;urlリダイレクトを無効にする方法&#34;&gt;URLリダイレクトを無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consolで、&lt;strong&gt;[All Hosts]&lt;/strong&gt; のリストから目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options] を順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[File Types]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[URLs (web links)]&lt;/strong&gt; を無効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: パフォーマンスの自動調整</title>
+      <link>/docs/go-global61rc/advancedtopics/performanceauto-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/performanceauto-tuning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;パフォーマンスの自動調整は、アプリケーションが大量のグラフィックデータを生成しているとき、またはクライアントシステムの処理速度が制限されているときに使用されます。 パフォーマンス自動調整が有効になっていると、クライアントマシンはホストが送信しているデータを処理している速度を報告します。ホストはこの情報を使用して、クライアントシステムが対応できないグラフィック情報(フレームレートの高いアニメーションなど)を削除したり、プリミティブなグラフィカル操作ではなく、アプリケーションのコンテンツのイメージを送信することを選択したりして、送信するデータの総量を減らします。&lt;/p&gt;
+&lt;p&gt;パフォーマンスの自動調整により、どのクライアントでも最もグラフィックスの厳しいアプリケーションでも実行できます。 パフォーマンスの自動調整は、デフォルトでは無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;ホストに接続しているすべてのクライアントに対してパフォーマンス自動調整を有効にする方法&#34;&gt;ホストに接続しているすべてのクライアントに対してパフォーマンス自動調整を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;次のディレクトリで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientProcessingBatch&lt;/strong&gt; 値を0から1に変更します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientProcessingThrottleV2&lt;/strong&gt; 値を0から1に変更します。&lt;/li&gt;
+&lt;li&gt;Regeditを開き、DWORDレジストリ値を作成します。&lt;code&gt;\HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GOGlobal\AppServer\ClientOffscreenSurfaces&lt;/code&gt;そしてその値を0に設定します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止して開始します。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+変更を加える前に、必ず &lt;strong&gt;HostProperties.xml&lt;/strong&gt; のバックアップを作成してください。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;パフォーマンス自動調整のしくみ&#34;&gt;パフォーマンス自動調整のしくみ&lt;/h3&gt;
+&lt;p&gt;パフォーマンス自動調整が無効になっていると、ホストは「四角形を描く」、「線を描く」、「テキストを描く」などの基本的な描画コマンドをクライアントに送信して、クライアントの表示を更新します。&lt;/p&gt;
+&lt;p&gt;代替方法は、ホストが描画操作の最終結果を含むイメージを待機してクライアントに送信することです。このアプローチは「スクリーンスクレイピング」と呼ばれます。ほとんどの場合、プリミティブ描画コマンドを使用してクライアントの表示を更新する方がはるかに効率的ですが、「スクリーンスクレイピング」のほうが効率的な場合があります。&lt;/p&gt;
+&lt;p&gt;パフォーマンス自動調整が有効になっていると、ホストは、ディスプレイデータがホストからクライアントに送信されるたびに、クライアントディスプレイを更新する最も効率的な方法を決定しようとします。たとえば、ホストが画面の変更された領域の画像を送信するのに必要な帯域幅が、画面を変更するのに使用されたすべての描画コマンドを送信するのに必要な帯域幅よりも小さいと推定した場合、描画コマンドの代わりにホストは画像を送信します。言い換えれば、それが「スクリーンスクレープ」になります。&lt;/p&gt;
+&lt;p&gt;アニメーションやビデオを表示するアプリケーションでは、パフォーマンス自動調整を有効にすることをお勧めします。ホスト上のアプリケーションが大量の画像を描画している場合でも、ホストがフレームをスキップしてユーザ入力に応答できるからです。ただし、このオプションを有効にすると、画面の一部がホストのフレームバッファ(画面)から更新され、その他の部分が描画コマンドを使用して更新されたときに、小さな表示異常が発生する可能性があります。これらの異常のため、パフォーマンス自動調整はデフォルトで無効になっています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サイレントインストール</title>
+      <link>/docs/go-global61rc/advancedtopics/silentinstallation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/silentinstallation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalはサイレントインストールすることができます。言い換えれば、インストールはプロセスの最初の起動以外はユーザの操作なしで実行されます。サイレントホストアップグレードを実行する前に、バージョン6.1のGO-Globalライセンスをライセンスディレクトリにコピーする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントのサイレントインストールを実行する方法&#34;&gt;クライアントのサイレントインストールを実行する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;cmd.exeをローカル管理者として実行します(管理者として実行)。&lt;/li&gt;
+&lt;li&gt;以下のコマンドを実行します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe /q
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これにより、スタートメニューに GO-Global AppControllerショートカットが追加されます。[ Start | Programs | GO-Global ]ショートカットなしでGO-Global AppControllerをサイレントインストールするには、次のコマンドを実行します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe /q CLIENT_SHORTCUT=&amp;quot;No&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;GO-Globalホストをサイレントインストールすることもできます。GO-Globalホストをアップグレードする場合もこれらの手順は同じです。&lt;/p&gt;
+&lt;h3 id=&#34;サイレントホストインストールを実行する方法&#34;&gt;サイレントホストインストールを実行する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ローカル管理者としてcmd.exeを実行します(管理者として実行)。&lt;/li&gt;
+&lt;li&gt;次のコマンドを実行してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;go-global.exe /q
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ホストは自動的に再起動します。&lt;/li&gt;
+&lt;li&gt;ライセンスファイルを &lt;strong&gt;Licensing&lt;/strong&gt; ディレクトリにコピーします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global License Manager&lt;/strong&gt; サービスを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;システムを自動的に再起動せずにサイレントホストインストールを実行するには、次のコマンドを実行します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gg-host.exe /q /norestart
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Logファイル</title>
+      <link>/docs/go-global61rc/advancedtopics/logfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/logfiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストはログファイルを作成して、GO-Global自身および一定のGO-Globalプロセスのパフォーマンス情報を記録します。GraphOn Technical Supportは、このデータを使用して、起こり得る問題の診断と修正を行います。特に、特定のマシンや特定のアプリケーションでのみ再発し得るエラーに対して有効です。&lt;/p&gt;
+&lt;p&gt;全てのログファイルは、クライアントマシン関連でもホストマシン関連でも、GO-Globalホスト上のLog フォルダ(例:&lt;code&gt;D:\Program Files\GraphOn\GO-Global\Log&lt;/code&gt;)に保存されます。Logフォルダには、 &lt;strong&gt;Backup&lt;/strong&gt;、 &lt;strong&gt;Codes&lt;/strong&gt;、 &lt;strong&gt;Templates&lt;/strong&gt; の3つのサブフォルダがあります。これらのサブフォルダを削除しないよう注意してください。GO-Globalのメッセージは、接頭語 aps の後にApplication Publishing Serviceが開始された日付と時刻(ミリ秒未満は四捨五入)が続く形でログファイルに記録されます(例: aps_2013-04-04_09-55-47-636.html)。Application Publishing Serviceが開始されるたびに、新しいログファイルが作成されます。最新の日時スタンプのログファイルに、現行または最後の Application Publishing Serviceインスタンスでのメッセージが含まれています。&lt;/p&gt;
+&lt;p&gt;GO-Globalの実行時に検出された問題は、ログファイルのエントリとして記述されています。各エントリは、項目番号と日時スタンプによって固有識別された、イベントやプログラムエラーの説明です。 GraphOn Technical Supportは、この情報を利用して、障害の原因を判断し解決策を決定します。&lt;/p&gt;
+&lt;p&gt;また、ログファイルのエントリにはメッセージ識別用の接頭語がついています。それにより、関連する個別ユーザのセッションやアプリケーションが判断できます。イベントが特定セッションのコンテキスト内で発生した場合、そのセッション名がメッセージの最初に表示されます(例:SuzyG on Server1)。イベントがApplication Publishing Serviceへの接続(クライアントまたはアプリケーションからの接続)のコンテキスト内で発生した場合、その接続プロセスの名称(例: pw(1244))がメッセージの接頭語に含まれます。この例(pw(1244))の場合、Program Windowプロセスと Application Publishing Service間の接続中に障害が発生しています。1244は、そのイベントが発生したプロセスのIDです。メッセージの最初に接続名apsが含まれている場合、そのイベントは Application Publishing Service で発生していますが、他のプロセスとの接続には関係ありません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2019112701&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112702&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112703&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112705&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112704&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h2 id=&#34;logファイルの新規保存場所の選択&#34;&gt;Logファイルの新規保存場所の選択&lt;/h2&gt;
+&lt;p&gt;デフォルトでは、Logファイルは生成されると&lt;code&gt;\Program Files\GraphOn\GO-Global\Log&lt;/code&gt; に保存されます。Admin Consoleの &lt;strong&gt;{Host Options]&lt;/strong&gt; ダイアログを使用すれば、Logファイルの新規保存場所を選択できます。&lt;/p&gt;
+&lt;h3 id=&#34;logファイルの新規保存場所を選択する方法&#34;&gt;Logファイルの新規保存場所を選択する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Folder]&lt;/strong&gt; 編集ボックスに新しいディレクトリへのパスを入力するか、その保存場所を閲覧します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Logファイルの保存場所としてリモートシステムのパスを指定することはできません。すなわち、UNCパスやマップされたネットワークドライブを[Folder]ボックスで指定すると、&lt;strong&gt;&amp;ldquo;Please specify a usable Windows folder where log files may be written.&amp;quot;&lt;/strong&gt; というエラーメッセージが表示されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;Backup&lt;/strong&gt;フォルダと既存のLogファイルを、 &lt;strong&gt;Templates&lt;/strong&gt;および &lt;strong&gt;Codes&lt;/strong&gt;サブフォルダと一緒に新規保存場所に移動してください。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;出力レベルの設定&#34;&gt;出力レベルの設定&lt;/h2&gt;
+&lt;p&gt;GO-Globalには、以下の 6 つのLog出力レベルがあります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0:出力なし 
+1:エラー 
+2:エラーおよびイベント 
+3:エラー、イベント、および警告 
+4:エラー、イベント、警告、および診断メッセージ 
+5, 6:エラー、イベント、警告、診断メッセージ、およびトレースメッセージ
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;出力レベルの設定方法&#34;&gt;出力レベルの設定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Output level]&lt;/strong&gt; ボックスに上記の数値の 1 つを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Logの出力レベルを5または6に設定した場合、ホストで生成されるLogファイルの容量は非常に大きくなるため、パフォーマンスや拡張性に悪影響が出る場合があります。したがって、GraphOn社や代理店から特別な指示がない限り、Logの出力レベルを5または6に設定すべきではありません。
+&lt;/div&gt;
+
+&lt;p&gt;デフォルトの出力レベルは4です。&lt;/p&gt;
+&lt;h2 id=&#34;logファイルの管理&#34;&gt;Logファイルの管理&lt;/h2&gt;
+&lt;p&gt;GO-Globalでは、Application Publishing Serviceが開始されるたびに &lt;strong&gt;Log&lt;/strong&gt; フォルダに新しいLogファイルが作成されます。時間の経過とともに、これらのファイルのサイズは大きくなり、大量のディスクスペースを占領するようになります。これらのファイルの管理のために、GO-Globalでは、Logファイルの削除またはバックアップ、ファイルサイズや保存期間の上限の設定ができます。&lt;/p&gt;
+&lt;h3 id=&#34;logファイルの削除方法&#34;&gt;Logファイルの削除方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Maintenance]&lt;/strong&gt; のところで &lt;strong&gt;[Delete]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;削除するまでのLogファイルの保存期間を指定します(日単位)。&lt;/li&gt;
+&lt;li&gt;Logファイルのサイズがどのくらいに達したら削除するか指定します(MB 単位)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;Go-Global Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;logファイルのバックアップ方法&#34;&gt;Logファイルのバックアップ方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;[Maintenance]のところで [Back up]を選択します。&lt;/li&gt;
+&lt;li&gt;どのくらいの時間が経過したらログファイルをLogフォルダのBackupサブディレクトリに移動するか指定します (日単位)。&lt;/li&gt;
+&lt;li&gt;ログファイルがどのくらいの容量に達したらLogフォルダのBackupサブディレクトリに移動するか指定します(MB 単位)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;GO-Global Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Application Publishing Serviceは30分ごと、および開始されるたびに、 &lt;strong&gt;Log&lt;/strong&gt;フォルダ から指定した保存期間またはサイズに達したファイルを探し出します。その後、それらのファイルを削除するか、Logフォルダ内の &lt;strong&gt;Backup&lt;/strong&gt;サブディレクトリに移動します。ログファイルの整理中に、現行のログファイルが指定の保存期間またはサイズに達したら、Application Publishing Serviceはそのログファイルを閉じて、新規作成したログファイルをインストールします。&lt;/p&gt;
+&lt;p&gt;デフォルトでは、ログファイルは 7日間経過したら、またはサイズが20 MBに達したらバックアップが取られるようになっています。&lt;/p&gt;
+&lt;h2 id=&#34;クライアントlogファイル&#34;&gt;クライアントLogファイル&lt;/h2&gt;
+&lt;p&gt;GO-Globalクライアントは、クライアントがホストに接続されていない時に、クライアントデバイス上のLogファイルに情報を記録します。さらに、ユーザがホストにサインインした後、クライアントはLogファイルをホストと同期させます。具体的には、GO-Globalは、ホストに以前にコピーされていないLogファイルがクライアントに存在するかどうかを判断します。存在する場合、GO-Globalは欠落しているクライアントLogファイルをホストにコピーします。&lt;/p&gt;
+&lt;p&gt;これらの変更により、システム管理者は接続の問題の原因を簡単に特定できます。 たとえば、ユーザがホストへの接続が頻繁に切断されると報告してきた場合、システム管理者はホストとクライアントのLogファイルをチェックして原因を特定できます。 通常、このシナリオでは、ユーザの前のセッションのクライアントLogファイルがホスト上で使用可能になり、管理者はクライアントLogファイルをクライアントデバイスから手動で取得する必要はありません。 一般的に、管理者は、ユーザがホストにまったく接続できない場合にユーザのコンピュータからLogファイルを取得する必要があります。&lt;/p&gt;
+&lt;p&gt;クライアントLogファイルの名前には、ユーザの名前、ホストのアドレス、クライアントが開始された日時が含まれます。クライアントLogファイルは、ユーザの&lt;code&gt;%APPDATA%\GraphOn\Logs&lt;/code&gt;ディレクトリ(Windowsクライアントの場合)およびホストの&lt;code&gt;\ProgramFiles\GraphOn\AppController\Log\Clients&lt;/code&gt;ディレクトリに格納されます。Logファイルがクライアントからホストにコピーされると、クライアントのLogファイルのコピーがクライアントコンピュータの&lt;code&gt;%APPDATA%\GraphOn\Logs\Old&lt;/code&gt;ディレクトリに移動されます。Logファイルは、&lt;code&gt;HKEY_CURRENT_USER\Software\GraphOn\AppController\Client\LogFileAgeLimit&lt;/code&gt;レジストリ値で指定された日数の間、クライアントに保存されます。デフォルトは10日間です。&lt;/p&gt;
+&lt;p&gt;クライアントがホストに接続している間にクライアントが出力する情報は、ホストの(APS__&amp;hellip;)ログファイルに記録されます。GO-Globalクライアントは、クライアントがホストに接続されていない場合にのみ、クライアントLogファイルにメッセージを記録します。&lt;/p&gt;
+&lt;h2 id=&#34;接続の監視&#34;&gt;接続の監視&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、ホストへの接続の待ち時間と入出力速度を監視します。新しいクライアントがホストに接続すると、ホストはクライアントの接続をテストし、各メトリックの初期値をホストのログファイルに記録します。その後、ホストは品質の変化について接続を監視します。セッションの実行中にいずれかのメトリックの品質が変化した場合、ホストはその変化をログファイルに記録します。&lt;/p&gt;
+&lt;p&gt;品質チェックの頻度としきい値は、&lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルで指定します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サポートリクエストウィザード(SRW)</title>
+      <link>/docs/go-global61rc/advancedtopics/supportrequestwizard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/supportrequestwizard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストには、テクニカルサポートに送信できるログファイルとホストに関する情報を収集するSupport Request Wizardがあります。管理者は、[Help]メニューの[Help]をクリックして、Admin Consoleからサポートリクエストウィザードを実行できます。もしくは[ Programs | GraphOn GO-Global | Support Request Wizard ]の順にクリックします。&lt;/p&gt;
+&lt;p&gt;ウィザードは、問題の説明、問題が発生したときの時間枠、および影響を受けたユーザ(複数可)について管理者にプロンプトを出します。問題が既存のサポート案件に関連している場合、管理者は案件番号を入力できます。デフォルトでは、zip形式のレポートはユーザプロファイルのデスクトップに配置されていますが、管理者はウィザードを使用して別の場所を選択できます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+KitASPからの連絡で必要に応じて採取をしてください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;/p&gt;
+&lt;p&gt;KGTN 2013122703&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;代理店様向けの専用ページにkitASP障害情報採取ツール_kitCollectToolの資料も用意しています。&lt;br&gt;
+合わせてご参照ください。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 高解像度クライアントデバイス</title>
+      <link>/docs/go-global61rc/advancedtopics/highresolutionclientdevices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/advancedtopics/highresolutionclientdevices/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ディスプレイを拡大縮小するように設定されている高解像度クライアントデバイス上でGO-Global AppControllerを実行すると、AppControllerは、セッションで実行されているアプリケーションのテキストとコントロールが、クライアントデバイスでローカルに実行されているアプリケーションのテキストとコントロールと同じサイズになるように、GO-Globalセッションのグラフィカル出力を拡大しようとします。たとえば、クライアントコンピュータが表示を200％拡大するように設定されている場合、AppControllerはホストから受信したグラフィックスコマンド(テキスト文字や画像など)を200％拡大します。&lt;/p&gt;
+&lt;p&gt;クライアントが画像やテキストなどのグラフィックオブジェクトを引き伸ばすとき、それらの品質はオブジェクトが100％で描画されるときほど良くありません。たとえば、テキスト文字の端は、引き伸ばしたときほど滑らかではありません。文字がブロック状またはぼやけて見えることがあります。高解像度の画面(ディスプレイの拡大縮小が最も頻繁に有効になっている場合)では、これらの効果は通常あまり目立ちません。高解像度の画面（ディスプレイの拡大縮小が最も頻繁に有効になっている場合）では、これらの効果は通常あまり目立ちません。 ただし、低解像度の画面では、特に表示倍率が125％などの整数でない値に設定されている場合、影響が非常に顕著になります。 これらの影響が顕著な場合は、GO-Globalのスケーリング機能を次のように無効にすることができます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;クライアントがショートカットから実行する時は、クライアントのコマンドラインに &lt;strong&gt;-clientdpi 0&lt;/strong&gt; を追加します。&lt;/li&gt;
+&lt;li&gt;クライアントがブラウザから実行されている場合は、URLに &lt;strong&gt;＆clientdpi=false&lt;/strong&gt; を追加します。&lt;/li&gt;
+&lt;li&gt;すべてのユーザに対してホスト上の機能を無効にするには、ホスト上の &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;ClientDPIScalingEnabled&lt;/strong&gt; プロパティの値を「true」から「false」に変更します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GO-Globalのスケーリング機能が無効になっていると、GO-Globalはホスト上のコントロールパネルのディスプレイアプレットでユーザに指定されたスケールファクタを使用してセッションをレンダリングします。この構成では、管理者は表示アプレットをユーザに公開することによってユーザにDPI設定の変更を許可することができます。&lt;/p&gt;
+&lt;h3 id=&#34;表示アプレットをユーザに公開する方法&#34;&gt;表示アプレットをユーザに公開する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ホスト上のコンソールに管理者としてサインインします。&lt;/li&gt;
+&lt;li&gt;表示アプレットへのショートカットを作成します。&lt;br&gt; 
+a.&lt;strong&gt;[スタート | コントロール]&lt;/strong&gt; の順にクリックしてます。&lt;br&gt;
+b. &lt;strong&gt;[表示]&lt;/strong&gt; を右クリックします。 ショートカットがデスクトップに追加されます。&lt;br&gt;
+c.ショートカットをすべてのユーザがアクセスできるディレクトリ(例：C:\Users\Public\Desktop)にドラッグします。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;ユーザにショートカットを公開する。&lt;br&gt;
+a.Admin Consoleを実行し、 &lt;strong&gt;[Application | Add]&lt;/strong&gt; の順にクリックします。&lt;br&gt;
+b. &lt;strong&gt;[Display Name]&lt;/strong&gt; フィールドに「Display Setting」(または他のわかりやすい名前)と入力します。&lt;br&gt; 
+c. &lt;strong&gt;[Executable Path]&lt;/strong&gt; フィールドにexplorer.exeへのパス(例：C:\Windows\explorer.exe)を入力します。&lt;br&gt;
+d. &lt;strong&gt;[Command-Line Options]&lt;/strong&gt; フィールドに、手順2で作成したショートカットのパスを入力します(例C:\Users\Public\Desktop\Display.lnk)。&lt;br&gt;
+e. &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,97 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – ユーザーアカウントの管理</title>
+    <link>/docs/go-global61rc/administeringuseraccounts/</link>
+    <description>Recent content in ユーザーアカウントの管理 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61rc/administeringuseraccounts/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: ユーザアカウントの管理</title>
+      <link>/docs/go-global61rc/administeringuseraccounts/administeringuseraccounts/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/administeringuseraccounts/administeringuseraccounts/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホスト上のアプリケーションにアクセスするには、クライアントはホストマシンにサインインする必要があります。ユーザがGO-Globalクライアントを起動すると、ユーザ名、パスワード、およびアクセスするホスト名の入力が求められます。この情報はオプションで暗号化され、GO-Globalホスト上で実行されているApplication Publishing Serviceに渡されます。その後、Application Publishing ServiceはWindowsの標準的なマルチユーザ機能を使用してログオン操作を実行します。
+ユーザがホストにサインインし、ドメインが指定されていない場合、GO-Globalホストは最初にローカルマシン上のアカウントの認証を試み、次にマシンのドメイン、そして最後に信頼できるドメインの認証を試みます。ユーザは、この既定の動作をオーバーライドしてドメインを指定することができ、&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログの &lt;strong&gt;[User Name]&lt;/strong&gt; ボックスにドメイン名の後にバックスラッシュ( \ )とネットワークユーザ名を入力することでドメインを指定できます。例えば、NORTH\johngのようにです。
+GO-Globalホスト上のローカルユーザ名がドメインアカウントと同じユーザ名で、それぞれ異なるパスワードが設定されている場合、GO-Globalはこれらを2つの別個のアカウントとして扱います。たとえば、次のシナリオを考えてみましょう。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホスト上のローカルアカウント、&lt;strong&gt;ローカル&lt;/strong&gt; のパスワードを持つ&lt;strong&gt;johng&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ドメイン&lt;/strong&gt; のパスワードを持つドメインアカウント&lt;strong&gt;johng&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログでユーザ名、パスワードを&lt;strong&gt;ローカル&lt;/strong&gt; で入力して&lt;strong&gt;johng&lt;/strong&gt; と入力すると、アカウントはローカルのGO-Globalホストで認証されます。&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログでパスワードを&lt;strong&gt;ドメイン&lt;/strong&gt; で&lt;strong&gt;johng&lt;/strong&gt; と入力すると、GO-Globalはドメインでの認証を試みませんが、無効なユーザ名またはパスワードで失敗します。&lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログの [User Name]フィールドでドメイン名を指定する必要があります。たとえば、NORTH\johngです。
+ユーザがサインインした後、GO-Globalはホストのオペレーティングシステムに依存して、マルチユーザ環境でアプリケーションを安全に実行するために必要なセキュリティを提供します。アプリケーションは、プライベートセッションを確保するために、クライアントユーザのセキュリティコンテキストで実行されます。すべてのマシンおよびネットワークリソースへのアクセスは、オペレーティングシステムおよび個々のユーザのセッションに付与された権限によって管理されます。
+ユーザは GO-Global ホスト上でインタラクティブに(ローカルに)ログオンできる必要があります。ローカルセキュリティポリシー、ドメインセキュリティポリシー、およびドメイン コントローラセキュリティポリシーでユーザにローカルログオン権限を割り当てます。
+この章では、GO-Globalホストでのユーザアカウントの管理に関する基本情報を説明します。詳細については、[スタート]メニューからアクセスできるWindowsヘルプを参照してください。&lt;/p&gt;
+&lt;h2 id=&#34;ユーザプロファイルの設定&#34;&gt;ユーザプロファイルの設定&lt;/h2&gt;
+&lt;p&gt;ほとんどのWindowsアプリケーションは、ユーザ固有の設定やファイルをユーザのWindowsプロファイルの下に保存します。既定では、Windowsはシステムにログオンする各ユーザに対してローカルプロファイルを作成します。ローカルプロファイルは特定のコンピュータに固有のものであり、複数のGO-Globalホストを実行している場合はうまく機能しません。複数のホスト環境を実行している場合は、移動ユーザプロファイルを設定する必要があります。移動ユーザプロファイルはリモートに保存され、そのプロファイルが有効なネットワーク接続されたコンピュータからアクセスできます。移動ユーザプロファイルを持つユーザがネットワーク接続されたコンピュータにログオンすると、最後にログオフしたときと同じようにデスクトップが表示されます。マルチホスト環境では、ユーザ固有の設定を常に利用できるようにするには、移動ユーザプロファイルを使用するしかありません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プロファイルは、作成されたプラットフォーム上でのみ有効です。たとえば、Windows Server 2016プロファイルは、Windows Server 2016コンピュータでのみ使用できます。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+移動ユーザプロファイルの詳細につきましてはMicrosoftのドキュメントを参照ください。&lt;br&gt;
+&lt;a href=&#34;https://docs.microsoft.com/ja-jp/windows-server/storage/folder-redirection/folder-redirection-rup-overview&#34;&gt;フォルダー リダイレクト、オフライン ファイル、移動ユーザー プロファイルの概要&lt;/a&gt;
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ファイルのパーミッションを設定する&#34;&gt;ファイルのパーミッションを設定する&lt;/h2&gt;
+&lt;p&gt;システム管理者として、特定のファイルやリソースへのユーザアクセスを制限する必要があるかもしれません。ホストには複数のユーザがアクセスしていることを念頭に置いてください。特に負荷分散されたサーバ環境では、ユーザがローカルのGO-Globalホストにファイルを保存できないように、システムおよびアプリケーションフォルダを書き込み保護することをお勧めします。そうしないと、次回ユーザがGO-Globalにログオンして別のサーバに転送されたときに、ファイルおよびフォルダにアクセスできなくなります。Windowsエクスプローラを使用して、サーバ上のファイルのアクセス許可を設定する必要があります。ファイルのアクセス許可を設定することで、アプリケーション、プリンタ、およびフォルダへのユーザのアクセスを制限することができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Windowsエクスプローラで、&lt;strong&gt;ヘルプ&lt;/strong&gt; ボタンを選択するか、&lt;strong&gt;F1&lt;/strong&gt; を押してファイルのパーミッション設定の詳細を確認します。
+&lt;/div&gt;
+
+&lt;h2 id=&#34;ネットワークプリンタの設定&#34;&gt;ネットワークプリンタの設定&lt;/h2&gt;
+&lt;p&gt;管理者として、GO-Globalクライアントが使用するネットワークプリンタを設定することができます。まず、ホストに直接接続するポートをGO-Globalホストに作成してから、プリンタをローカルにインストールする必要があります。これにより、プリンタへの直接アクセスが可能になります。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalホストにポートを追加する方法&#34;&gt;GO-Globalホストにポートを追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[スタート | 設定 | プリンタ] の順にクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit3-27-1.png&#34; alt=&#34;kit3-27-1&#34;&gt;
+&lt;img src=&#34;/img/kit3-27-2.png&#34; alt=&#34;kit3-27-2&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;&lt;strong&gt;[プリンタの追加]&lt;/strong&gt; をダブルクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit3-27-3.png&#34; alt=&#34;kit3-27-3&#34;&gt;
+&lt;img src=&#34;/img/kit3-27-4.png&#34; alt=&#34;kit3-27-4&#34;&gt;
+&lt;img src=&#34;/img/kit3-27-5.png&#34; alt=&#34;kit3-27-5&#34;&gt;
+&lt;img src=&#34;/img/kit3-27-6.png&#34; alt=&#34;kit3-27-6&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ローカルプリンタを選択し、&lt;strong&gt;[次へ]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;[新しいポートの作成] をクリックし、種類として[標準 TCP/IP ポート]を選択します。&lt;strong&gt;[次へ]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;プリンタウィザードの指示に従って、プリンタのIPアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;左側のプリンタメーカを選択し、右側のプリンタモデルを選択するか、&lt;strong&gt;[ディスク使用]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;ウィザードの指示に従って、適切なプリンタドライバをインストールします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/kit3-27-7.png&#34; alt=&#34;kit3-27-5&#34;&gt;
+&lt;img src=&#34;/img/kit3-27-8.png&#34; alt=&#34;kit3-27-6&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,801 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – TIPS</title>
+    <link>/docs/go-globalforwindows6tips/technote/</link>
+    <description>Recent content in TIPS on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-globalforwindows6tips/technote/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: クライアントプリンタの設定後にスクリプトを実行</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote25/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote25/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Program Windowsは &lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; というDWORDレジストリ変数をサポートしています。これによりGO-Globalはクライアントプリンタの設定後にスクリプトを実行することができます。管理者はこの変数を手動でレジストリに追加する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントプリンタを設定した後にスクリプトを実行する方法&#34;&gt;&lt;strong&gt;クライアントプリンタを設定した後にスクリプトを実行する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタから、HKEY_LOCAL_MACHINEキーを展開します。&lt;/li&gt;
+&lt;li&gt;Locate the AppServer key:&lt;code&gt;[SOFTWARE\GraphOn\Bridges\1.0.0\AppServer]&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; という名前の新しいDWORD値を作成します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; を右クリックして &lt;strong&gt;[変更]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;値のデータフィールド&lt;/strong&gt; に1を入力します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;レジストリ変数 &lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; がない場合、または0(ゼロ)に設定されている場合、Program Windowsは従来どおりに動作します。つまり、印刷コンポーネントをセットアップする前に補助アプリケーションを起動します。ただし、 &lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; 値がレジストリに存在し、0以外の値が割り当てられている場合、Program Windowsは、印刷コンポーネントを設定した後で補助アプリケーションを起動します。管理者は自分のスクリプトを&amp;quot;補助アプリケーション&amp;quot;として確立し、 &lt;strong&gt;PW_InitializePrintersEarly&lt;/strong&gt; をレジストリに追加し、それをゼロ以外の値に設定する必要があり1が推奨されます。&lt;/p&gt;
+&lt;p&gt;補助アプリケーションを確立するには、管理者は2つのレジストリ変数をそれぞれ独自のキーの下に手動で追加する必要があります。1つ目はGraphOnキーの下に配置するDWORD、2つ目はMicrosoftキーの下に配置するストリングです。&lt;/p&gt;
+&lt;p&gt;候補として2組のキーを提供します。&lt;/p&gt;
+&lt;p&gt;The first pair:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GraphOn: HKEY_CURRENT_USER
+SOFTWARE\\GraphOn\\Bridges\\1.0.0\\System\\Run\\CurrentUser
+Microsoft: HKEY_CURRENT_USERSOFTWARE
+SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The second pair:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;GraphOn: HKEY_LOCAL_MACHINE
+SOFTWARE\\GraphOn\\Bridges\\1.0.0\\System\\Run\\LocalMachine
+Microsoft: HKEY_LOCAL_MACHINE
+SOFTWARE\\Microsoft\\Windows\\CurrentVersion\\Run
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;GO-Globalの検索アルゴリズムを満たすには、管理者は上記で指定したいずれかのGraphOnキーの下にDWORD変数を追加する必要があります。その変数の名前は任意ですので例えばPrinterScriptという名前でも構いません。その値は無関係です。次に管理者は、対応するMicrosoftキーの下に同じ名前(この例ではPrinterScript)の文字列変数を追加し、その値を目的のアプリケーションの完全修飾パスにする必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: LMGRD UTILITY IS CONSUMING 100% CPU WHEN THREE-SERVER REDUNDANCY IS USED</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote41/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote41/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;resolution&#34;&gt;&lt;strong&gt;Resolution:&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; and the &lt;strong&gt;GO-Global License Manager&lt;/strong&gt; on all three redundant GO-Global Hosts.&lt;/li&gt;
+&lt;li&gt;Add the same port number on each server line in the license file. For example.And please use the same license file on all three hosts.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;SERVER piper 000C29750Ac6 28001
+SERVER harpua 0002A5C8219D 28001
+SERVER wilson 000C29C7B953 28001
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Please use the same license file on all three hosts.&lt;/li&gt;
+&lt;li&gt;Add an environment variable for each server, using commas to separate the servers. For example, LM_LICENSE_FILE = 28001@piper,28001@harpua,28001@wilson&lt;/li&gt;
+&lt;li&gt;Restart the &lt;strong&gt;Application Publishing Service&lt;/strong&gt; and the &lt;strong&gt;License Manager&lt;/strong&gt; on the &amp;ldquo;master&amp;rdquo; server first (piper, in the example above), then on the secondary and tertiary servers (e.g., harpua and wilson, respectively).&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;Registering the Windows Shell to run in the background of a GO-Global session adds significant overhead. Sessions will take longer to start and will consume more memory. Additional overhead can also result from other processes that are registered to run when the Shell starts up.&lt;/p&gt;
+&lt;p&gt;Care should be taken to ensure that unnecessary processes are not registered in users&#39; Startup folders or under the various Run commands in the Registry (e.g., &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code&gt;).&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: いくつかのアプリケーションがGO-Globalセッションで適切に起動または実行できない</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote46/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote46/</guid>
+      <description>
+        
+        
+        &lt;p&gt;いくつかのWindowsアプリケーションは、Windowsシェルによって提供される機能およびサービス(例えばDDE)を使用する(explorer.exe)。ほとんどのアプリケーションはWindowsシェルなしで実行されますが、Windowsシェルがアプリケーションと同じセッションで実行されていないと、起動に失敗したり、正しく実行されなかったりすることがあります。デフォルトでは、WindowsシェルはGO-Globalセッションでは動作しません。アプリケーションがGO-Globalセッションで起動または正常に動作しない場合、アプリケーションはシェルに依存している可能性があります。&lt;/p&gt;
+&lt;h3 id=&#34;解決策&#34;&gt;&lt;strong&gt;解決策&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalセッションのバックグラウンドで実行するようにWindowsシェル(explorer.exe)を登録します。&lt;br&gt;
+a. レジストリエディタから、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。&lt;br&gt;
+b. &lt;code&gt;\SOFTWARE\GraphOn\Bridges\1.0.0\System\Run\LocalMachine&lt;/code&gt;を展開します。&lt;br&gt;
+c. DWORD値を作成し、 &lt;strong&gt;explorer.exe&lt;/strong&gt; という名前を付けます。値を0に設定してください。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;explorer.exeおよびexplorer.exeが開始するすべての子プロセスをシステムプロセスとして登録し、最後に公開されたアプリケーションが閉じられるとGO-Globalセッションが終了するようにします。&lt;br&gt;
+a. GO-Globalセッションを開始し、GO-Globalホストにログオンします。&lt;br&gt;
+b. Admin Consoleの &lt;strong&gt;[Session]&lt;/strong&gt; タブで、セッション内でexplorer.exeが実行されていることを確認します。シェルのユーザインターフェイスがどれも表示されていないことを確認します(シェルの一部の要素は、新しいユーザが初めてホストにログオンしたときに表示されることがあります)。&lt;br&gt;
+c. `HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\Bridges\1.0.0\System\Processes@を展開します。&lt;br&gt;
+d. DWORD値を作成し、explorer.exeという名前を付けます。 &lt;strong&gt;explorer.exe&lt;/strong&gt; によって起動されたプロセスについてアドミンコンソールを確認し、これらの各プロセスに対してDWORD値を作成します。システムプロセスには、次のような実行可能ファイルが含まれる場合があります。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;ALMon.exe
+sqlmangr.exe
+soffice.exe
+reader_sl.exe
+acrobat_sl.exe
+&lt;/code&gt;&lt;/pre&gt;&lt;br&gt;
+    e. これらのプロセスの値を0に設定してください。&lt;br&gt;
+    f. Program Windowsを閉じます。GO-Globalセッションも終了することを確認してください。&lt;br&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;GO-Globalセッションのバックグラウンドで実行するようにWindowsシェルを登録すると、かなりのオーバーヘッドが追加されます。セッションの開始に時間がかかり、より多くのメモリを消費します。シェルの起動時に実行するように登録されている他のプロセスによっても、追加のオーバーヘッドが発生する可能性があります。&lt;/p&gt;
+&lt;p&gt;不要なプロセスがユーザーのスタートアップフォルダまたはレジストリのさまざまなRunコマンドの下に登録されないように注意する必要があります(例:&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run&lt;/code&gt;)。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: APPLICATIONは、一度に1つだけのGO-Globalセッションで実行されます</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote128/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote128/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;背景&#34;&gt;&lt;strong&gt;背景&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;セッションごとにプロセスのインスタンスが1つだけ実行されるように、アプリケーションはセッションIDを使用することがよくあります。GO-Globalセッションは、システムのセッションIDをゼロ(0)で共有します。&lt;/p&gt;
+&lt;h3 id=&#34;解決策&#34;&gt;&lt;strong&gt;解決策&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;システムのセッションIDではなくGO-GlobalセッションIDを必要とするアプリケーションがある場合、管理者はレジストリキーの下に実行可能ファイルの名前を追加できます。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\Compatibility\ProcessIdToSessionId&lt;/code&gt;&lt;/strong&gt; のDWORD値を作成して0x00000001の値にします。&lt;/p&gt;
+&lt;p&gt;このレジストリキーの下にリストされたデータ値が0x00000001の名前のいずれかと一致する実行可能ファイルが &lt;strong&gt;ProcessIdToSessionId&lt;/strong&gt; を呼び出すたびに、指定されたセッションIDバッファはセッションIDゼロ(0)ではなくGO-GlobalセッションIDで埋められます。&lt;/p&gt;
+&lt;p&gt;Windows ProcessIdToSessionId APIを呼び出すときにシステムのセッションIDではなくGO-GlobalセッションIDを取得するアプリケーションのリストにアプリケーションを追加するには、以下の手順を実行します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;互換性キー&lt;/strong&gt; を見つけます。 &lt;code&gt;HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\Compatibility&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;必要に応じて、 &lt;strong&gt;ProcessIdToSessionId&lt;/strong&gt; という名前のサブキーを作成します。&lt;/li&gt;
+&lt;li&gt;実行可能ファイル(example.exe)の &lt;strong&gt;DWORD&lt;/strong&gt; エントリを作成します。&lt;/li&gt;
+&lt;li&gt;新しいエントリの値を &lt;strong&gt;0x00000001&lt;/strong&gt; に設定します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントファイルキャッシュの期限</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote159/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote159/</guid>
+      <description>
+        
+        
+        &lt;p&gt;デフォルトでは、GO-Globalはファイルの内容をキャッシュし、60秒ごとに変更をチェックします。ファイルがGO-Globalの外部でローカルに変更されていて、60秒が経過する前にファイルが閉じられると、変更はGO-Globalに登録されません。DefaultWorkspaceProperties.xmlファイルの2つのプロパティを編集して、クライアントファイルのキャッシュタイムアウトを変更できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;fileCacheAttribTimeout:&lt;/strong&gt; GO-Globalがファイル属性を無効にするまでのタイムアウト(ミリ秒)&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;fileCacheDirListTimeout:&lt;/strong&gt; GO-Globalがフォルダリストを無効にするまでのタイムアウト(ミリ秒)&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;filecachattribtimeoutおよびfilecachedirlisttimeoutを設定する方法&#34;&gt;&lt;strong&gt;fileCachAttribTimeoutおよびfileCacheDirListTimeoutを設定する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;次のディレクトリで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;code&gt;C:\ProgramData\GraphOn&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;fileCacheAttribTimeout&amp;quot; group=&amp;quot;ClientAccess&amp;quot; type=&amp;quot;UINT32&amp;quot;&amp;gt;
+&amp;lt;value&amp;gt;60000&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&amp;lt;property id=&amp;quot;fileCacheDirListTimeout&amp;quot; group=&amp;quot;ClientAccess&amp;quot; type=&amp;quot;UINT32&amp;quot;&amp;gt;
+&amp;lt;value&amp;gt;60000&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;値に必要なミリ秒数を入力します(この値は1以上の整数でなければなりません。両方のプロパティーのデフォルト値は60000です)。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: iOSクライアントでのSSL証明書の使用</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote163/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote163/</guid>
+      <description>
+        
+        
+        &lt;p&gt;iOSクライアントがサーバ証明書を信頼するためには、中間証明書とすべてのルート証明書を含む、SSL証明書チェーン全体を信頼できなければなりません。&lt;/p&gt;
+&lt;h3 id=&#34;iosクライアントにチェーン全体を提供するサーバ証明書を作成する方法&#34;&gt;&lt;strong&gt;iOSクライアントにチェーン全体を提供するサーバ証明書を作成する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;証明書チェーンに含まれるすべての.crtファイルと、GO-Globalホストで使用されている.keyファイルを取得します。&lt;/li&gt;
+&lt;li&gt;.crtとすべての中間およびルート.crtファイルを連結します(次のようにそれらを単一のファイルに結合します：test_server.crt + intermediate.crt + root.crt server.crt)。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+0個以上の中間ファイルと1個以上のルートファイルが存在する場合があります。.crtファイルが自己署名されている場合、.crtファイルの名前をserver.crtに変更するだけです。
+&lt;/div&gt;
+
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;手順1のキーファイルの名前を &lt;strong&gt;server.key&lt;/strong&gt; に変更して、新しく作成した &lt;strong&gt;server.crt&lt;/strong&gt; ファイルと一致するようにします。&lt;/li&gt;
+&lt;li&gt;これらの2つのファイルをGO-Globalホスト(&lt;code&gt;c:\Data&lt;/code&gt;など)にコピーします。&lt;/li&gt;
+&lt;li&gt;Admin Consoleを起動します。[Tools | Host Options | &lt;strong&gt;Security&lt;/strong&gt; ]タブをクリックします。&lt;/li&gt;
+&lt;li&gt;トランスポートをSSLに変更し、暗号化ライセンスが高い場合は、暗号化レベルを256ビットAESに上げます。そうでない場合は、56ビットのままにします。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;c:\data&lt;/code&gt;でSSL証明書server.crtを参照し、 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。同じプレフィックスの.crtファイルと.keyファイルがある場合、この時点でエラーメッセージは表示されません。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;テスト目的で接続が安全な場合にユーザに通知&lt;/strong&gt; を有効にします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;iOSデバイスからGO-Globalセッションを開始します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-163-1.png&#34; alt=&#34;9-163-1&#34;&gt;&lt;br&gt;
+図1：安全な接続が確立されると、このダイアログが表示されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: OVERVIEW OF COMMUNICATION BETWEEN GO-GLOBAL CLIENTS, RELAY SERVERS, DEPENDENT APPLICATION SERVERS, AND THE ADMIN CONSOLE</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote164/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote164/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;ol&gt;
+&lt;li&gt;When the &lt;strong&gt;Application Publishing Service&lt;/strong&gt; (APS) starts up on a relay server, it listens for connections on the port specified in the Admin Guide. Both clients and dependent application servers connect to the relay server using this port.&lt;/li&gt;
+&lt;li&gt;The security settings specified in the Admin Console (e.g., SSL, encryption, etc.) are used for all connections to the relay server with one exception. Connections made from the relay server itself (i.e., from the Admin Console running on the relay server) use the TCP transport regardless of what transport mode is set in the Admin Console.&lt;/li&gt;
+&lt;li&gt;The relay server only accepts connections; it does not make any outgoing connections. For example, it does not open connections to dependent application servers. As such, no ports have to be opened on the internal firewall. This is a key aspect of the design.&lt;/li&gt;
+&lt;li&gt;When the APS starts on a dependent application server, the dependent application server opens a connection to the APS running on its associated relay server and registers itself with the relay server.&lt;/li&gt;
+&lt;li&gt;When a Admin Console starts up on a relay server, it:&lt;br&gt;
+a. Issues a UDP broadcast on port 491 requesting that the Application Publishing Services on the same subnet start broadcasting their server information. The APS on the relay server then starts broadcasting information about itself. This information is used to populate the Admin Console&amp;rsquo;s list of servers.&lt;br&gt;
+b. The Admin Console opens a connection to the APS as described in #2.&lt;br&gt;
+c. The APS authenticates the user running the Admin Console using Security Support Provider Interface (SSPI) and verifies that the user is a member of the Administrators group on the relay server.&lt;br&gt;
+d. The APS on the relay server then responds to queries from the Admin Console (e.g., to terminate a session) by making calls to its dependent application servers over the connections established in #4. All session management information is transmitted over these connections.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;When a client connects to the relay server, the relay server determines which of the dependent application servers has the lightest load and starts a session on the selected server as follows: &lt;br&gt;
+a. The relay server instructs the selected dependent application server (via a command over the connection established in #4) to open a new connection to the relay server. &lt;br&gt;
+b. The relay server issues a command over the new connection to create a new session. &lt;br&gt;
+c. The relay server associates the session with the client connection. &lt;br&gt;
+d. The relay server starts the logon process in the new session. &lt;br&gt;
+e. The graphics updates from the Sign in dialog are sent over the session connection to the relay server, and the relay server forwards these on to the client over the client connection. &lt;br&gt;
+f. When the user types in the Sign in dialog, the client sends the key strokes to the relay server, which then forwards them on to the session on the dependent application server over the session&amp;rsquo;s connection. &lt;br&gt;
+g. After the user authenticates, the logon process starts the Program Window. The Program Window&amp;rsquo;s user interface is transmitted via the relay server in the same way that the Sign in dialog user interface is.&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;File, clipboard, and print data is sent to the client in the same way that graphics data is: first to the relay server over the session connection, and then on to the client over the client connection.&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: iOSとの通信</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote167/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote167/</guid>
+      <description>
+        
+        
+        &lt;h3 id=&#34;クライアントとホストが同じlan上にあるときの通信&#34;&gt;&lt;strong&gt;クライアントとホストが同じLAN上にあるときの通信&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;以下の図は、GO-Global App(iOS上で実行)とホストが同じLAN上にある場合の通信を示しています。 ユーザデータグラムプロトコル(UDP)通信はGO-Globalがネットワーク上にあるホストを自動的に発見するために使用されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-167-1.png&#34; alt=&#34;9-167-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;communication-with-a-relay-server&#34;&gt;&lt;strong&gt;Communication with a Relay Server&lt;/strong&gt;&lt;/h3&gt;
+
+
+&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。
+&lt;/div&gt;
+
+&lt;p&gt;The diagram below shows how the GO-Global App (running on iOS) communicates with hosts when a relay server is used to connect clients on an external network with hosts that are on an internal network. In this configuration, all connections are made to the relay server.&lt;/p&gt;
+&lt;p&gt;The external firewall needs to allow connections on port 491 (or whatever port the relay server is configured to use). The internal firewall only needs to allow connections from the internal network to the DMZ; it does not need to allow connections from the DMZ to the internal network.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-167-2.png&#34; alt=&#34;9-167-2&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: グループポリシとログオンスクリプトの進捗メッセージ</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote168/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote168/</guid>
+      <description>
+        
+        
+        &lt;p&gt;グループポリシが有効になっている場合、またはログオンスクリプトが実行されている場合は、ログオンプロセスが非常に早く行われるため、これらの操作に関連する進行状況メッセージがユーザに表示されません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;AppServer&lt;/strong&gt; キーの下のレジストリ値 &lt;strong&gt;SessionStartupProgressDisplay&lt;/strong&gt; を0x00018481に変更すると、各起動メッセージが表示されてからさらに4秒が経過するため、グループポリシーとログオンスクリプトの進行状況メッセージがユーザに表示されます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタから、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SessionStartupProgressDisplay&lt;/strong&gt; キーを見つけます。&lt;code&gt;SOFTWARE\GraphOn\GO-Global\AppServer&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SessionStartupProgressDisplay&lt;/strong&gt; 値を18481に設定します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 手動によるサンドボックスホワイトリストエントリの設定</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote179/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote179/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのサンドボックス機能により、管理者はGO-Globalホスト上のファイルおよびプログラムへのユーザアクセスを制限できます。これらの制限はユーザにのみ適用され、管理者または管理者グループのメンバには適用されません。この記事では、&lt;code&gt;C:\ProgramData\GraphOn\WorksacePropertyDefinitions.xml&lt;/code&gt;ファイルを手動で編集して、ファイルおよびプログラムをサンドボックスホワイトリストに追加する方法について説明します。
+サンドボックス機能を有効にするには、まずレジストリでサンドボックスドライバを有効にする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;サンドボックスのドライバを有効にする方法&#34;&gt;&lt;strong&gt;サンドボックスのドライバを有効にする方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;[HKLM\Software\GraphOn\GO-Global\AppServer]&lt;/code&gt;レジストリキーを見つけます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;SandBox&lt;/strong&gt; という名前のDWORDレジストリ値を見つけます。&lt;/li&gt;
+&lt;li&gt;値を0から1に変更します。&lt;/li&gt;
+&lt;li&gt;コンピュータを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ホワイトリストエントリを指定する前に、ファイルやプログラムのサンドボックス機能を有効にする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;ファイルのサンドボックスを有効にする方法&#34;&gt;&lt;strong&gt;ファイルのサンドボックスを有効にする方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WorkspacePropertyDefinitions.xml&lt;/strong&gt; を開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;filesSandboxEnabled&lt;/strong&gt; プロパティIDを見つけて、値をtrueに設定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;propertygroup id=&amp;quot;UserSandbox&amp;quot;&amp;gt;
+&amp;lt;property id=&amp;quot;filesSandboxEnabled&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;User sandbox&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Enables the user sandbox feature.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;BOOL&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;true&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;プログラムのサンドボックスを有効にする方法&#34;&gt;&lt;strong&gt;プログラムのサンドボックスを有効にする方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;WorkspacePropertyDefinitions.xml&lt;/strong&gt;を開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;programsSandboxEnabled&lt;/strong&gt; プロパティIDを見つけて、値をtrueに設定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;programsSandboxEnabled&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;Programs&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Users may only run programs specified in the Programs white list.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;BOOL&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;true&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints/&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ホワイトリスト &lt;strong&gt;ファイル&lt;/strong&gt; は、完全修飾ディレクトリパスで指定されます。サンドボックスを使用すると、サブディレクトリを含め、ファイルのホワイトリストに記載されているディレクトリ内のすべてのファイルにアクセスできます。すべてのサブディレクトリを含むワークスペースプロファイルディレクトリ&lt;code&gt;%USERPROFILE%&lt;/code&gt;は、セッションの開始時にファイルのホワイトリストに自動的に追加されます。&lt;/p&gt;
+&lt;p&gt;ホワイトリストに登録された &lt;strong&gt;プログラム&lt;/strong&gt; は、完全修飾実行ファイルパスで指定されます。サンドボックスを使用すると、ユーザはプログラムのホワイトリストに記載されているすべてのプログラムを実行できます。パブリックデスクトップ&lt;code&gt;%PUBLIC%\Desktop&lt;/code&gt;、またはプライベートワークスペースデスクトップ&lt;code&gt;%USERPROFILE%\Desktop&lt;/code&gt;のいずれかのプログラムは、セッションの開始時に自動的にプログラムのホワイトリストに追加されます。これらのデスクトップにプログラムを追加する方法は4つあります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;実際のプログラム実行可能モジュールをデスクトップフォルダに置きます(例:&lt;code&gt;C:\Users\Public\Desktop\ExampleApp.exe&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;デスクトップフォルダにプログラム実行可能モジュールへのショートカットを配置する(例:&lt;code&gt;C:\Users\ExampleUser\Desktop\ExampleApp.lnk&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;関連付けられたプログラムを含む文書をデスクトップフォルダに配置する (例:&lt;code&gt;C:\Users\Public\Desktop\ExampleDoc.doc&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;関連付けられたプログラムを含む文書へのショートカットをデスクトップフォルダに配置する(例:@C:\Users\ExampleUser\Desktop\ExampleDoc.lnk`)。&lt;/li&gt;
+&lt;/ul&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+デスクトップフォルダにないホワイトリストファイルの関連プログラムは、自動的にプログラムホワイトリストに追加されません。
+&lt;/div&gt;
+
+&lt;p&gt;以下に説明するように、WorkspacePropertyDefinitions.xmlファイルを編集したら、変更内容をDefaultWorkspaceProperties.xmlファイルに伝播する必要があります。&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止し、&lt;code&gt;C:\ProgramData\GraphOn\DefaultWorkspaceProperties.xml&lt;/code&gt;ファイルを削除してから、&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を再起動します。これにより、DefaultWorkspaceProperties.xmlファイルがWorkspacePropertyDefinitions.xmlファイルから再作成されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+サンドボックス機能が有効になっていると、ホワイトリストに登録されているプログラムのみが実行を許可されます。既定のサンドボックス構成では、ユーザはコマンドプロンプト(cmd.exe)を実行できますが、プログラムがホワイトリストに追加されていない限り、cmd.exeからプログラムを起動することはできません。これはログオンスクリプトをサポートするための仕様です。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;oemのお客様への考慮事項&#34;&gt;&lt;strong&gt;OEMのお客様への考慮事項&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;OEMのお客様は、WorkspacePropertyDefinitions.xmlファイル内の既定のプロパティ値を自分の製品に適した値に編集する必要があります。このファイルはOEMのインストールに含まれるべきです。インストール後、Application Publishing ServiceはWorkspacePropertyDefinitions.xmlファイルの値からDefaultWorkspaceProperties.xmlファイルを生成します。Application Publishing Serviceは、DefaultWorkspaceProperties.xmlファイルから設定を取得します。&lt;/p&gt;
+&lt;p&gt;システム管理者は、DefaultWorkspaceProperties.xmlを次のように編集して追加の変更を加えることができます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; を開きます。&lt;/li&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ファイルのホワイトリストを編集する方法&#34;&gt;&lt;strong&gt;ファイルのホワイトリストを編集する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;C:\ProgramData\GraphOn\WorkspacePropertyDefinitions.xml&lt;/code&gt;ファイルで、&amp;ldquo;filesWhiteList&amp;quot;プロパティを探します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id = &amp;quot;filesWhiteList&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;Files&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Files and directories that users are allowed to access from the workspace.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;STRING&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;
+&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints&amp;gt;&amp;lt;/constraints&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;defaultvalue&gt;タグの間には、1行に1つのパスを使用し、二重引用符で囲み、先頭にスペースを入れずに、カンマとセミコロン(、;)で終わる複数のディレクトリパスを追加できます。拡張可能な環境変数を含めることができます。例えば、&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id = &amp;quot;filesWhiteList&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;Files&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Files and directories that users are allowed to access from the workspace.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;STRING&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;
+&amp;quot;C:\Departments\Accounting\Templates&amp;quot;,;
+&amp;quot;%ALLUSERSPROFILE%\ExampleApp&amp;quot;,;
+&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints&amp;gt;&amp;lt;/constraints&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;プログラムのホワイトリストを編集する方法&#34;&gt;&lt;strong&gt;プログラムのホワイトリストを編集する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;&lt;code&gt;C:\ProgramData\GraphOn\WorkspacePropertyDefinitions.xml&lt;/code&gt;ファイルで、&amp;ldquo;programsWhiteList&amp;quot;プロパティを探します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id = &amp;quot;programsWhiteList&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;Programs&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Programs that users are allowed to run from the workspace.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;STRING&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;
+&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints&amp;gt;&amp;lt;/constraints&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;1行に1つのパスを二重に囲んで使用して、&lt;defaultvalue&gt;タグ間に複数の実行可能ファイルパスを追加できます。セミコロン(;)で終わる引用符、先行する空白はありません。拡張可能な環境変数を含めることができます。例えば、&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id = &amp;quot;programsWhiteList&amp;quot;&amp;gt;
+&amp;lt;label&amp;gt;Programs&amp;lt;/label&amp;gt;
+&amp;lt;description&amp;gt;Programs that users are allowed to run from the workspace.&amp;lt;/description&amp;gt;
+&amp;lt;type&amp;gt;STRING&amp;lt;/type&amp;gt;
+&amp;lt;defaultvalue&amp;gt;
+&amp;quot;C:\ExampleApp\bin\ExampleApp.exe&amp;quot;;
+&amp;quot;%SystemRoot%\regedit.exe&amp;quot;;
+&amp;lt;/defaultvalue&amp;gt;
+&amp;lt;constraints&amp;gt;&amp;lt;/constraints&amp;gt;
+ &amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアント印刷技術の概要</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote201/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote201/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのクライアント印刷機能により、ホスト上のGO-Globalセッションで実行されているアプリケーションは、クライアントコンピュータまたはデバイスからアクセス可能なプリンタに印刷できます。この資料はこの機能の技術的な概要を提供したものです。&lt;/p&gt;
+&lt;h3 id=&#34;プロキシプリンタの作成と削除の方法&#34;&gt;&lt;strong&gt;プロキシプリンタの作成と削除の方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;ユーザがGO-Globalホストにサインインしてクライアント印刷機能が有効になると、Application Publishing Serviceはホストコンピュータ上にユーザのクライアントコンピューターまたはデバイスからアクセス可能なプリンタのプロキシとして機能するプリンターを作成します。 &lt;strong&gt;プロキシプリンタ&lt;/strong&gt; と呼ばれるこれらのホスト側プリンタは、ホストコンピュータの[デバイスとプリンタ]アプレットの下に表示されます。管理者にはプロキシプリンタへのフルコントロール権限が与えられます。通常のユーザには、自分のプロキシプリンタへの印刷権限と自分のプロキシプリンタの管理権限が付与されています。&lt;/p&gt;
+&lt;p&gt;デフォルトでは、GO-Globalはクライアントコンピュータ上のユーザのデフォルトプリンタ用のプロキシプリンタのみを作成します。あるいは、 &lt;strong&gt;–ac all&lt;/strong&gt; はGO-Globalクライアントのコマンドラインで指定されるか、 &lt;strong&gt;printConfig=all&lt;/strong&gt; はブラウザからクライアントを実行するために使用されるURLで指定され、プロキシプリンタはクライアントコンピュータ上のユーザが利用できるすべてのプリンタに対して作成されます。同様に、 クライアントのコマンドラインで &lt;strong&gt;–ac none&lt;/strong&gt; が指定されているか、 &lt;strong&gt;printConfig=none&lt;/strong&gt; がクライアントのURLに追加されている場合、ユーザのセッションにプロキシプリンタは作成されません。このオプションは、ユーザのセッションのクライアント印刷機能を事実上無効にします。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタ名のデフォルトの形式は、([ClientComputerName])の[ClientPrinterName]です。この形式は、 本ドキュメントサイトの&lt;a href=&#34;/docs/go-globalrc61/advancedtopics/printersapplet/#%E3%82%AF%E3%83%A9%E3%82%A4%E3%82%A2%E3%83%B3%E3%83%88%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BF%E5%90%8D%E3%81%AE%E3%82%AB%E3%82%B9%E3%82%BF%E3%83%9E%E3%82%A4%E3%82%BA&#34;&gt;クライアントプリンタ名のカスタマイズ&lt;/a&gt;の説明に従って変更できます。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタは、それを作成したセッションが閉じると削除されます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタドライバの選択方法&#34;&gt;&lt;strong&gt;プリンタドライバの選択方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;プロキシプリンタは、作成時に、プリンタ製造元のプリンタドライバまたはGO-GlobalのUniversalプリンタドライバのいずれかを使用するように設定されています。具体的には、 &lt;strong&gt;[Host Options]&lt;/strong&gt; ダイアログボックスの &lt;strong&gt;[Client Access]&lt;/strong&gt; タブで &lt;strong&gt;[Windows Printer Drivers]&lt;/strong&gt; オプションが選択されていて、次の条件の少なくとも1つが満たされている場合、Application Publishing Serviceは製造元のプリンタドライバを使用するようにプロキシプリンタを設定します。&lt;/p&gt;
+&lt;p&gt;a. 関連付けられたクライアントプリンタは、Windowsにインストールされている製造元のプリンタドライバを使用するようにWindowsプリンタアプレットプログラムを介して以前に設定されています。
+b. GO-Globalの &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; ファイルには、クライアントプリンタのプリンタドライバの名前を、ホストコンピュータにインストールされている製造元のプリンタドライバにマップするエントリが含まれています。
+c. クライアントプリンタのプリンタドライバの名前は、ホストコンピュータにインストールされている製造元のプリンタドライバの名前と同じです。&lt;/p&gt;
+&lt;p&gt;または、 &lt;strong&gt;[Host Options]&lt;/strong&gt; ダイアログボックスの &lt;strong&gt;[Client Access]&lt;/strong&gt; タブで &lt;strong&gt;[Universal Printer Driver]&lt;/strong&gt; オプションが選択されていて、次の条件の少なくとも1つが満たされている場合、Application Publishing ServiceはプロキシプリンタがGO-GlobalのUniversalプリンタドライバを使用するように設定します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;関連付けられたクライアントプリンタは、Universalプリンタドライバを使用するようにプログラムWindowsプリンタアプレットを介して以前に設定されています。&lt;/li&gt;
+&lt;li&gt;GO-Globalの &lt;strong&gt;Map Printer Drivers.xml&lt;/strong&gt; ファイルには、クライアントプリンタのプリンタドライバの名前をUniversal Printer Driverにマップするエントリが含まれています。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Windows Printer Drivers]&lt;/strong&gt; オプションが選択されていないか、製造元のプリンタドライバの選択条件が満たされていません。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;それ以外の場合、製造元のプリンタドライバの選択条件もUniversalプリンタドライバの選択条件も満たされないと、クライアントプリンタにプロキシプリンタは作成されず、ユーザはクライアントプリンタに印刷できなくなります。&lt;/p&gt;
+&lt;p&gt;製造元のプリンタドライバのインストールと管理、およびクライアントプリンタドライバの名前のサーバープリンタドライバへのマッピングは複雑なため、製造元のプリンタドライバでしか利用できない高度な機能が必要な場合を除き、管理者はUniversalプリンタドライバのみを有効にすることをお勧めします。特定のプリンタの高度な機能にアクセスする必要がある場合は、管理者が &lt;strong&gt;Windows Printer Drivers&lt;/strong&gt; を有効にすることをお勧めしますが、ユーザが必要とする高度な機能を提供するプリンタの製造元のプリンタドライバのみをホストにインストールします。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタ設定の方法&#34;&gt;&lt;strong&gt;プリンタ設定の方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Application Publishing Serviceは、プロキシプリンタを作成するときに、ユーザの&lt;code&gt;%APPDATA%\Roaming\GraphOn\GO-Global&lt;/code&gt;ディレクトリをチェックインして、クライアントプリンタのカスタマイズ設定が前回のセッションから保存されているかどうかを確認します。クライアントプリンタの設定ファイルが見つかった場合、Application Publishing Serviceはそのファイルに保存されている設定でプロキシプリンタを作成します。または、設定ファイルが見つからない場合、Application Publishing Serviceは選択したドライバで指定されている既定の設定でプロキシプリンタを作成します。管理者は、 本ドキュメントサイドの&lt;a href=&#34;/docs/go-globalrc61/advancedtopics/printersapplet/#%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BF%E3%83%9E%E3%83%83%E3%83%94%E3%83%B3%E3%82%B0%E3%81%AE%E3%83%87%E3%83%95%E3%82%A9%E3%83%AB%E3%83%88%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BF%E8%A8%AD%E5%AE%9A%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%81%AE%E4%BD%9C%E6%88%90&#34;&gt;プリンタマッピングのデフォルトプリンタ設定ファイルの作成&lt;/a&gt;セクションの手順に従って、プリンタドライバのデフォルト設定を含むファイルを作成できます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プロキシプリンタがUniversalプリンタドライバを使用するように設定されている場合、そのプリンタのデフォルト設定は&lt;code&gt;C:\Windows\System32\spool\drivers\x64\3\UniversalRemotePrinter.ppd&lt;/code&gt;ファイルによって制御されます。とりわけ、このファイルはUniversalプリンタドライバの余白を制御します。アプリケーションによっては、印刷出力をページの中央に配置するためにこのファイルを変更する必要があります。これについては、管理者ガイドの&lt;a href=&#34;/docs/go-globalrc61/advancedtopics/printersapplet/#%E5%8D%B0%E5%88%B7%E5%8F%AF%E8%83%BD%E9%A0%98%E5%9F%9F%E3%82%92%E8%AA%BF%E6%95%B4%E3%81%99%E3%82%8B&#34;&gt;印刷可能領域を調整する&lt;/a&gt;セクションで説明されています。
+&lt;/div&gt;
+
+&lt;p&gt;ユーザは[ファイル]メニューの[印刷]をクリックして、プリンタの設定をカスタマイズできます。GO-Global Printers Appletを実行するためのプログラムウィンドウ内のプリンタ。プリンタアプレットからプリンタの設定を変更しても、アプリケーションとセッションの間は維持されます。または、アプリケーションの[印刷]ダイアログボックスでプリンタの設定に加えた変更は、通常アプリケーションインスタンスにのみ適用され、アプリケーションを閉じると失われます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+ユーザがURLまたは特定のアプリケーションへのショートカットキーを使用してプログラムウィンドウを迂回する場合、管理者はそれを独立したアプリケーションとして公開することによってプリンタアプレットへのアクセスを提供できます。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;プリンタの列挙の方法&#34;&gt;&lt;strong&gt;プリンタの列挙の方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;ユーザがアプリケーションの[印刷]ダイアログを開くと、アプリケーションはオペレーティングシステムに対して1つ以上の呼び出しを行って、利用可能なプリンタを列挙します。GO-Globalは、プリンタを列挙するアプリケーション要求を傍受し、(a)ユーザが利用できるホスト側プリンタ、および(b)アプリケーションが実行されているセッション用に作成されたプロキシプリンタを返します。&lt;/p&gt;
+&lt;p&gt;他のセッションに属する代理プリンタはフィルタリングされ、ユーザ(例えば管理者)が他の代理プリンタに対する権利を持っていても、ユーザは自分のセッションに属する代理プリンタだけを見ることができる。&lt;/p&gt;
+&lt;h3 id=&#34;universalプリンタドライバで印刷する&#34;&gt;&lt;strong&gt;Universalプリンタドライバで印刷する&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;Universalプリンタドライバを使用して文書を印刷するプロセスを次の図に示します。&lt;/p&gt;
+&lt;p&gt;プロセスの手順は次のとおりです。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-201-1.png&#34; alt=&#34;9-201-1&#34;&gt;&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;アプリケーションは印刷ジョブを開始し、Windows APIを呼び出してドキュメントをプリンタにレンダリングします。&lt;/li&gt;
+&lt;li&gt;Microsoft PostScriptプリンタドライバは、アプリケーションのグラフィックコマンドをPostScript(PS)に変換し、PostScriptデータをプリントスプーラのプロキシプリンタのポートに送信します。&lt;/li&gt;
+&lt;li&gt;GO-Globalポートモニタは、Microsoft PostScriptプリンタドライバがプロキシプリンタのポートに送信したデータを受信します。&lt;/li&gt;
+&lt;li&gt;クライアントがWindowsまたはMacの場合、またはドキュメントがGO-GlobalのPreview PDFプリンタに印刷されている場合&lt;br&gt;
+a. GO-GlobalポートモニタはPostScriptデータをホスト上の一時ファイルに書き込みます。&lt;br&gt;
+b. ポートモニタは、すべての印刷ジョブデータを受信すると、VeryPDF PostScript to PDFコンバータを使用してPostScriptファイルをPDFファイルに変換します。&lt;br&gt;
+c. 印刷ジョブがPDFファイルに変換されると、ポートモニタはApplication Publishing Serviceを介してそのPDFファイルをGO-Globalクライアントに送信します。&lt;br&gt;
+d. GO-Globalポートモニタは、ホストから一時的なPostScriptファイルとPDFファイルを削除します。&lt;br&gt;
+e. GO-GlobalクライアントはPDFファイルを受信し、それをクライアントコンピュータの一時ファイルに保存します。&lt;br&gt;
+f. ドキュメントがGO-GlobalのPreview PDFプリンタで印刷された場合、クライアントはクライアントコンピュータのデフォルトのPDFビューアでPDFファイルを開きます。&lt;br&gt;
+g. あるいは、文書がクライアントプリンタに印刷された場合、GO-GlobalクライアントはPDFファイルをプリンタに送信します。Mac OS Xでは、クライアントはオペレーティングシステムの組み込みサポートを使用してPDFファイルをプリンタに送信します。Windowsでは、クライアントは、GO-Globalクライアントに含まれているVeryPDFのpdfprint.exeユーティリティを使用してPDFファイルを印刷します。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+クライアントがWindows上で実行されていて、ホストのHostProperties.xmlファイルの &lt;strong&gt;EnablePrintOptions&lt;/strong&gt; プロパティの値がtrueである場合、クライアントは &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;PrintOptions&lt;/strong&gt; プロパティで指定されているコマンド行オプションを &lt;strong&gt;pdfprint.exe&lt;/strong&gt; に追加します。
+&lt;/div&gt;
+
+&lt;br&gt;
+h. クライアントは一時PDFファイルを削除します。&lt;br&gt;&lt;/p&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;それ以外の場合、クライアントがLinux上で実行されていて、文書がクライアントプリンタに印刷されている場合&lt;br&gt;
+a. GO-Globalポートモニタは、Application Publishing Serviceを介してPostScriptデータをクライアントに転送します。&lt;br&gt;
+b. GO-GlobalクライアントはPostScriptデータをプリンタに送信します。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;プリンタの製造元からプリンタドライバで印刷する方法&#34;&gt;&lt;strong&gt;プリンタの製造元からプリンタドライバで印刷する方法&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;プロキシプリンタがプリンタ製造元のプリンタドライバを使用するように設定されている場合、このプロセスは、Universalプリンタドライバを使用してLinuxクライアント上のプリンタにドキュメントを印刷するプロセスと似ています。この場合：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;製造元のプリンタドライバがアプリケーションのグラフィックスコマンドをプリンタが処理できる形式に変換します。これは標準フォーマット(例えばPostScript)または独自フォーマットにすることが出来ます。&lt;/li&gt;
+&lt;li&gt;製造元のプリンタドライバが、印刷ジョブのデータをプリントスプーラのプリンタのポートに転送します。&lt;/li&gt;
+&lt;li&gt;GO-Globalポートモニタは印刷ジョブのデータを受信し、データを受信するとそれをGO-Globalクライアントに転送します。&lt;/li&gt;
+&lt;li&gt;GO-Globalクライアントが印刷ジョブのデータをプリンタに転送します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ホスト側プリンタへの印刷&#34;&gt;&lt;strong&gt;ホスト側プリンタへの印刷&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;ユーザがGO-Globalホストからアクセス可能なローカルプリンタまたはネットワークプリンタに印刷する場合、GO-Globalは関与しません。管理者は、ホスト側のプリンタに関する問題を解決するために、Microsoftのマニュアルおよびプリンタの製造元のマニュアルを参照する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 暗号化に関するFAQ</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote205/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote205/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalには暗号化機能があります。それは管理者が2つの異なる暗号化方法の1つを使用してGO-Globalホストとそのクライアントの間で転送されるデータを暗号化することを可能にします。&lt;/p&gt;
+&lt;p&gt;管理者がAdmin Consoleで &lt;strong&gt;TCP転送&lt;/strong&gt; を選択すると、クライアントとホスト間で非対称RSAアルゴリズムを使用して56ビットのDESキーが交換されます。RSAキーは512ビットです。&lt;/p&gt;
+&lt;p&gt;あるいは、管理者がAdmin Consoleで &lt;strong&gt;SSLトランスポート&lt;/strong&gt; を選択すると、GO-GlobalはOpenSSLを使用してキー交換を実行します。この場合、キーのビット長は、ホストコンピュータにインストールされている証明書によって決まります。GO-Globalは、最大2048ビットの長さの鍵を持つ証明書をサポートしています。GO-GlobalはSSLv2およびSSLv3プロトコルを無効にし、利用可能な最も高いTLSバージョンとの鍵交換をネゴシエートします。&lt;/p&gt;
+&lt;p&gt;以下は、 &lt;strong&gt;GO-Global暗号化に関してよくある質問&lt;/strong&gt; です。&lt;/p&gt;
+&lt;h3 id=&#34;sslとtcpトランスポートの違いは何ですか&#34;&gt;&lt;strong&gt;SSLとTCPトランスポートの違いは何ですか?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;主な違いは、SSLがMITM（Man-In-The-Middle）攻撃を防ぐのに対して、TCPトランスポートを使った56ビット暗号化は防げないことです。MITM攻撃、およびSSLがそれらをどのように防御するかを理解するために、オンラインの参考文献を参考にすることをお勧めします。&lt;/p&gt;
+&lt;p&gt;二次的な、それほど重要ではない違いは、SSLトランスポートが選択されているときGO-GlobalがOpenSSLのデータ暗号化標準（DES）実装を使用してGO-Globalセッションのデータを暗号化することです。以下は、GO-GlobalのTCPおよびSSLトランスポートが選択されている場合の暗号化キーの交換方法とセッションのデータの暗号化方法の概要です。&lt;/p&gt;
+&lt;p&gt;TCPトランスポートが選択されている場合、攻撃者はMITM攻撃を実行し、GO-Globalクライアントとホストの間で転送されるすべてのデータを復号化することが可能です。これを行うために、攻撃者はクライアントからの接続要求を傍受し、ホストになりすまします。その後、攻撃者はクライアントとの間で暗号化キーの交換を行い、その後クライアントが送信したすべてのデータを復号化することができます。攻撃を完了するために、攻撃者はホストへの接続を開き、クライアントになりすまします。攻撃者はホストとの暗号化キー交換を実行します。その後、攻撃者はホストが送信したすべてのデータを復号化できます。その後、攻撃者はクライアントとホストの間で双方向にデータを中継し、すべてのデータが暗号化されていないことを確認できます。&lt;/p&gt;
+&lt;p&gt;TCPトランスポートが選択されている場合、GO-Globalは、非対称RSA公開鍵交換アルゴリズムを使用してDES暗号で使用される56ビット対称鍵を交換します。クライアントは512ビットの非対称公開非公開鍵ペアを生成し、その公開鍵をホストに送信します。次に、ホストは、GO-Globalセッションのデータを暗号化および復号化するためにDES暗号で使用される56ビットの対称鍵を生成します。次に、ホストはクライアントの512ビットRSA公開鍵を使用して56ビット対称鍵を暗号化し、暗号化された56ビット対称鍵をクライアントに送信します。その後、クライアントは、512ビットのRSA秘密鍵を使用して56ビットの対称鍵を復号化します。その後、クライアントとホストは、56ビット対称鍵とDES暗号を使用して、接続を介して送信されるデータを暗号化および復号化します。&lt;/p&gt;
+&lt;p&gt;RSAアルゴリズムは、56ビット対称鍵を安全に暗号化する方法を提供しますが、それ自体では、クライアントが接続しようとしているコンピュータと直接通信していることを保証する方法は提供しません。たとえば、クライアントは、ホストまたはMITMのどちらから56ビット対称鍵を受信しているのかを判断できません。同様に、ホストは、56ビットの対称鍵をクライアントに送信しているのか、それともMITMに送信しているのかを判断できません。SSLはこの問題を解決し、クライアントとホストが56ビット対称鍵を交換するための安全な方法を提供します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-205-1.png&#34; alt=&#34;9-205-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;SSLトランスポートが選択されると、GO-GlobalはOpenSSLを使用してGO-Globalクライアントとホスト間の接続を確立します。OpenSSLでは、56ビット対称鍵の暗号化に使用される非対称公開鍵と秘密鍵は、それぞれSSL証明書とSSL鍵です。クライアントが接続すると、ホストは自分のSSL証明書(その公開鍵)をクライアントに送信します。証明書は、MITMによる改ざんを防ぐために署名されています。次に、クライアントは証明書を調べて、クライアントコンピュータが信頼している認証局(CA)によって発行されたものかどうかを確認します。証明書が有効であり、クライアントが信頼するCAによって発行されたものである場合、クライアントはMITMがないことを確認できます。次にOpenSSLは56ビットの対称鍵を生成し、それをホストの証明書(その公開鍵)を使用して暗号化し、暗号化された対称鍵をホストに送信します。その後、OpenSSLは56ビットの対称鍵を使用してGO-Globalセッションのデータを暗号化および復号化します。&lt;/p&gt;
+&lt;h3 id=&#34;高度な暗号化レベルのライセンスを使用する場合高度な暗号化を有効にするためにssl証明書が必要ですか&#34;&gt;&lt;strong&gt;高度な暗号化レベルのライセンスを使用する場合、高度な暗号化を有効にするためにSSL証明書が必要ですか?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;はい。GO-Globalには、強力な暗号の独自の実装はありません。OpenSSLの強力な暗号の実装を使用しています。&lt;/p&gt;
+&lt;h3 id=&#34;sslキー暗号強度1028ビットまたは2048ビットはadmin-consoleで指定されたセッション暗号化暗号レベルにどのように影響しますか&#34;&gt;&lt;strong&gt;SSLキー暗号強度(1028ビットまたは2048ビット)は、Admin Consoleで指定されたセッション暗号化暗号レベルにどのように影響しますか?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;SSL証明書内の非対称鍵および鍵ファイル(1024ビットまたは2048ビット)は、暗号化および復号化に使用される対称鍵(56ビット、256ビットなど)の暗号化および復号化にのみ使用されます。選択した暗号を使用したセッションのデータは常に、[Host Options]ダイアログの[Security]タブの[Encryption]ドロップダウンで指定されたキーの長さと暗号を使用して暗号化および復号化されます。&lt;/p&gt;
+&lt;h3 id=&#34;aes-256ビット暗号化とvpn製品で使用されている暗号化との違いは何ですか&#34;&gt;&lt;strong&gt;AES-256ビット暗号化とVPN製品で使用されている暗号化との違いは何ですか?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;AES-256ビット暗号化は、VPN製品で一般的に使用されています。 AES-256は、最も機密性の高い機密文書およびデータを保護するために安全性の高い環境で使用される最も一般的な対称アルゴリズムです。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalはエンドツーエンドの暗号化をサポートしていますか&#34;&gt;&lt;strong&gt;GO-Globalはエンドツーエンドの暗号化をサポートしていますか?&lt;/strong&gt;&lt;/h3&gt;
+&lt;p&gt;GO-Globalは、independent hostとクライアントの間でエンドツーエンドの暗号化を使用します。GO-Globalが1つ以上のdependent hostを持つrelay serverとして動作するように設定されている場合、GO-Globalはリンク暗号化を提供します。具体的には、relay server上のApplication Publishing Serviceは、クライアントから受信したデータを復号化し、そのデータをdependent hostに転送する前に再暗号化します。同様に、dependent hostから受信したデータを復号化し、クライアントに転送する前に再暗号化します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 問題：最後のアプリケーションを終了したときにGO-Globalセッションが閉じることができない</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote206/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote206/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalアーキテクチャにより、1つのセッション内で複数のプロセスを実行できます。常に1つ以上のプロセスが実行されている必要があります。セッションの最後のプロセスが終了すると、GO-Globalセッションは閉じられます。&lt;/p&gt;
+&lt;p&gt;通常のプログラム実行中に、ほとんどのアプリケーションは子プロセスを作成して外部操作を実行します。これらのプロセスの一部、たとえばWindowsヘルプは、独自のユーザインターフェイスを提供し、不要になったときにユーザによって閉じられます。その他は、ユーザインターフェイスを表示しないが、独自に終了する前に固定操作を実行するヘルパープロセスです。アプリケーションには、作成する子プロセスを制御し、終了する前に終了するオプションもあります。&lt;/p&gt;
+&lt;p&gt;プロセスにユーザインターフェイスがなく、プロセス自体が終了せず、親プロセスがプロセスを直接終了しない場合、まれに問題が発生します。デフォルト構成では、これらのプロセスは、他のすべてのプロセスが終了したときにGOGlobalセッションが終了するのを防ぎます。残りのプロセスはセッションをアクティブに保ちますが、クライアントにはプロセスとそれが実行されているセッションを閉じるためのユーザインターフェイスがありません。&lt;/p&gt;
+&lt;p&gt;この問題を解決するために、GO-Globalホストは、システムプロセスとして実行する特定の実行可能ファイルの登録をサポートしています。セッションに残っているプロセスがシステムプロセスのみである場合、GO-Globalセッションは閉じます。ほとんどのアプリケーションでは、デフォルトの構成で十分です。終了する手段なしでプロセスが作成される特別な場合、残留プロセスの実行可能ファイルを登録すると、GO-Globalセッションを適切に閉じることができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;警告&lt;/h4&gt;
+次の情報には、Windowsレジストリを開いて操作することが含まれます。ここで説明した以外の操作を実行すると、構成エラーが発生し、システムが使用できなくなる可能性があります。レジストリで作業するときは常に細心の注意を払ってください。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;システムプロセスを作成するファイルとして実行可能ファイルを登録する方法&#34;&gt;システムプロセスを作成するファイルとして実行可能ファイルを登録する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global\System\Processes&lt;/code&gt;を参照します。&lt;/li&gt;
+&lt;li&gt;登録する実行可能ファイルの名前(AGENTSVR.EXEなど)で &lt;strong&gt;DWORD&lt;/strong&gt; エントリを作成します。&lt;/li&gt;
+&lt;li&gt;実行可能ファイルへのフルパスが指定されている場合は新しいエントリの値を1に設定し、ベース名のみが指定されている場合は2に設定します(フルパスを含めると、同じ実行可能イメージの異なるバージョンを異なる方法で実行できます)。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;この設定は、将来のセッションに加えて、現在のすべてのGO-Globalセッションに影響します。これには、すでに&amp;quot;残留&amp;quot;状態にあるセッションは含まれません。このようなセッションは、Admin Consoleから終了する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ウィンドウ枠の幅とパディングの変更</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote207/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote207/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ウィンドウの境界線の幅とパディングは、&lt;strong&gt;Default WorkspaceProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;borderWidth&lt;/strong&gt; および &lt;strong&gt;paddedBorderWidth&lt;/strong&gt; プロパティの値を変更することで調整できます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;&lt;strong&gt;0&lt;/strong&gt;&lt;/th&gt;
+&lt;th&gt;Uses current hard-coded default values ( &lt;strong&gt;borderWidth&lt;/strong&gt; =1; &lt;strong&gt;paddedBorderWidth&lt;/strong&gt; =4)&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;1 or higher&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The value shown in the application will be the value specified in the .xml file&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;-1&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;The value shown in the application will be whatever the registry is set to, divided by -15. (The values in the registry are -15 times the actual value.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;境界線のサイズとパディングを変更する方法&#34;&gt;境界線のサイズとパディングを変更する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Application Publishing Serviceを停止します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;ディレクトリで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; を開き、 &lt;strong&gt;borderWidth&lt;/strong&gt; および &lt;strong&gt;paddedBorderWidth&lt;/strong&gt; の文字列を見つけます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;borderWidth&lt;/strong&gt; と &lt;strong&gt;paddedBorderWidth&lt;/strong&gt; を目的の値に設定します。&lt;/li&gt;
+&lt;li&gt;編集した.xmlファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を開始します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Androidデバイスでクラッシュレポートを生成する</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote208/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote208/</guid>
+      <description>
+        
+        
+        &lt;ol&gt;
+&lt;li&gt;Windowsマシンの &lt;strong&gt;Windows用SDKプラットフォームツール&lt;/strong&gt; を次からダウンロードします。&lt;a href=&#34;https://developer.android.com/studio/releases/platform-tools&#34;&gt;https://developer.android.com/studio/releases/platform-tools&lt;/a&gt;プラットフォームツールはAndroid SDKのコンポーネントであり、adb、fastboot、systrayなどのさまざまなツールが含まれています。&lt;/li&gt;
+&lt;li&gt;USBケーブルを使用して、AndroidデバイスをWindowsマシンに接続し、WindowsマシンからAndroidデバイスにアクセスできることを確認します。&lt;/li&gt;
+&lt;li&gt;Androidデバイスから、 &lt;strong&gt;[設定]&lt;/strong&gt; に移動し、 &lt;strong&gt;[開発者オプション]&lt;/strong&gt; をクリックします。 &lt;strong&gt;[開発設定を許可する]&lt;/strong&gt; 確認メッセージで &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。USBデバッグを有効にします。 &lt;strong&gt;[USBデバッグの確認メッセージを許可する]&lt;/strong&gt; で &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;Windowsマシンで管理者としてコマンドプロンプトを開き、 &lt;strong&gt;SDKプラットフォームツールパッケージ&lt;/strong&gt; が解凍されたディレクトリを参照します(例えば c:platform tools)。&lt;/li&gt;
+&lt;li&gt;次のコマンドを実行します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;adb logcat AndroidRuntime：E *：I 
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドは、実行時エラーやその他の警告を記録します。
+6. Androidデバイスで &lt;strong&gt;[USBデバッグの確認を許可する]&lt;/strong&gt; メッセージで &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。RSAキーフィンガープリントが表示されたら、 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。
+7. GO-Globalホストに接続し、クラッシュを再現します。
+8. GO-Globalがクラッシュしたら、コンソールからテキスト全体をコピーしてテキストドキュメントに貼り付け、分析のためにKitASPのサポートにメールで送信します。&lt;/p&gt;
+&lt;p&gt;クライアントがクラッシュすると、アプリケーションの起動時に &lt;strong&gt;&amp;ldquo;GO GLOBAL ANDROID:64ビット&amp;rdquo;&lt;/strong&gt; または &lt;strong&gt;&amp;ldquo;GO-GLOBAL ANDROID:32ビット&amp;rdquo;&lt;/strong&gt; というエントリが出力に含まれます。これが表示されない場合は、他の構成の問題がある可能性があります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-208-1.png&#34; alt=&#34;9-208-1&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+レイアウトの画面バッファサイズが大きいことが重要です。これにより、ログがクラッシュを検出するのに十分なだけ遡ります(たとえば、900x900)。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ホストインストーラがインターネットインフォメーションサービス(IIS)を構成してGO-GLOBAL WEB APPをホストするのに失敗する</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote210/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote210/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;em&gt;この記事は GO-Global v6.0.1.29306以降に適用されます。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;GO-GlobalホストのWebインストーラ(iis.msi)のインストールに失敗した場合、GO-Global Application Publishing Serviceのログファイルには次のメッセージが含まれている場合があります。&lt;/p&gt;
+&lt;p&gt;aps (1900) The installer failed to configure IIS to host the GO-Global Web App. Users will be unable to browse to this computer and run the GO-Global Web App.&lt;/p&gt;
+&lt;p&gt;詳細については、技術ノート 210 を参照してください。
+iis.msiのインストールに失敗する場合は、IIS で既定のサイトが指定されていないことが原因である可能性があります。これを解決するには、以下を追加してください。をポート80に1つのサイトを作成し、ホスト名フィールドは空白のままにしておきます。その後、以下のようにホストインストーラを実行します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Webサイトの追加]&lt;/strong&gt; ダイアログを使用してIISでWebサイトを追加します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;サイト名を作成&lt;/strong&gt; します(例:TestSite)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;物理パス&lt;/strong&gt; を選択します(例:&lt;code&gt;C:temp&lt;/code&gt;)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Binding&lt;/strong&gt; をhttpのままにして、Portを &lt;strong&gt;80&lt;/strong&gt; に設定します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ホスト名フィールド&lt;/strong&gt; は空白のままにしておきます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt; をクリックして IIS サービスを再起動します。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストインストーラを実行します。 &lt;strong&gt;[カスタマイズ]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;インストールオプションがすべて選択されていることを確認し、[ &lt;strong&gt;Host | Web | licensing&lt;/strong&gt; ]の順に選択し、 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/images/9-210-1.png&#34; alt=&#34;9-210-1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;9&#34;&gt;
+&lt;li&gt;&lt;strong&gt;修復&lt;/strong&gt; ボタンをクリックして、インストーラが完了するのを待ちます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これらの手順で問題が解決しない場合は、Web インストーラのログに以下のエラーがないか確認してください。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;WriteIIS7ConfigChanges: Error 0x800700b7: Failed get staticContent section for mimemap
+WriteIIS7ConfigChanges: Error 0x800700b7: Failed to configure IIS MimeMap.
+WriteIIS7ConfigChanges: Error 0x800700b7: WriteIIS7ConfigChanges Failed.
+CustomAction WriteIIS7ConfigChanges returned actual error code 1603
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ログファイルは、ユーザのtempフォルダに格納されています。
+&lt;code&gt;C:\Users\[username]\AppData\Local\Temp&lt;/code&gt;または&lt;code&gt;%TEMP%&lt;/code&gt;で、GO-Global_Host_20200412134338_010_iis.msi.logなどの名前が付けられます。
+Webインストーラのログファイルに上記のエラーメッセージが含まれている場合は、以下の回避策を実行してください。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;次のセクションを &lt;strong&gt;&lt;code&gt;%WINDIR%\System32\inetsrv\configApplicationHost.config&lt;/code&gt;&lt;/strong&gt; ファイルから削除します&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;location path=&amp;quot;Default Web Site/GraphOnGO-Global&amp;quot;&amp;gt;
+&amp;lt;system.webServer&amp;gt;
+&amp;lt;defaultDocument&amp;gt;
+&amp;lt;files&amp;gt;
+&amp;lt;clear/&amp;gt;
+&amp;lt;clear/&amp;gt;
+&amp;lt;add value=&amp;quot;logon.html&amp;quot;/&amp;gt;
+&amp;lt;/files&amp;gt;
+&amp;lt;/defaultDocument&amp;gt;
+&amp;lt;staticContent&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.mem&amp;quot; mimeType=&amp;quot;application/octet-stream&amp;quot; /&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.deb&amp;quot; mimeType=&amp;quot;application/octet-stream&amp;quot; /&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.rpm&amp;quot; mimeType=&amp;quot;application/octet-stream&amp;quot; /&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.dmg&amp;quot; mimeType=&amp;quot;application/octet-stream&amp;quot; /&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.otf&amp;quot; mimeType=&amp;quot;application/octet-stream&amp;quot; /&amp;gt;
+&amp;lt;mimeMap fileExtension=&amp;quot;.properties&amp;quot; mimeType=&amp;quot;text/plain&amp;quot; /&amp;gt;
+&amp;lt;/staticContent&amp;gt;
+&amp;lt;/system.webServer&amp;gt;
+&amp;lt;/location&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;このセクションを削除した後、GO-Globalホストを再インストールします。
+IIS を手動で構成する方法については、管理者ガイドの第 II 章の次のセクションを参照してください。&lt;a href=&#34;http://localhost:1313/docs/go-globalrc61/configuringthehost/runningthe30daytrialversion/#iis-web%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E4%BD%BF%E7%94%A8%E3%81%97%E3%81%A6%E6%97%A2%E5%AE%9A%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E4%BB%A5%E5%A4%96%E3%81%AE%E3%83%87%E3%82%A3%E3%83%AC%E3%82%AF%E3%83%88%E3%83%AA%E3%81%8B%E3%82%89web%E3%83%95%E3%82%A1%E3%82%A4%E3%83%AB%E3%82%92%E3%83%9B%E3%82%B9%E3%83%88%E3%81%99%E3%82%8B&#34;&gt;IIS Webサーバを使用して、既定のディレクトリ以外のディレクトリからWebファイルをホストする&lt;/a&gt;、&lt;a href=&#34;http://localhost:1313/docs/go-globalrc61/configuringthehost/runningthe30daytrialversion/#apache-http%E3%82%B5%E3%83%BC%E3%83%90%E3%82%92%E4%BB%8B%E3%81%97%E3%81%9Fgo-global%E3%81%AE%E5%AE%9F%E8%A1%8C&#34;&gt;Apache HTTPサーバを介したGO-Globalの実行&lt;/a&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Universalプリンタドライバを使用して印刷できないユーザについて</title>
+      <link>/docs/go-globalforwindows6tips/technote/technote211/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-globalforwindows6tips/technote/technote211/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;em&gt;この記事は、GO-Global v6.0以降に適用されます。&lt;/em&gt;&lt;/p&gt;
+&lt;p&gt;GO-Globalホスト上のソフトウェアがポート9010を使用する場合、ユーザはUniversalプリンタドライバで印刷できず、ps2pdf.exeプロセスはホスト上で実行されたままになります。Ps2pdf.exeはポート9010を使用し、このポートは変更できません。&lt;/p&gt;
+&lt;p&gt;この制限を回避するには、ポート9010でリッスンしているソフトウェアが別のポートを使用するように構成されている必要があります。別のプログラムがポート9010でリッスンしているかどうかを確認するには、管理者としてCMD.exeを実行します。 &lt;strong&gt;netstat -a&lt;/strong&gt; と入力して、Enterキーを押します。これにより、すべてのアクティブなTCP接続が一覧表示されます。ポート番号は、IPアドレスの後にコロンで区切られて表示されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

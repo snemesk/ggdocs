@@ -1,0 +1,995 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – GO-Global 拡張パッケージ</title>
+    <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/</link>
+    <description>Recent content in GO-Global 拡張パッケージ on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 概要</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/introduction/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/introduction/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyLogon</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylogon/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylogon/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyMonitor</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasymonitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasymonitor/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasylog</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylog/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylog/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2017-03-07: 1.0.0]&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GGEasylog1.png&#34; alt=&#34;GGEasylog1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;アプリケーション(.EXE)のラッパー・プログラムで，これを介してアプリケーションが起動されると，アプリケーションの起動日時・終了日時・ユーザーID・クライアント端末の名前・クライアント端末のIPアドレスがログに記録するツール。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;p&gt;アプリケーションの操作記録を行いたいサーバにGGEasylogフォルダを配置。&lt;/p&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GGEasylogフォルダ内にあるGGEasylog.iniにアプリケーションのパスを記載します。
+例）Internet Explorerの場合
+path = C:\Program Files (x86)\Internet Explorer\iexplore.exe
+args = &lt;a href=&#34;http://www.yahoo.co.jp&#34;&gt;http://www.yahoo.co.jp&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;AdminConsoleの[Executable Path]ボックス内にGGEasyLog を指定し，コマンドラインのオプションで ?app &amp;lt;アプリケーションの名称&amp;gt; を指定します。アイコンを本来のアプリケーションのアイコンに変更します。&lt;/li&gt;
+&lt;li&gt;GGにログオン後，登録したアプリケーションを起動します。先ず、GGEasyLog が起動され、GGEasyLogはログに起動日時を記録し、次にアプリケーション(この例ではIE)を起動します。この時タスクバーには、ラッパーのGGEasyLogは現れません。&lt;/li&gt;
+&lt;li&gt;アプリケーションを閉じます。GGEasyLogはアプリケーションの終了を認識し，終了日時を記録します。&lt;/li&gt;
+&lt;li&gt;ログに記載されているStart行 が開始日時、Ended行が終了日時です。Appはアプリケーションの名称、PID はプロセスID、USER はユーザーID、CNAME はクライアント端末の名前、IPADDR はクライアント端末のIPアドレスです。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+アプリケーションの操作記録を行いたいサーバが複数ある場合はそれぞれのサーバで作業を行ってください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2017012301&lt;/li&gt;
+&lt;li&gt;KGTN 2017021101&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGHX-SystemProcess</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gghx-systemprocess/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gghx-systemprocess/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGAPSManager</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggapsmanager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggapsmanager/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyMonitorConnectionCChCheCheck</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasymonitorconnectioncchchecheck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasymonitorconnectioncchchecheck/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGAXDelete4G</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggaxdelete4g/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggaxdelete4g/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGExpLic</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggexplic/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggexplic/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGHealthCheck2</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gghealthcheck2/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gghealthcheck2/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGNetworkCheck</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggnetworkcheck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggnetworkcheck/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyMonitor</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggservicemonitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggservicemonitor/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGSessionManager</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsessionmanager/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsessionmanager/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGSessionMonitor</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsessionmonitor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsessionmonitor/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GMService</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmservice/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmservice/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyPrinters</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyprinters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyprinters/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyPrintSpooler</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyprintspooler/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyprintspooler/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyNotify</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasynotify/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasynotify/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2020-05-01: 1.0.0]&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;通常GO-Globalサーバのコンソールから起動されるアプリケーションで、そのサーバ上に存在する全てのGO-Globalセッションにメッセージを表示します。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-GlobalサーバでGGEasyNotify.exeを実行してインストールを行います。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;設定ファイルGGEasyNotify.iniのdefaultセクションで、以下のパラメタを設定して下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;logLevel&lt;/td&gt;
+&lt;td&gt;ログファイルの出力先フォルダーを指定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;logd&lt;/td&gt;
+&lt;td&gt;ログの出力レベル（1～9）を指定、既定値は4&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;apsPort&lt;/td&gt;
+&lt;td&gt;GGの接続ポートの番号を指定、既定値は491&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;appName&lt;/td&gt;
+&lt;td&gt;メッセージを表示するGGのアプリケーション名、既定値はappNews&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;起動オプションは以下の通りになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;logLevel&lt;/td&gt;
+&lt;td&gt;引数でメッセージを表示するGG上のアプリケーション名を指定 ※未指定時は設定ファイルにあるアプリケーション名を使用されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;logd&lt;/td&gt;
+&lt;td&gt;引数で起動するアプリケーションへのパラメタを指定 ※パラメタ全体を “” で囲って１つの文字列として指定して下さい。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;記載方法は以下の通りになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;[default]
+logLevel         = 4
+logd             = Logs
+apsPort          = 491
+; appName        = notepad
+;-
+; [使い方の例]
+; GGEasyNotify.exe -appArgs &amp;quot;-id msg3 午後5時 1時間&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;/expackimage/GGEasyNotify1.png&#34; alt=&#34;GGEasyNotify1&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2020050101&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyNews</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasynews/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasynews/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2020-04-30: 1.0.0]&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;GGEasyNewsは、GGEasyNotifyから起動されるアプリケーションで、GO-Globalのセッション上にパラメタで指定された情報を画面に表示します。利用に当たっては、Admin Consoleで名称GGNewsとしてアプリケーション登録する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-GlobalサーバでGGEasyNotify.exeを実行してインストールを行います。&lt;/li&gt;
+&lt;li&gt;Admin ConsoleにてGGEasyNewsを登録します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;設定ファイルGGEasyNews.iniのdefaultセクションで、以下のパラメタを設定して下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;message&lt;/td&gt;
+&lt;td&gt;既定のメッセージ （該当するメッセージが無い時に表示）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;autoClose&lt;/td&gt;
+&lt;td&gt;メッセージを自動的に閉じる場合の秒数、0 は継続して表示&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;メッセージID&amp;gt;&lt;/td&gt;
+&lt;td&gt;GGの接続ポートの番号を指定、既定値は491&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;appName&lt;/td&gt;
+&lt;td&gt;表示するメッセージ、%s (3個まで) は文字列の置換が行われます&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;起動オプションは以下の通りになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-id　　　&lt;/td&gt;
+&lt;td&gt;表示する設定ファイルの &amp;lt;メッセージID&amp;gt; を引数として指定&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&amp;lt;文字列&amp;gt;&lt;/td&gt;
+&lt;td&gt;置換が指定されたメッセージに与える文字列 （3個まで）&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;記載方法は以下の通りになります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;[default]
+message          = 既定のメッセージです。
+msg1             = 印刷スプーラーを再起動しました。これにより再ログオンするまでクライアント側のプリンターを選択できません。
+msg2             = これはメッセージ２です。
+msg3             = サービスを %s より %s 停止します。
+;-
+; autoClose      = 30
+;-
+; [使い方の例]
+; GGEasyNews.exe -id msg3 &amp;quot;午後5時&amp;quot; &amp;quot;1時間&amp;quot;
+;-
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;/expackimage/GGEasyNews1.png&#34; alt=&#34;GGEasyNews1&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2020043001&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyDefaultPrinter</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasydefaultprinter/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasydefaultprinter/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2017-06-28: 1.0.0]&lt;br&gt;
+・UDPのポート通信をチェックするツール&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GGEasyUDPCheck1.png&#34; alt=&#34;GGEasyUDPCheck1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Consoleの左側に表示されるサーバの一覧(GO-Global Hosts)は，各GO-Globalサーバが送信するUDP:491(マルチキャスト通信)のメッセージをAdmin Consoleが受信した時に表示されます。
+上記のように批評の場合はWindowsファイアウォール等でUDP:491 がブロックされていることが考えられますので、このツールを利用してUDP:491の受信状況(到達状況)を確認してください。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;p&gt;調査したいサーバにGGEasyUDPCheck.exeを配置。&lt;/p&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;利用者がコマンドプロンプトでGGEasyUDPCheck.exeを配置したところで実行すれば動作します。&lt;br&gt;
+例:C:¥Program Files\GGEasyUDPCheck.exe&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;画面およびログファイルには，次のような受信情報が記録されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2017-06-13 12:45:08] Name = DESKTOP-P7UNP59, Addr = 192.168.1.160
+[2017-06-13 12:45:09] Name = WS2012R2-Isumi1, Addr = 192.168.1.63
+…
+※ Name = &amp;lt;受信したGG サーバーの名前&amp;gt;
+※ Addr = &amp;lt;受信したGG サーバーのIP アドレス&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;計測時間を経過すると受信処理は終了し，次のようなサマリー情報(重複を排除しGO-Globalサーバの名前でソート)が表示されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2017-06-13 12:45:23] --- Summary ---
+[2017-06-13 12:45:23] [1] Name = DESKTOP-P7UNP59, Addr = 192.168.1.160 (10)
+[2017-06-13 12:45:23] [2] Name = WS2012R2-Isumi1, Addr = 192.168.1.63 (10)
+[2017-06-13 12:45:23] --- End ---
+※ 括弧内の数値は受信した回数
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;GGEasyUDPCheck.iniのdefaultセクションで，以下のパラメタを設定して下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;logd&lt;/td&gt;
+&lt;td&gt;ログの出力フォルダ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;logLevel&lt;/td&gt;
+&lt;td&gt;ログ出力レベル(1～9)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rxpPort&lt;/td&gt;
+&lt;td&gt;GO-Globalサーバのポート番号(既定値:491)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;interval&lt;/td&gt;
+&lt;td&gt;計測時間(既定値:30秒)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pvSleep&lt;/td&gt;
+&lt;td&gt;受信処理のスリープ時間(既定値:500ミリ秒)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;コマンドプロンプトで以下の引数を設定することで.iniファイルの設定を上書きすることが出来ます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;引数　　&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-logLevel&lt;/td&gt;
+&lt;td&gt;ログ出力レベル&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-rxpPort&lt;/td&gt;
+&lt;td&gt;GGサーバーのポート番号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-interval&lt;/td&gt;
+&lt;td&gt;計測時間&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例:C:¥Program Files\GGEasyUDPCheck.exe -interval 300&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2017061301&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyPassword</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasypassword/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasypassword/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGToolSessionCount</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggtoolsessioncount/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggtoolsessioncount/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGSleepApp</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsleepapp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggsleepapp/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyLogoff</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylogoff/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasylogoff/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2020-02-28: 1.0.0]&lt;br&gt;
+・GGのセッションを終了させるアプリケーション&lt;br&gt;
+・PWからの直接起動も可能なようにMFCアプリケーションとして動作&lt;br&gt;
+・スクリプト(VBS/BAT)からも起動可能&lt;br&gt;
+・拡張パックを構成する製品&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;[ProgramWindow | File | Sign Out] を選択した時と同じ機能を持ちます。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalサーバの任意の場所にGGEasyLogoff.exeを配置します。&lt;/li&gt;
+&lt;li&gt;Admin ConsoleからGGEasyLogoff.exeを公開します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;利用者がセッションを切断するのを忘れた際に利用します。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2013112901&lt;/li&gt;
+&lt;li&gt;KGTN 2020022701&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyEnableEUDC</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyenableeudc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyenableeudc/</guid>
+      <description>
+        
+        
+        &lt;ul&gt;
+&lt;li&gt;初版&lt;/li&gt;
+&lt;li&gt;EUDC(外字)の利用を有効にするプログラムです。&lt;/li&gt;
+&lt;li&gt;ログオンスクリプトで GGEasyEnableEUDC.exe を実行してください。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;[2020-02-28: 1.0.0]&lt;br&gt;
+・EUDC(外字)の利用を有効にするプログラムです。&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;[ProgramWindow | File | Sign Out] を選択した時と同じ機能を持ちます。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;GO-Globalサーバの任意の場所にGGEasyLogoff.exeを配置します。&lt;/li&gt;
+&lt;li&gt;Admin ConsoleからGGEasyLogoff.exeを公開します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;利用者がセッションを切断するのを忘れた際に利用します。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2013112901&lt;/li&gt;
+&lt;li&gt;KGTN 2020022701&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGPDFPrint</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggpdfprint/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggpdfprint/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GMFileProc</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmfileproc/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmfileproc/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGCreateSession</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggcreatesession/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggcreatesession/</guid>
+      <description>
+        
+        
+        
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GMLogonTest</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmlogontest/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/gmlogontest/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2018-10-18: 1.1.0]&lt;br&gt;
+・VS2017で再構築&lt;br&gt;
+・GGH5.0に対応&lt;br&gt;
+・Windows Server 2012 R2 に対応&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;[2010-07-13: 1.0.1]&lt;br&gt;
+・画像をランダムに選択して表示するように修正&lt;/p&gt;
+&lt;p&gt;[2010-07-12: 1.0.0]&lt;br&gt;
+・β版を作成&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;このツールは，クライアント側でgg-client.exeを非同期に繰り返し起動するバッチと，サーバ側で負荷の重たい処理を実行し終了する(ログアウトする)アプリケーションから構成されます。「ログオン処理 → 高負荷な処理→ログアウト」を行うセッションを複数並行して行うことにより、擬似的に負荷試験を行うことが可能になります。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;p&gt;サーバとクライアントにそれぞれGMLogonTest(Server Side)とGMLogonTest(Client Side)を配置。&lt;/p&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;サーバ側で以下の作業を実施してください。&lt;br&gt;
+1-1. GMLogonTest (Server Side) 中の Install.bat を実行します。&lt;br&gt;
+1-2. “ユーザアカウント制御”のダイアログで「はい」 を選択します。&lt;br&gt;
+1-3. “レジストリ エディタ”のダイアログでは「はい」(続行)を選択します。&lt;br&gt;
+1-4. 実行完了後GO-Global Application Publishing Serviceを再起動します。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GMLogonTest1.png&#34; alt=&#34;GMLogonTest1&#34;&gt;&lt;/p&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;gg-client.exeをインストールしてない場合はインストールをします。&lt;br&gt;
+2-1. GMLogonTest(Client Side)をデスクトップにコピーします。&lt;br&gt;
+2-2. GMLogonTest_wait_sub.bat をメモ帳で開き下記の項目を設定(変更)します。&lt;br&gt;
+&lt;ul&gt;
+&lt;li&gt;set host=GG サーバのIP アドレスまたはホスト名&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set user=試験に使用するアカウントのID&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set pass=試験に使用するアカウントのパスワード&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set app=GMLogonTest&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set GGDIR=Windows Client がインストールされたフォルダ&lt;br&gt;
+2-3. GMLogonTest_sub.bat をダブルクリックして実行します。正常にログオン出来て、かつ画像が表示され、数秒後に全て終了することを確認して下さい。&lt;br&gt;
+2-4. GMLogonTest.bat をメモ帳で開き下記の項目を設定(変更)します。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set loop=ログオンの回数&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;set wait=ログオンの間隔(秒)&lt;br&gt;
+2-5. GMLogonTest.bat をダブルクリックして実行します。&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GMLogonTest2.png&#34; alt=&#34;GMLogonTest2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GMLogonTest3.png&#34; alt=&#34;GMLogonTest3&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GMLogonTest.batはGMLogonTest_sub.bat を繰り返し起動します。GMLogonTest_sub.batは，非同期にgg-client.exeを起動しますので、ログオンの間隔の設定により、複数(多数)のセッションが同時に走ることになります。また、サーバ側のクラスタマネージャでGMLogonTest に数値の引数を与えると、その秒数後に終了するようになります。従って、クライアント側のログオンの間隔と、サーバ側のアプリケーション名の実行時間を調整することで、様々なシナリオを擬似的に試験することが出来ます。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2010070602&lt;/li&gt;
+&lt;li&gt;KGTN 2010070701&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGPramEdit</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggpramedit/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggpramedit/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2017-06-08: 1.0.0]&lt;br&gt;
+・HostProperties.xmlおよびDefaultWorkspaceProperties.xmlをGUIで編集するツール&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GGPramEdit1.png&#34; alt=&#34;GGEasyUDPCheck1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;C:\ProgramData\GraphOn\HostProperties.xml および C:\ProgramData\GraphOn\DefaultWorkspaceProperties.xmlを編集する際にGO-Global Application Publishing Serviceを止めてから編集をして再起動をする手順を踏まないと
+設定は反映されない。管理者の中にはこの作業手順を忘れて編集を行い設定値が反映されない事を防ぐためのツール。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;p&gt;設定変更したいサーバにGGPramEdit.exeを配置。&lt;/p&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;利用者がGGPramEdit.exeを配置したところで実行。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;GUI画面が起動しますので設定値を変更。
+3．[保存]をクリックすると、GO-Global Application Publishing Serviceが自動的にOFFになり、C:\ProgramData\GraphOn\HostProperties.xml および C:\ProgramData\GraphOn\DefaultWorkspaceProperties.xmlの設定値が変更されGO-Global Application Publishing Serviceが自動的にONになります。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+設定変更を行いたいサーバが複数ある場合はそれぞれのサーバで作業を行ってください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2017060201&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GGEasyUDPCheck</title>
+      <link>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyudpcheck/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global%E6%8B%A1%E5%BC%B5%E3%83%91%E3%83%83%E3%82%B1%E3%83%BC%E3%82%B8/ggeasyudpcheck/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;変更履歴&#34;&gt;変更履歴&lt;/h2&gt;
+&lt;p&gt;[2017-06-28: 1.0.0]&lt;br&gt;
+・UDPのポート通信をチェックするツール&lt;br&gt;
+・初版&lt;br&gt;&lt;/p&gt;
+&lt;h3 id=&#34;機能&#34;&gt;機能&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&#34;/expackimage/GGEasyUDPCheck1.png&#34; alt=&#34;GGEasyUDPCheck1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Consoleの左側に表示されるサーバの一覧(GO-Global Hosts)は，各GO-Globalサーバが送信するUDP:491(マルチキャスト通信)のメッセージをAdmin Consoleが受信した時に表示されます。
+上記のように批評の場合はWindowsファイアウォール等でUDP:491 がブロックされていることが考えられますので、このツールを利用してUDP:491の受信状況(到達状況)を確認してください。&lt;/p&gt;
+&lt;h3 id=&#34;設置方法&#34;&gt;設置方法&lt;/h3&gt;
+&lt;p&gt;調査したいサーバにGGEasyUDPCheck.exeを配置。&lt;/p&gt;
+&lt;h3 id=&#34;使用方法&#34;&gt;使用方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;利用者がコマンドプロンプトでGGEasyUDPCheck.exeを配置したところで実行すれば動作します。&lt;br&gt;
+例:C:¥Program Files\GGEasyUDPCheck.exe&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;画面およびログファイルには，次のような受信情報が記録されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2017-06-13 12:45:08] Name = DESKTOP-P7UNP59, Addr = 192.168.1.160
+[2017-06-13 12:45:09] Name = WS2012R2-Isumi1, Addr = 192.168.1.63
+…
+※ Name = &amp;lt;受信したGG サーバーの名前&amp;gt;
+※ Addr = &amp;lt;受信したGG サーバーのIP アドレス&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;計測時間を経過すると受信処理は終了し，次のようなサマリー情報(重複を排除しGO-Globalサーバの名前でソート)が表示されます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[2017-06-13 12:45:23] --- Summary ---
+[2017-06-13 12:45:23] [1] Name = DESKTOP-P7UNP59, Addr = 192.168.1.160 (10)
+[2017-06-13 12:45:23] [2] Name = WS2012R2-Isumi1, Addr = 192.168.1.63 (10)
+[2017-06-13 12:45:23] --- End ---
+※ 括弧内の数値は受信した回数
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;GGEasyUDPCheck.iniのdefaultセクションで，以下のパラメタを設定して下さい。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;設定項目&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;logd&lt;/td&gt;
+&lt;td&gt;ログの出力フォルダ&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;logLevel&lt;/td&gt;
+&lt;td&gt;ログ出力レベル(1～9)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;rxpPort&lt;/td&gt;
+&lt;td&gt;GO-Globalサーバのポート番号(既定値:491)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;interval&lt;/td&gt;
+&lt;td&gt;計測時間(既定値:30秒)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;pvSleep&lt;/td&gt;
+&lt;td&gt;受信処理のスリープ時間(既定値:500ミリ秒)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;コマンドプロンプトで以下の引数を設定することで.iniファイルの設定を上書きすることが出来ます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;引数　　&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;-logLevel&lt;/td&gt;
+&lt;td&gt;ログ出力レベル&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-rxpPort&lt;/td&gt;
+&lt;td&gt;GGサーバーのポート番号&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;-interval&lt;/td&gt;
+&lt;td&gt;計測時間&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;例:C:¥Program Files\GGEasyUDPCheck.exe -interval 300&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2017061301&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

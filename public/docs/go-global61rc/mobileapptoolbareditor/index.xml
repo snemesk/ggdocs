@@ -1,0 +1,159 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – Mobile App Toolbar Editor</title>
+    <link>/docs/go-global61rc/mobileapptoolbareditor/</link>
+    <description>Recent content in Mobile App Toolbar Editor on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61rc/mobileapptoolbareditor/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Mobile App Toolbar Editor</title>
+      <link>/docs/go-global61rc/mobileapptoolbareditor/mobileapptoolbareditor/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/mobileapptoolbareditor/mobileapptoolbareditor/</guid>
+      <description>
+        
+        
+        &lt;h2 id=&#34;mobile-app-toolbar-editor&#34;&gt;Mobile App Toolbar Editor&lt;/h2&gt;
+&lt;p&gt;Mobile App Toolbar Editorは、アプリケーションがモバイルデバイスからアクセスされたときに表示されるツールバーボタンとメニューを定義するために使用されます。ボタンとメニュー項目の両方がアプリケーション下部のツールバーに表示されます。メニュー項目には、メインツールバーのすぐ上の別のツールバーに表示されるサブメニュー項目を含めることができます。&lt;/p&gt;
+&lt;h3 id=&#34;mobile-app-toolbar-editorの起動方法&#34;&gt;Mobile App Toolbar Editorの起動方法&lt;/h3&gt;
+&lt;p&gt;Programs | GraphOn GO-Global | Mobile App Console の順にクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-1-1.png&#34; alt=&#34;6-1-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Admin Consoleで公開されているアプリケーションが一覧表示され、それぞれがデフォルトのツールバーを使用するように設定されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;Add、Edit、Remove、Duplicate&lt;/strong&gt; ボタンはカスタムツールバーにのみ適用され、アプリケーションには適用されません。 たとえば、 &lt;strong&gt;[Remove]&lt;/strong&gt; ボタンをクリックすると、選択したアプリケーションからカスタムツールバーが削除されます。 アプリケーションはAdmin Consoleで公開されたままになり、ユーザは引き続き利用できるようになります。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Custom Toolbarsの作成</title>
+      <link>/docs/go-global61rc/mobileapptoolbareditor/creatingcustomtoolbars/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/mobileapptoolbareditor/creatingcustomtoolbars/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ショートカットキーを確認するために、カスタムツールバーを作成しているアプリケーションのメニューを確認します。すべてのアプリケーションには独自のショートカットがあり、一方で機能するショートカットは他方で機能しない可能性があります。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-1.png&#34; alt=&#34;6-2-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;Microsoft Wordやワードパッドなどのツールバーがあるアプリケーションでは、[Home]タブで[Alt] + [H]をクリックして使用可能なショートカットを表示します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-2.png&#34; alt=&#34;6-2-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;カスタムツールバーを作成するための次の手順では、ワードパッドをサンプルアプリケーションとして使用します。&lt;/p&gt;
+&lt;h3 id=&#34;ボタンの追加方法&#34;&gt;ボタンの追加方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;アプリケーションのリストからアプリケーションを選択して、 &lt;strong&gt;[Edit]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add Button&lt;/strong&gt; をクリックして、&lt;strong&gt;Add Button&lt;/strong&gt; ダイアログを開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Label]&lt;/strong&gt; フィールドに新しいボタンの名前を入力します。&lt;/li&gt;
+&lt;li&gt;関連付けられているショートカットを追加します。キーボードのショートカットキーストロークを使って、これを行います。たとえば、キーボードのCtrl+Xを押すと、これが &lt;strong&gt;[Shortcuts]&lt;/strong&gt; フィールドに表示されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add]&lt;/strong&gt; をクリックします。これにより、ボタンとショートカットがツールバーリストに追加されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply]&lt;/strong&gt; をクリックします。このボタンは、モバイルクライアントデバイスのアプリケーションのツールバーに表示されます。ボタンやメニュー項目を追加し続けることも、 &lt;strong&gt;[Custom Toolbars List]&lt;/strong&gt; ボタンをクリックして別のアプリケーションにツールバーやメニュー項目を追加することもできます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;次の例では、&lt;strong&gt;切り取り&lt;/strong&gt; (Ctrl + X)、&lt;strong&gt;コピー&lt;/strong&gt; (Ctrl + C)、&lt;strong&gt;貼り付け&lt;/strong&gt; (Ctrl + V)、&lt;strong&gt;閉じる&lt;/strong&gt; (Shift + F4)のボタンがカスタムツールバーに追加されています。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-3.png&#34; alt=&#34;6-2-3&#34;&gt;&lt;/p&gt;
+&lt;p&gt;メニュー項目はツールバーボタンに似ていますが、最大3つのサブメニュー項目を持つことができます。&lt;/p&gt;
+&lt;h3 id=&#34;メニューアイテムの追加方法&#34;&gt;メニューアイテムの追加方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;リストからアプリケーションを選択して &lt;strong&gt;[Edit]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add Menu]&lt;/strong&gt; ボタンをクリックして &lt;strong&gt;[Add Menu]&lt;/strong&gt; ダイアログを開きます。&lt;strong&gt;[Label]&lt;/strong&gt; フィールドにメニュー項目の名前を入力します。&lt;/li&gt;
+&lt;li&gt;メニューの場合、&lt;strong&gt;[Shortcuts]&lt;/strong&gt; フィールドは通常空白のままです。 ただし、メニューを開いたときにアプリケーションにアクションを実行させる場合は、ショートカットフィールドにそのアクションのショートカットを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply]&lt;/strong&gt; をクリックします。このメニュー項目は、クライアントデバイスのアプリケーションのツールバーに表示されます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-4.png&#34; alt=&#34;6-2-4&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;メニューにボタンを追加する方法&#34;&gt;メニューにボタンを追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ツールバーリストからメニュー項目を強調表示して、&lt;strong&gt;[Add Button]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add Button]&lt;/strong&gt; ダイアログで、&lt;strong&gt;[Label]&lt;/strong&gt; フィールドに新しいボタンの名前を入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Shortcuts]&lt;/strong&gt; フィールドにアクションのショートカットを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Add]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;次の例では、写真、図面、およびオブジェクトを挿入するためのボタンを含む &lt;strong&gt;[Insert]&lt;/strong&gt; メニューが作成されました。ショートカットキーを使用してワードパッドにオブジェクトを挿入するには、ユーザはAlt + H、次にOをクリックします。適切なショートカットキーを使用して、ツールバーエディタでオブジェクトのサブメニューボタンを作成します。モバイルデバイスのユーザは、カスタムツールバーの &lt;strong&gt;[Object]&lt;/strong&gt; ボタンをクリックして、オブジェクトをドキュメントに挿入できます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-5.png&#34; alt=&#34;6-2-5&#34;&gt;&lt;/p&gt;
+&lt;p&gt;メニューレベルごとに最大10項目、ボタンあたり最大5つのショートカットを追加できます。&lt;/p&gt;
+&lt;h3 id=&#34;ツールバーボタンとメニュー項目の編集の方法&#34;&gt;ツールバーボタンとメニュー項目の編集の方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ボタンまたはメニュー項目を編集するには、リストから項目を強調表示して &lt;strong&gt;[edit]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;既存のショートカットを削除するには、 &lt;strong&gt;[Shortcuts]&lt;/strong&gt; フィールドのテキストの上にマウスを置きます。 灰色でハイライト表示されたテキストの上に表示されているxをクリックします。&lt;/li&gt;
+&lt;li&gt;新しいショートカットを入力してください。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Save]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-6.png&#34; alt=&#34;6-2-6&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ボタンまたはメニュー項目を上下に移動する方法&#34;&gt;ボタンまたはメニュー項目を上下に移動する方法&lt;/h3&gt;
+&lt;p&gt;ツールバーリストの項目を強調表示して、&lt;strong&gt;[Move up]&lt;/strong&gt; または &lt;strong&gt;[Move down]&lt;/strong&gt; ボタンをクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-7.png&#34; alt=&#34;6-2-7&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ボタンまたはメニュー項目を削除する方法&#34;&gt;ボタンまたはメニュー項目を削除する方法&lt;/h3&gt;
+&lt;p&gt;ツールバーリストの項目を強調表示して、 &lt;strong&gt;[delete]&lt;/strong&gt; ボタンをクリックします。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-8.png&#34; alt=&#34;6-2-8&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;デフォルトのツールバーに戻す方法&#34;&gt;デフォルトのツールバーに戻す方法&lt;/h3&gt;
+&lt;p&gt;&lt;strong&gt;{Set Default}&lt;/strong&gt; ボタンをクリックします。これにより、カスタムツールバー設定が削除されます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-9.png&#34; alt=&#34;6-2-9&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;アプリケーションの子プログラム用のカスタムツールバーを追加する方法&#34;&gt;アプリケーションの子プログラム用のカスタムツールバーを追加する方法&lt;/h3&gt;
+&lt;p&gt;Admin Consoleで公開されたアプリケーションの中には、アプリケーションのタスクのサブセットを実行する1つ以上の子プログラムを起動するものがあります。場合によっては、アプリケーションの主な機能が未公開の子プログラムによって提供されることがあります。このような場合、 &lt;strong&gt;[Add]&lt;/strong&gt; ボタンを使用して子プログラムのツールバーを追加したり、 &lt;strong&gt;[Duplicate]&lt;/strong&gt; ボタンを使用して既存のツールバーを子プログラムにコピーしたりできます。&lt;/p&gt;
+&lt;h3 id=&#34;子プロセス用のツールバーを作成する方法&#34;&gt;子プロセス用のツールバーを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ツールバーエディタで、 &lt;strong&gt;[Add]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;子プログラムの実行可能ファイルを参照します。&lt;/li&gt;
+&lt;li&gt;ファイルを選択して &lt;strong&gt;[Open]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;上記のようにボタンとメニューを追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ツールバーをコピーする方法&#34;&gt;ツールバーをコピーする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;既存のツールバーをコピーして子プログラムで使用するには、コピーするアプリケーションのツールバーをリストから選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Duplicate]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;子プログラムの実行可能ファイルを参照します。&lt;/li&gt;
+&lt;li&gt;ファイルを選択して &lt;strong&gt;[Open]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;カスタムツールバーの表示&#34;&gt;カスタムツールバーの表示&lt;/h3&gt;
+&lt;p&gt;モバイルデバイスでGO-Global Appを開いて作成したツールバーボタンを表示できます。たとえば、ワードパッドを起動すると、画面下部にカスタムツールバーボタンが表示されます。 &lt;strong&gt;[Insert]&lt;/strong&gt; をタップしてサブメニューを開きます。 &lt;strong&gt;X&lt;/strong&gt; をタップしてサブメニューを閉じます。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/6-2-10.png&#34; alt=&#34;6-2-10&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ツールバーディレクトリの変更&#34;&gt;ツールバーディレクトリの変更&lt;/h3&gt;
+&lt;p&gt;ツールバーファイルはデフォルトで &lt;strong&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\MobileAppSettings&lt;/code&gt;&lt;/strong&gt; ディレクトリに格納されています。GO-Globalホストが複数ある場合は、ツールバーを共有ネットワークディレクトリに保存し、すべてのホストで同じツールバーファイルを使用できます。&lt;/p&gt;
+&lt;h3 id=&#34;ツールバーが格納されているディレクトリを変更する方法&#34;&gt;ツールバーが格納されているディレクトリを変更する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;[Toolbar Directory]&lt;/strong&gt; フィールドで目的のディレクトリへのパスを参照するか入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;すでにツールバーを作成している場合は、既存のツールバーを新しいディレクトリにコピーするかどうかを尋ねられます。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Logファイル</title>
+      <link>/docs/go-global61rc/mobileapptoolbareditor/logfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61rc/mobileapptoolbareditor/logfiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ロギングが有効になっていると、Mobile App Consoleは &lt;strong&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\MobileAppLogs&lt;/code&gt;&lt;/strong&gt; ディレクトリに格納されているログファイルにメッセージを記録します。ログ記録は、Mobile App Consoleの &lt;strong&gt;[Log]&lt;/strong&gt; パネルで有効または無効にできます。ロギングはデフォルトで無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;ロギングを有効にする方法&#34;&gt;ロギングを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Enable Logging&lt;/strong&gt; の横のチェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Apply]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ログ記録が有効になっている場合は、 &lt;strong&gt;[Log Directory]&lt;/strong&gt; フィールドに目的のディレクトリへのパスを入力して &lt;strong&gt;[Apply]&lt;/strong&gt; をクリックすることで、ログファイルが保存されているディレクトリを変更できます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

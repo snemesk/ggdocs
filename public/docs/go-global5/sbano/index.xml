@@ -1,0 +1,575 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – サーバーの設定</title>
+    <link>/docs/go-global5/sbano/</link>
+    <description>Recent content in サーバーの設定 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global5/sbano/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalホストのインストール</title>
+      <link>/docs/go-global5/sbano/untitled/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/untitled/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、自己解凍形式の実行可能ファイルとして提供されており、ダブルクリックするとインストールされます。解凍先のルートフォルダで &lt;strong&gt;gg-host.windows_x86.exe&lt;/strong&gt;または &lt;strong&gt;gg-host.windows_x64.exe&lt;/strong&gt;を実行してファイルを解凍し、インストールすることもできます。セットアップでは、すべてのGO-Globalホストファイルおよびブラウザログオン用にGO-Globalホストを設定するために必要なファイルがインストールされます。&lt;/p&gt;
+&lt;p&gt;ホストセットアッププログラムを実行するときは、「管理者」として(つまり、コンピュータのローカル管理者アカウントで)コンピュータにログインする必要があります。コンピュータの管理者グループのメンバであるアカウントでログインするだけでは不十分です。ローカル管理者([コンピュータ名]\administrator)としてログインしている必要があります。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ライセンスファイル(C:\Program Files\GraphOn\GO-Global\Programs*.lic)への最小アクセス許可は次のとおりです。Administrators：フルコントロール、Users：読み取りと実行、SYSTEM：フルコントロール&lt;/p&gt;
+&lt;p&gt;次のエラーメッセージがログファイルに表示される場合は、ライセンスファイルに対する権限が正しくない可能性があります。&lt;/p&gt;
+&lt;p&gt;&lt;em&gt;FlexLM code #-1; FlexLM text : Cannot find license file.The license files(or license server system network addresses)attempted are listed below.Use LM_LICENSE_FILE to use a different license file,or contact your software provider for a license file.)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt;と &lt;strong&gt;License Manager&lt;/strong&gt;が実行中であることを確認する方法&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Windows タスクバーの [&lt;strong&gt;スタート&lt;/strong&gt;]ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;[コントロール パネル | 管理ツール]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;サービス&lt;/strong&gt;]をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;サービスの一覧から GO-Global Application Publishing Service を選択します｡&lt;/li&gt;
+&lt;li&gt;これらのサービス の状態が「開始」で、スタートアップの種類が「自動」であることを確認します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-Globalホストのスタートアップの種類を設定する場合は、一覧からGO-Global Application Publishing Serviceを選択し、[開始]ボタンをクリックします。そこでGO-Globalホストに適用するオプションを選択します。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンスファイルの手動によるコピー&#34;&gt;ライセンスファイルの手動によるコピー&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;License Retrieval Wizard&lt;/strong&gt;を利用しない場合は、予め入手したライセンスファイルをGO-GlobalのインストールパスのProgramsディレクトリにコピーして下さい。中央ライセンスサーバを使用するようにGO-Globalを設定している場合は、ライセンスファイルをライセンスサーバにコピーします。詳細については、「中央ライセンスサーバを使用するためのGO-Globalの設定」の項を参照してください。ライセンス ファイルをコピーしたら、License Managerを停止して再起動する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;license-manager-の起動方法&#34;&gt;License Manager の起動方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Windowsタスクバーの [&lt;strong&gt;スタート&lt;/strong&gt;]ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;[コントロール パネル | 管理ツール]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;サービス&lt;/strong&gt;]をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;サービスの一覧から &lt;strong&gt;GO-Global License Manager&lt;/strong&gt;を選択します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;スタート&lt;/strong&gt;]ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/2-1-1.png&#34; alt=&#34;2-1-1&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ライセンスマネージャを再起動しても、GO-Globalホスト上で実行されている既存のセッションには影響しません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Webクライアント用のGO-Globalホストの設定</title>
+      <link>/docs/go-global5/sbano/burauza-roguonno-go-global-server-no/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/burauza-roguonno-go-global-server-no/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストセットアップは、C:\Program Files\GraphOn\GO-Global\Webの下にGO-Global Webファイルをインストールします。インストール中にMicrosoftインターネットインフォメーションサービス(IIS)が検出されると、GO-Global Webファイルを指す仮想ディレクトリがIISに作成されます。IISが利用できない場合、管理者は指定されたWebサーバ上でGO-Global Webフォルダの内容を手動でホストする必要があります。&lt;/p&gt;
+&lt;p&gt;IISの仮想ディレクトリの詳細については、以下を参照してください。&lt;a href=&#34;http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/8c110149-8060-4dd7-9bdb-e262c21483dd.mspx?mfr=true&#34;&gt;http://www.microsoft.com/technet/prodtechnol/WindowsServer2003/Library/IIS/8c110149-8060-4dd7-9bdb-e262c21483dd.mspx?mfr=true&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;管理者はGO-GlobalのHTMLページを編集してデフォルトのオプションを変更したり、ユーザが使用できるクライアントを制限したりできます。インストール中、初期Webページはlogon.htmlに設定されます。 Webブラウザからホストにアクセスするユーザは、GO-Globalログオンページにアクセスする必要があります。(例：&lt;a href=&#34;http://hostname/goglobal/logon.html&#34;&gt;http://hostname/goglobal/logon.html&lt;/a&gt;)&lt;/p&gt;
+&lt;p&gt;Logon.htmlはユーザのプラットフォームとブラウザを自動的に検出し、適切なGO-Globalクライアントを実行します。clients.htmlページではユーザのプラットフォームとブラウザも検出されますが、ユーザのコンピュータにインストールできるすべてのGO-Globalクライアントが一覧表示されます。 allclients.htmlページには、どのクライアントオペレーティングシステムが検出されても、すべてのGO-Globalクライアントが一覧表示されます。&lt;/p&gt;
+&lt;p&gt;logon.html、clients.html、allclients.htmlに加えて、次のHTMLページがGO-Global Webフォルダにあります。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;HTML Page&lt;/th&gt;
+&lt;th&gt;Description&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;index.htm&lt;/td&gt;
+&lt;td&gt;Default landing page.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;installLinux.html&lt;/td&gt;
+&lt;td&gt;Install page for the Linux Client. (gg-client.linux.rpm and gg-client.linux.deb.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;installMac.html&lt;/td&gt;
+&lt;td&gt;Install page for the Mac OS X Client. (gg-client.mac.dmg)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;installWindows.html&lt;/td&gt;
+&lt;td&gt;Install page for the Windows Client. (gg-client.windows.exe)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;installChrome.html&lt;/td&gt;
+&lt;td&gt;Install page for the Chrome Extension.&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;web.config&lt;/td&gt;
+&lt;td&gt;Used to indicate that logon.html is a default document for the virtual directory, and to indicate that file browsing is disabled for the virtual directory. (The web.config file only exists when Microsoft IIS 7 or later is installed.)&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;以前のGO-Globalのバージョンでは、ブラウザプラグイン毎とGO-Globalオプションの組み合わせで別々のHTMLページが用意されていました。例えば、embeddedactivexlogon.htmlはInternet Explorerで埋め込みウィンドウオプションを指定してGO-Globalを起動するために使用され、looselinuxpluginlogon.htmlはLinux上のFirefoxで固定ウィンドウオプションを指定してGO-Globalを起動するために使用されました。&lt;/p&gt;
+&lt;p&gt;GO-Global 5では、単一のWebページlogon.htmlがすべてのブラウザと設定オプションをサポートしています。したがって、これらの追加の構成固有のWebページは不要であり、それらはもはや製品に含まれていません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Global Webページの変更</title>
+      <link>/docs/go-global5/sbano/go-global-webpjino/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/go-global-webpjino/</guid>
+      <description>
+        
+        
+        &lt;p&gt;上記のHTMLページをそのまま使用して、サポートされているオペレーティングシステムとブラウザからGO-Globalのインストールと実行を行うことができます。これらのページをカスタマイズしたり、特定のニーズに合わせて新しいページを作成したりすることもできます。変更は、ページの外観、テキスト、画像を変更する単純で表面的な変更になります。あるいは、Webアプリケーションによって動的に生成されるページのように変更が複雑になることもあります。次の例は、GO-GlobalのWebページをカスタマイズする方法のいくつかを示しています。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例1：既存のページからプラットフォームと設定のオプションを削除する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;linuxクライアントへのリンクを削除する方法&#34;&gt;Linuxクライアントへのリンクを削除する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;テキストエディタでallclients.htmlまたはclients.htmlを編集します。&lt;/li&gt;
+&lt;li&gt;ファイルから次の行を削除します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;h3&amp;gt;Linux&amp;lt;/h3&amp;gt;
+&amp;lt;p&amp;gt;
+&amp;lt;a href=&amp;quot;installLinux.html&amp;quot;&amp;gt;Linux Client&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+Plug-in: &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;quot;&amp;gt;Loose&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;amp;embed=true&amp;quot;&amp;gt;Embedded&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+&amp;lt;/p&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;internet-explorerを実行しているユーザに埋め込みウィンドウオプションが表示されないようにする方法&#34;&gt;Internet Explorerを実行しているユーザに埋め込みウィンドウオプションが表示されないようにする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;allclients.htmlまたはclients.htmlを編集します。&lt;/li&gt;
+&lt;li&gt;次の行を修正してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;Firefox: &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;quot;&amp;gt;Loose&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;amp;embed=true&amp;quot;&amp;gt;Embedded&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+Internet Explorer: &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;quot;&amp;gt;Loose&amp;lt;/a&amp;gt; | &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;amp;embed=true&amp;quot;&amp;gt;Embedded&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+to:
+Firefox: &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;quot;&amp;gt;Loose&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+Internet Explorer: &amp;lt;a href=&amp;quot;logon.html?direct=true&amp;quot;&amp;gt;Loose&amp;lt;/a&amp;gt;&amp;lt;br&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;例2：特定のアプリケーションへのリンクを含むWebページを作成する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h3 id=&#34;ワードパッドとwindowsエクスプローラへのリンクを含むページを作成する方法&#34;&gt;ワードパッドとWindowsエクスプローラへのリンクを含むページを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;HTMLエディタで新規または既存のWebページを開きます。&lt;/li&gt;
+&lt;li&gt;エディタの [&lt;strong&gt;ハイパーリンクの挿入&lt;/strong&gt;]オプションをクリックします。&lt;/li&gt;
+&lt;li&gt;ワードパッドドキュメントへのハイパーリンクを入力します。&lt;a href=&#34;http://hostname/goglobal/logon.html?mode=embed&amp;amp;app=C:/Program%20Files/Windows%20NT/Accessories/wordpad.exe&amp;amp;args=C:/Users/Public/Public%20Documents/welcome.rtf&#34;&gt;http://hostname/goglobal/logon.html?mode=embed&amp;amp;app=C:\Program Files\Windows NT\Accessories\wordpad.exe&amp;amp;args=C:\Users\Public\Public Documents\welcome.rtf&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ハイパーリンクの表示テキストを「ようこそ」のように入力します。&lt;/li&gt;
+&lt;li&gt;Windowsエクスプローラへのリンクを作成するには、手順2〜4を繰り返します。&lt;a href=&#34;http://hostname/goglobal/logon.html?mode=embed&amp;amp;app=C:/Windows/System32/explorer.exe&#34;&gt;http://hostname/goglobal/logon.html?mode=embed&amp;amp;app=C:\Windows\System32\explorer.exe&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;ファイルを保存してWebサーバのパスに追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;この例では、GO-Globalオプションはlogon.htmlページへのハイパーリンクで指定されています。ユーザーがこれらのリンクをクリックすると、logon.htmlはハイパーリンクからこれらのオプションを読み取り、指定されたオプションを使用して適切なクライアントをロードします。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;例3：特定のアプリケーションをロードするページを作成する&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Logon.htmlを使用すると、ユーザは独自のハイパーリンクを作成し、好みのGO-Globalオプションを指定できます。場合によっては、ユーザにこの機能を持たせたくない場合があります。たとえば、ユーザがホストコンピュータ上のアプリケーションやファイルを開かないようにして、代わりに特定のアプリケーションに固定されたオプションのセットをロードするページを提供したくない場合があります。&lt;/p&gt;
+&lt;p&gt;アプリケーションを指定するときは、Cluster Managerに表示される表示名、またはアプリケーションへの完全修飾パスを使用できます。&lt;/p&gt;
+&lt;h3 id=&#34;ユーザに特定のオプションを指定した特定のアプリケーションの実行のみを許可する方法&#34;&gt;ユーザに特定のオプションを指定した特定のアプリケーションの実行のみを許可する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;logon.htmlをテキストエディタで開きます。&lt;/li&gt;
+&lt;li&gt;Uncomment (remove the two &amp;ldquo;/&amp;rdquo; characters from) the following line: // controlArgs.set([ &amp;ldquo;app&amp;rdquo;, &amp;ldquo;testapp1&amp;rdquo; ]);&lt;/li&gt;
+&lt;li&gt;testapp1を、Cluster Managerに表示されるアプリケーションの表示名に置き換えます。 例：var app = &amp;ldquo;Wordpad&amp;rdquo;; もしくはアプリケーションへの完全修飾パスを入力してください。 例：&amp;ldquo;C:\Program Files\Windows NT\Accessories\wordpad.exe&amp;rdquo;;&lt;/li&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;li&gt;必要に応じて、ファイルの名前を変更してください。(例：wordpad.html)&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;完全修飾パスを使用する場合は、アプリケーションがCluster Managerを介して公開されたかどうかにかかわらず、アプリケーション固有の引数をvar argsパラメーターを使用して指定する必要があります。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Microsoftインターネットインフォメーションサービス(IIS)6.0がWindows Server 2008を実行しているGO-Globalホストにインストールされている場合、プラグインは、サーバ上のMIMEタイプが登録されていない拡張子を持つドキュメントを提供するようにIISを変更しない限り実行されません。詳細については、マイクロソフトサポート技術情報326965を参照してください。&lt;a href=&#34;https://support.microsoft.com/en-us/kb/326965#%2Fen-us%2Fkb%2F326965&#34;&gt;https://support.microsoft.com/en-us/kb/326965#%2Fen-us%2Fkb%2F326965&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;GO-Globalの場合は、Windowsシステムの場合は「拡張子」ボックスに.xpiと入力し、Macシステムの場合は.dmgと入力します。[MIMEの種類]ボックスにapplication / octet-streamと入力します。この変更を加えたら、Webサーバー上のWorld Wide Web発行サービスを再起動します。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GO-Globalハイパーリンクパラメータとその指定方法についての詳細は、第5章に記載されています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalホスト以外のシステムへのWebファイルのインストール</title>
+      <link>/docs/go-global5/sbano/go-global-server-noshisutemuheno-web-fuirunoinsutru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/go-global-server-noshisutemuheno-web-fuirunoinsutru/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Global Webファイルは、GO-Globalホスト以外のシステムにもインストールできます。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalホスト以外のシステムにwebファイルをインストールする方法&#34;&gt;GO-Globalホスト以外のシステムにWebファイルをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;\Program Files\GraphOn\GO-Global\Webディレクトリの内容を目的のWebサーバにコピーします。&lt;/li&gt;
+&lt;li&gt;Webサーバー上のlogon.htmlページを編集して、hostnameの代わりにGO-Globalホストのアドレスを挿入して、以下のステートメントを追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;if (host.length == 0)
+{
+host=&amp;quot;hostname&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Redundant License Servers</title>
+      <link>/docs/go-global5/sbano/redundant-license-servers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/redundant-license-servers/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before upgradi&lt;/p&gt;
+&lt;p&gt;If you wish to use redundant servers, select stable systems as server machines. Do not pick systems that are frequently rebooted or shut down. Redundant license server machines can be any supported GO-Global Host machines. These servers must have excellent communications on a reliable network and need to be located in the same subnet. Avoid configuring redundant servers with slow communications or dial-up links.&lt;/p&gt;
+&lt;p&gt;GO-Global supports two methods of redundancy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Via a set of three redundant license servers&lt;/li&gt;
+&lt;li&gt;Via a license-file list in the LM_LICENSE_FILE environment variable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The License Manager service should be disabled on secondary servers of Central License Servers and Three-Server Redundant License Servers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;three-server-redundancy&#34;&gt;Three-Server Redundancy&lt;/h2&gt;
+&lt;p&gt;With three-server redundancy, if any two of the three license servers are up and running, a &amp;ldquo;quorum&amp;rdquo; of servers is established, and the system is functional and serves its total complement of licenses.&lt;/p&gt;
+&lt;p&gt;Three-server redundancy is designed to provide hardware failover protection only and does not provide load-balancing. This is because with three-server redundancy, only one of the three servers is &amp;ldquo;master&amp;rdquo; and capable of issuing licenses.&lt;/p&gt;
+&lt;p&gt;Following is an example of a three-server redundant license file that GraphOn supplies after registering online. You must provide the hostnames of the three GO-Global Hosts as well as the hostids (Ethernet addresses, in most cases) for each. The port of the license server (e.g., 27000) must also be appended to each server line, if it is not already listed.&lt;/p&gt;
+&lt;p&gt;SERVER wilson 000476BA8EE9 27000
+SERVER piper 00115B73383E 27000
+SERVER caspian 000476BA8F74 27000
+DAEMON blm
+INCREMENT session blm 6.0 31-dec-2019 5 99E82D1B9A64 HOSTID=ANY
+INCREMENT any_app blm 6.0 31-dec-2019 uncounted D1D222D031C4&lt;br&gt;
+HOSTID=ANY&lt;/p&gt;
+&lt;p&gt;The three-server license file needs to be copied to each of the three license servers.&lt;/p&gt;
+&lt;p&gt;Lastly, you must point the GO-Global Host to the license server. This can be done in two different ways, either by copying the license to each GO-Global Host and editing it to use USE_SERVER (see example below), or by adding each server to the environment variable.&lt;/p&gt;
+&lt;p&gt;SERVER wilson 000476BA8EE9 27000
+SERVER piper 00115B73383E 27000
+SERVER caspian 000476BA8F74 27000
+USE_SERVER&lt;/p&gt;
+&lt;p&gt;With the second option, add each server to the environment variable, using commas to separate the servers. For example, LM_LICENSE_FILE = 27000@wilson,27000@piper,27000@caspian. Restart the GO-Global Application Publishing Service and the GO-Global License Manager on the &amp;ldquo;master&amp;rdquo; server first (wilson, in the example above), then on the secondary and tertiary servers.&lt;/p&gt;
+&lt;p&gt;We recommend running Flexera&amp;rsquo;s lmtools application to check the status of the redundant license servers once all three servers are up and running. Launch lmtools.exe and select the Server Status tab. Click on Perform Status Enquiry and verify that your servers are &amp;ldquo;UP.&amp;rdquo; You can obtain lmtools from the Licensing directory (\GO-Global\Licensing) or from the start menu. The lmtools application is included for diagnostic purposes. Any questions on its functionality should be directed to Flexera.&lt;/p&gt;
+&lt;h2 id=&#34;license-file-list-redundancy&#34;&gt;License-File List Redundancy&lt;/h2&gt;
+&lt;p&gt;As an alternative to three-server redundancy, license-file list redundancy is available when there is limited system administration available to monitor license servers, when load-balancing is required for applications located far apart (e.g., Chicago and Tokyo), or when two or more license servers are required.&lt;/p&gt;
+&lt;p&gt;With license-file redundancy, each one of a group of license servers serves a subset of the total licenses. As such, this method does not provide true redundancy in the way three-server redundancy does.&lt;/p&gt;
+&lt;p&gt;Set the LM_LICENSE_FILE environment variable to a list of license files, where each license file points to one of the license servers. GO-Global attempts a license checkout from each server in the list, in order, until it succeeds or gets to the end of the list.&lt;/p&gt;
+&lt;p&gt;The following example illustrates how license-file list redundancy works. If ten licenses are desired, you will need to request two Product Codes with a count of five for each. The actual licenses will be generated from the Product Codes. Unlike with three-server redundancy, the server machines can be physically distant. The license servers on both servers need to be running.&lt;/p&gt;
+&lt;p&gt;The sample license files will look like:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;License 1 for chicago:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SERVER chicago 00508BFE7FFE 27000 
+DAEMON blm 
+INCREMENT session blm 6.0 permanent 5 DF9C8F5ADF34 HOSTID=ANY \    
+        user_info=&amp;quot;Joe User joeu@mycompany.com&amp;quot; ISSUER=&amp;quot;GraphOn \      
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \     
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=142 \     
+        SN=12865-AA 
+INCREMENT any_app blm 6.0 permanent 5 1DF84A360E8F HOSTID=ANY \     
+        user_info=&amp;quot; Joe User joeu@mycompany.com &amp;quot; ISSUER=&amp;quot;GraphOn \     
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \     
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=84 \     
+        SN=12865-AA
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;license-2-for-tokyo&#34;&gt;License 2 for tokyo:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;SERVER tokyo 00508BF77F7E 27000 
+DAEMON blm 
+INCREMENT session blm 6.0 permanent 5 16BE40E1D98D HOSTID=ANY \    
+        user_info=&amp;quot;Joe User joeu@mycompany.com&amp;quot; ISSUER=&amp;quot;GraphOn \    
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \    
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=142 \    
+        SN=12865-AA
+INCREMENT any_app blm 6.0 permanent 5 6DB6F3E402DF HOSTID=ANY \    
+        user_info=&amp;quot; Joe User joeu@mycompany.com &amp;quot; ISSUER=&amp;quot;GraphOn \    
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \    
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=84 \    
+        SN=12865-AA
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The administrator of the chicago server should set LM_LICENSE_FILE to: 27000@chicago;27000@tokyo where 27000 represents the port that the license servers in Chicago and Tokyo are running. This will direct the license engine to first attempt license checkouts from chicago. If unsuccessful, it will attempt to checkout from tokyo. The administrator of the tokyo server should set LM_LICENSE_FILE to: 27000@tokyo;27000@chicago. This will direct the license engine to first attempt license checkouts from tokyo. If unsuccessful, it will attempt to checkout from chicago.&lt;/p&gt;
+&lt;h3 id=&#34;to-change-or-set-the-lm_license_file-variable&#34;&gt;To change or set the LM_LICENSE_FILE variable&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;To view or change the current Environment Variables, right-click My Computer and select Properties.&lt;/li&gt;
+&lt;li&gt;Select the Advanced tab and click Environment Variables below.&lt;/li&gt;
+&lt;li&gt;Under System variables, select LM_LICENSE_FILE and click Edit.&lt;/li&gt;
+&lt;li&gt;Change the Variable value from C:\Program Files\GraphOn\GO-Global\Licensing to reflect the new redundant servers. Separate the license server names with a semicolon (;). GO-Global will attempt the first server in the list. If that fails for any reason, the second server is tried.&lt;/li&gt;
+&lt;li&gt;Restart the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As with three-server redundancy, we recommend running lmtools to verify the status of the redundant license servers once all servers are up and running.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セントラルライセンスサーバを使用するためのGO-Globalの構成</title>
+      <link>/docs/go-global5/sbano/configuring-go-global-to-use-a-central-license-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/configuring-go-global-to-use-a-central-license-server/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By default, the GO-Global License Manager service is installed together with the GO-Global Host, and the GO-Global Host is configured to use the GO-Global License Manager that is on the same computer as the GO-Global Host. Alternatively, one or more GO-Global Hosts can be configured to use a central GO-Global License Manager that is running on a different computer. You can configure a GO-Global Host to use a GO-Global License Manager on a different computer using either of the following methods.&lt;/p&gt;
+&lt;p&gt;We recommend stopping the GO-Global License Manager on the GO-Global Host before getting started. The License Manager should be disabled on all secondary servers of the Central License Server.&lt;/p&gt;
+&lt;h3 id=&#34;to-stop-the-go-global-license-manager&#34;&gt;To stop the GO-Global License Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Control Panel | Administrative Tools | Services.&lt;/li&gt;
+&lt;li&gt;Select GO-Global License Manager from the list of services.&lt;/li&gt;
+&lt;li&gt;Click the Stop button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After stopping the GO-Global License Manager on the GO-Global Host, you can proceed with one of the following methods for configuring a central license server. In the examples below, LicenseServer1 is the name of the license server.&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place port@host (e.g., 27000@LicenseServer1) in the LM_LICENSE_FILE environment variable instead of the path to the license file. FLEXnet Publisher&amp;rsquo;s LMTOOLS.EXE reports that the license file on LicenseServer1 is being read correctly.&lt;/p&gt;
+&lt;p&gt;—or—&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place USE_SERVER directly after the SERVER line in the license file on the GO-Global Host. This is essentially the same as the preceding method but the change to the environment variable is not required.&lt;/p&gt;
+&lt;h3 id=&#34;to-checkout-licenses-from-the-relay-server&#34;&gt;To checkout licenses from the relay server&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;li&gt;Locate the file HostProperties.xml in the C:\ProgramData\GraphOn\GO-Global directory.&lt;/li&gt;
+&lt;li&gt;Open HostProperties.xml in WordPad and locate the ManageLicensesFrom property.&lt;/li&gt;
+&lt;li&gt;Set the ManageLicensesFrom property to Relay.&lt;/li&gt;
+&lt;li&gt;Save the file.&lt;/li&gt;
+&lt;li&gt;Restart the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The default value for the ManageLicensesFrom property is Host. If this property is changed to Relay on an independent host or if it is set to an invalid value, licenses will revert to being managed from the host.&lt;/p&gt;
+&lt;p&gt;Two alternative methods can be used for configuring GO-Global to use a license server serving multiple machines. In the following examples, LicenseServer1 is the name of the license server and HOST1 is the name of the GO-Global Host. We recommend stopping the GO-Global License Manager on the GO-Global Host before getting started. The License Manager should be disabled on all secondary servers of the Central License Server.&lt;/p&gt;
+&lt;h3 id=&#34;to-stop-the-go-global-license-manager-1&#34;&gt;To stop the GO-Global License Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Control Panel | Administrative Tools | Services.&lt;/li&gt;
+&lt;li&gt;Select GO-Global License Manager from the list of services.&lt;/li&gt;
+&lt;li&gt;Click the Stop button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once you have stopped the GO-Global License Manager on the GO-Global Host, you can proceed with one of the following methods for configuring a central license server:&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place port@host (e.g., 27000@LicenseServer1) in the LM_LICENSE_FILE environment variable instead of the path to the license file. FLEXnet Publisher&amp;rsquo;s LMTOOLS.EXE reports that the license file on LicenseServer1 is being read correctly.&lt;/p&gt;
+&lt;p&gt;—or—&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place USE_SERVER directly after the SERVER line in the license file on the GO-Global Host. This is essentially the same as the preceding method but the change to the environment variable is not required.&lt;/p&gt;
+&lt;p&gt;For example, the permanent license file (e.g., license.lic) on GO-Global Host (HOST1) would appear as follows:&lt;/p&gt;
+&lt;p&gt;For example, the permanent license file (e.g., license.lic) on GO-Global Host would appear as follows:&lt;/p&gt;
+&lt;p&gt;SERVER LicenseServer1 00d0b74f4023
+USE_SERVER&lt;/p&gt;
+&lt;h2 id=&#34;opening-the-license-manager-port-in-a-firewall&#34;&gt;Opening the License Manager Port in a Firewall&lt;/h2&gt;
+&lt;p&gt;If there is a firewall between GO-Global hosts and the license server, the ports for FLEXnet (27000, by default) and for the license manager(BLM)need to be open in the firewall. For the license manager, add&lt;/p&gt;
+&lt;p&gt;port=&amp;lt;port#&amp;gt;&lt;/p&gt;
+&lt;p&gt;to the license on the license server for a specific port. (Unless you manually assign a specific port number, an ephemeral port number is used.)&lt;/p&gt;
+&lt;p&gt;EXAMPLE:&lt;/p&gt;
+&lt;p&gt;SERVER caspian 000476BA8F74 27000
+DAEMON BLM port=5678
+INCREMENT session blm 6.0 31-dec-2018 5 99E82D1B9A64 HOSTID=ANY
+INCREMENT any_app blm 6.0 31-dec-2018 uncounted D1D222D031C4
+HOSTID=ANY&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボード/IME 用サポートの設定</title>
+      <link>/docs/go-global5/sbano/kuraianto-kbdoime-saptono/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/kuraianto-kbdoime-saptono/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windowsでは、入力言語、キーボードレイアウト、言語入力システム(IME)、コードページを使用して、キーボード上の各キーを画面上の文字にマッピングします。クライアントキーボード上でキーを押すと、GO-Globalからホストにキーコードが送信します。ホストはセッションの有効なキーボードレイアウトを使用して、キーコードをWindowsの入力メッセージに変換します。GO-Globalのセットアップでは、ホストと同じオペレーティングシステム、キーボードおよびIMEを使用するクライアントをサポートするようにホストを設定します。GO-Globalは、キーボードマッピングファイルを使用して、さまざまなオペレーティングシステムとキーボードを持つクライアントをサポートします。&lt;/p&gt;
+&lt;p&gt;次のセクションでは、ホストシステムと異なるクライアントコンピュータ上のセッションにおいてキーボードやIMEを管理するためのしくみと手順を説明します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: キーボードとIMEの追加インストール</title>
+      <link>/docs/go-global5/sbano/kbdotoimenoinsutru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/kbdotoimenoinsutru/</guid>
+      <description>
+        
+        
+        &lt;p&gt;クライアントがホストとは異なるキーボードやIMEを使用する前に、それらをサポートするためのファイルをGO-Globalホストにインストールする必要があります。ほとんどの場合、レイアウトはオペレーティングシステムのインストール中にコピーされますが、東アジア言語と右から左へ表記される言語はコピーされません。&lt;/p&gt;
+&lt;h3 id=&#34;サーバにキーボード-レイアウトをインストールする方法&#34;&gt;サーバにキーボード レイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタートメニューから[コントロールパネル]をクリックします。&lt;/li&gt;
+&lt;li&gt;[地域と言語のオプション]アイコンをダブルクリックします。&lt;/li&gt;
+&lt;li&gt;[言語]タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[補足言語サポート]ボックスで、使用する言語グループの横にあるチェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;[OK]をクリックします。[&lt;strong&gt;言語&lt;/strong&gt;]タブをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;追加のファイルがあなたのマシンにコピーされます。OSのインストールCDまたはネットワーク共有名を提供する必要があります。新しい言語のサポートは再起動後に利用可能になります。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2008-が稼動するサーバにキーボード-レイアウトをインストールする方法&#34;&gt;Windows Server 2008 が稼動するサーバにキーボード レイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタート メニューから [&lt;strong&gt;コントロールパネル&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;地域と言語のオプション&lt;/strong&gt;]アイコンをダブルクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;キーボードと言語&lt;/strong&gt;]タブをクリックします。[&lt;strong&gt;キーボードの変更&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;テキストサービスと入力言語&lt;/strong&gt;]ウィンドウで、 [&lt;strong&gt;追加&lt;/strong&gt;]ボタンをクリックして目的の言語を追加します。 [&lt;strong&gt;入力言語の追加&lt;/strong&gt;]ウィンドウのチェックボックスをクリックして言語を選択します。&lt;/li&gt;
+&lt;li&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;テキストサービスと入力言語&lt;/strong&gt;]ウィンドウの [&lt;strong&gt;適用&lt;/strong&gt;]ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下に、各GO-Globalクライアントがサポートするキーボードの一覧を示します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linuxクライアント&lt;/strong&gt;は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Linux  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Linux  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;us&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US&lt;/td&gt;
+&lt;td&gt;00000409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Japanese&lt;/td&gt;
+&lt;td&gt;jp&lt;/td&gt;
+&lt;td&gt;日本語&lt;/td&gt;
+&lt;td&gt;日本語 (106/109  キー)&lt;/td&gt;
+&lt;td&gt;E0010411 (IME)&lt;/td&gt;
+&lt;td&gt;jp.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;fr&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;フランス語&lt;/td&gt;
+&lt;td&gt;0000040C&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Belgian  (be-latin1)&lt;/td&gt;
+&lt;td&gt;be&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;0000080C&lt;/td&gt;
+&lt;td&gt;be.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German、 German(Latin1)、 German (Latin1 w/ no  dead keys)&lt;/td&gt;
+&lt;td&gt;de&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;ドイツ語&lt;/td&gt;
+&lt;td&gt;00000407&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polish&lt;/td&gt;
+&lt;td&gt;pl&lt;/td&gt;
+&lt;td&gt;ポーランド語&lt;/td&gt;
+&lt;td&gt;ポーランド語  (214)&lt;/td&gt;
+&lt;td&gt;00010415&lt;/td&gt;
+&lt;td&gt;pl.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazilian (ABNT2)&lt;/td&gt;
+&lt;td&gt;br&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジル)&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジルABNT2)&lt;/td&gt;
+&lt;td&gt;00010416&lt;/td&gt;
+&lt;td&gt;br.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Mac OS Xクライアント&lt;/strong&gt;は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mac OS X  キーボード  レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mac OS XキーボードとWindowsキーボードの物理的な違いにより、Mac OS Xキーボードマッピングファイルでは、米国国際Windowsキーボードレイアウトを使用して、キーの大部分をWindowsアプリケーションに変換しています。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Windowsクライアント(ネイティブのWindowsクライアント、ActiveXコントロール、およびプラグインを含む)は、GO-Globalホストにドライバがあるすべてのキーボードをサポートします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: テーマ</title>
+      <link>/docs/go-global5/sbano/tma/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global5/sbano/tma/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windows 7以降では、GO-Globalはホストで指定されているテーマを使用してアプリケーションを表示します。Windows Server 2008 R2では、Windowsのテーマはデフォルトで有効になっていません。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2008-r2でテーマを有効にする方法&#34;&gt;Windows Server 2008 R2でテーマを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;デスクトップエクスペリエンスをインストールする(&lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc742809.aspx&#34;&gt;http://technet.microsoft.com/en-us/library/cc742809.aspx&lt;/a&gt;)。&lt;/li&gt;
+&lt;li&gt;ホストを再起動したら、Themesサービスを起動します。&lt;/li&gt;
+&lt;li&gt;クラスタマネージャでグループポリシーを有効にします。
+a. クラスタマネージャで、[ツール]メニューから[ツール | ホストオプション]をクリックします。
+b. &lt;strong&gt;Session Startup&lt;/strong&gt;タブをクリックします。
+c. &lt;strong&gt;Apply Group Policy&lt;/strong&gt;を有効にする。&lt;/li&gt;
+&lt;li&gt;グループポリシーを介してすべてのユーザに対してテーマを有効にします。
+a. mmcを実行
+b. [&lt;strong&gt;ファイル | スナップインの追加と削除&amp;hellip;&lt;/strong&gt;]をクリックします。
+c. &lt;strong&gt;グループポリシーオブジェクト&lt;/strong&gt;を選択
+d. &lt;strong&gt;追加&lt;/strong&gt;をクリックします。
+e. &lt;strong&gt;完了&lt;/strong&gt;をクリックします。
+f. ユーザーの構成\ポリシー\管理用テンプレート\コントロールパネル\個人用設定に移動します。
+g. **「特定のビジュアルスタイルファイルを強制するかWindows Classicを強制する」**をダブルクリックします。
+h. &lt;strong&gt;有効&lt;/strong&gt;をクリックします。
+i. [&lt;strong&gt;ビジュアルスタイルへのパス&lt;/strong&gt;]で、パスを入力します。%windir%\resources\Themes\Aero\ aero.msstyles&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

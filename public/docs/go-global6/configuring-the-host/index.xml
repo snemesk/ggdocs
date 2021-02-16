@@ -1,0 +1,521 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – サーバの設定</title>
+    <link>/docs/go-global6/configuring-the-host/</link>
+    <description>Recent content in サーバの設定 on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global6/configuring-the-host/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Upgrading GO-Global</title>
+      <link>/docs/go-global6/configuring-the-host/upgrading-go-global/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/upgrading-go-global/</guid>
+      <description>
+        
+        
+        &lt;p&gt;
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+本項目の設定は推奨設定ではございませんのでご注意ください。ライセンスのアップグレード申請を行う際にはきっとエイエスピー営業部までお問い合わせください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-warning&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+GO-Global version5から6へのアップグレード手順は以下の技術ノートを参照ください。
+技術ノート KGTN 2019061901　技術ノート KGTN 2019071702
+&lt;/div&gt;
+&lt;/p&gt;
+&lt;p&gt;Before upgrading to version 6, you must upgrade the GO-Global license(s) by submitting a License Change Request via the &lt;a href=&#34;https://www.graphon.com/&#34;&gt;GraphOn portal&lt;/a&gt;. The version 6 host installer will not upgrade a computer that does not have a version 6 GO-Global license. After signing in to the portal, click License Management then click License Change Request and complete the form.&lt;/p&gt;
+&lt;p&gt;After submitting the License Change Request form, a version 6 GO-Global license will be sent via email. Place the new license file in the directory where the existing version 5 license file is stored. (The default license folder for GO-Global version 5 is C:\Program Files\GraphOn\GO-Global\Programs.)&lt;/p&gt;
+&lt;p&gt;Remove all version 5 licenses from the Programs directory. Then restart the &lt;strong&gt;GO-Global License Manager.&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&#34;to-restart-the-license-manager&#34;&gt;To restart the License Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Control Panel | Administrative Tools | Services.&lt;/li&gt;
+&lt;li&gt;Select &lt;strong&gt;GO-Global License Manager&lt;/strong&gt;from the list of services.&lt;/li&gt;
+&lt;li&gt;Right-click and select Restart.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Restarting the License Manager will not affect existing sessions running on the GO-Global Host.&lt;/p&gt;
+&lt;p&gt;After restarting the License Manager, run the version 6 GO-Global host installer by doubleclicking gg-host.exe.&lt;/p&gt;
+&lt;p&gt;When upgrading to version 6, you will be prompted to restart the computer two times. The host installer will resume automatically after restarting. As part of the installation process, existing versions of GO-Global are removed, but Registry settings and files are saved.These files can be found in the &lt;strong&gt;Program Files\GraphOn\GO-Global.backup&lt;/strong&gt;folder and in the Registry at HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global.backup. The installer also moves the new license file(s) from the Programs directory to the Licensing directory.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+Customers will be unable to upgrade their version 5 license to version 6 if their Support contract has expired. To renew, contact your GO-Global reseller or &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt;.
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalホストのインストール</title>
+      <link>/docs/go-global6/configuring-the-host/installing-the-go-global-host/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/installing-the-go-global-host/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは自己解凍型の実行ファイルとして配布されており、gg-host.exeをダブルクリックしてインストールすることができます。ホストセットアッププログラムを実行するときは、コンピュータの管理者グループのメンバであるアカウントにログインする必要があります。&lt;/p&gt;
+&lt;p&gt;デフォルトでは、GO-Globalホストのセットアップは、すべての &lt;strong&gt;ホスト&lt;/strong&gt;のコアコンポーネント、 &lt;strong&gt;Web&lt;/strong&gt;コンポーネント(ブラウザログオン用にホストを設定するために必要なすべてのファイルを含む)、および &lt;strong&gt;Licensing&lt;/strong&gt;コンポーネントをインストールします。 [&lt;strong&gt;Customize&lt;/strong&gt;]ボタンをクリックして、インストールしたくないコンポーネントを選択解除することで、インストールをカスタマイズできます。それ以外の場合は、 [&lt;strong&gt;Install&lt;/strong&gt;]ボタンをクリックしてください。&lt;/p&gt;
+&lt;p&gt;GO-Globalを有効にするには、 &lt;strong&gt;GO-Globalライセンスファイルをデフォルトのライセンスフォルダ&lt;/strong&gt; C:\ Program Files\GraphOn\GO-Global\Licensingにコピーします。ライセンスサーバを使用するようにGO-Globalを設定するには、&lt;a href=&#34;https://app.gitbook.com/@kitasp-goglobal/s/kitasp-documentaion/go-global-6/configuring-the-host/configuring-go-global-to-use-a-central-license-server&#34;&gt;セントラルライセンスサーバを使用するためのGO-Global&lt;/a&gt;の構成を参照してください。&lt;/p&gt;
+&lt;p&gt;後でライセンスファイルをコピーすることを選択した場合は、ファイルをコピーした後にGO-Global License Managerを再起動し、次にGO-Global Application Publishing Serviceを再起動する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;go-global-license-managerを再起動する方法&#34;&gt;GO-Global License Managerを再起動する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[コントロールパネル | 管理ツール | サービス]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;サービスの一覧から &lt;strong&gt;GO-Global License Manager&lt;/strong&gt;を選択します｡&lt;/li&gt;
+&lt;li&gt;右クリックをして &lt;strong&gt;再起動&lt;/strong&gt;を選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;go-global-application-publishing-service-を再起動する方法&#34;&gt;GO-Global Application Publishing Service を再起動する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[コントロール パネル | 管理ツール | サービス]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;サービスの一覧から &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt;を選択します｡&lt;/li&gt;
+&lt;li&gt;右クリックをして &lt;strong&gt;再起動&lt;/strong&gt;を選択します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;ホストをインストールしてコンピュータを再起動したら、Webブラウザを選択してGO-Globalの &lt;strong&gt;Interactive Quick Start Guide&lt;/strong&gt;を開きます。このガイドでは、admin consoleを介してアプリケーションを公開する方法と、アプリケーションへのリンクを共有する方法について説明します。 &lt;strong&gt;Interactive Quick Start Guide&lt;/strong&gt;は、GO-Globalのログオンページに &lt;strong&gt;?help=ac&lt;/strong&gt;を追加することでいつでも開くことができます。たとえば、 &lt;strong&gt;http://hostname/goglobal/?help=ac&lt;/strong&gt;のようになります。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;ライセンスファイル(C:\Program Files\GraphOn\GO-Global\Programs*.lic)への最小アクセス権限は次のとおりです。&lt;/p&gt;
+&lt;p&gt;Administrators：フルコントロール、Users：読み取りと実行、SYSTEM：フルコントロール 次のエラーメッセージがログファイルに表示される場合は、ライセンスファイルに対する権限が正しくない可能性があります。 &lt;em&gt;FlexLM code #-1; FlexLM text : Cannot find license file.The license files(or license server system network addresses)attempted are listed below.Use LM_LICENSE_FILE to use a different license file,or contact your software provider for a license file.)&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;2つのGO-Globalライセンスを組み合わせるとき、または同じGO-Globalホストで2つの別々のライセンスを使用するときは、ライセンスファイル内のホスト名は大文字と小文字が区別され、同一である必要があります。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストの起動設定を行う場合は、リストからGO-Global Application Publishing Serviceを選択して、 [&lt;strong&gt;起動&lt;/strong&gt;]ボタンをクリックしてください。GO-Globalホストに適用したいオプションを選択します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Running the 30-Day Trial Version</title>
+      <link>/docs/go-global6/configuring-the-host/running-the-30-day-trial-version/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/running-the-30-day-trial-version/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;img src=&#34;/images/2-3-1.png&#34; alt=&#34;&#34;&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。GO-Globalの評価を行う際にはきっとエイエスピー営業部までお問い合わせください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;GO-Global&amp;rsquo;s 30-day trial version can be downloaded from GraphOn&amp;rsquo;s web site. The Activation Wizard runs during the GO-Global trial installation, and is accessible from the Start menu after installing the host. It configures the computer to use a GraphOn product license, then activates GO-Global on the computer. GO-Global can be activated on a computer with a trial license only once.&lt;/p&gt;
+&lt;h3 id=&#34;to-run-the-activation-wizard&#34;&gt;To run the Activation Wizard&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;When the Activation Wizard opens, follow the prompts. Sign in using your GraphOn account. Create an account if you do not have one. Then click the &lt;strong&gt;Sign in&lt;/strong&gt; button.&lt;/li&gt;
+&lt;li&gt;If applicable, select a GraphOn customer account.&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+GO-Global cloud trial licenses can only be used on computers that have direct access to the internet. If a computer does not have access to the internet (e.g., if it accesses the internet via a proxy server), the Activation Wizard will notify you that GO-Global is unable to communicate with GraphOn&amp;rsquo;s online license service. If you see this message, you can request an on-premises trial license as described below.
+&lt;/div&gt;
+
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;Select the license you would like the computer to use. If there are no available licenses, click &lt;strong&gt;Start New Trial&lt;/strong&gt;. Specify a description for the license, then click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Accept&lt;/strong&gt;to accept the GO-Global License Agreement.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;Activate&lt;/strong&gt; to enable GO-Global on this computer.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After installing GO-Global and running the Activation Wizard, you must &lt;strong&gt;restart&lt;/strong&gt; the computer.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+If a license is grayed out, it is not an active license, and cannot be used.
+&lt;/div&gt;
+
+&lt;h3 id=&#34;activating-go-global-using-an-on-premises-license&#34;&gt;Activating GO-Global using an on-premises license&lt;/h3&gt;
+&lt;p&gt;For computers without direct access to the internet, or if a cloud trial license cannot be established, GraphOn will generate an on-premises, Flexera-based trial license, which will be sent via email.&lt;/p&gt;
+&lt;h3 id=&#34;to-activate-go-global-using-an-on-premises-license&#34;&gt;To activate GO-Global using an on-premises license&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Determine the computer&amp;rsquo;s &lt;strong&gt;Host Name&lt;/strong&gt; and &lt;strong&gt;Host ID&lt;/strong&gt; (Physical Address).
+a. Open the Command Prompt window by clicking Start | (All) Programs | Accessories | Command Prompt.
+b. Type &lt;strong&gt;ipconfig /all&lt;/strong&gt; and press the &lt;strong&gt;Enter&lt;/strong&gt; key.
+c. Locate the computer&amp;rsquo;s &lt;strong&gt;Host Name&lt;/strong&gt; and &lt;strong&gt;Physical Address.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Email &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt; with the computer&amp;rsquo;s Host Name, Host ID (Physical Address), and number of seats.&lt;/li&gt;
+&lt;li&gt;When you receive the license file from GraphOn:
+a. Copy the .lic file into c:\Program Files\GraphOn\GO-Global\Licensing directory.
+b. Start the &lt;strong&gt;GO-Global License Manager Service.&lt;/strong&gt;
+c. Restart the &lt;strong&gt;GO-Global Application Publishing Service.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: ホスト以外のシステムへのWebファイルのインストール</title>
+      <link>/docs/go-global6/configuring-the-host/installing-the-web-files-on-a-system-other-than-the-host/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/installing-the-web-files-on-a-system-other-than-the-host/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Global Webファイルは、GO-Globalホスト以外のシステムにもインストールできます。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalホスト以外のシステムにwebファイルをインストールする方法&#34;&gt;GO-Globalホスト以外のシステムにWebファイルをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Webファイルをインストールすることを選択して、目的のWebサーバでホストインストーラを実行します。&lt;/li&gt;
+&lt;li&gt;Webサーバ上のlogon.htmlページを編集して、hostnameの代わりにGO-Globalホストのアドレスを挿入して、以下のステートメントを追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;if (host.length == 0)
+{
+host=&amp;quot;hostname&amp;quot;;
+}
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: IIS Webサーバーを使用して、既定のディレクトリ以外からWebファイルをホストする</title>
+      <link>/docs/go-global6/configuring-the-host/iis-web-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/iis-web-server/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Microsoft IIS Webサーバを使用して、既定のgoglobalディレクトリ以外からGO-Global Webファイルをホストできます。&lt;/p&gt;
+&lt;h3 id=&#34;既定のディレクトリ以外からwebファイルをホストする方法&#34;&gt;既定のディレクトリ以外からWebファイルをホストする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Webサーバの C:\inetpub\wwwroot\にディレクトリを作成し、ユーザに表示したいディレクトリに呼び出します。たとえば、C:\inetpub\wwwroot\Webのフォルダを作成します。&lt;/li&gt;
+&lt;li&gt;GO-GlobalホストからC:\Program files\GraphOn\GO-Global\Webディレクトリの内容を新しいディレクトリにコピーします。&lt;/li&gt;
+&lt;li&gt;IISマネージャを開き、[サイト]に移動します。既定のWebサイト &lt;strong&gt;既定のWebサイト&lt;/strong&gt;を右クリックし、 &lt;strong&gt;仮想ディレクトリの追加&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;手順1で作成したディレクトリと同じエイリアスを指定し、手順2でファイルをコピーしたディレクトリを &lt;strong&gt;物理パス&lt;/strong&gt;に指定します。たとえば、C:\inetpub\wwwroot\Webです。&lt;/li&gt;
+&lt;li&gt;新しい仮想ディレクトリをクリックします。次に &lt;strong&gt;MIMEタイプ&lt;/strong&gt;をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;追加&lt;/strong&gt;をクリックします。 &lt;strong&gt;File name extension&lt;/strong&gt;ボックスに.memを入力します。[MIMEの種類]ボックスにapplication/octet-streamと入力します。次に &lt;strong&gt;OK&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;IISの設定が正しいことを確認するには、ブラウザを開き、GO-Globalホストに接続するためのURLを入力します(例 : &lt;strong&gt;http://hostname/web/logon.html&lt;/strong&gt;)。(hostnameはあなたのGO-Globalホストの名前です。webはIISで作成した仮想ディレクトリの名前です。)&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Apache HTTPサーバを介したGO-Globalの実行</title>
+      <link>/docs/go-global6/configuring-the-host/running-go-global-through-apache-http-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/running-go-global-through-apache-http-server/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Apache HTTP Server 2.4 WebサービスがGO-Globalホストにインストールされている場合、ユーザはWebブラウザを使ってクライアントマシンから接続できます。&lt;/p&gt;
+&lt;p&gt;IISがインストールされている場合は、Apacheをダウンロードする前に &lt;strong&gt;World Wide Web発行サービス&lt;/strong&gt;を停止して無効にする必要があります。 &lt;strong&gt;サービス&lt;/strong&gt;から、 &lt;strong&gt;World Wide Web発行サービス&lt;/strong&gt;を右クリックして &lt;strong&gt;プロパティ&lt;/strong&gt;を選択します。 &lt;strong&gt;プロパティ&lt;/strong&gt;ダイアログで、 &lt;strong&gt;スタートアップの種類&lt;/strong&gt;ドロップダウンメニューから &lt;strong&gt;無効&lt;/strong&gt;を選択し、 &lt;strong&gt;停止&lt;/strong&gt;ボタンをクリックします。OKをクリックしてください。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;a href=&#34;http://www.apachelounge.com/download/&#34;&gt;http://www.apachelounge.com/download/&lt;/a&gt;にアクセスして最新バージョンをダウンロードしてください。GraphOnによってテストされたバージョンは &lt;strong&gt;httpd-2.4.29-Win64-VC15.zip&lt;/strong&gt;でした。&lt;/li&gt;
+&lt;li&gt;C ++再配布可能なVisual Studio 2017をダウンロードしてインストールします。GraphOnによってテストされたバージョンは、次のリンクからダウンロードできます。&lt;a href=&#34;https://aka.ms/vs/15/release/VC_redis.x64.exe&#34;&gt;https://aka.ms/vs/15/release/VC_redis.x64.exe&lt;/a&gt;​&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;httpd-2.4.29-Win64-VC15.zip&lt;/strong&gt;をC:\Apache24ディレクトリのGO-Globalホストに抽出します。&lt;/li&gt;
+&lt;li&gt;[ スタート | すべてのプログラム | アクセサリー | コマンドプロンプト ]の順にクリックします。コマンドプロンプトを右クリックし、管理者として実行します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;コマンドプロンプト&lt;/strong&gt;ウィンドウで、次のように入力します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;cd C:\Apache24\bin
+httpd -k install
+httpd -k start
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;まだ開いていない場合は、ファイアウォールでポート80を開く必要があります。SSLが実行されている場合は、ポート443が開いていることを確認してください。
+6. C :\Apache24\binを開き、 &lt;strong&gt;ApacheMonitor.exe&lt;/strong&gt;を実行します。システムトレイからApache Monitorを開き、サービスが開始されたことを確認します。
+7. C:\Apache24\htdocsを開き、goglobalという名前のディレクトリを作成します。
+8. C:\Program files\GraphOn\GO-Global\Webの内容をC:\Apache24\htdocs\goglobalディレクトリにコピーします。
+9. GO-Globalホスト上でブラウザを開き、 &lt;strong&gt;http://localhost/goglobal/logon.html&lt;/strong&gt;にアクセスしてセッションを開始します。&lt;/p&gt;
+&lt;p&gt;GO-Globalのバージョン番号には、ソフトウェアのメジャーバージョン、マイナーバージョン、サービスパックバージョン、ビルド番号が含まれています。たとえば、バージョン6.1.2.37894では、6がメジャーバージョン、1がマイナーバージョン、2がサービスパックバージョン、そして37897がビルド番号です。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;GraphOnがGO-Globalへのメジャーアップグレードをリリースすると、メジャーバージョン番号が増えます。メジャーアップグレードには、通常、重要な新機能または変更された機能や機能、ユーザインターフェイスの変更、またはアーキテクチャの変更が含まれます。GraphOnがGO-Globalへのマイナーアップグレードをリリースすると、マイナーバージョン番号が増えます。マイナアップグレードには、一般的にマイナーな機能追加や変更、バグ修正とセキュリティ改善が含まれます。GraphOnがGO-GlobalにService Packをリリースすると、Service Packのバージョン番号が増えます。サービスパックには一般にバグ修正が含まれており、新しいプラットフォームのサポートとマイナーな機能強化が含まれている場合があります。ビルド番号はすべてのGO-Globalリリースで増加しています。ビルド番号だけが増えたリリースがパッチです。パッチには通常、セキュリティ上の問題、互換性の問題、および製品の問題に対する修正が含まれています。たとえば、パッチにはGO-Globalが最新リリースのMicrosoft Windows上で動作することを可能にする変更が含まれているかもしれません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: セントラルライセンスサーバを使用するためのGO-Globalの構成</title>
+      <link>/docs/go-global6/configuring-the-host/configuring-go-global-to-use-a-central-license-server/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/configuring-go-global-to-use-a-central-license-server/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;By default, the GO-Global License Manager service is installed together with the GO-Global Host, and the GO-Global Host is configured to use the GO-Global License Manager that is on the same computer as the GO-Global Host. Alternatively, one or more GO-Global Hosts can be configured to use a central GO-Global License Manager that is running on a different computer. You can configure a GO-Global Host to use a GO-Global License Manager on a different computer using either of the following methods.&lt;/p&gt;
+&lt;p&gt;We recommend stopping the GO-Global License Manager on the GO-Global Host before getting started. The License Manager should be disabled on all secondary servers of the Central License Server.&lt;/p&gt;
+&lt;h3 id=&#34;to-stop-the-go-global-license-manager&#34;&gt;To stop the GO-Global License Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Control Panel | Administrative Tools | Services.&lt;/li&gt;
+&lt;li&gt;Select GO-Global License Manager from the list of services.&lt;/li&gt;
+&lt;li&gt;Click the Stop button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;After stopping the GO-Global License Manager on the GO-Global Host, you can proceed with one of the following methods for configuring a central license server. In the examples below, LicenseServer1 is the name of the license server.&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place port@host (e.g., 27000@LicenseServer1) in the LM_LICENSE_FILE environment variable instead of the path to the license file. FLEXnet Publisher&amp;rsquo;s LMTOOLS.EXE reports that the license file on LicenseServer1 is being read correctly.&lt;/p&gt;
+&lt;p&gt;—or—&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place USE_SERVER directly after the SERVER line in the license file on the GO-Global Host. This is essentially the same as the preceding method but the change to the environment variable is not required.&lt;/p&gt;
+&lt;h3 id=&#34;to-checkout-licenses-from-the-relay-server&#34;&gt;To checkout licenses from the relay server&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;li&gt;Locate the file HostProperties.xml in the C:\ProgramData\GraphOn\GO-Global directory.&lt;/li&gt;
+&lt;li&gt;Open HostProperties.xml in WordPad and locate the ManageLicensesFrom property.&lt;/li&gt;
+&lt;li&gt;Set the ManageLicensesFrom property to Relay.&lt;/li&gt;
+&lt;li&gt;Save the file.&lt;/li&gt;
+&lt;li&gt;Restart the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The default value for the ManageLicensesFrom property is Host. If this property is changed to Relay on an independent host or if it is set to an invalid value, licenses will revert to being managed from the host.&lt;/p&gt;
+&lt;p&gt;Two alternative methods can be used for configuring GO-Global to use a license server serving multiple machines. In the following examples, LicenseServer1 is the name of the license server and HOST1 is the name of the GO-Global Host. We recommend stopping the GO-Global License Manager on the GO-Global Host before getting started. The License Manager should be disabled on all secondary servers of the Central License Server.&lt;/p&gt;
+&lt;h3 id=&#34;to-stop-the-go-global-license-manager-1&#34;&gt;To stop the GO-Global License Manager&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Control Panel | Administrative Tools | Services.&lt;/li&gt;
+&lt;li&gt;Select GO-Global License Manager from the list of services.&lt;/li&gt;
+&lt;li&gt;Click the Stop button.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Once you have stopped the GO-Global License Manager on the GO-Global Host, you can proceed with one of the following methods for configuring a central license server:&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place port@host (e.g., 27000@LicenseServer1) in the LM_LICENSE_FILE environment variable instead of the path to the license file. FLEXnet Publisher&amp;rsquo;s LMTOOLS.EXE reports that the license file on LicenseServer1 is being read correctly.&lt;/p&gt;
+&lt;p&gt;—or—&lt;/p&gt;
+&lt;p&gt;On the GO-Global Host, place USE_SERVER directly after the SERVER line in the license file on the GO-Global Host. This is essentially the same as the preceding method but the change to the environment variable is not required.&lt;/p&gt;
+&lt;p&gt;For example, the permanent license file (e.g., license.lic) on GO-Global Host (HOST1) would appear as follows:&lt;/p&gt;
+&lt;p&gt;For example, the permanent license file (e.g., license.lic) on GO-Global Host would appear as follows:&lt;/p&gt;
+&lt;p&gt;SERVER LicenseServer1 00d0b74f4023
+USE_SERVER&lt;/p&gt;
+&lt;h2 id=&#34;opening-the-license-manager-port-in-a-firewall&#34;&gt;Opening the License Manager Port in a Firewall&lt;/h2&gt;
+&lt;p&gt;If there is a firewall between GO-Global hosts and the license server, the ports for FLEXnet (27000, by default) and for the license manager(BLM)need to be open in the firewall. For the license manager, add&lt;/p&gt;
+&lt;p&gt;port=&amp;lt;port#&amp;gt;&lt;/p&gt;
+&lt;p&gt;to the license on the license server for a specific port. (Unless you manually assign a specific port number, an ephemeral port number is used.)&lt;/p&gt;
+&lt;p&gt;EXAMPLE:&lt;/p&gt;
+&lt;p&gt;SERVER caspian 000476BA8F74 27000
+DAEMON BLM port=5678
+INCREMENT session blm 6.0 31-dec-2018 5 99E82D1B9A64 HOSTID=ANY
+INCREMENT any_app blm 6.0 31-dec-2018 uncounted D1D222D031C4
+HOSTID=ANY&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Redundant License Servers</title>
+      <link>/docs/go-global6/configuring-the-host/redundant-license-servers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/redundant-license-servers/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before upgradi&lt;/p&gt;
+&lt;p&gt;If you wish to use redundant servers, select stable systems as server machines. Do not pick systems that are frequently rebooted or shut down. Redundant license server machines can be any supported GO-Global Host machines. These servers must have excellent communications on a reliable network and need to be located in the same subnet. Avoid configuring redundant servers with slow communications or dial-up links.&lt;/p&gt;
+&lt;p&gt;GO-Global supports two methods of redundancy:&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Via a set of three redundant license servers&lt;/li&gt;
+&lt;li&gt;Via a license-file list in the LM_LICENSE_FILE environment variable&lt;/li&gt;
+&lt;/ul&gt;
+&lt;blockquote&gt;
+&lt;p&gt;The License Manager service should be disabled on secondary servers of Central License Servers and Three-Server Redundant License Servers.&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&#34;three-server-redundancy&#34;&gt;Three-Server Redundancy&lt;/h3&gt;
+&lt;p&gt;With three-server redundancy, if any two of the three license servers are up and running, a &amp;ldquo;quorum&amp;rdquo; of servers is established, and the system is functional and serves its total complement of licenses.&lt;/p&gt;
+&lt;p&gt;Three-server redundancy is designed to provide hardware failover protection only and does not provide load-balancing. This is because with three-server redundancy, only one of the three servers is &amp;ldquo;master&amp;rdquo; and capable of issuing licenses.&lt;/p&gt;
+&lt;p&gt;Following is an example of a three-server redundant license file that GraphOn supplies after registering online. You must provide the hostnames of the three GO-Global Hosts as well as the hostids (Ethernet addresses, in most cases) for each. The port of the license server (e.g., 27000) must also be appended to each server line, if it is not already listed.&lt;/p&gt;
+&lt;p&gt;SERVER wilson 000476BA8EE9 27000
+SERVER piper 00115B73383E 27000
+SERVER caspian 000476BA8F74 27000
+DAEMON blm
+INCREMENT session blm 6.0 31-dec-2019 5 99E82D1B9A64 HOSTID=ANY
+INCREMENT any_app blm 6.0 31-dec-2019 uncounted D1D222D031C4&lt;br&gt;
+HOSTID=ANY&lt;/p&gt;
+&lt;p&gt;The three-server license file needs to be copied to each of the three license servers.&lt;/p&gt;
+&lt;p&gt;Lastly, you must point the GO-Global Host to the license server. This can be done in two different ways, either by copying the license to each GO-Global Host and editing it to use USE_SERVER (see example below), or by adding each server to the environment variable.&lt;/p&gt;
+&lt;p&gt;SERVER wilson 000476BA8EE9 27000
+SERVER piper 00115B73383E 27000
+SERVER caspian 000476BA8F74 27000
+USE_SERVER&lt;/p&gt;
+&lt;p&gt;With the second option, add each server to the environment variable, using commas to separate the servers. For example, LM_LICENSE_FILE = 27000@wilson,27000@piper,27000@caspian. Restart the GO-Global Application Publishing Service and the GO-Global License Manager on the &amp;ldquo;master&amp;rdquo; server first (wilson, in the example above), then on the secondary and tertiary servers.&lt;/p&gt;
+&lt;p&gt;We recommend running Flexera&amp;rsquo;s lmtools application to check the status of the redundant license servers once all three servers are up and running. Launch lmtools.exe and select the Server Status tab. Click on Perform Status Enquiry and verify that your servers are &amp;ldquo;UP.&amp;rdquo; You can obtain lmtools from the Licensing directory (\GO-Global\Licensing) or from the start menu. The lmtools application is included for diagnostic purposes. Any questions on its functionality should be directed to Flexera.&lt;/p&gt;
+&lt;h3 id=&#34;license-file-list-redundancy&#34;&gt;License-File List Redundancy&lt;/h3&gt;
+&lt;p&gt;As an alternative to three-server redundancy, license-file list redundancy is available when there is limited system administration available to monitor license servers, when load-balancing is required for applications located far apart (e.g., Chicago and Tokyo), or when two or more license servers are required.&lt;/p&gt;
+&lt;p&gt;With license-file redundancy, each one of a group of license servers serves a subset of the total licenses. As such, this method does not provide true redundancy in the way three-server redundancy does.&lt;/p&gt;
+&lt;p&gt;Set the LM_LICENSE_FILE environment variable to a list of license files, where each license file points to one of the license servers. GO-Global attempts a license checkout from each server in the list, in order, until it succeeds or gets to the end of the list.&lt;/p&gt;
+&lt;p&gt;The following example illustrates how license-file list redundancy works. If ten licenses are desired, you will need to request two Product Codes with a count of five for each. The actual licenses will be generated from the Product Codes. Unlike with three-server redundancy, the server machines can be physically distant. The license servers on both servers need to be running.&lt;/p&gt;
+&lt;p&gt;The sample license files will look like:&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;License 1 for chicago:&lt;/strong&gt;&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;SERVER chicago 00508BFE7FFE 27000
+DAEMON blm
+INCREMENT session blm 6.0 permanent 5 DF9C8F5ADF34 HOSTID=ANY \    
+        user_info=&amp;quot;Joe User joeu@mycompany.com&amp;quot; ISSUER=&amp;quot;GraphOn \      
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \     
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=142 \     
+        SN=12865-AA
+INCREMENT any_app blm 6.0 permanent 5 1DF84A360E8F HOSTID=ANY \     
+        user_info=&amp;quot; Joe User joeu@mycompany.com &amp;quot; ISSUER=&amp;quot;GraphOn \     
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \     
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=84 \     
+        SN=12865-AA
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;license-2-for-tokyo&#34;&gt;License 2 for tokyo:&lt;/h3&gt;
+&lt;pre&gt;&lt;code&gt;SERVER tokyo 00508BF77F7E 27000
+DAEMON blm
+INCREMENT session blm 6.0 permanent 5 16BE40E1D98D HOSTID=ANY \    
+        user_info=&amp;quot;Joe User joeu@mycompany.com&amp;quot; ISSUER=&amp;quot;GraphOn \    
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \    
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=142 \    
+        SN=12865-AA
+INCREMENT any_app blm 6.0 permanent 5 6DB6F3E402DF HOSTID=ANY \    
+        user_info=&amp;quot; Joe User joeu@mycompany.com &amp;quot; ISSUER=&amp;quot;GraphOn \    
+        Corporation&amp;quot; ISSUED=17-feb-2019 NOTICE=&amp;quot;Copyright (C) \    
+        1996-2019 GraphOn Corporation. All Rights Reserved&amp;quot; ck=84 \    
+        SN=12865-AA
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;The administrator of the chicago server should set LM_LICENSE_FILE to: 27000@chicago;27000@tokyo where 27000 represents the port that the license servers in Chicago and Tokyo are running. This will direct the license engine to first attempt license checkouts from chicago. If unsuccessful, it will attempt to checkout from tokyo. The administrator of the tokyo server should set LM_LICENSE_FILE to: 27000@tokyo;27000@chicago. This will direct the license engine to first attempt license checkouts from tokyo. If unsuccessful, it will attempt to checkout from chicago.&lt;/p&gt;
+&lt;h3 id=&#34;to-change-or-set-the-lm_license_file-variable&#34;&gt;To change or set the LM_LICENSE_FILE variable&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;To view or change the current Environment Variables, right-click My Computer and select Properties.&lt;/li&gt;
+&lt;li&gt;Select the Advanced tab and click Environment Variables below.&lt;/li&gt;
+&lt;li&gt;Under System variables, select LM_LICENSE_FILE and click Edit.&lt;/li&gt;
+&lt;li&gt;Change the Variable value from C:\Program Files\GraphOn\GO-Global\Licensing to reflect the new redundant servers. Separate the license server names with a semicolon (;). GO-Global will attempt the first server in the list. If that fails for any reason, the second server is tried.&lt;/li&gt;
+&lt;li&gt;Restart the GO-Global Application Publishing Service.&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;As with three-server redundancy, we recommend running lmtools to verify the status of the redundant license servers once all servers are up and running.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: License Servers in a Relay Server Environment</title>
+      <link>/docs/go-global6/configuring-the-host/license-servers-in-a-relay-server-environment/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/license-servers-in-a-relay-server-environment/</guid>
+      <description>
+        
+        
+        &lt;blockquote&gt;
+&lt;p&gt;本項目の設定は推奨設定ではございませんのでご注意ください。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Before upgradi&lt;/p&gt;
+&lt;p&gt;By default, licenses are checked out and managed from dependent hosts. Licenses can be managed from a relay server by setting the value of the &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; property to &lt;strong&gt;Relay&lt;/strong&gt; in the &lt;strong&gt;HostProperties.xml&lt;/strong&gt; file. This change must be made on the relay server as well as the dependent hosts.&lt;/p&gt;
+&lt;h3 id=&#34;to-checkout-licenses-from-the-relay-server&#34;&gt;To checkout licenses from the relay server&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Stop the &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Locate the file &lt;strong&gt;HostProperties.xml&lt;/strong&gt; in the C:\ProgramData\GraphOn\GO-Global directory.&lt;/li&gt;
+&lt;li&gt;Open &lt;strong&gt;HostProperties.xml&lt;/strong&gt; in WordPad and locate the &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; property.&lt;/li&gt;
+&lt;li&gt;Set the &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; property to &lt;strong&gt;Relay&lt;/strong&gt;.&lt;/li&gt;
+&lt;li&gt;Save the file.&lt;/li&gt;
+&lt;li&gt;Restart the &lt;strong&gt;GO-Global Application Publishing Service.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;The default value for the &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; property is Host. If this property is changed to &lt;strong&gt;Relay&lt;/strong&gt; on an independent host or if it is set to an invalid value, licenses will revert to being managed from the host.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クラウド環境のライセンスサーバ</title>
+      <link>/docs/go-global6/configuring-the-host/license-servers-in-cloud-environments/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/license-servers-in-cloud-environments/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalライセンスファイルは、GO-Global License Managerサービスが実行されているコンピュータのMACアドレスにバインドされています。Amazon Webサービス(AWS)などのクラウド環境では、仮想コンピュータのMACアドレスが変わる可能性があります。GO-Global License Managerサービスを実行しているコンピュータのMACアドレスが変更されると、サービスはライセンスをチェックアウトできなくなり、GO-Globalセッションは開始できなくなります。これを防ぐには、GO-Global License Managerサービスを実行している仮想コンピュータを、固定のMACアドレスを持つように構成する必要があります。AWS環境では、固定Elastic IPアドレス(EIP)と固定MACアドレスを使用してElastic Network Interface(ENI)を作成し、そのENIをGO-Global License Managerサービスを実行している仮想コンピュータ(EC2インスタンス)に接続することでこれを実行できます。&lt;/p&gt;
+&lt;h3 id=&#34;awsでeipとeniを作成しec2インスタンスにアタッチする方法&#34;&gt;AWSでEIPとENIを作成し、EC2インスタンスにアタッチする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Elastic IP(EIP)を作成する&lt;/strong&gt;
+EC2コンソールのナビゲーションペインから、[ネットワークとセキュリティ | セキュリティ]の順にクリックします。[Elastic IP]をクリックし、[新しいアドレスを割り当てる]を選択します。 詳細については、AWS EIPのドキュメントを参照してください。: &lt;a href=&#34;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html&#34;&gt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html&lt;/a&gt;​&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Elastic Network Interfaceを作成する(ENI)&lt;/strong&gt;
+2.1 EC2コンソールのナビゲーションペインから[Network Interfaces]を選択します。
+2.2 [ネットワークインターフェイスの作成]をクリックします。
+2.3 説明を入力し、適切なアベイラビリティーゾーンからサブネットを選択します。
+2.4 プライベートIPを自動割り当てのままにします。
+2.5 ファイアウォールルールを含むセキュリティグループを選択してください。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Elastic IP(EIP)をElastic Network Interface(ENI)に割り当てます。&lt;/strong&gt;
+3.1 EIPとENIを作成したら、[Network Interface | アクション| IPアドレスの管理] の順に選択します。
+3.2 ステップ1で作成したEIPをENIに割り当てます。 詳細については、AWS ENIのドキュメントを参照してください。: &lt;a href=&#34;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html&#34;&gt;https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html&lt;/a&gt;​&lt;/li&gt;
+&lt;li&gt;GO-Global License Managerサービスを実行しているインスタンスにENIを添付します。
+4.1 ECインスタンスから、GO-Global License Managerサービスを実行しているインスタンスを選択し、[アクション | ネットワーキング | ネットワークインターフェイス]の順に選択します。
+4.2 手順2で作成したENIを選択します。使用できない場合は、別のAWSインスタンスに添付されているか、インスタンスとは異なるアベイラビリティーゾーンに作成されている可能性があります。
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;Note&lt;/h4&gt;
+ENIをインスタンスに割り当てるには、ENIのサブネットがGO-Global License Managerサービスを実行しているAWSインスタンスと同じアベイラビリティーゾーンにある必要があります。 Amazon Virtual Private Cloud（VPC）を介して、アベイラビリティーゾーンでサブネットを使用するか、アベイラビリティーゾーンでカスタムサブネットを作成できます。
+&lt;/div&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動クライアントキーボードサポート</title>
+      <link>/docs/go-global6/configuring-the-host/automatic-client-keyboard-support/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/automatic-client-keyboard-support/</guid>
+      <description>
+        
+        
+        &lt;p&gt;自動クライアントキーボード機能を使用すると、管理者はGO-Globalホストを設定して自動的に任意のクライアントキーボードを操作できます。ユーザは、クライアントデバイスのローカルキーボード切り替え機能とクライアントのIME(Input Method Editor)を使用して、キーボードをその場で切り替えることができます。GO-Globalホストにキーボードレイアウトをインストールしたり、GO-Globalクライアントにキーボードマッピングファイルをインストールしたりする必要はありません。&lt;/p&gt;
+&lt;p&gt;自動クライアントキーボードはデフォルトで有効になっています。自動クライアントキーボードを無効にし、クライアントキーボードを処理するための従来の方法を有効にする手順は、&lt;a href=&#34;https://gitbook.kitasp.com/go-global-6/appendix&#34;&gt;Appendix&lt;/a&gt;に記載されています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: テーマ</title>
+      <link>/docs/go-global6/configuring-the-host/themes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/configuring-the-host/themes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windows 7以降では、GO-Globalはホストで指定されているテーマを使用してアプリケーションを表示します。Windows Server 2008 R2では、Windowsのテーマはデフォルトで有効になっていません。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2008-r2でテーマを有効にする方法&#34;&gt;Windows Server 2008 R2でテーマを有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;デスクトップエクスペリエンスをインストールする(&lt;a href=&#34;http://technet.microsoft.com/en-us/library/cc742809.aspx&#34;&gt;http://technet.microsoft.com/en-us/library/cc742809.aspx&lt;/a&gt;)。&lt;/li&gt;
+&lt;li&gt;ホストを再起動したら、Themesサービスを起動します。&lt;/li&gt;
+&lt;li&gt;クラスタマネージャでグループポリシーを有効にします。
+&lt;ol&gt;
+&lt;li&gt;クラスタマネージャで、[ツール]メニューから[ツール | ホストオプション]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Session Startup&lt;/strong&gt;タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Apply Group Policy&lt;/strong&gt;を有効にする。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;グループポリシーを介してすべてのユーザに対してテーマを有効にします。
+&lt;ol&gt;
+&lt;li&gt;mmcを実行&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ファイル&lt;/strong&gt; | &lt;strong&gt;スナップインの追加と削除&lt;/strong&gt;&amp;hellip;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;グループポリシーオブジェクト&lt;/strong&gt;を選択&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;追加&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;完了&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;ユーザーの構成\ポリシー\管理用テンプレート\コントロールパネル\個人用設定に移動します。&lt;/li&gt;
+&lt;li&gt;**「特定のビジュアルスタイルファイルを強制するかWindows Classicを強制する」**をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;有効&lt;/strong&gt;をクリックします。&lt;/li&gt;
+&lt;li&gt;**[ビジュアルスタイルへのパス]**で、パスを入力します。
+%windir%\resources\Themes\Aero\ aero.msstyles&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,502 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>kitASP Docs – APPENDIX</title>
+    <link>/docs/go-global6/appendix/</link>
+    <description>Recent content in APPENDIX on kitASP Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global6/appendix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: Licensing</title>
+      <link>/docs/go-global6/appendix/licensing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/licensing/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;licensing&#34;&gt;Licensing&lt;/h1&gt;
+&lt;p&gt;GO-Globalのライセンスは、必要な同時ユーザ数に基づいており、永続的です。GO-Globalライセンスファイルはノードロックされています。つまり、それらはホストのMACアドレス(ホストID)で明確に識別され、そのホストにインストールされている場合にのみ使用可能です。GO-Globalホストは、ライセンスサーバやアプリケーションサーバとして設定できます。ライセンスも含むGO-Globalホストは、ライセンスサーバと呼ばれます。&lt;/p&gt;
+&lt;p&gt;一般的な小規模エンドユーザサイトは、アプリケーションサーバとライセンスサーバの両方として動作する1つのGO-Globalホストがあるという基本構成で動作します。一般的な大規模サイトでは、ライセンスがネットワーク上の中央のライセンスサーバにインストールされ、複数のGO-Globalアプリケーションサーバがネットワーク上の指定された中央のライセンスサーバからライセンスをチェックアウトするように設定されています。さらに、GO-Globalライセンスは冗長性と高可用性のためにいくつかの異なるライセンスサーバ設定をサポートします。これらはこのガイドの第2章で説明されています。&lt;/p&gt;
+&lt;p&gt;GraphOnは、ライセンスを購入するたびに、ライセンスマスタと呼ばれる固有のライセンスデータベースレコードを作成します。各ライセンスマスタには、ほとんどのセキュリティ関連トランザクションに使用される固有の製品コードと、単純な連続番号である固有のライセンスマスタIDが割り当てられています。ライセンスマスタIDは、ライセンスの簡単な参照としてライセンス管理に使用されます。製品コードはより長く、英数字であり、新しいライセンスの有効化、メンテナンス注文の更新、およびライセンス変更要求(LCR)などのより安全な機能に必要です。ライセンスマスタIDと製品コードはどちらもライセンスファイルで識別され、どちらもライセンスの恒久的な識別子です。&lt;/p&gt;
+&lt;p&gt;新しいバージョンのGO-Globalをサポートするため、または新しいMACアドレス(ホストID)を持つ新しいサーバにライセンスを移動する必要がある場合は、時間の経過とともに、更新されたライセンスファイルを発行する必要があります。各変更イベントで、GraphOnは更新されたライセンスファイルを提供し、古いライセンスファイルを無効にします。ライセンスマスターIDと製品コードは変わりません。それらは恒久的です。発行された新規または更新された各ライセンスファイルには、そのライセンスに対する一意のランダムなライセンスIDがあります。ライセンスIDもライセンスファイル内で識別されます。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンスファイルの入手&#34;&gt;ライセンスファイルの入手&lt;/h2&gt;
+&lt;p&gt;新しいライセンスの注文が行われると、GraphOnは注文を処理して新しいライセンスマスタを作成します。ライセンス情報は、注文要求で識別された連絡先に電子メールで送信されます。ユーザは、製品コード、電子メールアドレス、ホスト名、およびホストIDを入力して、カスタマーポータルからライセンスをアクティブ化する必要があります。新しいライセンス(.lic)ファイルは添付ファイルとして電子メールで送信されます。ライセンスIDは、ライセンスファイルの名前をフォーマットするために使用されます。 (例：8d73e4k.lic、ここで8d73e4kはライセンスIDです)。 指定されたライセンスサーバに添付されたライセンスをインストールします。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンス変更依頼&#34;&gt;ライセンス変更依頼&lt;/h2&gt;
+&lt;p&gt;管理者がライセンスファイルを新しいライセンスサーバに移動した場合は、カスタマーポータルからライセンス変更要求(LCR)を行う必要があります。同様に、GO-Globalの新しいバージョンがリリースされたときには、ライセンス変更要求も要求されます。ライセンス変更要求は通常1〜2日以内に処理されますが、処理には最大5営業日かかります。更新されたライセンスは、新しいライセンスIDとともに電子メールの添付ファイルとして送信されます。(ライセンスマスターIDと製品コードは変更されません。)GraphOnによって無効にされたか取り消されたため、古いライセンスファイルを削除する必要があります。ライセンスファイルに記載されている手順に従って、更新されたライセンスをインストールする必要があります。&lt;/p&gt;
+&lt;h2 id=&#34;ライセンスデータベース&#34;&gt;ライセンスデータベース&lt;/h2&gt;
+&lt;p&gt;製品コードまたはライセンスIDを使用して、ライセンシーはカスタマーポータルでライセンスの詳細とステータスを確認できます。ライセンスデータベースには、1つ以上のライセンスのステータス、バージョン、製品ファミリ、およびメンテナンスの有効期限が表示されます。&lt;/p&gt;
+&lt;h2 id=&#34;複数のライセンス&#34;&gt;複数のライセンス&lt;/h2&gt;
+&lt;p&gt;顧客が時間をかけて追加のライセンスを注文するのは一般的です。GraphOnは、ライセンスの注文ごとに、アドオンライセンスごとに一意の新しいライセンスマスターを作成します。管理者はすでにインストールされているライセンスを変更または変更する必要はありません。&lt;/p&gt;
+&lt;h3 id=&#34;アドオンライセンスをインストールする方法&#34;&gt;アドオンライセンスをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;アドオンライセンス製品コードを受け取った後。カスタマーポータルからライセンスをアクティベートします。&lt;/li&gt;
+&lt;li&gt;ライセンスファイル内の指示に従って、ライセンスサーバにライセンスをインストールします。&lt;/li&gt;
+&lt;li&gt;GO-Global License Managerサービスを再起動します。それ以外の場合、アドオンライセンスは認識されません。サービスを再起動しても、アクティブにログインしているエンドユーザが中断されることはありません。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;複数のライセンスがインストールされている場合、小数点の左側の命名は固有でなければなりません。 GraphOnは、常に一意のライセンスIDを使用してライセンスファイルを配信します。管理者は調整する必要はなく、受け取ったライセンスをインストールするだけで済みます。ただし、システム管理上の理由から管理者がライセンスファイルの名前を変更する場合は、ライセンスファイル名が一意でファイル拡張子が.licである限り、これは許可されます。拡張子が「.lic」ではない場合、GO-Global License Managerサービスはそのライセンスを認識しません（例：License1.lic、License2.lic、License3.lic）。 GraphOnは、「LicenseID.lic」命名規則に従って配布されたとおりにライセンスをインストールすることをお勧めします。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: RapidX Protocol (RXP)</title>
+      <link>/docs/go-global6/appendix/rapidx-protocol/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/rapidx-protocol/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;rapidx-protocol-rxp&#34;&gt;RapidX Protocol (RXP)&lt;/h1&gt;
+&lt;p&gt;RXPは、GO-Globalのクライアント - ホスト間のすべてのデータ通信に使用される独自のプロトコルです。デフォルトでは、RXPはTCPポート491を介して動作しますが、互換性のある任意のデータポートを介して動作するようにすることもできます。RXPは標準のTCP / IPプロトコルスタックの一部として動作します。低帯域幅接続を処理するように設計および最適化されています。RXP表示プロトコルはほぼ完全に非同期です。つまり、ホストとクライアントがピアからの応答を待つことはめったにありません。&lt;/p&gt;
+&lt;p&gt;RXPは現在、56ビットDESから256ビットAESまでの暗号化レベルを処理するように設計されています。 TCPトランスポートが選択されると、GO-GlobalはGraphOnのDES(Data Encryption Standard)の実装を使用します。SSLトランスポートが選択されると、GO-GlobalはOpenSSLのトランスポート層セキュリティ(TLS)の実装とOpenSSLの選択された暗号の実装、例えばAdvanced Encryption Standard(AES)を使用します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Encryption and Exportation Regulations</title>
+      <link>/docs/go-global6/appendix/encryption-and-exportation-regulations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/encryption-and-exportation-regulations/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;encryption-and-exportation-regulations&#34;&gt;Encryption and Exportation Regulations&lt;/h1&gt;
+&lt;p&gt;GO-Global incorporates an open-source, publicly available SSL software encryption module from the OpenSSL project. GO-Global&amp;rsquo;s use of OpenSSL and other encryption technologies has been reviewed by the United States Department of Commerce and classified under the Export Commodity Control Number (ECCN) 5D002. The ECCN 5D002 classification allows GraphOn and its resellers to export and re-export GO-Global with support for up to 256-bit encryption, implemented by OpenSSL, to government and non-government entities, with the exception of USA embargoed countries, and except when GO-Global will be used in the design, development, production or use of nuclear, chemical or biological weapons or missiles.&lt;/p&gt;
+&lt;p&gt;Commodity Classification Automated Tracking System (CCATS) is an alphanumeric code assigned by the United States Bureau of Industry and Security (BIS) to products that it has classified under the Export Administration Regulations (EAR). GraphOn&amp;rsquo;s CCATS number is G066799.&lt;/p&gt;
+&lt;p&gt;For further inquiries regarding GraphOn&amp;rsquo;s CCATS number or ECCN classification, or for a copy of GraphOn&amp;rsquo;s export license, please contact &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 独自の認証局の作成</title>
+      <link>/docs/go-global6/appendix/creating-your-own-certificate-authority/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/creating-your-own-certificate-authority/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;独自の認証局の作成&#34;&gt;独自の認証局の作成&lt;/h1&gt;
+&lt;p&gt;多数のGO-Globalホストが稼動するサイトでは、独自の認証局を作成し、この認証局から各サーバの証明書に署名して、その証明書を各クライアントにインストールすることができます。この方法なら、信頼されていない認証局に関する警告が表示されることはなく、サイトの各サーバにサードパーティ製の証明書を取得する必要もありません。&lt;/p&gt;
+&lt;p&gt;OpenSSLツールキットと相互運用性のある認証局の作成および管理を支援するサードパーティ製のアプリケーションとシステムは多数あります。これらのツールでは、GO-Globalで使用できる署名付きサーバ証明書を修正作業は不要で生成できます。&lt;/p&gt;
+&lt;p&gt;認証局は、各サーバキーに署名して、サーバキーが本物であり、改ざんされていないことをクライアントが確認できるようにする仮想組織です。&lt;/p&gt;
+&lt;p&gt;認証局を作成するには、CAキーと自己署名証明書を作成する必要があります。CA証明書とキーの作成後、[インターネットオプション]ダイアログを使用して、クライアントのデバイスにCA証明書をインポートします。最後に、サーバ鍵はCA証明書を使用して署名されます。これで、クライアントマシンは署名が本物であることを確認し、CAの信頼性についてユーザに警告することなくサーバへの接続を許可できます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;このプロセスでは、次の 9 つのファイルが生成されます。 ca.key、ca.csr、ca.crt、ca.cfg、ca.serial、server.cfg、server.key、server.crt、server.csr&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;信頼されたサーバ証明書を従属ホストにインポートする&#34;&gt;信頼されたサーバ証明書を従属ホストにインポートする&lt;/h2&gt;
+&lt;p&gt;信頼されたサーバ証明書をdependent hostにインポートするには、Microsoft管理コンソールにポリシーを追加します。これは自己証明書を使用する場合にのみ必要です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;dependent hostで、[スタート | ファイル名を指定して実行]の順にクリックします。[名前]ボックス内に &lt;strong&gt;mmc&lt;/strong&gt;と入力します。Microsoft Management Console が開きます。&lt;/li&gt;
+&lt;li&gt;[コンソール |スナップインの追加と削除]の順にクリックして、 [&lt;strong&gt;追加&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[利用できるスタンドアロンスナップイン]の一覧から [証明書]を選択して、[追加]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;証明書スナップイン&lt;/strong&gt;]ダイアログで[コンピュータアカウント]を選択し、 [&lt;strong&gt;次へ&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;コンピュータの選択&lt;/strong&gt;]ダイアログで、[ローカルコンピュータ]を選択します。[完了]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;スタンドアロンスナップインの追加&lt;/strong&gt;]ダイアログを閉じます。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;スナップインの追加と削除&lt;/strong&gt;]ダイアログに戻り、 [&lt;strong&gt;証明書(ローカルコンピュータ)&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;OK&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[コンソールルート]から [&lt;strong&gt;証明書(ローカルコンピュータ)&lt;/strong&gt;]を展開します。 [&lt;strong&gt;信頼されたルート証明機関&lt;/strong&gt;] をクリックします。右の枠内にある [&lt;strong&gt;証明書&lt;/strong&gt;]を右クリックします。&lt;/li&gt;
+&lt;li&gt;[すべてのタスク |インポート]の順に選択します。証明書 &lt;strong&gt;ca.cert&lt;/strong&gt;を表示します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/images/8-4-1.png&#34; alt=&#34;8-4-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;サーバキーと証明書のファイル(server.key、server.crtなど)は同じベースファイル名を使用し、GO-Globalホストの同じディレクトリに配置する必要があります。dependent hostにはSSL証明書は必要ありませんが、指定されたrelay serverには、CAによって署名され、dependent hostで認識される有効なSSL証明書が必要です。これらの条件が満たされているかどうかは、以下の方法で確認できます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;dependent hostで、ネイティブのWindowsクライアントを実行します。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;マイコンピュータ&lt;/strong&gt;]を右クリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;エクスプローラ&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;\GO-Global\Programsディレクトリを表示します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;gg-client.exe&lt;/strong&gt;をダブルクリックします。&lt;/li&gt;
+&lt;li&gt;Admin Consoleで指定されたrelay serverの名前を入力します。&lt;/li&gt;
+&lt;li&gt;relay serverのSSL証明書が、CAによって署名され、dependent hostで認識される有効な証明書の場合、 [&lt;strong&gt;Security Alert&lt;/strong&gt;]ダイアログは表示されません。 [&lt;strong&gt;Security Alert&lt;/strong&gt;]ダイアログが表示された場合、dependent hostは、relay serverに接続できません。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&#34;caキーと証明書の作成&#34;&gt;CAキーと証明書の作成&lt;/h2&gt;
+&lt;p&gt;認証局(CA)を作成するには、まずRSA秘密鍵を生成する必要があります。この鍵が悪用されると、不明なホストを承認ホストとする偽の証明書が作成される恐れがあるため、この鍵は必ず秘密にしておく必要があります。認証局の整合性を維持することが非常に重要です。CAキーを作成するには、次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl genrsa -out ca.key 1024
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドによって最初のCAキーが生成され、ca.keyというファイルに保存されます。キーの作成後、CA証明書の作成に使用する証明書署名要求(CSR)を生成します。CSRを生成するには、次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl req –new –key ca.key -out ca.csr
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドは対話的に実行され、証明書に含まれる情報の入力を求められます。以下に入力例を示します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Country Name (2 letter code) [AU]:US 
+State or Province Name (full name) [Some-State]:Washington 
+Locality Name (e.g., city) []:Bellevue
+Organization Name (e.g., company) [Internet Widgits Pty Ltd]:GraphOn Corporation 
+Organizational Unit Name (e.g., section) []:GraphOn Corporation 
+CACommon Name (e.g., YOUR name) []:GraphOn Corporation  
+Email Address []:hostmaster@graphon.com 
+Please enter the following extra attributes to be sent with your certificate request: 
+A challenge password []:[enter] 
+An optional company name []:[enter]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;プロンプトには以下のように入力します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Country Name:国の 2 文字の略語 
+State or Province Name:州または都道府県の完全な名称 
+Locality Name:市区町村名 
+Organization Name:組織名または会社名 
+Organizational Unit Name:組織名には CA 名を表す名前を入力します。
+Common Name:CA の運用担当者または CA そのものを表す総称を入力します。
+Email Address:CA の担当者に証明書に関する問い合わせを送信するときに使用する電子メール アドレスです。
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;最後のステップはCA証明書を確立することです。 これを行うには、CAに関する情報を含む設定ファイルを作成します。 ファイルは &lt;strong&gt;ca.cfg&lt;/strong&gt;という名前で、以下を含む必要があります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;extensions = x509v3 [ x509v3 ] subjectAltName = email:copy basicConstraints = CA:true,pathlen:0 nsComment = &amp;quot;[your company] site CA&amp;quot; nsCertType = sslCA
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このファイルの作成後、次のコマンドを使用してCA証明書に署名できます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;OPENSSL_DIR]\bin\openssl x509 –req –extfile ca.cfg –days 1825 –signkey ca.key –in ca.csr –out ca.crt
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;生成される証明書ファイル &lt;strong&gt;ca.crt&lt;/strong&gt;が、各クライアントデバイスの証明書ストアにインポートする証明書になります。また、サーバキーに署名するための設定ファイルも作成する必要があります。このファイルには &lt;strong&gt;server.cfg&lt;/strong&gt;という名前を付け、以下の情報を含めます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;extensions = x509v3 [ x509v3 ] subjectAltName = email:copy nsComment = &amp;quot;Certificate signed by your company CA&amp;quot; nsCertType = server
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;さらに、このCAによって署名された証明書のシリアル番号を保存するファイルも作成する必要があります。次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;echo 01 &amp;gt; ca.serial
+&lt;/code&gt;&lt;/pre&gt;&lt;h2 id=&#34;サーバキーの作成と署名&#34;&gt;サーバキーの作成と署名&lt;/h2&gt;
+&lt;p&gt;新しいサーバキーを作成するには、次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl genrsa –out server.key 1024
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これにより、新しいサーバキーが生成され、 &lt;strong&gt;server.key&lt;/strong&gt;というファイルに保存されます。次に、サーバキーの証明書署名要求(CSR)を生成します。この作業は、基本的にCAキーのCSR生成に使用するプロセスと同じですが、入力内容は少し異なります。次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl req –new –key server.key –out server.csr
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;このコマンドは対話的に実行され、生成されるサーバ証明書に関する情報を求めるプロンプトが表示されます。以下に入力例を示します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Country Name (2 letter code) [AU]:US State or Province Name (full name) [Some-State]:Washington Locality Name (eg, city) []:Bellevue Organization Name (eg, company) [Internet Widgits Pty Ltd]:Company Name Organizational Unit Name (eg, section) []: Engineering Common Name []:server Email Address []:user@company.com Please enter the following &#39;extra&#39; attributes to be sent with your certificate request: A challenge password []: [enter] An optional company name []: [enter]
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;プロンプトに対して、以下のように入力します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;Country Name:国の 2 文字の略語 State or Province Name:州または都道府県の完全な名称 Locality Name:組織の所在地の市区町名 Organization Name:会社名または組織名 Organizational Unit Name:部署名またはこのサーバを表す名前 Common Name:このサーバの名前。証明書に使用されます。人の名前ではないので注意してください。Email address:このサーバの担当者の電子メール アドレス
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;Common Nameは、GO-Globalホストのホスト名と一致している必要があります。異なる名前を使用すると、接続時にクライアントから警告が発せられます。最後に、CAの証明書を使用してサーバキーに署名します。これには、次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;[OPENSSL_DIR]\bin\openssl x509 –req –extfile server.cfg –days 1825 –CA ca.crt –CAkey ca.key –CAserial ca.serial –in server.csr –out server.crt -days 1825
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;-days 1825パラメータを使用すると、サーバの証明書は1825 日(約5年)で失効します。証明書の有効期限を早くまたは遅くしたい場合は、要件に応じてこの数値を調整します。ca.crt、server.key、server.crtファイルを、システムアカウントからアクセスでき、かつホストにログオンするユーザのアカウントからはアクセスできないターゲットサーバ上のディレクトリにコピーします。最後に、Admin Consoleでサーバ証明書を選択します。&lt;/p&gt;
+&lt;p&gt;** サーバ証明書の選択方法 **&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;[Security]タブをクリックします。&lt;/li&gt;
+&lt;li&gt;[Transport]の一覧で、SSL を選択します。&lt;/li&gt;
+&lt;li&gt;[SSL Certificate]ボックスにサーバの証明書ファイル(server.crtなど)へのパスを入力するか検索をします。&lt;/li&gt;
+&lt;li&gt;[OK]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これで、GO-Globalホストに新しいSSL証明書が作成され、独自のカスタム認証局によって署名されました。&lt;/p&gt;
+&lt;h2 id=&#34;iis-certificate-wizard-を使用したcsrの生成&#34;&gt;IIS Certificate Wizard を使用したCSRの生成&lt;/h2&gt;
+&lt;p&gt;以下に、Microsoftの &lt;strong&gt;IIS Certificate Wizard&lt;/strong&gt;を使用して証明書署名要求(CSR)を作成し、その後OpenSSLを使用して証明書を生成する方法を説明します。この例では、システム管理者はCAです。&lt;/p&gt;
+&lt;p&gt;この証明書をGO-Globalで有効にするには、プライベートキーが必要です。プライベートキーは、IIS Certificate Wizard を使用してCSRを生成するときに作成されますが、デフォルトではエンドユーザに提示されません。そのため、MMC(Microsoft Management Console)を使用してプライベートキーのバックアップを個別に取る必要があります。手順については、以下をMicrosoft IIS 6.0の見出しを見てください。&lt;a href=&#34;https://search.thawte.com/support/ssl-digital-certificates/index?page=content&amp;amp;id=AR214&#34;&gt;https://search.thawte.com/support/ssl-digital-certificates/index?page=content&amp;amp;id=AR214&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;この例では、プライベートキーは.keyファイルではなく.pfxファイルです。これをGO-Globalで使用できるようにするには、PEMフォーマットに変換する必要があります。.pfxファイルをPEMフォーマットに変換するには、次のコマンドを使用します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openssl pkcs12 -nocerts -in server.pfx -out server.pem –nodes
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;ファイルの拡張子を.pemから.keyに変更します。作成されたファイルは &lt;strong&gt;server.key&lt;/strong&gt;と呼ばれ、GO-Global でSSLを稼動させるために必要です。このファイルのプレフィックスはCAが作成した証明書と同じでなければなりません(例: server.crt)。&lt;/p&gt;
+&lt;p&gt;GO-Globalでは、証明書はPEMフォーマットである必要があります。サードパーティのCAに証明書を要求する場合は、PEMフォーマットでの証明書を要求するよう推奨します。これが不可能で、証明書がDERフォーマットでしか提供されない場合は、次のコマンドを使用することによってPEMフォーマットに変換できます。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;openssl x509 -inform der -in MYCERT.cer -out MYCERT.pem
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;生成された &lt;strong&gt;MYCERT.pem&lt;/strong&gt;のファイル名を &lt;strong&gt;MYCERT.crt&lt;/strong&gt;に変更すれば GO-Globalで使用できるようになります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動クライアントキーボードを無効にする方法</title>
+      <link>/docs/go-global6/appendix/kuraiantokbdowonisuru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/kuraiantokbdowonisuru/</guid>
+      <description>
+        
+        
+        &lt;p&gt;自動クライアントキーボードを使用すると、管理者はGO-Globalホストを任意のクライアントキーボードで自動的に機能するように設定できます。この機能はデフォルトで有効になっていますが、HostProperties.xmlファイルを編集して無効にすることができます。&lt;/p&gt;
+&lt;h3 id=&#34;自動クライアントキーボードを無効にする方法&#34;&gt;自動クライアントキーボードを無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;HostProperties.xmlファイルを探します(例：C:\ProgramData\GraphOn\GO-Global)&lt;/li&gt;
+&lt;li&gt;ワードパッドでHostProperties.xmlを開き、ClientSideIMEEnabledプロパティを探します。&lt;/li&gt;
+&lt;li&gt;ClientSideIMEEnabledプロパティをfalseに設定します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自動クライアントキーボードがHostProperties.xmlで無効になっている場合でも、次のようにユーザーごとに有効にできます。&lt;/p&gt;
+&lt;p&gt;クライアントショートカットに-kb ClientSideIMEを追加します。&lt;/p&gt;
+&lt;p&gt;たとえば、Windowsクライアントの場合：&amp;ldquo;C:\Program Files\GraphOn\GO-Global\Client\gg-client.exe&amp;rdquo; -kb ClientSideIME&lt;/p&gt;
+&lt;p&gt;または、GO-GlobalがWebブラウザから実行されている場合は、logon.htmlページを参照するハイパーリンクに次の引数を追加します。&amp;amp;keyboard = ClientSideIME たとえば、&lt;a href=&#34;http://hostname/goglobal/logon.html?direct=true&amp;amp;keyboard=ClientSideIME&#34;&gt;http://hostname/goglobal/logon.html?direct=true&amp;amp;keyboard=ClientSideIME&lt;/a&gt;のようになります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボード/IME 用サポートの設定</title>
+      <link>/docs/go-global6/appendix/kuraiantokbdooyobimatahaimenosaptono/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/kuraiantokbdooyobimatahaimenosaptono/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windowsでは、入力言語、キーボードレイアウト、言語入力システム(IME)、コードページを使用して、キーボード上の各キーを画面上の文字にマッピングします。クライアントキーボード上でキーを押すと、GO-Globalからホストにキーコードが送信します。ホストはセッションの有効なキーボードレイアウトを使用して、キーコードをWindowsの入力メッセージに変換します。GO-Globalのセットアップでは、ホストと同じオペレーティングシステム、キーボードおよびIMEを使用するクライアントをサポートするようにホストを設定します。GO-Globalは、キーボードマッピングファイルを使用して、さまざまなオペレーティングシステムとキーボードを持つクライアントをサポートします。&lt;/p&gt;
+&lt;p&gt;次のセクションでは、ホストシステムと異なるクライアントコンピュータ上のセッションにおいてキーボードやIMEを管理するためのしくみと手順を説明します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: キーボードとIMEの追加インストール</title>
+      <link>/docs/go-global6/appendix/kbdotoimenoinsutru/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global6/appendix/kbdotoimenoinsutru/</guid>
+      <description>
+        
+        
+        &lt;h1 id=&#34;キーボードとimeの追加インストール&#34;&gt;キーボードとIMEの追加インストール&lt;/h1&gt;
+&lt;p&gt;クライアントがホストとは異なるキーボードやIMEを使用する前に、それらをサポートするためのファイルをGO-Global Hostにインストールする必要があります。ほとんどの場合、レイアウトはオペレーティングシステムのインストール中にコピーされますが、東アジア言語と右から左へ表記される言語はコピーされません。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2016-が稼動するサーバにキーボード-レイアウトをインストールする方法&#34;&gt;Windows Server 2016 が稼動するサーバにキーボード レイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタートメニューから[コントロールパネル]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;言語&lt;/strong&gt;]タブをクリックします。&lt;/li&gt;
+&lt;li&gt;希望する言語(および該当する場合は地域の変更)を選択して、[追加]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;追加のファイルがあなたのマシンにコピーされます。OSのインストールCDまたはネットワーク共有名を提供する必要があります。新しい言語のサポートは再起動後に利用可能になります。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2008-が稼動するサーバにキーボード-レイアウトをインストールする方法&#34;&gt;Windows Server 2008 が稼動するサーバにキーボード レイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタート メニューから [&lt;strong&gt;コントロールパネル&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;地域と言語のオプション&lt;/strong&gt;]アイコンをダブルクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;キーボードと言語&lt;/strong&gt;]タブをクリックします。[&lt;strong&gt;キーボードの変更&lt;/strong&gt;]をクリックします。&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;テキストサービスと入力言語&lt;/strong&gt;]ウィンドウで、 [&lt;strong&gt;追加&lt;/strong&gt;]ボタンをクリックして目的の言語を追加します。 [&lt;strong&gt;入力言語の追加&lt;/strong&gt;]ウィンドウのチェックボックスをクリックして言語を選択します。&lt;/li&gt;
+&lt;li&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;li&gt;[&lt;strong&gt;テキストサービスと入力言語&lt;/strong&gt;]ウィンドウの [&lt;strong&gt;適用&lt;/strong&gt;]ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;
+&lt;hr&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;以下に、各GO-Globalクライアントがサポートするキーボードの一覧を示します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linuxクライアント&lt;/strong&gt;は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Linux  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Linux  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;us&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US&lt;/td&gt;
+&lt;td&gt;00000409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Japanese&lt;/td&gt;
+&lt;td&gt;jp&lt;/td&gt;
+&lt;td&gt;日本語&lt;/td&gt;
+&lt;td&gt;日本語 (106/109  キー)&lt;/td&gt;
+&lt;td&gt;E0010411 (IME)&lt;/td&gt;
+&lt;td&gt;jp.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;fr&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;フランス語&lt;/td&gt;
+&lt;td&gt;0000040C&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Belgian  (be-latin1)&lt;/td&gt;
+&lt;td&gt;be&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;0000080C&lt;/td&gt;
+&lt;td&gt;be.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German、 German(Latin1)、 German (Latin1 w/ no  dead keys)&lt;/td&gt;
+&lt;td&gt;de&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;ドイツ語&lt;/td&gt;
+&lt;td&gt;00000407&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polish&lt;/td&gt;
+&lt;td&gt;pl&lt;/td&gt;
+&lt;td&gt;ポーランド語&lt;/td&gt;
+&lt;td&gt;ポーランド語  (214)&lt;/td&gt;
+&lt;td&gt;00010415&lt;/td&gt;
+&lt;td&gt;pl.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazilian (ABNT2)&lt;/td&gt;
+&lt;td&gt;br&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジル)&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジルABNT2)&lt;/td&gt;
+&lt;td&gt;00010416&lt;/td&gt;
+&lt;td&gt;br.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Mac OS Xクライアント&lt;/strong&gt;は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mac OS X  キーボード  レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Mac OS XキーボードとWindowsキーボードの物理的な違いにより、Mac OS Xキーボードマッピングファイルでは、米国国際Windowsキーボードレイアウトを使用して、キーの大部分をWindowsアプリケーションに変換しています。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;Windowsクライアント(ネイティブのWindowsクライアント、ActiveXコントロール、およびプラグインを含む)は、GO-Globalホストにドライバがあるすべてのキーボードをサポートします。&lt;/p&gt;
+&lt;h2 id=&#34;クライアントキーボードマッピングファイル&#34;&gt;クライアントキーボードマッピングファイル&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、LinuxおよびMac OS X上のキーボードマッピングファイルを使用して、適切なキーボードレイアウトがホストにロードされ、正しいキーコードが各キーを押して放すたびに送信されるようにします。キーボードマッピングファイルを使用すると、新しいキーボードマッピングファイルをクライアントにコピーするだけで、新しいキーボードのサポートを追加できます。キーボードマッピングファイルは、Linuxの/ etc / gg-client / kbdディレクトリとMacの/ etc / GO-Global / kbdディレクトリにインストールされています。キーボードマッピングファイルが見つからない場合は、us.kbmキーボードマッピングファイルの内部バージョンが使用されます。&lt;/p&gt;
+&lt;p&gt;これらのクライアントは、オペレーティングシステムから取得した情報に基づいてキーボードマッピングファイルを自動的に読み込むことができます。&lt;/p&gt;
+&lt;p&gt;キーボードマッピングファイルのインストール場所(デフォルトのルートパス)&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;クライアント OS&lt;/th&gt;
+&lt;th&gt;ネイティブ インストール&lt;/th&gt;
+&lt;th&gt;Browser Plug-in  インストール&lt;/th&gt;
+&lt;th&gt;デフォルト レイアウト&lt;/th&gt;
+&lt;th&gt;レイアウトの取得&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Linux&lt;/td&gt;
+&lt;td&gt;/etc/ggw/kbd&lt;/td&gt;
+&lt;td&gt;~/.mozilla/ggw/kbd&lt;/td&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;環境変数、または OSから自動で取得&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Mac OS X&lt;/td&gt;
+&lt;td&gt;/etc/ggw/kbd&lt;/td&gt;
+&lt;td&gt;/etc/ggw/kbd&lt;/td&gt;
+&lt;td&gt;U.S.&lt;/td&gt;
+&lt;td&gt;環境変数、または OSから自動で取得&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;go-globalで使用されるキーボード-ime識別子&#34;&gt;GO-Globalで使用されるキーボード/ IME識別子&lt;/h2&gt;
+&lt;p&gt;GO-Globalは、まとめてGO-Global Input Identifier(GGII)と呼ばれる2つの識別子を使用して、セッションのキーボード/IMEを指定します。最初のキーボードレイアウトです。これらは、WindowsオペレーティングシステムがキーボードドライバとIMEプログラムをロードするために使用する8桁の文字列識別子です。これらはロケールIDと似ていますが、最後の4桁は通常、キーボードでサポートされている言語の4桁のロケールIDと一致します。IMEを指定するキーボードレイアウトは、通常「E」で始まります。使用可能なキーボードレイアウトの一覧は、[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ Keyboard\Layouts]キーの下のレジストリに表示されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalが使用する2番目の識別子はレイアウトテキスト文字列です。これは、各キーボードレイアウトレジストリキーのレジストリ値です。これらの文字列は、入力言語を追加するときにキーボードレイアウト/IMEの下のドロップダウンボックスに表示されます。次の例では、最初のキーボードレイアウトGGIIは00000409、レイアウトテキストGGIIはUSです。2番目の例では、キーボードレイアウトGGIIがE0010411で、レイアウトテキストGGIIが日本語入力システム(MS-IME2002)です。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ 00000409  
+Layout File = KBDUS.DLL  
+Layout Text  = US
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ E0010411  
+Ime File = name81.name  
+Layout File = Kbdjpn.dll  
+Layout Text = Japanese Input System（MS-IME2002）
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;環境変数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_FILE&lt;/td&gt;
+&lt;td&gt;使用するマッピングファイルの完全修飾パスの指定に使用されます。指定すると、他のあらゆるファイル名パスの取得方法に優先します。例 : Linuxの場合 GGW_KBD_FILE=/home/someuser/KeyMappingFiles/MyCustomKeyMappingFile.kmfと指定すると、正しいファイルがロードされます。このファイルが見つからない場合は、us.kbm キーボードマッピングファイルの内部バージョンが使用されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_FILE_ROOT&lt;/td&gt;
+&lt;td&gt;キーボードマッピングファイルへのルートパス名の指定に使用されます。キーボードマッピングファイルを含むkbdディレクトリは、このディレクトリに置きます。例:Linuxの場合、GGW_KBD_FILE_ROOT=/home/someuserと指定すれば、/home/someuser/kbd/xxx.kbmファイルがロードされます。「xxx」は、次に説明するGGW_KBD_FILE_LAYOUT 環境変数から、または直接オペレーティングシステムから取得されたLAYOUTを示します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;GGW_KBD_LAYOUT&lt;/td&gt;
+&lt;td&gt;どのLAYOUT(またはファイル名のプレフィックス)を使用するかの指定に使用されます。このLAYOUT名に拡張子.kbmが付いたものがファイル名として使用されます。例:GGW_KBD_LAYOUT=MyCustomKeyMappingFile と指定すれば、/ect/ggw/kbd/MyCustomKeyMappingFile.kbmファイルがロードされます。上に説明したGGW_KBD_FILE_ROOTも使用されている場合は、/home/someuser/kbd/MyCustomKeyMappingFile.kbmファイルがロードされます。マッピングファイルへのルートパス名のサブディレクトリを、ここに含めることもできます。例:GGW_KBD_LAYOUT=thinclient/usと指定すれば、別のルートパスが指定されていないかぎり、/etc/ggw/kbd/thinclient/us.kbmファイルがロードされます。これは、オペレーティングシステムから自動取得したLAYOUTに優先します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h2 id=&#34;クライアントキーボードオプションの設定&#34;&gt;クライアントキーボードオプションの設定&lt;/h2&gt;
+&lt;p&gt;-kbショートカットパラメータまたは「キーボード」ハイパーリンクパラメータを使用して、セッションのキーボード/IMEを指定できます。これらは上記の両方のタイプのGGIIを取ります。Windowsコンピュータでは、-kbショートカットパラメータが指定されていない場合、GO-Globalは現在アクティブなキーボードレイアウトのレイアウトテキストを使用します。Linuxコンピュータでは、コマンドラインでレイアウトテキストが指定されていない場合、GO-Globalはレイアウトテキストをサーバに送信しません。&lt;/p&gt;
+&lt;p&gt;例：キーボードレイアウトを使用したWindowsショートカット&lt;/p&gt;
+&lt;h2 id=&#34;レイアウトテキスト置換の指定&#34;&gt;レイアウトテキスト置換の指定&lt;/h2&gt;
+&lt;p&gt;クライアントとサーバーのキーボードレイアウト名をマッピングするために、サーバー上でレイアウトテキストの置換を指定できます。それらを使用することができます：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;異なるバージョンのWindowsでのレイアウトテキスト名の違いを克服します。たとえば、Windows 2000のGO-Globalクライアントシステムの **日本語入力システム(MS-IME2000)**レイアウトテキストは、GO-Globalホストの **日本語入力システム(MS IME2002)**レイアウトテキストに置き換えることができます。&lt;/li&gt;
+&lt;li&gt;UNICODE名を持つキーボードレイアウトをANSI名に置き換えます。たとえば、ASCII HTMLページで「keyboard」アプレットパラメータを使用してUNICODE名でキーボードレイアウトを指定するときは、UNICODE名の代わりにASCII名を使用する必要があります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;キーボードレイアウトの置換は、[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\System\ Keyboard\Layout\Substitutes]レジストリキーで指定されています。このキー内の各REG_SZ値はGGIIの名前を持ち、値はクライアント名の代わりに使用されるべきサーバからのレイアウトテキストの名前です。&lt;/p&gt;
+&lt;h2 id=&#34;代替レイアウトテキストの設定&#34;&gt;代替レイアウトテキストの設定&lt;/h2&gt;
+&lt;p&gt;クライアントからGGIIが指定されていない場合、または指定されたGGIIが有効なキーボードレイアウトをロードできない場合、GO-Globalホストはフォールバックメカニズムを使用してセッションに使用するキーボードレイアウトを決定します。代替レイアウトテキストは、有効なGGIIを渡すクライアントを除いて、サーバに接続しているすべてのクライアントによって使用されるキーボードレイアウトのレイアウトテキストです。アクティブなキーボードレイアウトがIMEの場合、代替レイアウトテキストはインストール中に自動的に設定されます。インストール後に、次のレジストリキーの下にある &lt;strong&gt;Fallback Layout Text&lt;/strong&gt;の値を編集して変更することができます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;中国語のGO-Globalホストに接続すると、ショートカットから[&lt;strong&gt;サインイン&lt;/strong&gt;]ダイアログが、デフォルト言語として中国語を指定しているIMEバーと共に表示されます。Ctrl+スペースバーをクリックしても言語は切り替わりません。ユーザは手動で英語を選択するためにマウスポインタでIMEバーをクリックする必要があります。IMEバーを手動でクリックしないと、ユーザはユーザ名とパスワードを入力できません。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id=&#34;複数の入力ロケールの設定&#34;&gt;複数の入力ロケールの設定&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントプロファイルは、異なる入力ロケールまたは複数の入力ロケール、あるいはその両方で構成できます。 GO-Globalホストにログオンする新規ユーザのアカウントロファイルは、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントの入力ロケールで自動的に設定されます。ユーザは、自分のアカウントプロファイルで定義されている任意の入力ロケールに切り替えることができます。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;移動ユーザプロファイルまたは既にGO-Globalホストに存在するプロファイルを持つユーザは、これらの新しい設定を受け取りません。これらのアカウントは手動で設定する必要があります。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;例として、次の手順では英語のWindows Server 2016にドイツ語の入力ロケールをインストールして使用する方法について説明します。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;英語版のWindows Server 2016でドイツ語を有効にします。&lt;/strong&gt;
+1.1 入力ローカルを設定したいユーザアカウントでGO-Globalホストに対話的にサインインします。
+1.2 [スタート | コントロールパネル | 地域の言語オプション]をクリック
+1.3 &lt;strong&gt;言語&lt;/strong&gt;タブをクリックします。
+1.4 ドイツ語を選択し、開くをクリックします。
+1.5 地域の変更としてDeutsch(Deutschland)を選択し、Addをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;入力ロケールが正しくインストールおよび構成されていることを確認してください。&lt;/strong&gt;
+2.1 この対話型セッションで &lt;strong&gt;メモ帳&lt;/strong&gt;を起動します。
+2.2 英語で数文字を入力してください。
+2.3 左Alt + Shiftを押します。
+2.4 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;これで、ドイツ語の入力ロケールが、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;プロファイルと、ステップ1.1でシステムにログオンしたユーザに対して有効になります。&lt;/p&gt;
+&lt;p&gt;3.GO-Globalセッション中に入力ロケールを切り替えます。
+3.1 GO-Globalクライアントを起動し、手順1.1で使用したアカウントでサーバに接続します。
+3.2 メモ帳を起動します。
+3.3 英語で数文字を入力してください。
+3.4 左Alt + Shiftを押します。
+3.5 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;サインインダイアログが表示されているときは、ユーザは入力ロケールを切り替えることができません。 GO-Global &lt;strong&gt;ホスト&lt;/strong&gt;のデフォルト言語の入力ロケールが使用されます。&lt;/p&gt;
+&lt;p&gt;Windowsクライアントでは、サーバベースのアプリケーションの選択された入力ロケールは、クライアントコンピュータのシステムトレイに表示されません。&lt;/p&gt;
+&lt;/blockquote&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
