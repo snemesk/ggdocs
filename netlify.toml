@@ -3,8 +3,7 @@
 
 # Default build settings
 [build]
-  publish = "usergu"
-¥
+  publish = "public"
 # "production" environment specific build settings
 [build.environment]
   HUGO_VERSION = "0.55.6"
