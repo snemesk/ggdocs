@@ -1,0 +1,1064 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GO-Global Docs – Advanced Topics</title>
+    <link>/docs/go-global61/advancedtopics/</link>
+    <description>Recent content in Advanced Topics on GO-Global Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61/advancedtopics/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalホストパフォーマンスカウンタ</title>
+      <link>/docs/go-global61/advancedtopics/go-globalhostperformancecounters/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/go-globalhostperformancecounters/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalホストパフォーマンスカウンタをWindowsパフォーマンスモニタに追加して、アクティブセッションの数とホストに接続されているクライアントの数を追跡できます。パフォーマンスカウンタを追加して、relay serverに接続されているホストの数を追跡し、ホスト上で許可されているセッションの最大数を特定することもできます。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストパフォーマンスカウンタを使用すると、管理者はGO-Globalホストへのネットワークアクセスを持つ任意のマシンからホストのアクティビティを監視できます。リモートパフォーマンス監視を機能させるには、リモートレジストリサービス(Regsvc.exe)を有効にする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalホストパフォーマンスカウンタをパフォーマンスモニタに追加する方法&#34;&gt;GO-Globalホストパフォーマンスカウンタをパフォーマンスモニタに追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;[スタート | プログラム | 管理ツール | パフォーマンス]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;パフォーマンスモニタ&lt;/strong&gt; をクリックした後 &lt;strong&gt;+&lt;/strong&gt; ボタンをクリックして、カウンタを追加します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[使用可能なカウンタ]&lt;/strong&gt; 一覧から、&lt;strong&gt;GO-Globalホスト&lt;/strong&gt; を探してクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[追加&amp;raquo;]&lt;/strong&gt; ボタンをクリックして、4つのカウンタ(Active Sessions、Client Connections、Maximum Sessions、Server Connections)を追加します。&lt;/li&gt;
+&lt;li&gt;[OK]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-5-1.png&#34; alt=&#34;7-5-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;GO-Global ホストパフォーマンスカウンタには、次のものがあります。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Client Connections&lt;/strong&gt; － independent hostsまたはrelay server上のクライアント接続の総数。この値は、dependent hostsでは常に 0 です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Server Connections&lt;/strong&gt;－ relay serverに接続しているdependent hostsの総数。この値は、independent hostsまたはdependent hostsでは常に 0 です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Active Sessions&lt;/strong&gt; － independent hostsまたはdependent hostsの場合、これはホスト上で実行されているセッションの数です。relay serverの場合、これは接続されているすべてのdependent hostsでホストされているセッションの総数です。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maximum Sessions&lt;/strong&gt; － Admin Consoieの **[Host Options]**ダイアログで設定した &lt;strong&gt;セッションの最大数&lt;/strong&gt;を表示します。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 委任サポートの構成要件</title>
+      <link>/docs/go-global61/advancedtopics/configurationrequirementsfordelegationsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/configurationrequirementsfordelegationsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;統合Windows認証を &lt;strong&gt;ホストのキャッシュパスワード&lt;/strong&gt;なしで使用すると、一部のネットワークリソースにアクセスするためにWindows委任が必要になる場合があります。たとえば、委任が有効になっていないと、グループポリシーが正しく適用されないことがあります。&lt;/p&gt;
+&lt;p&gt;委任サポートの構成要件は次のとおりです。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;委任には、Kerberos認証プロトコルとActive Directoryドメインが必要です。&lt;/li&gt;
+&lt;li&gt;ドメインネームシステム(DNS)サーバは、サービスロケーション(SRV)リソースレコードをサポートする必要があります。 また、DNSサーバがDNS動的更新をサポートすることをお勧めします。 DNS動的更新プロトコルがないと、管理者はドメインコントローラによって作成され、DNSサーバによって保存されたレコードを手動で構成する必要があります。Windows 2000以降で提供されるDNSサービスは、これら両方の要件をサポートしています。&lt;/li&gt;
+&lt;li&gt;GO-Globalクライアント、GO-Globalホスト、および電子メールやデータベースなどのバックエンドサービスをホストしているコンピュータは、Kerberosをサポートしている必要があります。&lt;/li&gt;
+&lt;li&gt;クライアントのユーザーアカウントは、GO-Global Application Publishing Serviceによる委任をサポートしている必要があります。 &lt;strong&gt;Active Directoryユーザとコンピュータの管理コンソール&lt;/strong&gt; で、ユーザを選択して &lt;strong&gt;[アクション | コンピュータ]&lt;/strong&gt; の順にクリックします。プロパティ &lt;strong&gt;アカウント&lt;/strong&gt; タブをクリックします。[アカウントオプション]リストボックスを下にスクロールして、 &lt;strong&gt;[アカウントが機密で委任できない]&lt;/strong&gt; オプションが無効になっていることを確認します。 &lt;strong&gt;[アカウントは委任に対して信頼されている]&lt;/strong&gt; オプションを有効にします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-1.png&#34; alt=&#34;7-6-1&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Windows Server 2008の[プロパティ]ダイアログに[委任]タブが表示されない場合は、これは仕様によるものです。[委任]タブは、サービスアカウント名(SPN)がユーザアカウントに対して作成された後にのみ表示されます。昇格したコマンドプロンプトで、以下を実行します。Active DirectoryでDOMAIN Accountを検索します。&lt;strong&gt;[委任]&lt;/strong&gt; タブが[プロパティ]ダイアログに表示されます。&lt;strong&gt;[任意のサービスへの委任でこのユーザを信頼する]&lt;/strong&gt; を選択します &lt;strong&gt;(Kerberosのみ)。&lt;/strong&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;pre&gt;&lt;code&gt;setspn -A HTTP / intranet.domain.local DOMAIN\Account
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;&lt;img src=&#34;/img/7-6-2.png&#34; alt=&#34;7-6-2&#34;&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホストは、ユーザのアカウントを他のコンピュータに委任する権限を持っている必要があります。 &lt;strong&gt;Active Directoryユーザとコンピュータの管理&lt;/strong&gt; コンソールで、コンピュータを選択して**[アクション | プロパティ]** の順にクリックします。プロパティ[委任]タブをクリックします。 **[任意のサービスへの委任に対してコンピュータを信頼する]** を有効にします(Kerberos)。これらの委任権限を適用するには、GO-Global Application Publishing Serviceをローカルシステムアカウントで実行するように構成する必要があります。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-3.png&#34; alt=&#34;7-6-3&#34;&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Active Directory内の任意のサービス(Kerberosのみ)への &lt;strong&gt;[コンピュータを委任に対して信頼する]&lt;/strong&gt; を有効にしたら、委任を有効にするためにGO-Globalホストを再起動する必要があります。
+&lt;/div&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; のService Principle Name(SPN)をActive Directoryに登録できるようにする必要があります。GO-Global Application Publishing Serviceは、サービスが再実行されるたびにこれを試みます。 &lt;strong&gt;setspn.exe&lt;/strong&gt; ユーティリティ(Microsoft Resource Kitに収録。Microsoftからも個別にダウンロード可能)を使用して、SPNが正しく設定されているかどうかを確認できます。下の図は、setspn.exeをGO-Globalホストで実行したときに表示されるコマンドウィンドウです。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-4.png&#34; alt=&#34;7-6-4&#34;&gt;&lt;/p&gt;
+&lt;p&gt;adlab-ggserverを、GO-Globalホストのコンピュータ名に置き換えます。{54094C05-F977-4987-BFC9-E8B90E088973} Globally Unique Identifier(GUID)は、GO-Global Application Publishing Serviceが {54094C05-F977-4987-BFC9-E8B90E088973}/adlab-ggserver.adlab.graphon.com SPNを作成するときに使用します。&lt;/p&gt;
+&lt;p&gt;次のコマンドウィンドウは、GO-Globalホストで &lt;strong&gt;setspn.exe&lt;/strong&gt;を実行したときに表示される出力画面で、ネットワーク設定にエラーがあることを示しています。上述のすべての要件が満たされている場合、この画面は表示されません。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-6-5.png&#34; alt=&#34;7-6-5&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: マッピングされたドライブ</title>
+      <link>/docs/go-global61/advancedtopics/mappeddrives/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/mappeddrives/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ドライブマッピングは、各GO-Globalセッション内でプライベートです。たとえば、GO-Globalホストで2つのセッションが実行されている場合、ドライブ文字(たとえばH)をセッション1の1つのネットワーク共有(例:\servername\session1)にマッピングし、同じドライブ文字を割り当てることができます。セッション2で別のネットワーク共有にマッピングすることができます(例:\servername\session2)。&lt;/p&gt;
+&lt;p&gt;ログオンスクリプトを使用してドライブ文字のマッピングを定義します。この機能を提供するアプリケーションを公開することによって、ユーザに独自のドライブマッピングの定義を許可することもできます。&lt;/p&gt;
+&lt;p&gt;GO-Globalホストの対話型セッション内で定義されたドライブマッピングは、リモートユーザには使用できません。すべてのユーザがドライブマッピングを介して同じネットワーク共有へのアクセスを必要とする場合、ドライブマッピングは通常ログオンスクリプトで定義する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: マルチモニタのサポート</title>
+      <link>/docs/go-global61/advancedtopics/multi-monitorsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/multi-monitorsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Globalクライアントは、Windows上でマルチモニタをサポートします。マルチモニタのサポートは、デフォルトで有効になっていますが、手動で無効にすることもできます。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalショートカットを使用してマルチモニタを無効にする方法&#34;&gt;GO-Globalショートカットを使用してマルチモニタを無効にする方法&lt;/h3&gt;
+&lt;p&gt;AppControllerショートカットに引数-mm 0を追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe -h server1 -mm 0
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;appcontrollerショートカットを使用してマルチモニタを有効にする方法&#34;&gt;AppControllerショートカットを使用してマルチモニタを有効にする方法&lt;/h3&gt;
+&lt;p&gt;AppControllerショートカットに引数-mm 1を追加します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe -h server1 -mm 1
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;go-globalハイパーリンク経由でマルチモニタを無効にする方法&#34;&gt;GO-Globalハイパーリンク経由でマルチモニタを無効にする方法&lt;/h3&gt;
+&lt;p&gt;GO-Globalハイパーリンクでマルチモニタパラメータをfalseに設定します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?multimonitor=false 
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;go-globalハイパーリンク経由でマルチモニタを有効にする方法&#34;&gt;GO-Globalハイパーリンク経由でマルチモニタを有効にする方法&lt;/h3&gt;
+&lt;p&gt;GO-Globalハイパーリンクでマルチモニタパラメータをtrueに設定します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?multimonitor=true 
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: GO-Globalセッションの最大色数の指定</title>
+      <link>/docs/go-global61/advancedtopics/specifyingthemaximumcolordepthforgo-globalsessions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/specifyingthemaximumcolordepthforgo-globalsessions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalセッションの色深度(または色品質)は、アプリケーションによっては画像の品質に影響を与える可能性があります。GO-Globalセッションは、最大値までクライアントシステムの色深度で実行されます。デフォルトでは、最大深度は1ピクセルあたり16ビットに設定されています。&lt;/p&gt;
+&lt;p&gt;GO-Globalセッションの最大色数を増減するには、ショートカットからGO-Globalを実行するときに–mxオプションを使用します。最大色数は、次のように-mx 32、-mx 24、-mx 16、-mx 8と指定できます。GO-Globalセッションは、-mxオプションの最小値とクライアントシステムの色数を使用します。たとえば、GO-Globalセッションを1ピクセルあたり32ビットで実行するには、-mx 32をコマンドラインに追加し、クライアントシステムを1ピクセルあたり32ビットで実行する必要があります。&lt;/p&gt;
+&lt;p&gt;例:&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -mx 32&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-17-1.png&#34; alt=&#34;7-17-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ハイパーリンクからGO-Globalを実行するときは、&lt;strong&gt;maxbpp&lt;/strong&gt; パラメータを8、16、24、32の値で使用します。次の例では、ハイパーリンクは最大色数を1ピクセルあたり24ビットに設定します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;[http://hostname/goglobal/logon.html?maxbpp=24]&lt;/strong&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 画像圧縮を無効にする</title>
+      <link>/docs/go-global61/advancedtopics/disablingimagecompression/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/disablingimagecompression/</guid>
+      <description>
+        
+        
+        &lt;p&gt;デフォルトでは、GO-Globalはすべての画像を1画像あたり最大256色に圧縮します。その結果、複雑な画像は鮮明さを失う可能性があります。GO-Globalクライアントで画像圧縮を無効にするには、次のようにショートカットに-qt 0を追加します。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -qt 0&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;ハイパーリンクからGO-Globalを実行する場合は、quantizeパラメータをfalseに設定してイメージ圧縮を無効にします&lt;/p&gt;
+&lt;p&gt;例:&lt;strong&gt;&lt;code&gt;[http://hostname/goglobal/logon.html?quantize=false]&lt;/code&gt;&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;画像圧縮の機能を無効にすると、GO-Globalホストから送信されるデータの帯域幅が大幅に増加する可能性があるので注意して下さい。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: fontContrastプロパティを変更する</title>
+      <link>/docs/go-global61/advancedtopics/modifyingthefontcontrastproperty/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/modifyingthefontcontrastproperty/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;fontContrast&lt;/strong&gt; プロパティの値を変更することで、フォントとテキストの明瞭さを調整できます。 &lt;strong&gt;fontContrast&lt;/strong&gt; の最大値は2200、最小値は1000です。このプロパティはデフォルトで1400に設定されています。&lt;/p&gt;
+&lt;h3 id=&#34;fontcontrastプロパティを変更する方法&#34;&gt;fontContrastプロパティを変更する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GOGlobal&lt;/code&gt;ディレクトリで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;DefaultWorkspaceProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;/property&amp;gt;
+&amp;lt;property type=&amp;quot;UINT32&amp;quot; group=&amp;quot;Miscellaneous&amp;quot; id=&amp;quot;fontContrast&amp;quot;&amp;gt;
+&amp;lt;value&amp;gt;1400&amp;lt;/value&amp;gt;
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;1400を希望の値に置き換えます。&lt;/li&gt;
+&lt;li&gt;編集した.xmlファイルを保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントコンピュータの名前を取得する</title>
+      <link>/docs/go-global61/advancedtopics/obtainingthenameoftheclientcomputer/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/obtainingthenameoftheclientcomputer/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストではなくクライアントのコンピュータ名を必要とするアプリケーションの場合、管理者はその実行可能ファイルの名前をレジストリキー&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global\Compatibility\GetComputerName&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;の下にDWORDとして追加し、データ値 &lt;strong&gt;0x00000001&lt;/strong&gt;データ値0x00000001で追加できます。このレジストリキーの下にリストされているデータ値が &lt;strong&gt;0x00000001&lt;/strong&gt;のいずれかの名前に一致する実行可能ファイルがWindows &lt;strong&gt;GetComputerName&lt;/strong&gt; APIを呼び出すと、指定されたバッファにホスト名ではなくクライアントコンピュータ名が書き込まれます。&lt;/p&gt;
+&lt;p&gt;さらに、公開アプリケーションの実行環境の一部として存在する &lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt;という名前の環境変数があります。&lt;/p&gt;
+&lt;p&gt;この環境変数には、クライアントのコンピュータ名が含まれています。 &lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;環境変数は、コンピュータ名ではなくクライアントコンピュータのIPアドレスを含むことを除いて、同じ機能を実行します。標準のWindows環境変数 &lt;strong&gt;COMPUTERNAME&lt;/strong&gt;は変更されていません。その値はホストのコンピュータ名です。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントコンピュータ名の取得方法&#34;&gt;クライアントコンピュータ名の取得方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ (regedit.exe) を実行します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタ で、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。&lt;/li&gt;
+&lt;li&gt;次の &lt;strong&gt;GetComputerName&lt;/strong&gt; キーを検索します。 [SOFTWARE\GraphOn\GO-Global\Compatibility\GetComputerName]&lt;/li&gt;
+&lt;li&gt;この実行可能ファイルの &lt;strong&gt;DWORD&lt;/strong&gt;エントリを作成します (例 : pw.exe)。&lt;/li&gt;
+&lt;li&gt;新しいエントリの値を &lt;strong&gt;0x00000001&lt;/strong&gt;に設定します。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを終了します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;さらに、公開されたアプリケーションの実行環境の一部として存在する &lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt; という名前の環境変数があります。この環境変数には、クライアントのコンピュータ名が含まれています。&lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;、&lt;strong&gt;CLIENTNETWORKADDRESS&lt;/strong&gt;環境変数は、同様の機能を実行します。前者にはクライアントコンピュータのローカルIPアドレスが含まれ、後者にはクライアントコンピュータのパブリックIPアドレスが含まれます&lt;/p&gt;
+&lt;p&gt;クライアントがセッションに再接続すると、&lt;strong&gt;CLIENTCOMPUTERNAME&lt;/strong&gt;、&lt;strong&gt;CLIENTCOMPUTERIPADDRESS&lt;/strong&gt;、&lt;strong&gt;CLIENTNETWORKADDRESS&lt;/strong&gt; 環境変数は、環境変数を取得するためのAPI呼び出しを行うと、既存の各プロセスで更新されます。セッションプロセスがこれらのAPIの1つを呼び出す前に、別のプロセスがセッションプロセスの環境変数を取得しようとした場合、これらの環境変数の値は更新されて表示されません。更新をトリガーする正確なAPI呼び出しは次のとおりです。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;UserEnv!CreateEnvironmentBlock()
+Kernel32!ExpandEnvironmentStringsA/W()
+Kernel32!GetEnvironmentStringsA/W()
+Kernel32!GetEnvironmentVariableA/W()
+&lt;/code&gt;&lt;/pre&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: アプリケーションスクリプトのサポート</title>
+      <link>/docs/go-global61/advancedtopics/applicationscriptsupport/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/applicationscriptsupport/</guid>
+      <description>
+        
+        
+        &lt;p&gt;多くのWin32アプリケーションは、クライアントPCにインストールするように設計されており、1人のユーザだけで実行されます。アプリケーションがGO-Globalホストからデプロイされると、複数のユーザが同時にそのアプリケーションを実行できるようにする必要があり、アプリケーションが「マルチユーザ対応」でない場合は、いくつかの問題が発生する可能性があります。&lt;/p&gt;
+&lt;p&gt;アプリケーションでのマルチユーザ配置の問題を解決する最善の方法は、アプリケーションが複数のユーザを適切にサポートするようにアプリケーションを変更することです。アプリケーションを変更できない場合は、起動前の設定とシャットダウン後のクリーンアップを実行するためにアプリケーションスクリプトを使用します。これは、アプリケーションをマルチユーザ環境で実行できるようにするために必要です。アプリケーションスクリプトを作成およびデプロイするプロセスは次のとおりです。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;以下の処理を行うバッチファイルを作成します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザのアプリケーション環境を準備するために必要なタスクの実行&lt;/li&gt;
+&lt;li&gt;アプリケーションの起動&lt;/li&gt;
+&lt;li&gt;アプリケーションのシャットダウン後に必要なクリーンアップタスクの実行。バッチファイルはEXITコマンドで終了します。このコマンドがない場合、CMD.EXEプロセスはシャットダウンしません。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;アプリケーションスクリプトを公開します。&lt;br&gt;
+a. Cluster Manager を開きます。&lt;br&gt;
+b. [Tools | Applications | Add]の順にクリックします。&lt;br&gt;
+c. &lt;strong&gt;[Application Path]&lt;/strong&gt; フィールドに CMD.EXE へのパスを入力します。&lt;br&gt;
+d. &lt;strong&gt;[Command Line Options]&lt;/strong&gt; フィールドで&amp;quot;/K filename&amp;quot;を指定します。filenameは実行するバッチファイルのフルパスです。&lt;br&gt;
+e. アプリケーションの表示名を入力し、アイコンを指定します。&lt;br&gt;
+f. &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;アプリケーションスクリプトをテストします。&lt;br&gt;
+a. GO-Globalクライアントの 1 つを起動し、GO-Globalホストに接続します。&lt;br&gt;
+b. アプリケーションスクリプトのアイコンをダブルクリックします。アプリケーションのユーザインタフェースがクライアント画面上に表示され、アプリケーションスクリプトによって設定された環境下でアプリケーションが実行されます。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+GO-Globalを使用してアプリケーションスクリプトを起動すると、CMD.EXE 画面は表示されません。したがって、アプリケーションスクリプトにはユーザ入力用のプロンプトは組み込めません。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Advanced Session Process Configuration</title>
+      <link>/docs/go-global61/advancedtopics/advancedsessionprocessconfiguration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/advancedsessionprocessconfiguration/</guid>
+      <description>
+        
+        
+        
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+この項目はKitASPでのサポート項目ではございません。
+&lt;/div&gt;
+
+&lt;p&gt;This section covers some of the advanced configuration options that can be set for processes running within GO-Global sessions. These settings can be applied to specific executable (.exe) applications or as default settings applied to applications without specific configurations. Care should be taken when making any changes discussed in this section. An incorrect configuration can affect the startup of a process, make a process incompatible with GO-Global, or have fatal consequences during suspend/resume operations. Most applications that run within a GO-Global session will have GO-Global libraries loaded within them to perform redirection in order to obtain desired behavior. There are two levels of redirection that these libraries can initialize. The first level configures application and system modules to behave in a particular way. Most applications will need one or more level one settings enabled. Level one settings include Client Time Zone, Client Printing, and altered Windows API behavior. The second level creates a communications channel between the application and client for duplex transmission of session related information. For the highest level of application compatibility with GO-Global, level two settings should be enabled in as few applications as possible. Level two settings include Client Sound and Client Serial and Parallel Ports. The different configuration settings employed by the GO-Global libraries that redirect session processes are controlled by hexadecimal bit values within the registry. The desired bit values are logically ORed together to create a QWORD registry value. Here is the documented list of process redirector bits and a description of what they configure.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000001&lt;/strong&gt; *- Prohibit a process from running within a session&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000002&lt;/strong&gt;- Disable the loading of GO-Global libraries. All redirection will be disabled. The time required to perform the redirection operations is generally a small percentage of the time required to launch typical Windows applications, but it can be a large percentage of the time required to launch and run simple console applications. Some console applications do not require redirection and performing these tasks can significantly extend the time required to execute logon scripts. Including this bit allows administrators to bypass redirection of a process. Applications execute faster since the GO-Global libraries are not loaded and initialized. This bit can also be used for applications that, for one reason or another, are incompatible with some or all of the GO-Global redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000004&lt;/strong&gt;- Disable Client Time Zone. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Time Zone redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000008&lt;/strong&gt;- Disable Client Printing. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Printing redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000040&lt;/strong&gt; *- Enable the Windows ProcessIdToSessionId() API to return the GO-Global session ID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000200&lt;/strong&gt;- Disable Client Sound. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Sound redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000400&lt;/strong&gt;- Disable client Serial and Parallel Ports. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Serial and Parallel Ports redirection settings.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000000800&lt;/strong&gt; *- Enable the Windows GetComputerName() API to return the client computer name. See also: Obtaining the Name of the Client Computer. Disable the updating of the client environment variables (CLIENTCOMPUTERNAME and CLIENTCOMPUTERIPADDRESS) when a client reconnects to a suspended session.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000000001000&lt;/strong&gt; *- Disable, for optimization purposes, some of the normal processing performed when Explorer.exe is launched. This bit prevents Explorer.exe from launching processes listed under the HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run, RunOnce and RunOnceEx registry keys. This reduces the system resources needed to run Explorer in a session.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000080000000&lt;/strong&gt; *- Enable application produced with Delphi to use the Client Serial and Parallel Ports feature. Applications built with Delphi do not properly process all return values from the Windows GetOverlappedResult() API. This bit prevents the returning of WAITTIMEOUT and instead returns WAITOBJECT0.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000000800000000&lt;/strong&gt; *- Enable the NtQuerySystemInformation function to return the GO-Global session ID. This option may be required for .NET applications that make use of the Windows Session ID.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;0x0000040000000000&lt;/strong&gt;- Make specific named pipes that the process creates or accesses session-private.&lt;/p&gt;
+&lt;p&gt;*Indicates advanced options that should only be used if instructed to by your support contact.&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+All the unlisted bits are purposely undocumented and reserved for internal GraphOn use only. Do not alter any registry values that contain any unlisted bits and do not apply any unlisted bits to any registry values you add. GO-Global Host operation will be compromised if this is done.
+&lt;/div&gt;
+
+&lt;p&gt;These bits can be combined to customize the redirector settings of specific applications or to change the default settings used by applications that do not have a registry entry. In either case always include the default value bits set by the initial install of GO-Global, unless instructed otherwise by a support engineer.&lt;/p&gt;
+&lt;h3 id=&#34;to-add-custom-redirector-settings-for-a-specific-application&#34;&gt;To add custom redirector settings for a specific application&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Start | Run.&lt;/li&gt;
+&lt;li&gt;Type Regedit.&lt;/li&gt;
+&lt;li&gt;Browse to the registry key:&lt;code&gt;HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Click Edit | New | QWORD value.&lt;/li&gt;
+&lt;li&gt;Type the name of the application&amp;rsquo;s executable file. (For example, Beeps.exe.) The application&amp;rsquo;s name can be specified as either a fully qualified path or as the file&amp;rsquo;s base name and extension.&lt;/li&gt;
+&lt;li&gt;Select the new registry value.&lt;/li&gt;
+&lt;li&gt;Click Edit | Modify.&lt;/li&gt;
+&lt;li&gt;Verify that the Base selection is Hexadecimal.&lt;/li&gt;
+&lt;li&gt;Type the combined bits in the &lt;strong&gt;Value data&lt;/strong&gt; edit box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;to-make-a-named-pipe-session-private&#34;&gt;To make a named pipe session-private&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Add a custom redirector setting for each process that uses the named pipe that includes the &lt;strong&gt;0x0000040000000000&lt;/strong&gt; bit.&lt;/li&gt;
+&lt;li&gt;Create a DWORD registry value under the &lt;code&gt;KEYLOCALMACHINE\SOFTWARE\GraphOn\GOGlobal\System\Namedpipes&lt;/code&gt; registry key that identifies the named pipes that should be made session-private.&lt;/li&gt;
+&lt;li&gt;Set the name of the registry value equal to the string that will be compared to the name of the named pipes, and set the registry value to one of the following:&lt;/li&gt;
+&lt;/ol&gt;
+&lt;ul&gt;
+&lt;li&gt;1 - Make a named pipe session-private when the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;li&gt;2 - Make a named pipe session-private when the beginning of the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;li&gt;4 - Make a named pipe session-private when any part of the name of the named pipe matches the name of the registry value.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;Comparison types 1 and 2 must be in the form of .\pipe\pipename and are made with a caseinsensitive test. Comparison type 4 is case-sensitive.&lt;/p&gt;
+&lt;h3 id=&#34;to-change-the-default-redirection-settings&#34;&gt;To change the default redirection settings&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Click Start | Run&lt;/li&gt;
+&lt;li&gt;Type Regedit.&lt;/li&gt;
+&lt;li&gt;Browse to the registry key:&lt;code&gt;HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Select the existing &lt;strong&gt;DefaultLoaderOptions&lt;/strong&gt; registry value.&lt;/li&gt;
+&lt;li&gt;Click Edit | Modify.&lt;/li&gt;
+&lt;li&gt;Verify that the Base selection is &lt;strong&gt;Hexadecimal.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Type the new setting in the &lt;strong&gt;Value data&lt;/strong&gt; edit box.&lt;/li&gt;
+&lt;li&gt;Click &lt;strong&gt;OK&lt;/strong&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Example Configuration&lt;/p&gt;
+&lt;p&gt;A GO-Global host has the following applications installed and registered in the Cluster Manager.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;DataDownloader.exe&lt;/li&gt;
+&lt;li&gt;DataProcessor.exe&lt;/li&gt;
+&lt;li&gt;DataViewer.exe&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;The &lt;strong&gt;DataDownloader.exe&lt;/strong&gt; executable is a Windows application that reads data from a serial device and saves it to a file. Client Sound is needed for error conditions alerts that can be signaled while data is being downloaded. Client Files Access will be used to store the data file on the client system. The Windows GetComputerName() API must be redirected so that the client computer name can be used to indicate the source of the data within the data file.&lt;/p&gt;
+&lt;p&gt;Because the serial device that contains the data is connected to the client computer, Client Serial and Parallel Ports will need to be enabled. Because this is the only process that will access Client Serial and Parallel Ports on this system, a registry entry specifically for DataDownloader.exe has been added. This minimizes the risks and overhead associated with this level two redirector setting by disabling Client Serial and Parallel Ports in all other applications.&lt;/p&gt;
+&lt;p&gt;The settings for this application are calculated as follows:&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000800 - This is the bit that enables the Windows GetComputerName() API redirection. 0x0000000000000900 – This is the hexadecimal QWORD to be set in the DataDownloader.exe registry value. The DataProcessor.exe executable is a console application that needs Client File Access to read in the serial data file from the client and write out the processed data file to the client. It will also use Client Time Zone to properly process the times recorded in the serial data file. All other settings will be disabled to minimize the risks and overhead associated with redirector settings. The settings for this application are calculated as follows:&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000008 - This is the bit that disables Client Printing.&lt;/p&gt;
+&lt;p&gt;0x0000000000000200 - This is the bit that disables Client Sound.&lt;/p&gt;
+&lt;p&gt;0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.&lt;/p&gt;
+&lt;p&gt;0x0000000000000708 – This is the hexadecimal QWORD to be set in the DataProcessor.exe registry value.&lt;/p&gt;
+&lt;p&gt;The &lt;strong&gt;DataViewer.exe&lt;/strong&gt; executable is a Windows application that displays the data so that it can be analyzed. It needs Client File Access to read in the processed data file from the client. It needs Client Sound so that application sounds can be heard. It needs Client Printing so that the analyzed data can be printed on paper. These are some of the settings needed by most applications, so the &lt;strong&gt;DefaultLoaderOptions&lt;/strong&gt; registry value is used for the calculation below.&lt;/p&gt;
+&lt;p&gt;The default setting will be changed to disable the Client Serial and Parallel Ports. This can be done because the only application that uses Client Serial and Parallel Ports, DataDownloader.exe, has its own registry setting that specifically enables it.&lt;/p&gt;
+&lt;p&gt;0x0000000000000100 These are the bits originally set in DefaultLoaderOptions.&lt;/p&gt;
+&lt;p&gt;0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.&lt;/p&gt;
+&lt;p&gt;0x0000000000000500 – This is the hexadecimal QWORD to be set in the DefaultLoaderOptions registry value.&lt;/p&gt;
+&lt;p&gt;This example demonstrates how a combination of application specific and the default settings can be used to minimize the risk of application incompatibilities and allow an optimal environment to run in.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Running the Windows desktop in the background of GO-Global sessions</title>
+      <link>/docs/go-global61/advancedtopics/runningthewindowsdesktopinthebackgroundofgo-globalsessions/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/runningthewindowsdesktopinthebackgroundofgo-globalsessions/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Running the Windows desktop (explorer.exe) in the background of GO-Global sessions
+Some Windows applications use features and services that are provided by the Windows desktop (explorer.exe). Most applications run without the desktop, but some fail to start or run properly when the desktop is not running in the same session as the application. By default, the desktop does not run in GO-Global sessions. If an application fails to start or work properly in a GO-Global session, it may have a dependency on the desktop.&lt;/p&gt;
+&lt;p&gt;To register the Windows desktop (explorer.exe) to run in GO-Global sessions
+From the Registry Editor, expand the HKEYLOCALMACHINE key.
+Expand \SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachine.
+Create a DWORD value and name it explorer.exe.
+Set the value to
+With this configuration, the desktop will run in GO-Global sessions but will not be visible.&lt;/p&gt;
+&lt;p&gt;参照
+Registering the Windows desktop to run in the background of a GO-Global session adds significant overhead. Sessions will take longer to start and will consume more memory. Additional overhead can also result from other processes that are registered to run when the desktop starts up. Care should be taken to ensure that unnecessary processes are not registered in users’ Startup folders or under the various Run commands in the Registry (e.g., HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run).&lt;/p&gt;
+&lt;p&gt;Explorer.exe will run in the session the first time that a user signs on to a host. This is done to fully initialize the user profile. Explorer.exe will not run in subsequent sessions started by the same user on the same host, unless configured to do so as described above.&lt;/p&gt;
+&lt;h2 id=&#34;システムプロセスの登録&#34;&gt;システムプロセスの登録&lt;/h2&gt;
+&lt;p&gt;GO-Globalアーキテクチャでは、1つのセッション内で複数のプロセスを実行できます。常に最低1つのプロセスが実行されている必要があります。すべてのプロセスが終了すると、GO-Globalセッションが閉じられ、すべてのリソースが割り当て解除され、クライアント接続が切断されます。&lt;/p&gt;
+&lt;p&gt;通常のプログラムの実行中に、ほとんどのアプリケーションでは、外部操作を実行するための子プロセスが作成されます。これらのアプリケーションの中には、例えばWindowsヘルプなど、独自のユーザインターフェイスを提供するものがあり、必要なくなるとユーザによって閉じられます。他には、ユーザインターフェイスを提供せず、固定の操作を行ってから終了するヘルパープロセスもあります。アプリケーションは、終了する前に作成した子プロセスを制御して終了させることもできます。&lt;/p&gt;
+&lt;p&gt;問題は、プロセスがユーザインターフェースを持たず、自分自身で終了せず、親プロセスが直接終了させない場合にまれに発生します。既定の構成では、これらのプロセスは、他のすべてのプロセスが終了すると、ハングした GO-Globalセッションを作成します。残りのプロセスはセッションをアクティブに保ちますが、クライアントにはセッションを完全に閉じるためのユーザインターフェイスがありません。&lt;/p&gt;
+&lt;p&gt;この問題を解決するために、GO-Globalホストでは、システムプロセスとして実行する特定の実行可能ファイルの登録をサポートしています。セッション内に残っているプロセスがシステムプロセスのみの場合、GO-Globalセッションは終了します。&lt;/p&gt;
+&lt;p&gt;ほとんどのアプリケーションでは、デフォルトの構成で十分です。プロセスが終了する手段を持たずに作成された特別なケースでは、待機中のプロセスの実行可能ファイルを登録することで、GO-Globalセッションを適切に終了させることができます。&lt;/p&gt;
+&lt;p&gt;警告
+以下の情報には、Windowsレジストリを開いて操作することが含まれています。ここで説明されている操作以外の操作を行うと、構成エラーが発生し、システムが使用できなくなる可能性があります。レジストリを操作する際には、細心の注意を払ってください。&lt;/p&gt;
+&lt;h3 id=&#34;実行ファイルをシステムプロセスを作成するものとして登録する方法&#34;&gt;実行ファイルをシステムプロセスを作成するものとして登録する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global\System\Processesにブラウズする。&lt;/li&gt;
+&lt;li&gt;登録される実行可能ファイルの名前(例えば、AGENTSVR.EXE)を持つ DWORD エントリを作成してください。&lt;/li&gt;
+&lt;li&gt;新しいエントリの値を、実行ファイルへのフルパスが指定されている場合は1に、ベース名のみが指定されている場合は2に設定します(フルパスを含めることで、同じ実行ファイルイメージの異なるバージョンを異なる方法で実行することができます)。&lt;/li&gt;
+&lt;li&gt;レジストリエディタを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;この設定は、将来のセッションに加えて、現在のすべてのGO-Globalセッションに影響します。これには、すでに「ハング」状態にあるセッションは含まれません。このようなセッションは、Admin Consolから終了する必要があります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プロキシのトンネリング</title>
+      <link>/docs/go-global61/advancedtopics/proxytunneling/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/proxytunneling/</guid>
+      <description>
+        
+        
+        &lt;p&gt;&lt;strong&gt;HTTP CONNECT&lt;/strong&gt; メソッドを介したプロキシトンネリングでは、プロキシサーバを介してインターネットにアクセスするユーザは、次の条件が満たされたときにインターネット上のGO-Globalホストに接続できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;ユーザはWindowsコンピュータ上でGO-Globalクライアントを実行している。&lt;/li&gt;
+&lt;li&gt;プロキシサーバのアドレスとポートが、クライアントコンピュータの[インターネットオプション]に保存されている。&lt;/li&gt;
+&lt;li&gt;GO-Globalホストが設定されているポートへのHTTP CONNECTメソッドのトンネルで、Rapid-X Protocol(RXP)接続を受け入れられるように、プロキシサーバが設定されている。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h1 id=&#34;http-connectメソッドによるプロキシのトンネリング&#34;&gt;HTTP CONNECTメソッドによるプロキシのトンネリング&lt;/h1&gt;
+&lt;p&gt;Windowsコンピュータ上のユーザがGO-Globalホストとの直接接続を確立できず、クライアントコンピュータが[インターネットオプション]でプロキシサーバを使用するように設定されている場合、クライアントは GO-GlobalホストとのHTTP CONNECTメソッドトンネルの確立を試みます。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;クライアントコンピュータの &lt;strong&gt;[インターネットオプション]&lt;/strong&gt; で指定されたアドレスとポートを使用してプロキシサーバに接続します。&lt;/li&gt;
+&lt;li&gt;プロキシサーバにCONNECT要求(CONNECT address:port HTTP/1.0)を送信します。addressとport は、それぞれGO-GlobalホストのIPアドレスと、ホストがRXP接続を受け入れるポート(デフォルトでは491)です。&lt;/li&gt;
+&lt;li&gt;プロキシサーバからの応答を読み取ります。&lt;/li&gt;
+&lt;li&gt;プロキシサーバの応答に、以下のように応答します。&lt;br&gt;
+a.Basic認証が必要な場合、GO-Globalはユーザにユーザ名とパスワードの入力を求め、手順2を繰り返します。ここではユーザの資格情報を提供します。&lt;br&gt;
+b.要求に失敗すると、以下のメッセージが表示されます。「Failed to connect to serverAddress via the proxy server at proxyAddress.(proxyAddressのプロキシサーバからserverAddressに接続できませんでした)[reason for failure (失敗の理由)]&lt;br&gt;
+c. 要求に成功すると、GO-GlobalはRXP接続を初期化し、セッションを開始します。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;ポート-443を使用してhttp-connectメソッドトンネルを許可する方法&#34;&gt;ポート 443を使用してHTTP CONNECTメソッドトンネルを許可する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ポート443での接続を受け入れるようにGO-Globalホストを設定します。&lt;/li&gt;
+&lt;li&gt;ホストへのアクセスに使用するWebページでポート443を指定します。&lt;/li&gt;
+&lt;li&gt;必要に応じて、ポート80(HTTP)およびポート443(HTTPS)でGO-Globalホストへの接続を許可するようにプロキシサーバを設定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;GO-GlobalホストとそのWebページの設定を完了すると、上述の3つの要件を満たすユーザはホストに接続できます。ショートカットを使用するユーザは、コマンド行に -hp 引数と 443を追加する必要があります(例: &amp;ldquo;..\ggclient.exe&amp;rdquo; -h server -hp 443)。そうしなければ、これらのユーザはGO-Globalにログオンできません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;GO-Globalクライアントは、ポート443のトラフィックがHTTPSかどうかを確認するように設定されているプロキシサーバからGO-Globalホストに接続することはできません。&lt;/p&gt;
+&lt;p&gt;プロキシサーバでは、GO-Globalは基本認証のみをサポートします。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: IPv6のサポート</title>
+      <link>/docs/go-global61/advancedtopics/supportforinternetprotocolversion6/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/supportforinternetprotocolversion6/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、主要なインターネットレイヤプロトコルであるIPv4の後継であるインターネットプロトコルバージョン6(IPv6)をサポートしています。IPv6はIPv4よりもはるかに広いアドレス空間を持ち、アドレスの割り当てやトラフィックのルーティングを柔軟に行うことができます。&lt;/p&gt;
+&lt;p&gt;GO-Globalは以下をサポートしています：&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;GO-Globalホストは、IPv4およびIPv6クライアントからの接続を受け入れます。&lt;/li&gt;
+&lt;li&gt;GO-Global relay serversは、IPv4およびIPv6にdependent hostsからの接続を受け入れます。&lt;/li&gt;
+&lt;li&gt;管理者は、ホスト名、IPv4アドレス、またはIPv6アドレスを使用して、Admin Consoleでrelay serverを指定できます。&lt;/li&gt;
+&lt;li&gt;ユーザは、ホスト名、IPv4アドレス、またはIPv6アドレスを使用してGO-Globalホストに接続できます。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-24-1.png&#34; alt=&#34;7-24-1&#34;&gt;&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: パフォーマンスの自動調整</title>
+      <link>/docs/go-global61/advancedtopics/performanceauto-tuning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/performanceauto-tuning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;パフォーマンスの自動調整は、アプリケーションが大量のグラフィックデータを生成しているとき、またはクライアントシステムの処理速度が制限されているときに使用されます。 パフォーマンス自動調整が有効になっていると、クライアントマシンはホストが送信しているデータを処理している速度を報告します。ホストはこの情報を使用して、クライアントシステムが対応できないグラフィック情報(フレームレートの高いアニメーションなど)を削除したり、プリミティブなグラフィカル操作ではなく、アプリケーションのコンテンツのイメージを送信することを選択したりして、送信するデータの総量を減らします。&lt;/p&gt;
+&lt;p&gt;パフォーマンスの自動調整により、どのクライアントでも最もグラフィックスの厳しいアプリケーションでも実行できます。 パフォーマンスの自動調整は、デフォルトでは無効になっています。&lt;/p&gt;
+&lt;h3 id=&#34;ホストに接続しているすべてのクライアントに対してパフォーマンス自動調整を有効にする方法&#34;&gt;ホストに接続しているすべてのクライアントに対してパフォーマンス自動調整を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;次のディレクトリで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルを見つけます。&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; を開き、次のセクションを見つけます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientProcessingBatch&lt;/strong&gt; 値を0から1に変更します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientProcessingThrottleV2&lt;/strong&gt; 値を0から1に変更します。&lt;/li&gt;
+&lt;li&gt;Regeditを開き、DWORDレジストリ値を作成します。&lt;code&gt;\HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GOGlobal\AppServer\ClientOffscreenSurfaces&lt;/code&gt;そしてその値を0に設定します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止して開始します。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+変更を加える前に、必ず &lt;strong&gt;HostProperties.xml&lt;/strong&gt; のバックアップを作成してください。
+&lt;/div&gt;
+
+&lt;h1 id=&#34;パフォーマンス自動調整のしくみ&#34;&gt;パフォーマンス自動調整のしくみ&lt;/h1&gt;
+&lt;p&gt;パフォーマンス自動調整が無効になっていると、ホストは「四角形を描く」、「線を描く」、「テキストを描く」などの基本的な描画コマンドをクライアントに送信して、クライアントの表示を更新します。&lt;/p&gt;
+&lt;p&gt;代替方法は、ホストが描画操作の最終結果を含むイメージを待機してクライアントに送信することです。このアプローチは「スクリーンスクレイピング」と呼ばれます。ほとんどの場合、プリミティブ描画コマンドを使用してクライアントの表示を更新する方がはるかに効率的ですが、「スクリーンスクレイピング」のほうが効率的な場合があります。&lt;/p&gt;
+&lt;p&gt;パフォーマンス自動調整が有効になっていると、ホストは、ディスプレイデータがホストからクライアントに送信されるたびに、クライアントディスプレイを更新する最も効率的な方法を決定しようとします。たとえば、ホストが画面の変更された領域の画像を送信するのに必要な帯域幅が、画面を変更するのに使用されたすべての描画コマンドを送信するのに必要な帯域幅よりも小さいと推定した場合、描画コマンドの代わりにホストは画像を送信します。言い換えれば、それが「スクリーンスクレープ」になります。&lt;/p&gt;
+&lt;p&gt;アニメーションやビデオを表示するアプリケーションでは、パフォーマンス自動調整を有効にすることをお勧めします。ホスト上のアプリケーションが大量の画像を描画している場合でも、ホストがフレームをスキップしてユーザ入力に応答できるからです。ただし、このオプションを有効にすると、画面の一部がホストのフレームバッファ(画面)から更新され、その他の部分が描画コマンドを使用して更新されたときに、小さな表示異常が発生する可能性があります。これらの異常のため、パフォーマンス自動調整はデフォルトで無効になっています。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サイレントインストール</title>
+      <link>/docs/go-global61/advancedtopics/silentinstallation/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/silentinstallation/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalはサイレントインストールすることができます。言い換えれば、インストールはプロセスの最初の起動以外はユーザの操作なしで実行されます。サイレントホストアップグレードを実行する前に、バージョン6.1のGO-Globalライセンスをライセンスディレクトリにコピーする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントのサイレントインストールを実行する方法&#34;&gt;クライアントのサイレントインストールを実行する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;cmd.exeをローカル管理者として実行します(管理者として実行)。&lt;/li&gt;
+&lt;li&gt;以下のコマンドを実行します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe /q
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;これにより、スタートメニューに GO-Global AppControllerショートカットが追加されます。[ Start | Programs | GO-Global ]ショートカットなしでGO-Global AppControllerをサイレントインストールするには、次のコマンドを実行します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;AppController.exe /q CLIENT_SHORTCUT=&amp;quot;No&amp;quot;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;GO-Globalホストをサイレントインストールすることもできます。GO-Globalホストをアップグレードする場合もこれらの手順は同じです。&lt;/p&gt;
+&lt;h3 id=&#34;サイレントホストインストールを実行する方法&#34;&gt;サイレントホストインストールを実行する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ローカル管理者としてcmd.exeを実行します(管理者として実行)。&lt;/li&gt;
+&lt;li&gt;次のコマンドを実行してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;go-global.exe /q
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ホストは自動的に再起動します。&lt;/li&gt;
+&lt;li&gt;ライセンスファイルを &lt;strong&gt;Licensing&lt;/strong&gt; ディレクトリにコピーします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global License Manager&lt;/strong&gt; サービスを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;システムを自動的に再起動せずにサイレントホストインストールを実行するには、次のコマンドを実行します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;gg-host.exe /q /norestart
+&lt;/code&gt;&lt;/pre&gt;
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サポートリクエストウィザード(SRW)</title>
+      <link>/docs/go-global61/advancedtopics/supportrequestwizard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/supportrequestwizard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストには、テクニカルサポートに送信できるログファイルとホストに関する情報を収集するSupport Request Wizardがあります。管理者は、[Help]メニューの[Help]をクリックして、Admin Consoleからサポートリクエストウィザードを実行できます。もしくは[ Programs | GraphOn GO-Global | Support Request Wizard ]の順にクリックします。&lt;/p&gt;
+&lt;p&gt;ウィザードは、問題の説明、問題が発生したときの時間枠、および影響を受けたユーザ(複数可)について管理者にプロンプトを出します。問題が既存のサポート案件に関連している場合、管理者は案件番号を入力できます。デフォルトでは、zip形式のレポートはユーザプロファイルのデスクトップに配置されていますが、管理者はウィザードを使用して別の場所を選択できます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+KitASPからの連絡で必要に応じて採取をしてください。
+&lt;/div&gt;
+
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;/p&gt;
+&lt;p&gt;KGTN 2013122703&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;代理店様向けの専用ページにkitASP障害情報採取ツール_kitCollectToolの資料も用意しています。&lt;br&gt;
+合わせてご参照ください。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Logファイル</title>
+      <link>/docs/go-global61/advancedtopics/logfiles/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/logfiles/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalホストはログファイルを作成して、GO-Global自身および一定のGO-Globalプロセスのパフォーマンス情報を記録します。GraphOn Technical Supportは、このデータを使用して、起こり得る問題の診断と修正を行います。特に、特定のマシンや特定のアプリケーションでのみ再発し得るエラーに対して有効です。&lt;/p&gt;
+&lt;p&gt;全てのログファイルは、クライアントマシン関連でもホストマシン関連でも、GO-Globalホスト上のLog フォルダ(例:&lt;code&gt;D:\Program Files\GraphOn\GO-Global\Log&lt;/code&gt;)に保存されます。Logフォルダには、 &lt;strong&gt;Backup&lt;/strong&gt;、 &lt;strong&gt;Codes&lt;/strong&gt;、 &lt;strong&gt;Templates&lt;/strong&gt; の3つのサブフォルダがあります。これらのサブフォルダを削除しないよう注意してください。GO-Globalのメッセージは、接頭語 aps の後にApplication Publishing Serviceが開始された日付と時刻(ミリ秒未満は四捨五入)が続く形でログファイルに記録されます(例: aps_2013-04-04_09-55-47-636.html)。Application Publishing Serviceが開始されるたびに、新しいログファイルが作成されます。最新の日時スタンプのログファイルに、現行または最後の Application Publishing Serviceインスタンスでのメッセージが含まれています。&lt;/p&gt;
+&lt;p&gt;GO-Globalの実行時に検出された問題は、ログファイルのエントリとして記述されています。各エントリは、項目番号と日時スタンプによって固有識別された、イベントやプログラムエラーの説明です。 GraphOn Technical Supportは、この情報を利用して、障害の原因を判断し解決策を決定します。&lt;/p&gt;
+&lt;p&gt;また、ログファイルのエントリにはメッセージ識別用の接頭語がついています。それにより、関連する個別ユーザのセッションやアプリケーションが判断できます。イベントが特定セッションのコンテキスト内で発生した場合、そのセッション名がメッセージの最初に表示されます(例:SuzyG on Server1)。イベントがApplication Publishing Serviceへの接続(クライアントまたはアプリケーションからの接続)のコンテキスト内で発生した場合、その接続プロセスの名称(例: pw(1244))がメッセージの接頭語に含まれます。この例(pw(1244))の場合、Program Windowプロセスと Application Publishing Service間の接続中に障害が発生しています。1244は、そのイベントが発生したプロセスのIDです。メッセージの最初に接続名apsが含まれている場合、そのイベントは Application Publishing Service で発生していますが、他のプロセスとの接続には関係ありません。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
+&lt;p&gt;本項目の設定は以下の技術ノートを参照ください。&lt;br&gt;&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;KGTN 2019112701&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112702&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112703&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112705&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;KGTN 2019112704&lt;br&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;logファイルの新規保存場所の選択&#34;&gt;Logファイルの新規保存場所の選択&lt;/h1&gt;
+&lt;p&gt;デフォルトでは、Logファイルは生成されると&lt;code&gt;\Program Files\GraphOn\GO-Global\Log&lt;/code&gt; に保存されます。Admin Consoleの &lt;strong&gt;{Host Options]&lt;/strong&gt; ダイアログを使用すれば、Logファイルの新規保存場所を選択できます。&lt;/p&gt;
+&lt;h3 id=&#34;logファイルの新規保存場所を選択する方法&#34;&gt;Logファイルの新規保存場所を選択する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Folder]&lt;/strong&gt; 編集ボックスに新しいディレクトリへのパスを入力するか、その保存場所を閲覧します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Logファイルの保存場所としてリモートシステムのパスを指定することはできません。すなわち、UNCパスやマップされたネットワークドライブを[Folder]ボックスで指定すると、&lt;strong&gt;&amp;ldquo;Please specify a usable Windows folder where log files may be written.&amp;quot;&lt;/strong&gt; というエラーメッセージが表示されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;Backup&lt;/strong&gt;フォルダと既存のLogファイルを、 &lt;strong&gt;Templates&lt;/strong&gt;および &lt;strong&gt;Codes&lt;/strong&gt;サブフォルダと一緒に新規保存場所に移動してください。
+&lt;/div&gt;
+
+&lt;h1 id=&#34;出力レベルの設定&#34;&gt;出力レベルの設定&lt;/h1&gt;
+&lt;p&gt;GO-Globalには、以下の 6 つのLog出力レベルがあります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;0:出力なし 
+1:エラー 
+2:エラーおよびイベント 
+3:エラー、イベント、および警告 
+4:エラー、イベント、警告、および診断メッセージ 
+5, 6:エラー、イベント、警告、診断メッセージ、およびトレースメッセージ
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;出力レベルの設定方法&#34;&gt;出力レベルの設定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Output level]&lt;/strong&gt; ボックスに上記の数値の 1 つを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Logの出力レベルを5または6に設定した場合、ホストで生成されるLogファイルの容量は非常に大きくなるため、パフォーマンスや拡張性に悪影響が出る場合があります。したがって、GraphOn社や代理店から特別な指示がない限り、Logの出力レベルを5または6に設定すべきではありません。
+&lt;/div&gt;
+
+&lt;p&gt;デフォルトの出力レベルは4です。&lt;/p&gt;
+&lt;h1 id=&#34;logファイルの管理&#34;&gt;Logファイルの管理&lt;/h1&gt;
+&lt;p&gt;GO-Globalでは、Application Publishing Serviceが開始されるたびに &lt;strong&gt;Log&lt;/strong&gt; フォルダに新しいLogファイルが作成されます。時間の経過とともに、これらのファイルのサイズは大きくなり、大量のディスクスペースを占領するようになります。これらのファイルの管理のために、GO-Globalでは、Logファイルの削除またはバックアップ、ファイルサイズや保存期間の上限の設定ができます。&lt;/p&gt;
+&lt;h3 id=&#34;logファイルの削除方法&#34;&gt;Logファイルの削除方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Maintenance]&lt;/strong&gt; のところで &lt;strong&gt;[Delete]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;削除するまでのLogファイルの保存期間を指定します(日単位)。&lt;/li&gt;
+&lt;li&gt;Logファイルのサイズがどのくらいに達したら削除するか指定します(MB 単位)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;Go-Global Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h3 id=&#34;logファイルのバックアップ方法&#34;&gt;Logファイルのバックアップ方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、[Tools | Hosts Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Log]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;[Maintenance]のところで [Back up]を選択します。&lt;/li&gt;
+&lt;li&gt;どのくらいの時間が経過したらログファイルをLogフォルダのBackupサブディレクトリに移動するか指定します (日単位)。&lt;/li&gt;
+&lt;li&gt;ログファイルがどのくらいの容量に達したらLogフォルダのBackupサブディレクトリに移動するか指定します(MB 単位)。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;GO-Global Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;Application Publishing Serviceは30分ごと、および開始されるたびに、 &lt;strong&gt;Log&lt;/strong&gt;フォルダ から指定した保存期間またはサイズに達したファイルを探し出します。その後、それらのファイルを削除するか、Logフォルダ内の &lt;strong&gt;Backup&lt;/strong&gt;サブディレクトリに移動します。ログファイルの整理中に、現行のログファイルが指定の保存期間またはサイズに達したら、Application Publishing Serviceはそのログファイルを閉じて、新規作成したログファイルをインストールします。&lt;/p&gt;
+&lt;p&gt;デフォルトでは、ログファイルは 7日間経過したら、またはサイズが20 MBに達したらバックアップが取られるようになっています。&lt;/p&gt;
+&lt;h1 id=&#34;クライアントlogファイル&#34;&gt;クライアントLogファイル&lt;/h1&gt;
+&lt;p&gt;GO-Globalクライアントは、クライアントがホストに接続されていない時に、クライアントデバイス上のLogファイルに情報を記録します。さらに、ユーザがホストにサインインした後、クライアントはLogファイルをホストと同期させます。具体的には、GO-Globalは、ホストに以前にコピーされていないLogファイルがクライアントに存在するかどうかを判断します。存在する場合、GO-Globalは欠落しているクライアントLogファイルをホストにコピーします。&lt;/p&gt;
+&lt;p&gt;これらの変更により、システム管理者は接続の問題の原因を簡単に特定できます。 たとえば、ユーザがホストへの接続が頻繁に切断されると報告してきた場合、システム管理者はホストとクライアントのLogファイルをチェックして原因を特定できます。 通常、このシナリオでは、ユーザの前のセッションのクライアントLogファイルがホスト上で使用可能になり、管理者はクライアントLogファイルをクライアントデバイスから手動で取得する必要はありません。 一般的に、管理者は、ユーザがホストにまったく接続できない場合にユーザのコンピュータからLogファイルを取得する必要があります。&lt;/p&gt;
+&lt;p&gt;クライアントLogファイルの名前には、ユーザの名前、ホストのアドレス、クライアントが開始された日時が含まれます。クライアントLogファイルは、ユーザの&lt;code&gt;%APPDATA%\GraphOn\Logs&lt;/code&gt;ディレクトリ(Windowsクライアントの場合)およびホストの&lt;code&gt;\ProgramFiles\GraphOn\AppController\Log\Clients&lt;/code&gt;ディレクトリに格納されます。Logファイルがクライアントからホストにコピーされると、クライアントのLogファイルのコピーがクライアントコンピュータの&lt;code&gt;%APPDATA%\GraphOn\Logs\Old&lt;/code&gt;ディレクトリに移動されます。Logファイルは、&lt;code&gt;HKEY_CURRENT_USER\Software\GraphOn\AppController\Client\LogFileAgeLimit&lt;/code&gt;レジストリ値で指定された日数の間、クライアントに保存されます。デフォルトは10日間です。&lt;/p&gt;
+&lt;p&gt;クライアントがホストに接続している間にクライアントが出力する情報は、ホストの(APS__&amp;hellip;)ログファイルに記録されます。GO-Globalクライアントは、クライアントがホストに接続されていない場合にのみ、クライアントLogファイルにメッセージを記録します。&lt;/p&gt;
+&lt;h1 id=&#34;接続の監視&#34;&gt;接続の監視&lt;/h1&gt;
+&lt;p&gt;GO-Globalは、ホストへの接続の待ち時間と入出力速度を監視します。新しいクライアントがホストに接続すると、ホストはクライアントの接続をテストし、各メトリックの初期値をホストのログファイルに記録します。その後、ホストは品質の変化について接続を監視します。セッションの実行中にいずれかのメトリックの品質が変化した場合、ホストはその変化をログファイルに記録します。&lt;/p&gt;
+&lt;p&gt;品質チェックの頻度としきい値は、&lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルで指定します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 高解像度クライアントデバイス</title>
+      <link>/docs/go-global61/advancedtopics/highresolutionclientdevices/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/highresolutionclientdevices/</guid>
+      <description>
+        
+        
+        &lt;p&gt;ディスプレイを拡大縮小するように設定されている高解像度クライアントデバイス上でGO-Global AppControllerを実行すると、AppControllerは、セッションで実行されているアプリケーションのテキストとコントロールが、クライアントデバイスでローカルに実行されているアプリケーションのテキストとコントロールと同じサイズになるように、GO-Globalセッションのグラフィカル出力を拡大しようとします。たとえば、クライアントコンピュータが表示を200％拡大するように設定されている場合、AppControllerはホストから受信したグラフィックスコマンド(テキスト文字や画像など)を200％拡大します。&lt;/p&gt;
+&lt;p&gt;クライアントが画像やテキストなどのグラフィックオブジェクトを引き伸ばすとき、それらの品質はオブジェクトが100％で描画されるときほど良くありません。たとえば、テキスト文字の端は、引き伸ばしたときほど滑らかではありません。文字がブロック状またはぼやけて見えることがあります。高解像度の画面(ディスプレイの拡大縮小が最も頻繁に有効になっている場合)では、これらの効果は通常あまり目立ちません。高解像度の画面（ディスプレイの拡大縮小が最も頻繁に有効になっている場合）では、これらの効果は通常あまり目立ちません。 ただし、低解像度の画面では、特に表示倍率が125％などの整数でない値に設定されている場合、影響が非常に顕著になります。 これらの影響が顕著な場合は、GO-Globalのスケーリング機能を次のように無効にすることができます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;クライアントがショートカットから実行する時は、クライアントのコマンドラインに &lt;strong&gt;-clientdpi 0&lt;/strong&gt; を追加します。&lt;/li&gt;
+&lt;li&gt;クライアントがブラウザから実行されている場合は、URLに &lt;strong&gt;＆clientdpi=false&lt;/strong&gt; を追加します。&lt;/li&gt;
+&lt;li&gt;すべてのユーザに対してホスト上の機能を無効にするには、ホスト上の &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;ClientDPIScalingEnabled&lt;/strong&gt; プロパティの値を「true」から「false」に変更します。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;GO-Globalのスケーリング機能が無効になっていると、GO-Globalはホスト上のコントロールパネルのディスプレイアプレットでユーザに指定されたスケールファクタを使用してセッションをレンダリングします。この構成では、管理者は表示アプレットをユーザに公開することによってユーザにDPI設定の変更を許可することができます。&lt;/p&gt;
+&lt;h3 id=&#34;表示アプレットをユーザに公開する方法&#34;&gt;表示アプレットをユーザに公開する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;ホスト上のコンソールに管理者としてサインインします。&lt;/li&gt;
+&lt;li&gt;表示アプレットへのショートカットを作成します。&lt;br&gt; 
+a.&lt;strong&gt;[スタート | コントロール]&lt;/strong&gt; の順にクリックしてます。&lt;br&gt;
+b. &lt;strong&gt;[表示]&lt;/strong&gt; を右クリックします。 ショートカットがデスクトップに追加されます。&lt;br&gt;
+c.ショートカットをすべてのユーザがアクセスできるディレクトリ(例：C:\Users\Public\Desktop)にドラッグします。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;ユーザにショートカットを公開する。&lt;br&gt;
+a.Admin Consoleを実行し、 &lt;strong&gt;[Application | Add]&lt;/strong&gt; の順にクリックします。&lt;br&gt;
+b. &lt;strong&gt;[Display Name]&lt;/strong&gt; フィールドに「Display Setting」(または他のわかりやすい名前)と入力します。&lt;br&gt; 
+c. &lt;strong&gt;[Executable Path]&lt;/strong&gt; フィールドにexplorer.exeへのパス(例：C:\Windows\explorer.exe)を入力します。&lt;br&gt;
+d. &lt;strong&gt;[Command-Line Options]&lt;/strong&gt; フィールドに、手順2で作成したショートカットのパスを入力します(例C:\Users\Public\Desktop\Display.lnk)。&lt;br&gt;
+e. &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;program-window-を閉じるオプションを設定する&#34;&gt;Program Window を閉じるオプションを設定する&lt;/h1&gt;
+&lt;p&gt;ProgramWindowCloseOption キーを編集することで、管理者は、ユーザが右上隅の X ボタンをクリックしたときにProgram Windowがどのように閉じるかを決定することができます。既定では、ProgramWindowCloseOptionは1に設定されています。ユーザが X ボタンをクリックすると、Sign outオプションが実行され、サインアウトの確認を求められます。なお、ユーザは[File | Disconnect]をクリックしても切断することができます。&lt;/p&gt;
+&lt;p&gt;ProgramWindowCloseOptionキーを編集するには&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;レジストリエディタ(regedit.exe)を実行します。&lt;/li&gt;
+&lt;li&gt;Locate the ProgramWindowCloseOption key: [HKEY_LOCAL_MACHINE_Software\GraphOn\GO-Global\AppServerProgramWindowsCloseOption]&lt;/li&gt;
+&lt;li&gt;エントリの値を以下のいずれかに設定します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;0: 切断 
+Admin Console の [切断されたセッションを終了する] オプションが [しない] または [x 分後] に設定されている場合、ユーザーがプログラム ウィンドウの右上隅にある [X] ボタンをクリックすると、Program Windowsで[File | Sign out]オプションが実行されます。
+ユーザには以下のダイアログが表示されます。再接続するまで、セッションとそのアプリケーションはホスト上で実行され続けます。
+そうでない場合は、［切断されたセッションを終了する］オプションが［即時］に設定されていると、Program Windowsで[File | Sign out]オプションが実行され、次のようなダイアログが表示されます。あなたのセッションとアプリケーションが閉じられます。サインアウトしてもよろしいですか？&lt;/p&gt;
+&lt;p&gt;1: サインアウト 
+ProgramWindowCloseOptionが1に設定されている場合、ユーザがXボタンをクリックすると、Program Windowsは[File | Sign out]オプションを実行し、以下のメッセージが表示されます。あなたのセッションとアプリケーションが閉じられます。本当にサインアウトしてもよろしいですか？&lt;/p&gt;
+&lt;p&gt;2: クローズ
+ProgramWindowCloseOptionが2に設定されている場合、ユーザーがxボタンをクリックすると、Program Windowsは[File | Sign out]オプションを実行します。これによりProgram Windowは閉じますが、ユーザのアプリケーションはホスト上で実行され続けます。
+4. レジストリエディタを閉じます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: 自動クライアントキーボードを無効にする方法</title>
+      <link>/docs/go-global61/advancedtopics/disablingautomaticclientkeyboard/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/disablingautomaticclientkeyboard/</guid>
+      <description>
+        
+        
+        &lt;p&gt;自動クライアントキーボードを使用すると、管理者はGO-Globalホストを任意のクライアントキーボードで自動的に機能するように設定できます。この機能はデフォルトで有効になっていますが、HostProperties.xmlファイルを編集して無効にすることができます。&lt;/p&gt;
+&lt;h3 id=&#34;自動クライアントキーボードを無効にする方法&#34;&gt;自動クライアントキーボードを無効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルを探します(例: &lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;)&lt;/li&gt;
+&lt;li&gt;ワードパッドで &lt;strong&gt;HostProperties.xml&lt;/strong&gt; を開き、&lt;strong&gt;ClientSideIMEEnabled&lt;/strong&gt; プロパティを探します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;ClientSideIMEEnabled&lt;/strong&gt; プロパティをfalseに設定します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;自動クライアントキーボードがHostProperties.xmlで無効になっている場合でも、次のようにユーザーごとに有効にできます。&lt;/p&gt;
+&lt;p&gt;クライアントショートカットに &lt;strong&gt;-kb ClientSideIME&lt;/strong&gt; を追加します。&lt;/p&gt;
+&lt;p&gt;たとえば、Windowsクライアントの場合:&lt;code&gt;&amp;quot;C:\Program Files\GraphOn\AppController\AppController.exe&amp;quot; -kb ClientSideIME&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;または、GO-GlobalがWebブラウザから実行されている場合は、logon.htmlページを参照するハイパーリンクに次の引数を追加します。 &lt;strong&gt;&lt;code&gt;&amp;amp;keyboard=ClientSideIME&lt;/code&gt;&lt;/strong&gt; たとえば、 &lt;strong&gt;[http://hostname/goglobal/logon.html?direct=true&amp;amp;keyboard=ClientSideIME]&lt;/strong&gt; のようになります。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボード/IME 用サポートの設定</title>
+      <link>/docs/go-global61/advancedtopics/configuringsupportforclientkeyboardsandorimes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/configuringsupportforclientkeyboardsandorimes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;Windowsでは、入力言語、キーボードレイアウト、言語入力システム(IME)、コードページを使用して、キーボード上の各キーを画面上の文字にマッピングします。クライアントキーボード上でキーを押すと、GO-Globalからホストにキーコードが送信します。ホストはセッションの有効なキーボードレイアウトを使用して、キーコードをWindowsの入力メッセージに変換します。GO-Globalのセットアップでは、ホストと同じオペレーティングシステム、キーボードおよびIMEを使用するクライアントをサポートするようにホストを設定します。GO-Globalは、キーボードマッピングファイルを使用して、さまざまなオペレーティングシステムとキーボードを持つクライアントをサポートします。&lt;/p&gt;
+&lt;p&gt;次のセクションでは、ホストシステムと異なるクライアントコンピュータ上のセッションにおいてキーボードやIMEを管理するためのしくみと手順を説明します。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントキーボードのサポートやIMEの構成</title>
+      <link>/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/</guid>
+      <description>
+        
+        
+        &lt;p&gt;クライアントがホストとは異なるキーボードやIMEを使用する前に、それらをサポートするためのファイルをGO-Globalホストにインストールする必要があります。ほとんどの場合、レイアウトはオペレーティングシステムのインストール中にコピーされますが、東アジア言語と右から左へ表記される言語はコピーされません。&lt;/p&gt;
+&lt;h3 id=&#34;windows-server-2016-が稼動するサーバにキーボードレイアウトをインストールする方法&#34;&gt;Windows Server 2016 が稼動するサーバにキーボードレイアウトをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;スタートメニューから &lt;strong&gt;[コントロールパネル]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[言語]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;希望する言語(および該当する場合は地域の変更)を選択して、&lt;strong&gt;[追加]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;追加のファイルがあなたのマシンにコピーされます。OSのインストールCDまたはネットワーク共有名を提供する必要があります。新しい言語のサポートは再起動後に利用可能になります。&lt;/p&gt;
+&lt;p&gt;以下に、各GO-Globalクライアントがサポートするキーボードの一覧を示します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Linuxクライアント&lt;/strong&gt; は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Linux  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Linux  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;us&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US&lt;/td&gt;
+&lt;td&gt;00000409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Japanese&lt;/td&gt;
+&lt;td&gt;jp&lt;/td&gt;
+&lt;td&gt;日本語&lt;/td&gt;
+&lt;td&gt;日本語 (106/109  キー)&lt;/td&gt;
+&lt;td&gt;E0010411 (IME)&lt;/td&gt;
+&lt;td&gt;jp.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;fr&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;フランス語&lt;/td&gt;
+&lt;td&gt;0000040C&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Belgian  (be-latin1)&lt;/td&gt;
+&lt;td&gt;be&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;フランス語 (ベルギー)&lt;/td&gt;
+&lt;td&gt;0000080C&lt;/td&gt;
+&lt;td&gt;be.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German、 German(Latin1)、 German (Latin1 w/ no  dead keys)&lt;/td&gt;
+&lt;td&gt;de&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;ドイツ語&lt;/td&gt;
+&lt;td&gt;00000407&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Polish&lt;/td&gt;
+&lt;td&gt;pl&lt;/td&gt;
+&lt;td&gt;ポーランド語&lt;/td&gt;
+&lt;td&gt;ポーランド語  (214)&lt;/td&gt;
+&lt;td&gt;00010415&lt;/td&gt;
+&lt;td&gt;pl.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Brazilian (ABNT2)&lt;/td&gt;
+&lt;td&gt;br&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジル)&lt;/td&gt;
+&lt;td&gt;ポルトガル語 (ブラジルABNT2)&lt;/td&gt;
+&lt;td&gt;00010416&lt;/td&gt;
+&lt;td&gt;br.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;p&gt;&lt;strong&gt;Mac OS Xクライアント&lt;/strong&gt; は以下をサポートします。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;Mac OS X  キーボード  レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  入力言語&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト名&lt;/th&gt;
+&lt;th&gt;Windows  キーボード レイアウト&lt;/th&gt;
+&lt;th&gt;キーボード マッピング ファイル *&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;U.S. English&lt;/td&gt;
+&lt;td&gt;英語(米国)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;us.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;French&lt;/td&gt;
+&lt;td&gt;フランス語 (フランス)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;fr.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;German&lt;/td&gt;
+&lt;td&gt;ドイツ語 (ドイツ)&lt;/td&gt;
+&lt;td&gt;US-International&lt;/td&gt;
+&lt;td&gt;00020409&lt;/td&gt;
+&lt;td&gt;de.kbm&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;*  詳細については、下の「クライアントキーボードのマッピングファイル」の項を参照してください。&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;td&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+Mac OS XキーボードとWindowsキーボードの物理的な違いにより、Mac OS Xキーボードマッピングファイルでは、 &lt;strong&gt;米国国際&lt;/strong&gt; Windowsキーボードレイアウトを使用して、キーの大部分をWindowsアプリケーションに変換しています。
+&lt;/div&gt;
+
+&lt;p&gt;Windowsクライアント(ネイティブのWindowsクライアント、ActiveXコントロール、およびプラグインを含む)は、GO-Globalホストにドライバがあるすべてのキーボードをサポートします。&lt;/p&gt;
+&lt;h1 id=&#34;クライアントキーボードマッピングファイル&#34;&gt;クライアントキーボードマッピングファイル&lt;/h1&gt;
+&lt;p&gt;GO-Globalは、LinuxおよびMac OS X上のキーボードマッピングファイルを使用して、適切なキーボードレイアウトがホストにロードされ、正しいキーコードが各キーを押して放すたびに送信されるようにします。キーボードマッピングファイルを使用すると、新しいキーボードマッピングファイルをクライアントにコピーするだけで、新しいキーボードのサポートを追加できます。キーボードマッピングファイルは、Linuxの &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; ディレクトリとMacの &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; ディレクトリにインストールされています。キーボードマッピングファイルが見つからない場合は、us.kbmキーボードマッピングファイルの内部バージョンが使用されます。&lt;/p&gt;
+&lt;p&gt;これらのクライアントは、オペレーティングシステムから取得した情報に基づいてキーボードマッピングファイルを自動的に読み込むことができます。&lt;/p&gt;
+&lt;p&gt;Linuxのキーボードマッピングファイルのインストール場所(つまり、デフォルトのルートパス)は &lt;strong&gt;&lt;code&gt;/etc/AppController/kbd&lt;/code&gt;&lt;/strong&gt; です。デフォルトのレイアウトは米国英語で、環境変数によって取得されるか、オペレーティングシステムから自動的に取得されます。&lt;/p&gt;
+&lt;h1 id=&#34;go-globalで使用されるキーボード-ime識別子&#34;&gt;GO-Globalで使用されるキーボード/ IME識別子&lt;/h1&gt;
+&lt;p&gt;GO-Globalは、まとめて &lt;strong&gt;GO-Global Input Identifier(GGII)&lt;/strong&gt; と呼ばれる2つの識別子を使用して、セッションのキーボード/IMEを指定します。最初のキーボードレイアウトです。これらは、WindowsオペレーティングシステムがキーボードドライバとIMEプログラムをロードするために使用する8桁の文字列識別子です。これらはロケールIDと似ていますが、最後の4桁は通常、キーボードでサポートされている言語の4桁のロケールIDと一致します。IMEを指定するキーボードレイアウトは、通常「E」で始まります。使用可能なキーボードレイアウトの一覧は、[HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\ Keyboard\Layouts]キーの下のレジストリに表示されます。&lt;/p&gt;
+&lt;p&gt;GO-Globalが使用する2番目の識別子はレイアウトテキスト文字列です。これは、各キーボードレイアウトレジストリキーのレジストリ値です。これらの文字列は、入力言語を追加するときにキーボードレイアウト/IMEの下のドロップダウンボックスに表示されます。次の例では、最初のキーボードレイアウトGGIIは00000409、レイアウトテキストGGIIはUSです。2番目の例では、キーボードレイアウトGGIIがE0010411で、レイアウトテキストGGIIが日本語入力システム(MS-IME2002)です。&lt;/p&gt;
+&lt;p&gt;例：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ 00000409  
+Layout File = KBDUS.DLL  
+Layout Text  = US
+&lt;/code&gt;&lt;/pre&gt;&lt;pre&gt;&lt;code&gt;HKEY_LOCAL_MACHINE \ SYSTEM \ CurrentControlSet \ Control \ Keyboard Layouts \ E0010411  
+Ime File = name81.name  
+Layout File = Kbdjpn.dll  
+Layout Text = Japanese Input System（MS-IME2002）
+&lt;/code&gt;&lt;/pre&gt;&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;環境変数&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_FILE&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;使用するマッピングファイルの完全修飾パスの指定に使用されます。指定すると、他のあらゆるファイル名パスの取得方法に優先します。例 : Linuxの場合 **&lt;code&gt;APPCONTROLLER_KBD_FILE=/home/someuser/KeyMappingFiles/MyCustomKeyMappingFile.kmf&lt;/code&gt;**と指定すると、正しいファイルがロードされます。このファイルが見つからない場合は、&lt;strong&gt;us.kbm&lt;/strong&gt; キーボードマッピングファイルの内部バージョンが使用されます。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_FILE_ROOT&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;キーボードマッピングファイルへのルートパス名の指定に使用されます。キーボードマッピングファイルを含む &lt;strong&gt;kbd&lt;/strong&gt; ディレクトリは、このディレクトリに置きます。例:Linuxの場合、**&lt;code&gt;APPCONTROLLER_KBD_FILE_ROOT=/home/someuser&lt;/code&gt;**と指定すれば、&lt;code&gt;/home/someuser/kbd/xxx.kbm&lt;/code&gt;ファイルがロードされます。「xxx」は、次に説明する&lt;code&gt;APPCONTROLLER_KBD_FILE_LAYOUT&lt;/code&gt; 環境変数から、または直接オペレーティングシステムから取得されたLAYOUTを示します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;&lt;strong&gt;APPCONTROLLER_KBD_LAYOUT&lt;/strong&gt;&lt;/td&gt;
+&lt;td&gt;どのLAYOUT(またはファイル名のプレフィックス)を使用するかの指定に使用されます。このLAYOUT名に拡張子.kbmが付いたものがファイル名として使用されます。例:&lt;strong&gt;&lt;code&gt;APPCONTROLLER_KBD_LAYOUT=MyCustomKeyMappingFile&lt;/code&gt;&lt;/strong&gt; と指定すれば、&lt;code&gt;/ect/AppController/kbd/MyCustomKeyMappingFile.kbm&lt;/code&gt;ファイルがロードされます。上に説明した&lt;code&gt;APPCONTROLLER_KBD_FILE_ROOT&lt;/code&gt;も使用されている場合は、&lt;code&gt;/home/someuser/kbd/MyCustomKeyMappingFile.kbm&lt;/code&gt;ファイルがロードされます。マッピングファイルへのルートパス名のサブディレクトリを、ここに含めることもできます。例:&lt;code&gt;APPCONTROLLER_KBD_LAYOUT=thinclient/us&lt;/code&gt;と指定すれば、別のルートパスが指定されていないかぎり、&lt;code&gt;/etc/AppController/kbd/thinclient/us.kbm&lt;/code&gt;ファイルがロードされます。これは、オペレーティングシステムから自動取得したLAYOUTに優先します。&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h1 id=&#34;クライアントキーボードオプションの設定&#34;&gt;クライアントキーボードオプションの設定&lt;/h1&gt;
+&lt;p&gt;-kbショートカットパラメータまたは「キーボード」ハイパーリンクパラメータを使用して、セッションのキーボード/IMEを指定できます。これらは上記の両方のタイプのGGIIを取ります。Windowsコンピュータでは、-kbショートカットパラメータが指定されていない場合、GO-Globalは現在アクティブなキーボードレイアウトのレイアウトテキストを使用します。Linuxコンピュータでは、コマンドラインでレイアウトテキストが指定されていない場合、GO-Globalはレイアウトテキストをサーバに送信しません。&lt;/p&gt;
+&lt;p&gt;例:キーボードレイアウトを使用したWindowsショートカット&lt;br&gt;
+&lt;code&gt;AppController.exe -h server1 -kb 00000409&lt;/code&gt;&lt;/p&gt;
+&lt;h1 id=&#34;レイアウトテキスト置換の指定&#34;&gt;レイアウトテキスト置換の指定&lt;/h1&gt;
+&lt;p&gt;クライアントとサーバのキーボードレイアウト名をマッピングするために、サーバ上でレイアウトテキストの置換を指定できます。それらを使用することができます：&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;異なるバージョンのWindowsでのレイアウトテキスト名の違いを克服します。たとえば、Windows 2000のGO-Globalクライアントシステムの &lt;strong&gt;日本語入力システム(MS-IME2000)&lt;/strong&gt; レイアウトテキストは、GO-Globalホストの &lt;strong&gt;日本語入力システム(MS IME2002)&lt;/strong&gt; レイアウトテキストに置き換えることができます。&lt;/li&gt;
+&lt;li&gt;UNICODE名を持つキーボードレイアウトをANSI名に置き換えます。たとえば、ASCII HTMLページで「keyboard」アプレットパラメータを使用してUNICODE名でキーボードレイアウトを指定するときは、UNICODE名の代わりにASCII名を使用する必要があります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;キーボードレイアウトの置換は、&lt;code&gt;[HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\AppController\System\Keyboard\Layout\Substitutes]&lt;/code&gt;レジストリキーで指定されています。このキー内の各REG_SZ値はGGIIの名前を持ち、値はクライアント名の代わりに使用されるべきサーバからのレイアウトテキストの名前です。&lt;/p&gt;
+&lt;h1 id=&#34;代替レイアウトテキストの設定&#34;&gt;代替レイアウトテキストの設定&lt;/h1&gt;
+&lt;p&gt;クライアントからGGIIが指定されていない場合、または指定されたGGIIが有効なキーボードレイアウトをロードできない場合、GO-Globalホストはフォールバックメカニズムを使用してセッションに使用するキーボードレイアウトを決定します。代替レイアウトテキストは、有効なGGIIを渡すクライアントを除いて、サーバに接続しているすべてのクライアントによって使用されるキーボードレイアウトのレイアウトテキストです。アクティブなキーボードレイアウトがIMEの場合、代替レイアウトテキストはインストール中に自動的に設定されます。インストール後に、次のレジストリキーの下にあるHKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\AppController\System\Keyboard Layout
+&lt;strong&gt;Fallback Layout Text&lt;/strong&gt; の値を編集して変更することができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+中国語のGO-Globalホストに接続すると、ショートカットから &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログが、デフォルト言語として中国語を指定しているIMEバーと共に表示されます。Ctrl+スペースバーをクリックしても言語は切り替わりません。ユーザは手動で英語を選択するためにマウスポインタでIMEバーをクリックする必要があります。IMEバーを手動でクリックしないと、ユーザはユーザ名とパスワードを入力できません。
+&lt;/div&gt;
+
+&lt;h1 id=&#34;複数の入力ロケールの設定&#34;&gt;複数の入力ロケールの設定&lt;/h1&gt;
+&lt;p&gt;&lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントプロファイルは、異なる入力ロケールまたは複数の入力ロケール、あるいはその両方で構成できます。GO-Globalホストにログオンする新規ユーザのアカウントロファイルは、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt;アカウントの入力ロケールで自動的に設定されます。ユーザは、自分のアカウントプロファイルで定義されている任意の入力ロケールに切り替えることができます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+移動ユーザプロファイルまたは既にGO-Globalホストに存在するプロファイルを持つユーザは、これらの新しい設定を受け取りません。これらのアカウントは手動で設定する必要があります。
+&lt;/div&gt;
+
+&lt;p&gt;例として、次の手順では英語のWindows Server 2016にドイツ語の入力ロケールをインストールして使用する方法について説明します。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;1. 英語版のWindows Server 2016でドイツ語を有効にします。&lt;/strong&gt; &lt;br&gt;
+1.1 入力ローカルを設定したいユーザアカウントでGO-Globalホストに対話的にサインインします。&lt;br&gt;
+1.2 [スタート | コントロールパネル | 地域の言語オプション]をクリックします。&lt;br&gt;
+1.3 言語タブをクリックします。&lt;br&gt;
+1.4 ドイツ語を選択し、&lt;strong&gt;開く&lt;/strong&gt; をクリックします。&lt;br&gt;
+1.5 地域の変更としてDeutsch(Deutschland)を選択し、&lt;strong&gt;追加&lt;/strong&gt; をクリックします。&lt;br&gt;
+&lt;strong&gt;2. 入力ロケールが正しくインストールおよび構成されていることを確認してください。&lt;/strong&gt; &lt;br&gt;
+2.1 この対話型セッションで &lt;strong&gt;メモ帳&lt;/strong&gt;を起動します。&lt;br&gt;
+2.2 英語で数文字を入力してください。&lt;br&gt;
+2.3 左Alt + Shiftを押します。&lt;br&gt;
+2.4 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;これで、ドイツ語の入力ロケールが、 &lt;strong&gt;デフォルトユーザ&lt;/strong&gt; プロファイルと、ステップ1.1でシステムにログオンしたユーザに対して有効になります。&lt;/p&gt;
+&lt;p&gt;3.GO-Globalセッション中に入力ロケールを切り替えます。&lt;br&gt;
+3.1 GO-Globalクライアントを起動し、手順1.1で使用したアカウントでサーバに接続します。&lt;br&gt;
+3.2 &lt;strong&gt;メモ帳&lt;/strong&gt; を起動します。&lt;br&gt;
+3.3 英語で数文字を入力してください。&lt;br&gt;
+3.4 左Alt + Shiftを押します。&lt;br&gt;
+3.5 数文字を入力して、それらがドイツ語で表示されることを確認します。&lt;br&gt;&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;&lt;strong&gt;Sign In&lt;/strong&gt; ダイアログが表示されているときは、ユーザは入力ロケールを切り替えることができません。GO-Globalホストのデフォルト言語の入力ロケールが使用されます。&lt;/p&gt;
+&lt;p&gt;Windowsクライアントでは、サーバベースのアプリケーションの選択された入力ロケールは、クライアントコンピュータのシステムトレイに表示されません。&lt;/p&gt;
+
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

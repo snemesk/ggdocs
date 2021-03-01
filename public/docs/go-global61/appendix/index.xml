@@ -1,0 +1,176 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GO-Global Docs – APPENDIX</title>
+    <link>/docs/go-global61/appendix/</link>
+    <description>Recent content in APPENDIX on GO-Global Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61/appendix/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: GO-Globalのリリースバージョンについて</title>
+      <link>/docs/go-global61/appendix/go-globalreleaseversioning/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/appendix/go-globalreleaseversioning/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのバージョン番号には、ソフトウェアのメジャーバージョン、マイナーバージョン、サービスパックバージョン、ビルド番号が含まれています。たとえば、バージョン 6.1.2.37894 では、6 がメジャー バージョン、1 がマイナー バージョン、2 がサービス パック バージョン、37897 がビルド番号となっています。&lt;/p&gt;
+&lt;p&gt;ビルド番号は GO-Global のすべてのリリースで増加します。ビルド番号のみが増加するリリースはパッチです。パッチ リリースには、一般的に緊急性の高い問題や製品の不具合を対象とした修正が含まれています。&lt;/p&gt;
+&lt;p&gt;Service Pack リリースでは、Service Pack 番号が増加します。Service Packリリースにはバグフィックスが含まれ、先行するPatchリリースでリリースされた修正が含まれます。また、Service Pack リリースには、新しいプラットフォームへの対応やマイナーな機能強化が含まれる場合があります。&lt;/p&gt;
+&lt;p&gt;フィーチャーアップグレードでは、マイナーバージョン数が増加します。Feature Upgradesには、重要な機能の追加や変更が含まれます。また、Feature Upgrades には、以前の Service Pack リリースや Patch リリースでリリースされた変更を含む、バグ修正やセキュリティの改善も含まれます。機能アップグレードには、一般的に管理ユーザーインターフェースの変更が含まれますが、エンドユーザーが製品を使用する方法を大幅に変更するものではありません。&lt;/p&gt;
+&lt;p&gt;メジャーバージョンアップでは、メジャーバージョン番号が増加します。メジャー アップグレードには、GO-Global の基礎となるアーキテクチャまたはユーザー インターフェイスの大幅な変更が含まれます。また、先行する機能アップグレード、サービス パック、およびパッチでリリースされたすべての機能および修正を含む、重要な機能の追加およびバグ修正も含まれます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: RapidX Protocol (RXP)</title>
+      <link>/docs/go-global61/appendix/rapidxprotocolrxp/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/appendix/rapidxprotocolrxp/</guid>
+      <description>
+        
+        
+        &lt;p&gt;RXPは、GO-Globalのクライアント - ホスト間のすべてのデータ通信に使用される独自のプロトコルです。デフォルトでは、RXPはTCPポート491を介して動作しますが、互換性のある任意のデータポートを介して動作するようにすることもできます。RXPは標準のTCP/IPプロトコルスタックの一部として動作します。低帯域幅接続を処理するように設計および最適化されています。RXP表示プロトコルはほぼ完全に非同期です。つまり、ホストとクライアントがピアからの応答を待つことはめったにありません。&lt;/p&gt;
+&lt;p&gt;RXPは現在、56ビットDESから256ビットAESまでの暗号化レベルを処理するように設計されています。TCPトランスポートが選択されると、GO-GlobalはGraphOnのDES(Data Encryption Standard)の実装を使用します。SSLトランスポートが選択されると、GO-GlobalはOpenSSLのトランスポート層セキュリティ(TLS)の実装とOpenSSLの選択された暗号の実装、例えばAdvanced Encryption Standard(AES)を使用します。&lt;/p&gt;
+&lt;p&gt;クライアントがApplication Publishing Service(APS)への接続を開くと、APSは最初にクライアントとのRXP接続のネゴシエーションを試みます。APSがクライアントから受信するデータがRXPクライアントが送信するデータと一致しない場合、APSはクライアントとのWebSocket(ws://)またはWebSocket Secure(wss://)接続のネゴシエーションを試みます。&lt;/p&gt;
+&lt;p&gt;プロトコルネゴシエーション中に、次のいずれかが発生すると、APSは接続を閉じます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;プロトコルのネゴシエーションに必要な時間がHostProperties.xmlファイルの &lt;strong&gt;ProtocolNegotiationTimeout&lt;/strong&gt; プロパティの値を超えた場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのRXP接続をネゴシエートしようとしているとAPSが判断した後、RXP接続をネゴシエートしようとしているときにエラーが発生した場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのWebSocket(ws://)接続のネゴシエートを試み、ホストがTLS接続を受け入れるように構成されている(SSLトランスポートが選択されている)場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;クライアントがホストとのWebソケットセキュア(wss://)接続のネゴシエートを試み、ホストがTLS接続を受け入れるように構成されていない(TCPトランスポートが選択されている)場合&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: トランスポート層のセキュリティ</title>
+      <link>/docs/go-global61/appendix/transportlayersecurity/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/appendix/transportlayersecurity/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-GlobalにはTLSv1.0、TLSv1.1、およびTLSv1.2が含まれていますが、GO-Globalは最も安全な共有プロトコルをネゴシエートします。したがって、GO-GlobalホストのAdmin ConsoleでSSLトランスポートが選択されている場合、サポートされているすべてのバージョンのGO-Globalクライアントとホスト間の接続にはTLSv1.2が使用されます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: Encryption and Exportation Regulations</title>
+      <link>/docs/go-global61/appendix/encryptionandexportationregulations/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/appendix/encryptionandexportationregulations/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Global incorporates an open-source, publicly available SSL software encryption module from the OpenSSL project. GO-Global&amp;rsquo;s use of OpenSSL and other encryption technologies has been reviewed by the United States Department of Commerce and classified under the Export Commodity Control Number (ECCN) 5D002. The ECCN 5D002 classification allows GraphOn and its resellers to export and re-export GO-Global with support for up to 256-bit encryption, implemented by OpenSSL, to government and non-government entities, with the exception of USA embargoed countries, and except when GO-Global will be used in the design, development, production or use of nuclear, chemical or biological weapons or missiles.&lt;/p&gt;
+&lt;p&gt;Commodity Classification Automated Tracking System (CCATS) is an alphanumeric code assigned by the United States Bureau of Industry and Security (BIS) to products that it has classified under the Export Administration Regulations (EAR). GraphOn&amp;rsquo;s CCATS number is G066799.&lt;/p&gt;
+&lt;p&gt;For further inquiries regarding GraphOn&amp;rsquo;s CCATS number or ECCN classification, or for a copy of GraphOn&amp;rsquo;s export license, please contact &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt;.&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: サードパーティコンポーネント</title>
+      <link>/docs/go-global61/appendix/third-partycomponent/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/appendix/third-partycomponent/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalには、オープンソース ソフトウェアを含む第三者が提供するソフトウェアが含まれています。これらのコンポーネントは以下に記載されています。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;サードパーティコンポーネント&lt;/th&gt;
+&lt;th&gt;ライセンス契約&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;Apache Tomcat&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.apache.org/licenses/LICENSE-2.0&#34;&gt;http://www.apache.org/licenses/LICENSE-2.0&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Adobe Integrated Runtime&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://labs.adobe.com/technologies/eula/air.html&#34;&gt;https://labs.adobe.com/technologies/eula/air.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;BlazeDS&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.gnu.org/licenses/lgpl.txt&#34;&gt;http://www.gnu.org/licenses/lgpl.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Codejock Software Xtreme Skinframework&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.codejock.com/products/licensefaq.asp&#34;&gt;http://www.codejock.com/products/licensefaq.asp&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Flex&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://labs.adobe.com/technologies/eula/flexbuilder_linux.html&#34;&gt;https://labs.adobe.com/technologies/eula/flexbuilder_linux.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Java Runtime Environment&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html&#34;&gt;https://www.oracle.com/technetwork/java/javase/jre-8-readme-2095710.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;libpng&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.libpng.org/pub/png/src/libpng-LICENSE.txt&#34;&gt;http://www.libpng.org/pub/png/src/libpng-LICENSE.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;OpenSSL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.openssl.org/source/license.html&#34;&gt;http://www.openssl.org/source/license.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;PostgreSQL&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://wiki.postgresql.org/wiki/FAQ#What_is_the_license_of_PostgreSQL.3F&#34;&gt;https://wiki.postgresql.org/wiki/FAQ#What_is_the_license_of_PostgreSQL.3F&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Qt&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.gnu.org/licenses/lgpl.txt&#34;&gt;http://www.gnu.org/licenses/lgpl.txt&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;VeryPDF&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.verypdf.com/custom/license_agreement.htm&#34;&gt;http://www.verypdf.com/custom/license_agreement.htm&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;win-acme&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://github.com/PKISharp/win-acme/blob/master/LICENSE&#34;&gt;https://github.com/PKISharp/win-acme/blob/master/LICENSE&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;XML Parser Library&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;https://www.applied-mathematics.net/tools/xmlparser_doc/html/index.html&#34;&gt;https://www.applied-mathematics.net/tools/xmlparser_doc/html/index.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;Zlib&lt;/td&gt;
+&lt;td&gt;&lt;a href=&#34;http://www.zlib.net/zlib_license.html&#34;&gt;http://www.zlib.net/zlib_license.html&lt;/a&gt;&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>

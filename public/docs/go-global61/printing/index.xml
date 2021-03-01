@@ -1,0 +1,450 @@
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>GO-Global Docs – 印刷</title>
+    <link>/docs/go-global61/printing/</link>
+    <description>Recent content in 印刷 on GO-Global Docs</description>
+    <generator>Hugo -- gohugo.io</generator>
+    
+	  <atom:link href="/docs/go-global61/printing/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+      
+        
+      
+    
+    
+    <item>
+      <title>Docs: 印刷</title>
+      <link>/docs/go-global61/printing/printing/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/printing/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、すべてのクライアントでクライアント側の印刷をサポートします。デフォルトでは、GO-Globalは、ユーザがGO-Globalホストにサインインすると、クライアントのデフォルトプリンタ情報を自動的に検出します。これには、デフォルトのプリンタのポートとプリンタドライバが含まれます。プリンタドライバがGO-Globalホストにインストールされていない場合、GO-Globalはドライバを見つけて自動的にインストールしようとします。&lt;/p&gt;
+&lt;p&gt;GO-Globalホスト上でアプリケーションを実行すると、ネットワークプリンタやコンピュータに直接接続されているプリンタ(シリアルポート、パラレルポート、USBポートなど)で印刷できます。&lt;/p&gt;
+&lt;p&gt;管理者は、 &lt;strong&gt;-ac&lt;/strong&gt;および &lt;strong&gt;printerconfig&lt;/strong&gt;のGO-Global起動パラメータを使用して、使用可能なプリンタを制御できます。&lt;/p&gt;
+&lt;p&gt;ショートカットからGO-Globalを実行する場合は、GO-Globalホスト上で実行されているアプリケーションから&amp;quot;all&amp;quot;、&amp;ldquo;none&amp;rdquo;、&amp;ldquo;default&amp;quot;を指定して-acパラメータを使用します。例えば全てのプリンタを使用できるようにするには、ターゲットを次のように指定してショートカットを作成します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;&amp;quot;C：¥Program Files¥GraphOn¥GraphOn\AppController\AppController.exe&amp;quot; -ac all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;と指定したターゲットでショートカットを作成します。&lt;/p&gt;
+&lt;p&gt;同様に、ハイパーリンクからGO-Globalを実行する場合は、&lt;strong&gt;printerconfig&lt;/strong&gt;パラメータに &amp;ldquo;all&amp;rdquo;、 &amp;ldquo;none&amp;rdquo;、 &amp;ldquo;default&amp;quot;を指定します。たとえば、次のハイパーリンクを使用すると、すべてのプリンタが使用可能になります。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;http://hostname/goglobal/logon.html?printerconfig=all
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;オプションを指定しない場合、GO-Globalは自動的にユーザのデフォルトプリンタのみを設定します。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+クライアントプリンタを設定するには、 &lt;strong&gt;印刷スプーラサービス&lt;/strong&gt;がGO-Globalホスト上で実行されている必要があります。
+&lt;/div&gt;
+
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタドライバへのアクセスを指定する</title>
+      <link>/docs/go-global61/printing/designatingaccesstoprinterdrivers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/designatingaccesstoprinterdrivers/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、次のソースからプリンタドライバを入手できます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Universalプリンタドライバ:&lt;/strong&gt; GO-Globalには、任意のクライアントプリンタに印刷できる &lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt; が含まれています。このオプションを有効にすると、Universalプリンタドライバを使用してクライアントプリンタを設定できます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Windowsプリンタドライバ:&lt;/strong&gt; 既にインストールされているネイティブドライバを使用してプリンタを構成できるようにするには、 &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; オプションを有効にします。GO-GlobalがMicrosoft Windowsに付属のネイティブプリンタドライバを自動的にインストールできるようにするには、自動的にドライバをインストールします。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;のみが有効な場合、Universalプリンタドライバのみがプリンタドライバとして使用されます。ネイティブドライバは使用されません。これがデフォルト設定です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; を有効にすると、ホストにインストールされているネイティブプリンタドライバが使用されます。プリンタのネイティブドライバがインストールされていない場合、またはプリンタのネイティブドライバがType4プリンタドライバ(GO-Globalはサポートしていない)である場合、&lt;strong&gt;[Universal Printer Driver option]&lt;/strong&gt; オプションがオンになっていると、そのプリンタはUniversalプリンタドライバを使用するように構成されます。そうしないと、Universalプリンタドライバーオプションがチェックされていない場合、ユーザはプリンタを使用できません。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;または &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt;が有効になっていない場合、プリンタは設定されず、クライアントの印刷は無効になります。&lt;/p&gt;
+&lt;p&gt;Universalプリンタドライバは、Windows、Linux、およびMac OS Xでサポートされています。Universalプリンタドライバで印刷する場合、ユーザ(またはグループ)はTempディレクトリにフルアクセスする必要があります。&lt;/p&gt;
+&lt;p&gt;Universalプリンタドライバを有効にすると、 &lt;strong&gt;Preview PDF&lt;/strong&gt;というプリンタが各セッションで構成されます。このプリンタに印刷されたドキュメントは自動的に.pdfファイルに変換され、クライアントコンピュータに表示されます。ユーザは、自由に文書を保存、印刷、電子メールで送信できます。UniversalプリンタドライバのPDF変換機能を使用するには、Adobe ReaderなどのPDFリーダーがクライアントコンピュータに必要です&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt; は標準の印刷プロパティダイアログを使用し、他のドライバが提供するより高度な印刷オプションのいくつかを提供しないかもしれません。
+&lt;/div&gt;
+
+&lt;p&gt;管理者は、 &lt;strong&gt;Host Option&lt;/strong&gt;ダイアログを使用して、プリンタドライバソースへのアクセスを設定します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-8-1.png&#34; alt=&#34;7-8-1&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;プリンタドライバへのアクセスの指定方法&#34;&gt;プリンタドライバへのアクセスの指定方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、 &lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Printers]&lt;/strong&gt; チェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;目的のドライバソースの横にあるチェックボックスをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;クライアント側の印刷は、デフォルトで有効になっています。管理者は、Admin Consoleの &lt;strong&gt;Host Options&lt;/strong&gt; ダイアログを使用してクライアント側の印刷を無効にします。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントプリンタのサポートの無効方法&#34;&gt;クライアントプリンタのサポートの無効方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;Admin Consoleで、&lt;strong&gt;[All Hosts]&lt;/strong&gt; の一覧から目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;[Tools | Host Options]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Client Access]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;と &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt;を無効にします。これらのオプションのいずれも選択されていない場合、クライアントの印刷は無効になります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタの構成</title>
+      <link>/docs/go-global61/printing/printerconfiguration/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/printerconfiguration/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalクライアントがホストに接続すると、 &lt;strong&gt;プロキシプリンタ&lt;/strong&gt;が自動的にホスト上に作成され、クライアントプリンタに印刷するためのインタフェースとして機能します。プロキシプリンタは、GO-Globalセッションで実行されているアプリケーションとクライアントプリンタ間のブリッジとしてGO-Globalがホスト上に設定するプリンタです。プロキシプリンタは自動または手動で設定できます。プロキシプリンタを設定する場合は、ネイティブプリンタドライバが優先されます。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタを設定する場合は、ネイティブプリンタドライバが推奨されます(使用可能で、設定によって使用可能な場合)。ネイティブドライバが利用できないとき、代わりに &lt;strong&gt;Universalプリンタドライバ&lt;/strong&gt;が使用できます。&lt;/p&gt;
+&lt;p&gt;管理者がプロキシプリンタを作成するときに使用するプリンタドライバを管理する方法はいくつかあります。クライアントプリンタからの設定は、プロキシプリンタにも反映されます。セッションが終了すると、セッションのプロキシプリンタは削除されます。セッションが切断されても、プロキシプリンタは削除されません。システム上のすべてのプロキシプリンタは、Application Publishing Serviceの起動時に削除されます。&lt;/p&gt;
+&lt;p&gt;プロキシプリンタが設定されている場合、ネイティブプリンタドライバを選択するときの優先順位の階層があります。 &lt;strong&gt;Windowsプリンタドライバ&lt;/strong&gt; オプションがAdmin Consoleで無効になっている場合、この階層は適用されません。&lt;/p&gt;
+&lt;p&gt;ネイティブドライバは次の順序で選択されます。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;プリンタアプレット&lt;/strong&gt; プリンタアプレットでユーザーが手動でプリンタドライバを選択すると、他のすべてのドライバ選択方法よりも優先されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;マップされたプリンタドライバ&lt;/strong&gt; MappedPrinterDrivers.xmlには、各ドライバに使用できるドライバ名のリストが含まれています。このファイルはApplication Publishing Serviceによって生成されますが、管理者が手動で編集することもできます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;クライアントドライバ名&lt;/strong&gt; クライアントにインストールされているドライバの正確な名前のドライバが、プロキシプリンタの設定に使用されます。&lt;/li&gt;
+&lt;/ul&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタドライブマッピング</title>
+      <link>/docs/go-global61/printing/mappingprinterdrivers/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/mappingprinterdrivers/</guid>
+      <description>
+        
+        
+        &lt;p&gt;管理者は、 &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を編集してプリンタドライバをマップできます。ほとんどのGO-Globalの構築では、管理者はこのファイルを編集する必要はありません。これは、ホストのドライバ名がクライアントの名前と完全に一致しない場合、または管理者がネイティブドライバを上書きしてクライアントに別のプリンタドライバまたはUniversalプリンタドライバを使用させたい場合に使用するドライバを指定するために使用されます。&lt;/p&gt;
+&lt;h3 id=&#34;別のプリンタドライバを指定する方法&#34;&gt;別のプリンタドライバを指定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;値フィールドからドライバ名を削除します。上記の例では、HP LaserJet 2100 Series PSを削除し、目的のプリンタドライバと交換します。&lt;/li&gt;
+&lt;li&gt;ファイルを保存してください。この変更は、次にユーザがGO-Globalセッションを開始したときに有効になります。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;上記の例では&lt;property id=&#34;HP LaserJet 2100 Series PS&#34; type=&#34;STRING&#34;&gt;がクライアントで使用されているドライバです。&lt;/p&gt;
+&lt;p&gt;&lt;value&gt;HP LaserJet 2100 Series PS&lt;/value&gt;は、ホスト上でマッピングされるべきドライバです。&lt;/p&gt;
+&lt;p&gt;マッピングプリンタドライバを使用して、プリンタにUniversalプリンタドライバを使用させることもできます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタにuniversalプリンタドライバの使用を強制する方法&#34;&gt;プリンタにUniversalプリンタドライバの使用を強制する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;値フィールドからドライバ名を削除します。上記の例では、HP LaserJet 2100 Series PSを削除し、それをUniversalリモートプリンタに置き換えます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;Universal Remote Printer&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;次回ユーザがホストに接続したときには、Universalプリンタドライバを使用してプリンタが設定されます。&lt;/p&gt;
+&lt;p&gt;複数のドライバをセミコロンで区切ることによって、&amp;lt;値&amp;gt;フィールドに指定できます。&lt;/p&gt;
+&lt;h3 id=&#34;追加のドライバを指定する方法&#34;&gt;追加のドライバを指定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:¥ProgramData¥GraphOn&lt;/code&gt;または&lt;code&gt;C:¥Documents and Settings¥All Users¥Application Data¥GraphOn&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を探します。&lt;/li&gt;
+&lt;li&gt;ワードパッドでファイルを開き、クライアントプリンタドライバの名前を検索します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;追加のドライバを指定してください。たとえば、HP LaserJet 2100 Series PSをリストに追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2200 Series PS;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;管理者は、無制限の数のドライバ名を値に追加できます。GO-Globalは、指定された順序でドライバを使用してクライアントプリンタを設定しようとします。セミコロンで区切られたドライバは、プロキシプリンタをインストールするときに使用されるドライバの優先順位を指定します。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタドライバマッピングを削除する方法&#34;&gt;プリンタドライバマッピングを削除する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;テキストエディタで &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を開き、変更された行全体を削除します。たとえば、次のように削除します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;property id=&amp;quot;HP LaserJet 2100 Series PS&amp;quot; type=&amp;quot;STRING&amp;quot;&amp;gt; 
+&amp;lt;value&amp;gt;HP LaserJet 2100 Series PS&amp;lt;/value&amp;gt; 
+&amp;lt;/property&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; ファイルを削除して、以前の変更を削除することができます。ユーザがホストにサインインすると、ファイルが再作成されます。&lt;/p&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+&lt;p&gt;クライアントプリンタは、クライアントのセッション中に一時的にGO-Globalホストにインストールされます。プリンタドライバは恒久的にインストールされています。管理者は、GO-GlobalホストのPrintersフォルダにあるプリンタとドライバのリストを表示できます。&lt;/p&gt;
+&lt;p&gt;すべての新規ユーザにデフォルトのプリンタを追加するには、次の記事を参照してください。&lt;/p&gt;
+&lt;p&gt;[https://support.microsoft.com/en-us/kb/252388#%2Fen-us%2Fkb%2F252388]&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;h1 id=&#34;プリンタ設定をファイルへエクスポート&#34;&gt;プリンタ設定をファイルへエクスポート&lt;/h1&gt;
+&lt;p&gt;ほとんどのプリンタは、WindowsのDEVMODE構造体に設定を保存しています。GO-Globalは、ユーザがサインアウトしたときに各プリンタのDEVMODE構造体の内容を保存し、ユーザがサインインしてプリンタが再作成されたときにこれらの設定を復元します。&lt;/p&gt;
+&lt;p&gt;管理者はエントリ &lt;strong&gt;&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;&lt;/strong&gt; を &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; に追加できるため、ユーザがプリンタの設定を保存すると、その設定はWindowsのDEVMODE構造体ではなくファイルに書き込まれます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタ設定をファイルへエクスポートする方法&#34;&gt;プリンタ設定をファイルへエクスポートする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を見つけます。&lt;/li&gt;
+&lt;li&gt;ファイルをテキストエディタで開き、クライアントプリンタドライバの名前を検索します。次に例を示します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;alternate_driver_name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt; &amp;lt;/alternate_driver_name&amp;gt;
+&amp;lt;/driver&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;次のように、エントリ &amp;lt;export_printer_settings&amp;gt; true &amp;lt;/export_printer_settings&amp;gt;を追加します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;alternate_driver_name=&amp;quot;HP LaserJet 2100 Series PS&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;/alternate_driver_name&amp;gt;
+&amp;lt;/driver&amp;gt; 
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;プリンタマッピングのデフォルトプリンタ設定ファイルの作成&#34;&gt;プリンタマッピングのデフォルトプリンタ設定ファイルの作成&lt;/h1&gt;
+&lt;p&gt;管理者は、マップされたプリンタのデフォルトプリンタ設定を含むファイルを作成できます。エントリ &lt;strong&gt;&amp;lt;default_printer_settings_file&amp;gt;&lt;/strong&gt; を追加して &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; にプリンタ設定ファイルを指定すると、 &lt;strong&gt;&amp;lt;export_printer_settings&amp;gt;&lt;/strong&gt; がfalseに設定されているかどうかにかかわらず、管理者がユーザの個別ファイルが存在しない場合にプリンタのデフォルト設定を指定できます。ユーザはまだプリンタ設定を変更していません。プリンタ設定を設定したら、設定をファイルにエクスポートしてから、デフォルトのプリンタ設定ファイルを &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; に追加します。デフォルトの設定ファイルは、すべてのユーザがアクセスできるように、公開された場所に保存する必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタの環境設定を設定する方法&#34;&gt;プリンタの環境設定を設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;コントロールパネルから、 &lt;strong&gt;デバイスとプリンタ&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;目的のプリンタを右クリックして &lt;strong&gt;[印刷設定]&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;プリンタの設定を編集して、 &lt;strong&gt;[適用]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックして &lt;strong&gt;[印刷設定]&lt;/strong&gt; ダイアログを閉じます。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-10-2.png&#34; alt=&#34;7-10-2&#34;&gt;&lt;/p&gt;
+&lt;h3 id=&#34;新しい印刷設定をファイルにエクスポートする方法&#34;&gt;新しい印刷設定をファイルにエクスポートする方法&lt;/h3&gt;
+&lt;p&gt;管理者としてコマンドプロンプトを実行し、次のコマンドを入力します。&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rundll32.exe printui.dll PrintUIEntry /Ss /n &amp;quot;printer name&amp;quot; /a &amp;quot;full path to settings file&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;p&gt;例:&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;rundll32.exe printui.dll PrintUIEntry /Ss /n &amp;quot;HP Officejet Pro 8600&amp;quot; /a
+&amp;quot;C:\printersettings\Officejet.dat&amp;quot;
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;mappedprinterdriversxmlにデフォルトのプリンタ設定ファイルを作成する方法&#34;&gt;MappedPrinterDrivers.xmlにデフォルトのプリンタ設定ファイルを作成する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;で &lt;strong&gt;MappedPrinterDrivers.xml&lt;/strong&gt; を見つけます。&lt;/li&gt;
+&lt;li&gt;以下を追加してください。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;pre&gt;&lt;code&gt;&amp;lt;driver name=&amp;quot;printer driver name&amp;quot;&amp;gt;
+&amp;lt;alternate_driver name=&amp;quot;alternate driver name&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;default_printer_settings_file&amp;gt;&amp;quot;full path to settings file” &amp;lt;/default_printer_settings_file&amp;gt;
+&amp;lt;/alternate_driver&amp;gt;
+&amp;lt;/driver&amp;gt;
+For example:
+&amp;lt;driver name=&amp;quot;HP Officejet Pro 8600&amp;quot;&amp;gt;
+&amp;lt;alternate_driver name=&amp;quot;OfficeJet Driver 1&amp;quot;&amp;gt;
+&amp;lt;export_printer_settings&amp;gt;true&amp;lt;/export_printer_settings&amp;gt;
+&amp;lt;default_printer_settings_file&amp;gt;&amp;quot;C:\printersettings\Officejet.dat.&amp;quot;&amp;lt;/default_printer_settings_file&amp;gt;
+&amp;lt;/&amp;lt;alternate_driver&amp;gt;
+&amp;lt;/driver&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;ol start=&#34;4&#34;&gt;
+&lt;li&gt;ファイルを保存してください。この変更は、次にユーザがGO-Globalセッションを開始したときに有効になります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: クライアントプリンタ名のカスタマイズ</title>
+      <link>/docs/go-global61/printing/clientprinternamingcustomization/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/clientprinternamingcustomization/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalは、クライアントマシンに設定されている各プリンタについて、ホストにプリンタをインストールします。これらのプリンタはプロキシプリンタと呼ばれ、GO-Global経由で印刷するときにユーザに表示されるプリンタです。複数のユーザがGO-Globalホストに接続するので、これらのプリンタは、ユーザが自分のプリンタだけを見ることができるようにフィルタリングする必要があります。これには、各プリンタに一意の識別子を割り当てる必要があります。&lt;/p&gt;
+&lt;p&gt;レジストリを通じて、管理者はこれらのプロキシプリンタ名の形式を指定し、ユーザ名、クライアントコンピュータのIPアドレス、クライアントマシン名などの情報を含めることができます。 &lt;strong&gt;PrinterNameFormat&lt;/strong&gt; レジストリキーは、GO-Globalセッションの開始後に作成されます。&lt;/p&gt;
+&lt;p&gt;管理者は、次のトークンからプリンタ文字列名のサフィックスを作成できます。&lt;/p&gt;
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr&gt;
+&lt;th&gt;トークン&lt;/th&gt;
+&lt;th&gt;説明&lt;/th&gt;
+&lt;th&gt;例&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr&gt;
+&lt;td&gt;%U&lt;/td&gt;
+&lt;td&gt;ユーザ名&lt;/td&gt;
+&lt;td&gt;Wilson&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%I&lt;/td&gt;
+&lt;td&gt;クライアントの IP アドレス&lt;/td&gt;
+&lt;td&gt;192.168.100.147&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%M&lt;/td&gt;
+&lt;td&gt;クライアントの MAC アドレス&lt;/td&gt;
+&lt;td&gt;001122334455&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%C&lt;/td&gt;
+&lt;td&gt;クライアントのマシン名&lt;/td&gt;
+&lt;td&gt;HRWorkstation&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+&lt;td&gt;%S&lt;/td&gt;
+&lt;td&gt;サーバのマシン名&lt;/td&gt;
+&lt;td&gt;Server1&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+&lt;h3 id=&#34;クライアントプリンタ名のカスタマイズ方法&#34;&gt;クライアントプリンタ名のカスタマイズ方法&lt;/h3&gt;
+&lt;p&gt;1.レジストリエディタ(regedit.exe)を実行します。
+2. レジストリエディタで、 &lt;strong&gt;HKEY_LOCAL_MACHINE&lt;/strong&gt; キーを展開します。
+3. &lt;strong&gt;PrinterNameFormat&lt;/strong&gt;キーを見つけます。&lt;code&gt;[HKLM\Software\GraphOn\GO-Global\AppServer\PrinterNameFormat]&lt;/code&gt;
+4. **[PrinterNameFormat]**を右クリックして、 &lt;strong&gt;[Modify]&lt;/strong&gt; を選択します。
+5. &lt;strong&gt;[値のデータ]&lt;/strong&gt; フィールドに、1つまたは複数のクライアントプリンタカスタマイズトークンを入力します。
+6. レジストリエディタを終了します。&lt;/p&gt;
+&lt;p&gt;PrinterNameFormatキーは、デフォルトで(from ％C)に設定されています。上記の例を使用すると、プリンタ名は次のようになります。PrinterName(from HRWorkstation)&lt;/p&gt;
+&lt;p&gt;PrinterNameFormatストリング内の％以外の特殊文字はトークンではないため、文字通りに使用されます。&lt;/p&gt;
+&lt;p&gt;許可されていない12文字があります。! ,  = / : * ? &amp;quot; &amp;lt; &amp;gt; and |.これらの文字のいずれかが文字列で使用されている場合、それらはハイフンに置き換えられます。&lt;/p&gt;
+&lt;h1 id=&#34;印刷可能領域を調整する&#34;&gt;印刷可能領域を調整する&lt;/h1&gt;
+&lt;p&gt;場合によっては、GO-Global Universal Printer Driver(UPD)を使用して印刷するアプリケーションでは、ページの端の近くにあるドキュメントの一部が印刷されない場合、ドキュメントの一部が切り取られることがあります。この問題に対処する方法は2つあります。代替の.PPDファイルを使用してドキュメントの印刷可能領域を定義する方法と、印刷ジョブの拡大縮小を有効にする方法です。&lt;/p&gt;
+&lt;p&gt;1番目の方法は、代替.PPDファイルをインストールする必要があります。&lt;/p&gt;
+&lt;h3 id=&#34;代替のppdファイルをインストールする方法&#34;&gt;代替の.PPDファイルをインストールする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;以下から &lt;strong&gt;UniversalRemotePrinter.ppd&lt;/strong&gt; をダウンロードします。&lt;code&gt;ftp.graphon.com/private/gg6/6.0.0.xxxxx/UniversalRemotePrinter.ppd&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniversalRemotePrinter.ppd&lt;/strong&gt; を次のフォルダにコピーします。&lt;code&gt;C:\Windows\System32\spool\drivers\x64\3&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;UniversalRemotePrinter.bpd&lt;/strong&gt; が存在する場合は削除します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UniversalRemotePrinter.ppdファイルは、Universalプリンタドライバのドライバ設定を定義します。このファイルのデフォルトバージョンでは、ドライバが印刷できる領域はページ全体です。これは、テキストまたはイメージをページの端に印刷できることを意味します。ほとんどのプリンタは物理的にこれに対応していません。代替.PPDファイルは、定義された用紙サイズに対して1/4インチ(6.35 mm)の余白を定義します。これにより、アプリケーションは印刷可能領域を予測し、それによってクリッピングすることなく印刷ジョブをレイアウトすることができます。&lt;/p&gt;
+&lt;p&gt;2番目の方法は、 &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルで &lt;strong&gt;EnablePrintOptions&lt;/strong&gt; プロパティをtrueに設定して、印刷ジョブの拡大縮小を有効にする必要があります。または、ホストがアップグレードされている場合は、 &lt;strong&gt;HostPropertyDefinitions.xml&lt;/strong&gt; を編集します。&lt;/p&gt;
+&lt;h3 id=&#34;印刷ジョブの拡大縮小を有効にする方法&#34;&gt;印刷ジョブの拡大縮小を有効にする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
+&lt;li&gt;テキストエディタで&lt;code&gt;%PROGRAMDATA%\GraphOn\GO-Global\HostProperties.xml&lt;/code&gt;を開きます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;EnablePrintOptions&lt;/strong&gt; プロパティを見つけて、それに関連付けられた値を &amp;ldquo;true&amp;quot;に変更します。&lt;/li&gt;
+&lt;li&gt;PrintOptionsプロパティの値が &amp;ldquo;-printermargins -xoffset 50 -yoffset 30&amp;quot;であることを確認してください。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;HostProperties.xml&lt;/strong&gt; を保存します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; を起動します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;印刷ジョブのスケーリングを有効にすると、印刷可能領域内に収まらない印刷ジョブが縮小され、画像またはテキストが定義された用紙サイズに収まるようになります。スケーリング操作は、GO-Globalクライアントアプリケーションで実行されます。これは、Universalプリンタドライバを使用するように構成されたプリンタにのみ影響します。PDFのプレビュープリンタには影響しません。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+    <item>
+      <title>Docs: プリンタアプレット</title>
+      <link>/docs/go-global61/printing/printersapplet/</link>
+      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
+      
+      <guid>/docs/go-global61/printing/printersapplet/</guid>
+      <description>
+        
+        
+        &lt;p&gt;GO-Globalのプリンタアプレットを使うと、プリンタの追加と削除、プリンタのプロパティの編集、デフォルトプリンタの設定、プリンタドライバの選択、テストページの印刷ができます。プリンタアプレットはプログラムウィンドウからアクセスできます。構成されているすべてのクライアントプリンタと、ユーザがアクセスできるすべてのホストプリンタが一覧表示されます。プリンタのリストは、-acパラメータとprinterconfigパラメータだけでなく、Admin Consoleのプリンタドライバ設定によっても異なります。&lt;/p&gt;
+&lt;p&gt;プリンタアプレットのアイコンについては後述します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/7-10-1.png&#34; alt=&#34;7-10-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザが次回GO-Globalにサインインしたときに、プリンタアプレットで行った設定は保存されます。これらの設定はコマンドラインオプションよりも優先されます。プリンタアプレットで行ったプリンタの変更はすぐに有効になります。ユーザはセッションを再開する必要はありません。&lt;/p&gt;
+&lt;h1 id=&#34;プリンタの追加と削除&#34;&gt;プリンタの追加と削除&lt;/h1&gt;
+&lt;p&gt;プリンタは、プリンタアプレットを介して追加または削除されても、クライアントコンピュータに対して追加または削除されず、GO-Globalで使用するように設定されているプリンタのみが判断されます。&lt;/p&gt;
+&lt;h3 id=&#34;クライアントプリンタを追加する方法&#34;&gt;クライアントプリンタを追加する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Add Printer&lt;/strong&gt; ダイアログから目的のプリンタを選択し、 &lt;strong&gt;Add&lt;/strong&gt; をクリックします。これにより、設定済みプリンタのリストにそのプリンタが追加され、使用可能になります。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プリンタがプリンタアプレットから追加されると、-acコマンドラインオプションやprinterconfigパラメータに関係なく、起動時にプリンタが設定されます。
+&lt;/div&gt;
+
+&lt;h3 id=&#34;プリンタを削除する方法&#34;&gt;プリンタを削除する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Remove&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;リストからプリンタを削除すると、次にユーザがGO-Globalセッションを開始したときにそのプリンタが設定されなくなります。&lt;strong&gt;[追加]&lt;/strong&gt; ボタンをクリックしてリストから選択することで、プリンタをいつでもリストに追加できます。&lt;/p&gt;
+&lt;h1 id=&#34;デフォルトプリンタの設定&#34;&gt;デフォルトプリンタの設定&lt;/h1&gt;
+&lt;p&gt;ユーザは、プリンタアプレットでデフォルトのプリンタを指定できます。デフォルトプリンタは、黒い丸とプリンタ上のチェックマークで示されます。サーバプリンタを含むすべてのプリンタをデフォルトとして指定できます。&lt;/p&gt;
+&lt;h3 id=&#34;デフォルトプリンタを設定する方法&#34;&gt;デフォルトプリンタを設定する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Set Default&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;プリンタ設定の編集&#34;&gt;プリンタ設定の編集&lt;/h1&gt;
+&lt;p&gt;プリンタアプレットを通じて、ユーザはレイアウトの向きや用紙サイズなどのプリンタ設定を編集できます。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタ設定を編集する方法&#34;&gt;プリンタ設定を編集する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Edit]&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;必要に応じてプロパティを編集し、&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+
+
+&lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
+
+
+&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
+プリンタ設定は、ユーザのユーザプロファイルに保存されます。relay serverまたはロードバランサが使用されているマルチホスト環境では、ユーザのプリンタ設定がクラスタ内のすべてのホスト間で確実に複製されるように、移動プロファイルを有効にする必要があります。
+&lt;/div&gt;
+
+&lt;h1 id=&#34;テストページの印刷&#34;&gt;テストページの印刷&lt;/h1&gt;
+&lt;p&gt;ユーザは、プリンタアプレットからテストページを印刷して、プリンタが正しく設定されていることを確認し、プリンタがグラフィックとテキストを正しく印刷しているかどうかを確認できます。テストページには、プリンタ名、モデル、ドライバソフトウェアのバージョンなどの情報も表示されます。これは、プリンタの問題のトラブルシューティングに役立つ場合があります。&lt;/p&gt;
+&lt;h3 id=&#34;テストページを印刷する方法&#34;&gt;テストページを印刷する方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test Page&lt;/strong&gt; ボタンをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&#34;プリンタドライバの変更&#34;&gt;プリンタドライバの変更&lt;/h1&gt;
+&lt;p&gt;プリンタアプレットを通じて、ユーザは自分のプリンタ用に異なるドライバを選択できます。これは、ドライバが正しく機能していない場合や、ユーザがネイティブドライバとユニバーサルプリンタドライバを切り替えたい場合に便利です。&lt;/p&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;リストから目的のプリンタを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Driver]&lt;/strong&gt; ボタンをクリックして &lt;strong&gt;[Select Printer Driver]&lt;/strong&gt; ダイアログを開き、GO-Globalホストマシンに現在インストールされているドライバを一覧表示します。&lt;/li&gt;
+&lt;li&gt;新しいドライバを選択して &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。これで、プリンタは新しいドライバで設定されました。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;UniversalプリンタドライバのみがAdmin Consoleでドライバソースとして指定されている場合、ユーザはドライバを変更できません。ユーザはGO-GlobalのPreview PDFプリンタまたはサーバベースのプリンタのドライバを変更できません。&lt;/p&gt;
+&lt;h1 id=&#34;プリンタ設定のリセット&#34;&gt;プリンタ設定のリセット&lt;/h1&gt;
+&lt;p&gt;ユーザはいつでも、設定やプリンタ設定など、プリンタデータをデフォルト設定にリセットできます。これは、プリンタが正しく設定されていない場合や、ユーザにプリンタの問題が発生している場合に便利です。&lt;/p&gt;
+&lt;h3 id=&#34;プリンタの設定をリセットする方法&#34;&gt;プリンタの設定をリセットする方法&lt;/h3&gt;
+&lt;ol&gt;
+&lt;li&gt;プログラムウィンドウから[File | Printer]の順にクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Reset Printers]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;プリンタ設定をリセットすると、セッションからすべてのプロキシプリンタが削除されます。クライアントプリンタに再度印刷するには、セッションを再開する必要があります。これにより、デフォルトプリンタが元のデフォルト設定にリセットされます。&lt;/p&gt;
+
+      </description>
+    </item>
+    
+  </channel>
+</rss>
