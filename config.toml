@@ -112,7 +112,7 @@ gcs_engine_id = "a1841f91d3ae3d6b1"
 # Enable Algolia DocSearch
 algolia_docsearch = false
 # Enable Lunr.js offline search
-offlineSearch = false
+offlineSearch = true
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
