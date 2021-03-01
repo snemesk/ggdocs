@@ -1,8 +1,8 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>kitASP Docs – イントロダクション</title>
+    <title>GO-Global Docs – イントロダクション</title>
     <link>/docs/deployment-guide/introduction/</link>
-    <description>Recent content in イントロダクション on kitASP Docs</description>
+    <description>Recent content in イントロダクション on GO-Global Docs</description>
     <generator>Hugo -- gohugo.io</generator>
     
 	  <atom:link href="/docs/deployment-guide/introduction/index.xml" rel="self" type="application/rss+xml" />
