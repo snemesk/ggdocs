@@ -21,22 +21,52 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>既知の制限 | GO-Global Docs</title><meta property="og:title" content="既知の制限" />
-<meta property="og:description" content="GO-Globalの既知の制限事項は以下のとおりです。
- GO-Globalはグループポリシーのログオンスクリプトまたはログオフスクリプトをサポートしていません。 MicrosoftのVBScriptsは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。 GO-Globalホスト上のファイルをコピーしてクライアントに貼り付け、既存のファイルを上書きしようとすると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしていません。 GO-GlobalはGO-GlobalセッションでAdobe Acrobat 8.0をサポートしています。以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、Appleのプレビューアプリケーションはサポートされていません。Mac OS Xアプリを実行している場合、印刷するにはAdobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用しています。このポートは変更できません。GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバを使用して印刷することができません。 ライセンスファイルが追加または削除されるたびに、GO-Globalライセンスマネージャーサービスを再起動する必要があります。 日本語キーボードは、Mac OS Xでは-kb ClientSideIMEオプションでのみサポートされています。 クライアントのタスクマネージャが&quot;常にトップにある&quot;に設定されている場合、ペイントの問題が発生することがあります。 クライアントの表示が256色に設定されていると、色が正しく表示されないことがあります。 ジャーナルレコードフックはサポートされていません。そのため、アプリケーションによってはマクロの記録に失敗することがある。 クライアント側のファイルに埋め込まれたOLEオブジェクトは編集できません。OLEオブジェクトの編集に必要なアプリケーションがホスト上で利用可能な場合は、ホスト上のドライブにファイルをコピーして編集し、必要に応じてクライアントにコピーし直してください。 Windows以外のクライアントでは、クライアント上で実行されているアプリケーションとホスト上で実行されているアプリケーションの間では、テキストと画像のみをコピーして貼り付けることができます。 GO-Globalホストがrelay serverに接続されている場合、ホストの設定(公開アプリケーションなど)がrelay serverの設定に置き換わるという警告は表示されません(※1)。 セッションシャドウイングされている間は、切断されたセッションにユーザが再接続することはできません。 GO-Globalは、システムアカウント以外のアカウントでのアプリケーション公開サービスの実行をサポートしていません。 キーボードマッピングコマンドライン引数-kbは、Linuxおよび Mac OS Xでは大文字と小文字が区別されます。 GO-Globalは /3GB スイッチをサポートしていません。 pdfforgeからのPDFCreatorはサポートされていません。 MicrosoftのXPS Document Writerは、ユニバーサルプリンタドライバを使用している場合、クライアントプリンタとしてサポートされていますが、XPS Printer Driverはサポートされていません。 dependent application serverからGO-Globalを管理する場合、異なるアカウントで2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。代わりに、relay serverでAdmin Consoleを実行してください(※1)。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしていません。 Admin Consoleで[Apply Group Policy]が有効になっている場合、セッションの開始に時間がかかる。 Windows統合認証を使用してユーザが認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。 ユーザに対してInternet Explorer拡張セキュリティ設定が有効になっている場合、GO-GlobalセッションからOffice 365にログインするには、*.microsoftonline.comをユーザの信頼できるサイトに追加する必要があります。 Chrome77以降で useApp=true(既定の設定)でGO-Global Webアプリを実行すると、ユーザは GO-Globalアプリを実行するたびに承認するよう求められます。Chromeでは、ユーザが承認ダイアログを回避して常にアプリケーションを実行するオプションがなくなりました。 ユーザはGO-Globalセッションで実行されているChromeからクライアント側のスマートカードにアクセスできません。 環境変数LM_LICENSE_FILEが存在しないか、何も設定されていないか、または HKLM_GlosseSOFTWAREFLEXlm License Manager\GGLicenseManagerLicenseレジストリ値と一致しない場合、GO-Globalホストはライセンスのチェックアウトに失敗します。 いくつかのライセンス構成では(例えば、セントラルライセンスサーバが使用されている場合)、APSはメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: License server system does not support this feature…&ldquo;これらのメッセージは良性です。 Hyper-Vロールが有効になっている場合、Windows Server 2016 および Windows Server 2019でGO-Globalセッションの開始に失敗します。 HostProperties." />
+<meta property="og:description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+Version 6.1.1.30272の既知事象   新しいビデオオプションが有効になっているかどうかに関係なく：
+ Chromeバージョン80がGO-Globalセッションで実行されている場合、ビデオは再生されません。 Windowsオーディオサービスが有効になっていない限り、ビデオはInternetExplorerで再生されません。 WindowsMedia PlayerをGO-Globalセッションで実行すると、ビデオは表示されません。 Windows Media Playerの問題を回避するために、お客様は別のメディアプレーヤを使用することができます。    GO-GlobalホストにTrend Micro Antivirusをインストールすると、セッションの開始に失敗します。この問題を回避するには、aps.exeとlogon.exeをTrend Behavior Monitoringから除外してください。
+  CrowdStrike Falconアンチウイルスソリューションは、GO-Globalホストではサポートされていません。
+  Webアプリが単独で使用されている場合(AppControllerを使用していない場合)、GO-Globalセッションで実行されているアプリケーションの[カット]、[コピー]、[ペースト]メニューオプションを使用して、ローカルとリモートのアプリケーション間でデータを転送することができません。ローカルとリモートのアプリケーション間でデータの切り取り、コピー、貼り付けを行うには、Ctrl&#43;X、Ctrl&#43;C、Ctrl&#43;Vの各キーボードショートカットを使用する必要があります。
+  Windows 10では、公開アプリケーションとしてInternet Explorerを使用して閲覧する場合は、Microsoft Edgeを使用するように指示されます。EdgeはGO-Globalで公開アプリケーションとしてサポートされていません。FirefoxやChrome(64 ビット)などの代替ブラウザを使用してください。
+  Microsoft Remote Desktop クライアントはGO-Globalセッションではサポートされていません。
+  Sentinel One AntivirusまたはKaspersky EndPoint Securityのいずれかがインストールされている場合、Microsoft OfficeアプリケーションはGO-Globalセッションで実行されません。
+  サーバ側の入力メソッドエディタ(IME)は、Windows Server 2019または Windows 10のGO-Globalセッションでは動作しません。
+  Kaspersky Anti-VirusがGO-Globalホストにインストールされている場合、一部のアプリケーションがGO-Globalセッションでの起動に失敗することがあります。この問題を回避するには、Kaspersky Anti-Virusを一時停止してください。
+  Windows 10ホスト上でGO-Globalセッションを実行しているMicrosoft Officeアプリケーションからクライアントコンピュータ上のディレクトリにファイルを保存すると、保存されたファイルと一緒にクライアントディレクトリに一時ファイル(.tmp)が追加で保存されます。
+  Admin Consoleでスマートカードまたはシリアルポートとパラレルポートが有効になっている場合、64ビット版のFirefoxが起動しませんでした。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-global61introduction/knownlimitations/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="既知の制限">
-<meta itemprop="description" content="GO-Globalの既知の制限事項は以下のとおりです。
- GO-Globalはグループポリシーのログオンスクリプトまたはログオフスクリプトをサポートしていません。 MicrosoftのVBScriptsは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。 GO-Globalホスト上のファイルをコピーしてクライアントに貼り付け、既存のファイルを上書きしようとすると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしていません。 GO-GlobalはGO-GlobalセッションでAdobe Acrobat 8.0をサポートしています。以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、Appleのプレビューアプリケーションはサポートされていません。Mac OS Xアプリを実行している場合、印刷するにはAdobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用しています。このポートは変更できません。GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバを使用して印刷することができません。 ライセンスファイルが追加または削除されるたびに、GO-Globalライセンスマネージャーサービスを再起動する必要があります。 日本語キーボードは、Mac OS Xでは-kb ClientSideIMEオプションでのみサポートされています。 クライアントのタスクマネージャが&quot;常にトップにある&quot;に設定されている場合、ペイントの問題が発生することがあります。 クライアントの表示が256色に設定されていると、色が正しく表示されないことがあります。 ジャーナルレコードフックはサポートされていません。そのため、アプリケーションによってはマクロの記録に失敗することがある。 クライアント側のファイルに埋め込まれたOLEオブジェクトは編集できません。OLEオブジェクトの編集に必要なアプリケーションがホスト上で利用可能な場合は、ホスト上のドライブにファイルをコピーして編集し、必要に応じてクライアントにコピーし直してください。 Windows以外のクライアントでは、クライアント上で実行されているアプリケーションとホスト上で実行されているアプリケーションの間では、テキストと画像のみをコピーして貼り付けることができます。 GO-Globalホストがrelay serverに接続されている場合、ホストの設定(公開アプリケーションなど)がrelay serverの設定に置き換わるという警告は表示されません(※1)。 セッションシャドウイングされている間は、切断されたセッションにユーザが再接続することはできません。 GO-Globalは、システムアカウント以外のアカウントでのアプリケーション公開サービスの実行をサポートしていません。 キーボードマッピングコマンドライン引数-kbは、Linuxおよび Mac OS Xでは大文字と小文字が区別されます。 GO-Globalは /3GB スイッチをサポートしていません。 pdfforgeからのPDFCreatorはサポートされていません。 MicrosoftのXPS Document Writerは、ユニバーサルプリンタドライバを使用している場合、クライアントプリンタとしてサポートされていますが、XPS Printer Driverはサポートされていません。 dependent application serverからGO-Globalを管理する場合、異なるアカウントで2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。代わりに、relay serverでAdmin Consoleを実行してください(※1)。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしていません。 Admin Consoleで[Apply Group Policy]が有効になっている場合、セッションの開始に時間がかかる。 Windows統合認証を使用してユーザが認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。 ユーザに対してInternet Explorer拡張セキュリティ設定が有効になっている場合、GO-GlobalセッションからOffice 365にログインするには、*.microsoftonline.comをユーザの信頼できるサイトに追加する必要があります。 Chrome77以降で useApp=true(既定の設定)でGO-Global Webアプリを実行すると、ユーザは GO-Globalアプリを実行するたびに承認するよう求められます。Chromeでは、ユーザが承認ダイアログを回避して常にアプリケーションを実行するオプションがなくなりました。 ユーザはGO-Globalセッションで実行されているChromeからクライアント側のスマートカードにアクセスできません。 環境変数LM_LICENSE_FILEが存在しないか、何も設定されていないか、または HKLM_GlosseSOFTWAREFLEXlm License Manager\GGLicenseManagerLicenseレジストリ値と一致しない場合、GO-Globalホストはライセンスのチェックアウトに失敗します。 いくつかのライセンス構成では(例えば、セントラルライセンスサーバが使用されている場合)、APSはメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: License server system does not support this feature…&ldquo;これらのメッセージは良性です。 Hyper-Vロールが有効になっている場合、Windows Server 2016 および Windows Server 2019でGO-Globalセッションの開始に失敗します。 HostProperties.">
+<meta itemprop="description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+Version 6.1.1.30272の既知事象   新しいビデオオプションが有効になっているかどうかに関係なく：
+ Chromeバージョン80がGO-Globalセッションで実行されている場合、ビデオは再生されません。 Windowsオーディオサービスが有効になっていない限り、ビデオはInternetExplorerで再生されません。 WindowsMedia PlayerをGO-Globalセッションで実行すると、ビデオは表示されません。 Windows Media Playerの問題を回避するために、お客様は別のメディアプレーヤを使用することができます。    GO-GlobalホストにTrend Micro Antivirusをインストールすると、セッションの開始に失敗します。この問題を回避するには、aps.exeとlogon.exeをTrend Behavior Monitoringから除外してください。
+  CrowdStrike Falconアンチウイルスソリューションは、GO-Globalホストではサポートされていません。
+  Webアプリが単独で使用されている場合(AppControllerを使用していない場合)、GO-Globalセッションで実行されているアプリケーションの[カット]、[コピー]、[ペースト]メニューオプションを使用して、ローカルとリモートのアプリケーション間でデータを転送することができません。ローカルとリモートのアプリケーション間でデータの切り取り、コピー、貼り付けを行うには、Ctrl&#43;X、Ctrl&#43;C、Ctrl&#43;Vの各キーボードショートカットを使用する必要があります。
+  Windows 10では、公開アプリケーションとしてInternet Explorerを使用して閲覧する場合は、Microsoft Edgeを使用するように指示されます。EdgeはGO-Globalで公開アプリケーションとしてサポートされていません。FirefoxやChrome(64 ビット)などの代替ブラウザを使用してください。
+  Microsoft Remote Desktop クライアントはGO-Globalセッションではサポートされていません。
+  Sentinel One AntivirusまたはKaspersky EndPoint Securityのいずれかがインストールされている場合、Microsoft OfficeアプリケーションはGO-Globalセッションで実行されません。
+  サーバ側の入力メソッドエディタ(IME)は、Windows Server 2019または Windows 10のGO-Globalセッションでは動作しません。
+  Kaspersky Anti-VirusがGO-Globalホストにインストールされている場合、一部のアプリケーションがGO-Globalセッションでの起動に失敗することがあります。この問題を回避するには、Kaspersky Anti-Virusを一時停止してください。
+  Windows 10ホスト上でGO-Globalセッションを実行しているMicrosoft Officeアプリケーションからクライアントコンピュータ上のディレクトリにファイルを保存すると、保存されたファイルと一緒にクライアントディレクトリに一時ファイル(.tmp)が追加で保存されます。
+  Admin Consoleでスマートカードまたはシリアルポートとパラレルポートが有効になっている場合、64ビット版のFirefoxが起動しませんでした。">
 <meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="357">
+<meta itemprop="wordCount" content="283">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="既知の制限"/>
-<meta name="twitter:description" content="GO-Globalの既知の制限事項は以下のとおりです。
- GO-Globalはグループポリシーのログオンスクリプトまたはログオフスクリプトをサポートしていません。 MicrosoftのVBScriptsは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。 GO-Globalホスト上のファイルをコピーしてクライアントに貼り付け、既存のファイルを上書きしようとすると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしていません。 GO-GlobalはGO-GlobalセッションでAdobe Acrobat 8.0をサポートしています。以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、Appleのプレビューアプリケーションはサポートされていません。Mac OS Xアプリを実行している場合、印刷するにはAdobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用しています。このポートは変更できません。GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバを使用して印刷することができません。 ライセンスファイルが追加または削除されるたびに、GO-Globalライセンスマネージャーサービスを再起動する必要があります。 日本語キーボードは、Mac OS Xでは-kb ClientSideIMEオプションでのみサポートされています。 クライアントのタスクマネージャが&quot;常にトップにある&quot;に設定されている場合、ペイントの問題が発生することがあります。 クライアントの表示が256色に設定されていると、色が正しく表示されないことがあります。 ジャーナルレコードフックはサポートされていません。そのため、アプリケーションによってはマクロの記録に失敗することがある。 クライアント側のファイルに埋め込まれたOLEオブジェクトは編集できません。OLEオブジェクトの編集に必要なアプリケーションがホスト上で利用可能な場合は、ホスト上のドライブにファイルをコピーして編集し、必要に応じてクライアントにコピーし直してください。 Windows以外のクライアントでは、クライアント上で実行されているアプリケーションとホスト上で実行されているアプリケーションの間では、テキストと画像のみをコピーして貼り付けることができます。 GO-Globalホストがrelay serverに接続されている場合、ホストの設定(公開アプリケーションなど)がrelay serverの設定に置き換わるという警告は表示されません(※1)。 セッションシャドウイングされている間は、切断されたセッションにユーザが再接続することはできません。 GO-Globalは、システムアカウント以外のアカウントでのアプリケーション公開サービスの実行をサポートしていません。 キーボードマッピングコマンドライン引数-kbは、Linuxおよび Mac OS Xでは大文字と小文字が区別されます。 GO-Globalは /3GB スイッチをサポートしていません。 pdfforgeからのPDFCreatorはサポートされていません。 MicrosoftのXPS Document Writerは、ユニバーサルプリンタドライバを使用している場合、クライアントプリンタとしてサポートされていますが、XPS Printer Driverはサポートされていません。 dependent application serverからGO-Globalを管理する場合、異なるアカウントで2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。代わりに、relay serverでAdmin Consoleを実行してください(※1)。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしていません。 Admin Consoleで[Apply Group Policy]が有効になっている場合、セッションの開始に時間がかかる。 Windows統合認証を使用してユーザが認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。 ユーザに対してInternet Explorer拡張セキュリティ設定が有効になっている場合、GO-GlobalセッションからOffice 365にログインするには、*.microsoftonline.comをユーザの信頼できるサイトに追加する必要があります。 Chrome77以降で useApp=true(既定の設定)でGO-Global Webアプリを実行すると、ユーザは GO-Globalアプリを実行するたびに承認するよう求められます。Chromeでは、ユーザが承認ダイアログを回避して常にアプリケーションを実行するオプションがなくなりました。 ユーザはGO-Globalセッションで実行されているChromeからクライアント側のスマートカードにアクセスできません。 環境変数LM_LICENSE_FILEが存在しないか、何も設定されていないか、または HKLM_GlosseSOFTWAREFLEXlm License Manager\GGLicenseManagerLicenseレジストリ値と一致しない場合、GO-Globalホストはライセンスのチェックアウトに失敗します。 いくつかのライセンス構成では(例えば、セントラルライセンスサーバが使用されている場合)、APSはメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: License server system does not support this feature…&ldquo;これらのメッセージは良性です。 Hyper-Vロールが有効になっている場合、Windows Server 2016 および Windows Server 2019でGO-Globalセッションの開始に失敗します。 HostProperties."/>
+<meta name="twitter:description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+Version 6.1.1.30272の既知事象   新しいビデオオプションが有効になっているかどうかに関係なく：
+ Chromeバージョン80がGO-Globalセッションで実行されている場合、ビデオは再生されません。 Windowsオーディオサービスが有効になっていない限り、ビデオはInternetExplorerで再生されません。 WindowsMedia PlayerをGO-Globalセッションで実行すると、ビデオは表示されません。 Windows Media Playerの問題を回避するために、お客様は別のメディアプレーヤを使用することができます。    GO-GlobalホストにTrend Micro Antivirusをインストールすると、セッションの開始に失敗します。この問題を回避するには、aps.exeとlogon.exeをTrend Behavior Monitoringから除外してください。
+  CrowdStrike Falconアンチウイルスソリューションは、GO-Globalホストではサポートされていません。
+  Webアプリが単独で使用されている場合(AppControllerを使用していない場合)、GO-Globalセッションで実行されているアプリケーションの[カット]、[コピー]、[ペースト]メニューオプションを使用して、ローカルとリモートのアプリケーション間でデータを転送することができません。ローカルとリモートのアプリケーション間でデータの切り取り、コピー、貼り付けを行うには、Ctrl&#43;X、Ctrl&#43;C、Ctrl&#43;Vの各キーボードショートカットを使用する必要があります。
+  Windows 10では、公開アプリケーションとしてInternet Explorerを使用して閲覧する場合は、Microsoft Edgeを使用するように指示されます。EdgeはGO-Globalで公開アプリケーションとしてサポートされていません。FirefoxやChrome(64 ビット)などの代替ブラウザを使用してください。
+  Microsoft Remote Desktop クライアントはGO-Globalセッションではサポートされていません。
+  Sentinel One AntivirusまたはKaspersky EndPoint Securityのいずれかがインストールされている場合、Microsoft OfficeアプリケーションはGO-Globalセッションで実行されません。
+  サーバ側の入力メソッドエディタ(IME)は、Windows Server 2019または Windows 10のGO-Globalセッションでは動作しません。
+  Kaspersky Anti-VirusがGO-Globalホストにインストールされている場合、一部のアプリケーションがGO-Globalセッションでの起動に失敗することがあります。この問題を回避するには、Kaspersky Anti-Virusを一時停止してください。
+  Windows 10ホスト上でGO-Globalセッションを実行しているMicrosoft Officeアプリケーションからクライアントコンピュータ上のディレクトリにファイルを保存すると、保存されたファイルと一緒にクライアントディレクトリに一時ファイル(.tmp)が追加で保存されます。
+  Admin Consoleでスマートカードまたはシリアルポートとパラレルポートが有効になっている場合、64ビット版のFirefoxが起動しませんでした。"/>
 
 
 
@@ -93,7 +123,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.39fe1134e897ec5ab4a640130921ee621f0c4e8f392afd50f096c97df2ae141dec23e7f08852a7450e81498a4112d68cf9d46d5ac96673443d67d19366c61f5f.json"
+  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
   data-offline-search-base-href="/"
 >
 
@@ -124,7 +154,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.39fe1134e897ec5ab4a640130921ee621f0c4e8f392afd50f096c97df2ae141dec23e7f08852a7450e81498a4112d68cf9d46d5ac96673443d67d19366c61f5f.json"
+  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
   data-offline-search-base-href="/"
 >
 
@@ -218,6 +248,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-global61introductionissuefix" href="/docs/go-global61/go-global61introduction/issuefix/">解決された問題</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61go-global61introductionknownlimitations" href="/docs/go-global61/go-global61introduction/knownlimitations/">既知の制限</a>
       
       
@@ -259,7 +295,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globallicensingcloudlicenses" href="/docs/go-global61/go-globallicensing/cloudlicenses/">cloudライセンスについて</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globallicensingcloudlicenses" href="/docs/go-global61/go-globallicensing/cloudlicenses/">Cloudライセンスについて</a>
       
       
     </li>
@@ -2854,75 +2890,8 @@
 <div class="td-content">
 	<h1>既知の制限</h1>
 	
-	<p>GO-Globalの既知の制限事項は以下のとおりです。</p>
-<ul>
-<li>GO-Globalはグループポリシーのログオンスクリプトまたはログオフスクリプトをサポートしていません。</li>
-<li>MicrosoftのVBScriptsは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。</li>
-<li>GO-Globalホスト上のファイルをコピーしてクライアントに貼り付け、既存のファイルを上書きしようとすると、うまくいかない場合があります。</li>
-<li>GO-GlobalはParallels Virtuozzoをサポートしていません。</li>
-<li>GO-GlobalはGO-GlobalセッションでAdobe Acrobat 8.0をサポートしています。以前のバージョンのAcrobatはサポートされていません。</li>
-<li>Macから印刷する場合、Appleのプレビューアプリケーションはサポートされていません。Mac OS Xアプリを実行している場合、印刷するにはAdobe Readerが必要です。</li>
-<li>GO-Globalのユニバーサルプリンタドライバはポート9010を使用しています。このポートは変更できません。GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバを使用して印刷することができません。</li>
-<li>ライセンスファイルが追加または削除されるたびに、GO-Globalライセンスマネージャーサービスを再起動する必要があります。</li>
-<li>日本語キーボードは、Mac OS Xでは-kb ClientSideIMEオプションでのみサポートされています。</li>
-<li>クライアントのタスクマネージャが&quot;常にトップにある&quot;に設定されている場合、ペイントの問題が発生することがあります。</li>
-<li>クライアントの表示が256色に設定されていると、色が正しく表示されないことがあります。</li>
-<li>ジャーナルレコードフックはサポートされていません。そのため、アプリケーションによってはマクロの記録に失敗することがある。</li>
-<li>クライアント側のファイルに埋め込まれたOLEオブジェクトは編集できません。OLEオブジェクトの編集に必要なアプリケーションがホスト上で利用可能な場合は、ホスト上のドライブにファイルをコピーして編集し、必要に応じてクライアントにコピーし直してください。</li>
-<li>Windows以外のクライアントでは、クライアント上で実行されているアプリケーションとホスト上で実行されているアプリケーションの間では、テキストと画像のみをコピーして貼り付けることができます。</li>
-<li>GO-Globalホストがrelay serverに接続されている場合、ホストの設定(公開アプリケーションなど)がrelay serverの設定に置き換わるという警告は表示されません(※1)。</li>
-<li>セッションシャドウイングされている間は、切断されたセッションにユーザが再接続することはできません。</li>
-<li>GO-Globalは、システムアカウント以外のアカウントでのアプリケーション公開サービスの実行をサポートしていません。</li>
-<li>キーボードマッピングコマンドライン引数-kbは、Linuxおよび Mac OS Xでは大文字と小文字が区別されます。</li>
-<li>GO-Globalは /3GB スイッチをサポートしていません。</li>
-<li>pdfforgeからのPDFCreatorはサポートされていません。</li>
-<li>MicrosoftのXPS Document Writerは、ユニバーサルプリンタドライバを使用している場合、クライアントプリンタとしてサポートされていますが、XPS Printer Driverはサポートされていません。</li>
-<li>dependent application serverからGO-Globalを管理する場合、異なるアカウントで2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。代わりに、relay serverでAdmin Consoleを実行してください(※1)。</li>
-<li>GO-Globalは、システムトレイと統合するアプリケーションをサポートしていません。</li>
-<li>Admin Consoleで[Apply Group Policy]が有効になっている場合、セッションの開始に時間がかかる。</li>
-<li>Windows統合認証を使用してユーザが認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。</li>
-<li>ユーザに対してInternet Explorer拡張セキュリティ設定が有効になっている場合、GO-GlobalセッションからOffice 365にログインするには、*.microsoftonline.comをユーザの信頼できるサイトに追加する必要があります。</li>
-<li>Chrome77以降で useApp=true(既定の設定)でGO-Global Webアプリを実行すると、ユーザは GO-Globalアプリを実行するたびに承認するよう求められます。Chromeでは、ユーザが承認ダイアログを回避して常にアプリケーションを実行するオプションがなくなりました。</li>
-<li>ユーザはGO-Globalセッションで実行されているChromeからクライアント側のスマートカードにアクセスできません。</li>
-<li>環境変数LM_LICENSE_FILEが存在しないか、何も設定されていないか、または HKLM_GlosseSOFTWAREFLEXlm License Manager\GGLicenseManagerLicenseレジストリ値と一致しない場合、GO-Globalホストはライセンスのチェックアウトに失敗します。</li>
-<li>いくつかのライセンス構成では(例えば、セントラルライセンスサーバが使用されている場合)、APSはメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: License server system does not support this feature…&ldquo;これらのメッセージは良性です。</li>
-<li>Hyper-Vロールが有効になっている場合、Windows Server 2016 および Windows Server 2019でGO-Globalセッションの開始に失敗します。</li>
-<li>HostProperties.xmlファイルでClientSideIMEEnabledがtrueに設定されている場合(デフォルト値)、Ctrl-ZおよびCtrl-Yを使用すると、一部のアプリケーションで異常な動作が発生することがあります。これらの問題を回避するには、ClientSideIMEEnabledをfalseに設定してください。</li>
-<li>ユーザがiOSまたはAndroidからSSLトランスポートが有効になっているGO-Globalホストに接続すると、SSL警告ダイアログが表示されます。この問題を回避するには、管理者が中間証明書とルート証明書の両方をサーバ証明書に連結し、ユーザが最初にホストに接続するときに証明書を検査し、正しい場合は[インストール]をクリックして証明書をデバイスにインストールする必要があります。</li>
-<li>Windows Server 2012 R2上でAdobe ReaderをGO-Globalセッションで実行すると、&ldquo;AppContainer System Incompatibility &ldquo;というレポートが表示されます。この問題を回避してメッセージが表示されないようにするには、Adobeの環境設定で「起動時に保護モードを有効にする」オプションのチェックを外すことができます。</li>
-<li>Web MSIが[ホストオプション]ダイアログボックスの[更新]タブを使用してインストールされ、対応するホストMSIがインストールされていない場合、GO-Global\Webディレクトリの内容は更新されますが、[更新]タブではインストールされた更新のリストにWeb MSIが含まれません。</li>
-<li>Adobe Acrobat ProがGO-Globalセッションで実行されると、ホストコンピューターがクラッシュします。この問題を回避するには、Adobe純正モニターサービスとAdobe純正ソフトウェア整合性サービスを無効にします。</li>
-<li>バージョン 6のGO-Globalホストの以前のリリースを最新のリリースにアップグレードしても、変更されていないファイルは置き換えられません。これは設計によるものです。</li>
-<li>Windowsアップデートが最新でない一部のシステムで、GO-Globalホストのインストールに失敗します。これは、MicrosoftのVisual Studio再配布可能ファイルの前提条件がインストールされていない場合に発生します。この問題を回避するには、Windows Updateを適用してください。</li>
-<li>ユーザーがInternetExplorerでGO-GlobalWeb Appを実行し、AppControllerがインストールされていないか有効になっていない場合、ユーザーが最初にCTRL+X、CTRL+C、CTRL+Vを入力すると、Internet Explorerは次のメッセージを表示することがあります。「このWebページにクリップボードへのアクセスを許可しますか？」ユーザが[アクセスを許可する]または[許可しない]をクリックしてこのメッセージを閉じると、ユーザがキーを押すたびに二重文字が表示される場合があります。この問題を回避するには、CTRLキーを押して離します。また、ユーザがCTRL+Cを入力した場合、選択したテキストは&quot;c&quot;に置き換えられる場合があります。この問題を回避するには、アプリケーションの元に戻す機能(たとえば、CTRL+Zを入力)を使用して、削除されたテキストを復元します。上記のメッセージは、セッションごとに1回だけ表示されます。これらの問題は、ユーザがその後CTRL+X、CTRL+C、またはCTRL+Vを押して、GO-Global Web Appのインスタンス内でテキストを切り取り、コピー、または貼り付けた場合には発生しません。</li>
-<li>ユーザがGoogle ChromeまたはMozilla FirefoxでGO-Global Webアプリを実行し、CTRL+NまたはCTRL+Tを入力すると、それぞれ新しいウィンドウまたは新しいタブが開きます。同様に、ユーザがInternet ExplorerでGO-Global Web Appを実行し、CTRL+OまたはCTRL+Pを入力すると、Internet Explorerの[ファイルを開く]ダイアログボックスまたは[印刷]ダイアログボックスがそれぞれ開きます。これらのケースやその他のケースでは、ブラウザはGO-Global Web Appの既定の動作を抑制することを許可していません。</li>
-<li>Mac OS XのSafariでGO-Global Web Appをバックグラウンドタブに移動すると、クライアントはセッションから切断されます。</li>
-<li>ユーザがWindows 7のInternet Explorer 11からGO-Globalホストを参照すると、アプリがインストールされていてもAppControllerのインストールを促すプロンプトが表示されます。ユーザはこのプロンプトを無視することができます。</li>
-<li>GO-Global WebアプリでDPIスケーリングが機能しないことがある。</li>
-<li>バージョン 6のGO-Globalホストがサイレントインストールされている場合、GO-Global Audio Driverがインストールされず、アップグレードされません。この問題を回避するには、GO-Globalホストのインストーラを実行した後、デバイスマネージャからGO-Global Audio Driverをインストールしてください。</li>
-<li>AppControllerがインストール後に自動的に起動しない場合があります。この問題が発生した場合は、[Reload]リンクをクリックしてください。</li>
-</ul>
-<p>(※1)KitASPでサポートしていない機能になります。</p>
-<p>Version 6.1.0.30001のトピックス</p>
-<ol>
-<li>GO-Global6.1は、バージョン6.0のライセンスでは使用できません。以前のバージョンからGO-Global6.1にアップグレードする場合は、新しいバージョン6.1のライセンスファイルが必要になります。カスタマーポータルのライセンス変更要求(LCR)ページから、新しいライセンスファイルを要求できます。</li>
-<li>GO-Global Appは、顧客自身の企業ブランドでパーソナライズできるアプリケーションであるAppControllerに置き換えられました。</li>
-<li>[Host Options]ダイアログには、次の変更が含まれています。</li>
-</ol>
-<ul>
-<li>[Use client’s time zone]オプションが[Client Access]タブに移動しました。</li>
-<li>[Shared account]オプションが[Session Shutdown]タブに移動しました。</li>
-<li>[General]タブが削除されました。</li>
-<li>GO-Globalホストのサーバーロールを指定するための[Configuration]タブが追加されました。</li>
-</ul>
-<ol start="4">
-<li>GO-Global 6.1ホストは、Windows 7、Windows 8、Windows 8.1、Windows Server 2008 R2、またはWindows10バージョン1803以前をサポートしていません。</li>
-<li>GO-Globalは、VMware ESXi、Microsoft Hyper-V、CitrixHypervisorなどのハイパーバイザ製品によって管理されるゲストオペレーティングシステムにインストールして実行できます。GO-Globalは、Hyper-Vの役割または機能が有効になっているコンピュータではサポートされていません。</li>
-<li>バージョン6.1より前のバージョンでは、GO-Globalはデフォルトで依存ホストからのライセンスを管理していました。これにより、管理者は中央のライセンスマネージャを使用するように各依存ホストを構成する必要がありました。バージョン6.1では、GO-Globalはデフォルトでリレーサーバからのライセンスを管理します。これにより、管理者は、ライセンス構成を変更することなく、依存ホストをリレーサーバに追加したり、リレーサーバから削除したりできます。
-6.1では、リレーサーバはリレーロードバランサと呼ばれるようになり、[Host Options]ダイアログの新しい[Configuration]タブで構成されることに注意してください。</li>
-</ol>
-<p>このページの7.15 基本製品とCU1、CU2、CU3、CU4およびCU5セクションで説明されている既知の問題は、「解決された問題」に記載されていない限りCU6でも引き続き存在します。</p>
-<p>Version 6.1.1.30272の既知事象</p>
+	<p>このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、<a href="/issuefix">解決された問題</a>に記載されていない限り次のビルドでも引き続き存在します。</p>
+<h1 id="version-61130272の既知事象">Version 6.1.1.30272の既知事象</h1>
 <ul>
 <li>
 <p>新しいビデオオプションが有効になっているかどうかに関係なく：</p>
@@ -2930,51 +2899,50 @@
 <li>Chromeバージョン80がGO-Globalセッションで実行されている場合、ビデオは再生されません。</li>
 <li>Windowsオーディオサービスが有効になっていない限り、ビデオはInternetExplorerで再生されません。</li>
 <li>WindowsMedia PlayerをGO-Globalセッションで実行すると、ビデオは表示されません。
-Windows Media Playerの問題を回避するために、お客様は別のメディアプレーヤーを使用することができます。</li>
+Windows Media Playerの問題を回避するために、お客様は別のメディアプレーヤを使用することができます。</li>
 </ul>
 </li>
 <li>
-<p>GO-Global HostsにTrend Micro Antivirusをインストールすると、セッションの開始に失敗します。この問題を回避するには、aps.exeとlogon.exeをTrend Behavior Monitoringから除外してください。</p>
+<p>GO-GlobalホストにTrend Micro Antivirusをインストールすると、セッションの開始に失敗します。この問題を回避するには、aps.exeとlogon.exeをTrend Behavior Monitoringから除外してください。</p>
 </li>
 <li>
-<p>CrowdStrike Falconアンチウイルスソリューションは、GO-Global Hostsではサポートされていません。</p>
+<p>CrowdStrike Falconアンチウイルスソリューションは、GO-Globalホストではサポートされていません。</p>
 </li>
 <li>
-<p>Web アプリが単独で使用されている場合（AppController を使用していない場合）、GO-Global セッションで実行されているアプリケーションの [切り取り]、[コピー]、および [貼り付け] メニュー オプションを使用して、ローカルとリモートのアプリケーション間でデータを転送することができません。ローカルとリモートのアプリケーション間でデータの切り取り、コピー、貼り付けを行うには、Ctrl+X、Ctrl+C、Ctrl+V の各キーボード ショートカットを使用する必要があります。</p>
+<p>Webアプリが単独で使用されている場合(AppControllerを使用していない場合)、GO-Globalセッションで実行されているアプリケーションの[カット]、[コピー]、[ペースト]メニューオプションを使用して、ローカルとリモートのアプリケーション間でデータを転送することができません。ローカルとリモートのアプリケーション間でデータの切り取り、コピー、貼り付けを行うには、Ctrl+X、Ctrl+C、Ctrl+Vの各キーボードショートカットを使用する必要があります。</p>
 </li>
 <li>
-<p>Windows 10では、公開アプリケーションとしてInternet Explorerを使用して閲覧する場合は、Microsoft Edgeを使用するように指示されます。Edge は GO-Global で公開アプリケーションとしてサポートされていません。Firefox や Chrome（64 ビット）などの代替ブラウザを使用してください。</p>
+<p>Windows 10では、公開アプリケーションとしてInternet Explorerを使用して閲覧する場合は、Microsoft Edgeを使用するように指示されます。EdgeはGO-Globalで公開アプリケーションとしてサポートされていません。FirefoxやChrome(64 ビット)などの代替ブラウザを使用してください。</p>
 </li>
 <li>
-<p>Microsoft Remote Desktop Client は GO-Global セッションではサポートされていません。</p>
+<p>Microsoft Remote Desktop クライアントはGO-Globalセッションではサポートされていません。</p>
 </li>
 <li>
 <p>Sentinel One AntivirusまたはKaspersky EndPoint Securityのいずれかがインストールされている場合、Microsoft OfficeアプリケーションはGO-Globalセッションで実行されません。</p>
 </li>
 <li>
-<p>サーバー側の入力メソッド エディター（IME）は、Windows Server 2019 または Windows 10 の GO-Global セッションでは動作しません。</p>
+<p>サーバ側の入力メソッドエディタ(IME)は、Windows Server 2019または Windows 10のGO-Globalセッションでは動作しません。</p>
 </li>
 <li>
-<p>Kaspersky Anti-Virus が GO-Global ホストにインストールされている場合、一部のアプリケーションが GO-Global セッションでの起動に失敗することがあります。この問題を回避するには、Kaspersky Anti-Virus を一時停止してください。</p>
+<p>Kaspersky Anti-VirusがGO-Globalホストにインストールされている場合、一部のアプリケーションがGO-Globalセッションでの起動に失敗することがあります。この問題を回避するには、Kaspersky Anti-Virusを一時停止してください。</p>
 </li>
 <li>
-<p>Windows 10 ホスト上で GO-Global セッションを実行している Microsoft Office アプリケーションからクライアント コンピュータ上のディレクトリにファイルを保存すると、保存されたファイルと一緒にクライアント ディレクトリに一時ファイル (.tmp) が追加で保存されます。</p>
+<p>Windows 10ホスト上でGO-Globalセッションを実行しているMicrosoft Officeアプリケーションからクライアントコンピュータ上のディレクトリにファイルを保存すると、保存されたファイルと一緒にクライアントディレクトリに一時ファイル(.tmp)が追加で保存されます。</p>
 </li>
 <li>
-<p>管理者コンソールでスマート カードまたはシリアル ポートとパラレル ポートが有効になっている場合、64 ビット版の Firefox が起動しませんでした。</p>
+<p>Admin Consoleでスマートカードまたはシリアルポートとパラレルポートが有効になっている場合、64ビット版のFirefoxが起動しませんでした。</p>
 </li>
 <li>
-<p>GO-Global Web App の一部のシナリオでコピー アンド ペーストが機能しない。</p>
+<p>GO-Global Web Appの一部のシナリオでコピーアンドペーストが機能しない。</p>
 </li>
 <li>
-<p>GO-Global Web App で DPI スケーリングが機能しないことがある。</p>
+<p>GO-Global Web AppでDPIスケーリングが機能しないことがある。</p>
 </li>
 <li>
-<p>AppController がインストール後に自動的に起動しないことがある。この問題が発生した場合は、[Reload] リンクをクリックしてください。</p>
+<p>AppControllerがインストール後に自動的に起動しないことがある。この問題が発生した場合は、[Reload]リンクをクリックしてください。</p>
 </li>
 </ul>
-<p><a href="http://www.DeepL.com/Translator">www.DeepL.com/Translator</a>（無料版）で翻訳しました。</p>
-<p>Version 6.1.0.30001の既知事象</p>
+<h1 id="version-61030001の既知事象">Version 6.1.0.30001の既知事象</h1>
 <ul>
 <li>
 <p>次のWebブラウザは、公開アプリケーションとしてサポートされていません。</p>
@@ -2984,7 +2952,7 @@ Windows Media Playerの問題を回避するために、お客様は別のメデ
 </ul>
 </li>
 <li>
-<p>GO-GlobalセッションでMicrosoft Officeアプリケーションを実行しているユーザは、ローカルコンピューターにマップされているMyWorkDrivesにファイルを保存できません。</p>
+<p>GO-GlobalセッションでMicrosoft Officeアプリケーションを実行しているユーザは、ローカルコンピュータにマップされているMyWorkDrivesにファイルを保存できません。</p>
 </li>
 <li>
 <p>新しいビデオオプション：</p>
@@ -3007,13 +2975,13 @@ Windows Media Playerの問題を回避するために、お客様は別のメデ
 <p>Open File Redirection機能は、AppController for Windowsでのみサポートされています。</p>
 </li>
 <li>
-<p>ファイルリダイレクト機能を開く機能は、WindowsエクスプローラまたはWindowsの「プログラムから開く」機能を介してファイルを開くアプリケーションではサポートされていません。たとえば、ユーザがアプリケーションの[ファイルを開く]ダイアログボックスでファイルを右クリックして[開く]を選択すると、ファイルが[ホストオプション] | [ホストオプション]でオンになっているタイプの場合でも、ファイルはホスト上のアプリケーションで開きます。クライアントアクセス| クライアントでファイルを開く| ファイルタイプ。 この制限は、バージョン6.1の製品リリースでも引き続き使用されます。</p>
+<p>ファイルを開くリダイレクト機能は、WindowsエクスプローラやWindowsの「ファイルを開く」機能を使ってファイルを開くアプリケーションではサポートされていません。例えば、ユーザがアプリケーションの[ファイルを開く]ダイアログボックスでファイルを右クリックして[開く]を選択した場合、ファイルの種類が[Host Options | Client Access | Open files on client | File Types]でチェックされている場合でも、そのファイルはホスト上のアプリケーションで開きます。この制限はバージョン6.1の製品版でも適用されます。</p>
 </li>
 <li>
-<p>クライアントは、サードパーティのロードバランサーをバイパスして、ファームマネージャを介して間接的にファームホストに接続することができます。</p>
+<p>クライアントは、サードパーティのロードバランサを経由して、ファームマネージャを介して間接的にファームホストに接続することができます。</p>
 </li>
 <li>
-<p>同様に、クライアントは従属ホストに直接接続することができます。</p>
+<p>同様に、クライアントはDependent Hostsに直接接続することができます。</p>
 </li>
 <li>
 <p>ユーザがファームホストに接続すると、Admin ConsoleにはクライアントデバイスのIPアドレスはリストされません。</p>
@@ -3040,11 +3008,59 @@ Windows Media Playerの問題を回避するために、お客様は別のメデ
 <p>Windows 10(バージョン2004)では、Office 2019およびOffice 365はGO-Globalセッションで実行されません。</p>
 </li>
 <li>
-<p>ユーザは、Windows Server 2019および Windows 10のバージョン 1809、1903、および 1909の一部のOffice 2019アプリケーションからクライアントドライブにファイルを保存できません。</p>
+<p>ユーザは、Windows Server 2019および Windows 10のバージョン1809、1903、1909の一部のOffice 2019アプリケーションからクライアントドライブにファイルを保存できません。</p>
 </li>
 <li>
 <p>公開されたアプリケーションとしてのFirefox 64は、Webページを閲覧した後にハングすることがあります。</p>
 </li>
+</ul>
+<h1 id="go-global全体の既知の制限事項は以下のとおりです">GO-Global全体の既知の制限事項は以下のとおりです。</h1>
+<ul>
+<li>GO-Globalはグループポリシーのログオンスクリプトまたはログオフスクリプトをサポートしていません。</li>
+<li>MicrosoftのVBScriptsは、バッチファイルで実行されない限り、ログオンスクリプトとしてサポートされていません。</li>
+<li>GO-Globalホスト上のファイルをコピーしてクライアントに貼り付け、既存のファイルを上書きしようとすると、うまくいかない場合があります。</li>
+<li>GO-GlobalはParallels Virtuozzoをサポートしていません。</li>
+<li>GO-GlobalはGO-GlobalセッションでAdobe Acrobat 8.0をサポートしています。以前のバージョンのAcrobatはサポートされていません。</li>
+<li>Macから印刷する場合、Appleのプレビューアプリケーションはサポートされていません。Mac OS Xアプリを実行している場合、印刷するにはAdobe Readerが必要です。</li>
+<li>GO-GlobalのUniversal Print Driverはポート9010を使用しています。このポートは変更できません。GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはUniversal Print Driverを使用して印刷することができません。</li>
+<li>ライセンスファイルが追加または削除されるたびに、GO-Globalライセンスマネージャーサービスを再起動する必要があります。</li>
+<li>日本語キーボードは、Mac OS Xでは-kb ClientSideIMEオプションでのみサポートされています。</li>
+<li>クライアントのタスクマネージャが&quot;常にトップにある&quot;に設定されている場合、ペイントの問題が発生することがあります。</li>
+<li>クライアントの表示が256色に設定されていると、色が正しく表示されないことがあります。</li>
+<li>ジャーナルレコードフックはサポートされていません。そのため、アプリケーションによってはマクロの記録に失敗することがある。</li>
+<li>クライアント側のファイルに埋め込まれたOLEオブジェクトは編集できません。OLEオブジェクトの編集に必要なアプリケーションがホスト上で利用可能な場合は、ホスト上のドライブにファイルをコピーして編集し、必要に応じてクライアントにコピーし直してください。</li>
+<li>Windows以外のクライアントでは、クライアント上で実行されているアプリケーションとホスト上で実行されているアプリケーションの間では、テキストと画像のみをコピーして貼り付けることができます。</li>
+<li>GO-Globalホストがrelay serverに接続されている場合、ホストの設定(公開アプリケーションなど)がrelay serverの設定に置き換わるという警告は表示されません。</li>
+<li>セッションシャドウイングされている間は、切断されたセッションにユーザが再接続することはできません。</li>
+<li>GO-Globalは、システムアカウント以外のアカウントでのアプリケーション公開サービスの実行をサポートしていません。</li>
+<li>キーボードマッピングコマンドライン引数-kbは、Linuxおよび Mac OS Xでは大文字と小文字が区別されます。</li>
+<li>GO-Globalは /3GB スイッチをサポートしていません。</li>
+<li>pdfforgeからのPDFCreatorはサポートされていません。</li>
+<li>MicrosoftのXPS Document Writerは、ユニバーサルプリンタドライバを使用している場合、クライアントプリンタとしてサポートされていますが、XPS Printer Driverはサポートされていません。</li>
+<li>dependent application serverからGO-Globalを管理する場合、異なるアカウントで2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。代わりに、relay serverでAdmin Consoleを実行してください。</li>
+<li>GO-Globalは、システムトレイと統合するアプリケーションをサポートしていません。</li>
+<li>Admin Consoleで[Apply Group Policy]が有効になっている場合、セッションの開始に時間がかかる。</li>
+<li>Windows統合認証を使用してユーザが認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。</li>
+<li>ユーザに対してInternet Explorer拡張セキュリティ設定が有効になっている場合、GO-GlobalセッションからOffice 365にログインするには、*.microsoftonline.comをユーザの信頼できるサイトに追加する必要があります。</li>
+<li>Chrome77以降で useApp=true(既定の設定)でGO-Global Webアプリを実行すると、ユーザは GO-Globalアプリを実行するたびに承認するよう求められます。Chromeでは、ユーザが承認ダイアログを回避して常にアプリケーションを実行するオプションがなくなりました。</li>
+<li>ユーザはGO-Globalセッションで実行されているChromeからクライアント側のスマートカードにアクセスできません。</li>
+<li>環境変数LM_LICENSE_FILEが存在しないか、何も設定されていないか、または HKLM_GlosseSOFTWAREFLEXlm License Manager\GGLicenseManagerLicenseレジストリ値と一致しない場合、GO-Globalホストはライセンスのチェックアウトに失敗します。</li>
+<li>いくつかのライセンス構成では(例えば、セントラルライセンスサーバが使用されている場合)、APSはメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: License server system does not support this feature…&ldquo;これらのメッセージは良性です。</li>
+<li>Hyper-Vロールが有効になっている場合、Windows Server 2016 および Windows Server 2019でGO-Globalセッションの開始に失敗します。</li>
+<li>HostProperties.xmlファイルでClientSideIMEEnabledがtrueに設定されている場合(デフォルト値)、Ctrl-ZおよびCtrl-Yを使用すると、一部のアプリケーションで異常な動作が発生することがあります。これらの問題を回避するには、ClientSideIMEEnabledをfalseに設定してください。</li>
+<li>ユーザがiOSまたはAndroidからSSLトランスポートが有効になっているGO-Globalホストに接続すると、SSL警告ダイアログが表示されます。この問題を回避するには、管理者が中間証明書とルート証明書の両方をサーバ証明書に連結し、ユーザが最初にホストに接続するときに証明書を検査し、正しい場合は[インストール]をクリックして証明書をデバイスにインストールする必要があります。</li>
+<li>Windows Server 2012 R2上でAdobe ReaderをGO-Globalセッションで実行すると、&ldquo;AppContainer System Incompatibility &ldquo;というレポートが表示されます。この問題を回避してメッセージが表示されないようにするには、Adobeの環境設定で「起動時に保護モードを有効にする」オプションのチェックを外すことができます。</li>
+<li>Web MSIが[ホストオプション]ダイアログボックスの[更新]タブを使用してインストールされ、対応するホストMSIがインストールされていない場合、GO-Global\Webディレクトリの内容は更新されますが、[更新]タブではインストールされた更新のリストにWeb MSIが含まれません。</li>
+<li>Adobe Acrobat ProがGO-Globalセッションで実行されると、ホストコンピューターがクラッシュします。この問題を回避するには、Adobe純正モニターサービスとAdobe純正ソフトウェア整合性サービスを無効にします。</li>
+<li>バージョン 6のGO-Globalホストの以前のリリースを最新のリリースにアップグレードしても、変更されていないファイルは置き換えられません。これは設計によるものです。</li>
+<li>Windowsアップデートが最新でない一部のシステムで、GO-Globalホストのインストールに失敗します。これは、MicrosoftのVisual Studio再配布可能ファイルの前提条件がインストールされていない場合に発生します。この問題を回避するには、Windows Updateを適用してください。</li>
+<li>ユーザがInternetExplorerでGO-GlobalWeb Appを実行し、AppControllerがインストールされていないか有効になっていない場合、ユーザーが最初にCTRL+X、CTRL+C、CTRL+Vを入力すると、Internet Explorerは次のメッセージを表示することがあります。「このWebページにクリップボードへのアクセスを許可しますか？」ユーザが[アクセスを許可する]または[許可しない]をクリックしてこのメッセージを閉じると、ユーザがキーを押すたびに二重文字が表示される場合があります。この問題を回避するには、CTRLキーを押して離します。また、ユーザがCTRL+Cを入力した場合、選択したテキストは&quot;c&quot;に置き換えられる場合があります。この問題を回避するには、アプリケーションの元に戻す機能(たとえば、CTRL+Zを入力)を使用して、削除されたテキストを復元します。上記のメッセージは、セッションごとに1回だけ表示されます。これらの問題は、ユーザがその後CTRL+X、CTRL+C、またはCTRL+Vを押して、GO-Global Web Appのインスタンス内でテキストを切り取り、コピー、または貼り付けた場合には発生しません。</li>
+<li>ユーザがGoogle ChromeまたはMozilla FirefoxでGO-Global Webアプリを実行し、CTRL+NまたはCTRL+Tを入力すると、それぞれ新しいウィンドウまたは新しいタブが開きます。同様に、ユーザがInternet ExplorerでGO-Global Web Appを実行し、CTRL+OまたはCTRL+Pを入力すると、Internet Explorerの[ファイルを開く]ダイアログボックスまたは[印刷]ダイアログボックスがそれぞれ開きます。これらのケースやその他のケースでは、ブラウザはGO-Global Web Appの既定の動作を抑制することを許可していません。</li>
+<li>Mac OS XのSafariでGO-Global Web Appをバックグラウンドタブに移動すると、クライアントはセッションから切断されます。</li>
+<li>ユーザがWindows 7のInternet Explorer 11からGO-Globalホストを参照すると、アプリがインストールされていてもAppControllerのインストールを促すプロンプトが表示されます。ユーザはこのプロンプトを無視することができます。</li>
+<li>GO-Global WebアプリでDPIスケーリングが機能しないことがある。</li>
+<li>バージョン 6のGO-Globalホストがサイレントインストールされている場合、GO-Global Audio Driverがインストールされず、アップグレードされません。この問題を回避するには、GO-Globalホストのインストーラを実行した後、デバイスマネージャからGO-Global Audio Driverをインストールしてください。</li>
+<li>AppControllerがインストール後に自動的に起動しない場合があります。この問題が発生した場合は、[Reload]リンクをクリックしてください。</li>
 </ul>
 
 	
@@ -3091,13 +3107,20 @@ Windows Media Playerの問題を回避するために、お客様は別のメデ
   
     
       
+        
+        
+      
+    
+  
+    
+      
     
   
 
   
 
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
-        <a title="システム要件"href="/docs/go-global61/go-global61introduction/systemrequirements/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
+        <a title="解決された問題"href="/docs/go-global61/go-global61introduction/issuefix/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div></div>
   
 

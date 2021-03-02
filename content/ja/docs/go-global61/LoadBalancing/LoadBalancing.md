@@ -5,10 +5,6 @@ weight: 01
 type: "docs"
 ---
 
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。負荷分散設定を行いたい場合はkitASP作成の拡張パッケージGGEasyMonitorの項を参照ください。
-{{% /alert %}}
-
 Load balancing allows GO-Global sessions to be distributed across multiple hosts. Load balancing is required when the host resource requirements for a deployment exceed the capacity of a single host computer. Load balancing is done automatically and is transparent to the user. GO-Global can also be used with any third party TCP/IP based load-balancing service. 
 
 ## Load Balancing Requirements

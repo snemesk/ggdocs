@@ -4,9 +4,6 @@ linkTitle: ""
 weight: 08
 type: "docs"
 ---
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。
-{{% /alert %}}
 
 When an Independent Host is configured to run as a Relay Load Balancer or a Dependent Host, GO-Global does not automatically make any changes to the host's licensing configuration. For example, if an Independent Host is configured to use an on-premises license that is installed on the same computer as the host, the host will continue to use this on-premises license after the host is connected to a Relay Load Balancer. This is the default configuration, but not typically the best licensing configuration. A Relay Load Balancer and its Dependent Hosts should all be configured to use the same license server(s) or, if cloud licensing is used, the same cloud license.<br>
 

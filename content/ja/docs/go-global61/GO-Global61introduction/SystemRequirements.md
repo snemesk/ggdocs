@@ -4,11 +4,6 @@ linkTitle: ""
 weight: 05
 type: "docs"
 ---
-{{% alert title="情報" color="green" %}}
-代理店様向けの専用ページにGO-Global製品OSバージョン別マトリックスとGO-Global製品バージョン別機能マトリックスの資料も用意しています。<br>
-合わせてご参照ください。
-{{% /alert %}}
-
 # GO-Globalホスト
 - GO-Globalホストには、次の64ビットWindowsオペレーティングシステムのいずれかが必要です。<br>
 　**Windows Server 2019** - Standard/Datacenter<br>
@@ -33,7 +28,7 @@ GO-Globalは以下のクライアントプラットフォームをサポート�
 - Mac OS X 10.13以降
 - Red Hat Enterprise Linux 7と8(64ビット)、CentOS 7および8(64ビット)、SUSE Linux Enterprise Desktop 12および15(64ビット)、Ubuntu 18.04 LTSと19(64ビット)
 - iOS 11.0以降
-- ARMプロセッサのAndroid 8.0以降
+- 2019年以降に製造されたChromebookを含むARMプロセッサ上のAndroid8.0以降
 
 # クライアントサポートブラウザ
 - Internet Explorer 11(32ビット)
@@ -41,3 +36,8 @@ GO-Globalは以下のクライアントプラットフォームをサポート�
 - Mac OS XでのApple Safari 11以降
 - Google Chrome 67以降のWindows 7/Windows 10/Chromebookとの連携
 - Microsoft Edge
+
+{{% alert title="情報" color="green" %}}
+GO-Global製品OSバージョン別マトリックスとGO-Global製品バージョン別機能マトリックスの資料になります。<br>
+合わせてご参照ください。
+{{% /alert %}}

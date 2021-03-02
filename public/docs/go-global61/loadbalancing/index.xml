@@ -22,16 +22,7 @@
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。負荷分散設定を行いたい場合はkitASP作成の拡張パッケージGGEasyMonitorの項を参照ください。
-&lt;/div&gt;
-
-&lt;p&gt;Load balancing allows GO-Global sessions to be distributed across multiple hosts. Load balancing is required when the host resource requirements for a deployment exceed the capacity of a single host computer. Load balancing is done automatically and is transparent to the user. GO-Global can also be used with any third party TCP/IP based load-balancing service.&lt;/p&gt;
+        &lt;p&gt;Load balancing allows GO-Global sessions to be distributed across multiple hosts. Load balancing is required when the host resource requirements for a deployment exceed the capacity of a single host computer. Load balancing is done automatically and is transparent to the user. GO-Global can also be used with any third party TCP/IP based load-balancing service.&lt;/p&gt;
 &lt;h2 id=&#34;load-balancing-requirements&#34;&gt;Load Balancing Requirements&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;A GO-Global Host must be installed on each of the hosts in the cluster.&lt;/li&gt;
@@ -193,16 +184,7 @@ We recommend installing the same set of applications on each dependent host and 
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。負荷分散設定を行いたい場合はkitASP作成の拡張パッケージGGEasyMonitorの項を参照ください。
-&lt;/div&gt;
-
-&lt;p&gt;GO-Global&amp;rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm.&lt;/p&gt;
+        &lt;p&gt;GO-Global&amp;rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm.&lt;/p&gt;
 &lt;p&gt;In addition, these new roles enable users who connect to GO-Global Hosts via third-party load balancers to disconnect from their sessions from one device, and reconnect to their sessions from a different device. GO-Global automatically reconnects users to their sessions, even when the load balancer fails to connect a user to the host on which the user’s session is running. For example, if a user with a session running on Host A disconnects from the session while at work, goes home, and then reconnects to the session from a home computer, GO-Global will ensure that the user is reconnected to his or her session. If the load balancer routes the user&amp;rsquo;s connection to Host B, Host B will open a connection to Host A and relay the data between the GO-Global AppController and Host A.&lt;/p&gt;
 &lt;h3 id=&#34;to-enable-these-capabilities&#34;&gt;To enable these capabilities:&lt;/h3&gt;
 &lt;ol&gt;
@@ -240,16 +222,7 @@ b. Restart the &lt;strong&gt;Application Publishing Service.&lt;/strong&gt; &lt;
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。
-&lt;/div&gt;
-
-&lt;p&gt;When an Independent Host is configured to run as a Relay Load Balancer or a Dependent Host, GO-Global does not automatically make any changes to the host&amp;rsquo;s licensing configuration. For example, if an Independent Host is configured to use an on-premises license that is installed on the same computer as the host, the host will continue to use this on-premises license after the host is connected to a Relay Load Balancer. This is the default configuration, but not typically the best licensing configuration. A Relay Load Balancer and its Dependent Hosts should all be configured to use the same license server(s) or, if cloud licensing is used, the same cloud license.&lt;br&gt;&lt;/p&gt;
+        &lt;p&gt;When an Independent Host is configured to run as a Relay Load Balancer or a Dependent Host, GO-Global does not automatically make any changes to the host&amp;rsquo;s licensing configuration. For example, if an Independent Host is configured to use an on-premises license that is installed on the same computer as the host, the host will continue to use this on-premises license after the host is connected to a Relay Load Balancer. This is the default configuration, but not typically the best licensing configuration. A Relay Load Balancer and its Dependent Hosts should all be configured to use the same license server(s) or, if cloud licensing is used, the same cloud license.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;If an on-premises license is being used and high-availability is not required, GraphOn recommends configuring the Dependent Hosts to use the license server on the Relay Load Balancer as a central license server. (See Multiple Host Enviroments and ensure that the Dependent Hosts are able to connect to the license server&amp;rsquo;s port on the Relay Load Balancer.)&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;If an on-premises license is being used and high-availability is required, GraphOn recommends configuring the Relay Load Balancer and its Dependent Hosts to use a set of Three-Server Redundant License Servers.&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;If a cloud license is being used, and high availability is not required, GraphOn recommends activating GO-Global on the Relay Load Balancer. Alternatively, if a cloud license is being used and high availability is required, GraphOn recommends activating GO-Global on both the primary Relay Load Balancer and the failover Relay Load Balancer and configuring each to be a Backup License Server for the other.&lt;br&gt;&lt;/p&gt;

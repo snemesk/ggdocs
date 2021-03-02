@@ -21,52 +21,19 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>変更履歴 | GO-Global Docs</title><meta property="og:title" content="変更履歴" />
-<meta property="og:description" content="GGH6.1.1.30272 release (Version 6.1.1.30272) GGH6.1.0 release (Version 6.1.0.30001) からの主な変更点は次の通りです。
-  アプリケーション パブリッシング サービスでメモリ リークが発生しました。
-  ライセンス ID に特定の文字 (「&#43;」文字など) が含まれている場合、GO-Global がサポートの期限切れを誤って検出し、ホストのアップグレードができませんでした。
-  バージョン 6.1 では、SSL が選択されている場合に 56 ビット DES 暗号化がサポートされなくなりましたが、管理者が 56 ビット DES 暗号化を選択できるようになりました。
-  従属ホストが応答しなくなり、クラッシュします。
-  パフォーマンスのボトルネックにより、アプリケーションパブリッシングサービスのメモリ使用量が増加し、アプリケーションのパフォーマンスが低下する可能性があります。
-  バージョン 6.1.0 では、コピーと貼り付け操作が断続的に失敗し、過剰な数のエラーメッセージが記録されます。
-  Chromium Embedded Framework を使用するアプリケーションでタブの表示に失敗する。
-  QuickBooks Enterprise で印刷が機能しません。
-  ユーザーがあるデバイスからセッションを切断し、解像度の異なるデバイスからセッションに再接続すると、アイコンが正しく表示されませんでした。
-  LogMessageRequestFrequencyLimitの設定が高すぎるため、クライアントがホストのログファイルに記録するメッセージが多すぎる可能性があります。バージョン6.1.0では、ビデオ再生のデフォルト設定は常にオンでした。バージョン6.1.1では、デフォルト設定は常にオフになっています。
-  32 ビット Firefox が GO-Global セッションでの実行に失敗する。" />
+<meta property="og:description" content="Version 6.1.1.30272のトピックス  バージョン 6.1.1では、Video Replayはデフォルトで無効になっています。管理者は、Admin Consoleの[Host Options]ダイアログの[Client Access]タブでVideo Replayを有効にすることができます。  Version 6.1.0.30001のトピックス  GO-Global6.1は、バージョン6.0のライセンスでは使用できません。以前のバージョンからGO-Global6.1にアップグレードする場合は、新しいバージョン6.1のライセンスファイルが必要になります。カスタマーポータルのライセンス変更要求(LCR)ページから、新しいライセンスファイルを要求できます。 GO-Global Appは、顧客自身の企業ブランドでパーソナライズできるアプリケーションであるAppControllerに置き換えられました。 [Host Options]ダイアログには、次の変更が含まれています。   [Use client’s time zone]オプションが[Client Access]タブに移動しました。 [Shared account]オプションが[Session Shutdown]タブに移動しました。 [General]タブが削除されました。 GO-Globalホストのサーバーロールを指定するための[Configuration]タブが追加されました。  GO-Global 6.1ホストは、Windows 7、Windows 8、Windows 8.1、Windows Server 2008 R2、またはWindows10バージョン1803以前をサポートしていません。 GO-Globalは、VMware ESXi、Microsoft Hyper-V、CitrixHypervisorなどのハイパーバイザ製品によって管理されるゲストオペレーティングシステムにインストールして実行できます。GO-Globalは、Hyper-Vの役割または機能が有効になっているコンピュータではサポートされていません。 バージョン6.1より前のバージョンでは、GO-Globalはデフォルトで依存ホストからのライセンスを管理していました。これにより、管理者は中央のライセンスマネージャを使用するように各依存ホストを構成する必要がありました。バージョン6.1では、GO-Globalはデフォルトでリレーサーバからのライセンスを管理します。これにより、管理者は、ライセンス構成を変更することなく、依存ホストをリレーサーバに追加したり、リレーサーバから削除したりできます。 6.1では、リレーサーバはリレーロードバランサと呼ばれるようになり、[Host Options]ダイアログの新しい[Configuration]タブで構成されることに注意してください。  " />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-global61introduction/revisionhistory/" /><meta property="article:section" content="docs" />
 
 <meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="変更履歴">
-<meta itemprop="description" content="GGH6.1.1.30272 release (Version 6.1.1.30272) GGH6.1.0 release (Version 6.1.0.30001) からの主な変更点は次の通りです。
-  アプリケーション パブリッシング サービスでメモリ リークが発生しました。
-  ライセンス ID に特定の文字 (「&#43;」文字など) が含まれている場合、GO-Global がサポートの期限切れを誤って検出し、ホストのアップグレードができませんでした。
-  バージョン 6.1 では、SSL が選択されている場合に 56 ビット DES 暗号化がサポートされなくなりましたが、管理者が 56 ビット DES 暗号化を選択できるようになりました。
-  従属ホストが応答しなくなり、クラッシュします。
-  パフォーマンスのボトルネックにより、アプリケーションパブリッシングサービスのメモリ使用量が増加し、アプリケーションのパフォーマンスが低下する可能性があります。
-  バージョン 6.1.0 では、コピーと貼り付け操作が断続的に失敗し、過剰な数のエラーメッセージが記録されます。
-  Chromium Embedded Framework を使用するアプリケーションでタブの表示に失敗する。
-  QuickBooks Enterprise で印刷が機能しません。
-  ユーザーがあるデバイスからセッションを切断し、解像度の異なるデバイスからセッションに再接続すると、アイコンが正しく表示されませんでした。
-  LogMessageRequestFrequencyLimitの設定が高すぎるため、クライアントがホストのログファイルに記録するメッセージが多すぎる可能性があります。バージョン6.1.0では、ビデオ再生のデフォルト設定は常にオンでした。バージョン6.1.1では、デフォルト設定は常にオフになっています。
-  32 ビット Firefox が GO-Global セッションでの実行に失敗する。">
+<meta itemprop="description" content="Version 6.1.1.30272のトピックス  バージョン 6.1.1では、Video Replayはデフォルトで無効になっています。管理者は、Admin Consoleの[Host Options]ダイアログの[Client Access]タブでVideo Replayを有効にすることができます。  Version 6.1.0.30001のトピックス  GO-Global6.1は、バージョン6.0のライセンスでは使用できません。以前のバージョンからGO-Global6.1にアップグレードする場合は、新しいバージョン6.1のライセンスファイルが必要になります。カスタマーポータルのライセンス変更要求(LCR)ページから、新しいライセンスファイルを要求できます。 GO-Global Appは、顧客自身の企業ブランドでパーソナライズできるアプリケーションであるAppControllerに置き換えられました。 [Host Options]ダイアログには、次の変更が含まれています。   [Use client’s time zone]オプションが[Client Access]タブに移動しました。 [Shared account]オプションが[Session Shutdown]タブに移動しました。 [General]タブが削除されました。 GO-Globalホストのサーバーロールを指定するための[Configuration]タブが追加されました。  GO-Global 6.1ホストは、Windows 7、Windows 8、Windows 8.1、Windows Server 2008 R2、またはWindows10バージョン1803以前をサポートしていません。 GO-Globalは、VMware ESXi、Microsoft Hyper-V、CitrixHypervisorなどのハイパーバイザ製品によって管理されるゲストオペレーティングシステムにインストールして実行できます。GO-Globalは、Hyper-Vの役割または機能が有効になっているコンピュータではサポートされていません。 バージョン6.1より前のバージョンでは、GO-Globalはデフォルトで依存ホストからのライセンスを管理していました。これにより、管理者は中央のライセンスマネージャを使用するように各依存ホストを構成する必要がありました。バージョン6.1では、GO-Globalはデフォルトでリレーサーバからのライセンスを管理します。これにより、管理者は、ライセンス構成を変更することなく、依存ホストをリレーサーバに追加したり、リレーサーバから削除したりできます。 6.1では、リレーサーバはリレーロードバランサと呼ばれるようになり、[Host Options]ダイアログの新しい[Configuration]タブで構成されることに注意してください。  ">
 <meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="167">
+<meta itemprop="wordCount" content="40">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="変更履歴"/>
-<meta name="twitter:description" content="GGH6.1.1.30272 release (Version 6.1.1.30272) GGH6.1.0 release (Version 6.1.0.30001) からの主な変更点は次の通りです。
-  アプリケーション パブリッシング サービスでメモリ リークが発生しました。
-  ライセンス ID に特定の文字 (「&#43;」文字など) が含まれている場合、GO-Global がサポートの期限切れを誤って検出し、ホストのアップグレードができませんでした。
-  バージョン 6.1 では、SSL が選択されている場合に 56 ビット DES 暗号化がサポートされなくなりましたが、管理者が 56 ビット DES 暗号化を選択できるようになりました。
-  従属ホストが応答しなくなり、クラッシュします。
-  パフォーマンスのボトルネックにより、アプリケーションパブリッシングサービスのメモリ使用量が増加し、アプリケーションのパフォーマンスが低下する可能性があります。
-  バージョン 6.1.0 では、コピーと貼り付け操作が断続的に失敗し、過剰な数のエラーメッセージが記録されます。
-  Chromium Embedded Framework を使用するアプリケーションでタブの表示に失敗する。
-  QuickBooks Enterprise で印刷が機能しません。
-  ユーザーがあるデバイスからセッションを切断し、解像度の異なるデバイスからセッションに再接続すると、アイコンが正しく表示されませんでした。
-  LogMessageRequestFrequencyLimitの設定が高すぎるため、クライアントがホストのログファイルに記録するメッセージが多すぎる可能性があります。バージョン6.1.0では、ビデオ再生のデフォルト設定は常にオンでした。バージョン6.1.1では、デフォルト設定は常にオフになっています。
-  32 ビット Firefox が GO-Global セッションでの実行に失敗する。"/>
+<meta name="twitter:description" content="Version 6.1.1.30272のトピックス  バージョン 6.1.1では、Video Replayはデフォルトで無効になっています。管理者は、Admin Consoleの[Host Options]ダイアログの[Client Access]タブでVideo Replayを有効にすることができます。  Version 6.1.0.30001のトピックス  GO-Global6.1は、バージョン6.0のライセンスでは使用できません。以前のバージョンからGO-Global6.1にアップグレードする場合は、新しいバージョン6.1のライセンスファイルが必要になります。カスタマーポータルのライセンス変更要求(LCR)ページから、新しいライセンスファイルを要求できます。 GO-Global Appは、顧客自身の企業ブランドでパーソナライズできるアプリケーションであるAppControllerに置き換えられました。 [Host Options]ダイアログには、次の変更が含まれています。   [Use client’s time zone]オプションが[Client Access]タブに移動しました。 [Shared account]オプションが[Session Shutdown]タブに移動しました。 [General]タブが削除されました。 GO-Globalホストのサーバーロールを指定するための[Configuration]タブが追加されました。  GO-Global 6.1ホストは、Windows 7、Windows 8、Windows 8.1、Windows Server 2008 R2、またはWindows10バージョン1803以前をサポートしていません。 GO-Globalは、VMware ESXi、Microsoft Hyper-V、CitrixHypervisorなどのハイパーバイザ製品によって管理されるゲストオペレーティングシステムにインストールして実行できます。GO-Globalは、Hyper-Vの役割または機能が有効になっているコンピュータではサポートされていません。 バージョン6.1より前のバージョンでは、GO-Globalはデフォルトで依存ホストからのライセンスを管理していました。これにより、管理者は中央のライセンスマネージャを使用するように各依存ホストを構成する必要がありました。バージョン6.1では、GO-Globalはデフォルトでリレーサーバからのライセンスを管理します。これにより、管理者は、ライセンス構成を変更することなく、依存ホストをリレーサーバに追加したり、リレーサーバから削除したりできます。 6.1では、リレーサーバはリレーロードバランサと呼ばれるようになり、[Host Options]ダイアログの新しい[Configuration]タブで構成されることに注意してください。  "/>
 
 
 
@@ -123,7 +90,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.39fe1134e897ec5ab4a640130921ee621f0c4e8f392afd50f096c97df2ae141dec23e7f08852a7450e81498a4112d68cf9d46d5ac96673443d67d19366c61f5f.json"
+  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
   data-offline-search-base-href="/"
 >
 
@@ -154,7 +121,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.39fe1134e897ec5ab4a640130921ee621f0c4e8f392afd50f096c97df2ae141dec23e7f08852a7450e81498a4112d68cf9d46d5ac96673443d67d19366c61f5f.json"
+  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
   data-offline-search-base-href="/"
 >
 
@@ -248,6 +215,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-global61introductionissuefix" href="/docs/go-global61/go-global61introduction/issuefix/">解決された問題</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-global61introductionknownlimitations" href="/docs/go-global61/go-global61introduction/knownlimitations/">既知の制限</a>
       
       
@@ -289,7 +262,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globallicensingcloudlicenses" href="/docs/go-global61/go-globallicensing/cloudlicenses/">cloudライセンスについて</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globallicensingcloudlicenses" href="/docs/go-global61/go-globallicensing/cloudlicenses/">Cloudライセンスについて</a>
       
       
     </li>
@@ -2884,109 +2857,28 @@
 <div class="td-content">
 	<h1>変更履歴</h1>
 	
-	<h2 id="ggh61130272-release-version-61130272">GGH6.1.1.30272 release (Version 6.1.1.30272)</h2>
-<p>GGH6.1.0 release (Version 6.1.0.30001) からの主な変更点は次の通りです。</p>
+	<h1 id="version-61130272のトピックス">Version 6.1.1.30272のトピックス</h1>
+<ol>
+<li>バージョン 6.1.1では、Video Replayはデフォルトで無効になっています。管理者は、Admin Consoleの[Host Options]ダイアログの[Client Access]タブでVideo Replayを有効にすることができます。</li>
+</ol>
+<h1 id="version-61030001のトピックス">Version 6.1.0.30001のトピックス</h1>
+<ol>
+<li>GO-Global6.1は、バージョン6.0のライセンスでは使用できません。以前のバージョンからGO-Global6.1にアップグレードする場合は、新しいバージョン6.1のライセンスファイルが必要になります。カスタマーポータルのライセンス変更要求(LCR)ページから、新しいライセンスファイルを要求できます。</li>
+<li>GO-Global Appは、顧客自身の企業ブランドでパーソナライズできるアプリケーションであるAppControllerに置き換えられました。</li>
+<li>[Host Options]ダイアログには、次の変更が含まれています。</li>
+</ol>
 <ul>
-<li>
-<p>アプリケーション パブリッシング サービスでメモリ リークが発生しました。</p>
-</li>
-<li>
-<p>ライセンス ID に特定の文字 (「+」文字など) が含まれている場合、GO-Global がサポートの期限切れを誤って検出し、ホストのアップグレードができませんでした。</p>
-</li>
-<li>
-<p>バージョン 6.1 では、SSL が選択されている場合に 56 ビット DES 暗号化がサポートされなくなりましたが、管理者が 56 ビット DES 暗号化を選択できるようになりました。</p>
-</li>
-<li>
-<p>従属ホストが応答しなくなり、クラッシュします。</p>
-</li>
-<li>
-<p>パフォーマンスのボトルネックにより、アプリケーションパブリッシングサービスのメモリ使用量が増加し、アプリケーションのパフォーマンスが低下する可能性があります。</p>
-</li>
-<li>
-<p>バージョン 6.1.0 では、コピーと貼り付け操作が断続的に失敗し、過剰な数のエラーメッセージが記録されます。</p>
-</li>
-<li>
-<p>Chromium Embedded Framework を使用するアプリケーションでタブの表示に失敗する。</p>
-</li>
-<li>
-<p>QuickBooks Enterprise で印刷が機能しません。</p>
-</li>
-<li>
-<p>ユーザーがあるデバイスからセッションを切断し、解像度の異なるデバイスからセッションに再接続すると、アイコンが正しく表示されませんでした。</p>
-</li>
-<li>
-<p>LogMessageRequestFrequencyLimitの設定が高すぎるため、クライアントがホストのログファイルに記録するメッセージが多すぎる可能性があります。バージョン6.1.0では、ビデオ再生のデフォルト設定は常にオンでした。バージョン6.1.1では、デフォルト設定は常にオフになっています。</p>
-</li>
-<li>
-<p>32 ビット Firefox が GO-Global セッションでの実行に失敗する。</p>
-</li>
-<li>
-<p>Windows 10 および Windows Server 2019 で GO-Global セッションで実行すると、Microsoft Office 365 および Microsoft Office 2019 アプリケーションが断続的にハングします。</p>
-</li>
-<li>
-<p>GO-Global ホストがブラウザからアクセスされ、useApp オプションと埋め込みオプションの両方が true に設定されている場合、統合された Windows 認証が機能しません。</p>
-</li>
-<li>
-<p>ホストインストーラが C:\ドライブのルートディレクトリにファイルを抽出し、インストールが完了した後にファイルを削除しない。</p>
-</li>
-<li>
-<p>インターネットにアクセスできないコンピュータにバージョン 6.1.0 をインストールすると、GO-Global は GraphOn のライセンス検証ウェブサービスへのアクセスがブロックされたと誤って判断し、240 時間後に GO-Global がセッションを開始できなくなる。</p>
-</li>
-<li>
-<p>URLリダイレクトに失敗することがよくあります。</p>
-</li>
-<li>
-<p>Webサーバーのアドレスをapps.graphon.comから変更すると、リンクを取得オプションが誤ってURLに6.1と表示されることがありました。</p>
-</li>
-<li>
-<p>まれに、ユーザーが GO-Global セッションに再接続すると、システムがクラッシュすることがあります。</p>
-</li>
-<li>
-<p>特定の条件下では、パフォーマンスの自動調整が有効な場合、GO-Global ディスプレイ ドライバーが一時的に大量のメモリを消費し、ホストがクラッシュすることがあります。</p>
-</li>
-<li>
-<p>Chromium Embedded Framework を使用するアプリケーションが GO-Global セッションで実行されると、空白のウィンドウが表示される。</p>
-</li>
-<li>
-<p>Mac OS で、Caps Lock キーの状態が間欠的に反転する。</p>
-</li>
-<li>
-<p>クライアント上にファイルがある場合、ファイルリダイレクトが正しく動作しない。</p>
-</li>
-<li>
-<p>クライアント側のスマート カードへのアクセスが有効な場合、Logon.exe のメモリおよび CPU 使用率が高くなることがある。</p>
-</li>
-<li>
-<p>その他の問題 Web App を使用してローカル アプリケーションとリモート アプリケーション間でテキストをコピーしたり貼り付けたりする。注: Webアプリケーションでは、ローカルアプリケーションからテキストをコピーし、リモートアプリケーションの[貼り付け]メニューオプションを使用してリモートアプリケーションに貼り付けることはサポートされていません。ローカルアプリケーションからリモートアプリケーションにコピーしたテキストを貼り付けるには、Ctrl-Vを入力する必要があります。</p>
-</li>
-<li>
-<p>GO-Global セッションで実行されているアプリケーションからテキストをコピーして、Mac OS 上で実行されているアプリケーションに貼り付けることができない場合があります。</p>
-</li>
-<li>
-<p>Windows Server 2016 および Windows Server 2019 で特定のアプリケーションの起動が遅い。</p>
-</li>
-<li>
-<p>共有アカウント設定で先頭または末尾にスペースがあるアカウントが一覧表示されると、ユーザーが他のユーザーのセッションに再接続されることがあります。</p>
-</li>
-<li>
-<p>ローカル デバイスから画像をコピーして、GO-Global セッションで実行中の PowerPoint に貼り付けることができません。</p>
-</li>
-<li>
-<p>強力な暗号化ライセンスは、管理者コンソールの [ライセンス] タブの別の行に表示されます。強力な暗号化ライセンスは無制限であるため、混乱を招く原因となります。これで、[ライセンス]タブにはセッション ライセンスのみが表示されるようになりました。</p>
-</li>
-<li>
-<p>Alt 番号パッドを使用して ASCI 文字を挿入すると、二重文字が発生する。</p>
-</li>
-<li>
-<p>コンピュータから GO-Global をアンインストールしてから同じコンピュータに再インストールした場合、アンインストール前にクライアントのパスワードのキャッシュ オプションが有効になっていたが、再インストール後に有効になった場合、アプリケーション公開サービスがクラッシュすることがありました。</p>
-</li>
-<li>
-<p>ローカル管理者アカウント以外のアカウントで Windows Server 2019 で GO-Global Host のインストーラを実行すると、インストーラの完了時に表示される [再起動] ボタンを押しても、コンピュータが再起動されない。これまで通りですが、インストーラでは管理者にコンピュータを手動で再起動するよう指示するメッセージが表示されるようになりました。</p>
-</li>
-<li>
-<p>Windows 10 および Windows Server 2019 で GO-Global セッションで実行されているアプリケーションからクライアント ドライブにファイルを保存できない。</p>
-</li>
+<li>[Use client’s time zone]オプションが[Client Access]タブに移動しました。</li>
+<li>[Shared account]オプションが[Session Shutdown]タブに移動しました。</li>
+<li>[General]タブが削除されました。</li>
+<li>GO-Globalホストのサーバーロールを指定するための[Configuration]タブが追加されました。</li>
 </ul>
+<ol start="4">
+<li>GO-Global 6.1ホストは、Windows 7、Windows 8、Windows 8.1、Windows Server 2008 R2、またはWindows10バージョン1803以前をサポートしていません。</li>
+<li>GO-Globalは、VMware ESXi、Microsoft Hyper-V、CitrixHypervisorなどのハイパーバイザ製品によって管理されるゲストオペレーティングシステムにインストールして実行できます。GO-Globalは、Hyper-Vの役割または機能が有効になっているコンピュータではサポートされていません。</li>
+<li>バージョン6.1より前のバージョンでは、GO-Globalはデフォルトで依存ホストからのライセンスを管理していました。これにより、管理者は中央のライセンスマネージャを使用するように各依存ホストを構成する必要がありました。バージョン6.1では、GO-Globalはデフォルトでリレーサーバからのライセンスを管理します。これにより、管理者は、ライセンス構成を変更することなく、依存ホストをリレーサーバに追加したり、リレーサーバから削除したりできます。
+6.1では、リレーサーバはリレーロードバランサと呼ばれるようになり、[Host Options]ダイアログの新しい[Configuration]タブで構成されることに注意してください。</li>
+</ol>
 
 	
 		
@@ -3011,6 +2903,12 @@
         
           
           
+        
+      
+    
+  
+    
+      
         
       
     

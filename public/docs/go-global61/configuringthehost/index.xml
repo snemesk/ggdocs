@@ -303,19 +303,22 @@ httpd -k start
       <description>
         
         
-        &lt;p&gt;以下では、設定のバックアップ、GO-Globalのアンインストールと再インストール、およびGO-Globalホストで公開されているアプリケーションとカスタム設定の復元について説明します。&lt;/p&gt;
-&lt;h3 id=&#34;go-globalのレジストリ設定のバックアップ方法&#34;&gt;GO-Globalのレジストリ設定のバックアップ方法&lt;/h3&gt;
+        &lt;p&gt;以下では、設定のバックアップ、GO-Global のアンインストールと再インストール、および GO-Globalホストで公開されているアプリケーションとカスタム設定の復元について説明します。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalのレジストリ設定のバックアップ&#34;&gt;GO-Globalのレジストリ設定のバックアップ&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;registry.exeを開きます。&lt;/li&gt;
-&lt;li&gt;次のレジストリキーを選びなさい &lt;code&gt;:HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global&lt;/code&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;GO-Global&lt;/strong&gt; キーを右クリックし、 &lt;strong&gt;エクスポート&lt;/strong&gt; を選択します。&lt;/li&gt;
+&lt;li&gt;次のレジストリキーを選びなさい:HKEY_LOCAL_MACHINE\SOFTWARE\GraphOn\GO-Global&lt;/li&gt;
+&lt;li&gt;GO-Globalキーを右クリックし、エクスポートを選択します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h3 id=&#34;admin-consoleで作成したカスタム設定のバックアップ方法&#34;&gt;Admin Consoleで作成したカスタム設定のバックアップ方法&lt;/h3&gt;
-&lt;p&gt;Admin Consoleで作成したカスタム設定は、 &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルと &lt;strong&gt;DefaultWorkspacePropterties.xml&lt;/strong&gt; ファイルに保存されます。これらのファイルへのパスは次のとおりです。
-&lt;code&gt;C:\ProgramDataGraphOn\GO-Global\HostProperties.xml&lt;/code&gt;
-&lt;code&gt;C:\ProgramDataGraphOn\GO-Global\DefaultWorkspacePropterties.xml&lt;/code&gt;
+&lt;p&gt;Admin Consoleで作成したカスタム設定は、 &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルと &lt;strong&gt;DefaultWorkspacePropterties.xml&lt;/strong&gt; ファイルに保存されます。これらのファイルへのパスは以下の通りです。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\ProgramDataGraphOn\GO-Global\HostProperties.xml&lt;/code&gt;&lt;br&gt;
+&lt;code&gt;C:\ProgramDataGraphOn\GO-Global\DefaultWorkspacePropterties.xml&lt;/code&gt;&lt;br&gt;
 上記のレジストリのエクスポートと一緒にこれらのファイルを保存します。&lt;/p&gt;
-&lt;p&gt;ライセンスファイルまたはファイルをバックアップします。&lt;/p&gt;
+&lt;h3 id=&#34;サーバの鍵のをバックアップ&#34;&gt;サーバの鍵のをバックアップ&lt;/h3&gt;
+&lt;p&gt;サーバの鍵は、以下のファイルに保存されています。&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\ks\ks.dat&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&#34;ライセンスファイルまたはファイルのバックアップ&#34;&gt;ライセンスファイルまたはファイルのバックアップ&lt;/h3&gt;
 &lt;p&gt;ライセンスファイルは、&lt;code&gt;C:Program Files\GraphOn\GO-GlobalLicensing&lt;/code&gt;に保存されています。&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GO-Globalをアンインストールし、ホストを再起動してください。&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;GO-Globalホストソフトウェアをインストールし、ホストを再起動してください&lt;/strong&gt;
@@ -325,6 +328,7 @@ httpd -k start
 &lt;li&gt;&lt;code&gt;C:Program Files\\GraphOn\GO-Global\Licensing&lt;/code&gt; ディレクトリにライセンスファイルをコピーします。&lt;/li&gt;
 &lt;li&gt;バックアップされたGO-Globalレジストリキーファイルをダブルクリックしてインポートします。&lt;/li&gt;
 &lt;li&gt;バックアップしたHostProperties.xml及びDefaultWorkspaceProperties.xmlを&lt;code&gt;C:\ProgramData\GraphOn\GO-Global&lt;/code&gt;ディレクトリにコピーし、既存のファイルを上書きしてください。&lt;/li&gt;
+&lt;li&gt;バックアップしたks.datを、&lt;code&gt;C:\ProgramData\GraphOn\GO-Global\ks&lt;/code&gt;ディレクトリにコピーし、既存のファイルを上書きしてください。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GO-Global License Manager&lt;/strong&gt; を再起動します。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
 &lt;/ol&gt;
