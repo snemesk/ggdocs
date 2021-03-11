@@ -21,22 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Dependent Hosts | GO-Global Docs</title><meta property="og:title" content="Dependent Hosts" />
-<meta property="og:description" content="A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.
-To configure a GO-Global Host to operate as a dependent host  Select the desired host from the list of All Hosts. Click Tools | Host Options." />
+<meta property="og:description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
+参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/dependenthosts/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="Dependent Hosts">
-<meta itemprop="description" content="A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.
-To configure a GO-Global Host to operate as a dependent host  Select the desired host from the list of All Hosts. Click Tools | Host Options.">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="363">
+<meta itemprop="description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
+参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。">
+<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
+<meta itemprop="wordCount" content="94">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dependent Hosts"/>
-<meta name="twitter:description" content="A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.
-To configure a GO-Global Host to operate as a dependent host  Select the desired host from the list of All Hosts. Click Tools | Host Options."/>
+<meta name="twitter:description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
+参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。"/>
 
 
 
@@ -93,7 +96,7 @@ To configure a GO-Global Host to operate as a dependent host  Select the desired
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -124,7 +127,7 @@ To configure a GO-Global Host to operate as a dependent host  Select the desired
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -995,6 +998,12 @@ To configure a GO-Global Host to operate as a dependent host  Select the desired
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicsinstallingadditionalkeyboardsandimes" href="/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/">クライアントキーボードのサポートやIMEの構成</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicssettingresolutiononmobileclients" href="/docs/go-global61/advancedtopics/settingresolutiononmobileclients/">モバイルクライアントの解像度の構成</a>
       
       
     </li>
@@ -2807,9 +2816,9 @@ To configure a GO-Global Host to operate as a dependent host  Select the desired
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#メンテナンスのためのdependent-hostのオフライン化">メンテナンスのためのDependent Hostのオフライン化</a>
       <ul>
-        <li><a href="#to-configure-a-go-global-host-to-operate-as-a-dependent-host">To configure a GO-Global Host to operate as a dependent host</a></li>
+        <li><a href="#dependent-hostをオフラインにする方法">Dependent Hostをオフラインにする方法</a></li>
       </ul>
     </li>
   </ul>
@@ -2870,31 +2879,40 @@ To configure a GO-Global Host to operate as a dependent host  Select the desired
 <div class="td-content">
 	<h1>Dependent Hosts</h1>
 	
-	<p>A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.</p>
-<h3 id="to-configure-a-go-global-host-to-operate-as-a-dependent-host">To configure a GO-Global Host to operate as a dependent host</h3>
+	<p>Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。</p>
 <ol>
-<li>Select the desired host from the list of <strong>All Hosts.</strong></li>
-<li>Click Tools | Host Options.</li>
-<li>Click the <strong>Configuration</strong> tab.</li>
-<li>Click <strong>Application Host.</strong></li>
-<li>Click <strong>Dependent Host.</strong></li>
-<li>Type the name or IP address of the Relay Load Balancer in <strong>Relay Load Balancer address</strong> edit box.</li>
-<li>Click <strong>OK.</strong></li>
-<li>A message box is displayed indicating that the change will not take effect until the <strong>Application Publishing Service</strong> has been restarted. Click <strong>OK.</strong></li>
-<li>Stop and restart the <strong>GO-Global Application Publishing Service</strong> from the Services option in the Control Panel.</li>
+<li><strong>All Hosts.</strong> のリストから目的のホストを選択します。</li>
+<li>[Tools | Host Options]をクリックします。</li>
+<li>[Configuration]タブをクリックします。</li>
+<li>[Application Host] をクリックします。</li>
+<li>[Dependent Host] をクリックします。</li>
+<li>[Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。</li>
+<li>[OK]をクリックします。</li>
+<li>Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。</li>
+<li>コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。</li>
 </ol>
-<p>When the Application Publishing Service is restarted, the dependent host will appear beneath the Relay Load Balancer in the Admin Console&rsquo;s list of GO-Global Hosts. A dependent host with a yellow x indicates that the host has been &ldquo;orphaned;&rdquo; in other words, that its Relay Load Balancer has gone down. If a host&rsquo;s icon has a red X, the administrator does not have administrative rights on the host. If the host&rsquo;s icon has a red X and is grayed out, the host is no longer running the Application Publishing Service or it has been turned off. In either case, the administrator is unable to access that host from the Admin Console.</p>
-<p>Users are authenticated on dependent hosts, not on Relay Load Balancers. As a result, dependent hosts can be located on a different network than their associated Relay Load Balancer. For example, dependent hosts can be located behind a firewall on an internal, Active Directory network, and the associated Relay Load Balancer can be located in a demilitarized zone(DMZ)that is outside the firewall. If <strong>Integrated Windows authentication</strong> is used, clients and dependent hosts must be located on the same domain, but the Relay Load Balancer can be located on a different domain.</p>
+<p>Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。
+ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。</p>
 
 
 <div class="alert alert-info" role="alert">
 
 
 <h4 class="alert-heading"><i class="fa fa-info-circle" aria-hidden="true"></i>参照</h4>
-We recommend installing the same set of applications on each dependent host and using the same installation path.
+各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。
 </div>
 
 <p><img src="/img/5-6-1.png" alt="5-6-1"></p>
+<h2 id="メンテナンスのためのdependent-hostのオフライン化">メンテナンスのためのDependent Hostのオフライン化</h2>
+<p>管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。</p>
+<h3 id="dependent-hostをオフラインにする方法">Dependent Hostをオフラインにする方法</h3>
+<ol>
+<li>すべてのホストのリストから目的のDependent Hostを選択します。</li>
+<li>[Tools | Host Options]をクリックします。</li>
+<li>[Session Startup]タブをクリックします。</li>
+<li>Maximum sessions on this hostボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。</li>
+<li>[OK]をクリックします。</li>
+</ol>
 
 	
 		
@@ -3045,7 +3063,7 @@ We recommend installing the same set of applications on each dependent host and 
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
 </div>
 </div>
 

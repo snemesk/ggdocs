@@ -21,19 +21,25 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Independent Hosts | GO-Global Docs</title><meta property="og:title" content="Independent Hosts" />
-<meta property="og:description" content="Independent Hosts are GO-Global Hosts that do not interact with other GO-Global Hosts running on the network. Independent Hosts appear in the Admin Console on the first level of the GO-Global Hosts tree view as an independent node. The GO-Global setup program configures hosts to operate as Independent Hosts. GO-Global clients can connect to Independent Hosts directly by specifying the name or IP address of the server in the Connection dialog or the location box of a web browser." />
+<meta property="og:description" content="Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにある管理者コンソールに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 [Connection] ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。
+クライアントは、複数のサーバ間でクライアント接続を分散するサードパーティのネットワークロードバランサを介してIndependent Hostsに接続することもできます。ただし、後者の設定では、セッション再接続はサポートされていないため、無効にする必要があります。
+Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンが赤く表示されます。管理者がホストにアクセスする権限を持っていない場合、ホストのアイコンは黄色になります。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/independenthosts/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="Independent Hosts">
-<meta itemprop="description" content="Independent Hosts are GO-Global Hosts that do not interact with other GO-Global Hosts running on the network. Independent Hosts appear in the Admin Console on the first level of the GO-Global Hosts tree view as an independent node. The GO-Global setup program configures hosts to operate as Independent Hosts. GO-Global clients can connect to Independent Hosts directly by specifying the name or IP address of the server in the Connection dialog or the location box of a web browser.">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="147">
+<meta itemprop="description" content="Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにある管理者コンソールに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 [Connection] ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。
+クライアントは、複数のサーバ間でクライアント接続を分散するサードパーティのネットワークロードバランサを介してIndependent Hostsに接続することもできます。ただし、後者の設定では、セッション再接続はサポートされていないため、無効にする必要があります。
+Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンが赤く表示されます。管理者がホストにアクセスする権限を持っていない場合、ホストのアイコンは黄色になります。">
+<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
+<meta itemprop="wordCount" content="12">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Independent Hosts"/>
-<meta name="twitter:description" content="Independent Hosts are GO-Global Hosts that do not interact with other GO-Global Hosts running on the network. Independent Hosts appear in the Admin Console on the first level of the GO-Global Hosts tree view as an independent node. The GO-Global setup program configures hosts to operate as Independent Hosts. GO-Global clients can connect to Independent Hosts directly by specifying the name or IP address of the server in the Connection dialog or the location box of a web browser."/>
+<meta name="twitter:description" content="Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにある管理者コンソールに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 [Connection] ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。
+クライアントは、複数のサーバ間でクライアント接続を分散するサードパーティのネットワークロードバランサを介してIndependent Hostsに接続することもできます。ただし、後者の設定では、セッション再接続はサポートされていないため、無効にする必要があります。
+Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンが赤く表示されます。管理者がホストにアクセスする権限を持っていない場合、ホストのアイコンは黄色になります。"/>
 
 
 
@@ -90,7 +96,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -121,7 +127,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -992,6 +998,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicsinstallingadditionalkeyboardsandimes" href="/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/">クライアントキーボードのサポートやIMEの構成</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicssettingresolutiononmobileclients" href="/docs/go-global61/advancedtopics/settingresolutiononmobileclients/">モバイルクライアントの解像度の構成</a>
       
       
     </li>
@@ -2857,9 +2869,9 @@
 <div class="td-content">
 	<h1>Independent Hosts</h1>
 	
-	<p>Independent Hosts are GO-Global Hosts that do not interact with other GO-Global Hosts running on the network. Independent Hosts appear in the Admin Console on the first level of the GO-Global Hosts tree view as an independent node. The GO-Global setup program configures hosts to operate as Independent Hosts. GO-Global clients can connect to Independent Hosts directly by specifying the name or IP address of the server in the Connection dialog or the location box of a web browser.<br></p>
-<p>Clients can also connect to Independent Hosts through a third-party network load balancer that distributes client connections among several servers. However, session reconnect is not supported in the latter configuration and must be disabled.<br></p>
-<p>If the Application Publishing Service is not running on a host, the host’s icon will be red. If the administrator does not have rights to access the host, the host’s icon will be yellow.</p>
+	<p>Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにある管理者コンソールに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 <strong>[Connection]</strong> ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。<br></p>
+<p>クライアントは、複数のサーバ間でクライアント接続を分散するサードパーティのネットワークロードバランサを介してIndependent Hostsに接続することもできます。ただし、後者の設定では、セッション再接続はサポートされていないため、無効にする必要があります。<br></p>
+<p>Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンが赤く表示されます。管理者がホストにアクセスする権限を持っていない場合、ホストのアイコンは黄色になります。</p>
 <p><img src="/img/5-2-1.png" alt="5-2-1"></p>
 
 	
@@ -3009,7 +3021,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
 </div>
 </div>
 

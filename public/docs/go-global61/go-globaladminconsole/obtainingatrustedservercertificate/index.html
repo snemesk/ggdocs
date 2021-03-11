@@ -29,7 +29,7 @@ Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-globaladminconsole/obtainingatrustedservercertificate/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="信頼されたサーバ証明書の取得">
 <meta itemprop="description" content="強力な暗号化証明書ウィザードを使用する代わりに、お客様は他の認証局のサーバ証明書を使用することができます。クライアントのオペレーティングシステムによって信頼されているCAからサーバ証明書を取得する方法については、以下の情報と選択したCAのマニュアルを参照してください。CAは、証明書署名要求(CSR)を必要とします。
@@ -37,8 +37,8 @@ CSRを生成する方法  http://www.openssl.org/related/binaries.htmlから Ope
 Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会社名 Organizational Unit:部署名 Common Name:サーバ名 E-mail Address:電子メールアドレスワイルドカードSSL証明書を使用しない場合Common Nameは、GO-Globalホストのホスト名(ホストに接続するときに指定する名前)と一致している必要があります。異なる名前を使用すると、接続時にクライアントから警告が発せられます。上のコマンドの出力は、 server.csrという名前のファイルに保存されます。このファイルをCAに送信します。GO-Globalでは、OpenSSLツールキットに基づいてSSLが実装されているため、使用するツールは、Apache mod_sslパッケージなどのOpenSSLベースの製品で使用されているツールと同じです。mod_sslパッケージを使用してサーバの証明書を取得する方法については、CA の指示に従ってください。
 認証局(CA)から署名された証明書ファイルが届いた時、それを server.crt というファイル名で保存してください。このファイルと上記ステップ5で生成されたファイル server.key をGO-Globalホスト上のシステムアカウントおよびAdministratorグループのアカウントでのみアクセス可能なフォルダへコピーしてください。この時、通常のユーザアカウントでアクセス出来ないことを必ず確認してください。最後に、Admin Consoleで署名された証明書ファイルを選択してください。
 サーバ証明書の選択方法  Admin Consoleで、[Tools | Host Options]の順にクリックします。 Securityタブをクリックします。 Transportリストの中から SSLを選択します。 [SSL Certificate] ボックスに、サーバの証明書(server.crtなど)ファイルへのパスを入力または参照します。 OKをクリックします。  GO-Globalは、証明書とその鍵がPEM形式であることを要求しています。第三者のCAに証明書を要求する場合、GraphOnはPEM形式で証明書を要求することをお勧めします。これが不可能で、証明書をDER形式でしか配信できない場合は、次のコマンドを使用してPEM形式に変換できます。">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="471">
+<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
+<meta itemprop="wordCount" content="195">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="信頼されたサーバ証明書の取得"/>
 <meta name="twitter:description" content="強力な暗号化証明書ウィザードを使用する代わりに、お客様は他の認証局のサーバ証明書を使用することができます。クライアントのオペレーティングシステムによって信頼されているCAからサーバ証明書を取得する方法については、以下の情報と選択したCAのマニュアルを参照してください。CAは、証明書署名要求(CSR)を必要とします。
@@ -102,7 +102,7 @@ Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会�
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -133,7 +133,7 @@ Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会�
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -1004,6 +1004,12 @@ Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会�
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicsinstallingadditionalkeyboardsandimes" href="/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/">クライアントキーボードのサポートやIMEの構成</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicssettingresolutiononmobileclients" href="/docs/go-global61/advancedtopics/settingresolutiononmobileclients/">モバイルクライアントの解像度の構成</a>
       
       
     </li>
@@ -2823,14 +2829,6 @@ Country Name:JP State:都道府県名 Locality:市区町村名 Organization:会�
       </ul>
     </li>
   </ul>
-
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#to-verify-that-the-relay-load-balancer-and-dependent-host-are-properly-configured">To verify that the Relay Load Balancer and Dependent Host are properly configured</a></li>
-      </ul>
-    </li>
-  </ul>
 </nav>
 
 
@@ -2972,27 +2970,29 @@ GO-Globalのモバイルアプリで中間のSSL証明書を使用する場合�
 <li><strong>OK</strong>をクリックします。</li>
 <li>iOSまたはAndroidデバイスからGO-Globalセッションを開始します。</li>
 </ol>
-<h1 id="resolving-sll-issues">Resolving SLL Issues</h1>
-
-
-<div class="alert alert-secondary" role="alert">
-
-
-<h4 class="alert-heading"><i class="fa fa-info-circle" aria-hidden="true"></i>注意</h4>
-本項目の設定は推奨設定ではございませんのでご注意ください。
-</div>
-
-<p>When a Relay Load Balancer is configured to use SSL, the name entered into the Relay Load Balancer field on the Dependent Hosts must match the Common Name of the Relay Load Balancer’s certificate. (The name entered into the Relay Load Balancer field on the Relay Load Balancer does not need to match the Common Name of the Relay Load Balancer’s certificate.)</p>
-<h3 id="to-verify-that-the-relay-load-balancer-and-dependent-host-are-properly-configured">To verify that the Relay Load Balancer and Dependent Host are properly configured</h3>
+<h1 id="sslの問題を解決する">SSLの問題を解決する</h1>
+<p>SSLを使用するようにRelay Load Balancerを設定している場合、Dependent HostsのRelay Load Balancer欄に入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致している必要があります。(Relay Load BalancerのRelay Load Balancerフィールドに入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致する必要はありません) リレーロードバランサーと依存ホストが正しく設定されていることを確認するには、以下の手順に従います。</p>
 <ol>
-<li>Run the Admin Console and verify that the Dependent Host appears below the Relay Load Balancer in the tree view. If it does not, the Dependent Host is not connected to the Relay Load Balancer.</li>
-<li>If the Dependent Host does not appear below the Relay Load Balancer in the tree view, check the Application Publishing Service log on the Dependent Host. If it contains a message that the certificate is invalid, there is an SSL configuration problem.</li>
-<li>If there is an SSL certificate error message in the Dependent Host&rsquo;s Application Publishing Service log, browse to the GO-Global\Programs directory on the Dependent Host and double-click AppController.exe to run the GO-Global client.</li>
-<li>Type the address of the Relay Load Balancer into the Connection dialog. Type the address exactly as it is specified in the Relay Load Balancer field of the Host Options dialog on the Dependent Host.</li>
-<li>Click Connect.</li>
+<li>管理者コンソールを実行し、ツリービューのRelay Load Balancerの下に従属ホストが表示されていることを確認します。表示されない場合は、従属ホストがRelay Load Balancerに接続されていません。</li>
+<li>
+<ol start="2">
+<li>ツリービューで従属ホストがリレーロードバランサーの下に表示されない場合は、従属ホストのアプリケーショ ンパブリッシングサービスのログを確認します。証明書が無効であるというメッセージがあれば、SSLの設定に問題があります。</li>
 </ol>
-<p>If an SSL warning message is displayed, the Dependent Host will not be able to connect to the Relay Load Balancer. Resolve the issue described in the SSL warning message. Then the Dependent Host should be able to connect to the Relay Load Balancer.
-If no SSL warning dialog is displayed, but a different error message is displayed (e.g., No available hosts), the SSL configuration is fine. For the purposes of this test, you can disregard any error messages that do not pertain to the ability of the client to open a connection to the Relay Load Balancer.</p>
+</li>
+<li>
+<ol start="3">
+<li>ディペンデントホストの Application Publishing Service ログに SSL 証明書のエラーメッセージがある場合は、ディペンデントホストの GO-Global の GO-G\Programs ディレクトリを参照し、AppController.exe をダブルクリックして GO-Global クライアントを実行します。</li>
+</ol>
+</li>
+<li>接続ダイアログにリレーロードバランサーのアドレスを入力します。従属ホスト上のホストオプションダイアログのリレーロードバランサーフィールドに指定されているアドレスを正確に入力します。</li>
+<li>
+<ol start="5">
+<li>[Connect]をクリックします。</li>
+</ol>
+</li>
+</ol>
+<p>SSL警告メッセージが表示された場合、従属ホストはRelay Load Balancerに接続できません。SSL警告メッセージに記載されている問題を解決してください。そうすれば、従属ホストはRelay Load Balancerに接続できるはずです。
+SSL警告ダイアログが表示されず、別のエラーメッセージが表示された場合(例：利用可能なホストがありません)は、SSL設定に問題がないことを示しています。このテストでは、クライアントがRelay Load Balancerへの接続を開く能力に関係のないエラーメッセージは無視しても構いません。</p>
 
 	
 		
@@ -3268,7 +3268,7 @@ If no SSL warning dialog is displayed, but a different error message is displaye
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
 </div>
 </div>
 

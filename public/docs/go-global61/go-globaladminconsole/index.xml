@@ -516,7 +516,7 @@ GO-Globalセッションがシャドウイングされているとき、ホス�
 &lt;p&gt;&lt;img src=&#34;/img/4-4-1.png&#34; alt=&#34;4-4-1&#34;&gt;&lt;/p&gt;
 &lt;p&gt;有効なGO-Globalサポート契約を結んでいるお客様は、ライセンスを取得したホストで発生した問題についてテクニカルサポートを受けることができます。サポート契約の期限が切れると( &lt;strong&gt;[Support Expiration Date]&lt;/strong&gt; 列に示されているように)、重要なGO-Globalアップデートのみをホストにインストールできます。重要でないGO-Globalアップデートはインストールできません。お客様はサポートをリクエストする資格がありません。期限切れ警告の頻度は免許の種類によって異なります。&lt;strong&gt;[Don&amp;rsquo;t display this message again]&lt;/strong&gt; をオンにすると、有効期限の警告を無効にすることができます。&lt;/p&gt;
 &lt;p&gt;GO-Globalホストで利用可能ないずれかのライセンスのサポート契約の期限が切れた後にGO-Global Updateがリリースされた場合は、ホストにアップデートをインストールするためにサポート契約を更新する必要があります。すべてではなく一部のライセンスのサポート契約の期限が切れた後にアップデートがリリースされた場合は、期限切れのサポート契約のあるライセンスを削除するか、期限切れのサポート契約を更新することができます。&lt;/p&gt;
-&lt;p&gt;サポート契約を更新するには、KitASP販売窓口に連絡してください。&lt;/p&gt;
+&lt;p&gt;サポート契約を更新するには、GO-Global販売代理店にお問い合わせください。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -526,8 +526,9 @@ GO-Globalセッションがシャドウイングされているとき、ホス�
 GO-Globalホストが利用できるライセンスのサポート契約の有効期限がGO-Globalホストのビルド日より早い場合、&lt;strong&gt;Application Publishing Service&lt;/strong&gt; は実行されません。
 &lt;/div&gt;
 
-&lt;p&gt;GO-GlobalのOn-premiseトライアルライセンスでは、ライセンスマスターID、ライセンスID、およびメンテナンス有効期限が適用外として表示されます。&lt;strong&gt;[Expiration Date]&lt;/strong&gt; 列は、トライアルが機能しなくなる日を示します。試用ライセンスの有効期限が切れると、ユーザはそのコンピュータでGO-Globalを実行できなくなります。&lt;/p&gt;
-&lt;p&gt;ライセンスが失効として表示されている場合、そのライセンスは無効であり、システムから削除する必要があります。また、Application Publishing Serviceを再起動する必要があります。さらに支援が必要な場合は、KitASP技術支援センターにお問い合わせください。ライセンスがOld versionと表示されている場合、そのライセンスのバージョンは、ホストが要求しているライセンスバージョンよりも古いものです。それがホスト上の唯一のライセンスである場合は、アップグレードする必要があります。他のライセンスが機能するため削除する必要はありません。&lt;/p&gt;
+&lt;p&gt;GO-Globalのオンプレミストライアルライセンスの場合、ライセンスマスターID、ライセンスID、およびサポートの有効期限は、該当しないものとして記載されます。有効期限の欄には、トライアルが機能しなくなる日付が記載されています。トライアルライセンスステータスの有効期限が切れると、ユーザはそのコンピュータでGO-Globalを実行できなくなります。GO-Globalの販売代理店に連絡して、GO-Globalの試用ライセンスを延長してください。&lt;/p&gt;
+&lt;p&gt;ライセンスがRevokedと表示されている場合は無効であり、システムから削除し、Application Publishing Serviceを再起動する必要があります。詳細については、GO-Global販売代理店までお問い合わせください。ライセンスが古いバージョンとして表示されている場合、ライセンスのバージョンはホストが必要とするライセンスのバージョンよりも古いものです。これがホスト上の唯一のライセンスである場合は、アップグレードする必要があります。他のライセンスが動作するために削除する必要はありません。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&#34;http://www.DeepL.com/Translator&#34;&gt;www.DeepL.com/Translator&lt;/a&gt;（無料版）で翻訳しました。
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -536,8 +537,8 @@ GO-Globalホストが利用できるライセンスのサポート契約の有�
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
 ライセンスの一覧を更新するには、右クリックして &lt;strong&gt;[Refresh]&lt;/strong&gt; を選択するか、キーボードの &lt;strong&gt;F5&lt;/strong&gt; キーを押します。
 &lt;/div&gt;
-
-&lt;p&gt;cloudサブスクリプションのライセンスが有効期限内に更新されなかった場合、有効期限後に利用猶予期間が設けられています。猶予期間中はライセンスの運用が継続され、お客様がライセンスを更新するための時間が確保されます。猶予期間の終了時に、ライセンスが更新されていない場合は、ステータスがGraceからExpiredに変更され、ライセンスは動作を停止します。&lt;/p&gt;
+&lt;/p&gt;
+&lt;p&gt;Cloudサブスクリプションのライセンスが有効期限内に更新されなかった場合、有効期限後に利用猶予期間が設けられています。猶予期間中はライセンスの運用が継続され、お客様がライセンスを更新するための時間が確保されます。猶予期間の終了時に、ライセンスが更新されていない場合は、ステータスがGraceからExpiredに変更され、ライセンスは動作を停止します。&lt;/p&gt;
 
       </description>
     </item>
@@ -628,19 +629,10 @@ HTTPS接続を受け入れるように設定されたコンピュータにWebサ
 &lt;strong&gt;[SSLトランスポート]&lt;/strong&gt; を選択した場合、ユーザがWebブラウザを使用してGO-Globalホストにアクセスする場合は、WebサーバでHTTPSを有効にする必要があります。
 &lt;/div&gt;
 
-&lt;p&gt;When a Relay Load Balancer is used:&lt;/p&gt;
-
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。
-&lt;/div&gt;
-
+&lt;p&gt;Relay ロードバランサーを使用している場合。&lt;/p&gt;
 &lt;ul&gt;
-&lt;li&gt;The certificate must be installed on the Relay Load Balancer but does not need to be installed on the Dependent Hosts.&lt;/li&gt;
-&lt;li&gt;On the Dependent Hosts, the value in the &lt;strong&gt;Relay Load Balancer&lt;/strong&gt; address field on the &lt;strong&gt;Configuration&lt;/strong&gt; tab of the &lt;strong&gt;Host Options&lt;/strong&gt; dialog must match the certificate&amp;rsquo;s Common Name.&lt;/li&gt;
+&lt;li&gt;証明書はリレーロードバランサーにインストールする必要がありますが、従属ホストにはインストールする必要はありません。&lt;/li&gt;
+&lt;li&gt;従属ホストでは、&lt;strong&gt;Host Options&lt;/strong&gt;ダイアログの&lt;strong&gt;Configuration&lt;/strong&gt;タブの&lt;strong&gt;Relay Load Balancer&lt;/strong&gt;アドレスフィールドの値が証明書のCommon Nameと一致している必要があります。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;ファームマネージャを使用する場合：&lt;/p&gt;
 &lt;ul&gt;
@@ -859,27 +851,29 @@ GO-Globalのモバイルアプリで中間のSSL証明書を使用する場合�
 &lt;li&gt;&lt;strong&gt;OK&lt;/strong&gt;をクリックします。&lt;/li&gt;
 &lt;li&gt;iOSまたはAndroidデバイスからGO-Globalセッションを開始します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;resolving-sll-issues&#34;&gt;Resolving SLL Issues&lt;/h1&gt;
-
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。
-&lt;/div&gt;
-
-&lt;p&gt;When a Relay Load Balancer is configured to use SSL, the name entered into the Relay Load Balancer field on the Dependent Hosts must match the Common Name of the Relay Load Balancer’s certificate. (The name entered into the Relay Load Balancer field on the Relay Load Balancer does not need to match the Common Name of the Relay Load Balancer’s certificate.)&lt;/p&gt;
-&lt;h3 id=&#34;to-verify-that-the-relay-load-balancer-and-dependent-host-are-properly-configured&#34;&gt;To verify that the Relay Load Balancer and Dependent Host are properly configured&lt;/h3&gt;
+&lt;h1 id=&#34;sslの問題を解決する&#34;&gt;SSLの問題を解決する&lt;/h1&gt;
+&lt;p&gt;SSLを使用するようにRelay Load Balancerを設定している場合、Dependent HostsのRelay Load Balancer欄に入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致している必要があります。(Relay Load BalancerのRelay Load Balancerフィールドに入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致する必要はありません) リレーロードバランサーと依存ホストが正しく設定されていることを確認するには、以下の手順に従います。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;Run the Admin Console and verify that the Dependent Host appears below the Relay Load Balancer in the tree view. If it does not, the Dependent Host is not connected to the Relay Load Balancer.&lt;/li&gt;
-&lt;li&gt;If the Dependent Host does not appear below the Relay Load Balancer in the tree view, check the Application Publishing Service log on the Dependent Host. If it contains a message that the certificate is invalid, there is an SSL configuration problem.&lt;/li&gt;
-&lt;li&gt;If there is an SSL certificate error message in the Dependent Host&amp;rsquo;s Application Publishing Service log, browse to the GO-Global\Programs directory on the Dependent Host and double-click AppController.exe to run the GO-Global client.&lt;/li&gt;
-&lt;li&gt;Type the address of the Relay Load Balancer into the Connection dialog. Type the address exactly as it is specified in the Relay Load Balancer field of the Host Options dialog on the Dependent Host.&lt;/li&gt;
-&lt;li&gt;Click Connect.&lt;/li&gt;
+&lt;li&gt;管理者コンソールを実行し、ツリービューのRelay Load Balancerの下に従属ホストが表示されていることを確認します。表示されない場合は、従属ホストがRelay Load Balancerに接続されていません。&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;2&#34;&gt;
+&lt;li&gt;ツリービューで従属ホストがリレーロードバランサーの下に表示されない場合は、従属ホストのアプリケーショ ンパブリッシングサービスのログを確認します。証明書が無効であるというメッセージがあれば、SSLの設定に問題があります。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;If an SSL warning message is displayed, the Dependent Host will not be able to connect to the Relay Load Balancer. Resolve the issue described in the SSL warning message. Then the Dependent Host should be able to connect to the Relay Load Balancer.
-If no SSL warning dialog is displayed, but a different error message is displayed (e.g., No available hosts), the SSL configuration is fine. For the purposes of this test, you can disregard any error messages that do not pertain to the ability of the client to open a connection to the Relay Load Balancer.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;ディペンデントホストの Application Publishing Service ログに SSL 証明書のエラーメッセージがある場合は、ディペンデントホストの GO-Global の GO-G\Programs ディレクトリを参照し、AppController.exe をダブルクリックして GO-Global クライアントを実行します。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;li&gt;接続ダイアログにリレーロードバランサーのアドレスを入力します。従属ホスト上のホストオプションダイアログのリレーロードバランサーフィールドに指定されているアドレスを正確に入力します。&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;5&#34;&gt;
+&lt;li&gt;[Connect]をクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;p&gt;SSL警告メッセージが表示された場合、従属ホストはRelay Load Balancerに接続できません。SSL警告メッセージに記載されている問題を解決してください。そうすれば、従属ホストはRelay Load Balancerに接続できるはずです。
+SSL警告ダイアログが表示されず、別のエラーメッセージが表示された場合(例：利用可能なホストがありません)は、SSL設定に問題がないことを示しています。このテストでは、クライアントがRelay Load Balancerへの接続を開く能力に関係のないエラーメッセージは無視しても構いません。&lt;/p&gt;
 
       </description>
     </item>
@@ -1113,6 +1107,7 @@ Admin Consoleのダイアログボックス内で、項目を右クリックし�
 &lt;p&gt;QRコードをスキャンし、2段階認証ダイアログで &lt;strong&gt;[Next]&lt;/strong&gt; をクリックすると、ユーザは、携帯電話のアプリから 6桁のコードを入力するように求められます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/4-10-5.png&#34; alt=&#34;4-10-5&#34;&gt;&lt;/p&gt;
 &lt;p&gt;2要素認証に登録済みのユーザーがGO-Globalホストに接続すると、まず &lt;strong&gt;[Sign In]&lt;/strong&gt; ダイアログでユーザ名とパスワードの入力を求められ、次に認証アプリから6桁のコードを入力するよう求められます。&lt;/p&gt;
+&lt;p&gt;二要素認証で使用するQRコードは、ユーザーのユーザープロファイルに保存されます。ローミングプロファイルが有効になっている場合、ユーザーは一度だけQRコードをスキャンする必要があります。あるいは、ローミングプロファイルを有効にしていない場合、ユーザーは新しいホストに接続するたびにQRコードをスキャンするように促されます。そのため、二要素認証が有効なマルチサーバー環境では、ローミングプロファイルを有効にする必要があります。&lt;/p&gt;
 &lt;h1 id=&#34;ユーザ確認コードのリセット&#34;&gt;ユーザ確認コードのリセット&lt;/h1&gt;
 &lt;p&gt;Admin Consoleを使用すると、管理者は特定のユーザの認証コードをリセットできます。たとえば、そのユーザが認証アプリを削除したり、スマートフォンを紛失したりした場合などです。管理者は、すべてのユーザの確認コードをリセットすることもできます。&lt;/p&gt;
 &lt;h3 id=&#34;特定のユーザのユーザ確認コードをリセットする方法&#34;&gt;特定のユーザのユーザ確認コードをリセットする方法&lt;/h3&gt;
@@ -1287,7 +1282,7 @@ Admin Consoleのダイアログボックス内で、項目を右クリックし�
 &lt;li&gt;&lt;strong&gt;[Sound]&lt;/strong&gt; チェック ボックスをクリックします。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;サウンドカードをホストに取り付ける必要があります。スピーカはホストには必要ありません。クライアントサウンドは、WindowsとMac OS X Appでサポートされています。クライアントマシンにはサウンドカードとスピーカが必要です。オーディオサポートはデフォルトで無効になっています。&lt;/p&gt;
+&lt;p&gt;ホストコンピュータにサウンドカードやスピーカーは必要ありませんが、Windows Audio サービスがホスト上で有効になっている必要があります。AppController for Windows および Mac OS X はクライアントサウンドをサポートしています。クライアントマシンにはサウンドカードとスピーカーが必要です。オーディオのサポートはデフォルトでは無効になっています。&lt;/p&gt;
 
       </description>
     </item>
@@ -1920,48 +1915,32 @@ MicrosoftのVBScriptは、バッチファイルで実行されない限り、ロ
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-secondary&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;注意&lt;/h4&gt;
-本項目の設定は推奨設定ではございませんのでご注意ください。
-&lt;/div&gt;
-
-
-
-&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
-本項目の設定については弊社から各代理店様宛に「【重要】きっとエイエスピー技術支援センターからのお知らせ 20yy年mm月のWindows Update互換性情報に関して」というご案内を出させておりますのでそちらをご参照ください。
-&lt;/div&gt;
-
-&lt;p&gt;To provide multi-user remote access on all versions of Windows, GO-Global must access internal functions and data structures in Windows. When a computer running the GO-Global Host starts, GO-Global analyzes some of the operating system&amp;rsquo;s binary files and automatically identifies the addresses of the operating system functions and variables that GO-Global requires.&lt;/p&gt;
-&lt;p&gt;In most cases, GO-Global is able to identify the required operating system addresses regardless of the version of Windows and the Windows Updates that are installed on the computer. In rare cases, however, Windows Updates include changes to the operating system that either prevent GO-Global from locating a required address or are incompatible with GO-Global&amp;rsquo;s interface to the operating system. When this happens, GO-Global is unable to start sessions on a computer. To prevent this from occurring, GO-Global v6 provides Windows Compatibility Assurance.&lt;/p&gt;
-&lt;p&gt;The Windows Compatibility Assurance feature gives administrators the option to automatically defer installation of Windows Updates until GraphOn has verified that the updates are compatible with GO-Global. To do this, GraphOn continuously monitors Microsoft&amp;rsquo;s Windows Update service for new updates. When Microsoft releases one or more Windows Updates, GO-Global suspends installation of all Windows Updates on affected GO-Global hosts until GraphOn has verified that the newly released Windows Updates are compatible.&lt;/p&gt;
-
+        &lt;p&gt;Windowsのすべてのバージョンでマルチユーザリモートアクセスを提供するために、GO-GlobalはWindowsの内部関数およびデータ構造にアクセスする必要があります。GO-Globalホストを実行しているコンピュータが起動すると、GO-Globalはオペレーティングシステムのバイナリファイルの一部を分析し、GO-Globalが必要とするオペレーティングシステムの機能および変数のアドレスを自動的に特定します。&lt;/p&gt;
+&lt;p&gt;ほとんどの場合、コンピュータにインストールされている Windowsのバージョンおよび Windowsアップデートに関係なく、GO-Globalは必要なオペレーティングシステムのアドレスを識別することができます。ただし、まれに、Windowsアップデートにはオペレーティングシステムへの変更が含まれているため、GO-Globalが必要なアドレスを特定できない場合や、GO-Globalのオペレーティングシステムへのインターフェイスと互換性がない場合があります。この場合、GO-Globalはコンピュータでセッションを開始することができません。このような事態を防ぐため、GO-Globalバージョン6ではWindows互換性保証を提供しています。&lt;/p&gt;
+&lt;p&gt;Windows互換性保証機能により、管理者は、更新プログラムがGO-Globalと互換性があることをGraphOnが確認するまで、Windows更新プログラムのインストールを自動的に延期することができます。このために、GraphOnはマイクロソフトのWindows Updateサービスを継続的に監視し、新しいアップデートがないかどうかを確認しています。Microsoftが1つまたは複数のWindowsアップデートをリリースすると、GO-Globalは、GraphOnが新しくリリースされたWindowsアップデートの互換性を確認するまで、影響を受けるGO-GlobalホストへのすべてのWindowsアップデートのインストールを一時停止します。&lt;/p&gt;
+&lt;p&gt;
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-&lt;p&gt;To ensure GO-Global Hosts do not download newly released Windows Updates during the short window of time between when Microsoft releases a new update and GraphOn detects that the update has been released, GO-Global controls when Windows Updates can be installed on GO-Global Hosts. On Windows 10 and later, GO-Global delays Windows Updates by the number of days specified by the value of the DelayWindowsUpdates property in the HostProperties.xml file. (This is set to 1 day, by default).&lt;/p&gt;
-&lt;p&gt;On earlier versions of Windows, GO-Global only allows Windows Updates to be installed during the time period specified by the value of the AllowWindowsUpdates property in the HostProperties.xml file. (The default value is 02:00-14:00 UTC, which means Windows Updates can install new updates between 6:00 p.m. and 6:00 a.m. PST.)&lt;/p&gt;
-
+TMicrosoft が新しい更新プログラムをリリースしてから GraphOn が更新プログラムのリリースを検出するまでの短い時間内に GO-Global ホストが新しくリリースされた Windows 更新プログラムをダウンロードしないようにするために、GO-Global は GO-Global ホストに Windows 更新プログラムをインストールできるタイミングを制御します。GO-Globalは、HostProperties.xmlファイルのDelayWindowsUpdatesプロパティの値で指定された日数分、Windowsアップデートを遅らせます。(既定では 1 日間に設定されています)。
 &lt;/div&gt;
 
-&lt;p&gt;If an incompatibility is identified, GO-Global prevents installation of all Windows Updates on affected hosts until it has automatically downloaded and installed an update that is compatible with all Windows Update releases. GO-Global notifies the administrator when a compatibility update is downloaded and installed. After the compatibility update is successfully installed and the computer is restarted, GO-Global will resume Windows Updates.&lt;/p&gt;
-&lt;p&gt;When enabled, Windows Compatibility Assurance minimizes the risk of incompatibilities. Windows Compatibility Assurance is enabled by default, but can be disabled through the Host Options dialog. However, if a Windows Update is incompatible with GO-Global, and it is installed on the host, GO-Global and/or the host machine will stop working. GraphOn recommends that this option is not disabled. However, if GO-Global is running on a closed network, and is unable to communicate with GraphOn&amp;rsquo;s Update server, this feature can be disabled to prevent warning messages from being displayed.&lt;/p&gt;
+互換性がないことが確認された場合、GO-Global は、すべての Windows Update リリースと互換性のある更新プログラムを自動的にダウンロードしてインストールするまで、影響を受けるホストへのすべての Windows Update のインストールを禁止します。互換性のある更新プログラムがダウンロードおよびインストールされると、GO-Global は管理者に通知します。互換性更新プログラムが正常にインストールされ、コンピュータが再起動されると、GO-Global は Windows 更新プログラムを再開します。&lt;/p&gt;
+&lt;p&gt;Windows 互換性保証を有効にすると、互換性がない場合のリスクを最小限に抑えることができます。Windows の互換性保証は既定で有効になっていますが、[ホスト オプション] ダイアログで無効にすることができます。ただし、Windows UpdateがGO-Globalと互換性がなく、ホストにインストールされている場合、GO-Globalおよびホストマシンは動作を停止します。グラフオンでは、このオプションを無効にしないことをお勧めします。ただし、GO-Globalがクローズドネットワーク上で動作していて、グラフオンのアップデートサーバーと通信できない場合は、この機能を無効にして警告メッセージを表示しないようにすることができます。&lt;/p&gt;
 &lt;h3 id=&#34;to-disable-windows-compatibility-assurance&#34;&gt;To disable Windows Compatibility Assurance&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
-&lt;li&gt;Click the Updates tab.&lt;/li&gt;
-&lt;li&gt;Click the checkbox next to Defer Windows Updates until they have been certified by GraphOn.&lt;/li&gt;
+&lt;li&gt;管理者コンソールから、[ツール] &amp;gt; [ホストオプション] をクリックします。&lt;/li&gt;
+&lt;li&gt;更新] タブをクリックします。&lt;/li&gt;
+&lt;li&gt;
+&lt;ol start=&#34;3&#34;&gt;
+&lt;li&gt;GraphOnの認定を受けるまでWindowsの更新を延期するのチェックボックスをクリックします。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;&lt;img src=&#34;/img/4-16-1.png&#34; alt=&#34;4-16-1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;GO-Global displays messages describing an update&amp;rsquo;s certification status when the Admin Console first opens and when selecting a host from the All Hosts list. Certification status messages display as follows:&lt;/p&gt;
+&lt;p&gt;GO-Globalでは、管理者コンソールが最初に開いたとき、およびすべてのホストのリストからホストを選択したときに、更新の認証ステータスを説明するメッセージが表示されます。認証ステータス メッセージは次のように表示されます。:&lt;/p&gt;
 &lt;table&gt;
 &lt;thead&gt;
 &lt;tr&gt;
@@ -1972,27 +1951,27 @@ MicrosoftのVBScriptは、バッチファイルで実行されない限り、ロ
 &lt;tbody&gt;
 &lt;tr&gt;
 &lt;td&gt;If Windows Updates have been certified by GraphOn…&lt;/td&gt;
-&lt;td&gt;GO-Global is compatible with the latest Windows Updates, which were released on [date of release].&lt;/td&gt;
+&lt;td&gt;GO-Global は、[リリース日] にリリースされた最新の Windows アップデートに対応しています。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;If certification by GraphOn is pending…&lt;/td&gt;
-&lt;td&gt;GraphOn is testing Windows Updates released on [date of release]. GO-Global is delaying installation of Windows Updates until GraphOn certifies that these Windows updates are compatible with GO-Global.&lt;/td&gt;
+&lt;td&gt;グラフオンは、[リリース日]にリリースされたWindowsアップデートをテストしています。GO-Globalは、グラフオンがこれらのWindowsアップデートがGO-Globalと互換性があることを証明するまで、Windowsアップデートのインストールを延期しています。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;If certification by GraphOn is pending, but the Windows Compatibility Assurance option is disabled…&lt;/td&gt;
-&lt;td&gt;GraphOn is testing Windows Updates released on [date of release] to see if they are compatible with GO-Global.&lt;/td&gt;
+&lt;td&gt;グラフオンでは、[リリース日]にリリースされたWindowsアップデートがGO-Globalと互換性があるかどうかをテストしています。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;If GraphOn determines that Windows Updates are incompatible…&lt;/td&gt;
-&lt;td&gt;GO-Global is incompatible with Windows Updates released on [date of release]. GO-Global is delaying installation of Windows Updates until a GO-Global Compatibility Update is available.&lt;/td&gt;
+&lt;td&gt;GO-Global は [リリース日] にリリースされた Windows アップデートと互換性がありません。GO-Global では、GO-Global 互換性更新プログラムが利用可能になるまで Windows 更新プログラムのインストールを延期しています。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;tr&gt;
 &lt;td&gt;If Windows Updates are incompatible but the Windows Compatibility Assurance option is disabled…&lt;/td&gt;
-&lt;td&gt;GO-Global is incompatible with Windows Updates released on [date of release]. If these Windows Updates are installed on this computer, GO-Global and/or this computer will stop working.&lt;/td&gt;
+&lt;td&gt;GO-Global は [リリース日] にリリースされた Windows アップデートと互換性がありません。これらの Windows アップデートがこのコンピューターにインストールされている場合、GO-Global および/またはこのコンピューターは機能しなくなります。&lt;/td&gt;
 &lt;/tr&gt;
 &lt;/tbody&gt;
 &lt;/table&gt;
-&lt;p&gt;GO-Global verifies that all the licenses the computer is using support the selected GO-Global update. If any of the licenses do not support the update, the GO-Global update will not be installed. For example, if the host is using a version 5 license and the selected GO-Global update is version 6, the GO-Global license(s) that this computer is using must be upgraded before the update can be installed. Contact your GO-Global reseller or &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt; to upgrade licenses.&lt;/p&gt;
+&lt;p&gt;GO-Global は、コンピュータで使用しているすべてのライセンスが選択した GO-Global 更新プログラムをサポートしていることを確認します。更新をサポートしていないライセンスがある場合、GO-Global の更新プログラムはインストールされません。たとえば、ホストがバージョン 5 のライセンスを使用しており、選択した GO-Global 更新プログラムがバージョン 6 の場合、更新プログラムをインストールする前に、このコンピュータで使用している GO-Global ライセンスをアップグレードする必要があります。ライセンスのアップグレードについては、GO-Global販売代理店にお問い合わせください。&lt;/p&gt;
 
       </description>
     </item>
@@ -2015,7 +1994,7 @@ MicrosoftのVBScriptは、バッチファイルで実行されない限り、ロ
 本項目の設定は推奨設定ではございませんのでご注意ください。
 &lt;/div&gt;
 
-
+&lt;p&gt;
 
 &lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
 
@@ -2030,41 +2009,40 @@ MicrosoftのVBScriptは、バッチファイルで実行されない限り、ロ
 
 &lt;/div&gt;
 
-&lt;p&gt;There are three types of GO-Global Updates:&lt;/p&gt;
+GO-Global アップデートには 3 つのタイプがあります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Critical&lt;/li&gt;
 &lt;li&gt;Recommended&lt;/li&gt;
 &lt;li&gt;Optional&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;Critical updates are changes that are required for GO-Global to run on the latest releases of Microsoft Windows. Critical updates do not include functionality changes. They generally only replace a few binary files on the host. Recommended updates are changes that fix GO-Global defects and usability issues. They generally do not include user interface changes unless a user interface change is necessary to fix an important defect. Recommended updates generally replace all of GO-Global&amp;rsquo;s binary files. Optional updates are changes that add new features and functionality to GO-Global. Optional updates include major upgrades and minor upgrades. Optional updates generally replace all of GO-Global&amp;rsquo;s binary files.&lt;/p&gt;
-&lt;p&gt;GO-Global will only automatically download and install critical GO-Global Updates if the Windows Compatibility Assurance option is enabled. By default, GO-Global defers installation of Windows Updates until they have been certified by GraphOn.&lt;/p&gt;
-&lt;h3 id=&#34;installing-a-go-global-update-go-global&#34;&gt;Installing a GO-Global Update GO-Global&lt;/h3&gt;
-&lt;p&gt;GO-Global displays the available GO-Global updates in the Updates tab of the Host Options dialog, and allows administrators to select an update and install it.
-In the example below, there are two available GO-Global updates: host_6.1.0.29711.msi and web_6.1.0.29711.msi. Both are recommended updates.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/img/4-17-1.png&#34; alt=&#34;4-17-1&#34;&gt;&lt;/p&gt;
+&lt;p&gt;重要な更新は、Microsoft Windows の最新リリースで GO-Global を実行するために必要な変更です。重要な更新には機能の変更は含まれていません。一般的には、ホスト上のいくつかのバイナリファイルを置き換えるだけです。推奨更新は、GO-Global の不具合やユーザビリティの問題を修正するための変更です。重要な欠陥を修正するためにユーザー インターフェイスの変更が必要な場合を除き、通常、ユーザー インターフェイスの変更は含まれません。推奨更新は通常、GO-Global のすべてのバイナリ ファイルを置き換えます。オプションの更新は、GO-Global に新しい機能と機能を追加する変更です。オプションの更新には、メジャー アップグレードとマイナー アップグレードが含まれます。オプションの更新は通常、GO-Global のすべてのバイナリ ファイルを置き換えます。&lt;/p&gt;
+&lt;p&gt;GO-Global は、Windows 互換性保証オプションが有効になっている場合にのみ、重要な GO-Global 更新プログラムを自動的にダウンロードしてインストールします。デフォルトでは、GO-GlobalはWindows更新プログラムのインストールを、グラフオンによって認証されるまで延期します。&lt;/p&gt;
+&lt;h3 id=&#34;go-globalアップデートのインストール-go-global&#34;&gt;GO-Globalアップデートのインストール GO-Global&lt;/h3&gt;
+&lt;p&gt;GO-Global では、[ホスト オプション] ダイアログの [更新] タブに利用可能な GO-Global 更新プログラムが表示され、管理者は更新プログラムを選択してインストールすることができます。次の例では、利用可能な GO-Global の更新プログラムは 2 つあります：host_6.1.0.29711.msi と web_6.1.0.29711.msi です。どちらも推奨されるアップデートです。
+&lt;img src=&#34;/img/4-17-1.png&#34; alt=&#34;4-17-1&#34;&gt;&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
-&lt;li&gt;Click the Updates tab.&lt;/li&gt;
-&lt;li&gt;Select an update from the list of available GO-Global updates.&lt;/li&gt;
-&lt;li&gt;Click the Install button.&lt;/li&gt;
-&lt;li&gt;Click Yes to confirm.&lt;/li&gt;
+&lt;li&gt;管理者コンソールから、[ツール] &amp;gt; [ホストオプション] をクリックします。&lt;/li&gt;
+&lt;li&gt;更新] タブをクリックします。&lt;/li&gt;
+&lt;li&gt;利用可能な GO-Global アップデートのリストからアップデートを選択します。&lt;/li&gt;
+&lt;li&gt;インストール] ボタンをクリックします。&lt;/li&gt;
+&lt;li&gt;はい] をクリックして確認します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;After confirming installation of the updates, the following message is displayed:&lt;/p&gt;
+&lt;p&gt;更新プログラムのインストールを確認すると、次のメッセージが表示されます。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/4-17-2.png&#34; alt=&#34;4-17-2&#34;&gt;&lt;/p&gt;
-&lt;p&gt;The installed updates will be enabled when the computer is restarted. GraphOn recommends restarting the computer at the first opportunity, when users will not be affected.&lt;/p&gt;
-&lt;h2 id=&#34;reviewing-pending-and-installed-updates&#34;&gt;Reviewing Pending and Installed Updates&lt;/h2&gt;
-&lt;p&gt;When performing update checks, the Application Publishing Service looks for updates that support:&lt;/p&gt;
-&lt;p&gt;　a. the version of GO-Global that is installed on the computer,&lt;/p&gt;
-&lt;p&gt;　b. the version of the computer&amp;rsquo;s operating system, and&lt;/p&gt;
-&lt;p&gt;　c. the type of updates that are approved to be downloaded and installed on the host.&lt;/p&gt;
-&lt;p&gt;When the Application Publishing Service finds a match, it downloads the update&amp;rsquo;s installer and runs it. After the update&amp;rsquo;s installer has been run, the update is pending but not yet fully installed. Pending updates are installed and activated the next time the computer is restarted. Administrators can view the pending and installed updates on the Updates tab of the Admin Console&amp;rsquo;s &lt;strong&gt;Host Options&lt;/strong&gt; dialog.&lt;/p&gt;
-&lt;h3 id=&#34;to-review-pending-and-installed-updates&#34;&gt;To review pending and installed updates&lt;/h3&gt;
+&lt;p&gt;インストールされているアップデートは、コンピュータを再起動すると有効になります。グラフオンでは、ユーザーが影響を受けないタイミングで再起動することをお勧めします。&lt;/p&gt;
+&lt;h2 id=&#34;保留中のアップデートとインストールされているアップデートの確認&#34;&gt;保留中のアップデートとインストールされているアップデートの確認&lt;/h2&gt;
+&lt;p&gt;アップデート チェックを実行するとき、アプリケーション パブリッシング サービスは、以下をサポートするアップデートを探します。&lt;/p&gt;
+&lt;p&gt;　a. コンピュータにインストールされている GO-Global のバージョン。&lt;/p&gt;
+&lt;p&gt;　b. コンピュータのオペレーティングシステムのバージョン、および&lt;/p&gt;
+&lt;p&gt;　c. ホストにダウンロードしてインストールすることが承認されている更新プログラムの種類。&lt;/p&gt;
+&lt;p&gt;アプリケーション公開サービスが一致するものを見つけると、更新プログラムのインストーラーをダウンロードして実行します。更新プログラムのインストーラーが実行されると、更新プログラムは保留中ですが、まだ完全にはインストールされていません。保留中の更新プログラムはインストールされ、次回のコンピュータの再起動時に有効になります。管理者は、管理者コンソールの&lt;strong&gt;ホストオプション&lt;/strong&gt;ダイアログの[更新]タブで、保留中の更新プログラムとインストール済みの更新プログラムを表示できます。&lt;/p&gt;
+&lt;h3 id=&#34;保留中のアップデートやインストールされているアップデートを確認するには&#34;&gt;保留中のアップデートやインストールされているアップデートを確認するには&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;From the Admin Console, click Tools | Host Options.&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;Updates.&lt;/strong&gt;&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;The following GO-Global updates will be enabled&lt;/strong&gt; the next time the computer restarts group box lists the updates that have been downloaded but are not yet fully installed.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;The following GO-Global updates have been installed&lt;/strong&gt; group box lists the updates that are installed and active on the host.&lt;/li&gt;
-&lt;li&gt;Click &lt;strong&gt;OK.&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;管理者コンソールから、[ツール] &amp;gt; [ホストオプション] をクリックします。&lt;/li&gt;
+&lt;li&gt;更新」をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;次の GO-Global 更新プログラムが有効になります&lt;/strong&gt;* 次回のコンピュータの再起動時に、グループボックスには、ダウンロードされたがまだ完全にインストールされていない更新プログラムが一覧表示されます。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;次の GO-Global 更新プログラムがインストールされています&lt;/strong&gt; グループボックスには、ホストにインストールされ、有効になっている更新プログラムが一覧表示されます。&lt;/li&gt;
+&lt;li&gt;OK] をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 
       </description>

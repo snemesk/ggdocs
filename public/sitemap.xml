@@ -45,7 +45,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/configuringthehost/installingthego-globalhost/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/advancedtopics/go-globalhostperformancecounters/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -60,7 +60,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/loadbalancing/</loc>
-    <lastmod>2021-03-02T23:02:32+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/mobile-app-toolbar-editor/mobile-app-toolbar-editor/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -120,7 +120,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/runninggo-global/go-globalwebapp/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globallicensing/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -135,7 +135,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/independenthosts/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/technote/technote41/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -237,7 +237,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/relayloadbalancers/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/configuring-the-host/running-the-30-day-trial-version/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -303,7 +303,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/dependenthosts/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/appendix/encryptionandexportationregulations/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -381,7 +381,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/managinggo-globallicenses/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/configuring-the-host/iis-web-server/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -462,7 +462,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/securityoptions/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global5/cluster-manager/sesshonno-1/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -501,7 +501,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/</loc>
-    <lastmod>2021-03-02T23:02:32+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global5/go-global-clientno/updating-the-activex-control-and-the-plug-in/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -549,7 +549,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/licenseserverconfiguration/</loc>
-    <lastmod>2021-03-02T23:02:32+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/configuring-the-host/redundant-license-servers/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -582,7 +582,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/runninggo-global/automaticclientupdates/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -621,16 +621,16 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/obtainingatrustedservercertificate/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/go-global-admin-console/akaunto/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/advancedtopics/advancedsessionprocessconfiguration/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/running-go-global/automatic-client-updates/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -678,7 +678,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/advancedtopics/runningthewindowsdesktopinthebackgroundofgo-globalsessions/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/loadbalancing/manuallycopyingconfigurationsettingsfromonehosttoanother/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -744,7 +744,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/two-factorauthentication/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/go-global-admin-console/go-global-updates/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -825,7 +825,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/advancedtopics/supportrequestwizard/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-globalforwindows6tips/technote/technote210/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -849,7 +849,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/clientsound/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/advanced-topics/proxy-tunneling/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -905,6 +905,9 @@
     <loc>/docs/go-global61/go-globaladminconsole/fileopenredirection/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
+    <loc>/docs/go-global61/advancedtopics/settingresolutiononmobileclients/</loc>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
+  </url><url>
     <loc>/docs/go-global5/topikku-1/no-1/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
@@ -954,10 +957,10 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/go-globalupdates/</loc>
-    <lastmod>2021-03-01T17:25:01+09:00</lastmod>
+    <lastmod>2021-03-11T16:07:55+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global5/topikku-1/paenosaptowonisuru/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>

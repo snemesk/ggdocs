@@ -21,19 +21,28 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>Support for Third-Party Load Balancers | GO-Global Docs</title><meta property="og:title" content="Support for Third-Party Load Balancers" />
-<meta property="og:description" content="GO-Global&rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm." />
+<meta property="og:description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-02T23:02:32&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="Support for Third-Party Load Balancers">
-<meta itemprop="description" content="GO-Global&rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm.">
-<meta itemprop="dateModified" content="2021-03-02T23:02:32&#43;09:00" />
-<meta itemprop="wordCount" content="502">
+<meta itemprop="description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。">
+<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
+<meta itemprop="wordCount" content="53">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Support for Third-Party Load Balancers"/>
-<meta name="twitter:description" content="GO-Global&rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm."/>
+<meta name="twitter:description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。"/>
 
 
 
@@ -90,7 +99,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -121,7 +130,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.9e0884aca095c4e9914eea621eea6807acdbca09d37b6226db32a54df8291e2b3ba96e0ce66f86b7ed3bf442b7d0e704b1a9017b10158f79feee05b8706f9179.json"
+  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
   data-offline-search-base-href="/"
 >
 
@@ -992,6 +1001,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicsinstallingadditionalkeyboardsandimes" href="/docs/go-global61/advancedtopics/installingadditionalkeyboardsandimes/">クライアントキーボードのサポートやIMEの構成</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61advancedtopicssettingresolutiononmobileclients" href="/docs/go-global61/advancedtopics/settingresolutiononmobileclients/">モバイルクライアントの解像度の構成</a>
       
       
     </li>
@@ -2802,6 +2817,16 @@
 
 
 
+<nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#これらの機能を有効にする方法">これらの機能を有効にする方法</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+
 
 
           </div>
@@ -2857,30 +2882,31 @@
 <div class="td-content">
 	<h1>Support for Third-Party Load Balancers</h1>
 	
-	<p>GO-Global&rsquo;s new Farm Host and Farm Manager roles make it easy for administrators to manage farms of GO-Global Application Hosts that are accessed via third-party load balancers. Using these roles, administrators can manage and shadow sessions running across a farm, and they can configure settings on all Farm Hosts in a farm at once. And when new Farm Hosts join a farm,they automatically inherit the settings of the other hosts in the farm.</p>
-<p>In addition, these new roles enable users who connect to GO-Global Hosts via third-party load balancers to disconnect from their sessions from one device, and reconnect to their sessions from a different device. GO-Global automatically reconnects users to their sessions, even when the load balancer fails to connect a user to the host on which the user’s session is running. For example, if a user with a session running on Host A disconnects from the session while at work, goes home, and then reconnects to the session from a home computer, GO-Global will ensure that the user is reconnected to his or her session. If the load balancer routes the user&rsquo;s connection to Host B, Host B will open a connection to Host A and relay the data between the GO-Global AppController and Host A.</p>
-<h3 id="to-enable-these-capabilities">To enable these capabilities:</h3>
+	<p>GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。</p>
+<p>さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。
+たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。</p>
+<h3 id="これらの機能を有効にする方法">これらの機能を有効にする方法</h3>
 <ol>
-<li>Create a GO-Global Farm Manager:<br>
-a. Install the GO-Global Host on a computer that is <strong>not</strong> connected to the third-party load balancer.<br>
-b. Run the Admin Console and set the Server Role to <strong>Farm Manager.</strong> <br>
-c. Restart the <strong>Application Publishing Service.</strong> <br></li>
-<li>On each GO-Global Application Host that is accessible from the load balancer:<br>
-a. Run the Admin Console and set the Server Role to Farm Host.<br>
-b. Enter the address of the Farm Manager configured in step 1 in the <strong>Farm Manager address</strong> field.<br>
-c. Restart the <strong>Application Publishing Service.</strong><br></li>
+<li>GO-Globalファームマネージャを作成します。
+a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
+c. Application Publishing Serviceを再起動します。</li>
+<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
+b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。
+c. Application Publishing Serviceを再起動します。</li>
 </ol>
-<p>Administrators can provide High Availability for a farm by configuring a failover Farm Manager as follows:</p>
+<p>管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。</p>
 <ol>
-<li>Create a failover Farm Manager:<br>
-a. Install the GO-Global Host on another computer that is not connected to the third-party load balancer.<br>
-b. Run the Admin Console and set the Server Role to <strong>Farm Manager.</strong> <br>
-c. Restart the <strong>Application Publishing Service.</strong> <br></li>
-<li>On each GO-Global Application Host that is accessible from the load balancer:<br>
-a. Run the Admin Console and append a semicolon and the address of the failover Farm Manager to the address of the primary Farm Manager in the <strong>Farm Manager address</strong> field.<br>
-b. Restart the <strong>Application Publishing Service.</strong> <br></li>
+<li>フェールオーバーファームマネージャを作成します。
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
+c. Application Publishing Serviceを再起動します。</li>
+<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
+b. Application Publishing Serviceを再起動します。</li>
 </ol>
-<p>The new Farm Manager and Farm Host server roles are supported by the same infrastructure and design that has supported the GO-Global Relay Server and Dependent Host roles for many years.Unlike a Relay Server, however, a Farm Manager does not relay data between GO-Global clients and hosts and is, therefore, not subject to the same scalability limits as a Relay Server. A Farm Manager keeps track of all sessions running in a farm, but unless an administrator is shadowing a session, no data from applications running in a session passes through the Farm Manager.</p>
+<p>新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。</p>
 <p><img src="/img/5-7-1.png" alt="5-7-1"></p>
 
 	
@@ -3035,7 +3061,7 @@ b. Restart the <strong>Application Publishing Service.</strong> <br></li>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 2, 2021: <a  href="https://github.com//commit/8dcfd989cf90c007da202398cf22c0c54dd0cb1e">test (8dcfd98)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
 </div>
 </div>
 

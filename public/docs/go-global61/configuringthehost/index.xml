@@ -22,53 +22,36 @@
       <description>
         
         
-        
-
-&lt;div class=&#34;alert alert-green&#34; role=&#34;alert&#34;&gt;
-
-
-&lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;情報&lt;/h4&gt;
-GO-Globalホストのインストールの詳細につきましては弊社提供のメディアにございますDocuments_kitASPフォルダ内のGGH6.*インストール手順書をご参照ください。
-&lt;/div&gt;
-
-&lt;p&gt;GO-Globalは自己解凍型の実行ファイルとして提供され、 &lt;strong&gt;gg-host.exe&lt;/strong&gt; をダブルクリックすることでインストールできます。ホストセットアッププログラムを実行する場合は、コンピュータの管理者グループのメンバであるアカウントにログインしている必要があります。Windows Server 2019でインストーラを実行する場合は、&lt;strong&gt;gg-host.exe&lt;/strong&gt; を右クリックし、 &lt;strong&gt;[管理者として実行]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/p&gt;
+        &lt;p&gt;GO-Globalは自己解凍型の実行ファイルとして提供され、 &lt;strong&gt;gg-host.exe&lt;/strong&gt; をダブルクリックすることでインストールできます。ホストセットアッププログラムを実行する場合は、コンピュータの管理者グループのメンバであるアカウントにログインしている必要があります。Windows Server 2019でインストーラを実行する場合は、&lt;strong&gt;gg-host.exe&lt;/strong&gt; を右クリックし、 &lt;strong&gt;[管理者として実行]&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;既定では、GO-Globalホストのセットアップでは、コア &lt;strong&gt;ホスト&lt;/strong&gt; コンポーネント、 &lt;strong&gt;Web&lt;/strong&gt; コンポーネント(ブラウザログオンのためにホストを構成するために必要なすべてのファイルを含む)、およびライセンスコンポーネントのすべてがインストールされます。 &lt;strong&gt;[Customize]&lt;/strong&gt; ボタンをクリックして、インストールしたくないコンポーネントのチェックを外すことで、インストールをカスタマイズすることができます。それ以外の場合は、 &lt;strong&gt;[Install]&lt;/strong&gt; ボタンをクリックします。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;インストール中、インストーラには、ライセンスを使用して GO-Globalを有効化する方法を説明する画面が表示されます。on-premisesライセンスを使用する場合は、この時点でon-premisesライセンスをインストールしてください。または、cloudライセンスを使用して GO-Globalをアクティベートする場合は、アクティベーションウィザードを実行してください。&lt;/p&gt;
-&lt;h1 id=&#34;on-premisesライセンスファイルでgo-globalをアクティブ化&#34;&gt;on-premisesライセンスファイルでGO-Globalをアクティブ化&lt;/h1&gt;
-&lt;p&gt;ホスト上でon-premisesライセンスを使用したい場合は、on-premisesライセンスファイルをライセンシングディレクトリにコピーしてください(例：&lt;code&gt;C:\Program Files\\GraphOn\GO-Global\Licensing&lt;/code&gt;)。別のホストでon-premisesライセンスを使用したい場合は、「複数のホスト環境」を参照してください。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;インストール中、インストーラには、ライセンスを使用して GO-Globalを有効化する方法を説明する画面が表示されます。On-premisesライセンスを使用する場合は、この時点でOn-premisesライセンスをインストールしてください。または、Cloudライセンスを使用して GO-Globalをアクティベートする場合は、アクティベーションウィザードを実行してください。&lt;/p&gt;
+&lt;h1 id=&#34;on-premisesライセンスファイルでgo-globalをアクティブ化&#34;&gt;On-premisesライセンスファイルでGO-Globalをアクティブ化&lt;/h1&gt;
+&lt;p&gt;ホスト上でOn-premisesライセンスを使用したい場合は、On-premisesライセンスファイルをライセンシングディレクトリにコピーしてください(例：&lt;code&gt;C:\Program Files\\GraphOn\GO-Global\Licensing&lt;/code&gt;)。別のホストでOn-premisesライセンスを使用したい場合は、「複数のホスト環境」を参照してください。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;後でライセンスファイルをコピーする場合は、ファイルをコピーした後にGO-Globalライセンスマネージャーを再起動し、次に GO-Global Application Publishing Serviceを再起動する必要があります。&lt;/p&gt;
 &lt;h3 id=&#34;go-global-license-managerを再起動する方法&#34;&gt;GO-Global License Managerを再起動する方法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;[コントロールパネル | 管理ツール | サービス]をクリックします。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[コントロールパネル | 管理ツール | サービス]をクリックします。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;サービスの一覧から &lt;strong&gt;[GO-Global License Manager]&lt;/strong&gt; を選択します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右クリックして、 &lt;strong&gt;[再起動]&lt;/strong&gt; を選択します。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-1.png&#34; alt=&#34;kit3-25-1&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-2.png&#34; alt=&#34;kit3-25-2&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-3.png&#34; alt=&#34;kit3-25-3&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;サービスの一覧から &lt;strong&gt;[GO-Global License Manager]&lt;/strong&gt; を選択します。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-4.png&#34; alt=&#34;kit3-25-4&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-5.png&#34; alt=&#34;kit3-25-5&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;右クリックして、 &lt;strong&gt;[再起動]&lt;/strong&gt; を選択します。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-6.png&#34; alt=&#34;kit3-25-6&#34;&gt;&lt;/p&gt;
 &lt;h3 id=&#34;go-global-application-publishing-serviceを再起動する方法&#34;&gt;GO-Global Application Publishing Serviceを再起動する方法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;[コントロールパネル | 管理ツール | サービス]をクリックします。&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;[コントロールパネル | 管理ツール | サービス]をクリックします。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;サービスの一覧から &lt;strong&gt;[GO-Global Application Publishing Service]&lt;/strong&gt; を選択します。&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;右クリックして、 &lt;strong&gt;[再起動]&lt;/strong&gt; を選択します。&lt;/p&gt;
+&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-7.png&#34; alt=&#34;kit3-25-7&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-8.png&#34; alt=&#34;kit3-25-8&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-9.png&#34; alt=&#34;kit3-25-9&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;2&#34;&gt;
-&lt;li&gt;サービスの一覧から &lt;strong&gt;[GO-Global Application Publishing Service]&lt;/strong&gt; を選択します。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-10.png&#34; alt=&#34;kit3-25-10&#34;&gt;
-&lt;img src=&#34;/img/kit3-25-11.png&#34; alt=&#34;kit3-25-11&#34;&gt;&lt;/p&gt;
-&lt;ol start=&#34;3&#34;&gt;
-&lt;li&gt;右クリックして、 &lt;strong&gt;[再起動]&lt;/strong&gt; を選択します。&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit3-25-12.png&#34; alt=&#34;kit3-25-12&#34;&gt;&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -83,8 +66,8 @@ GO-Globalホストのインストールの詳細につきましては弊社提�
 &lt;/div&gt;
 
 &lt;p&gt;2つのGO-Globalライセンスを組み合わせる場合、または同じGO-Globalホストで2つの別々のライセンスを使用する場合、ライセンスファイルのホスト名は大文字と小文字が区別され、同一である必要があります。&lt;/p&gt;
-&lt;h1 id=&#34;cloudライセンスでgo-globalをアクティブ化&#34;&gt;cloudライセンスでGO-Globalをアクティブ化&lt;/h1&gt;
-&lt;p&gt;cloudライセンスを使用してGO-Globalをアクティベートするには、アクティベーションウィザードを実行します。&lt;/p&gt;
+&lt;h1 id=&#34;cloudライセンスでgo-globalをアクティブ化&#34;&gt;CloudライセンスでGO-Globalをアクティブ化&lt;/h1&gt;
+&lt;p&gt;Cloudライセンスを使用してGO-Globalをアクティベートするには、アクティベーションウィザードを実行します。&lt;/p&gt;
 &lt;h3 id=&#34;アクティベーションウィザードを実行する方法&#34;&gt;アクティベーションウィザードを実行する方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;[スタート]メニューから[GraphOn GO-Global｜Activation Wizard]をクリックします。&lt;/li&gt;
@@ -96,7 +79,7 @@ GO-Globalホストのインストールの詳細につきましては弊社提�
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-GO-Global cloudライセンスは、インターネットに直接アクセスできるコンピュータでのみ使用できます。コンピュータがインターネットにアクセスできない場合(プロキシサーバ経由でインターネットにアクセスしている場合など)、アクティベーションウィザードでは、GO-GlobalがGraphOnのcloudライセンスサービスと通信できないことが通知されます。このメッセージが表示された場合は、以下の手順でon-premisesライセンスを要求することができます。
+GO-Global Cloudライセンスは、インターネットに直接アクセスできるコンピュータでのみ使用できます。コンピュータがインターネットにアクセスできない場合(プロキシサーバ経由でインターネットにアクセスしている場合など)、アクティベーションウィザードでは、GO-GlobalがGraphOnのCloudライセンスサービスと通信できないことが通知されます。このメッセージが表示された場合は、以下の手順でOn-premisesライセンスを要求することができます。
 &lt;/div&gt;
 
 &lt;ol start=&#34;3&#34;&gt;
@@ -111,9 +94,9 @@ GO-Global cloudライセンスは、インターネットに直接アクセス�
 &lt;p&gt;GO-Globalホストの起動設定を行う場合は、リストから[GO-Global Application Publishing Service]を選択し、[起動]ボタンをクリックします。GO-Globalホストに適用するオプションを選択します。&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;以前のバージョンからgo-global-61へのアップグレード&#34;&gt;以前のバージョンからGO-Global 6.1へのアップグレード&lt;/h1&gt;
 &lt;p&gt;以前のバージョンからGO-Global 6.1にアップグレードするお客様は、アップグレードする前にバージョン 6.1のライセンスを取得する必要があります。バージョン 6.1 ホストインストーラは、バージョン 6.1のGO-Globalライセンスを持っていないコンピュータをアップグレードすることはできません。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;アップグレードするコンピュータがcloudライセンス(cloudトライアルライセンスなど)を使用している場合は、sales@graphon.com に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのcloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;または、アップグレードするホストがon-premisesのライセンスを使用している場合（ほとんどの場合)、カスタマーポータルでライセンス変更リクエストを送信して新しいライセンスファイルを取得します。&lt;/p&gt;
-&lt;h3 id=&#34;バージョン61のon-premisesライセンスファイルを取得する方法&#34;&gt;バージョン6.1のon-premisesライセンスファイルを取得する方法&lt;/h3&gt;
+&lt;p&gt;アップグレードするコンピュータがCloudライセンス(Cloudトライアルライセンスなど)を使用している場合は、sales@graphon.com に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのCloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;または、アップグレードするホストがOn-premisesのライセンスを使用している場合（ほとんどの場合)、カスタマーポータルでライセンス変更リクエストを送信して新しいライセンスファイルを取得します。&lt;/p&gt;
+&lt;h3 id=&#34;バージョン61のon-premisesライセンスファイルを取得する方法&#34;&gt;バージョン6.1のOn-premisesライセンスファイルを取得する方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;カスタマーポータルにサインインします。&lt;/li&gt;
 &lt;li&gt;License Managementをクリックします。&lt;/li&gt;
@@ -124,7 +107,7 @@ GO-Global cloudライセンスは、インターネットに直接アクセス�
 &lt;p&gt;ライセンス変更要求フォームを送信すると、GO-Globalライセンスファイルが電子メールで送信されます。&lt;/p&gt;
 &lt;h3 id=&#34;新しいライセンスファイルをインストールする方法&#34;&gt;新しいライセンスファイルをインストールする方法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;GO-Global6.0が現在インストールされている場合、新しいライセンスファイルを\Program Files\GraphOn\GO-Globalディレクトリに配置してください。または、GO-Global版5.0か版4.8が現在取付けられていれば、\Program Files\GraphGraphOn\GO-Global\Programsのディレクトリにライセンスファイルを置いて下さい。&lt;/li&gt;
+&lt;li&gt;GO-Global6.0が現在インストールされている場合、新しいライセンスファイルを\Program Files\GraphOn\GO-Globalディレクトリに配置してください。または、GO-Globalバージョン4.8かバージョン5.0が現在設置されていれば、\Program Files\GraphGraphOn\GO-Global\Programsのディレクトリにライセンスファイルを置いて下さい。&lt;/li&gt;
 &lt;li&gt;古いバージョンのライセンスファイルを削除します。&lt;/li&gt;
 &lt;li&gt;GO-Global License Manager Serviceを再起動します。&lt;/li&gt;
 &lt;/ol&gt;
@@ -146,12 +129,12 @@ License Managerを再起動しても、GO-Globalホストで実行されてい�
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-ライセンスをバージョン 6.1にアップグレードするには、お客様がアクティブなサポート契約を結んでいる必要があります。サポート契約が終了している場合は、GO-Globalの販売店またはsales@graphon.comに連絡して更新してください。
+ライセンスをバージョン 6.1にアップグレードするには、お客様がアクティブなサポート契約を結んでいる必要があります。サポート契約が終了している場合は、GO-Globalの販売代理店に連絡して更新してください。
 &lt;/div&gt;
 
-&lt;h1 id=&#34;on-premisesのトライアルライセンスでgo-globalをアクティブ化&#34;&gt;on-premisesのトライアルライセンスでGO-Globalをアクティブ化&lt;/h1&gt;
-&lt;p&gt;インターネットに直接アクセスできない場合や、cloudのトライアルライセンスが確立できない場合は、on-premisesのトライアルライセンスを作成し、メールでお送りします。&lt;/p&gt;
-&lt;h3 id=&#34;on-premisesライセンスを使用してgo-globalを起動する方法&#34;&gt;on-premisesライセンスを使用してGO-Globalを起動する方法&lt;/h3&gt;
+&lt;h1 id=&#34;on-premisesのトライアルライセンスでgo-globalをアクティブ化&#34;&gt;On-premisesのトライアルライセンスでGO-Globalをアクティブ化&lt;/h1&gt;
+&lt;p&gt;インターネットに直接アクセスできない場合や、Cloudのトライアルライセンスが確立できない場合は、On-premisesのトライアルライセンスを作成し、メールでお送りします。&lt;/p&gt;
+&lt;h3 id=&#34;on-premisesライセンスを使用してgo-globalを起動する方法&#34;&gt;On-premisesライセンスを使用してGO-Globalを起動する方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;コンピュータのホスト名とホストID(物理アドレス)を決定します。&lt;br&gt;
 a. [スタート | すべてのプログラム | アクセサリ | コマンドプロンプト]をクリックして、コマンドプロンプトウィンドウを開きます。&lt;br&gt;
@@ -163,10 +146,10 @@ a. .licファイルをC:\Pro\Program Files\GraphOn\GO-Global\Licensingディレ�
 b. GO-Global License Manager Serviceを起動してください。&lt;br&gt;
 c. GO-Global Application Publishing Serviceを再起動します。&lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
-&lt;h1 id=&#34;恒久的なon-premisesライセンスのインストール&#34;&gt;恒久的なon-premisesライセンスのインストール&lt;/h1&gt;
-&lt;p&gt;管理者は、現在クラウドまたはon-premisesのトライアルライセンスを使用しているシステムに、on-premisesの恒久的なライセンスをインストールすることができます。on-premisesの恒久的なライセンスを注文すると、GraphOnは注文を処理して新しいライセンスを作成します。ライセンス情報は、注文依頼に記載された連絡先にメールで送信されます。&lt;br&gt;
+&lt;h1 id=&#34;恒久的なon-premisesライセンスのインストール&#34;&gt;恒久的なOn-premisesライセンスのインストール&lt;/h1&gt;
+&lt;p&gt;管理者は、現在クラウドまたはOn-premisesのトライアルライセンスを使用しているシステムに、On-premisesの恒久的なライセンスをインストールすることができます。On-premisesの恒久的なライセンスを注文すると、GraphOnは注文を処理して新しいライセンスを作成します。ライセンス情報は、注文依頼に記載された連絡先にメールで送信されます。&lt;br&gt;
 管理者はカスタマーポータルからプロダクトコード、メールアドレス、ホスト名、ホストIDを入力してライセンスを有効化する必要があります。新しいライセンス(.lic)ファイルが添付ファイルとして電子メールで送信されます。ライセンス IDは、ライセンスファイルの名前のフォーマットに使用されます。(例:8d73e4k.lic（8d73e4kはライセンスID）)ライセンスファイルの添付ファイルは、指定されたライセンスサーバにインストールする必要があります。&lt;br&gt;&lt;/p&gt;
-&lt;h3 id=&#34;恒久的なon-premisesライセンスをインストールする方法&#34;&gt;恒久的なon-premisesライセンスをインストールする方法&lt;/h3&gt;
+&lt;h3 id=&#34;恒久的なon-premisesライセンスをインストールする方法&#34;&gt;恒久的なOn-premisesライセンスをインストールする方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;GO-Globalライセンスサーバ上のライセンスディレクトリ(例:C:\Program Files\GraphOn\GO-GlobalLicensing)からトライアルまたは無効になったライセンス(.lic)ファイルを削除してください。&lt;/li&gt;
 &lt;li&gt;新しい.licファイルをGO-GlobalライセンスサーバのLicensingディレクトリに移動します。&lt;/li&gt;
@@ -232,11 +215,6 @@ httpd -k start
 &lt;li&gt;Microsoft IISが実行されていないか、GO-Globalホスト上の接続を受け入れていないことを確認します。&lt;/li&gt;
 &lt;li&gt;&lt;strong&gt;[Hosts Options]&lt;/strong&gt; ダイアログの &lt;strong&gt;[Security]&lt;/strong&gt; タブの &lt;strong&gt;[Port]&lt;/strong&gt; フィールドの値を443に変更します。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;p&gt;&lt;img src=&#34;/img/kit2-15-1.png&#34; alt=&#34;kit2-15-1&#34;&gt;
-&lt;img src=&#34;/img/kit2-15-2.png&#34; alt=&#34;kit2-15-2&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;/img/kit2-15-3.png&#34; alt=&#34;kit2-15-3&#34;&gt;
-&lt;img src=&#34;/img/kit2-15-4.png&#34; alt=&#34;kit2-15-4&#34;&gt;&lt;br&gt;
-&lt;img src=&#34;/img/kit2-15-5.png&#34; alt=&#34;kit2-15-5&#34;&gt;&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/2-8-1.png&#34; alt=&#34;2-8-1&#34;&gt;&lt;/p&gt;
 &lt;ol start=&#34;4&#34;&gt;
 &lt;li&gt;ホストポートの設定を変更した後、&lt;strong&gt;Port&lt;/strong&gt; パラメータに433を付加してWebに追加します。ホストへの接続に使用されるリンクは例えば、&lt;code&gt;http://hostname.graphon.com/goglobal/?host=hostname.graphon.com&amp;amp;port=443&lt;/code&gt;&lt;/li&gt;
@@ -245,16 +223,16 @@ httpd -k start
 &lt;li&gt;ホストとWebの &lt;strong&gt;コモンネーム&lt;/strong&gt; を解決するように内部DNSを構成します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&#34;サーバロールと設定タブ&#34;&gt;サーバロールと設定タブ&lt;/h1&gt;
-&lt;p&gt;管理者は、[Host Options]ダイアログの[Configuration]タブを使用して、Admin Consoleでサーバの役割を指定できます。例えば、管理者はGO-Globalホストをアプリケーションホスト(独立ホスト、従属ホスト、またはファームホストなど)として、またはアプリケーションホストマネージャ(Relay Load Balancerまたはファームマネージャなど)として指定できます。
+&lt;p&gt;管理者は、[Host Options]ダイアログの[Configuration]タブを使用して、Admin Consoleでサーバの役割を指定できます。例えば、管理者はGO-Globalホストをアプリケーションホスト(Independent Host, Dependent Host,Farm Hostなど)として、またはアプリケーションホストマネージャ(Relay Load Balancerまたはファームマネージャなど)として指定できます。
 管理者は、[Configuration]タブを使用して、前の章で説明したバックアップライセンスマネージャを構成することもできます。&lt;/p&gt;
 &lt;h1 id=&#34;アプリケーションホストマネージャとライセンスサーバ&#34;&gt;アプリケーションホストマネージャとライセンスサーバ&lt;/h1&gt;
 &lt;p&gt;バージョン6.1では、アプリケーションホストマネージャ(Relay Load Balancerなど)を使用する場合、GO-Globalはデフォルトでアプリケーションホストマネージャーからライセンスを管理します。これにより、次のようなメリットがあります。&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;管理者は、ライセンス構成を変更することなく、クラスタにアプリケーションホストを追加および削除することができます。&lt;/li&gt;
-&lt;li&gt;cloudライセンスを使用すると、クラスタ内のすべてのホストが GraphOn cloudライセンスサービスと通信できない場合に、予約されたシートを共有できるようになります。&lt;/li&gt;
+&lt;li&gt;Cloudライセンスを使用すると、クラスタ内のすべてのホストが GraphOn Cloudライセンスサービスと通信できない場合に、予約されたシートを共有できるようになります。&lt;/li&gt;
 &lt;/ul&gt;
-&lt;p&gt;バージョン6.1以前のバージョンでは、GO-Globalはデフォルトで依存ホストのライセンスを管理していました。このため、管理者は各従属ホストがセントラルライセンスマネージャを使用するように設定する必要がありました。旧バージョンからバージョン 6.1にアップグレードされた従属ホストは、引き続き従属ホストからのライセンスを管理します。
-アップグレード後、管理者は、すべてのディペンデントホストとRelay Load Balancer上の &lt;strong&gt;ホスト&lt;/strong&gt; から &lt;strong&gt;Relay&lt;/strong&gt; への &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイル内の &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; プロパティの値を以下のように編集することで、これを変更することができます。&lt;/p&gt;
+&lt;p&gt;バージョン6.1以前のバージョンでは、GO-GlobalはデフォルトでDependent Hostsのライセンスを管理していました。このため、管理者は各Dependent Hostsがセントラルライセンスマネージャを使用するように設定する必要がありました。旧バージョンからバージョン 6.1にアップグレードされたDependent Hostsは、引き続きDependent Hostsからのライセンスを管理します。
+アップグレード後、管理者は、すべてのDependent HostsとRelay Load Balancer上の &lt;strong&gt;ホスト&lt;/strong&gt; から &lt;strong&gt;Relay&lt;/strong&gt; への &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイル内の &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; プロパティの値を以下のように編集することで、これを変更することができます。&lt;/p&gt;
 &lt;h3 id=&#34;relay-load-balancerからライセンスをチェックアウトする方法&#34;&gt;Relay Load Balancerからライセンスをチェックアウトする方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止します。&lt;/li&gt;
