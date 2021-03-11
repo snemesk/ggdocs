@@ -4,20 +4,20 @@ linkTitle: ""
 weight: 11
 type: "docs"
 ---
-Running the Windows desktop (explorer.exe) in the background of GO-Global sessions
-Some Windows applications use features and services that are provided by the Windows desktop (explorer.exe). Most applications run without the desktop, but some fail to start or run properly when the desktop is not running in the same session as the application. By default, the desktop does not run in GO-Global sessions. If an application fails to start or work properly in a GO-Global session, it may have a dependency on the desktop.
+Windowsアプリケーションの中には、Windowsデスクトップ（explorer.exe）で提供される機能やサービスを使用するものがあります。ほとんどのアプリケーションはデスクトップがなくても動作しますが、デスクトップがアプリケーションと同じセッションで実行されていないと、起動できなかったり、正常に動作しなかったりするものがあります。デフォルトでは、GO-Globalのセッションではデスクトップは実行されません。GO-Global セッションでアプリケーションが起動しない、または正しく動作しない場合は、デスクトップに依存している可能性があります。
 
-To register the Windows desktop (explorer.exe) to run in GO-Global sessions
-From the Registry Editor, expand the HKEYLOCALMACHINE key.
-Expand \SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachine.
-Create a DWORD value and name it explorer.exe.
-Set the value to
-With this configuration, the desktop will run in GO-Global sessions but will not be visible.
+### GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe）を登録する方法
 
-参照
-Registering the Windows desktop to run in the background of a GO-Global session adds significant overhead. Sessions will take longer to start and will consume more memory. Additional overhead can also result from other processes that are registered to run when the desktop starts up. Care should be taken to ensure that unnecessary processes are not registered in users’ Startup folders or under the various Run commands in the Registry (e.g., HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run).
+1. レジストリエディタで、HKEY_LOCAL_MACHINEキーを展開します。
+2. \SOFTWARE\GraphOn\GO-Global\System\Run\LocalMachineを展開します。
+3. DWORD値を作成し、名前をexplorer.exeとします。
+4. 値を0に設定します。
 
-Explorer.exe will run in the session the first time that a user signs on to a host. This is done to fully initialize the user profile. Explorer.exe will not run in subsequent sessions started by the same user on the same host, unless configured to do so as described above.
+この設定を行うと、GO-Globalセッションでデスクトップが実行されますが、表示されません。
+
+{{% alert title="参照" color="info" %}}
+GO-Globalセッションのバックグラウンドで実行するためにWindowsデスクトップを登録すると、大きなオーバーヘッドが発生します。セッションの開始に時間がかかり、より多くのメモリを消費するようになります。また、デスクトップの起動時に実行するために登録された他のプロセスによってもオーバーヘッドが発生します。不要なプロセスがユーザのスタートアップフォルダやレジストリの実行コマンド（HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Runなど）に登録されないように注意してください。Explorer.exeは、ユーザがホストに初めてサインオンしたときに、セッション内で実行されます。これは、ユーザプロファイルを完全に初期化するために行われます。Explorer.exeは、上記のように設定されていない限り、同じホスト上で同じユーザが開始した以降のセッションでは実行されません。
+{{% /alert %}}
 
 ## システムプロセスの登録
 GO-Globalアーキテクチャでは、1つのセッション内で複数のプロセスを実行できます。常に最低1つのプロセスが実行されている必要があります。すべてのプロセスが終了すると、GO-Globalセッションが閉じられ、すべてのリソースが割り当て解除され、クライアント接続が切断されます。
@@ -30,15 +30,16 @@ GO-Globalアーキテクチャでは、1つのセッション内で複数のプ�
 
 ほとんどのアプリケーションでは、デフォルトの構成で十分です。プロセスが終了する手段を持たずに作成された特別なケースでは、待機中のプロセスの実行可能ファイルを登録することで、GO-Globalセッションを適切に終了させることができます。
 
-警告
+{{% alert title="警告" color="Alert" %}}
 以下の情報には、Windowsレジストリを開いて操作することが含まれています。ここで説明されている操作以外の操作を行うと、構成エラーが発生し、システムが使用できなくなる可能性があります。レジストリを操作する際には、細心の注意を払ってください。
+{{% /alert %}}
 
-### 実行ファイルをシステムプロセスを作成するものとして登録する方法
+### 実行ファイルをヘルパープロセスとして登録する方法
 
 1. レジストリエディタ(regedit.exe)を実行します。
 2. HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global\System\Processesにブラウズする。
-3. 登録される実行可能ファイルの名前(例えば、AGENTSVR.EXE)を持つ DWORD エントリを作成してください。
-4. 新しいエントリの値を、実行ファイルへのフルパスが指定されている場合は1に、ベース名のみが指定されている場合は2に設定します(フルパスを含めることで、同じ実行ファイルイメージの異なるバージョンを異なる方法で実行することができます)。
+3. 登録する実行ファイルの名前(例えば、AGENTSVR.EXEもしくはC:\example1\testapp.exeとC:\example2\testapp.exe)のDWORDエントリを作成する。フルパスを含めることで、同じ実行イメージでもバージョンによって実行内容が異なります。
+4. 新しいエントリの値を0に設定します。
 5. レジストリエディタを閉じます。
 
 この設定は、将来のセッションに加えて、現在のすべてのGO-Globalセッションに影響します。これには、すでに「ハング」状態にあるセッションは含まれません。このようなセッションは、Admin Consolから終了する必要があります。

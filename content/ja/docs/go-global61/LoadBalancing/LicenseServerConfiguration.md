@@ -5,18 +5,14 @@ weight: 08
 type: "docs"
 ---
 
-When an Independent Host is configured to run as a Relay Load Balancer or a Dependent Host, GO-Global does not automatically make any changes to the host's licensing configuration. For example, if an Independent Host is configured to use an on-premises license that is installed on the same computer as the host, the host will continue to use this on-premises license after the host is connected to a Relay Load Balancer. This is the default configuration, but not typically the best licensing configuration. A Relay Load Balancer and its Dependent Hosts should all be configured to use the same license server(s) or, if cloud licensing is used, the same cloud license.<br>
+Independent HostがRelay Load BalancerまたはDependent Hostとして動作するように設定されている場合、GO-Globalはホストのライセンス設定を自動的に変更しません。たとえば、Independent Hostがホストと同じコンピュータにインストールされているOn-premisesを使用するように設定されている場合、ホストがRelay Load Balancerに接続された後も、そのホストはこのOn-premisesライセンスを使用し続けます。これはデフォルトの構成ですが、一般的には最適なライセンス構成ではありません。Relay Load Balancerとその依存ホストは、すべて同じライセンスサーバを使用するように設定するか、Cloudライセンスを使用する場合は、同じCloudライセンスを使用するように設定する必要があります。
+On-premisesライセンスを使用しており、高可用性を必要としない場合は、Relay Load Balancer上のライセンスサーバーを中央ライセンスサーバーとして使用するように、Dependent Hostを設定することをお勧めします。(複数のホスト環境を参照し、Dependent HostがRelay Load Balancer上のライセンスサーバのポートに接続できることを確認してください)。
+On-premisesライセンスを使用しており、高可用性が必要な場合は、3台の冗長ライセンスサーバを使用するようにRelay Load BalancerとそのDependent Hostを設定することをお勧めします。
 
-If an on-premises license is being used and high-availability is not required, GraphOn recommends configuring the Dependent Hosts to use the license server on the Relay Load Balancer as a central license server. (See Multiple Host Enviroments and ensure that the Dependent Hosts are able to connect to the license server's port on the Relay Load Balancer.)<br>
-
-If an on-premises license is being used and high-availability is required, GraphOn recommends configuring the Relay Load Balancer and its Dependent Hosts to use a set of Three-Server Redundant License Servers.<br>
-
-If a cloud license is being used, and high availability is not required, GraphOn recommends activating GO-Global on the Relay Load Balancer. Alternatively, if a cloud license is being used and high availability is required, GraphOn recommends activating GO-Global on both the primary Relay Load Balancer and the failover Relay Load Balancer and configuring each to be a Backup License Server for the other.<br>
-
-With all of these configurations, the **Licenses** tab on the Admin Console will report the same license information, regardless of which computer is selected.<br>
-
-Prior to version 6.1, GO-Global managed licenses from Dependent Hosts by default. With this configuration, administrators had to configure each Dependent Host to use a central license manager. Beginning with version 6.1, administrators no longer need to do this. GO-Global now manages licenses from the Relay Load Balancer by default. This enables administrators to add and remove Dependent Hosts from the Relay Load Balancer without having to make any licensing configuration changes.
+Cloudライセンスを使用しており、高可用性を必要としない場合は、Relay Load Balancer上でGO-Globalを有効にすることを推奨します。また、Cloudライセンスを使用しており、高可用性が必要な場合は、プライマリのRelay Load BalancerとフェイルオーバのRelay Load Balancerの両方でGO-Globalを起動し、それぞれをもう一方のバックアップライセンスサーバに設定することをお勧めします。
+これらの構成では、どちらのコンピュータを選択したかにかかわらず、Admin Consoleの[License]タブに同じライセンス情報がレポートされます。
+バージョン6.1以前のバージョンでは、GO-GlobalはデフォルトでDependent Hostのライセンスを管理していました。この構成では、管理者は各Dependent Hostで中央ライセンスマネージャを使用するように構成する必要がありました。バージョン 6.1より、管理者はこの設定を行う必要がなくなりました。GO-GlobalはデフォルトでRelay Load Balancerからライセンスを管理するようになりました。これにより、管理者はライセンス構成を変更することなく、Relay Load BalancerからDependent Hostを追加および削除できるようになりました。
 
 {{% alert title="参照" color="info" %}}
-Dependent Hosts that are upgraded to version 6.1 from older versions will continue to manage licenses from the Dependent Host. Administrators can change this after the upgrade by editing the value of the **ManageLicensesFrom** property in the **HostProperties.xml** file from Host to Relay on all the Dependent **Hosts** and the **Relay** Load Balancer.
+旧バージョンからバージョン6.1にアップグレードされたDependent Hostは、Dependent Hostからのライセンス管理を継続します。管理者は、アップグレード後に、すべてのDependent HostとRelay Load BalancerのHostProperties.xmlファイルのManageLicensesFromプロパティの値をHostからRelayに編集することで、これを変更することができます。
 {{% /alert %}}

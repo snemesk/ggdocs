@@ -4,26 +4,25 @@ linkTitle: ""
 weight: 03
 type: "docs"
 ---
-A Relay Load Balanceris a GO-Global Host that provides centralized control over one or more hosts. Relay Load Balancers maintain client connections and distribute GO-Global sessions across a set of load-balanced application hosts. Relay Load Balancers appear in the Admin Console on the first level of the list of **All Hosts** as nodes with one or more Dependent Hosts.
+Relay Load Balancerは、1台以上のホストを集中的に制御するGO-Globalホストです。Relay Load Balancerは、クライアント接続を維持し、負荷分散されたアプリケーションホストのセット全体にGO-Globalセッションを分散します。Relay Load Balancerは、1つ以上のDependent Hostsを持つノードとして、All Hostsのリストの最初のレベルにあるAdmin Consoleに表示されます。
 
-### To configure a GO-Global Host to operate as a Relay Load Balancer
+### GO-GlobalホストがRelay Load Balancerとして動作するように構成方法
 
-1. Select the desired host from the list of **All Hosts.**
-2. Click Tools | Host Options.
-3. Click the **Configuration**tab.
-4. Type the name or IP address of the computer in the **Relay Load Balancer address** box.
-5. Click **OK.**
-6. A message box is displayed indicating that the change will not take effect until the **GO-Global Application Publishing Service** on the Relay Load Balancer has been restarted. Click **OK.**
-7. Stop and restart the **GO-Global Application Publishing Service** from the Services option in the Control Panel.
+1. すべてのホストのリストから目的のホストを選択します。
+2. [Tools | Host Options]をクリックします。
+3. [Configuration]タブをクリックします。
+4. [Relay Load Balancer address]ボックスにコンピュータの名前またはIPアドレスを入力します。
+5. [OK]をクリックします。
+6. Relay Load Balancer上のApplication Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。OKをクリックします。
+7. コントロールパネルの[サービス]オプションから、GO-Global Application Publishing Serviceを停止して再起動します。
 
-After configuring a host to run as a Relay Load Balancerwith one or more dependent hosts, GO-Global load-balances client connections and ensures that sessions start successfully. If a session fails to start on the selected host, the Relay Load Balancer selects another host and tries again until it finds one that can support the session.
-
-When setting up a Relay Load Balancer environment, be sure the same **Log Folder** path for the Relay Load Balancerexists on the dependent hosts. Otherwise, the **Sign In** dialog will not appear when users attempt to sign in to GO-Global. Create a log directory on the C: drive of each Relay Load Balancer (e.g.,`C:\Data\APS_LOGS`) or use `C:\Program Files\GraphOn\GO-Global\Log` which already exists on the dependent host.Make sure this same path exists on the dependent host. In addition to changing the **Log Folder** path in the Admin Console, the `\Log\Codes` and `\Log\Templates` directories must be copied to the new location.
+1つ以上のDependent HostでRelay Load Balancerとして動作するようにホストを設定すると、GO-Globalはクライアント接続の負荷分散を行い、セッションが正常に開始されるようにします。選択したホストでセッションの開始に失敗した場合、Relay Load Balancerは別のホストを選択し、セッションをサポートできるホストが見つかるまで再試行します。
+各Dependent Hostの負荷は、Dependent Host上で実行されているセッションの数を、Dependent HostのAdmin Consoleで設定されているこのホストの最大セッション数で割った値として計算されます。
+Relay Load Balancer環境を設定する際には、Relay Load Balancerの **Log Folder** パスがDependent Hosts上に存在することを確認してください。そうしないと、ユーザがGO-Globalにサインインしようとしたときに **Sign In** ダイアログが表示されません。各Relay Load BalancerのC:ドライブ上にログディレクトリを作成するか(例：`C:DATA\DataAPS_LOGS`)、またはDependent Hosts上に既に存在する`C:DATA\Program Files\GraphOn\GO-Global\Log`を使用します。Admin Consoleの**Log Folder**のパスを変更するだけでなく、\Log\Codesと \Log\Templatesのディレクトリを新しい場所にコピーする必要があります。
 
 {{% alert title="参照" color="info" %}}
-When a Relay Load Balanceris selected in the Admin Console, the number of processes running on all dependent hosts is not listed in the Admin Console's status bar.
+Admin ConsoleでRelay Load Balancerが選択されている場合、すべてのDependent Hostsで実行されているプロセスの数がAdmin Consoleのステータスバーに表示されません。
 {{% /alert %}}
 
-A Relay Load Balancerrequires a minimum of 512MB of RAM. For most deployments and for best results, 1GB with a multiprocessor server is recommended. Depending on the number of dependent hosts attached to the Relay Load Balancer, more RAM may be required.
-
-Memory and CPU requirements for the dependent hosts are determined by the applications that are published and the number of users accessing the system. In general, a dependent host can support 12 "heavy" users/500 MHz CPU and 25 "light" users/500 MHz CPU. ("Heavy" is defined as a user running one or more large applications with continuous user interaction. "Light" is defined as a user running one application with intermittent user interaction.)
+Relay Load Balancerには最低512MBのRAMが必要です。ほとんどのデプロイメントでは、最高の結果を得るために、マルチプロセッササーバで1GBを推奨します。Relay Load Balancerに接続されているDependent Hostsの数によっては、より多くのRAMが必要になる場合があります。
+Dependent Hostsに必要なメモリとCPUは、公開するアプリケーションとシステムにアクセスするユーザの数によって決まります。一般的に、Dependent Hostsは12人のライトユーザ(ユーザ辺り500MHzのCPU利用を想定)と25人のヘビーユーザ(ユーザ辺り500MHzのCPU利用を想定)をサポートすることができます。(ライトとは、断続的なユーザインタラクションを伴う1つのアプリケーションを実行しているユーザと定義し、ヘビーとは、連続的なユーザインタラクションを伴う1つ以上の大規模なアプリケーションを実行しているユーザと定義されます。)

@@ -4,26 +4,36 @@ linkTitle: ""
 weight: 04
 type: "docs"
 ---
-A dependent host is a GO-Global Host that is connected to a Relay Load Balancer. GO-Global clients cannot connect directly to dependent hosts. Instead, they connect to the associated Relay Load Balancer, and the Relay Load Balancer selects one of the connected servers to host the session.
+Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
 
-### To configure a GO-Global Host to operate as a dependent host
+1. **All Hosts.** のリストから目的のホストを選択します。
+2. [Tools | Host Options]をクリックします。
+3. [Configuration]タブをクリックします。
+4. [Application Host] をクリックします。
+5. [Dependent Host] をクリックします。
+6. [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。
+7. [OK]をクリックします。
+8. Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。
+9. コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。
 
-1. Select the desired host from the list of **All Hosts.**
-2. Click Tools | Host Options.
-3. Click the **Configuration** tab.
-4. Click **Application Host.**
-5. Click **Dependent Host.**
-6. Type the name or IP address of the Relay Load Balancer in **Relay Load Balancer address** edit box.
-7. Click **OK.**
-8. A message box is displayed indicating that the change will not take effect until the **Application Publishing Service** has been restarted. Click **OK.**
-9. Stop and restart the **GO-Global Application Publishing Service** from the Services option in the Control Panel.
-
-When the Application Publishing Service is restarted, the dependent host will appear beneath the Relay Load Balancer in the Admin Console's list of GO-Global Hosts. A dependent host with a yellow x indicates that the host has been "orphaned;" in other words, that its Relay Load Balancer has gone down. If a host's icon has a red X, the administrator does not have administrative rights on the host. If the host's icon has a red X and is grayed out, the host is no longer running the Application Publishing Service or it has been turned off. In either case, the administrator is unable to access that host from the Admin Console.
-
-Users are authenticated on dependent hosts, not on Relay Load Balancers. As a result, dependent hosts can be located on a different network than their associated Relay Load Balancer. For example, dependent hosts can be located behind a firewall on an internal, Active Directory network, and the associated Relay Load Balancer can be located in a demilitarized zone(DMZ)that is outside the firewall. If **Integrated Windows authentication** is used, clients and dependent hosts must be located on the same domain, but the Relay Load Balancer can be located on a different domain.
+Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが"孤立状態"になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。
+ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
 
 {{% alert title="参照" color="info" %}}
-We recommend installing the same set of applications on each dependent host and using the same installation path.
+各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。
 {{% /alert %}}
 
 ![5-6-1](/img/5-6-1.png)
+
+## メンテナンスのためのDependent Hostのオフライン化
+
+管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。
+
+### Dependent Hostをオフラインにする方法
+
+1. すべてのホストのリストから目的のDependent Hostを選択します。
+2. [Tools | Host Options]をクリックします。
+3. [Session Startup]タブをクリックします。
+4. Maximum sessions on this hostボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。
+5. [OK]をクリックします。
+

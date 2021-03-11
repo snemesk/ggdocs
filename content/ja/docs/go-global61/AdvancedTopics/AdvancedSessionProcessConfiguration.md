@@ -5,116 +5,112 @@ weight: 10
 type: "docs"
 ---
 
-{{% alert title="参照" color="info" %}}
-この項目はKitASPでのサポート項目ではございません。
-{{% /alert %}}
+このセクションでは、GO-Globalセッション内で実行されるプロセスに設定可能な高度な設定オプションについて説明します。これらの設定は、特定の実行可能な（.exe）アプリケーションに適用することも、特定の設定のないアプリケーションに適用されるデフォルト設定として適用することもできます。このセクションで説明されている変更を行う際には、注意が必要です。不適切な設定は、プロセスの起動に影響を与えたり、プロセスをGO-Globalと互換性のないものにしたり、サスペンド／リジューム操作時に致命的な結果をもたらす可能性があります。GO-Global セッション内で実行されるほとんどのアプリケーションでは、GO-Global ライブラリーがロードされ、目的の動作を得るためにリダイレクションを行います。これらのライブラリが初期化できるリダイレクションには2つのレベルがあります。第1のレベルでは、アプリケーションおよびシステムモジュールが特定の方法で動作するように構成されます。ほとんどのアプリケーションでは、1つまたは複数のレベル1の設定を有効にする必要があります。レベル1の設定には、「クライアントのタイムゾーン」、「クライアントの印刷」、「Windows APIの動作変更」などがあります。レベル2では、アプリケーションとクライアントの間に通信チャネルを作成し、セッション関連情報を二重に送信します。GO-Globalとの最高レベルのアプリケーションの互換性を確保するために、レベル2の設定はできるだけ少ないアプリケーションで有効にする必要があります。レベル2の設定には、「クライアントサウンド」、「クライアントのシリアルポートおよびパラレルポート」があります。セッションプロセスをリダイレクトするGO-Globalライブラリが採用するさまざまな構成設定は、レジストリ内の16進数のビット値によって制御されます。必要なビット値をOR演算してQWORDというレジストリ値を作成します。ここでは、プロセス・リダイレクタ・ビットの一覧と、その設定内容について説明します。
 
-This section covers some of the advanced configuration options that can be set for processes running within GO-Global sessions. These settings can be applied to specific executable (.exe) applications or as default settings applied to applications without specific configurations. Care should be taken when making any changes discussed in this section. An incorrect configuration can affect the startup of a process, make a process incompatible with GO-Global, or have fatal consequences during suspend/resume operations. Most applications that run within a GO-Global session will have GO-Global libraries loaded within them to perform redirection in order to obtain desired behavior. There are two levels of redirection that these libraries can initialize. The first level configures application and system modules to behave in a particular way. Most applications will need one or more level one settings enabled. Level one settings include Client Time Zone, Client Printing, and altered Windows API behavior. The second level creates a communications channel between the application and client for duplex transmission of session related information. For the highest level of application compatibility with GO-Global, level two settings should be enabled in as few applications as possible. Level two settings include Client Sound and Client Serial and Parallel Ports. The different configuration settings employed by the GO-Global libraries that redirect session processes are controlled by hexadecimal bit values within the registry. The desired bit values are logically ORed together to create a QWORD registry value. Here is the documented list of process redirector bits and a description of what they configure.
+**0x0000000000000001** *- セッション内でのプロセスの実行を禁止する
 
-**0x0000000000000001** *- Prohibit a process from running within a session
+**0x0000000000000002**- GO-Globalライブラリの読み込みを無効にします。すべてのリダイレクトが無効になります。リダイレクト操作の実行に要する時間は、一般的なWindowsアプリケーションの起動に要する時間のごく一部ですが、単純なコンソールアプリケーションの起動・実行に要する時間の大きな割合を占めることがあります。コンソールアプリケーションの中にはリダイレクトを必要としないものもあり、これらのタスクを実行すると、ログオンスクリプトの実行に必要な時間が大幅に延びてしまいます。このビットを含めることで、管理者はプロセスのリダイレクションをバイパスすることができます。GO-Globalライブラリのロードと初期化が行われないため、アプリケーションの実行が速くなります。このビットは、何らかの理由で、GO-Globalのリダイレクション設定の一部または全部と互換性のないアプリケーションにも使用できます。
 
-**0x0000000000000002**- Disable the loading of GO-Global libraries. All redirection will be disabled. The time required to perform the redirection operations is generally a small percentage of the time required to launch typical Windows applications, but it can be a large percentage of the time required to launch and run simple console applications. Some console applications do not require redirection and performing these tasks can significantly extend the time required to execute logon scripts. Including this bit allows administrators to bypass redirection of a process. Applications execute faster since the GO-Global libraries are not loaded and initialized. This bit can also be used for applications that, for one reason or another, are incompatible with some or all of the GO-Global redirection settings.
+**0x0000000000000004**- クライアントのタイムゾーンを無効にする。このビットは、何らかの理由でGO-Global Client Time Zoneのリダイレクト設定と互換性のないアプリケーションに使用できます。
 
-**0x0000000000000004**- Disable Client Time Zone. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Time Zone redirection settings.
+**0x0000000000000008**- クライアント印刷を無効にする。このビットは、何らかの理由でGO-Globalのクライアント印刷のリダイレクト設定と互換性のないアプリケーションに使用できます。
 
-**0x0000000000000008**- Disable Client Printing. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Printing redirection settings.
+**0x0000000000000040** *- WindowsのProcessIdToSessionId()APIを有効にして、GO-GlobalのセッションIDを返すようにします。
 
-**0x0000000000000040** *- Enable the Windows ProcessIdToSessionId() API to return the GO-Global session ID.
+**0x0000000000000200**- クライアントサウンドを無効にする。このビットは、何らかの理由でGO-Global Client Soundのリダイレクト設定と互換性のないアプリケーションに使用することができます。
 
-**0x0000000000000200**- Disable Client Sound. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Sound redirection settings.
+**0x0000000000000400**- クライアントのシリアルポートおよびパラレルポートを無効にします。このビットは、何らかの理由でGO-Globalクライアントのシリアルポートおよびパラレルポートのリダイレクト設定と互換性のないアプリケーションに使用できます。
 
-**0x0000000000000400**- Disable client Serial and Parallel Ports. This bit can be used for applications that, for one reason or another, are incompatible with the GO-Global Client Serial and Parallel Ports redirection settings.
+**0x0000000000000800** *- WindowsのGetComputerName()APIを有効にして、クライアントのコンピュータ名を返すようにします。以下も参照してください。クライアントコンピュータの名前を取得する。中断されたセッションにクライアントが再接続したときに、クライアント環境変数（CLIENTCOMPUTERNAMEおよびCLIENTCOMPUTERIPADDRESS）の更新を無効にする。
 
-**0x0000000000000800** *- Enable the Windows GetComputerName() API to return the client computer name. See also: Obtaining the Name of the Client Computer. Disable the updating of the client environment variables (CLIENTCOMPUTERNAME and CLIENTCOMPUTERIPADDRESS) when a client reconnects to a suspended session.
+**0x0000000000001000** *- 最適化のために、Explorer.exeの起動時に実行される通常の処理の一部を無効にします。このビットにより、Explorer.exeがHKEYLOCALMACHINE\Microsoft Windows\CurrentVersion\Run、RunOnce、およびRunOnceExレジストリキーの下にリストされたプロセスを起動するのを防ぐことができます。これにより、エクスプローラーをセッションで実行するために必要なシステムリソースが削減されます。
 
-**0x0000000000001000** *- Disable, for optimization purposes, some of the normal processing performed when Explorer.exe is launched. This bit prevents Explorer.exe from launching processes listed under the HKEYLOCALMACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run, RunOnce and RunOnceEx registry keys. This reduces the system resources needed to run Explorer in a session.
+**0x0000000080000000** *- Delphiで作成されたアプリケーションで、Client Serial and Parallel Ports機能を使用できるようになりました。Delphiで作成されたアプリケーションは、WindowsのGetOverlappedResult()APIからのすべての戻り値を適切に処理しません。このビットは、WAITTIMEOUTを返さず、代わりにWAITOBJECT0を返します。
 
-**0x0000000080000000** *- Enable application produced with Delphi to use the Client Serial and Parallel Ports feature. Applications built with Delphi do not properly process all return values from the Windows GetOverlappedResult() API. This bit prevents the returning of WAITTIMEOUT and instead returns WAITOBJECT0.
+**0x0000000800000000** *- NtQuerySystemInformation関数がGO-GlobalのセッションIDを返すようにします。このオプションは、Windows セッション ID を使用する .NET アプリケーションで必要となる場合があります。
 
-**0x0000000800000000** *- Enable the NtQuerySystemInformation function to return the GO-Global session ID. This option may be required for .NET applications that make use of the Windows Session ID.
+**0x0000040000000000**- プロセスが作成またはアクセスする特定の名前付きパイプをセッション・プライベートにします。
 
-**0x0000040000000000**- Make specific named pipes that the process creates or accesses session-private.
-
-*Indicates advanced options that should only be used if instructed to by your support contact.
+*サポート担当者から指示された場合にのみ使用すべき高度なオプションを示します。
 
 {{% alert title="参照" color="info" %}}
-All the unlisted bits are purposely undocumented and reserved for internal GraphOn use only. Do not alter any registry values that contain any unlisted bits and do not apply any unlisted bits to any registry values you add. GO-Global Host operation will be compromised if this is done.
+リストアップされていないビットは、意図的に文書化されておらず、GraphOn社内でのみ使用されます。リストにないビットを含むレジストリ値を変更したり、追加したレジストリ値にリストにないビットを適用したりしないでください。このようなことをすると、GO-Globalホストの動作に支障をきたします。
 {{% /alert %}}
 
-These bits can be combined to customize the redirector settings of specific applications or to change the default settings used by applications that do not have a registry entry. In either case always include the default value bits set by the initial install of GO-Global, unless instructed otherwise by a support engineer.
+これらのビットを組み合わせることで、特定のアプリケーションのリダイレクタ設定をカスタマイズしたり、レジストリエントリを持たないアプリケーションが使用するデフォルト設定を変更したりすることができます。いずれの場合も、サポートエンジニアからの指示がない限り、GO-Globalの初期インストール時に設定されたデフォルト値のビットを必ず含めるようにしてください。
 
-### To add custom redirector settings for a specific application
+### 特定のアプリケーションにカスタムリダイレクタ設定を追加す方法
 
-1. Click Start | Run.
-2. Type Regedit.
-3. Browse to the registry key:`HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.`
-4. Click Edit | New | QWORD value.
-5. Type the name of the application's executable file. (For example, Beeps.exe.) The application's name can be specified as either a fully qualified path or as the file's base name and extension.
-6. Select the new registry value.
-7. Click Edit | Modify.
-8. Verify that the Base selection is Hexadecimal.
-9. Type the combined bits in the **Value data** edit box.
-10. Click **OK.**
+1. [スタート｜名前を指定して実行]をクリックします。
+2. Regeditと入力します。
+3. `HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.`のレジストリキーを表示します。
+4. [Edit | New | QWORD value]をクリックします。
+5. アプリケーションの実行ファイルの名前を入力する。(例：Beeps.exe.)アプリケーションの名前は、完全修飾パス、またはファイルの基本名と拡張子のいずれかで指定できます。
+6. 新しいレジストリ値を選択します。
+7. [Edit | Modify]をクリックします。
+8. ベースが「16進法」になっていることを確認します。
+9.  **Value data** エディットボックスに結合ビットを入力する。
+10. **OK.** をクリックします。
 
-### To make a named pipe session-private
+### 名前付きパイプをセッション・プライベートにする方法
 
-1. Add a custom redirector setting for each process that uses the named pipe that includes the **0x0000040000000000** bit.
-2. Create a DWORD registry value under the `KEYLOCALMACHINE\SOFTWARE\GraphOn\GOGlobal\System\Namedpipes` registry key that identifies the named pipes that should be made session-private.
-3. Set the name of the registry value equal to the string that will be compared to the name of the named pipes, and set the registry value to one of the following:
-  - 1 - Make a named pipe session-private when the name of the named pipe matches the name of the registry value.
-  - 2 - Make a named pipe session-private when the beginning of the name of the named pipe matches the name of the registry value.
-  - 4 - Make a named pipe session-private when any part of the name of the named pipe matches the name of the registry value.
+1. 名前付きパイプを使用する各プロセスに、**0x0000040000000000**ビットを含むカスタムリダイレクタ設定を追加します。
+2. `KEYLOCALMACHINE\SOFTWARE\GraphOn\GOGlobal\System\Namedpipes` レジストリキーの下にDWORD形式のレジストリ値を作成し、セッションプライベート化する名前付きパイプを特定する。
+3. レジストリ値の名前を、名前付きパイプの名前と比較される文字列と同じにして、レジストリ値を以下のいずれかに設定してください:
+  - 1 - 名前付きパイプの名前がレジストリ値の名前と一致したときに、名前付きパイプをセッション・プライベートにする。
+  - 2 - 名前付きパイプの名前の先頭がレジストリ値の名前と一致したら、名前付きパイプをセッション・プライベートにする
+  - 4 - 名前付きパイプの名前の一部がレジストリ値の名前と一致した場合、名前付きパイプのセッションをプライベートにします。
 
-Comparison types 1 and 2 must be in the form of \.\pipe\pipename and are made with a caseinsensitive test. Comparison type 4 is case-sensitive.
+比較タイプ1と2は、\\pipenameの形でなければならず、大文字と小文字を区別してテストされます。比較タイプ4は、大文字と小文字を区別します。
 
-### To change the default redirection settings
+### デフォルトのリダイレクト設定を変更する方法
 
-1. Click Start | Run
-2. Type Regedit.
-3. Browse to the registry key:`HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.`
-4. Select the existing **DefaultLoaderOptions** registry value.
-5. Click Edit | Modify.
-6. Verify that the Base selection is **Hexadecimal.**
-7. Type the new setting in the **Value data** edit box.
-8. Click **OK**
+1. スタート｜実行｜をクリックします。
+2. Regedit」と入力します。
+3. レジストリキー「HKEYLOCALMACHINE\GraphOn\GO-Global\Loader\Processes.`」を参照します。
+4. 既存の **DefaultLoaderOptions** レジストリ値を選択します。
+5. [Edit | Modify]をクリックします。
+6. ベースが「16進法」になっていることを確認します。
+7. **Value data** エディットボックスに結合ビットを入力する。
+8. **OK.** をクリックします。
 
-Example Configuration
+構成例
 
-A GO-Global host has the following applications installed and registered in the Cluster Manager.
+GO-Globalホストには以下のアプリケーションがインストールされており、Cluster Managerに登録されています。
 
 * DataDownloader.exe
 * DataProcessor.exe
 * DataViewer.exe
 
-The **DataDownloader.exe** executable is a Windows application that reads data from a serial device and saves it to a file. Client Sound is needed for error conditions alerts that can be signaled while data is being downloaded. Client Files Access will be used to store the data file on the client system. The Windows GetComputerName() API must be redirected so that the client computer name can be used to indicate the source of the data within the data file.
+DataDownloader.exe**実行ファイルは、シリアルデバイスからデータを読み取り、ファイルに保存するWindowsアプリケーションです。Client Soundは、データのダウンロード中にエラー状態のアラートを通知するために必要となります。Client Files Access は、クライアントシステムにデータファイルを保存するために使用します。WindowsのGetComputerName()APIをリダイレクトして、データファイル内のデータのソースを示すために、クライアントのコンピュータ名を使用できるようにする必要があります。
 
-Because the serial device that contains the data is connected to the client computer, Client Serial and Parallel Ports will need to be enabled. Because this is the only process that will access Client Serial and Parallel Ports on this system, a registry entry specifically for DataDownloader.exe has been added. This minimizes the risks and overhead associated with this level two redirector setting by disabling Client Serial and Parallel Ports in all other applications.
+データを格納するシリアルデバイスがクライアントコンピュータに接続されているため、クライアントのシリアルポートとパラレルポートを有効にする必要があります。DataDownloader.exeは、このシステムでクライアントのシリアルポートとパラレルポートにアクセスする唯一のプロセスであるため、DataDownloader.exe専用のレジストリエントリが追加されています。これにより、他のすべてのアプリケーションでクライアントのシリアルポートとパラレルポートを無効にすることで、このレベル2リダイレクタ設定に関連するリスクとオーバーヘッドを最小限に抑えることができます。
 
-The settings for this application are calculated as follows:
+このアプリケーションの設定は、次のように計算されます。
 
-0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.
+0x0000000000000100 - これらのビットは、もともとDefaultLoaderOptionsで設定されていたものです。
 
-0x0000000000000800 - This is the bit that enables the Windows GetComputerName() API redirection. 0x0000000000000900 – This is the hexadecimal QWORD to be set in the DataDownloader.exe registry value. The DataProcessor.exe executable is a console application that needs Client File Access to read in the serial data file from the client and write out the processed data file to the client. It will also use Client Time Zone to properly process the times recorded in the serial data file. All other settings will be disabled to minimize the risks and overhead associated with redirector settings. The settings for this application are calculated as follows:
+0x0000000000000800 - WindowsのGetComputerName()APIのリダイレクトを有効にするためのビットです。0x0000000000000900 - DataDownloader.exeのレジストリ値に設定される16進数のQWORDです。DataProcessor.exeの実行ファイルは、クライアントからシリアルデータファイルを読み込み、処理されたデータファイルをクライアントに書き出すためにClient File Accessを必要とするコンソールアプリケーションです。また、シリアルデータファイルに記録された時間を適切に処理するために、Client Time Zoneを使用します。リダイレクタの設定に関連するリスクとオーバーヘッドを最小限に抑えるため、その他の設定はすべて無効にします。このアプリケーションの設定は以下のように計算されます。
 
-0x0000000000000100 - These are the bits originally set in DefaultLoaderOptions.
+0x0000000000000100 - これらのビットは、もともとDefaultLoaderOptionsで設定されていたものです。
 
-0x0000000000000008 - This is the bit that disables Client Printing.
+0x0000000000000008 - これは、クライアント印刷を無効にするビットです。
 
-0x0000000000000200 - This is the bit that disables Client Sound.
+0x0000000000000200 - これは、クライアントサウンドを無効にするビットです。
 
-0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.
+0x0000000000000400 - クライアントのシリアルポートとパラレルポートを無効にするビットです。
 
-0x0000000000000708 – This is the hexadecimal QWORD to be set in the DataProcessor.exe registry value.
+0x0000000000000708 – DataProcessor.exeのレジストリ値に設定される16進数のQWORDです。
 
-The **DataViewer.exe** executable is a Windows application that displays the data so that it can be analyzed. It needs Client File Access to read in the processed data file from the client. It needs Client Sound so that application sounds can be heard. It needs Client Printing so that the analyzed data can be printed on paper. These are some of the settings needed by most applications, so the **DefaultLoaderOptions** registry value is used for the calculation below.
+DataViewer.exe**実行ファイルは、データを分析できるように表示するWindowsアプリケーションです。クライアントから処理済みのデータファイルを読み込むためには、Client File Accessが必要です。アプリケーションの音を聞くためには、Client Soundが必要です。分析したデータを紙に印刷するために、クライアント印刷が必要です。これらはほとんどのアプリケーションで必要とされる設定なので、以下の計算には **DefaultLoaderOptions** レジストリ値を使用しています。
 
-The default setting will be changed to disable the Client Serial and Parallel Ports. This can be done because the only application that uses Client Serial and Parallel Ports, DataDownloader.exe, has its own registry setting that specifically enables it.
+デフォルトの設定では、クライアントのシリアルポートとパラレルポートを無効にするように変更します。これは、クライアントのシリアルポートとパラレルポートを使用する唯一のアプリケーションであるDataDownloader.exeが、特に有効にする独自のレジストリ設定を持っているためです。
 
-0x0000000000000100 These are the bits originally set in DefaultLoaderOptions.
+0x0000000000000100 これらのビットは、もともとDefaultLoaderOptionsで設定されていたものです。
 
-0x0000000000000400 - This is the bit that disables Client Serial and Parallel Ports.
+0x0000000000000400 - クライアントのシリアルポートとパラレルポートを無効にするビットです。
 
-0x0000000000000500 – This is the hexadecimal QWORD to be set in the DefaultLoaderOptions registry value.
+0x0000000000000500 – DefaultLoaderOptionsのレジストリ値に設定される16進数のQWORDを指定します。
 
-This example demonstrates how a combination of application specific and the default settings can be used to minimize the risk of application incompatibilities and allow an optimal environment to run in.
+この例では、アプリケーション固有の設定とデフォルトの設定を組み合わせることで、アプリケーションの非互換性のリスクを最小限に抑え、最適な環境での実行を可能にしています。
 

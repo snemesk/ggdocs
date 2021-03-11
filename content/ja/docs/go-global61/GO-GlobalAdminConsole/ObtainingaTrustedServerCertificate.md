@@ -96,23 +96,17 @@ iOSまたはAndroid上のGO-Global AppControllerがサーバ証明書を信頼�
 9. **OK**をクリックします。
 10. iOSまたはAndroidデバイスからGO-Globalセッションを開始します。
 
-# Resolving SLL Issues
+# SSLの問題を解決する
 
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。
-{{% /alert %}}
+SSLを使用するようにRelay Load Balancerを設定している場合、Dependent HostsのRelay Load Balancer欄に入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致している必要があります。(Relay Load BalancerのRelay Load Balancerフィールドに入力した名前は、Relay Load Balancerの証明書のCommon Nameと一致する必要はありません) リレーロードバランサーと依存ホストが正しく設定されていることを確認するには、以下の手順に従います。
 
-When a Relay Load Balancer is configured to use SSL, the name entered into the Relay Load Balancer field on the Dependent Hosts must match the Common Name of the Relay Load Balancer’s certificate. (The name entered into the Relay Load Balancer field on the Relay Load Balancer does not need to match the Common Name of the Relay Load Balancer’s certificate.)
+1. 管理者コンソールを実行し、ツリービューのRelay Load Balancerの下に従属ホストが表示されていることを確認します。表示されない場合は、従属ホストがRelay Load Balancerに接続されていません。
+2. 2. ツリービューで従属ホストがリレーロードバランサーの下に表示されない場合は、従属ホストのアプリケーショ ンパブリッシングサービスのログを確認します。証明書が無効であるというメッセージがあれば、SSLの設定に問題があります。
+3. 3. ディペンデントホストの Application Publishing Service ログに SSL 証明書のエラーメッセージがある場合は、ディペンデントホストの GO-Global の GO-G\Programs ディレクトリを参照し、AppController.exe をダブルクリックして GO-Global クライアントを実行します。
+4. 接続ダイアログにリレーロードバランサーのアドレスを入力します。従属ホスト上のホストオプションダイアログのリレーロードバランサーフィールドに指定されているアドレスを正確に入力します。
+5. 5. [Connect]をクリックします。
 
-### To verify that the Relay Load Balancer and Dependent Host are properly configured
-
-1. Run the Admin Console and verify that the Dependent Host appears below the Relay Load Balancer in the tree view. If it does not, the Dependent Host is not connected to the Relay Load Balancer.
-2. If the Dependent Host does not appear below the Relay Load Balancer in the tree view, check the Application Publishing Service log on the Dependent Host. If it contains a message that the certificate is invalid, there is an SSL configuration problem.
-3. If there is an SSL certificate error message in the Dependent Host's Application Publishing Service log, browse to the GO-Global\Programs directory on the Dependent Host and double-click AppController.exe to run the GO-Global client.
-4. Type the address of the Relay Load Balancer into the Connection dialog. Type the address exactly as it is specified in the Relay Load Balancer field of the Host Options dialog on the Dependent Host.
-5. Click Connect.
-
-If an SSL warning message is displayed, the Dependent Host will not be able to connect to the Relay Load Balancer. Resolve the issue described in the SSL warning message. Then the Dependent Host should be able to connect to the Relay Load Balancer.
-If no SSL warning dialog is displayed, but a different error message is displayed (e.g., No available hosts), the SSL configuration is fine. For the purposes of this test, you can disregard any error messages that do not pertain to the ability of the client to open a connection to the Relay Load Balancer.
+SSL警告メッセージが表示された場合、従属ホストはRelay Load Balancerに接続できません。SSL警告メッセージに記載されている問題を解決してください。そうすれば、従属ホストはRelay Load Balancerに接続できるはずです。
+SSL警告ダイアログが表示されず、別のエラーメッセージが表示された場合(例：利用可能なホストがありません)は、SSL設定に問題がないことを示しています。このテストでは、クライアントがRelay Load Balancerへの接続を開く能力に関係のないエラーメッセージは無視しても構いません。
 
 

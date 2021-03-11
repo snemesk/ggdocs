@@ -62,16 +62,11 @@ GO-Global Web Appを使用する場合、アプリケーションのメニュー
 
 # Accessing the Host or Relay Load Balancer Directly from the Internet
 
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。
-{{% /alert %}}
+ユーザがインターネットからGO-Global HostやRelay Load Balancerに接続する場合、URL内のWebサーバーとホストアドレスはパブリック(インターネット)アドレスでなければなりません。公開されているウェブサーバがない場合は、GraphOnのウェブサーバであるapps.graphon.comを使用することができます。
 
-If users will be connecting to a GO-Global Host or Relay Load Balancer from the internet, the web server and host addresses in the URL must be public(internet)addresses. When there is no public web server available, GraphOn's web server, **apps.graphon.com,** can be used.
+この場合、以下のようなURLがユーザと共有されます。`http://apps.graphon.com/goglobal/?host=hostname`、hostnameはGO-Globalホストの公開アドレスです。
 
-In this case, a URL such as the following would be shared with users:**`http://apps.graphon.com/goglobal/?host=hostname`**, where hostname is the public address of the GO-Global Host.
+GraphOn以外のウェブサーバを使用する場合は、そのウェブサーバの公開アドレスを使用してください。例： http://webservername.com/goglobal/?host=hostname
+ユーザがインターネットと内部ネットワークの両方からホストやRelay Load Balancerにアクセスする場合、外部と内部のDNSは、ウェブサーバの公開アドレスと内部アドレスが同じになるように設定し、ホストの公開アドレスと内部アドレスが同じになるように設定します。あるいは、管理者が外部と内部のユーザに異なるURLを提供することもできますが、これはユーザを混乱させる可能性があります。
+サードパーティのロードバランサを介してホストにアクセスする場合、URL にはロードバランサのアドレスを含める必要があります。例えば **`http://loadbalancer.com/goglobal/?host=hostname&app=Notepad`**
 
-When using a web server other than GraphOn's, the URL must use the public address of the web server. For example:**`http://webservername.com/goglobal/?host=hostname`**
-
-If users will be accessing a host or Relay Load Balancer from both the Internet and the internal network, the external and internal DNS should be configured so that the public and internal addresses of the web server are the same, and the public and internal addresses of the host are the same. Alternatively, administrators can provide external and internal users with different URLs, but this may be confusing to users.
-
-When hosts are accessed via a third-party load balancer, the URL must include the address of the load-balancer. For example, **`http://loadbalancer.com/goglobal/?host=hostname&app=Notepad`**

@@ -86,14 +86,10 @@ GO-Globalは、WindowsとGO-Globalホスト間の通信方法として、Transmi
 **[SSLトランスポート]** を選択した場合、ユーザがWebブラウザを使用してGO-Globalホストにアクセスする場合は、WebサーバでHTTPSを有効にする必要があります。
 {{% /alert %}}
 
-When a Relay Load Balancer is used:
+Relay ロードバランサーを使用している場合。
 
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。
-{{% /alert %}}
-
-- The certificate must be installed on the Relay Load Balancer but does not need to be installed on the Dependent Hosts.
-- On the Dependent Hosts, the value in the **Relay Load Balancer** address field on the **Configuration** tab of the **Host Options** dialog must match the certificate's Common Name.
+- 証明書はリレーロードバランサーにインストールする必要がありますが、従属ホストにはインストールする必要はありません。
+- 従属ホストでは、**Host Options**ダイアログの**Configuration**タブの**Relay Load Balancer**アドレスフィールドの値が証明書のCommon Nameと一致している必要があります。
 
 ファームマネージャを使用する場合：
 

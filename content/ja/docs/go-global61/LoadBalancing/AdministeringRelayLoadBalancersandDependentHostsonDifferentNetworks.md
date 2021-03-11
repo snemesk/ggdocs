@@ -5,56 +5,52 @@ linkTitle: ""
 weight: 09
 type: "docs"
 ---
-When a user starts the Admin Console on a Relay Load Balancer or a dependent host, the Admin Console connects to the Relay Load Balancer and attempts to authenticate the user using Integrated Windows authentication. If the Admin Console is running on a dependent host and the associated Relay Load Balancer is located on a different network, a message such as the following is displayed:<br>
+ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。
 
-_Failed to log you on to Server8. This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?_<br>
+"Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？"
 
-Clicking **No** will return you to the **All Hosts** node of the Admin Console. Clicking **Yes** will initiate a special remote administration session on the Relay Load Balancer as follows:<br>
+Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。<br>
 
-1. The Admin Console on the dependent host starts the GO-Global Client.
-2. The client connects to the Relay Load Balancer and starts a session. The **Sign In**dialog is displayed to the user.
-3. The user signs in, specifying the user name and password of an account that is a member of the Administrators group on the Relay Load Balancer.
-4. The Admin Console starts on the Relay Load Balancer. The user can now administer the Relay Load Balancer and all of its dependent hosts.
-5. A maximum of two administration sessions can run on the Relay Load Balancer at any given time, regardless of the **Maximum sessions on this host** setting in the Admin Console and regardless of license restrictions.
+1. Dependent Hostの Admin Console が GO-Global Client を起動します。
+2. クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。
+3. Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。
+4. Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。
+5. Admin Consoleの **Maximum sessions on this host** 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。
 
-Dependent hosts inherit their list of published applications, server settings, and user settings from the Relay Load Balancer. Applications must be installed in the same directory on all dependent hosts. Applications do not need to be installed on the Relay Load Balancer. When a GO-Global Host is connected to a Relay Load Balancer all of its server settings are synchronized with those of the Relay Load Balancer. <br>
+Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。<br>
 
-When any changes are made to the Relay Load Balancer's settings, they are also made to **All Hosts** connected to that Relay Load Balancer. The only settings that are allowed to vary are the maximum number of sessions and the name of the Relay Load Balancer. All other settings in the **Host Options** and **Application Properties** dialogs are grayed out and cannot be modified.<br>
+Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホスト**にも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプション**とアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。
 
-When setting up a Relay Load Balancer, if an application is installed but not published on the Dependent Host, you will need to publish the application on the Relay Load Balancer through the Admin Console. For example, if Adobe Reader 8.0 is installed on the Dependent Host at C:\Program Files\Adobe\Acrobat 8.0\Reader\AcroRd32.exe, open the Admin Console on the Relay Load Balancer and type this path location in the **Location** box in the **Add Application** dialog.<br>
+Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.0がDependent HostのC:Greatment Files\AdobeAcrobat 8.0\Reader\AcroRd32.exeにインストールされている場合、Relay Load BalancerのAdmin Consoleを開き、**Add Application**ダイアログの**Location**ボックスにこのパスの場所を入力します。
 
 {{% alert title="参照" color="info" %}}
-Before publishing an item on a mapped drive, verify that the drive is mapped to the same drive letter and location on the dependent hosts as it is on the Relay Load Balancer.
+マップされたドライブにアイテムを公開する前に、ドライブがRelay Load Balancer上と同じドライブレターと場所にマップされていることを確認してください。
 {{% /alert %}}
 
 # Host Selection
 
-When a client connects to a Relay Load Balancer, the Relay Load Balancer attempts to start a session on the dependent host that has the lowest number of running sessions as a percentage of the maximum number of sessions allowed for the host.<br>
+クライアントがRelay Load Balancerに接続すると、Relay Load Balancerは、そのホストで許可されている最大セッション数に対する割合として、実行中のセッション数が最も少ないDependent Host上でセッションを開始しようとします。
+もし、選択したホストでセッションを開始できなかった場合、Relay Load Balancerは、セッションをサポートできるホストが見つかるまで、他の利用可能なホストでもセッションを開始しようとします。
 
-If the session fails to start on the selected host, the Relay Load Balancer successively attempts to start the session on other available hosts until it finds one that can support the session.<br>
+利用可能なホストがない場合(つまり、すべてのホストで実行中のセッション数が許可された最大数に等しい場合)、GO-Globalはユーザにメッセージを表示します。
 
-If there are no available hosts (i.e., if the number of running sessions on All Hosts equals the maximum number allowed), GO-Global displays a message to the user:<br>
-**You are already running as many sessions as you are allowed**.
+** You are already running as many sessions as you are allowed. **
 
-Otherwise, if the session cannot be started on any of the available hosts, the following message is displayed to the user:<br>
-**GO-Global failed to launch the Program Window for your session.**
+そうでない場合、利用可能なホストのいずれかでセッションを開始できない場合、次のようなメッセージがユーザに表示されます:<br>
 
-In a Relay Load Balancer setting, GO-Global checks the maximum sessions settings on the Relay Load Balancer and its dependent hosts. The maximum sessions value on the Relay Load Balancer is the maximum number of sessions that can be run concurrently on all dependent hosts assigned to that Relay Load Balancer.<br>
+** GO-Global failed to launch the Program Window for your session. **
 
-To modify the **Maximum sessions on this host** setting, open the Admin Console on the host, click Host Options | Session Startup.<br>
+Relay Load Balancerの設定では、GO-GlobalはRelay Load BalancerとそのDependent Hostの最大セッション設定を確認します。Relay Load Balancerの最大セッション数は、そのRelay Load Balancerに割り当てられたすべてのDependent Hostで同時に実行できるセッションの最大数です。
 
 # Relay Load Balancer in a DMZ
 
-A Relay Load Balancer in a DMZ can be separated from its dependent application servers by a firewall, with the following requirements:<br>
+DMZ内のRelay Load Balancerは、ファイアウォールによってDependent Hostから分離できますが、次の要件があります。
 
-* The dependent application server must be able to connect to the Relay Load Balancer from behind the firewall. Please note that the reverse is not required. The Relay Load Balancer does not need to be able to connect to the dependent application server.<br>
-* The client must be able to connect to the Relay Load Balancer in the DMZ.<br>
+Dependent Hostは、ファイアウォールの背後からRelay Load Balancerに接続できる必要があります。逆は必要ありませんのでご注意ください。Relay Load Balancerは、Dependent Hostに接続できる必要はありません。
+クライアントは、DMZのRelay Load Balancerに接続できる必要があります。
 
-When a session starts on a dependent application server, the dependent application server opens a connection to the Relay Load Balancer. When the Relay Load Balancer receives data from the session's clients, it forwards the data to the session over this connection. Similarly, when the Relay Load Balancer receives data from the session over this connection, it forwards the data to the session's clients.<br>
+依存するアプリケーションサーバー上でセッションが開始されると、依存するアプリケーションサーバーはRelay Load Balancerへの接続を開きます。Relay Load Balancerは、セッションのクライアントからデータを受信すると、この接続を介してそのデータをセッションに転送します。同様に、Relay Load Balancerはこの接続を介してセッションからデータを受け取ると、そのデータをセッションのクライアントに転送します。
 
-The Relay Load Balancer generally has two network interfaces: one that is accessible from clients outside the DMZ, and one that is accessible from dependent application servers behind the firewall.<br>
-
-The diagram below illustrates the recommended configuration for providing access to hosts on an internal network. The arrows show the direction in which the connections are made. Hosts connect to the Relay Load Balancer, not the other way around. As a result, the internal firewall does not need to allow any connections from the DMZ to the internal network. With this configuration, neither machines on the internet nor machines in the DMZ can connect directly to the hosts on the internal network. It is a highly secure configuration.<br>
-
+下図は、内部ネットワーク上のホストにアクセスを提供するための推奨構成を示しています。矢印は接続の方向を示しています。ホストはRelay Load Balancerに接続しますが、その逆ではありません。その結果、内部ファイアウォールはDMZから内部ネットワークへの接続を許可する必要はありません。この構成では、インターネット上のマシンもDMZ内のマシンも、内部ネットワーク上のホストに直接接続することはできません。
 ![5-9-1](/img/5-9-1.png) 
 
