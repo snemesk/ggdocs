@@ -1,5 +1,5 @@
 ---
-title: "Automatic Client Updates"
+title: "クライアントの自動更新"
 linkTitle: ""
 weight: 09
 type: "docs"

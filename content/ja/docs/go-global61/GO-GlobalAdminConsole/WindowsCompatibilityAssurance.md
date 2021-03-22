@@ -1,5 +1,5 @@
 ---
-title: "Windows Compatibility Assurance"
+title: "Windows互換性保証"
 linkTitle: ""
 weight: 28
 type: "docs"

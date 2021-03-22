@@ -1,13 +1,9 @@
 ---
-title: "GO-Global Updates"
+title: "GO-Globalのアップデート"
 linkTitle: ""
 weight: 29
 type: "docs"
 ---
-{{% alert title="注意" color="secondary" %}}
-本項目の設定は推奨設定ではございませんのでご注意ください。
-{{% /alert %}}
-
 {{% alert title="情報" color="green" %}}
 本項目の設定は以下の技術ノートを参照ください。
 - KGTN 20200040702

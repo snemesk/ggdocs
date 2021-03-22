@@ -1,7 +1,7 @@
 ---
 title: "強力な暗号化証明書ウィザード"
 linkTitle: ""
-weight: 08
+weight: 06
 type: "docs"
 ---
 

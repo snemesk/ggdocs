@@ -1,7 +1,7 @@
 ---
 title: "2要素認証"
 linkTitle: ""
-weight: 13
+weight: 11
 type: "docs"
 ---
 

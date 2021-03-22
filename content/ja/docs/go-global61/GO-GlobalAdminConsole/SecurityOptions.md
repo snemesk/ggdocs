@@ -1,7 +1,7 @@
 ---
 title: "セキュリティオプション"
 linkTitle: ""
-weight: 06
+weight: 05
 type: "docs"
 ---
 

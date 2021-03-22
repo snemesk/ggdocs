@@ -1,7 +1,7 @@
 ---
 title: "標準認証"
 linkTitle: ""
-weight: 10
+weight: 08
 type: "docs"
 ---
 

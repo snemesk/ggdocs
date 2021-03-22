@@ -1,7 +1,7 @@
 ---
 title: "パスワードの変更"
 linkTitle: ""
-weight: 12
+weight: 10
 type: "docs"
 ---
 

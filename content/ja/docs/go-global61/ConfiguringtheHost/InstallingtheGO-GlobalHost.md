@@ -33,8 +33,10 @@ GO-Globalは自己解凍型の実行ファイルとして提供され、 **gg-ho
 3. 右クリックして、 **[再起動]** を選択します。
 
 {{% alert title="参照" color="info" %}}
-ライセンスファイル`(C:\Program Files\GraphOn\GO-Global\Licensing\*.lic)`の最小権限は以下の通りです。
-**Administrators**:Full Control; **Users**:Read & Execute; **SYSTEM**:Full Control
+ライセンスファイル`(C:\Program Files\GraphOn\GO-Global\Licensing\*.lic)`の最小権限は以下の通りです。<br>
+**Administrators**:Full Control;<br> 
+**Users**:Read & Execute; <br>
+**SYSTEM**:Full Control<br>
 以下のエラーメッセージがLogファイルに表示された場合、ライセンスファイルのパーミッションが正しくない可能性があります。
 
 `FlexLM code #-1; FlexLM text: Cannot find license file. The license files (or license server system network addresses) attempted are listed below. Use LM_LICENSE_FILE to use a different license file, or contact your software provider for a license file.)`
@@ -72,7 +74,7 @@ GO-Globalホストの起動設定を行う場合は、リストから[GO-Global 
 
 以前のバージョンからGO-Global 6.1にアップグレードするお客様は、アップグレードする前にバージョン 6.1のライセンスを取得する必要があります。バージョン 6.1 ホストインストーラは、バージョン 6.1のGO-Globalライセンスを持っていないコンピュータをアップグレードすることはできません。<br>
 
-アップグレードするコンピュータがCloudライセンス(Cloudトライアルライセンスなど)を使用している場合は、sales@graphon.com に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのCloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。<br>
+アップグレードするコンピュータがCloudライセンス(Cloudトライアルライセンスなど)を使用している場合は、販売代理店に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのCloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。<br>
 
 または、アップグレードするホストがOn-premisesのライセンスを使用している場合（ほとんどの場合)、カスタマーポータルでライセンス変更リクエストを送信して新しいライセンスファイルを取得します。
 
@@ -116,7 +118,7 @@ License Managerを再起動しても、GO-Globalホストで実行されてい�
 a. [スタート | すべてのプログラム | アクセサリ | コマンドプロンプト]をクリックして、コマンドプロンプトウィンドウを開きます。<br>
 b. ipconfig /all と入力し、Enter キーを押します。<br>
 c. コンピュータのホスト名と物理アドレスを探します。<br>
-d. コンピュータのホスト名、ホストID(物理アドレス)、シート数をメールで sales@graphon.com に送信します。<br>
+d. コンピュータのホスト名、ホストID(物理アドレス)、シート数をメールで販売代理店に送信します。<br>
 2. GraphOnからライセンスファイルが届いたら<br>
 a. .licファイルをC:\Pro\Program Files\GraphOn\GO-Global\Licensingディレクトリにコピーしてください。<br>
 b. GO-Global License Manager Serviceを起動してください。<br>
@@ -125,7 +127,7 @@ c. GO-Global Application Publishing Serviceを再起動します。<br>
 # 恒久的なOn-premisesライセンスのインストール
 
 管理者は、現在クラウドまたはOn-premisesのトライアルライセンスを使用しているシステムに、On-premisesの恒久的なライセンスをインストールすることができます。On-premisesの恒久的なライセンスを注文すると、GraphOnは注文を処理して新しいライセンスを作成します。ライセンス情報は、注文依頼に記載された連絡先にメールで送信されます。<br>
-管理者はカスタマーポータルからプロダクトコード、メールアドレス、ホスト名、ホストIDを入力してライセンスを有効化する必要があります。新しいライセンス(.lic)ファイルが添付ファイルとして電子メールで送信されます。ライセンス IDは、ライセンスファイルの名前のフォーマットに使用されます。(例:8d73e4k.lic（8d73e4kはライセンスID）)ライセンスファイルの添付ファイルは、指定されたライセンスサーバにインストールする必要があります。<br>
+管理者はカスタマーポータルからプロダクトコード、メールアドレス、ホスト名、ホストIDを入力してライセンスを有効化する必要があります。新しいライセンス(.lic)ファイルが添付ファイルとして電子メールで送信されます。ライセンスIDは、ライセンスファイルの名前のフォーマットに使用されます。(例:8d73e4k.lic（8d73e4kはライセンスID）)ライセンスファイルの添付ファイルは、指定されたライセンスサーバにインストールする必要があります。<br>
 
 ### 恒久的なOn-premisesライセンスをインストールする方法
 

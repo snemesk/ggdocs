@@ -1,7 +1,7 @@
 ---
 title: "信頼されたサーバ証明書の取得"
 linkTitle: ""
-weight: 09
+weight: 07
 type: "docs"
 ---
 

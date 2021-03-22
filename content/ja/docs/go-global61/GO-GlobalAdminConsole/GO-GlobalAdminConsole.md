@@ -4,21 +4,14 @@ linkTitle: ""
 weight: 01
 type: "docs"
 ---
-{{% alert title="情報" color="green" %}}
-詳細につきましては弊社提供のメディアにございますDocuments_kitASPフォルダ内のGO-Global_for_Windows_6.0_ユーザーズマニュアルをご参照ください。
-{{% /alert %}}
-
 Admin Consoleでは、GO-Globalホストの管理、監視、GO-Globalホストへのクライアントアクセスの制御を行うことができます。Admin Consoleには、GO-Globalホストにサインインしているユーザのリストと、ユーザが実行しているアプリケーションが表示されます。Admin Consoleでは、アプリケーションの追加と削除、ユーザセッションの終了、ホスト上で実行されているプロセスの終了など、さまざまな管理タスクを実行できます。
 
 ### Admin Consoleにアクセスする方法
 デスクトップ上の **GO-Global Admin Console** アイコンをダブルクリックします。もしくは
 
 1. Windowsタスクバーの **[スタート]** ボタンをクリックします。<br>
-![kit6-51-1](/img/kit6-51-1.png)
 
 2. [GraphOn GO-Global｜Admin Console］をクリックします。<br>
-![kit6-51-2](/img/kit6-51-2.png)
-![kit6-51-3](/img/kit6-51-3.png)
 
 Admin Consoleの左側のパネルには、Application Publishing Serviceを実行しているネットワーク上のホストの一覧が表示されます。デフォルトでは、Application Publishing Serviceには、自分のマシンで実行されているホストの情報が表示されます。他のホストに接続してホストの情報を表示するには、[GO-Global Hosts]の一覧からホスト名をクリックします。<br>
 
