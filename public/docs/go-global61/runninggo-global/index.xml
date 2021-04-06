@@ -489,7 +489,7 @@ controlArgs.set([ &amp;quot;embed&amp;quot;, &amp;quot;true&amp;quot; ]);
     </item>
     
     <item>
-      <title>Docs: Automatic Client Updates</title>
+      <title>Docs: クライアントの自動更新</title>
       <link>/docs/go-global61/runninggo-global/automaticclientupdates/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       

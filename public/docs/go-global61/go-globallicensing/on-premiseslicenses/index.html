@@ -28,16 +28,16 @@ GO-Globalのアクティベート On-premisesライセンスでGO-Globalをア�
 ライセンスデータベースにライセンスレコードを作成した後、GraphOnは、注文で指定された連絡先にライセンスのライセンスマスターIDとプロダクトコードを電子メールで送信します。管理者はカスタマーポータルからライセンスを有効化することができます。
 参照将来的にライセンスサーバに障害が発生した場合、緊急ライセンスを取得するためにライセンスのプロダクトコードが必要になります。プロダクトコードはライセンスファイルに含まれています。そのため、ライセンスファイルのコピーを安全な場所に保存し、ライセンスサーバに障害が発生した場合にすぐに見つけられるようにしてください。ライセンスを有効にする方法  カスタマーポータルにサインインします。 [License Management | Activate License]をクリックします。 ライセンスのプロダクトコード、電子メールアドレス、ライセンスファイルをインストールするコンピュータのホスト名とホストIDを入力します。 [Activate License] をクリックします。  次に、カスタマポータルが入力した情報を検証し、ライセンス(.lic)ファイルを作成します。ポータルでは、ライセンスファイルの名前を ライセンスID (ライセンスファイルを一意に識別する英数字の識別子)に設定します。(例えば、 8d73e4k.lic の場合、8d73e4kはライセンスIDです)さらに、ライセンスIDは、ライセンスのライセンスマスターIDとプロダクトコードと共に、ライセンスファイルに保存されます。最後に、ポータルはライセンスファイルを管理者に電子メールで送信します。
 GO-Globalのアクティベーションを完了するには、管理者はライセンスファイルに含まれる指示に従って、アクティベートされたライセンスファイルを指定のライセンスサーバにインストールし、最後のステップに必ず従ってから GO-Global License Manager Service を再起動します。
-シートの追加 お客様がon-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
+シートの追加 お客様がOn-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
 アドオンライセンスをインストールする方法  ライセンスファイル内の指示に従って、ライセンスファイルをライセンスサーバにコピーします。既存のライセンスファイルはそのままにしておきます。 GO-Global License Manager Service を再起動します。サービスが再起動されるまでアドオンライセンスは認識されません。サービスを再起動しても、すでにログインしているユーザは中断されません。  ライセンスサーバに複数のライセンスファイルがインストールされている場合、各ライセンスファイルの名前はサーバ上で一意である必要があります。GraphOnでは、ライセンスIDに設定されたファイル名でライセンスファイルを配信します。
 GraphOnでは、ライセンスファイルをそのままインストールすることを推奨しています。しかし、管理者はシステム管理などの理由でライセンスファイルの名前を変更することができます。その場合、管理者はライセンスファイルの名前がライセンスサーバ上で一意であること、ファイルの拡張子が.licであることを確認しなければなりません。(たとえば、License1.lic、License2.lic、License3.licなど)ファイル拡張子が&lt;.lic&gt;でない場合、GO-Global License Manager serviceはライセンスファイルを認識しません。
 ライセンスのアップグレードとリホスト GO-Globalが新しいバージョンへアップグレードされた場合、およびライセンスがリホストされた場合(異なるMACアドレスの新しいコンピュータに移動された場合には、新しいライセンスファイルが必要になります。新しいライセンスファイルを取得するには、管理者がカスタマーポータルを介してライセンス変更要求(LCR)を送信します。変更要求は通常1～2日以内に処理されますが、処理には最大5営業日かかる場合があります。処理が完了すると、新しいライセンスIDを含む新しいライセンスファイルが管理者に電子メールで送信されます。(ライセンスマスターIDとプロダクトコードは変更されません)その後、管理者は新しいライセンスファイルをインストールし、ファイルに記載されている指示に従って古いライセンスファイルを削除します。古いライセンスファイルは、GraphOnによって無効化されている/取り消されているため、削除しなければなりません。
-ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様は管理者コンソールを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルと管理者コンソールの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
+ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様はAdmin Consoleを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルとAdmin Consoleの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
 複数のホスト環境 既定では、GO-Global License Manager serviceは GO-Globalホストと共にインストールされ、GO-Globalホストは同じコンピュータ上のGO-Global License Managerを使用するように構成されています。または、1つ以上のGO-Globalホストを構成して、別のコンピュータで実行されているセントラルライセンスマネージャを使用するように設定することもできます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-globallicensing/on-premiseslicenses/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="On-premisesライセンスについて">
 <meta itemprop="description" content="On-premisesライセンスは、コンピュータのネットワークアダプタのMACアドレス(ホストID)に関連付けられたライセンスファイルを使用して実行されます。ライセンスファイルは、ライセンスファイルで指定されたホストIDと一致するMACアドレスを持つネットワークアダプタを持つコンピュータにインストールされている場合にのみ使用可能です。ライセンスファイルは、GO-Globalライセンスサーバの\Program Files\GraphOn\GO-GlobalLicensingディレクトリに格納されます。
@@ -47,14 +47,14 @@ GO-Globalのアクティベート On-premisesライセンスでGO-Globalをア�
 ライセンスデータベースにライセンスレコードを作成した後、GraphOnは、注文で指定された連絡先にライセンスのライセンスマスターIDとプロダクトコードを電子メールで送信します。管理者はカスタマーポータルからライセンスを有効化することができます。
 参照将来的にライセンスサーバに障害が発生した場合、緊急ライセンスを取得するためにライセンスのプロダクトコードが必要になります。プロダクトコードはライセンスファイルに含まれています。そのため、ライセンスファイルのコピーを安全な場所に保存し、ライセンスサーバに障害が発生した場合にすぐに見つけられるようにしてください。ライセンスを有効にする方法  カスタマーポータルにサインインします。 [License Management | Activate License]をクリックします。 ライセンスのプロダクトコード、電子メールアドレス、ライセンスファイルをインストールするコンピュータのホスト名とホストIDを入力します。 [Activate License] をクリックします。  次に、カスタマポータルが入力した情報を検証し、ライセンス(.lic)ファイルを作成します。ポータルでは、ライセンスファイルの名前を ライセンスID (ライセンスファイルを一意に識別する英数字の識別子)に設定します。(例えば、 8d73e4k.lic の場合、8d73e4kはライセンスIDです)さらに、ライセンスIDは、ライセンスのライセンスマスターIDとプロダクトコードと共に、ライセンスファイルに保存されます。最後に、ポータルはライセンスファイルを管理者に電子メールで送信します。
 GO-Globalのアクティベーションを完了するには、管理者はライセンスファイルに含まれる指示に従って、アクティベートされたライセンスファイルを指定のライセンスサーバにインストールし、最後のステップに必ず従ってから GO-Global License Manager Service を再起動します。
-シートの追加 お客様がon-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
+シートの追加 お客様がOn-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
 アドオンライセンスをインストールする方法  ライセンスファイル内の指示に従って、ライセンスファイルをライセンスサーバにコピーします。既存のライセンスファイルはそのままにしておきます。 GO-Global License Manager Service を再起動します。サービスが再起動されるまでアドオンライセンスは認識されません。サービスを再起動しても、すでにログインしているユーザは中断されません。  ライセンスサーバに複数のライセンスファイルがインストールされている場合、各ライセンスファイルの名前はサーバ上で一意である必要があります。GraphOnでは、ライセンスIDに設定されたファイル名でライセンスファイルを配信します。
 GraphOnでは、ライセンスファイルをそのままインストールすることを推奨しています。しかし、管理者はシステム管理などの理由でライセンスファイルの名前を変更することができます。その場合、管理者はライセンスファイルの名前がライセンスサーバ上で一意であること、ファイルの拡張子が.licであることを確認しなければなりません。(たとえば、License1.lic、License2.lic、License3.licなど)ファイル拡張子が&lt;.lic&gt;でない場合、GO-Global License Manager serviceはライセンスファイルを認識しません。
 ライセンスのアップグレードとリホスト GO-Globalが新しいバージョンへアップグレードされた場合、およびライセンスがリホストされた場合(異なるMACアドレスの新しいコンピュータに移動された場合には、新しいライセンスファイルが必要になります。新しいライセンスファイルを取得するには、管理者がカスタマーポータルを介してライセンス変更要求(LCR)を送信します。変更要求は通常1～2日以内に処理されますが、処理には最大5営業日かかる場合があります。処理が完了すると、新しいライセンスIDを含む新しいライセンスファイルが管理者に電子メールで送信されます。(ライセンスマスターIDとプロダクトコードは変更されません)その後、管理者は新しいライセンスファイルをインストールし、ファイルに記載されている指示に従って古いライセンスファイルを削除します。古いライセンスファイルは、GraphOnによって無効化されている/取り消されているため、削除しなければなりません。
-ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様は管理者コンソールを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルと管理者コンソールの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
+ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様はAdmin Consoleを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルとAdmin Consoleの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
 複数のホスト環境 既定では、GO-Global License Manager serviceは GO-Globalホストと共にインストールされ、GO-Globalホストは同じコンピュータ上のGO-Global License Managerを使用するように構成されています。または、1つ以上のGO-Globalホストを構成して、別のコンピュータで実行されているセントラルライセンスマネージャを使用するように設定することもできます。">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="537">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="538">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="On-premisesライセンスについて"/>
 <meta name="twitter:description" content="On-premisesライセンスは、コンピュータのネットワークアダプタのMACアドレス(ホストID)に関連付けられたライセンスファイルを使用して実行されます。ライセンスファイルは、ライセンスファイルで指定されたホストIDと一致するMACアドレスを持つネットワークアダプタを持つコンピュータにインストールされている場合にのみ使用可能です。ライセンスファイルは、GO-Globalライセンスサーバの\Program Files\GraphOn\GO-GlobalLicensingディレクトリに格納されます。
@@ -64,11 +64,11 @@ GO-Globalのアクティベート On-premisesライセンスでGO-Globalをア�
 ライセンスデータベースにライセンスレコードを作成した後、GraphOnは、注文で指定された連絡先にライセンスのライセンスマスターIDとプロダクトコードを電子メールで送信します。管理者はカスタマーポータルからライセンスを有効化することができます。
 参照将来的にライセンスサーバに障害が発生した場合、緊急ライセンスを取得するためにライセンスのプロダクトコードが必要になります。プロダクトコードはライセンスファイルに含まれています。そのため、ライセンスファイルのコピーを安全な場所に保存し、ライセンスサーバに障害が発生した場合にすぐに見つけられるようにしてください。ライセンスを有効にする方法  カスタマーポータルにサインインします。 [License Management | Activate License]をクリックします。 ライセンスのプロダクトコード、電子メールアドレス、ライセンスファイルをインストールするコンピュータのホスト名とホストIDを入力します。 [Activate License] をクリックします。  次に、カスタマポータルが入力した情報を検証し、ライセンス(.lic)ファイルを作成します。ポータルでは、ライセンスファイルの名前を ライセンスID (ライセンスファイルを一意に識別する英数字の識別子)に設定します。(例えば、 8d73e4k.lic の場合、8d73e4kはライセンスIDです)さらに、ライセンスIDは、ライセンスのライセンスマスターIDとプロダクトコードと共に、ライセンスファイルに保存されます。最後に、ポータルはライセンスファイルを管理者に電子メールで送信します。
 GO-Globalのアクティベーションを完了するには、管理者はライセンスファイルに含まれる指示に従って、アクティベートされたライセンスファイルを指定のライセンスサーバにインストールし、最後のステップに必ず従ってから GO-Global License Manager Service を再起動します。
-シートの追加 お客様がon-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
+シートの追加 お客様がOn-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。
 アドオンライセンスをインストールする方法  ライセンスファイル内の指示に従って、ライセンスファイルをライセンスサーバにコピーします。既存のライセンスファイルはそのままにしておきます。 GO-Global License Manager Service を再起動します。サービスが再起動されるまでアドオンライセンスは認識されません。サービスを再起動しても、すでにログインしているユーザは中断されません。  ライセンスサーバに複数のライセンスファイルがインストールされている場合、各ライセンスファイルの名前はサーバ上で一意である必要があります。GraphOnでは、ライセンスIDに設定されたファイル名でライセンスファイルを配信します。
 GraphOnでは、ライセンスファイルをそのままインストールすることを推奨しています。しかし、管理者はシステム管理などの理由でライセンスファイルの名前を変更することができます。その場合、管理者はライセンスファイルの名前がライセンスサーバ上で一意であること、ファイルの拡張子が.licであることを確認しなければなりません。(たとえば、License1.lic、License2.lic、License3.licなど)ファイル拡張子が&lt;.lic&gt;でない場合、GO-Global License Manager serviceはライセンスファイルを認識しません。
 ライセンスのアップグレードとリホスト GO-Globalが新しいバージョンへアップグレードされた場合、およびライセンスがリホストされた場合(異なるMACアドレスの新しいコンピュータに移動された場合には、新しいライセンスファイルが必要になります。新しいライセンスファイルを取得するには、管理者がカスタマーポータルを介してライセンス変更要求(LCR)を送信します。変更要求は通常1～2日以内に処理されますが、処理には最大5営業日かかる場合があります。処理が完了すると、新しいライセンスIDを含む新しいライセンスファイルが管理者に電子メールで送信されます。(ライセンスマスターIDとプロダクトコードは変更されません)その後、管理者は新しいライセンスファイルをインストールし、ファイルに記載されている指示に従って古いライセンスファイルを削除します。古いライセンスファイルは、GraphOnによって無効化されている/取り消されているため、削除しなければなりません。
-ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様は管理者コンソールを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルと管理者コンソールの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
+ライセンスデータベース お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様はAdmin Consoleを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルとAdmin Consoleの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。
 複数のホスト環境 既定では、GO-Global License Manager serviceは GO-Globalホストと共にインストールされ、GO-Globalホストは同じコンピュータ上のGO-Global License Managerを使用するように構成されています。または、1つ以上のGO-Globalホストを構成して、別のコンピュータで実行されているセントラルライセンスマネージャを使用するように設定することもできます。"/>
 
 
@@ -84,10 +84,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -117,18 +114,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -145,26 +131,6 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -403,7 +369,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -439,25 +405,25 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -504,13 +470,13 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -528,13 +494,13 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -612,7 +578,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -654,13 +620,13 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -837,7 +803,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2976,7 +2942,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
 <p>次に、カスタマポータルが入力した情報を検証し、ライセンス(.lic)ファイルを作成します。ポータルでは、ライセンスファイルの名前を <strong>ライセンスID</strong> (ライセンスファイルを一意に識別する英数字の識別子)に設定します。(例えば、 <strong>8d73e4k.lic</strong> の場合、8d73e4kはライセンスIDです)さらに、ライセンスIDは、ライセンスのライセンスマスターIDとプロダクトコードと共に、ライセンスファイルに保存されます。最後に、ポータルはライセンスファイルを管理者に電子メールで送信します。<br></p>
 <p>GO-Globalのアクティベーションを完了するには、管理者はライセンスファイルに含まれる指示に従って、アクティベートされたライセンスファイルを指定のライセンスサーバにインストールし、最後のステップに必ず従ってから <strong>GO-Global License Manager Service</strong> を再起動します。</p>
 <h1 id="シートの追加">シートの追加</h1>
-<p>お客様がon-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。</p>
+<p>お客様がOn-premisesのライセンスサーバにシートを追加する必要がある場合、お客様は新規のアドオンライセンスを注文します。アドオンライセンスを注文するたびに、GraphOnはライセンスデータベースに新しいライセンスを作成し、そのライセンスのマスターIDとプロダクトコードを注文に記載された連絡先にメールで送信します。お客様の管理者は、ライセンスサーバのオリジナルライセンスをアクティベートするのと同じ手順でアドオンライセンスをアクティベートします。管理者がライセンスサーバにアドオンライセンスをインストールする場合、既存のライセンスファイルはそのままにしておきます。</p>
 <h3 id="アドオンライセンスをインストールする方法">アドオンライセンスをインストールする方法</h3>
 <ol>
 <li>ライセンスファイル内の指示に従って、ライセンスファイルをライセンスサーバにコピーします。既存のライセンスファイルはそのままにしておきます。</li>
@@ -2987,7 +2953,7 @@ GraphOnでは、ライセンスファイルをそのままインストールす�
 <h1 id="ライセンスのアップグレードとリホスト">ライセンスのアップグレードとリホスト</h1>
 <p>GO-Globalが新しいバージョンへアップグレードされた場合、およびライセンスがリホストされた場合(異なるMACアドレスの新しいコンピュータに移動された場合には、新しいライセンスファイルが必要になります。新しいライセンスファイルを取得するには、管理者がカスタマーポータルを介してライセンス変更要求(LCR)を送信します。変更要求は通常1～2日以内に処理されますが、処理には最大5営業日かかる場合があります。処理が完了すると、新しいライセンスIDを含む新しいライセンスファイルが管理者に電子メールで送信されます。(ライセンスマスターIDとプロダクトコードは変更されません)その後、管理者は新しいライセンスファイルをインストールし、ファイルに記載されている指示に従って古いライセンスファイルを削除します。古いライセンスファイルは、GraphOnによって無効化されている/取り消されているため、削除しなければなりません。</p>
 <h1 id="ライセンスデータベース">ライセンスデータベース</h1>
-<p>お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様は管理者コンソールを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルと管理者コンソールの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。</p>
+<p>お客様は、カスタマーポータルでライセンスの詳細とステータスを確認することができます。また、お客様はAdmin Consoleを使用して、GO-Globalホストが使用しているライセンスのステータスと詳細を表示することができます。カスタマーポータルとAdmin Consoleの両方で、ライセンスのステータス、バージョン、および保守の有効期限が表示されます。</p>
 <h1 id="複数のホスト環境">複数のホスト環境</h1>
 <p>既定では、GO-Global License Manager serviceは GO-Globalホストと共にインストールされ、GO-Globalホストは同じコンピュータ上のGO-Global License Managerを使用するように構成されています。または、1つ以上のGO-Globalホストを構成して、別のコンピュータで実行されているセントラルライセンスマネージャを使用するように設定することもできます。</p>
 <h3 id="別のコンピュータで実行されているライセンスサーバを使用するようにgo-globalホストを構成する方法">別のコンピュータで実行されているライセンスサーバを使用するようにGO-Globalホストを構成する方法</h3>
@@ -3097,7 +3063,7 @@ tokyoサーバの管理者は、 <strong>LM_LICENSE_FILE</strong> を以下の�
 </ol>
 <p>ライセンスサーバの3台での冗長化の場合と同様に、すべてのサーバが起動して稼働したら <strong>lmtools</strong> を実行して、冗長化したライセンスサーバの状態を確認することをお勧めします。</p>
 <h1 id="クラウド環境でのon-premisesライセンスの使用">クラウド環境でのOn-Premisesライセンスの使用</h1>
-<p>GO-Globalライセンスファイルは、GO-Global License Manager Serviceが実行されているコンピュータのMACアドレスにバインドされます。Amazon Web Services(AWS)などのクラウド環境では、仮想コンピュータのMACアドレスが変更されることがあります。GO-Global License Manager Serviceを実行しているコンピュータのMAC アドレスが変更されると、サービスがライセンスをチェックアウトできなくなり、GO-Globalセッションの開始に失敗します。これを防ぐには、GO-Global License Manager Serviceを実行している仮想コンピューターに固定のMACアドレスを設定する必要があります。AWS環境では、固定の <strong>Elastic IPアドレス(EIP)</strong> と固定のMACアドレスを持つ <strong>Elastic Network Interface(ENI)</strong> を作成し、GO-Global License Manager Serviceを実行している仮想コンピュータ(EC2 インスタンス)にENIをアタッチすることで、これを行うことができます。</p>
+<p>GO-Globalライセンスファイルは、GO-Global License Manager Serviceが実行されているコンピュータのMACアドレスにバインドされます。Amazon Web Services(AWS)などのクラウド環境では、仮想コンピュータのMACアドレスが変更されることがあります。GO-Global License Manager Serviceを実行しているコンピュータのMACアドレスが変更されると、サービスがライセンスをチェックアウトできなくなり、GO-Globalセッションの開始に失敗します。これを防ぐには、GO-Global License Manager Serviceを実行している仮想コンピューターに固定のMACアドレスを設定する必要があります。AWS環境では、固定の <strong>Elastic IPアドレス(EIP)</strong> と固定のMACアドレスを持つ <strong>Elastic Network Interface(ENI)</strong> を作成し、GO-Global License Manager Serviceを実行している仮想コンピュータ(EC2 インスタンス)にENIをアタッチすることで、これを行うことができます。</p>
 <h3 id="awsでeipとeniを作成しec2インスタンスにアタッチする方法">AWSでEIPとENIを作成し、EC2インスタンスにアタッチする方法</h3>
 <ol>
 <li>Elastic IP(EIP)を作成する。
@@ -3247,7 +3213,7 @@ ENIをインスタンスに割り当てるには、ENIのサブネットがGO-Gl
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3288,9 +3254,9 @@ ENIをインスタンスに割り当てるには、ENIのサブネットがGO-Gl
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

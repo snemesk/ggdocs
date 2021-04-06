@@ -32,7 +32,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/advancedtopics/runningthewindowsdesktopinthebackgroundofgo-globalsessions/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-11T17:07:10&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="Running the Windows desktop in the background of GO-Global sessions">
 <meta itemprop="description" content="Windowsアプリケーションの中には、Windowsデスクトップ（explorer.exe）で提供される機能やサービスを使用するものがあります。ほとんどのアプリケーションはデスクトップがなくても動作しますが、デスクトップがアプリケーションと同じセッションで実行されていないと、起動できなかったり、正常に動作しなかったりするものがあります。デフォルトでは、GO-Globalのセッションではデスクトップは実行されません。GO-Global セッションでアプリケーションが起動しない、または正しく動作しない場合は、デスクトップに依存している可能性があります。
@@ -43,7 +43,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
 この問題を解決するために、GO-Globalホストでは、システムプロセスとして実行する特定の実行可能ファイルの登録をサポートしています。セッション内に残っているプロセスがシステムプロセスのみの場合、GO-Globalセッションは終了します。
 ほとんどのアプリケーションでは、デフォルトの構成で十分です。プロセスが終了する手段を持たずに作成された特別なケースでは、待機中のプロセスの実行可能ファイルを登録することで、GO-Globalセッションを適切に終了させることができます。
 警告以下の情報には、Windowsレジストリを開いて操作することが含まれています。ここで説明されている操作以外の操作を行うと、構成エラーが発生し、システムが使用できなくなる可能性があります。レジストリを操作する際には、細心の注意を払ってください。実行ファイルをヘルパープロセスとして登録する方法  レジストリエディタ(regedit.exe)を実行します。 HKEY_LOCAL_MACHINE\Software\GraphOn\GO-Global\System\Processesにブラウズする。 登録する実行ファイルの名前(例えば、AGENTSVR.EXEもしくはC:\example1\testapp.exeとC:\example2\testapp.exe)のDWORDエントリを作成する。フルパスを含めることで、同じ実行イメージでもバージョンによって実行内容が異なります。 新しいエントリの値を0に設定します。 レジストリエディタを閉じます。  この設定は、将来のセッションに加えて、現在のすべてのGO-Globalセッションに影響します。これには、すでに「ハング」状態にあるセッションは含まれません。このようなセッションは、Admin Consolから終了する必要があります。">
-<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
+<meta itemprop="dateModified" content="2021-03-11T17:07:10&#43;09:00" />
 <meta itemprop="wordCount" content="27">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running the Windows desktop in the background of GO-Global sessions"/>
@@ -69,10 +69,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -102,18 +99,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -130,26 +116,6 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -388,7 +354,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -424,25 +390,25 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -489,13 +455,13 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -513,13 +479,13 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -597,7 +563,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -639,13 +605,13 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -822,7 +788,7 @@ GO-Globalセッションで実行するWindowsデスクトップ（explorer.exe�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -3164,7 +3130,7 @@ GO-Globalセッションのバックグラウンドで実行するためにWindo
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/8cc95281490f26dc376617846fee4458087af8f7">61fix0311− (8cc9528)</a>
 </div>
 </div>
 
@@ -3205,9 +3171,9 @@ GO-Globalセッションのバックグラウンドで実行するためにWindo
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

@@ -29,7 +29,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-globaladminconsole/sharedaccount/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="共有アカウント">
 <meta itemprop="description" content="共有アカウントは、GO-Globalセッションを開始するために複数のユーザが同じアカウントを使用しているときに指定する必要があります。共有アカウントでGO-Globalにサインインしたユーザは、切断してからGO-Globalに再接続することはできません。これにより、ユーザは他のユーザのセッションに再接続できなくなります。
@@ -37,7 +37,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 このプロパティの値が0に設定されている場合、セッションはただちに終了します。値が0より大きい場合、セッションは中断され、指定された分数の間サーバ上で実行されたままになります。後者の場合、セッションを開始したユーザだけが中断されたセッションに再接続できます。デフォルトでは、 SessionTimeoutBrokenConnection は0分に設定されています。
 共有アカウントの指定方法  [Tools | Host Options]の順にクリックします。 [Session Shutdown] タブをクリックします。 [Shared account] 編集ボックスに共有アカウントのユーザ名を入力します。複数の共有アカウントが必要な場合は、アカウントのユーザ名をセミコロンで区切ります。 [OK] をクリックします。  そのユーザが自分のセッションから切断されている間に管理者が既存のユーザ名を共有アカウントとして指定した場合、そのセッションは終了制限に達するまでサーバ上で実行されたままになります。その後セッションは終了します。共有アカウントを指定する前に、そのアカウントを使用して接続または切断されたセッションがないことをAdmin Consoleで確認してください。
 GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngなど)の使用をサポートしていません。">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
 <meta itemprop="wordCount" content="30">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="共有アカウント"/>
@@ -60,10 +60,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -93,18 +90,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -121,26 +107,6 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -379,7 +345,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -415,25 +381,25 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -480,13 +446,13 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -504,13 +470,13 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -588,7 +554,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -630,13 +596,13 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -813,7 +779,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -3169,7 +3135,7 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3210,9 +3176,9 @@ GO-Globalは、共有アカウントに対するドメイン名(NORTH\johngな�
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

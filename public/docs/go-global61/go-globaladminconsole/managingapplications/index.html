@@ -24,46 +24,46 @@
 <meta property="og:description" content="Admin Consoleを使用すると、アプリケーションを公開して共有できます。
 アプリケーションのインストール GO-Global を介して実行されるアプリケーションをインストールする場合、ベンダ提供の関連文書を参照して、適切なマルチユーザインストール方法を確認してください。ほとんどの場合、管理者アカウントでアプリケーションをインストールする必要がありますが、各アプリケーションによってインストール要件は異なります。またインストールは、マルチユーザ展開に関するMicrosoftのガイドラインに準拠する必要があります
 参照GO-Globalを介してアプリケーションを展開しても、各企業が無制限のアクセス権を取得することにはなりません。同時に実行できるアプリケーションの数に関しては、ベンダのライセンス供与規定に準拠する必要があります。アプリケーションの公開 アプリケーションはAdmin Consoleを使って公開されます。Admin Consoleを介してアプリケーションを公開するときに、アプリケーションの起動方法を制御する起動パラメータを指定できます。** Quick Start ** を実行するときは、プロンプトに従ってアプリケーションを公開してください。
-アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。  [Applications] タブをクリックします。 [Add] ボタンをクリックします。  [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。  [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
-Admin Consoleにアプリケーションを登録すると、インストール済みアプリケーションの一覧にアプリケーションの名前とパスが表示されます。列のタイトルをクリックすると、リスト内の項目を昇順または降順に並べ替えることができます。これは、Admin Consoleのすべてのリストに当てはまります。
-ODBC データソースを使用するアプリケーションを設定する場合は、GO-Globalクライアントがデータソースにアクセスできるように、ODBCドライバをシステムDSN(データソース名)として設定する必要があります。データソースの詳細については、Windows ODBCデータソース管理者オンラインヘルプを参照してください。
-アクセス制限により、Admin Consoleでは、UNC形式で指定されたパスの有効性を確認できません(例：\Machine Name\Folder Name...)、またはマップされたネットワークドライブに存在するパスの有効性を確認できません。公開されたアイテムのLocationまたはStart Directoryがマップされたドライブを含むか、UNCパスで指定されている場合、Admin Consoleは、有効かどうかにかかわらず、指定されたパスを受け入れます。パスが無効な場合、またはクライアントユーザが指定された実行可能ファイルまたはフォルダにアクセスする権限を持っていない場合、公開されたアイテムはProgram Windowに表示されません。アイテムを選択し、[Properties]ボタンをクリックします。アイテムの場所またはStart Directoryを更新してみてください。
-アイテムをアンインストールまたは新しい場所に移動した場合、Application Publishing Serviceを再起動しても、Admin Consoleには表示されません。
-UNC形式で指定されたアイテムのパス、またはマップされたドライブに存在するアイテムのグループおよびユーザ設定をAdmin Consoleで表示することができません。これが適用されるアプリケーションまたはファイルについて、Admin Consoleの[group and user settings]ウィンドウに次のメッセージが表示されます。&ldquo;User/Group settings not available&rdquo;
-マップされたドライブに存在するがGO-Globalでの使用がライセンスされていないアイテムがAdmin Consoleで公開されている場合、そのアイテムのアイコンがProgram Windowsに表示されます。ただし、ユーザはアイテムを開くことができず、アイテムを起動しようとするとエラーメッセージが表示されます。
-参照インストールされているアプリケーションのリストまたはアプリケーションのユーザー/グループのリストでアイテムの上でマウスの右ボタンをクリックすると、よく使用するコマンドのショートカットメニューが表示されます。アプリケーション名の変更 アプリケーションの ." />
+アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。 [Applications] タブをクリックします。 [Add] ボタンをクリックします。 [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。 [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
+アプリケーション名の変更 アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に [Name] ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。
+アプリケーションアイコンの変更 アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、[Icon] ボタンをクリックします。
+起動状態の変更 [Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。
+開始ディレクトリの変更 アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に [Start Directory] ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。
+コマンドラインオプションの指定 [Command-Line Options] ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。
+公開アプリケーションへのリンクの共有 Admin Consoleの [Get Link] ボタンをクリックすると、選択したアプリケーションへのリンクをコピーしてユーザと共有し、そのアプリケーションにすばやくアクセスできます。
+アプリケーションリンクを共有する方法  Installed Applications のリストから、共有したいアプリケーションを選択します。 インストール済みアプリケーションのリストの右側にある [Get Link] ボタンをクリックします。 [Application Link] ダイアログで、[Copy] ボタンをクリックしてリンクをクリップボードにコピーします。 リンクを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有します。  参照Admin Consoleがチュートリアルモードで実行されている場合、[Copy] ボタンをクリックすると、次のメッセージが表示されます。[Copy] をクリックしてこのリンクをクリップボードにコピーします。それを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有できます。ブラウザ外でのアプリケーションの実行 ユーザが公開アプリケーションへのリンクをクリックしてGO-Globalホストにサインインすると、アプリケーションが開き、Webブラウザの外部で実行されます。このデフォルト設定を無効にするには、[Run application outside the browser] のチェックを外します。これにより、パラメータ &amp;embed=true がURLに追加されます。このパラメータを追加してユーザがリンクをクリックすると、アプリケーションはユーザのWebブラウザ内で実行されます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/go-globaladminconsole/managingapplications/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-01T17:25:01&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="アプリケーションの管理">
 <meta itemprop="description" content="Admin Consoleを使用すると、アプリケーションを公開して共有できます。
 アプリケーションのインストール GO-Global を介して実行されるアプリケーションをインストールする場合、ベンダ提供の関連文書を参照して、適切なマルチユーザインストール方法を確認してください。ほとんどの場合、管理者アカウントでアプリケーションをインストールする必要がありますが、各アプリケーションによってインストール要件は異なります。またインストールは、マルチユーザ展開に関するMicrosoftのガイドラインに準拠する必要があります
 参照GO-Globalを介してアプリケーションを展開しても、各企業が無制限のアクセス権を取得することにはなりません。同時に実行できるアプリケーションの数に関しては、ベンダのライセンス供与規定に準拠する必要があります。アプリケーションの公開 アプリケーションはAdmin Consoleを使って公開されます。Admin Consoleを介してアプリケーションを公開するときに、アプリケーションの起動方法を制御する起動パラメータを指定できます。** Quick Start ** を実行するときは、プロンプトに従ってアプリケーションを公開してください。
-アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。  [Applications] タブをクリックします。 [Add] ボタンをクリックします。  [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。  [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
-Admin Consoleにアプリケーションを登録すると、インストール済みアプリケーションの一覧にアプリケーションの名前とパスが表示されます。列のタイトルをクリックすると、リスト内の項目を昇順または降順に並べ替えることができます。これは、Admin Consoleのすべてのリストに当てはまります。
-ODBC データソースを使用するアプリケーションを設定する場合は、GO-Globalクライアントがデータソースにアクセスできるように、ODBCドライバをシステムDSN(データソース名)として設定する必要があります。データソースの詳細については、Windows ODBCデータソース管理者オンラインヘルプを参照してください。
-アクセス制限により、Admin Consoleでは、UNC形式で指定されたパスの有効性を確認できません(例：\Machine Name\Folder Name...)、またはマップされたネットワークドライブに存在するパスの有効性を確認できません。公開されたアイテムのLocationまたはStart Directoryがマップされたドライブを含むか、UNCパスで指定されている場合、Admin Consoleは、有効かどうかにかかわらず、指定されたパスを受け入れます。パスが無効な場合、またはクライアントユーザが指定された実行可能ファイルまたはフォルダにアクセスする権限を持っていない場合、公開されたアイテムはProgram Windowに表示されません。アイテムを選択し、[Properties]ボタンをクリックします。アイテムの場所またはStart Directoryを更新してみてください。
-アイテムをアンインストールまたは新しい場所に移動した場合、Application Publishing Serviceを再起動しても、Admin Consoleには表示されません。
-UNC形式で指定されたアイテムのパス、またはマップされたドライブに存在するアイテムのグループおよびユーザ設定をAdmin Consoleで表示することができません。これが適用されるアプリケーションまたはファイルについて、Admin Consoleの[group and user settings]ウィンドウに次のメッセージが表示されます。&ldquo;User/Group settings not available&rdquo;
-マップされたドライブに存在するがGO-Globalでの使用がライセンスされていないアイテムがAdmin Consoleで公開されている場合、そのアイテムのアイコンがProgram Windowsに表示されます。ただし、ユーザはアイテムを開くことができず、アイテムを起動しようとするとエラーメッセージが表示されます。
-参照インストールされているアプリケーションのリストまたはアプリケーションのユーザー/グループのリストでアイテムの上でマウスの右ボタンをクリックすると、よく使用するコマンドのショートカットメニューが表示されます。アプリケーション名の変更 アプリケーションの .">
-<meta itemprop="dateModified" content="2021-03-01T17:25:01&#43;09:00" />
-<meta itemprop="wordCount" content="255">
+アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。 [Applications] タブをクリックします。 [Add] ボタンをクリックします。 [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。 [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
+アプリケーション名の変更 アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に [Name] ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。
+アプリケーションアイコンの変更 アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、[Icon] ボタンをクリックします。
+起動状態の変更 [Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。
+開始ディレクトリの変更 アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に [Start Directory] ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。
+コマンドラインオプションの指定 [Command-Line Options] ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。
+公開アプリケーションへのリンクの共有 Admin Consoleの [Get Link] ボタンをクリックすると、選択したアプリケーションへのリンクをコピーしてユーザと共有し、そのアプリケーションにすばやくアクセスできます。
+アプリケーションリンクを共有する方法  Installed Applications のリストから、共有したいアプリケーションを選択します。 インストール済みアプリケーションのリストの右側にある [Get Link] ボタンをクリックします。 [Application Link] ダイアログで、[Copy] ボタンをクリックしてリンクをクリップボードにコピーします。 リンクを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有します。  参照Admin Consoleがチュートリアルモードで実行されている場合、[Copy] ボタンをクリックすると、次のメッセージが表示されます。[Copy] をクリックしてこのリンクをクリップボードにコピーします。それを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有できます。ブラウザ外でのアプリケーションの実行 ユーザが公開アプリケーションへのリンクをクリックしてGO-Globalホストにサインインすると、アプリケーションが開き、Webブラウザの外部で実行されます。このデフォルト設定を無効にするには、[Run application outside the browser] のチェックを外します。これにより、パラメータ &amp;embed=true がURLに追加されます。このパラメータを追加してユーザがリンクをクリックすると、アプリケーションはユーザのWebブラウザ内で実行されます。">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="360">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="アプリケーションの管理"/>
 <meta name="twitter:description" content="Admin Consoleを使用すると、アプリケーションを公開して共有できます。
 アプリケーションのインストール GO-Global を介して実行されるアプリケーションをインストールする場合、ベンダ提供の関連文書を参照して、適切なマルチユーザインストール方法を確認してください。ほとんどの場合、管理者アカウントでアプリケーションをインストールする必要がありますが、各アプリケーションによってインストール要件は異なります。またインストールは、マルチユーザ展開に関するMicrosoftのガイドラインに準拠する必要があります
 参照GO-Globalを介してアプリケーションを展開しても、各企業が無制限のアクセス権を取得することにはなりません。同時に実行できるアプリケーションの数に関しては、ベンダのライセンス供与規定に準拠する必要があります。アプリケーションの公開 アプリケーションはAdmin Consoleを使って公開されます。Admin Consoleを介してアプリケーションを公開するときに、アプリケーションの起動方法を制御する起動パラメータを指定できます。** Quick Start ** を実行するときは、プロンプトに従ってアプリケーションを公開してください。
-アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。  [Applications] タブをクリックします。 [Add] ボタンをクリックします。  [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。  [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
-Admin Consoleにアプリケーションを登録すると、インストール済みアプリケーションの一覧にアプリケーションの名前とパスが表示されます。列のタイトルをクリックすると、リスト内の項目を昇順または降順に並べ替えることができます。これは、Admin Consoleのすべてのリストに当てはまります。
-ODBC データソースを使用するアプリケーションを設定する場合は、GO-Globalクライアントがデータソースにアクセスできるように、ODBCドライバをシステムDSN(データソース名)として設定する必要があります。データソースの詳細については、Windows ODBCデータソース管理者オンラインヘルプを参照してください。
-アクセス制限により、Admin Consoleでは、UNC形式で指定されたパスの有効性を確認できません(例：\Machine Name\Folder Name...)、またはマップされたネットワークドライブに存在するパスの有効性を確認できません。公開されたアイテムのLocationまたはStart Directoryがマップされたドライブを含むか、UNCパスで指定されている場合、Admin Consoleは、有効かどうかにかかわらず、指定されたパスを受け入れます。パスが無効な場合、またはクライアントユーザが指定された実行可能ファイルまたはフォルダにアクセスする権限を持っていない場合、公開されたアイテムはProgram Windowに表示されません。アイテムを選択し、[Properties]ボタンをクリックします。アイテムの場所またはStart Directoryを更新してみてください。
-アイテムをアンインストールまたは新しい場所に移動した場合、Application Publishing Serviceを再起動しても、Admin Consoleには表示されません。
-UNC形式で指定されたアイテムのパス、またはマップされたドライブに存在するアイテムのグループおよびユーザ設定をAdmin Consoleで表示することができません。これが適用されるアプリケーションまたはファイルについて、Admin Consoleの[group and user settings]ウィンドウに次のメッセージが表示されます。&ldquo;User/Group settings not available&rdquo;
-マップされたドライブに存在するがGO-Globalでの使用がライセンスされていないアイテムがAdmin Consoleで公開されている場合、そのアイテムのアイコンがProgram Windowsに表示されます。ただし、ユーザはアイテムを開くことができず、アイテムを起動しようとするとエラーメッセージが表示されます。
-参照インストールされているアプリケーションのリストまたはアプリケーションのユーザー/グループのリストでアイテムの上でマウスの右ボタンをクリックすると、よく使用するコマンドのショートカットメニューが表示されます。アプリケーション名の変更 アプリケーションの ."/>
+アプリケーションを公開する方法  [All Hosts] の一覧から、目的のホストを選択します。 [Applications] タブをクリックします。 [Add] ボタンをクリックします。 [Location] ボックスの横にある [Browse] ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。 [OK] をクリックします。  デフォルトでは、ブラウズダイアログはPROGRAMDATA\Microsoft\Windows\Start Menu\Programsディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。
+アプリケーション名の変更 アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に [Name] ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。
+アプリケーションアイコンの変更 アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、[Icon] ボタンをクリックします。
+起動状態の変更 [Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。
+開始ディレクトリの変更 アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に [Start Directory] ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。
+コマンドラインオプションの指定 [Command-Line Options] ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。
+公開アプリケーションへのリンクの共有 Admin Consoleの [Get Link] ボタンをクリックすると、選択したアプリケーションへのリンクをコピーしてユーザと共有し、そのアプリケーションにすばやくアクセスできます。
+アプリケーションリンクを共有する方法  Installed Applications のリストから、共有したいアプリケーションを選択します。 インストール済みアプリケーションのリストの右側にある [Get Link] ボタンをクリックします。 [Application Link] ダイアログで、[Copy] ボタンをクリックしてリンクをクリップボードにコピーします。 リンクを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有します。  参照Admin Consoleがチュートリアルモードで実行されている場合、[Copy] ボタンをクリックすると、次のメッセージが表示されます。[Copy] をクリックしてこのリンクをクリップボードにコピーします。それを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有できます。ブラウザ外でのアプリケーションの実行 ユーザが公開アプリケーションへのリンクをクリックしてGO-Globalホストにサインインすると、アプリケーションが開き、Webブラウザの外部で実行されます。このデフォルト設定を無効にするには、[Run application outside the browser] のチェックを外します。これにより、パラメータ &amp;embed=true がURLに追加されます。このパラメータを追加してユーザがリンクをクリックすると、アプリケーションはユーザのWebブラウザ内で実行されます。"/>
 
 
 
@@ -78,10 +78,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -111,18 +108,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -139,26 +125,6 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -397,7 +363,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -433,25 +399,25 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -498,13 +464,13 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -522,13 +488,13 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -606,7 +572,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -648,13 +614,13 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -831,7 +797,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2840,48 +2806,42 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
 
 <nav id="TableOfContents">
   <ul>
-    <li>
+    <li><a href="#アプリケーションのインストール">アプリケーションのインストール</a></li>
+    <li><a href="#アプリケーションの公開">アプリケーションの公開</a>
       <ul>
         <li><a href="#アプリケーションを公開する方法">アプリケーションを公開する方法</a></li>
+        <li><a href="#アプリケーション名の変更">アプリケーション名の変更</a></li>
+        <li><a href="#アプリケーションアイコンの変更">アプリケーションアイコンの変更</a></li>
+        <li><a href="#起動状態の変更">起動状態の変更</a></li>
+        <li><a href="#開始ディレクトリの変更">開始ディレクトリの変更</a></li>
+        <li><a href="#コマンドラインオプションの指定">コマンドラインオプションの指定</a></li>
       </ul>
     </li>
-    <li><a href="#アプリケーション名の変更">アプリケーション名の変更</a></li>
-    <li><a href="#アプリケーションアイコンの変更">アプリケーションアイコンの変更</a></li>
-    <li><a href="#起動状態の変更">起動状態の変更</a></li>
-    <li><a href="#開始ディレクトリの変更">開始ディレクトリの変更</a></li>
-    <li><a href="#コマンドラインオプションの指定">コマンドラインオプションの指定</a></li>
-    <li><a href="#デフォルトリンクプロパティの設定">デフォルトリンクプロパティの設定</a>
+    <li><a href="#公開アプリケーションへのリンクの共有">公開アプリケーションへのリンクの共有</a>
       <ul>
+        <li><a href="#アプリケーションリンクを共有する方法">アプリケーションリンクを共有する方法</a></li>
+      </ul>
+    </li>
+    <li><a href="#ブラウザ外でのアプリケーションの実行">ブラウザ外でのアプリケーションの実行</a>
+      <ul>
+        <li><a href="#ホストアドレスの編集">ホストアドレスの編集</a></li>
+        <li><a href="#ホストアドレスを編集する方法">ホストアドレスを編集する方法</a></li>
+        <li><a href="#webサーバアドレスの編集">Webサーバアドレスの編集</a></li>
+        <li><a href="#webサーバのアドレスを編集する方法">Webサーバのアドレスを編集する方法</a></li>
+        <li><a href="#リモートユーザのアクセスを有効にする-">リモートユーザのアクセスを有効にする .</a></li>
+        <li><a href="#デフォルトリンクプロパティの設定">デフォルトリンクプロパティの設定</a></li>
         <li><a href="#デフォルトのリンクプロパティを設定する方法">デフォルトのリンクプロパティを設定する方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#アプリケーションの複製">アプリケーションの複製</a>
-      <ul>
+        <li><a href="#アプリケーションの複製">アプリケーションの複製</a></li>
         <li><a href="#アプリケーションの複製方法">アプリケーションの複製方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#アプリケーション名の変更-1">アプリケーション名の変更</a>
-      <ul>
+        <li><a href="#アプリケーション名の変更-1">アプリケーション名の変更</a></li>
         <li><a href="#アプリケーションの表示名の変更方法">アプリケーションの表示名の変更方法</a></li>
-      </ul>
-    </li>
-  </ul>
-
-  <ul>
-    <li>
-      <ul>
+        <li><a href="#アプリケーションのプロパティの編集">アプリケーションのプロパティの編集</a></li>
         <li><a href="#アプリケーションのプロパティの編集方法">アプリケーションのプロパティの編集方法</a></li>
-      </ul>
-    </li>
-    <li><a href="#アプリケーションの削除">アプリケーションの削除</a>
-      <ul>
+        <li><a href="#アプリケーションの削除">アプリケーションの削除</a></li>
         <li><a href="#アプリケーションの削除方法">アプリケーションの削除方法</a></li>
       </ul>
     </li>
-  </ul>
-
-  <ul>
-    <li>
+    <li><a href="#ユーザやグループに対するアプリケーション起動パラメータの割り当て">ユーザやグループに対するアプリケーション起動パラメータの割り当て</a>
       <ul>
         <li><a href="#ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法">ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法</a></li>
       </ul>
@@ -2945,7 +2905,7 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
 	<h1>アプリケーションの管理</h1>
 	
 	<p>Admin Consoleを使用すると、アプリケーションを公開して共有できます。</p>
-<h1 id="アプリケーションのインストール">アプリケーションのインストール</h1>
+<h2 id="アプリケーションのインストール">アプリケーションのインストール</h2>
 <p>GO-Global を介して実行されるアプリケーションをインストールする場合、ベンダ提供の関連文書を参照して、適切なマルチユーザインストール方法を確認してください。ほとんどの場合、管理者アカウントでアプリケーションをインストールする必要がありますが、各アプリケーションによってインストール要件は異なります。またインストールは、マルチユーザ展開に関するMicrosoftのガイドラインに準拠する必要があります</p>
 
 
@@ -2956,29 +2916,155 @@ UNC形式で指定されたアイテムのパス、またはマップされた�
 GO-Globalを介してアプリケーションを展開しても、各企業が無制限のアクセス権を取得することにはなりません。同時に実行できるアプリケーションの数に関しては、ベンダのライセンス供与規定に準拠する必要があります。
 </div>
 
-<h1 id="アプリケーションの公開">アプリケーションの公開</h1>
+<h2 id="アプリケーションの公開">アプリケーションの公開</h2>
 <p>アプリケーションはAdmin Consoleを使って公開されます。Admin Consoleを介してアプリケーションを公開するときに、アプリケーションの起動方法を制御する起動パラメータを指定できます。** Quick Start ** を実行するときは、プロンプトに従ってアプリケーションを公開してください。</p>
 <h3 id="アプリケーションを公開する方法">アプリケーションを公開する方法</h3>
 <ol>
 <li><strong>[All Hosts]</strong> の一覧から、目的のホストを選択します。</li>
-</ol>
-<p><img src="/img/kit6-52-1.png" alt="kit6-52-1"></p>
-<ol start="2">
 <li><strong>[Applications]</strong> タブをクリックします。</li>
 <li><strong>[Add]</strong> ボタンをクリックします。</li>
-</ol>
-<p><img src="/img/kit6-52-2.png" alt="kit6-52-2"></p>
-<ol start="4">
 <li><strong>[Location]</strong> ボックスの横にある <strong>[Browse]</strong> ボタンをクリックして、アプリケーションの実行可能ファイルを見つけて選択します。</li>
-</ol>
-<p><img src="/img/kit6-52-3.png" alt="kit6-52-3">
-<img src="/img/kit6-52-4.png" alt="kit6-52-4"></p>
-<ol start="5">
 <li><strong>[OK]</strong> をクリックします。</li>
 </ol>
-<p><img src="/img/kit6-52-5.png" alt="kit6-52-5"><br>
-<img src="/img/kit6-52-6.png" alt="kit6-52-6"></p>
 <p>デフォルトでは、ブラウズダイアログは<code>PROGRAMDATA\Microsoft\Windows\Start Menu\Programs</code>ディレクトリに開きます。最初のアプリケーションを公開した後、ダイアログが最後に公開されたアプリケーションのディレクトリで開きます。<br></p>
+<h3 id="アプリケーション名の変更">アプリケーション名の変更</h3>
+<p>アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に <strong>[Name]</strong> ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。<br></p>
+<h3 id="アプリケーションアイコンの変更">アプリケーションアイコンの変更</h3>
+<p>アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、<strong>[Icon]</strong> ボタンをクリックします。<br></p>
+<h3 id="起動状態の変更">起動状態の変更</h3>
+<p>[Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。<br></p>
+<h3 id="開始ディレクトリの変更">開始ディレクトリの変更</h3>
+<p>アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に <strong>[Start Directory]</strong> ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。<br></p>
+<h3 id="コマンドラインオプションの指定">コマンドラインオプションの指定</h3>
+<p><strong>[Command-Line Options]</strong> ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。<br></p>
+<h2 id="公開アプリケーションへのリンクの共有">公開アプリケーションへのリンクの共有</h2>
+<p>Admin Consoleの <strong>[Get Link]</strong> ボタンをクリックすると、選択したアプリケーションへのリンクをコピーしてユーザと共有し、そのアプリケーションにすばやくアクセスできます。</p>
+<h3 id="アプリケーションリンクを共有する方法">アプリケーションリンクを共有する方法</h3>
+<ol>
+<li><strong>Installed Applications</strong> のリストから、共有したいアプリケーションを選択します。</li>
+<li>インストール済みアプリケーションのリストの右側にある <strong>[Get Link]</strong> ボタンをクリックします。</li>
+<li><strong>[Application Link]</strong> ダイアログで、<strong>[Copy]</strong> ボタンをクリックしてリンクをクリップボードにコピーします。</li>
+<li>リンクを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有します。</li>
+</ol>
+<p><img src="/img/4-2-2.png" alt="4-2-2"></p>
+
+
+<div class="alert alert-info" role="alert">
+
+
+<h4 class="alert-heading"><i class="fa fa-info-circle" aria-hidden="true"></i>参照</h4>
+Admin Consoleがチュートリアルモードで実行されている場合、<strong>[Copy]</strong> ボタンをクリックすると、次のメッセージが表示されます。<strong>[Copy]</strong> をクリックしてこのリンクをクリップボードにコピーします。それを電子メールまたはインスタントメッセージに貼り付けて、ユーザと共有できます。
+</div>
+
+<h2 id="ブラウザ外でのアプリケーションの実行">ブラウザ外でのアプリケーションの実行</h2>
+<p>ユーザが公開アプリケーションへのリンクをクリックしてGO-Globalホストにサインインすると、アプリケーションが開き、Webブラウザの外部で実行されます。このデフォルト設定を無効にするには、<strong>[Run application outside the browser]</strong> のチェックを外します。これにより、パラメータ <strong>&amp;embed=true</strong> がURLに追加されます。このパラメータを追加してユーザがリンクをクリックすると、アプリケーションはユーザのWebブラウザ内で実行されます。</p>
+<h3 id="ホストアドレスの編集">ホストアドレスの編集</h3>
+<p><strong>ホストアドレス</strong> は、GO-Global AppControllerまたはWeb Appがホストコンピュータへの接続に使用するアドレスを指定します。デフォルトでは、これはGO-Globalホストがインストールされているコンピュータの完全修飾ドメイン名です。クライアントがロードバランサ(GO-Global Relay Load Balancerやthird-party load balancerなど)を介してホストに接続する場合は、<strong>ホストアドレス</strong> を完全修飾ドメイン名に設定します。</p>
+<h3 id="ホストアドレスを編集する方法">ホストアドレスを編集する方法</h3>
+<ol>
+<li>
+<p><strong>[Application Link]</strong> ダイアログで、<strong>[Host Address]</strong> ボックスにホストの完全修飾ドメイン名を入力します。アプリケーションリンクは自動的に更新されます。</p>
+</li>
+<li>
+<p><strong>[Copy]</strong> ボタンをクリックしてURLをコピーし、ユーザと共有します。</p>
+</li>
+</ol>
+<h3 id="webサーバアドレスの編集">Webサーバアドレスの編集</h3>
+<p><strong>Webサーバアドレス</strong> は、GO-Global Web App、GO-Global AppController、それらをサポートするファイルをユーザのブラウザに提供するために使用されるWebサーバのアドレスを指定します。デフォルトのWebサーバアドレスは<strong>apps.graphon.com</strong> です。これは、GraphOnによってホストされているWebサーバのアドレスです。あなたがあなた自身のWebサーバを使うつもりならば、GO-Global WebコンポーネントをWebサーバにインストールし、<strong>Webサーバアドレス</strong> をあなたのWebサーバのアドレスに変更してください。たとえば、WebサーバがGO-Globalホストと同じコンピュータにインストールされている場合は、<strong>Webサーバアドレス</strong> と<strong>ホストアドレス</strong> を同じアドレスに設定します。</p>
+<h3 id="webサーバのアドレスを編集する方法">Webサーバのアドレスを編集する方法</h3>
+<ol>
+<li>
+<p><strong>[Application Link]</strong> ダイアログで、<strong>[Web Server Address]</strong> ボックスにWebサーバのアドレスを入力します。アプリケーションリンクは自動的に更新されます。</p>
+</li>
+<li>
+<p><strong>[Copy]</strong> ボタンをクリックしてURLをコピーし、ユーザと共有します。</p>
+</li>
+</ol>
+
+
+<div class="alert alert-info" role="alert">
+
+
+<h4 class="alert-heading"><i class="fa fa-info-circle" aria-hidden="true"></i>参照</h4>
+ユーザが内部ネットワークとパブリックネットワークの両方からホストにアクセスする場合、ホストとWebサーバは、<strong>[Host Address]</strong> フィールドと <strong>[Web Server Address]</strong> フィールドに指定されたアドレスを介して内部ネットワークとパブリックネットワークの両方からアクセスできる必要があります。これを実現するには、内部DNSエントリが <strong>ホストアドレス</strong> と <strong>Webサーバアドレス</strong> をコンピュータの内部IPアドレスにマップし、パブリックDNSエントリが <strong>ホストアドレス</strong> と <strong>Webサーバアドレス</strong> をこれらのコンピュータのパブリックIPアドレスにマップする必要があります。
+</div>
+
+<h3 id="リモートユーザのアクセスを有効にする-">リモートユーザのアクセスを有効にする .</h3>
+<p>インターネットからGO-Globalホストにアクセスするユーザがいる場合、これらのユーザがホストコンピュータに接続できるようにする必要があります。これは通常、VPNを介して、または DMZネットワークにGO-Global Relay Load Balancerを設定することで行われます。VPNまたはDMZネットワークをお持ちでない場合は、次の手順でインターネットルータからGO-Globalホストにポートを転送することもできます。</p>
+<ol>
+<li>ルータソフトウェアを開き、ポート転送設定を見つけます。通常は、「詳細設定」の下にあり、「ポート転送」の下にあります。</li>
+<li>必要に応じて、GO-Globalと呼ばれる新しいサービスを作成します。</li>
+<li>内部および外部ポート範囲を491に設定し、プロトコルをUDP/TCPパケットに設定します。</li>
+<li>GO-Globalホストの内部IPアドレスを入力します。</li>
+<li>[Apply]または[Save]をクリックして変更を保存します。</li>
+<li>[application link]ダイアログボックスで、[Host address]ボックスにGO-GlobalホストのパブリックIPアドレスを入力します。アプリケーションリンクが自動的に更新されます(パブリックIPアドレスは、GO-Globalホストのブラウザからwhatismyip.comにアクセスすることで確認できます)。</li>
+<li>[Copy]ボタンをクリックして URLをコピーし、リモートユーザと共有します。</li>
+</ol>
+<h3 id="デフォルトリンクプロパティの設定">デフォルトリンクプロパティの設定</h3>
+<p>デフォルトのアプリケーションリンクプロパティを <strong>[Application Link]</strong> ダイアログボックスで指定したものに設定して、ホストアドレス、Webサーバアドレス、アプリケーションをブラウザの内部で実行するか外部で実行するかを含めることができます。これらのデフォルトのリンクプロパティは、新しいアプリケーションが公開されたときに適用されます。</p>
+<h3 id="デフォルトのリンクプロパティを設定する方法">デフォルトのリンクプロパティを設定する方法</h3>
+<ol>
+<li>
+<p><strong>[Application Link]</strong> ダイアログで、 <strong>[Set defaults]</strong> ボタンをクリックします。</p>
+</li>
+<li>
+<p><strong>[Yes]</strong> をクリックして確定します。</p>
+</li>
+</ol>
+<h3 id="アプリケーションの複製">アプリケーションの複製</h3>
+<p>アプリケーションの複製では、選択された登録済みアプリケーションの完全なコピーが作成されます。これは、同一のアプリケーションを異なるユーザやグループに対してさまざまな形で利用可能にする場合に便利です。たとえば、 <strong>[Sign In]</strong> ダイアログを表示しないコマンド行オプション付きの1つのバージョンのアプリケーションと、クライアントにサインインを要求するコマンド行オプションのない別のバージョンのアプリケーションを登録できます。アプリケーションを複製する場合には、新しい表示名を選択する必要があります。</p>
+<h3 id="アプリケーションの複製方法">アプリケーションの複製方法</h3>
+<ol>
+<li>
+<p><strong>[Installed Applications]</strong> の一覧から複製するアプリケーションを選択します。</p>
+</li>
+<li>
+<p>[Tools | Applications | Duplicate]の順にクリックします。</p>
+</li>
+</ol>
+<p>－または－</p>
+<p>[Installed Applications]の一覧の右側にある <strong>[Duplicate]</strong> ボタンをクリックします。</p>
+<h3 id="アプリケーション名の変更-1">アプリケーション名の変更</h3>
+<p>アプリケーションに割り当てる表示名は、エンドユーザのProgram Windowに表示されます。アプリケーションの表示名は常時変更可能です。</p>
+<h3 id="アプリケーションの表示名の変更方法">アプリケーションの表示名の変更方法</h3>
+<ol>
+<li><strong>[Installed Applications]</strong> の一覧から名前を変更するアプリケーションを選択します。</li>
+<li>[Tools | Applications | Rename]の順にクリックします。</li>
+</ol>
+<p>－または－</p>
+<p>[Installed Applications]の一覧の右側にある <strong>[Rename]</strong> ボタンをクリックします。<br></p>
+<ol start="3">
+<li><strong>[Rename Application]</strong> ダイアログの <strong>[New]</strong> ボックスに名前を入力します。</li>
+</ol>
+<h3 id="アプリケーションのプロパティの編集">アプリケーションのプロパティの編集</h3>
+<p>アプリケーションが公開されたら、いつでもアプリケーションのプロパティを編集できます。たとえば、アプリケーションのスタートアップ状態、実行可能ファイルの場所、アプリケーションを起動するフォルダの編集が可能です。</p>
+<h3 id="アプリケーションのプロパティの編集方法">アプリケーションのプロパティの編集方法</h3>
+<ol>
+<li><strong>[Applications]</strong> タブをクリックします。</li>
+<li><strong>[Installed Applications]</strong> の一覧からアプリケーションを選択します。</li>
+<li><strong>[Properties]</strong> ボタンをクリックします。</li>
+<li>以下のいずれかの操作を行います</li>
+</ol>
+<ul>
+<li><strong>[Executable Path]</strong> ボックス内に、新しいパス名を入力します。</li>
+<li><strong>[Start Directory]</strong> ボックス内に、アプリケーションを起動するディレクトリのフルパス名を入力します。</li>
+<li><strong>[Command-Line Options]</strong> ボックス内に、そのアプリケーション用のスタートアップパラメータを入力します。</li>
+<li><strong>[Display Name]</strong> ボックス内に、そのアプリケーションの新しい表示名を入力します。</li>
+<li><strong>[Startup State]</strong> セクションで、そのアプリケーションの起動モード(Maximized、Minimized、Normal)を選択します。</li>
+<li><strong>[Icon]</strong> ボタンをクリックして、新しいアプリケーションアイコンを検索します。</li>
+</ul>
+<p><img src="/img/4-2-3.png" alt="4-2-3"></p>
+<h3 id="アプリケーションの削除">アプリケーションの削除</h3>
+<p>GO-Globalで展開したアプリケーションは、Admin Consoleで削除します。Admin Consoleでアプリケーションを削除しても、ホストからは削除されません。GO-Globalクライアントがそのアプリケーションにアクセスできなくなるだけです。</p>
+<h3 id="アプリケーションの削除方法">アプリケーションの削除方法</h3>
+<ol>
+<li><strong>[Applications]</strong> タブをクリックします。</li>
+<li>[Installed Applications]の一覧から削除するアプリケーションを選択します。</li>
+<li><strong>[Remove]</strong> ボタンをクリックします。</li>
+</ol>
+<p>－または－</p>
+<p>　　[Tools | Applications | Remove]の順にクリックします。</p>
+<p>Admin Consoleでインストール済みアプリケーションを削除する時に、あるユーザがそのアプリケーションを実行していた場合、そのユーザのセッションは中断されません。しかし、そのユーザがそのアプリケーションを終了すると、そのアプリケーションは利用不可能になり、Program Window内にアイコンは表示されません。</p>
 <p>Admin Consoleにアプリケーションを登録すると、インストール済みアプリケーションの一覧にアプリケーションの名前とパスが表示されます。列のタイトルをクリックすると、リスト内の項目を昇順または降順に並べ替えることができます。これは、Admin Consoleのすべてのリストに当てはまります。<br></p>
 <p>ODBC データソースを使用するアプリケーションを設定する場合は、GO-Globalクライアントがデータソースにアクセスできるように、ODBCドライバをシステムDSN(データソース名)として設定する必要があります。データソースの詳細については、Windows ODBCデータソース管理者オンラインヘルプを参照してください。<br></p>
 <p>アクセス制限により、Admin Consoleでは、UNC形式で指定されたパスの有効性を確認できません(例：\Machine Name\Folder Name...)、またはマップされたネットワークドライブに存在するパスの有効性を確認できません。公開されたアイテムのLocationまたはStart Directoryがマップされたドライブを含むか、UNCパスで指定されている場合、Admin Consoleは、有効かどうかにかかわらず、指定されたパスを受け入れます。パスが無効な場合、またはクライアントユーザが指定された実行可能ファイルまたはフォルダにアクセスする権限を持っていない場合、公開されたアイテムはProgram Windowに表示されません。アイテムを選択し、[Properties]ボタンをクリックします。アイテムの場所またはStart Directoryを更新してみてください。<br></p>
@@ -2994,120 +3080,7 @@ GO-Globalを介してアプリケーションを展開しても、各企業が�
 インストールされているアプリケーションのリストまたはアプリケーションのユーザー/グループのリストでアイテムの上でマウスの右ボタンをクリックすると、よく使用するコマンドのショートカットメニューが表示されます。
 </div>
 
-<h2 id="アプリケーション名の変更">アプリケーション名の変更</h2>
-<p>アプリケーションの .exeファイルを参照すると、そのファイル名が自動的に <strong>[Name]</strong> ボックス内に入力されます(アプリケーション名は Program Windowに表示されます)。そのままデフォルトの表示名を使用することも、新しい名称を入力することも可能です。アプリケーションの表示名をスペースのみにすることはできません。また、バックスラッシュ( \ )も使用できません。このフィールドは空欄のままにしないでください。<br>
-<img src="/img/kit6-53-1.png" alt="kit6-53-1"></p>
-<h2 id="アプリケーションアイコンの変更">アプリケーションアイコンの変更</h2>
-<p>アプリケーションのデフォルトアイコン以外のアイコンを選択する場合は、<strong>[Icon]</strong> ボタンをクリックします。<br>
-<img src="/img/kit6-53-2.png" alt="kit6-53-2"></p>
-<h2 id="起動状態の変更">起動状態の変更</h2>
-<p>[Startup State]セクションで、アプリケーションを最大化、最小化、通常モードのいずれで起動するかを選択します。デフォルトの起動状態は通常モードです。<br>
-<img src="/img/kit6-53-3.png" alt="kit6-53-3"></p>
-<h2 id="開始ディレクトリの変更">開始ディレクトリの変更</h2>
-<p>アプリケーションの実行可能ファイルを参照した場合は、ディレクトリのパス名が自動的に <strong>[Start Directory]</strong> ボックスに表示されます。それ以外の場合は、アプリケーションを起動するディレクトリのフルパス名を入力します。<br>
-<img src="/img/kit6-54-1.png" alt="kit6-54-1"></p>
-<h2 id="コマンドラインオプションの指定">コマンドラインオプションの指定</h2>
-<p><strong>[Command-Line Options]</strong> ボックスで、アプリケーションの起動パラメータを指定できます。これらのパラメータは各アプリケーションに固有のものであるため、特定の起動パラメータについてはアプリケーションのドキュメントを参照してください。<br>
-<img src="/img/kit6-54-2.png" alt="kit6-54-2"></p>
-<h2 id="デフォルトリンクプロパティの設定">デフォルトリンクプロパティの設定</h2>
-<p>デフォルトのアプリケーションリンクプロパティを <strong>[Application Link]</strong> ダイアログボックスで指定したものに設定して、ホストアドレス、Webサーバアドレス、アプリケーションをブラウザの内部で実行するか外部で実行するかを含めることができます。これらのデフォルトのリンクプロパティは、新しいアプリケーションが公開されたときに適用されます。</p>
-<h3 id="デフォルトのリンクプロパティを設定する方法">デフォルトのリンクプロパティを設定する方法</h3>
-<ol>
-<li><strong>[Application Link]</strong> ダイアログで、 <strong>[Set defaults]</strong> ボタンをクリックします。</li>
-</ol>
-<p><img src="/img/kit6-54-3.png" alt="kit6-54-3">
-<img src="/img/kit6-54-4.png" alt="kit6-54-4"></p>
-<ol start="2">
-<li><strong>[Yes]</strong> をクリックして確定します。</li>
-</ol>
-<p><img src="/img/kit6-54-5.png" alt="kit6-54-5">
-<img src="/img/kit6-54-6.png" alt="kit6-54-6"></p>
-<h2 id="アプリケーションの複製">アプリケーションの複製</h2>
-<p>アプリケーションの複製では、選択された登録済みアプリケーションの完全なコピーが作成されます。これは、同一のアプリケーションを異なるユーザやグループに対してさまざまな形で利用可能にする場合に便利です。たとえば、 <strong>[Sign In]</strong> ダイアログを表示しないコマンド行オプション付きの1つのバージョンのアプリケーションと、クライアントにサインインを要求するコマンド行オプションのない別のバージョンのアプリケーションを登録できます。アプリケーションを複製する場合には、新しい表示名を選択する必要があります。</p>
-<h3 id="アプリケーションの複製方法">アプリケーションの複製方法</h3>
-<ol>
-<li><strong>[Installed Applications]</strong> の一覧から複製するアプリケーションを選択します。</li>
-</ol>
-<p><img src="/img/kit6-54-7.png" alt="kit6-54-7">
-<img src="/img/kit6-54-8.png" alt="kit6-54-8"></p>
-<ol start="2">
-<li>[Tools | Applications | Duplicate]の順にクリックします。</li>
-</ol>
-<p><img src="/img/kit6-54-9.png" alt="kit6-54-9">
-<img src="/img/kit6-54-10.png" alt="kit6-54-10"></p>
-<p>－または－</p>
-<p>[Installed Applications]の一覧の右側にある <strong>[Duplicate]</strong> ボタンをクリックします。</p>
-<p><img src="/img/kit6-54-11.png" alt="kit6-54-11"></p>
-<h2 id="アプリケーション名の変更-1">アプリケーション名の変更</h2>
-<p>アプリケーションに割り当てる表示名は、エンドユーザのProgram Windowに表示されます。アプリケーションの表示名は常時変更可能です。</p>
-<h3 id="アプリケーションの表示名の変更方法">アプリケーションの表示名の変更方法</h3>
-<ol>
-<li><strong>[Installed Applications]</strong> の一覧から名前を変更するアプリケーションを選択します。</li>
-</ol>
-<p><img src="/img/kit4-33-6.png" alt="kit6-54-11">
-<img src="/img/kit4-33-7.png" alt="kit6-54-12"></p>
-<ol start="2">
-<li>[Tools | Applications | Rename]の順にクリックします。</li>
-</ol>
-<p><img src="/img/kit4-33-8.png" alt="kit6-54-13">
-<img src="/img/kit4-33-9.png" alt="kit6-54-14"></p>
-<p>－または－</p>
-<p>[Installed Applications]の一覧の右側にある <strong>[Rename]</strong> ボタンをクリックします。<br></p>
-<p><img src="/img/kit4-33-10.png" alt="kit6-54-15"></p>
-<ol start="3">
-<li><strong>[Rename Application]</strong> ダイアログの <strong>[New]</strong> ボックスに名前を入力します。</li>
-</ol>
-<p><img src="/img/kit4-33-11.png" alt="kit6-54-16">
-<img src="/img/kit4-33-12.png" alt="kit6-54-17"></p>
-<h1 id="アプリケーションのプロパティの編集">アプリケーションのプロパティの編集</h1>
-<p>アプリケーションが公開されたら、いつでもアプリケーションのプロパティを編集できます。たとえば、アプリケーションのスタートアップ状態、実行可能ファイルの場所、アプリケーションを起動するフォルダの編集が可能です。</p>
-<h3 id="アプリケーションのプロパティの編集方法">アプリケーションのプロパティの編集方法</h3>
-<ol>
-<li><strong>[Applications]</strong> タブをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-33-13.png" alt="kit4-33-13"></p>
-<ol start="2">
-<li><strong>[Installed Applications]</strong> の一覧からアプリケーションを選択します。</li>
-</ol>
-<p><img src="/img/kit4-33-14.png" alt="kit4-33-14"></p>
-<ol start="3">
-<li><strong>[Properties]</strong> ボタンをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-33-15.png" alt="kit4-33-15"></p>
-<ol start="4">
-<li>以下のいずれかの操作を行います</li>
-</ol>
-<ul>
-<li><strong>[Executable Path]</strong> ボックス内に、新しいパス名を入力します。</li>
-<li><strong>[Start Directory]</strong> ボックス内に、アプリケーションを起動するディレクトリのフルパス名を入力します。</li>
-<li><strong>[Command-Line Options]</strong> ボックス内に、そのアプリケーション用のスタートアップパラメータを入力します。</li>
-<li><strong>[Display Name]</strong> ボックス内に、そのアプリケーションの新しい表示名を入力します。</li>
-<li><strong>[Startup State]</strong> セクションで、そのアプリケーションの起動モード(Maximized、Minimized、Normal)を選択します。</li>
-<li><strong>[Icon]</strong> ボタンをクリックして、新しいアプリケーションアイコンを検索します。</li>
-</ul>
-<p><img src="/img/4-2-3.png" alt="4-2-3"></p>
-<h2 id="アプリケーションの削除">アプリケーションの削除</h2>
-<p>GO-Globalで展開したアプリケーションは、Admin Consoleで削除します。Admin Consoleでアプリケーションを削除しても、ホストからは削除されません。GO-Globalクライアントがそのアプリケーションにアクセスできなくなるだけです。</p>
-<h3 id="アプリケーションの削除方法">アプリケーションの削除方法</h3>
-<ol>
-<li><strong>[Applications]</strong> タブをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-34-1.png" alt="kit4-34-1"></p>
-<ol start="2">
-<li>[Installed Applications]の一覧から削除するアプリケーションを選択します。</li>
-</ol>
-<p><img src="/img/kit4-34-2.png" alt="kit4-34-2"></p>
-<ol start="3">
-<li><strong>[Remove]</strong> ボタンをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-34-3.png" alt="kit4-34-3">
-<img src="/img/kit4-34-4.png" alt="kit4-34-4">
-<img src="/img/kit4-34-5.png" alt="kit4-34-5"></p>
-<p>－または－</p>
-<p>　　[Tools | Applications | Remove]の順にクリックします。</p>
-<p><img src="/img/kit4-34-6.png" alt="kit4-34-6"></p>
-<p>Admin Consoleでインストール済みアプリケーションを削除する時に、あるユーザがそのアプリケーションを実行していた場合、そのユーザのセッションは中断されません。しかし、そのユーザがそのアプリケーションを終了すると、そのアプリケーションは利用不可能になり、Program Window内にアイコンは表示されません。</p>
-<h1 id="ユーザやグループに対するアプリケーション起動パラメータの割り当て">ユーザやグループに対するアプリケーション起動パラメータの割り当て</h1>
+<h2 id="ユーザやグループに対するアプリケーション起動パラメータの割り当て">ユーザやグループに対するアプリケーション起動パラメータの割り当て</h2>
 <p>Admin Consoleでは、ネットワーク上またはローカルマシン上のユーザやグループに対するアプリケーションの実行方法を指定するパラメータの割り当てが可能です。ユーザやグループに対して設定されたパラメータは、ユーザやグループがそのアプリケーションを起動する度に適用されます。個人に対して設定されたアプリケーション起動パラメータは、グループやアプリケーションに対して設定されたパラメータより優先されます。クライアントがGO-Globalを介してアプリケーションを起動すると、Program Windowは、まず個別ユーザに対して割り当てられた起動パラメータを確認します。何もパラメータが割り当てられていない場合は、Program Windowがシステムから取得した順に、そのユーザが属するグループの一覧を確認します。または、Program Windowは、そのアプリケーションに割り当てられている一般的な起動パラメータを検索します。</p>
 
 
@@ -3121,23 +3094,21 @@ GO-Globalを介してアプリケーションを展開しても、各企業が�
 <p>ユーザやグループ用のファイルアクセス許可は、サーバのWindows NTファイルシステム(NTFS)セキュリティ設定によって制御されます。ファイルアクセス許可は、Admin Consoleを通して設定することはできません。[Installed Applications]一覧からアプリケーションを選択すると、そのファイルやアプリケーション対してNTFSで指定されたユーザのアクセス許可が、[Application Users/Groups]一覧に表示されます。次に、特定のユーザやグループに対するアプリケーションのプロパティを編集できます。ファイルアクセス許可はNTFSで初期化されたドライブ上でのみ設定可能です。</p>
 <h3 id="ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法">ユーザまたはグループに対するアプリケーション起動パラメータの割り当て方法</h3>
 <ol>
-<li><strong>[Applications]</strong> タブをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-35-1.png" alt="kit4-35-1"></p>
-<ol start="2">
-<li><strong>[Installed Applications]</strong> の一覧からアプリケーションを選択します。</li>
-</ol>
-<p><img src="/img/kit4-35-2.png" alt="kit4-35-2"></p>
-<ol start="3">
-<li><strong>[Application Users/Groups]</strong> の一覧からユーザまたはグループを選択します。</li>
-</ol>
-<p><img src="/img/kit4-35-3.png" alt="kit4-35-3"></p>
-<ol start="4">
-<li><strong>[Properties]</strong> ボタンをクリックします。</li>
-</ol>
-<p><img src="/img/kit4-35-4.png" alt="kit4-35-4"></p>
-<ol start="5">
-<li>以下のいずれかの操作を行います。</li>
+<li>
+<p><strong>[Applications]</strong> タブをクリックします。</p>
+</li>
+<li>
+<p><strong>[Installed Applications]</strong> の一覧からアプリケーションを選択します。</p>
+</li>
+<li>
+<p><strong>[Application Users/Groups]</strong> の一覧からユーザまたはグループを選択します。</p>
+</li>
+<li>
+<p><strong>[Properties]</strong> ボタンをクリックします。</p>
+</li>
+<li>
+<p>以下のいずれかの操作を行います。</p>
+</li>
 </ol>
 <ul>
 <li><strong>[Start Directory]</strong> ボックス内に、アプリケーションを起動するディレクトリ内のフル パス名を入力します。</li>
@@ -3375,7 +3346,7 @@ KGTN 2016050601<br>
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
         <a title="GO-Global Admin Console"href="/docs/go-global61/go-globaladminconsole/go-globaladminconsole/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div><div class="xPrevNextLink_next">
-        <a title="公開アプリケーションへのリンクの共有"href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
+        <a title="セッションとプロセスの管理"href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
       </div></div>
   
 
@@ -3441,7 +3412,7 @@ KGTN 2016050601<br>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 1, 2021: <a  href="https://github.com//commit/a530c8c33eb3e26e9a1ae718bd16bedb1c08aeb0">test3 (a530c8c)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3482,9 +3453,9 @@ KGTN 2016050601<br>
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

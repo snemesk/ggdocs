@@ -22,24 +22,21 @@
 
 <title>Dependent Hosts | GO-Global Docs</title><meta property="og:title" content="Dependent Hosts" />
 <meta property="og:description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
- All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
-参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。" />
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration] タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Service が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 [OK] をクリックします。 コントロールパネルの[サービス]オプションから GO-Global Application Publishing Service を停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。 統合Windows認証 を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/dependenthosts/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="Dependent Hosts">
 <meta itemprop="description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
- All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
-参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。">
-<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
-<meta itemprop="wordCount" content="94">
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration] タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Service が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 [OK] をクリックします。 コントロールパネルの[サービス]オプションから GO-Global Application Publishing Service を停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。 統合Windows認証 を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="109">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Dependent Hosts"/>
 <meta name="twitter:description" content="Dependent Hostとは、Relay Load Balancerに接続されているGO-Globalホストのことです。GO-Globalクライアントは、Dependent Hostに直接接続することはできません。代わりに、関連するRelay Load Balancerに接続し、Relay Load Balancerは接続されているサーバの1つを選択してセッションをホストします。GO-GlobalホストをDependent Hostとして動作するように設定するには、次の手順に従います。
- All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration]タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。 コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。
-参照各Dependent Hostに同じアプリケーションをインストールし、同じインストールパスを使用することをお勧めします。メンテナンスのためのDependent Hostのオフライン化 管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。"/>
+ All Hosts. のリストから目的のホストを選択します。 [Tools | Host Options]をクリックします。 [Configuration] タブをクリックします。 [Application Host] をクリックします。 [Dependent Host] をクリックします。 [Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。 [OK]をクリックします。 Application Publishing Service が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 [OK] をクリックします。 コントロールパネルの[サービス]オプションから GO-Global Application Publishing Service を停止して再起動します。  Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。 ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。 統合Windows認証 を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。"/>
 
 
 
@@ -54,10 +51,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -87,18 +81,7 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -115,26 +98,6 @@
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -373,7 +336,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -409,25 +372,25 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -474,13 +437,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -498,13 +461,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -582,7 +545,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -624,13 +587,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -807,7 +770,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2883,16 +2846,16 @@
 <ol>
 <li><strong>All Hosts.</strong> のリストから目的のホストを選択します。</li>
 <li>[Tools | Host Options]をクリックします。</li>
-<li>[Configuration]タブをクリックします。</li>
-<li>[Application Host] をクリックします。</li>
-<li>[Dependent Host] をクリックします。</li>
+<li><strong>[Configuration]</strong> タブをクリックします。</li>
+<li><strong>[Application Host]</strong> をクリックします。</li>
+<li><strong>[Dependent Host]</strong> をクリックします。</li>
 <li>[Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。</li>
 <li>[OK]をクリックします。</li>
-<li>Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。</li>
-<li>コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。</li>
+<li><strong>Application Publishing Service</strong> が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 <strong>[OK]</strong> をクリックします。</li>
+<li>コントロールパネルの[サービス]オプションから <strong>GO-Global Application Publishing Service</strong> を停止して再起動します。</li>
 </ol>
 <p>Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&quot;孤立状態&quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。
-ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。</p>
+ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。 <strong>統合Windows認証</strong> を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -2904,14 +2867,14 @@
 
 <p><img src="/img/5-6-1.png" alt="5-6-1"></p>
 <h2 id="メンテナンスのためのdependent-hostのオフライン化">メンテナンスのためのDependent Hostのオフライン化</h2>
-<p>管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。</p>
+<p>管理者は、 <strong>[Session Startup]</strong> タブで <strong>Maximum sessions on this host</strong> を0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。</p>
 <h3 id="dependent-hostをオフラインにする方法">Dependent Hostをオフラインにする方法</h3>
 <ol>
 <li>すべてのホストのリストから目的のDependent Hostを選択します。</li>
 <li>[Tools | Host Options]をクリックします。</li>
-<li>[Session Startup]タブをクリックします。</li>
-<li>Maximum sessions on this hostボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。</li>
-<li>[OK]をクリックします。</li>
+<li><strong>[Session Startup]</strong> タブをクリックします。</li>
+<li><strong>Maximum sessions on this host</strong> ボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。</li>
+<li><strong>[OK]</strong> をクリックします。</li>
 </ol>
 
 	
@@ -3063,7 +3026,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3104,9 +3067,9 @@
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

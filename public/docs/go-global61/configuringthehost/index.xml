@@ -58,8 +58,10 @@
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-&lt;p&gt;ライセンスファイル&lt;code&gt;(C:\Program Files\GraphOn\GO-Global\Licensing\*.lic)&lt;/code&gt;の最小権限は以下の通りです。
-&lt;strong&gt;Administrators&lt;/strong&gt;:Full Control; &lt;strong&gt;Users&lt;/strong&gt;:Read &amp;amp; Execute; &lt;strong&gt;SYSTEM&lt;/strong&gt;:Full Control
+&lt;p&gt;ライセンスファイル&lt;code&gt;(C:\Program Files\GraphOn\GO-Global\Licensing\*.lic)&lt;/code&gt;の最小権限は以下の通りです。&lt;br&gt;
+&lt;strong&gt;Administrators&lt;/strong&gt;:Full Control;&lt;br&gt; 
+&lt;strong&gt;Users&lt;/strong&gt;:Read &amp;amp; Execute; &lt;br&gt;
+&lt;strong&gt;SYSTEM&lt;/strong&gt;:Full Control&lt;br&gt;
 以下のエラーメッセージがLogファイルに表示された場合、ライセンスファイルのパーミッションが正しくない可能性があります。&lt;/p&gt;
 &lt;p&gt;&lt;code&gt;FlexLM code #-1; FlexLM text: Cannot find license file. The license files (or license server system network addresses) attempted are listed below. Use LM_LICENSE_FILE to use a different license file, or contact your software provider for a license file.)&lt;/code&gt;&lt;/p&gt;
 
@@ -94,7 +96,7 @@ GO-Global Cloudライセンスは、インターネットに直接アクセス�
 &lt;p&gt;GO-Globalホストの起動設定を行う場合は、リストから[GO-Global Application Publishing Service]を選択し、[起動]ボタンをクリックします。GO-Globalホストに適用するオプションを選択します。&lt;br&gt;&lt;/p&gt;
 &lt;h1 id=&#34;以前のバージョンからgo-global-61へのアップグレード&#34;&gt;以前のバージョンからGO-Global 6.1へのアップグレード&lt;/h1&gt;
 &lt;p&gt;以前のバージョンからGO-Global 6.1にアップグレードするお客様は、アップグレードする前にバージョン 6.1のライセンスを取得する必要があります。バージョン 6.1 ホストインストーラは、バージョン 6.1のGO-Globalライセンスを持っていないコンピュータをアップグレードすることはできません。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;アップグレードするコンピュータがCloudライセンス(Cloudトライアルライセンスなど)を使用している場合は、sales@graphon.com に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのCloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;アップグレードするコンピュータがCloudライセンス(Cloudトライアルライセンスなど)を使用している場合は、販売代理店に電子メールでクラウドライセンスのアップグレードを依頼してください。メールにはホストのライセンスのライセンスマスターIDを記載してください。GraphOnがライセンスデータベースのCloudライセンスをアップグレードし、アップグレードが完了したらお客様に通知します。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;または、アップグレードするホストがOn-premisesのライセンスを使用している場合（ほとんどの場合)、カスタマーポータルでライセンス変更リクエストを送信して新しいライセンスファイルを取得します。&lt;/p&gt;
 &lt;h3 id=&#34;バージョン61のon-premisesライセンスファイルを取得する方法&#34;&gt;バージョン6.1のOn-premisesライセンスファイルを取得する方法&lt;/h3&gt;
 &lt;ol&gt;
@@ -140,7 +142,7 @@ License Managerを再起動しても、GO-Globalホストで実行されてい�
 a. [スタート | すべてのプログラム | アクセサリ | コマンドプロンプト]をクリックして、コマンドプロンプトウィンドウを開きます。&lt;br&gt;
 b. ipconfig /all と入力し、Enter キーを押します。&lt;br&gt;
 c. コンピュータのホスト名と物理アドレスを探します。&lt;br&gt;
-d. コンピュータのホスト名、ホストID(物理アドレス)、シート数をメールで &lt;a href=&#34;mailto:sales@graphon.com&#34;&gt;sales@graphon.com&lt;/a&gt; に送信します。&lt;br&gt;&lt;/li&gt;
+d. コンピュータのホスト名、ホストID(物理アドレス)、シート数をメールで販売代理店に送信します。&lt;br&gt;&lt;/li&gt;
 &lt;li&gt;GraphOnからライセンスファイルが届いたら&lt;br&gt;
 a. .licファイルをC:\Pro\Program Files\GraphOn\GO-Global\Licensingディレクトリにコピーしてください。&lt;br&gt;
 b. GO-Global License Manager Serviceを起動してください。&lt;br&gt;
@@ -148,7 +150,7 @@ c. GO-Global Application Publishing Serviceを再起動します。&lt;br&gt;&lt
 &lt;/ol&gt;
 &lt;h1 id=&#34;恒久的なon-premisesライセンスのインストール&#34;&gt;恒久的なOn-premisesライセンスのインストール&lt;/h1&gt;
 &lt;p&gt;管理者は、現在クラウドまたはOn-premisesのトライアルライセンスを使用しているシステムに、On-premisesの恒久的なライセンスをインストールすることができます。On-premisesの恒久的なライセンスを注文すると、GraphOnは注文を処理して新しいライセンスを作成します。ライセンス情報は、注文依頼に記載された連絡先にメールで送信されます。&lt;br&gt;
-管理者はカスタマーポータルからプロダクトコード、メールアドレス、ホスト名、ホストIDを入力してライセンスを有効化する必要があります。新しいライセンス(.lic)ファイルが添付ファイルとして電子メールで送信されます。ライセンス IDは、ライセンスファイルの名前のフォーマットに使用されます。(例:8d73e4k.lic（8d73e4kはライセンスID）)ライセンスファイルの添付ファイルは、指定されたライセンスサーバにインストールする必要があります。&lt;br&gt;&lt;/p&gt;
+管理者はカスタマーポータルからプロダクトコード、メールアドレス、ホスト名、ホストIDを入力してライセンスを有効化する必要があります。新しいライセンス(.lic)ファイルが添付ファイルとして電子メールで送信されます。ライセンスIDは、ライセンスファイルの名前のフォーマットに使用されます。(例:8d73e4k.lic（8d73e4kはライセンスID）)ライセンスファイルの添付ファイルは、指定されたライセンスサーバにインストールする必要があります。&lt;br&gt;&lt;/p&gt;
 &lt;h3 id=&#34;恒久的なon-premisesライセンスをインストールする方法&#34;&gt;恒久的なOn-premisesライセンスをインストールする方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;GO-Globalライセンスサーバ上のライセンスディレクトリ(例:C:\Program Files\GraphOn\GO-GlobalLicensing)からトライアルまたは無効になったライセンス(.lic)ファイルを削除してください。&lt;/li&gt;
@@ -255,7 +257,7 @@ httpd -k start
       <description>
         
         
-        &lt;p&gt;自動クライアントキーボード機能により、管理者はGO-Globalホストを設定して、任意のクライアント キーボードで自動的に動作するように設定することができます。ユーザは、クライアントデバイスのローカルキーボード切り替え機能とクライアントの入力メソッドエディタ（IME）を使用して、その場でキーボードを切り替えることができます。GO-Globalホストにキーボードレイアウトをインストールしたり、GO-Globalクライアントにキーボードマッピングファイルをインストールする必要はありません。&lt;br&gt;&lt;/p&gt;
+        &lt;p&gt;自動クライアントキーボード機能により、管理者はGO-Globalホストを設定して、任意のクライアントキーボードで自動的に動作するように設定することができます。ユーザは、クライアントデバイスのローカルキーボード切り替え機能とクライアントの入力メソッドエディタ(IME)を使用して、その場でキーボードを切り替えることができます。GO-Globalホストにキーボードレイアウトをインストールしたり、GO-Globalクライアントにキーボードマッピングファイルをインストールする必要はありません。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;クライアントの自動キーボードはデフォルトで有効になっています。自動クライアントキーボードを無効にし、クライアントキーボードを処理するためのレガシーメソッドを有効にする手順は、&lt;a href=&#34;/docs/go-globalrc61/appendix/disablingautomaticclientkeyboard/&#34;&gt;Appendix&lt;/a&gt;に記載されています。&lt;/p&gt;
 
 
@@ -281,7 +283,7 @@ httpd -k start
       <description>
         
         
-        &lt;p&gt;以下では、設定のバックアップ、GO-Global のアンインストールと再インストール、および GO-Globalホストで公開されているアプリケーションとカスタム設定の復元について説明します。&lt;/p&gt;
+        &lt;p&gt;以下では、設定のバックアップ、GO-Globalのアンインストールと再インストール、およびGO-Globalホストで公開されているアプリケーションとカスタム設定の復元について説明します。&lt;/p&gt;
 &lt;h3 id=&#34;go-globalのレジストリ設定のバックアップ&#34;&gt;GO-Globalのレジストリ設定のバックアップ&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;registry.exeを開きます。&lt;/li&gt;

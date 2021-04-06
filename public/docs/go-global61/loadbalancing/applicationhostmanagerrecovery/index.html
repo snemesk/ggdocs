@@ -20,32 +20,50 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Application Host Manager Recovery | GO-Global Docs</title><meta property="og:title" content="Application Host Manager Recovery" />
-<meta property="og:description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらの従属ホストは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
+<title>アプリケーションホストマネージャのリカバリ | GO-Global Docs</title><meta property="og:title" content="アプリケーションホストマネージャのリカバリ" />
+<meta property="og:description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらのDependent Hostsは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
 デフォルトでは、クライアントは自動的にアプリケーションホストマネージャへの再接続を5回試みます。より高いサービス可用性を提供するために、フェイルオーバーアプリケーションホストマネージャを設定することができます。
-To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。 a. コンピュータ上で Admin Console を実行します。 b. [Tools | Host Options]をクリックします。 c. [Configuration]タブをクリックします。 d. アプリケーションホストマネージャをクリックします。 e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、Relay Load Balancerをクリックします。 f. OK をクリックします。 g. Application Publishing Serviceを再起動します。 プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。:
-a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。 b. 以下のレジストリキーを選択してください：\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer
-c. ファイル｜エクスポート&hellip;**をクリックします。 d. ファイルの名前を入力します(例: Appserver.reg)。 e. 保存」をクリックします。 f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。 g." />
+To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。
+a. コンピュータ上で Admin Console を実行します。
+b. [Tools | Host Options]をクリックします。
+c. **[Configuration]**タブをクリックします。
+d. Application Host Manager をクリックします。
+e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、 Relay Load Balancer をクリックします。プライマリのApplication Host ManagerがFarm Managerの場合は、 Farm Manager をクリックします。
+f. OK をクリックします。
+g. Application Publishing Service を再起動します。
+ プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
-<meta itemprop="name" content="Application Host Manager Recovery">
-<meta itemprop="description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらの従属ホストは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
+<meta itemprop="name" content="アプリケーションホストマネージャのリカバリ">
+<meta itemprop="description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらのDependent Hostsは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
 デフォルトでは、クライアントは自動的にアプリケーションホストマネージャへの再接続を5回試みます。より高いサービス可用性を提供するために、フェイルオーバーアプリケーションホストマネージャを設定することができます。
-To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。 a. コンピュータ上で Admin Console を実行します。 b. [Tools | Host Options]をクリックします。 c. [Configuration]タブをクリックします。 d. アプリケーションホストマネージャをクリックします。 e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、Relay Load Balancerをクリックします。 f. OK をクリックします。 g. Application Publishing Serviceを再起動します。 プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。:
-a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。 b. 以下のレジストリキーを選択してください：\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer
-c. ファイル｜エクスポート&hellip;**をクリックします。 d. ファイルの名前を入力します(例: Appserver.reg)。 e. 保存」をクリックします。 f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。 g.">
-<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
-<meta itemprop="wordCount" content="129">
+To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。
+a. コンピュータ上で Admin Console を実行します。
+b. [Tools | Host Options]をクリックします。
+c. **[Configuration]**タブをクリックします。
+d. Application Host Manager をクリックします。
+e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、 Relay Load Balancer をクリックします。プライマリのApplication Host ManagerがFarm Managerの場合は、 Farm Manager をクリックします。
+f. OK をクリックします。
+g. Application Publishing Service を再起動します。
+ プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="201">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Application Host Manager Recovery"/>
-<meta name="twitter:description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらの従属ホストは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
+<meta name="twitter:title" content="アプリケーションホストマネージャのリカバリ"/>
+<meta name="twitter:description" content="Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらのDependent Hostsは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。
 デフォルトでは、クライアントは自動的にアプリケーションホストマネージャへの再接続を5回試みます。より高いサービス可用性を提供するために、フェイルオーバーアプリケーションホストマネージャを設定することができます。
-To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。 a. コンピュータ上で Admin Console を実行します。 b. [Tools | Host Options]をクリックします。 c. [Configuration]タブをクリックします。 d. アプリケーションホストマネージャをクリックします。 e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、Relay Load Balancerをクリックします。 f. OK をクリックします。 g. Application Publishing Serviceを再起動します。 プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。:
-a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。 b. 以下のレジストリキーを選択してください：\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer
-c. ファイル｜エクスポート&hellip;**をクリックします。 d. ファイルの名前を入力します(例: Appserver.reg)。 e. 保存」をクリックします。 f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。 g."/>
+To configure a Failover Application Host Manager  GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。 GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。
+a. コンピュータ上で Admin Console を実行します。
+b. [Tools | Host Options]をクリックします。
+c. **[Configuration]**タブをクリックします。
+d. Application Host Manager をクリックします。
+e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、 Relay Load Balancer をクリックします。プライマリのApplication Host ManagerがFarm Managerの場合は、 Farm Manager をクリックします。
+f. OK をクリックします。
+g. Application Publishing Service を再起動します。
+ プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。"/>
 
 
 
@@ -60,10 +78,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -93,18 +108,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -121,26 +125,6 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -379,7 +363,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -415,25 +399,25 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -480,13 +464,13 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -504,13 +488,13 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -588,7 +572,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -630,13 +614,13 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -813,7 +797,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2875,7 +2859,7 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+	<a href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
 </li>
 
 	</ol>
@@ -2883,58 +2867,54 @@ c. ファイル｜エクスポート&hellip;**をクリックします。 d. フ
 
             
 <div class="td-content">
-	<h1>Application Host Manager Recovery</h1>
+	<h1>アプリケーションホストマネージャのリカバリ</h1>
 	
-	<p>Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらの従属ホストは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。</p>
+	<p>Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらのDependent Hostsは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。</p>
 <p>デフォルトでは、クライアントは自動的にアプリケーションホストマネージャへの再接続を5回試みます。より高いサービス可用性を提供するために、フェイルオーバーアプリケーションホストマネージャを設定することができます。</p>
 <h3 id="to-configure-a-failover-application-host-manager">To configure a Failover Application Host Manager</h3>
 <ol>
 <li>GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。</li>
-<li>GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。
-a. コンピュータ上で <strong>Admin Console</strong> を実行します。
-b. [Tools | Host Options]をクリックします。
-c. [Configuration]タブをクリックします。 
-d. アプリケーションホストマネージャをクリックします。 
-e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、Relay Load Balancerをクリックします。
-f. OK をクリックします。 
-g. Application Publishing Serviceを再起動します。</li>
-<li>プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。:<br>
-a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。
+<li>GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。<br>
+a. コンピュータ上で <strong>Admin Console</strong> を実行します。<br>
+b. [Tools | Host Options]をクリックします。<br>
+c. **[Configuration]**タブをクリックします。<br>
+d. <strong>Application Host Manager</strong> をクリックします。<br> 
+e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、 <strong>Relay Load Balancer</strong> をクリックします。プライマリのApplication Host ManagerがFarm Managerの場合は、 <strong>Farm Manager</strong> をクリックします。<br>
+f. <strong>OK</strong> をクリックします。<br>
+g. <strong>Application Publishing Service</strong> を再起動します。<br></li>
+<li>プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。<br>
+a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。<br>
 b. 以下のレジストリキーを選択してください：<code>\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer</code><br>
-c. ファイル｜エクスポート&hellip;**をクリックします。
-d. ファイルの名前を入力します(例: Appserver.reg)。
-e. 保存」をクリックします。
-f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。
-g. ファイルをダブルクリックします。
-h. はい」をクリックして、ファイルをインポートします。
-i. OKをクリックします。</li>
-<li>また、「Failover Relay Load Balancer」に接続できない場合は、「Failover Relay Load Balancer」に接続するように各依存ホストを設定します。
-a. 管理者コンソールを実行します。
-b. <br> [ツール] &gt; [ホストオプション]をクリックします。
-c. 
-d. リレーロードバランサーのアドレス**には、両方のリレーロードバランサーのアドレスを、完全修飾ドメイン名と一緒に入力します。プライマリリレーロードバランサーのアドレスを最初に入力し、セミコロンを続けて入力し、その後にフェイルオーバーリレーロードバランサーのアドレスを入力します。例：primary_relay_load_balancer.graphon.com;failover_relay_load_balancer.graphon.com&lt;br
-e. OKをクリックします。</li>
-<li>
-<ol start="5">
-<li>クライアントの起動に使用するURLとショートカットに、プライマリとフェイルオーバーの両方のRelay Load Balancerのアドレスを指定します。
-a. <br> <br> ブラウザ経由で接続するユーザーには、<strong>host</strong> パラメータにプライマリリレーサーバーのアドレスを設定し、その後にセミコロン、その後にフェイルオーバーリレーサーバーのアドレスを設定した HTML ページまたは URL を提供します。
-b. b. インストールされたクライアントを介して接続するユーザーに、<strong>-h</strong>コマンドライン引数をプライマリリレーサーバーのアドレスに等しくし、セミコロンの後にフェイルオーバーリレーサーバーのアドレスを続くように設定するショートカットを提供します(例: -h primary_relay_load_balancer_address;failover_relay_load_balancer_address).<br>。</li>
+c. <strong>[File | Export…]</strong> をクリックします。<br>
+d. ファイルの名前を入力します(例: Appserver.reg)。<br>
+e. <strong>Save</strong> をクリックします。<br>
+f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。<br>
+g. ファイルをダブルクリックします。<br>
+h. <strong>Yes</strong> をクリックして、ファイルをインポートします。<br>
+i. <strong>OK</strong> をクリックします。<br></li>
+<li>また、Failover Relay Load Balancerに接続できない場合は、Failover Relay Load Balancerに接続するように各Dependent Hostsを設定します。<br>
+a. Admin Consoleを実行します。<br>
+b. [Tools | Host Options]をクリックします。<br>
+c. **[Configuration]**タブをクリックします。<br>
+d. <strong>Relay Load Balancer address</strong>には、両方のRelay Load Balancerのアドレスを完全修飾ドメイン名と一緒に入力します。プライマリRelay Load Balancerのアドレスを最初に入力し、セミコロンを続けて入力し、その後にフェイルオーバRelay Load Balancerのアドレスを入力します。例：primary_relay_load_balancer.graphon.com;failover_relay_load_balancer.graphon.com<br>
+e. <strong>OK</strong> をクリックします。</li>
+<li>クライアントの起動に使用するURLとショートカットに、プライマリとフェイルオーバの両方のRelay Load Balancerのアドレスを指定します。
+a. ブラウザ経由で接続するユーザには、 <strong>host</strong> パラメータにプライマリRelay Serverのアドレスを設定し、その後にセミコロン、その後にフェイルオーバRelay Serverのアドレスを設定したHTMLページまたはURLを提供します。
+b. インストールされたクライアントを介して接続するユーザに、 <strong>-h</strong> コマンドライン引数をプライマリRelay Serverのアドレスに等しくし、セミコロンの後にフェイルオーバRelay Serverのアドレスを続くように設定するショートカットを提供します(例: -h primary_relay_load_balancer_address;failover_relay_load_balancer_address).<br>。</li>
 </ol>
-</li>
-</ol>
-<p>この構成では、プライマリのRelay Load Balancerが何らかの理由で障害を起こした場合、従属ホストとクライアントは自動的にフェイルオーバーサーバに再接続し、ユーザーは通常、プライマリのRelay Load Balancerが障害を起こしてから1～2分以内にセッションに再接続されます。これを下図に示します。</p>
+<p>この構成では、プライマリのRelay Load Balancerが何らかの理由で障害を起こした場合、Dependent Hostsとクライアントは自動的にフェイルオーバーサーバに再接続し、ユーザは通常、プライマリのRelay Load Balancerが障害を起こしてから1～2分以内にセッションに再接続されます。これを下図に示します。</p>
 <p><img src="/img/5-10-1.png" alt="5-10-1"></p>
-<p>同様に、ファームマネージャの構成では、ファームマネージャが何らかの理由で障害を起こすと、ファームホストとクライアントは自動的にフェイルオーバーのファームマネージャに再接続し、ユーザーは通常、ファームマネージャの障害発生から1～2分以内にセッションに再接続されます。これを下図に示します。</p>
-<p><img src="/img/5-10-2.png" alt="5-10-2"> 
-<br> <br>ユーザーのセッションが自動的に再接続に失敗した場合は、クライアントのURL、ウェブページ、ショートカットのautoreconnectパラメータの値を5よりも大きい値（デフォルト）にしてください。</p>
-<p>フェイルオーバーリレーロードバランサーがアクティブな場合（つまり、依存ホストがフェイルオーバーリレーロードバランサーに接続されている場合）、ユーザーのセッションの開始に時間がかかります。このため、プライマリのリレーロードバランサーは、オンラインになったら再起動してください。プライマリのリレーロードバランサーを再起動するには、ユーザーがクラスタに接続する可能性が低い時間帯に、Task Managerを使用してフェイルオーバーのリレーロードバランサーのaps.exeプロセスを終了します。フェールオーバーのリレーロードバランサーでaps.exeプロセスが終了すると、従属ホストとクライアントはプライマリのリレーロードバランサーに再接続します。<br> <br>クラスターの依存ホストがプライマリのRelay Load Balancerに再接続した後、フェイルオーバーのRelay Load Balancer上でApplication Publishing Serviceを再起動してください。</p>
+<p>同様に、ファームマネージャの構成では、ファームマネージャが何らかの理由で障害を起こすと、ファームホストとクライアントは自動的にフェイルオーバーのファームマネージャに再接続し、ユーザは通常、ファームマネージャの障害発生から1～2分以内にセッションに再接続されます。これを下図に示します。</p>
+<p><img src="/img/5-10-2.png" alt="5-10-2"></p>
+<p>ユーザのセッションが自動的に再接続に失敗した場合は、クライアントのURL、Webページ、ショートカットの <strong>autoreconnect</strong> パラメータの値を5よりも大きい値(デフォルト)にしてください。</p>
+<p>フェイルオーバRelay Load Balancerがアクティブな場合(つまり、Dependent HostsがフェイルオーバRelay Load Balancerに接続されている場合)、ユーザのセッションの開始に時間がかかります。このため、プライマリのRelay Load Balancerは、オンラインになったら再起動してください。プライマリのRelay Load Balancerを再起動するには、ユーザがクラスタに接続する可能性が低い時間帯にタスクマネージャを使用してフェイルオーバのRelay Load Balancerのaps.exeプロセスを終了します。フェールオーバのRelay Load Balancerでaps.exeプロセスが終了すると、Dependent HostsとクライアントはプライマリのRelay Load Balancerに再接続します。クラスタのDependent HostsがプライマリのRelay Load Balancerに再接続した後、フェイルオーバのRelay Load Balancer上で <strong>Application Publishing Service</strong> を再起動してください。</p>
 
 
 <div class="alert alert-info" role="alert">
 
 
 <h4 class="alert-heading"><i class="fa fa-info-circle" aria-hidden="true"></i>参照</h4>
-Service経由でリレーロードバランサー上で<strong>Application Publishing Service</strong>を停止または再起動すると、**GO-Globalはリレーロードバランサーの従属ホスト上で実行中のすべてのセッションを閉じます。したがって、クラスタの依存ホスト上でセッションが実行されているときにプライマリのリレーロードバランサーを再アクティベートする必要がある場合は、フェイルオーバーのリレーロードバランサー上でサービスを介してアプリケーションパブリッシングサービスを再起動しないで、代わりに、上述のようにタスクマネージャを使用してフェイルオーバーのリレーロードバランサー上でapps.exeプロセスを終了します。
+<strong>Service</strong> 経由でRelay Load Balancer上で <strong>Application Publishing Service</strong> を停止または再起動すると、GO-GlobalはRelay Load BalancerのDependent Hosts上で実行中のすべてのセッションを閉じます。したがって、クラスタのDependent Hosts上でセッションが実行されているときにプライマリのRelay Load Balancerを再アクティベートする必要がある場合は、フェイルオーバのRelay Load Balancer上でサービスを介してApplication Publishing Serviceを再起動しないで、代わりに、上述のようにタスクマネージャを使用してフェイルオーバのRelay Load Balancer上でapps.exeプロセスを終了します。
 </div>
 
 
@@ -3025,7 +3005,7 @@ Service経由でリレーロードバランサー上で<strong>Application Publi
   
 
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
-        <a title="Administering Relay Load Balancers and Dependent Hosts on Different Networks "href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
+        <a title="異なるネットワーク上のRelay Load BalancerとDependent Hostの管理"href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div><div class="xPrevNextLink_next">
         <a title="あるホストから別のホストへの構成設定の手動コピー"href="/docs/go-global61/loadbalancing/manuallycopyingconfigurationsettingsfromonehosttoanother/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
       </div></div>
@@ -3093,7 +3073,7 @@ Service経由でリレーロードバランサー上で<strong>Application Publi
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3134,9 +3114,9 @@ Service経由でリレーロードバランサー上で<strong>Application Publi
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

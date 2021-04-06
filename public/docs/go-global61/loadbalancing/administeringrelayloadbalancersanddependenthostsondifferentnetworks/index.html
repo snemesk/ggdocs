@@ -20,35 +20,29 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Administering Relay Load Balancers and Dependent Hosts on Different Networks  | GO-Global Docs</title><meta property="og:title" content="Administering Relay Load Balancers and Dependent Hosts on Different Networks " />
+<title>異なるネットワーク上のRelay Load BalancerとDependent Hostの管理 | GO-Global Docs</title><meta property="og:title" content="異なるネットワーク上のRelay Load BalancerとDependent Hostの管理" />
 <meta property="og:description" content="ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。
-&ldquo;Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？&rdquo;
-Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
- Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。
-Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホストにも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプションとアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。
-Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8." />
+&ldquo;This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?(Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？)&rdquo;
+No をクリックすると、Admin Consoleの All Hosts ノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
+ Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。 Sign In ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
-<meta itemprop="name" content="Administering Relay Load Balancers and Dependent Hosts on Different Networks ">
+<meta itemprop="name" content="異なるネットワーク上のRelay Load BalancerとDependent Hostの管理">
 <meta itemprop="description" content="ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。
-&ldquo;Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？&rdquo;
-Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
- Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。
-Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホストにも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプションとアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。
-Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.">
-<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
-<meta itemprop="wordCount" content="166">
+&ldquo;This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?(Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？)&rdquo;
+No をクリックすると、Admin Consoleの All Hosts ノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
+ Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。 Sign In ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="209">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Administering Relay Load Balancers and Dependent Hosts on Different Networks "/>
+<meta name="twitter:title" content="異なるネットワーク上のRelay Load BalancerとDependent Hostの管理"/>
 <meta name="twitter:description" content="ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。
-&ldquo;Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？&rdquo;
-Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
- Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。
-Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホストにも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプションとアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。
-Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8."/>
+&ldquo;This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?(Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？)&rdquo;
+No をクリックすると、Admin Consoleの All Hosts ノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。
+ Dependent Hostの Admin Console が GO-Global Client を起動します。 クライアントがRelay Load Balancerに接続し、セッションを開始します。 Sign In ダイアログがユーザに表示されます。 Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。 Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。 Admin Consoleの Maximum sessions on this host 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。  Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。"/>
 
 
 
@@ -63,10 +57,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -96,18 +87,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -124,26 +104,6 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -382,7 +342,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -418,25 +378,25 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -483,13 +443,13 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -507,13 +467,13 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -591,7 +551,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -633,13 +593,13 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -816,7 +776,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2868,7 +2828,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+	<a href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
 </li>
 
 	</ol>
@@ -2876,21 +2836,21 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 
             
 <div class="td-content">
-	<h1>Administering Relay Load Balancers and Dependent Hosts on Different Networks </h1>
+	<h1>異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</h1>
 	
 	<p>ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。</p>
-<p>&ldquo;Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？&rdquo;</p>
-<p>Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。<br></p>
+<p>&ldquo;This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?(Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？)&rdquo;</p>
+<p><strong>No</strong> をクリックすると、Admin Consoleの <strong>All Hosts</strong> ノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。<br></p>
 <ol>
 <li>Dependent Hostの Admin Console が GO-Global Client を起動します。</li>
-<li>クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。</li>
+<li>クライアントがRelay Load Balancerに接続し、セッションを開始します。 <strong>Sign In</strong> ダイアログがユーザに表示されます。</li>
 <li>Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。</li>
 <li>Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。</li>
 <li>Admin Consoleの <strong>Maximum sessions on this host</strong> 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。</li>
 </ol>
 <p>Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。<br></p>
-<p>Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホスト<strong>にも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプション</strong>とアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。</p>
-<p>Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.0がDependent HostのC:Greatment Files\AdobeAcrobat 8.0\Reader\AcroRd32.exeにインストールされている場合、Relay Load BalancerのAdmin Consoleを開き、<strong>Add Application</strong>ダイアログの<strong>Location</strong>ボックスにこのパスの場所を入力します。</p>
+<p>Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されている <strong>All Hosts</strong> にも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。 <strong>Host Options</strong>と <strong>Application Properties</strong> ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。</p>
+<p>Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.0がDependent HostのC:Greatment Files\AdobeAcrobat 8.0\Reader\AcroRd32.exeにインストールされている場合、Relay Load BalancerのAdmin Consoleを開き、 <strong>Add Application</strong> ダイアログの <strong>Location</strong> ボックスにこのパスの場所を入力します。</p>
 
 
 <div class="alert alert-info" role="alert">
@@ -2904,15 +2864,18 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 <p>クライアントがRelay Load Balancerに接続すると、Relay Load Balancerは、そのホストで許可されている最大セッション数に対する割合として、実行中のセッション数が最も少ないDependent Host上でセッションを開始しようとします。
 もし、選択したホストでセッションを開始できなかった場合、Relay Load Balancerは、セッションをサポートできるホストが見つかるまで、他の利用可能なホストでもセッションを開始しようとします。</p>
 <p>利用可能なホストがない場合(つまり、すべてのホストで実行中のセッション数が許可された最大数に等しい場合)、GO-Globalはユーザにメッセージを表示します。</p>
-<p>** You are already running as many sessions as you are allowed. **</p>
+<p><strong>You are already running as many sessions as you are allowed.</strong></p>
 <p>そうでない場合、利用可能なホストのいずれかでセッションを開始できない場合、次のようなメッセージがユーザに表示されます:<br></p>
-<p>** GO-Global failed to launch the Program Window for your session. **</p>
-<p>Relay Load Balancerの設定では、GO-GlobalはRelay Load BalancerとそのDependent Hostの最大セッション設定を確認します。Relay Load Balancerの最大セッション数は、そのRelay Load Balancerに割り当てられたすべてのDependent Hostで同時に実行できるセッションの最大数です。</p>
+<p><strong>GO-Global failed to launch the Program Window for your session.</strong></p>
+<p>Relay Load Balancerの設定では、GO-GlobalはRelay Load BalancerとそのDependent Hostsの <strong>最大セッション数</strong> の設定を確認します。Relay Load Balacner上の最大セッション数の値は、そのRelay Load Balancerに割り当てられたすべてのDependent Host上で同時に実行できる最大セッション数です。</p>
+<p>このホストの最大セッション数の設定を変更するには、そのホストのAdmin Consoleを開き、[Host Options｜Session Startup]をクリックします。</p>
 <h1 id="relay-load-balancer-in-a-dmz">Relay Load Balancer in a DMZ</h1>
 <p>DMZ内のRelay Load Balancerは、ファイアウォールによってDependent Hostから分離できますが、次の要件があります。</p>
-<p>Dependent Hostは、ファイアウォールの背後からRelay Load Balancerに接続できる必要があります。逆は必要ありませんのでご注意ください。Relay Load Balancerは、Dependent Hostに接続できる必要はありません。
-クライアントは、DMZのRelay Load Balancerに接続できる必要があります。</p>
-<p>依存するアプリケーションサーバー上でセッションが開始されると、依存するアプリケーションサーバーはRelay Load Balancerへの接続を開きます。Relay Load Balancerは、セッションのクライアントからデータを受信すると、この接続を介してそのデータをセッションに転送します。同様に、Relay Load Balancerはこの接続を介してセッションからデータを受け取ると、そのデータをセッションのクライアントに転送します。</p>
+<ul>
+<li>Dependent Hostは、ファイアウォールの背後からRelay Load Balancerに接続できる必要があります。逆は必要ありませんのでご注意ください。Relay Load Balancerは、Dependent Hostに接続できる必要はありません。</li>
+<li>クライアントは、DMZのRelay Load Balancerに接続できる必要があります。</li>
+</ul>
+<p>依存するアプリケーションサーバ上でセッションが開始されると、依存するアプリケーションサーバはRelay Load Balancerへの接続を開きます。Relay Load Balancerは、セッションのクライアントからデータを受信すると、この接続を介してそのデータをセッションに転送します。同様に、Relay Load Balancerはこの接続を介してセッションからデータを受け取ると、そのデータをセッションのクライアントに転送します。</p>
 <p>下図は、内部ネットワーク上のホストにアクセスを提供するための推奨構成を示しています。矢印は接続の方向を示しています。ホストはRelay Load Balancerに接続しますが、その逆ではありません。その結果、内部ファイアウォールはDMZから内部ネットワークへの接続を許可する必要はありません。この構成では、インターネット上のマシンもDMZ内のマシンも、内部ネットワーク上のホストに直接接続することはできません。
 <img src="/img/5-9-1.png" alt="5-9-1"></p>
 
@@ -3002,9 +2965,9 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
   
 
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
-        <a title="License Server Configuration"href="/docs/go-global61/loadbalancing/licenseserverconfiguration/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
+        <a title="ライセンスサーバの構成"href="/docs/go-global61/loadbalancing/licenseserverconfiguration/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div><div class="xPrevNextLink_next">
-        <a title="Application Host Manager Recovery"href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
+        <a title="アプリケーションホストマネージャのリカバリ"href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
       </div></div>
   
 
@@ -3070,7 +3033,7 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3111,9 +3074,9 @@ Relay Load Balancerを設定する際に、Dependent Hostにアプリケーシ�
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

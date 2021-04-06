@@ -20,29 +20,71 @@
 <link rel="icon" type="image/png" href="/favicons/android-144x144.png" sizes="144x144">
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
-<title>Support for Third-Party Load Balancers | GO-Global Docs</title><meta property="og:title" content="Support for Third-Party Load Balancers" />
+<title>サードパーティ製のロードバランサのサポート | GO-Global Docs</title><meta property="og:title" content="サードパーティ製のロードバランサのサポート" />
 <meta property="og:description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
-さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
-これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
- フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。" />
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 例えば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。
+a. サードパーティのロードバランサに 接続されていない コンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
+b. ステップ1で設定したファームマネージャのアドレスを Farm Manager address フィールドに入力します。
+c. Application Publishing Service を再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、 Farm Manager address フィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
+b. Application Publishing Service を再起動します。
+  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-03-11T16:07:55&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-03-22T14:30:29&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
-<meta itemprop="name" content="Support for Third-Party Load Balancers">
+<meta itemprop="name" content="サードパーティ製のロードバランサのサポート">
 <meta itemprop="description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
-さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
-これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
- フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。">
-<meta itemprop="dateModified" content="2021-03-11T16:07:55&#43;09:00" />
-<meta itemprop="wordCount" content="53">
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 例えば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。
+a. サードパーティのロードバランサに 接続されていない コンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
+b. ステップ1で設定したファームマネージャのアドレスを Farm Manager address フィールドに入力します。
+c. Application Publishing Service を再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、 Farm Manager address フィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
+b. Application Publishing Service を再起動します。
+  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。">
+<meta itemprop="dateModified" content="2021-03-22T14:30:29&#43;09:00" />
+<meta itemprop="wordCount" content="69">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Support for Third-Party Load Balancers"/>
+<meta name="twitter:title" content="サードパーティ製のロードバランサのサポート"/>
 <meta name="twitter:description" content="GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。
-さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
-これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。 b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。 c. Application Publishing Serviceを再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
- フェールオーバーファームマネージャを作成します。 a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。 b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。 c. Application Publishing Serviceを再起動します。 ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。 a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。 b. Application Publishing Serviceを再起動します。  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。"/>
+さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。 例えば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。
+これらの機能を有効にする方法  GO-Globalファームマネージャを作成します。
+a. サードパーティのロードバランサに 接続されていない コンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
+b. ステップ1で設定したファームマネージャのアドレスを Farm Manager address フィールドに入力します。
+c. Application Publishing Service を再起動します。  管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。
+ フェールオーバーファームマネージャを作成します。
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
+b. Admin Consoleを実行し、サーバの役割を Farm Manager に設定します。
+c. Application Publishing Service を再起動します。
+ ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
+a. Admin Consoleを実行し、 Farm Manager address フィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
+b. Application Publishing Service を再起動します。
+  新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。"/>
 
 
 
@@ -57,10 +99,7 @@
   integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
   crossorigin="anonymous"></script>
 
-<script
-  src="https://unpkg.com/lunr@2.3.8/lunr.min.js"
-  integrity="sha384-vRQ9bDyE0Wnu+lMfm57BlYLO0/XauFuKpVsZPs7KEDwYKktWi5+Kz3MP8++DFlRY"
-  crossorigin="anonymous"></script>
+
 
 
   </head>
@@ -90,18 +129,7 @@
 		</ul>
 	</div>
 	<div class="navbar-nav d-none d-lg-block">
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
+<input type="search" class="form-control td-search-input" placeholder="&#xf002 サイトを検索..." aria-label="サイトを検索..." autocomplete="off">
 
 </div>
 
@@ -118,26 +146,6 @@
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
-  
-  <form class="td-sidebar__search d-flex align-items-center">
-    
-
-
-<input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; サイトを検索..."
-  aria-label="サイトを検索..."
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.2b9bb89b82cd27b137fadf86864b6a49e18e0d3deebfaf8d80bcae11956010a73eb5669df55b0952f2bf36159904185d0ed6d06e03f9f583ebe31d2178a1df1b.json"
-  data-offline-search-base-href="/"
->
-
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -376,7 +384,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">Load Balancing</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingloadbalancing" href="/docs/go-global61/loadbalancing/loadbalancing/">ロードバランシング</a>
       
       
       
@@ -412,25 +420,25 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+      <a class="td-sidebar-link td-sidebar-link__page  active" id="m-docsgo-global61loadbalancingsupportforthird-partyloadbalancers" href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">License Server Configuration</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancinglicenseserverconfiguration" href="/docs/go-global61/loadbalancing/licenseserverconfiguration/">ライセンスサーバの構成</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">Administering Relay Load Balancers and Dependent Hosts on Different Networks </a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingadministeringrelayloadbalancersanddependenthostsondifferentnetworks" href="/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/">異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">Application Host Manager Recovery</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61loadbalancingapplicationhostmanagerrecovery" href="/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/">アプリケーションホストマネージャのリカバリ</a>
       
       
       
@@ -477,13 +485,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolemanagingsessionsandprocesses" href="/docs/go-global61/go-globaladminconsole/managingsessionsandprocesses/">セッションとプロセスの管理</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolesharingalinktoapublishiedapplication" href="/docs/go-global61/go-globaladminconsole/sharingalinktoapublishiedapplication/">公開アプリケーションへのリンクの共有</a>
       
       
       
@@ -501,13 +509,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
-      
-      
-      
-      
-      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolestrongencryptioncertificatewizard" href="/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/">強力な暗号化証明書ウィザード</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsoleselectingssltransport" href="/docs/go-global61/go-globaladminconsole/selectingssltransport/">SSL転送の選択</a>
       
       
       
@@ -585,7 +593,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">ビデオリプレイ</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolevideoreplay" href="/docs/go-global61/go-globaladminconsole/videoreplay/">Video Replay</a>
       
       
       
@@ -627,13 +635,13 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows Compatibility Assurance</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolewindowscompatibilityassurance" href="/docs/go-global61/go-globaladminconsole/windowscompatibilityassurance/">Windows互換性保証</a>
       
       
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Global Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61go-globaladminconsolego-globalupdates" href="/docs/go-global61/go-globaladminconsole/go-globalupdates/">GO-Globalのアップデート</a>
       
       
       
@@ -810,7 +818,7 @@
       
       
       
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">Automatic Client Updates</a>
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global61runninggo-globalautomaticclientupdates" href="/docs/go-global61/runninggo-global/automaticclientupdates/">クライアントの自動更新</a>
       
       
     </li>
@@ -2872,7 +2880,7 @@
 
 
 <li class="breadcrumb-item active" aria-current="page">
-	<a href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">Support for Third-Party Load Balancers</a>
+	<a href="/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/">サードパーティ製のロードバランサのサポート</a>
 </li>
 
 	</ol>
@@ -2880,31 +2888,31 @@
 
             
 <div class="td-content">
-	<h1>Support for Third-Party Load Balancers</h1>
+	<h1>サードパーティ製のロードバランサのサポート</h1>
 	
 	<p>GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。</p>
 <p>さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。
-たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。</p>
+例えば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。</p>
 <h3 id="これらの機能を有効にする方法">これらの機能を有効にする方法</h3>
 <ol>
-<li>GO-Globalファームマネージャを作成します。
-a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。
-b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
-c. Application Publishing Serviceを再起動します。</li>
-<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
-a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
-b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。
-c. Application Publishing Serviceを再起動します。</li>
+<li>GO-Globalファームマネージャを作成します。<br>
+a. サードパーティのロードバランサに <strong>接続されていない</strong> コンピュータにGO-Globalホストをインストールします。<br>
+b. Admin Consoleを実行し、サーバの役割を <strong>Farm Manager</strong> に設定します。<br>
+c. <strong>Application Publishing Service</strong> を再起動します。<br></li>
+<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。<br>
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。<br>
+b. ステップ1で設定したファームマネージャのアドレスを <strong>Farm Manager address</strong> フィールドに入力します。<br>
+c. <strong>Application Publishing Service</strong> を再起動します。</li>
 </ol>
 <p>管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。</p>
 <ol>
-<li>フェールオーバーファームマネージャを作成します。
-a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
-b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
-c. Application Publishing Serviceを再起動します。</li>
-<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
-a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
-b. Application Publishing Serviceを再起動します。</li>
+<li>フェールオーバーファームマネージャを作成します。<br>
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。<br>
+b. Admin Consoleを実行し、サーバの役割を <strong>Farm Manager</strong> に設定します。<br>
+c. <strong>Application Publishing Service</strong> を再起動します。<br></li>
+<li>ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。<br>
+a. Admin Consoleを実行し、 <strong>Farm Manager address</strong> フィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。<br>
+b. <strong>Application Publishing Service</strong> を再起動します。<br></li>
 </ol>
 <p>新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。</p>
 <p><img src="/img/5-7-1.png" alt="5-7-1"></p>
@@ -2995,7 +3003,7 @@ b. Application Publishing Serviceを再起動します。</li>
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
         <a title="ファームホストの構成"href="/docs/go-global61/loadbalancing/farmhost/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div><div class="xPrevNextLink_next">
-        <a title="License Server Configuration"href="/docs/go-global61/loadbalancing/licenseserverconfiguration/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
+        <a title="ライセンスサーバの構成"href="/docs/go-global61/loadbalancing/licenseserverconfiguration/"><img src="/images/RC.svg" alt="right" width="30" height="30"></a>
       </div></div>
   
 
@@ -3061,7 +3069,7 @@ b. Application Publishing Serviceを再起動します。</li>
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 11, 2021: <a  href="https://github.com//commit/44e6a3fc8f446c4313322e5fc0904d03f03faa7b">61fix0311 (44e6a3f)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 March 22, 2021: <a  href="https://github.com//commit/db610d6162b282d5e7a1f2477bc2f42305ab19ff">610322fix (db610d6)</a>
 </div>
 </div>
 
@@ -3102,9 +3110,9 @@ b. Application Publishing Serviceを再起動します。</li>
 
 
 
+<script src="/js/main.min.5c74b870c6953931a705f390a49c7e4c0a842ec5c83b24354758dd674343ed0d.js" integrity="sha256-XHS4cMaVOTGnBfOQpJx&#43;TAqELsXIOyQ1R1jdZ0ND7Q0=" crossorigin="anonymous"></script>
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
 
 
 

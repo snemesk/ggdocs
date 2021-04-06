@@ -14,7 +14,7 @@
     
     
     <item>
-      <title>Docs: Load Balancing</title>
+      <title>Docs: ロードバランシング</title>
       <link>/docs/go-global61/loadbalancing/loadbalancing/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -22,7 +22,7 @@
       <description>
         
         
-        &lt;p&gt;ロードバランシングでは、GO-Global セッションを複数のホストに分散させることができます。ロードバランシングは、配置に必要なホストリソースの要件が1台のホストコンピュータの容量を超える場合に必要となります。ロードバランシングは自動的に実行され、ユーザには透過的です。GO-Globalは、サードパーティのTCP/IPベースの負荷分散サービスと一緒に使用することもできます。&lt;/p&gt;
+        &lt;p&gt;ロードバランシングでは、GO-Globalセッションを複数のホストに分散させることができます。ロードバランシングは、配置に必要なホストリソースの要件が1台のホストコンピュータの容量を超える場合に必要となります。ロードバランシングは自動的に実行され、ユーザには透過的です。GO-Globalは、サードパーティのTCP/IPベースの負荷分散サービスと一緒に使用することもできます。&lt;/p&gt;
 &lt;h2 id=&#34;負荷分散の要件&#34;&gt;負荷分散の要件&lt;/h2&gt;
 &lt;ul&gt;
 &lt;li&gt;GO-Globalホストはクラスタ内の各ホストにインストールする必要があります。&lt;/li&gt;
@@ -30,7 +30,7 @@
 &lt;li&gt;アプリケーションがユーザ固有の設定をレジストリに保存する場合(Microsoft Wordなど)、ユーザはローカルプロファイルではなく移動ユーザプロファイルで操作することを強くお勧めします。バランスのとれたサーバーファームでは、ユーザが実際にどのサーバにログオンするかを予測する方法がないため、ユーザ固有の設定を常に利用できるようにするには、移動ユーザプロファイルを使用することが唯一の方法です。&lt;/li&gt;
 &lt;/ul&gt;
 &lt;p&gt;GO-Globalホストは、Independent Host、Dependent Host、Relay Load Balancerとして動作するように設定できます。Relay Load Balancerはアプリケーションホストにはなりません。&lt;/p&gt;
-&lt;p&gt;負荷分散型のrelay server構成を設定する場合は、ライセンスサーバーを使用することをお勧めします。詳しくは以下のセクションのマルチホスト環境、スリーサーバ冗長化、ライセンス・ファイルリスト冗長化を参照してください。&lt;/p&gt;
+&lt;p&gt;負荷分散型のRelay Server構成を設定する場合は、ライセンスサーバを使用することをお勧めします。詳しくは以下のセクションのマルチホスト環境、スリーサーバ冗長化、ライセンス・ファイルリスト冗長化を参照してください。&lt;/p&gt;
 
       </description>
     </item>
@@ -44,7 +44,7 @@
       <description>
         
         
-        &lt;p&gt;Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにある管理者コンソールに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 &lt;strong&gt;[Connection]&lt;/strong&gt; ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。&lt;br&gt;&lt;/p&gt;
+        &lt;p&gt;Independent Hostsは、ネットワーク上で稼働している他のGO-Globalホストと相互作用しないGO-Globalホストです。Independent Hostsは、GO-Globalホストのツリービューの最初のレベルにあるAdmin Consoleに独立ノードとして表示されます。GO-Globalセットアッププログラムは、Independent Hostsとして動作するようにホストを設定します。GO-Globalのクライアントは、 &lt;strong&gt;[Connection]&lt;/strong&gt; ダイアログまたはWebブラウザのロケーションボックスでサーバの名前またはIPアドレスを指定して、Independent Hostsに直接接続できます。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;クライアントは、複数のサーバ間でクライアント接続を分散するサードパーティのネットワークロードバランサを介してIndependent Hostsに接続することもできます。ただし、後者の設定では、セッション再接続はサポートされていないため、無効にする必要があります。&lt;br&gt;&lt;/p&gt;
 &lt;p&gt;Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンが赤く表示されます。管理者がホストにアクセスする権限を持っていない場合、ホストのアイコンは黄色になります。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/5-2-1.png&#34; alt=&#34;5-2-1&#34;&gt;&lt;/p&gt;
@@ -61,20 +61,20 @@
       <description>
         
         
-        &lt;p&gt;Relay Load Balancerは、1台以上のホストを集中的に制御するGO-Globalホストです。Relay Load Balancerは、クライアント接続を維持し、負荷分散されたアプリケーションホストのセット全体にGO-Globalセッションを分散します。Relay Load Balancerは、1つ以上のDependent Hostsを持つノードとして、All Hostsのリストの最初のレベルにあるAdmin Consoleに表示されます。&lt;/p&gt;
+        &lt;p&gt;Relay Load Balancerは、1台以上のホストを集中的に制御するGO-Globalホストです。Relay Load Balancerは、クライアント接続を維持し、負荷分散されたアプリケーションホストのセット全体にGO-Globalセッションを分散します。Relay Load Balancerは、1つ以上のDependent Hostsを持つノードとして、 &lt;strong&gt;All Hosts&lt;/strong&gt; のリストの最初のレベルにあるAdmin Consoleに表示されます。&lt;/p&gt;
 &lt;h3 id=&#34;go-globalホストがrelay-load-balancerとして動作するように構成方法&#34;&gt;GO-GlobalホストがRelay Load Balancerとして動作するように構成方法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;すべてのホストのリストから目的のホストを選択します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;All Hosts&lt;/strong&gt; のリストから目的のホストを選択します。&lt;/li&gt;
 &lt;li&gt;[Tools | Host Options]をクリックします。&lt;/li&gt;
-&lt;li&gt;[Configuration]タブをクリックします。&lt;/li&gt;
-&lt;li&gt;[Relay Load Balancer address]ボックスにコンピュータの名前またはIPアドレスを入力します。&lt;/li&gt;
-&lt;li&gt;[OK]をクリックします。&lt;/li&gt;
-&lt;li&gt;Relay Load Balancer上のApplication Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。OKをクリックします。&lt;/li&gt;
-&lt;li&gt;コントロールパネルの[サービス]オプションから、GO-Global Application Publishing Serviceを停止して再起動します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Configuration]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Relay Load Balancer address]&lt;/strong&gt; ボックスにコンピュータの名前またはIPアドレスを入力します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;Relay Load Balancer上の &lt;strong&gt;Application Publishing Service&lt;/strong&gt; が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 &lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;コントロールパネルの[サービス]オプションから、 &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止して再起動します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;1つ以上のDependent HostでRelay Load Balancerとして動作するようにホストを設定すると、GO-Globalはクライアント接続の負荷分散を行い、セッションが正常に開始されるようにします。選択したホストでセッションの開始に失敗した場合、Relay Load Balancerは別のホストを選択し、セッションをサポートできるホストが見つかるまで再試行します。
-各Dependent Hostの負荷は、Dependent Host上で実行されているセッションの数を、Dependent HostのAdmin Consoleで設定されているこのホストの最大セッション数で割った値として計算されます。
-Relay Load Balancer環境を設定する際には、Relay Load Balancerの &lt;strong&gt;Log Folder&lt;/strong&gt; パスがDependent Hosts上に存在することを確認してください。そうしないと、ユーザがGO-Globalにサインインしようとしたときに &lt;strong&gt;Sign In&lt;/strong&gt; ダイアログが表示されません。各Relay Load BalancerのC:ドライブ上にログディレクトリを作成するか(例：&lt;code&gt;C:DATA\DataAPS_LOGS&lt;/code&gt;)、またはDependent Hosts上に既に存在する&lt;code&gt;C:DATA\Program Files\GraphOn\GO-Global\Log&lt;/code&gt;を使用します。Admin Consoleの&lt;strong&gt;Log Folder&lt;/strong&gt;のパスを変更するだけでなく、\Log\Codesと \Log\Templatesのディレクトリを新しい場所にコピーする必要があります。&lt;/p&gt;
+各Dependent Hostの負荷は、Dependent Host上で実行されているセッションの数を、Dependent HostのAdmin Consoleで設定されているこの &lt;strong&gt;ホストの最大セッション数&lt;/strong&gt; で割った値として計算されます。
+Relay Load Balancer環境を設定する際には、Relay Load Balancerの &lt;strong&gt;Log Folder&lt;/strong&gt; パスがDependent Hosts上に存在することを確認してください。そうしないと、ユーザがGO-Globalにサインインしようとしたときに &lt;strong&gt;Sign In&lt;/strong&gt; ダイアログが表示されません。各Relay Load BalancerのC:ドライブ上にログディレクトリを作成するか(例：&lt;code&gt;C:DATA\DataAPS_LOGS&lt;/code&gt;)、またはDependent Hosts上に既に存在する&lt;code&gt;C:DATA\Program Files\GraphOn\GO-Global\Log&lt;/code&gt;を使用します。Admin Consoleの &lt;strong&gt;Log Folder&lt;/strong&gt; のパスを変更するだけでなく、\Log\Codesと \Log\Templatesのディレクトリを新しい場所にコピーする必要があります。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -103,16 +103,16 @@ Dependent Hostsに必要なメモリとCPUは、公開するアプリケーシ�
 &lt;ol&gt;
 &lt;li&gt;&lt;strong&gt;All Hosts.&lt;/strong&gt; のリストから目的のホストを選択します。&lt;/li&gt;
 &lt;li&gt;[Tools | Host Options]をクリックします。&lt;/li&gt;
-&lt;li&gt;[Configuration]タブをクリックします。&lt;/li&gt;
-&lt;li&gt;[Application Host] をクリックします。&lt;/li&gt;
-&lt;li&gt;[Dependent Host] をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Configuration]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Application Host]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Dependent Host]&lt;/strong&gt; をクリックします。&lt;/li&gt;
 &lt;li&gt;[Relay Lad Balancer address]ボックスにRelay Load BalancerのIPアドレスを入力します。&lt;/li&gt;
 &lt;li&gt;[OK]をクリックします。&lt;/li&gt;
-&lt;li&gt;Application Publishing Serviceが再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。[OK]をクリックします。&lt;/li&gt;
-&lt;li&gt;コントロールパネルの[サービス]オプションからGO-Global Application Publishing Serviceを停止して再起動します。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Application Publishing Service&lt;/strong&gt; が再起動されるまで変更は有効ではないことを示すメッセージボックスが表示されます。 &lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;コントロールパネルの[サービス]オプションから &lt;strong&gt;GO-Global Application Publishing Service&lt;/strong&gt; を停止して再起動します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Application Publishing Serviceを再起動すると、Admin ConsoleのGO-Globalホストのリストで、Relay Load Balancerの下にDependent Hostが表示されます。Dependent Hostの色が黄色になっている場合は、そのホストが&amp;quot;孤立状態&amp;quot;になっていることを示しています(言い換えれば、Relay Load Balancerがダウンしていることを示しています）。Application Publishing Serviceがホスト上で実行されていない場合、ホストのアイコンは赤色になります。
-ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。統合Windows認証を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。&lt;/p&gt;
+ユーザの認証は、Relay Load Balancerではなく、Dependent Hostで行われます。その結果、Dependent Hostは、関連するRelay Load Balancerとは異なるネットワーク上に配置されることがあります。例えば、Dependent Hostは内部のActive Directoryネットワーク上のファイアウォールの後ろにあり、関連するRelay Load Balancerはファイアウォールの外にあるDMZ(非武装地帯)に位置することができます。 &lt;strong&gt;統合Windows認証&lt;/strong&gt; を使用する場合、クライアントとDependent Hostは同じドメインに配置する必要がありますが、Relay Load Balancerは別のドメインに配置することができます。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -124,14 +124,14 @@ Dependent Hostsに必要なメモリとCPUは、公開するアプリケーシ�
 
 &lt;p&gt;&lt;img src=&#34;/img/5-6-1.png&#34; alt=&#34;5-6-1&#34;&gt;&lt;/p&gt;
 &lt;h2 id=&#34;メンテナンスのためのdependent-hostのオフライン化&#34;&gt;メンテナンスのためのDependent Hostのオフライン化&lt;/h2&gt;
-&lt;p&gt;管理者は、[Session Startup]タブでMaximum sessions on this hostを0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。&lt;/p&gt;
+&lt;p&gt;管理者は、 &lt;strong&gt;[Session Startup]&lt;/strong&gt; タブで &lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; を0に設定することで、新規ユーザがGO-Globalホストに接続できないようにすることができます。これにより、管理者はRelay Load Balancer環境からDependent Hostを潔く削除することができます。&lt;/p&gt;
 &lt;h3 id=&#34;dependent-hostをオフラインにする方法&#34;&gt;Dependent Hostをオフラインにする方法&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;すべてのホストのリストから目的のDependent Hostを選択します。&lt;/li&gt;
 &lt;li&gt;[Tools | Host Options]をクリックします。&lt;/li&gt;
-&lt;li&gt;[Session Startup]タブをクリックします。&lt;/li&gt;
-&lt;li&gt;Maximum sessions on this hostボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。&lt;/li&gt;
-&lt;li&gt;[OK]をクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[Session Startup]&lt;/strong&gt; タブをクリックします。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; ボックスの値を0に設定します。これにより、新しいユーザがホストに接続できなくなります。&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;[OK]&lt;/strong&gt; をクリックします。&lt;/li&gt;
 &lt;/ol&gt;
 
       </description>
@@ -186,7 +186,7 @@ Dependent Hostsに必要なメモリとCPUは、公開するアプリケーシ�
     </item>
     
     <item>
-      <title>Docs: Support for Third-Party Load Balancers</title>
+      <title>Docs: サードパーティ製のロードバランサのサポート</title>
       <link>/docs/go-global61/loadbalancing/supportforthird-partyloadbalancers/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -196,27 +196,27 @@ Dependent Hostsに必要なメモリとCPUは、公開するアプリケーシ�
         
         &lt;p&gt;GO-Globalの新しいファームホストおよびファームマネージャの役割により、管理者はサードパーティのロードバランサを介してアクセスされるGO-Globalアプリケーションホストのファームを簡単に管理することができます。管理者はこれらの役割を使用して、ファーム全体で実行されているセッションを管理およびシャドウすることができ、ファーム内のすべてのファームホストの設定を一度に設定することができます。また、新しいファームホストがファームに参加すると、ファーム内の他のホストの設定を自動的に継承します。&lt;/p&gt;
 &lt;p&gt;さらに、これらの新しい役割により、サードパーティのロードバランサを介してGO-Globalホストに接続しているユーザは、あるデバイスからセッションを切断し、別のデバイスからセッションに再接続することができます。ロードバランサがユーザのセッションが実行されているホストへの接続に失敗した場合でも、GO-Globalは自動的にユーザをセッションに再接続します。
-たとえば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。&lt;/p&gt;
+例えば、ホストAでセッションが実行されているユーザが、仕事中にセッションを切断して帰宅し、自宅のコンピュータからセッションに再接続した場合、GO-Globalはユーザがセッションに再接続されていることを確認します。ロードバランサがユーザの接続をホストBにルーティングした場合、ホストBはホストAに接続を開き、AppControllerとホストAの間でデータを中継します。&lt;/p&gt;
 &lt;h3 id=&#34;これらの機能を有効にする方法&#34;&gt;これらの機能を有効にする方法&lt;/h3&gt;
 &lt;ol&gt;
-&lt;li&gt;GO-Globalファームマネージャを作成します。
-a. サードパーティのロードバランサに接続されていないコンピュータにGO-Globalホストをインストールします。
-b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
-c. Application Publishing Serviceを再起動します。&lt;/li&gt;
-&lt;li&gt;ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
-a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。
-b. ステップ1で設定したファームマネージャのアドレスをFarm Manager addressフィールドに入力します。
-c. Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;li&gt;GO-Globalファームマネージャを作成します。&lt;br&gt;
+a. サードパーティのロードバランサに &lt;strong&gt;接続されていない&lt;/strong&gt; コンピュータにGO-Globalホストをインストールします。&lt;br&gt;
+b. Admin Consoleを実行し、サーバの役割を &lt;strong&gt;Farm Manager&lt;/strong&gt; に設定します。&lt;br&gt;
+c. &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。&lt;br&gt;
+a. Admin Consoleを実行し、サーバの役割をファームホストに設定します。&lt;br&gt;
+b. ステップ1で設定したファームマネージャのアドレスを &lt;strong&gt;Farm Manager address&lt;/strong&gt; フィールドに入力します。&lt;br&gt;
+c. &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;管理者は、以下のようにフェイルオーバーファームマネージャを構成することで、ファームに高可用性を提供することができます。&lt;/p&gt;
 &lt;ol&gt;
-&lt;li&gt;フェールオーバーファームマネージャを作成します。
-a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。
-b. Admin Consoleを実行し、サーバの役割をファームマネージャに設定します。
-c. Application Publishing Serviceを再起動します。&lt;/li&gt;
-&lt;li&gt;ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。
-a. Admin Consoleを実行し、Farm Manager addressフィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。
-b. Application Publishing Serviceを再起動します。&lt;/li&gt;
+&lt;li&gt;フェールオーバーファームマネージャを作成します。&lt;br&gt;
+a. サードパーティのロードバランサに接続されていない別のコンピュータにGO-Globalホストをインストールします。&lt;br&gt;
+b. Admin Consoleを実行し、サーバの役割を &lt;strong&gt;Farm Manager&lt;/strong&gt; に設定します。&lt;br&gt;
+c. &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;ロードバランサからアクセス可能な各GO-Globalアプリケーションホスト上で、以下を実行します。&lt;br&gt;
+a. Admin Consoleを実行し、 &lt;strong&gt;Farm Manager address&lt;/strong&gt; フィールドのプライマリファームマネージャのアドレスにセミコロンとフェイルオーバーファームマネージャのアドレスを追加します。&lt;br&gt;
+b. &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;br&gt;&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;新しいファームマネージャとファームホストサーバの役割は、長年にわたってGO-Global Relay ServerとDependent Hostの役割をサポートしてきたのと同じインフラストラクチャと設計によってサポートされています。ただし、Relay Serverとは異なり、ファームマネージャはGO-Globalクライアントとホスト間でデータを中継しないため、Relay Serverのような拡張性の制限を受けません。ファームマネージャはファーム内で実行されているすべてのセッションを追跡しますが、管理者がセッションをシャドウイングしていない限り、セッション内で実行されているアプリケーションからのデータがファームマネージャを通過することはありません。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/5-7-1.png&#34; alt=&#34;5-7-1&#34;&gt;&lt;/p&gt;
@@ -225,7 +225,7 @@ b. Application Publishing Serviceを再起動します。&lt;/li&gt;
     </item>
     
     <item>
-      <title>Docs: License Server Configuration</title>
+      <title>Docs: ライセンスサーバの構成</title>
       <link>/docs/go-global61/loadbalancing/licenseserverconfiguration/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -233,19 +233,19 @@ b. Application Publishing Serviceを再起動します。&lt;/li&gt;
       <description>
         
         
-        &lt;p&gt;Independent HostがRelay Load BalancerまたはDependent Hostとして動作するように設定されている場合、GO-Globalはホストのライセンス設定を自動的に変更しません。たとえば、Independent Hostがホストと同じコンピュータにインストールされているOn-premisesを使用するように設定されている場合、ホストがRelay Load Balancerに接続された後も、そのホストはこのOn-premisesライセンスを使用し続けます。これはデフォルトの構成ですが、一般的には最適なライセンス構成ではありません。Relay Load Balancerとその依存ホストは、すべて同じライセンスサーバを使用するように設定するか、Cloudライセンスを使用する場合は、同じCloudライセンスを使用するように設定する必要があります。
+        &lt;p&gt;Independent HostがRelay Load BalancerまたはDependent Hostとして動作するように設定されている場合、GO-Globalはホストのライセンス設定を自動的に変更しません。例えば、Independent Hostがホストと同じコンピュータにインストールされているOn-premisesを使用するように設定されている場合、ホストがRelay Load Balancerに接続された後も、そのホストはこのOn-premisesライセンスを使用し続けます。これはデフォルトの構成ですが、一般的には最適なライセンス構成ではありません。Relay Load BalancerとそのDependent Hostは、すべて同じライセンスサーバを使用するように設定するか、Cloudライセンスを使用する場合は、同じCloudライセンスを使用するように設定する必要があります。
 On-premisesライセンスを使用しており、高可用性を必要としない場合は、Relay Load Balancer上のライセンスサーバーを中央ライセンスサーバーとして使用するように、Dependent Hostを設定することをお勧めします。(複数のホスト環境を参照し、Dependent HostがRelay Load Balancer上のライセンスサーバのポートに接続できることを確認してください)。
 On-premisesライセンスを使用しており、高可用性が必要な場合は、3台の冗長ライセンスサーバを使用するようにRelay Load BalancerとそのDependent Hostを設定することをお勧めします。&lt;/p&gt;
 &lt;p&gt;Cloudライセンスを使用しており、高可用性を必要としない場合は、Relay Load Balancer上でGO-Globalを有効にすることを推奨します。また、Cloudライセンスを使用しており、高可用性が必要な場合は、プライマリのRelay Load BalancerとフェイルオーバのRelay Load Balancerの両方でGO-Globalを起動し、それぞれをもう一方のバックアップライセンスサーバに設定することをお勧めします。
-これらの構成では、どちらのコンピュータを選択したかにかかわらず、Admin Consoleの[License]タブに同じライセンス情報がレポートされます。
-バージョン6.1以前のバージョンでは、GO-GlobalはデフォルトでDependent Hostのライセンスを管理していました。この構成では、管理者は各Dependent Hostで中央ライセンスマネージャを使用するように構成する必要がありました。バージョン 6.1より、管理者はこの設定を行う必要がなくなりました。GO-GlobalはデフォルトでRelay Load Balancerからライセンスを管理するようになりました。これにより、管理者はライセンス構成を変更することなく、Relay Load BalancerからDependent Hostを追加および削除できるようになりました。&lt;/p&gt;
+これらの構成では、どちらのコンピュータを選択したかにかかわらず、Admin Consoleの &lt;strong&gt;[License]&lt;/strong&gt; タブに同じライセンス情報がレポートされます。
+バージョン6.1以前のバージョンでは、GO-GlobalはデフォルトでDependent Hostのライセンスを管理していました。この構成では、管理者は各Dependent Hostでセントラルライセンスマネージャを使用するように構成する必要がありました。バージョン 6.1より、管理者はこの設定を行う必要がなくなりました。GO-GlobalはデフォルトでRelay Load Balancerからライセンスを管理するようになりました。これにより、管理者はライセンス構成を変更することなく、Relay Load BalancerからDependent Hostを追加および削除できるようになりました。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-旧バージョンからバージョン6.1にアップグレードされたDependent Hostは、Dependent Hostからのライセンス管理を継続します。管理者は、アップグレード後に、すべてのDependent HostとRelay Load BalancerのHostProperties.xmlファイルのManageLicensesFromプロパティの値をHostからRelayに編集することで、これを変更することができます。
+旧バージョンからバージョン6.1にアップグレードされたDependent Hostは、Dependent Hostからのライセンス管理を継続します。管理者は、アップグレード後に、すべてのDependent HostとRelay Load Balancerの &lt;strong&gt;HostProperties.xml&lt;/strong&gt; ファイルの &lt;strong&gt;ManageLicensesFrom&lt;/strong&gt; プロパティの値を &lt;strong&gt;Host&lt;/strong&gt; から &lt;strong&gt;Relay&lt;/strong&gt; に編集することで、これを変更することができます。
 &lt;/div&gt;
 
 
@@ -253,7 +253,7 @@ On-premisesライセンスを使用しており、高可用性が必要な場合
     </item>
     
     <item>
-      <title>Docs: Administering Relay Load Balancers and Dependent Hosts on Different Networks </title>
+      <title>Docs: 異なるネットワーク上のRelay Load BalancerとDependent Hostの管理</title>
       <link>/docs/go-global61/loadbalancing/administeringrelayloadbalancersanddependenthostsondifferentnetworks/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -262,18 +262,18 @@ On-premisesライセンスを使用しており、高可用性が必要な場合
         
         
         &lt;p&gt;ユーザがRelay Load BalancerまたはDependent HostでAdmin Consoleを起動すると、Admin ConsoleはRelay Load Balancerに接続し、統合Windows認証を使用してユーザの認証を試みます。Admin ConsoleがDependent Host上で実行されていて、関連するRelay Load Balancerが別のネットワーク上にある場合は、次のようなメッセージが表示されます。&lt;/p&gt;
-&lt;p&gt;&amp;ldquo;Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？&amp;rdquo;&lt;/p&gt;
-&lt;p&gt;Noをクリックすると、Admin ConsoleのAll Hostsノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。&lt;br&gt;&lt;/p&gt;
+&lt;p&gt;&amp;ldquo;This computer (Server4) and Server 8 may be located on different networks. Would you like to log onto Server 8 and administer it remotely?(Server8へのログオンに失敗しました。このコンピュータ(Server4)とServer8は異なるネットワーク上にある可能性があります。サーバー8にログオンしてリモートで管理しますか？)&amp;rdquo;&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;No&lt;/strong&gt; をクリックすると、Admin Consoleの &lt;strong&gt;All Hosts&lt;/strong&gt; ノードに戻ります。Yesをクリックすると、以下のようにRelay Load Balancer上で特別なリモート管理セッションが開始されます。&lt;br&gt;&lt;/p&gt;
 &lt;ol&gt;
 &lt;li&gt;Dependent Hostの Admin Console が GO-Global Client を起動します。&lt;/li&gt;
-&lt;li&gt;クライアントがRelay Load Balancerに接続し、セッションを開始します。サインイン**ダイアログがユーザに表示されます。&lt;/li&gt;
+&lt;li&gt;クライアントがRelay Load Balancerに接続し、セッションを開始します。 &lt;strong&gt;Sign In&lt;/strong&gt; ダイアログがユーザに表示されます。&lt;/li&gt;
 &lt;li&gt;Relay Load Balancer上のAdministratorsグループのメンバーであるアカウントのユーザ名とパスワードを指定してサインインします。&lt;/li&gt;
 &lt;li&gt;Relay Load Balancer上でAdmin Consoleが起動します。これで、ユーザはRelay Load BalancerとそのDependent Hostすべてを管理できるようになります。&lt;/li&gt;
 &lt;li&gt;Admin Consoleの &lt;strong&gt;Maximum sessions on this host&lt;/strong&gt; 設定やライセンスの制限に関係なく、Relay Load Balancer上では常に最大2つの管理セッションを実行できます。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;Dependent Hostは、公開されているアプリケーションのリスト、サーバ設定、ユーザ設定をRelay Load Balancerから継承します。アプリケーションは、すべてのDependent Host上の同じディレクトリにインストールする必要があります。アプリケーションはRelay Load Balancerにインストールする必要はありません。GO-GlobalホストがRelay Load Balancerに接続されると、そのサーバ設定はすべてRelay Load Balancerの設定と同期されます。&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されているすべてのホスト&lt;strong&gt;にも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。ホストオプション&lt;/strong&gt;とアプリケーションのプロパティ**ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。&lt;/p&gt;
-&lt;p&gt;Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.0がDependent HostのC:Greatment Files\AdobeAcrobat 8.0\Reader\AcroRd32.exeにインストールされている場合、Relay Load BalancerのAdmin Consoleを開き、&lt;strong&gt;Add Application&lt;/strong&gt;ダイアログの&lt;strong&gt;Location&lt;/strong&gt;ボックスにこのパスの場所を入力します。&lt;/p&gt;
+&lt;p&gt;Relay Load Balancerの設定を変更すると、そのRelay Load Balancerに接続されている &lt;strong&gt;All Hosts&lt;/strong&gt; にも変更が反映されます。変えられる設定は、セッションの最大数とRelay Load Balancerの名前だけです。 &lt;strong&gt;Host Options&lt;/strong&gt;と &lt;strong&gt;Application Properties&lt;/strong&gt; ダイアログのその他の設定はすべてグレーアウトされており、変更することはできません。&lt;/p&gt;
+&lt;p&gt;Relay Load Balancerを設定する際に、Dependent Hostにアプリケーションがインストールされていても公開されていない場合は、Admin ConsoleからRelay Load Balancerにアプリケーションを公開する必要があります。例えば、Adobe Reader 8.0がDependent HostのC:Greatment Files\AdobeAcrobat 8.0\Reader\AcroRd32.exeにインストールされている場合、Relay Load BalancerのAdmin Consoleを開き、 &lt;strong&gt;Add Application&lt;/strong&gt; ダイアログの &lt;strong&gt;Location&lt;/strong&gt; ボックスにこのパスの場所を入力します。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
@@ -287,15 +287,18 @@ On-premisesライセンスを使用しており、高可用性が必要な場合
 &lt;p&gt;クライアントがRelay Load Balancerに接続すると、Relay Load Balancerは、そのホストで許可されている最大セッション数に対する割合として、実行中のセッション数が最も少ないDependent Host上でセッションを開始しようとします。
 もし、選択したホストでセッションを開始できなかった場合、Relay Load Balancerは、セッションをサポートできるホストが見つかるまで、他の利用可能なホストでもセッションを開始しようとします。&lt;/p&gt;
 &lt;p&gt;利用可能なホストがない場合(つまり、すべてのホストで実行中のセッション数が許可された最大数に等しい場合)、GO-Globalはユーザにメッセージを表示します。&lt;/p&gt;
-&lt;p&gt;** You are already running as many sessions as you are allowed. **&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;You are already running as many sessions as you are allowed.&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;そうでない場合、利用可能なホストのいずれかでセッションを開始できない場合、次のようなメッセージがユーザに表示されます:&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;** GO-Global failed to launch the Program Window for your session. **&lt;/p&gt;
-&lt;p&gt;Relay Load Balancerの設定では、GO-GlobalはRelay Load BalancerとそのDependent Hostの最大セッション設定を確認します。Relay Load Balancerの最大セッション数は、そのRelay Load Balancerに割り当てられたすべてのDependent Hostで同時に実行できるセッションの最大数です。&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;GO-Global failed to launch the Program Window for your session.&lt;/strong&gt;&lt;/p&gt;
+&lt;p&gt;Relay Load Balancerの設定では、GO-GlobalはRelay Load BalancerとそのDependent Hostsの &lt;strong&gt;最大セッション数&lt;/strong&gt; の設定を確認します。Relay Load Balacner上の最大セッション数の値は、そのRelay Load Balancerに割り当てられたすべてのDependent Host上で同時に実行できる最大セッション数です。&lt;/p&gt;
+&lt;p&gt;このホストの最大セッション数の設定を変更するには、そのホストのAdmin Consoleを開き、[Host Options｜Session Startup]をクリックします。&lt;/p&gt;
 &lt;h1 id=&#34;relay-load-balancer-in-a-dmz&#34;&gt;Relay Load Balancer in a DMZ&lt;/h1&gt;
 &lt;p&gt;DMZ内のRelay Load Balancerは、ファイアウォールによってDependent Hostから分離できますが、次の要件があります。&lt;/p&gt;
-&lt;p&gt;Dependent Hostは、ファイアウォールの背後からRelay Load Balancerに接続できる必要があります。逆は必要ありませんのでご注意ください。Relay Load Balancerは、Dependent Hostに接続できる必要はありません。
-クライアントは、DMZのRelay Load Balancerに接続できる必要があります。&lt;/p&gt;
-&lt;p&gt;依存するアプリケーションサーバー上でセッションが開始されると、依存するアプリケーションサーバーはRelay Load Balancerへの接続を開きます。Relay Load Balancerは、セッションのクライアントからデータを受信すると、この接続を介してそのデータをセッションに転送します。同様に、Relay Load Balancerはこの接続を介してセッションからデータを受け取ると、そのデータをセッションのクライアントに転送します。&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Dependent Hostは、ファイアウォールの背後からRelay Load Balancerに接続できる必要があります。逆は必要ありませんのでご注意ください。Relay Load Balancerは、Dependent Hostに接続できる必要はありません。&lt;/li&gt;
+&lt;li&gt;クライアントは、DMZのRelay Load Balancerに接続できる必要があります。&lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;依存するアプリケーションサーバ上でセッションが開始されると、依存するアプリケーションサーバはRelay Load Balancerへの接続を開きます。Relay Load Balancerは、セッションのクライアントからデータを受信すると、この接続を介してそのデータをセッションに転送します。同様に、Relay Load Balancerはこの接続を介してセッションからデータを受け取ると、そのデータをセッションのクライアントに転送します。&lt;/p&gt;
 &lt;p&gt;下図は、内部ネットワーク上のホストにアクセスを提供するための推奨構成を示しています。矢印は接続の方向を示しています。ホストはRelay Load Balancerに接続しますが、その逆ではありません。その結果、内部ファイアウォールはDMZから内部ネットワークへの接続を許可する必要はありません。この構成では、インターネット上のマシンもDMZ内のマシンも、内部ネットワーク上のホストに直接接続することはできません。
 &lt;img src=&#34;/img/5-9-1.png&#34; alt=&#34;5-9-1&#34;&gt;&lt;/p&gt;
 
@@ -303,7 +306,7 @@ On-premisesライセンスを使用しており、高可用性が必要な場合
     </item>
     
     <item>
-      <title>Docs: Application Host Manager Recovery</title>
+      <title>Docs: アプリケーションホストマネージャのリカバリ</title>
       <link>/docs/go-global61/loadbalancing/applicationhostmanagerrecovery/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
@@ -311,56 +314,52 @@ On-premisesライセンスを使用しており、高可用性が必要な場合
       <description>
         
         
-        &lt;p&gt;Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらの従属ホストは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。&lt;/p&gt;
+        &lt;p&gt;Application Publishing Serviceは、サービスに障害が発生した場合に自動的に再起動するように設定できます。たとえば、Application Publishing ServiceがRelay Load Balancer上で停止すると、クライアントは切断されますが、Relay Load Balancerに接続されていたDependent Hosts上ではセッションは継続して実行されます。これらのDependent Hostsは、15秒ごとにRelay Load Balancerへの再接続を試みます。Dependent HostsがRelay Load Balancerに再接続すると、Relay Load Balancerにセッションを再追加し、切断されたセッションに関連付けられたすべての状態情報を復元します。これにより、クライアントは自分のセッションに再接続できます。&lt;/p&gt;
 &lt;p&gt;デフォルトでは、クライアントは自動的にアプリケーションホストマネージャへの再接続を5回試みます。より高いサービス可用性を提供するために、フェイルオーバーアプリケーションホストマネージャを設定することができます。&lt;/p&gt;
 &lt;h3 id=&#34;to-configure-a-failover-application-host-manager&#34;&gt;To configure a Failover Application Host Manager&lt;/h3&gt;
 &lt;ol&gt;
 &lt;li&gt;GO-Globalホストをアプリケーションホストマネージャと同じネットワーク上の別のコンピュータにインストールします。このコンピュータがフェイルオーバーアプリケーションホストマネージャになります。すべてのクライアントおよびDependent Hosts(またはファームマネージャ)は、フェイルオーバーアプリケーションホストマネージャに接続できる必要があります。&lt;/li&gt;
-&lt;li&gt;GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。
-a. コンピュータ上で &lt;strong&gt;Admin Console&lt;/strong&gt; を実行します。
-b. [Tools | Host Options]をクリックします。
-c. [Configuration]タブをクリックします。 
-d. アプリケーションホストマネージャをクリックします。 
-e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、Relay Load Balancerをクリックします。
-f. OK をクリックします。 
-g. Application Publishing Serviceを再起動します。&lt;/li&gt;
-&lt;li&gt;プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。:&lt;br&gt;
-a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。
+&lt;li&gt;GO-Globalホストをアプリケーションホストマネージャとして実行するように設定します。&lt;br&gt;
+a. コンピュータ上で &lt;strong&gt;Admin Console&lt;/strong&gt; を実行します。&lt;br&gt;
+b. [Tools | Host Options]をクリックします。&lt;br&gt;
+c. **[Configuration]**タブをクリックします。&lt;br&gt;
+d. &lt;strong&gt;Application Host Manager&lt;/strong&gt; をクリックします。&lt;br&gt; 
+e. プライマリのアプリケーションホストマネージャがRelay Load Balancerの場合は、 &lt;strong&gt;Relay Load Balancer&lt;/strong&gt; をクリックします。プライマリのApplication Host ManagerがFarm Managerの場合は、 &lt;strong&gt;Farm Manager&lt;/strong&gt; をクリックします。&lt;br&gt;
+f. &lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;br&gt;
+g. &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動します。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;プライマリアプリケーションホストマネージャから公開アプリケーションをエクスポートし、フェイルオーバーアプリケーションホストマネージャにインポートします。&lt;br&gt;
+a. プライマリアプリケーションホストマネージャで、管理者としてRegeditを実行してください。&lt;br&gt;
 b. 以下のレジストリキーを選択してください：&lt;code&gt;\HKEY_LOCAL_MACHINE\GraphOn\GO-Global\AppServer&lt;/code&gt;&lt;br&gt;
-c. ファイル｜エクスポート&amp;hellip;**をクリックします。
-d. ファイルの名前を入力します(例: Appserver.reg)。
-e. 保存」をクリックします。
-f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。
-g. ファイルをダブルクリックします。
-h. はい」をクリックして、ファイルをインポートします。
-i. OKをクリックします。&lt;/li&gt;
-&lt;li&gt;また、「Failover Relay Load Balancer」に接続できない場合は、「Failover Relay Load Balancer」に接続するように各依存ホストを設定します。
-a. 管理者コンソールを実行します。
-b. &lt;br&gt; [ツール] &amp;gt; [ホストオプション]をクリックします。
-c. 
-d. リレーロードバランサーのアドレス**には、両方のリレーロードバランサーのアドレスを、完全修飾ドメイン名と一緒に入力します。プライマリリレーロードバランサーのアドレスを最初に入力し、セミコロンを続けて入力し、その後にフェイルオーバーリレーロードバランサーのアドレスを入力します。例：primary_relay_load_balancer.graphon.com;failover_relay_load_balancer.graphon.com&amp;lt;br
-e. OKをクリックします。&lt;/li&gt;
-&lt;li&gt;
-&lt;ol start=&#34;5&#34;&gt;
-&lt;li&gt;クライアントの起動に使用するURLとショートカットに、プライマリとフェイルオーバーの両方のRelay Load Balancerのアドレスを指定します。
-a. &lt;br&gt; &lt;br&gt; ブラウザ経由で接続するユーザーには、&lt;strong&gt;host&lt;/strong&gt; パラメータにプライマリリレーサーバーのアドレスを設定し、その後にセミコロン、その後にフェイルオーバーリレーサーバーのアドレスを設定した HTML ページまたは URL を提供します。
-b. b. インストールされたクライアントを介して接続するユーザーに、&lt;strong&gt;-h&lt;/strong&gt;コマンドライン引数をプライマリリレーサーバーのアドレスに等しくし、セミコロンの後にフェイルオーバーリレーサーバーのアドレスを続くように設定するショートカットを提供します(例: -h primary_relay_load_balancer_address;failover_relay_load_balancer_address).&lt;br&gt;。&lt;/li&gt;
+c. &lt;strong&gt;[File | Export…]&lt;/strong&gt; をクリックします。&lt;br&gt;
+d. ファイルの名前を入力します(例: Appserver.reg)。&lt;br&gt;
+e. &lt;strong&gt;Save&lt;/strong&gt; をクリックします。&lt;br&gt;
+f. このファイルをフェイルオーバーアプリケーションホストマネージャにコピーします。&lt;br&gt;
+g. ファイルをダブルクリックします。&lt;br&gt;
+h. &lt;strong&gt;Yes&lt;/strong&gt; をクリックして、ファイルをインポートします。&lt;br&gt;
+i. &lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;br&gt;&lt;/li&gt;
+&lt;li&gt;また、Failover Relay Load Balancerに接続できない場合は、Failover Relay Load Balancerに接続するように各Dependent Hostsを設定します。&lt;br&gt;
+a. Admin Consoleを実行します。&lt;br&gt;
+b. [Tools | Host Options]をクリックします。&lt;br&gt;
+c. **[Configuration]**タブをクリックします。&lt;br&gt;
+d. &lt;strong&gt;Relay Load Balancer address&lt;/strong&gt;には、両方のRelay Load Balancerのアドレスを完全修飾ドメイン名と一緒に入力します。プライマリRelay Load Balancerのアドレスを最初に入力し、セミコロンを続けて入力し、その後にフェイルオーバRelay Load Balancerのアドレスを入力します。例：primary_relay_load_balancer.graphon.com;failover_relay_load_balancer.graphon.com&lt;br&gt;
+e. &lt;strong&gt;OK&lt;/strong&gt; をクリックします。&lt;/li&gt;
+&lt;li&gt;クライアントの起動に使用するURLとショートカットに、プライマリとフェイルオーバの両方のRelay Load Balancerのアドレスを指定します。
+a. ブラウザ経由で接続するユーザには、 &lt;strong&gt;host&lt;/strong&gt; パラメータにプライマリRelay Serverのアドレスを設定し、その後にセミコロン、その後にフェイルオーバRelay Serverのアドレスを設定したHTMLページまたはURLを提供します。
+b. インストールされたクライアントを介して接続するユーザに、 &lt;strong&gt;-h&lt;/strong&gt; コマンドライン引数をプライマリRelay Serverのアドレスに等しくし、セミコロンの後にフェイルオーバRelay Serverのアドレスを続くように設定するショートカットを提供します(例: -h primary_relay_load_balancer_address;failover_relay_load_balancer_address).&lt;br&gt;。&lt;/li&gt;
 &lt;/ol&gt;
-&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;この構成では、プライマリのRelay Load Balancerが何らかの理由で障害を起こした場合、従属ホストとクライアントは自動的にフェイルオーバーサーバに再接続し、ユーザーは通常、プライマリのRelay Load Balancerが障害を起こしてから1～2分以内にセッションに再接続されます。これを下図に示します。&lt;/p&gt;
+&lt;p&gt;この構成では、プライマリのRelay Load Balancerが何らかの理由で障害を起こした場合、Dependent Hostsとクライアントは自動的にフェイルオーバーサーバに再接続し、ユーザは通常、プライマリのRelay Load Balancerが障害を起こしてから1～2分以内にセッションに再接続されます。これを下図に示します。&lt;/p&gt;
 &lt;p&gt;&lt;img src=&#34;/img/5-10-1.png&#34; alt=&#34;5-10-1&#34;&gt;&lt;/p&gt;
-&lt;p&gt;同様に、ファームマネージャの構成では、ファームマネージャが何らかの理由で障害を起こすと、ファームホストとクライアントは自動的にフェイルオーバーのファームマネージャに再接続し、ユーザーは通常、ファームマネージャの障害発生から1～2分以内にセッションに再接続されます。これを下図に示します。&lt;/p&gt;
-&lt;p&gt;&lt;img src=&#34;/img/5-10-2.png&#34; alt=&#34;5-10-2&#34;&gt; 
-&lt;br&gt; &lt;br&gt;ユーザーのセッションが自動的に再接続に失敗した場合は、クライアントのURL、ウェブページ、ショートカットのautoreconnectパラメータの値を5よりも大きい値（デフォルト）にしてください。&lt;/p&gt;
-&lt;p&gt;フェイルオーバーリレーロードバランサーがアクティブな場合（つまり、依存ホストがフェイルオーバーリレーロードバランサーに接続されている場合）、ユーザーのセッションの開始に時間がかかります。このため、プライマリのリレーロードバランサーは、オンラインになったら再起動してください。プライマリのリレーロードバランサーを再起動するには、ユーザーがクラスタに接続する可能性が低い時間帯に、Task Managerを使用してフェイルオーバーのリレーロードバランサーのaps.exeプロセスを終了します。フェールオーバーのリレーロードバランサーでaps.exeプロセスが終了すると、従属ホストとクライアントはプライマリのリレーロードバランサーに再接続します。&lt;br&gt; &lt;br&gt;クラスターの依存ホストがプライマリのRelay Load Balancerに再接続した後、フェイルオーバーのRelay Load Balancer上でApplication Publishing Serviceを再起動してください。&lt;/p&gt;
+&lt;p&gt;同様に、ファームマネージャの構成では、ファームマネージャが何らかの理由で障害を起こすと、ファームホストとクライアントは自動的にフェイルオーバーのファームマネージャに再接続し、ユーザは通常、ファームマネージャの障害発生から1～2分以内にセッションに再接続されます。これを下図に示します。&lt;/p&gt;
+&lt;p&gt;&lt;img src=&#34;/img/5-10-2.png&#34; alt=&#34;5-10-2&#34;&gt;&lt;/p&gt;
+&lt;p&gt;ユーザのセッションが自動的に再接続に失敗した場合は、クライアントのURL、Webページ、ショートカットの &lt;strong&gt;autoreconnect&lt;/strong&gt; パラメータの値を5よりも大きい値(デフォルト)にしてください。&lt;/p&gt;
+&lt;p&gt;フェイルオーバRelay Load Balancerがアクティブな場合(つまり、Dependent HostsがフェイルオーバRelay Load Balancerに接続されている場合)、ユーザのセッションの開始に時間がかかります。このため、プライマリのRelay Load Balancerは、オンラインになったら再起動してください。プライマリのRelay Load Balancerを再起動するには、ユーザがクラスタに接続する可能性が低い時間帯にタスクマネージャを使用してフェイルオーバのRelay Load Balancerのaps.exeプロセスを終了します。フェールオーバのRelay Load Balancerでaps.exeプロセスが終了すると、Dependent HostsとクライアントはプライマリのRelay Load Balancerに再接続します。クラスタのDependent HostsがプライマリのRelay Load Balancerに再接続した後、フェイルオーバのRelay Load Balancer上で &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を再起動してください。&lt;/p&gt;
 
 
 &lt;div class=&#34;alert alert-info&#34; role=&#34;alert&#34;&gt;
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;参照&lt;/h4&gt;
-Service経由でリレーロードバランサー上で&lt;strong&gt;Application Publishing Service&lt;/strong&gt;を停止または再起動すると、**GO-Globalはリレーロードバランサーの従属ホスト上で実行中のすべてのセッションを閉じます。したがって、クラスタの依存ホスト上でセッションが実行されているときにプライマリのリレーロードバランサーを再アクティベートする必要がある場合は、フェイルオーバーのリレーロードバランサー上でサービスを介してアプリケーションパブリッシングサービスを再起動しないで、代わりに、上述のようにタスクマネージャを使用してフェイルオーバーのリレーロードバランサー上でapps.exeプロセスを終了します。
+&lt;strong&gt;Service&lt;/strong&gt; 経由でRelay Load Balancer上で &lt;strong&gt;Application Publishing Service&lt;/strong&gt; を停止または再起動すると、GO-GlobalはRelay Load BalancerのDependent Hosts上で実行中のすべてのセッションを閉じます。したがって、クラスタのDependent Hosts上でセッションが実行されているときにプライマリのRelay Load Balancerを再アクティベートする必要がある場合は、フェイルオーバのRelay Load Balancer上でサービスを介してApplication Publishing Serviceを再起動しないで、代わりに、上述のようにタスクマネージャを使用してフェイルオーバのRelay Load Balancer上でapps.exeプロセスを終了します。
 &lt;/div&gt;
 
 
