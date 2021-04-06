@@ -109,9 +109,9 @@ github_project_repo = "https://github.com/google/docsy"
 # Google Custom Search Engine ID. Remove or comment out to disable search.
 gcs_engine_id = false
 # Enable Algolia DocSearch
-algolia_docsearch = false
+algolia_docsearch = true
 # Enable Lunr.js offline search
-offlineSearch = true
+offlineSearch = false
 # User interface configuration
 [params.ui]
 # Enable to show the side bar menu in its compact state.
