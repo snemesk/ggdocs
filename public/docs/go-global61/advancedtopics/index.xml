@@ -408,7 +408,7 @@ GO-Globalセッションのバックグラウンドで実行するためにWindo
 &lt;p&gt;ほとんどのアプリケーションでは、デフォルトの構成で十分です。プロセスが終了する手段を持たずに作成された特別なケースでは、待機中のプロセスの実行可能ファイルを登録することで、GO-Globalセッションを適切に終了させることができます。&lt;/p&gt;
 
 
-&lt;div class=&#34;alert alert-danger&#34; role=&#34;alert&#34;&gt;
+&lt;div class=&#34;alert alert-Alert&#34; role=&#34;alert&#34;&gt;
 
 
 &lt;h4 class=&#34;alert-heading&#34;&gt;&lt;i class=&#34;fa fa-info-circle&#34; aria-hidden=&#34;true&#34;&gt;&lt;/i&gt;警告&lt;/h4&gt;
