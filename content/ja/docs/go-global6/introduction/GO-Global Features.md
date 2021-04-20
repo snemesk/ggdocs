@@ -1,7 +1,7 @@
 ---
 title: "GO-Globalの機能"
 linkTitle: ""
-weight: 2
+weight: 03
 type: "docs"
 ---
 

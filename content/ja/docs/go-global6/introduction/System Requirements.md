@@ -1,7 +1,7 @@
 ---
 title: "GO-Globalのシステム要件"
 linkTitle: ""
-weight: 3
+weight: 04
 type: "docs"
 ---
 
@@ -16,6 +16,10 @@ GO-Globalホストは、以下のWindowsオペレーティングシステムを�
 * Windows 10 : Professional または Enterprise
 * Windows 8.1 : Professional または Enterprise
 * Windows 7 SP1 : Professional または Ultimate または Enterprise
+
+※6.0.4はWindows 10 (v2004, v20H2)
+• Professional
+• Enterprise
 
 ※マルチユーザ環境では、Windows Serverの利用を強く推奨します。
 

@@ -1,7 +1,7 @@
 ---
 title: "GO-Globalの概要"
 linkTitle: ""
-weight: 1
+weight: 01
 type: "docs"
 ---
 
