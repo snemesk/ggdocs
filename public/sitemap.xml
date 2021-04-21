@@ -36,7 +36,7 @@
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/introduction/introducing-go-global/</loc>
-    <lastmod>2021-02-16T15:10:09+09:00</lastmod>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-global61introduction/introducinggo-global/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -93,7 +93,7 @@
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/introduction/</loc>
-    <lastmod>2021-02-16T15:10:09+09:00</lastmod>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-global61introduction/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
@@ -121,9 +121,6 @@
   </url><url>
     <loc>/docs/go-global61/go-globallicensing/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
-  </url><url>
-    <loc>/docs/go-global6/introduction/go-global-features/</loc>
-    <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/configuring-the-host/installing-the-go-global-host/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -185,6 +182,9 @@
     <loc>/docs/go-global6/administering-user-accounts/setting-up-user-profiles/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
+    <loc>/docs/go-global6/introduction/revisionhistory/</loc>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
+  </url><url>
     <loc>/docs/go-global61/go-global61introduction/revisionhistory/</loc>
     <lastmod>2021-03-22T14:30:29+09:00</lastmod>
   </url><url>
@@ -215,11 +215,11 @@
     <loc>/docs/go-global5/go-global-clientno/go-global-suttoappuparamta/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
-    <loc>/docs/go-global6/introduction/system-requirements/</loc>
-    <lastmod>2021-02-16T15:10:09+09:00</lastmod>
-  </url><url>
     <loc>/docs/go-global61/configuringthehost/downgradinggoglobal/</loc>
     <lastmod>2021-03-22T14:30:29+09:00</lastmod>
+  </url><url>
+    <loc>/docs/go-global6/introduction/go-global-features/</loc>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/go-global61introduction/go-globalfeatures/</loc>
     <lastmod>2021-03-22T14:30:29+09:00</lastmod>
@@ -314,6 +314,9 @@
     <loc>/docs/go-global61/go-global61introduction/newfeatures/</loc>
     <lastmod>2021-03-22T14:30:29+09:00</lastmod>
   </url><url>
+    <loc>/docs/go-global6/introduction/system-requirements/</loc>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
+  </url><url>
     <loc>/docs/go-global5/go-global-no/go-global-no-1/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
@@ -352,9 +355,6 @@
   </url><url>
     <loc>/docs/go-global61/administeringuseraccounts/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>
-  </url><url>
-    <loc>/docs/go-global6/introduction/install-kn/</loc>
-    <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global6/appendix/creating-your-own-certificate-authority/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
@@ -431,6 +431,9 @@
     <loc>/docs/go-global6/appendix/kuraiantokbdowonisuru/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
+    <loc>/docs/go-global6/introduction/issuefix/</loc>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
+  </url><url>
     <loc>/docs/go-global6/configuring-the-host/running-go-global-through-apache-http-server/</loc>
     <lastmod>2021-02-16T15:10:09+09:00</lastmod>
   </url><url>
@@ -478,6 +481,9 @@
   </url><url>
     <loc>/docs/go-global61/go-globaladminconsole/strongencryptioncertificatewizard/</loc>
     <lastmod>2021-03-22T14:30:29+09:00</lastmod>
+  </url><url>
+    <loc>/docs/go-global6/introduction/install-kn/</loc>
+    <lastmod>2021-04-20T09:05:19+09:00</lastmod>
   </url><url>
     <loc>/docs/go-global61/advancedtopics/disablingimagecompression/</loc>
     <lastmod>2021-03-01T17:25:01+09:00</lastmod>

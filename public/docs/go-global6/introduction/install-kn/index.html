@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="google-site-verification" content="fsIuzgf_4ihss6I1A1r8hinoHD75F9e-EzqG6apyAEI" />
 <meta name="generator" content="Hugo 0.81.0-DEV" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
@@ -21,19 +22,31 @@
 <link rel="icon" type="image/png" href="/favicons/android-192x192.png" sizes="192x192">
 
 <title>既知の制限事項 | GO-Global Docs</title><meta property="og:title" content="既知の制限事項" />
-<meta property="og:description" content="以下はGO-Globalの既知の制限事項です。  GO-Globalは、グループポリシーログオンまたはログオフスクリプトをサポートしません。 MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてはサポートされていません。 既存のファイルを上書きしようとしているときに、GO-Globalホスト上のファイルをコピーしてクライアントに貼り付けると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしません。 GO-Globalは、GO-GlobalセッションでAdobe Acrobat 8.0をサポートします。 以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、AppleのPreviewアプリケーションはサポートされていません。 Mac OS X Appを実行するときに印刷するには、Adobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用します。このポートは変更できません。 GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバで印刷できません。 ライセンスファイルを追加または削除するたびに、GO-Global License Managerサービスを再起動する必要があります。 日本語キーボードは、-kb ClientSideIMEオプションを指定したMac OS Xでのみサポートされています。 クライアントのタスクマネージャが[常に手前に表示]に設定されていると、塗装の問題が発生することがあります。 クライアントのディスプレイが256色に設定されていると、色が正しく表示されない場合があります。 ジャーナルレコードフックはサポートされていません。そのため、マクロはアプリケーションによっては記録に失敗することがあります。 クライアントサイドファイルに埋め込まれているOLEオブジェクトは編集できません。 OLEオブジェクトの編集に必要なアプリケーションがホスト上で使用可能な場合は、ファイルをホスト上のドライブにコピーして編集し、必要に応じてそれをクライアントにコピーします。 Windows以外のクライアントでは、クライアントで実行されているアプリケーションとホストで実行されているアプリケーションの間でコピーして貼り付けることができるのは、テキストと画像だけです。 GO-Global ホストがrelay serverに接続されている場合、そのホストの接続が切断されているという警告は表示されません。設定(公開アプリケーションなど)は、relay server,の設定に置き換えられます。 セッションがシャドウされている間、ユーザは切断されたセッションに再接続できません。 GO-Globalは、システムアカウント以外のアカウントでのApplication Publishing Serviceの実行をサポートしていません。 キーボードマッピングのコマンドライン引数-kbは、LinuxおよびMac OS Xでは大文字と小文字が区別されます。-KBは機能しません。 GO-Globalは/ 3GBスイッチをサポートしません。 pdfforgeのPDFCreatorはサポートされていません。 ユニバーサルプリンタドライバを使用する場合、マイクロソフトのXPSドキュメントライタはクライアントプリンタとしてサポートされていますが、XPSプリンタドライバはサポートされていません。 dependent application serverからGO-Globalを管理するとき、異なるアカウントを使用して2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。 代わりに、relay serverでAdmin Consoleを実行してください。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしません。 Admin Consoleで[Apply Group Policy]が有効になっていると、セッションの開始に時間がかかります。 ユーザが統合Windows認証で認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。  " />
+<meta property="og:description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+  GO-Globalとウイルス対策製品は、Windowsの機能を拡張するために同様の技術を使用しています。そのため、GO-Globalとウイルス対策製品との間に互換性がない場合があります。以下の製品は、GO-Globalとの互換性がありません。
+ AVG アンチウイルス Kaspersky Antivirus (32ビットアプリケーションが起動しない) Sentinel One Antivirus Trend Micro Antivirus - ワークアラウンド。aps.exe および logon.exe をトレンド動作監視の対象外としてください。 CrowdStrike Falcon Antivirus（クラウドストライク ファルコン アンチウイルス Acronis Cyber Protect Cloud (Acronisバックアップソリューションに含まれる) Avast Antivirus (Windows 10では互換性がありません)    Windows 10でGO-Global Hostと一緒にMcAfee Total Protection 16.0 R1をインストールすると、セッションが開始できないことがあります。この場合、コンピュータを再起動するとセッションが開始されます。
+  Windows 10 で F-Secure Anti-Virus を GO-Global Host と一緒にインストールした場合、セッションの開始に 2 分以上かかります。この問題を回避するには、以下の方法があります。
+ F-Secure を開きます。 右ペインの [AntiVirus] タブを選択します。 設定] をクリックします。 DeepGuard］を選択します。 View excluded files］をクリックします。 Add new］をクリックします。 C:Windows%System32」を追加します。 C:Program Files\\\\\\⁾⁾を追加する。 F-Secureのウィンドウをすべて閉じます。 10." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="/docs/go-global6/introduction/install-kn/" /><meta property="article:section" content="docs" />
 
-<meta property="article:modified_time" content="2021-02-16T15:10:09&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
+<meta property="article:modified_time" content="2021-04-20T09:05:19&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 
 <meta itemprop="name" content="既知の制限事項">
-<meta itemprop="description" content="以下はGO-Globalの既知の制限事項です。  GO-Globalは、グループポリシーログオンまたはログオフスクリプトをサポートしません。 MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてはサポートされていません。 既存のファイルを上書きしようとしているときに、GO-Globalホスト上のファイルをコピーしてクライアントに貼り付けると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしません。 GO-Globalは、GO-GlobalセッションでAdobe Acrobat 8.0をサポートします。 以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、AppleのPreviewアプリケーションはサポートされていません。 Mac OS X Appを実行するときに印刷するには、Adobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用します。このポートは変更できません。 GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバで印刷できません。 ライセンスファイルを追加または削除するたびに、GO-Global License Managerサービスを再起動する必要があります。 日本語キーボードは、-kb ClientSideIMEオプションを指定したMac OS Xでのみサポートされています。 クライアントのタスクマネージャが[常に手前に表示]に設定されていると、塗装の問題が発生することがあります。 クライアントのディスプレイが256色に設定されていると、色が正しく表示されない場合があります。 ジャーナルレコードフックはサポートされていません。そのため、マクロはアプリケーションによっては記録に失敗することがあります。 クライアントサイドファイルに埋め込まれているOLEオブジェクトは編集できません。 OLEオブジェクトの編集に必要なアプリケーションがホスト上で使用可能な場合は、ファイルをホスト上のドライブにコピーして編集し、必要に応じてそれをクライアントにコピーします。 Windows以外のクライアントでは、クライアントで実行されているアプリケーションとホストで実行されているアプリケーションの間でコピーして貼り付けることができるのは、テキストと画像だけです。 GO-Global ホストがrelay serverに接続されている場合、そのホストの接続が切断されているという警告は表示されません。設定(公開アプリケーションなど)は、relay server,の設定に置き換えられます。 セッションがシャドウされている間、ユーザは切断されたセッションに再接続できません。 GO-Globalは、システムアカウント以外のアカウントでのApplication Publishing Serviceの実行をサポートしていません。 キーボードマッピングのコマンドライン引数-kbは、LinuxおよびMac OS Xでは大文字と小文字が区別されます。-KBは機能しません。 GO-Globalは/ 3GBスイッチをサポートしません。 pdfforgeのPDFCreatorはサポートされていません。 ユニバーサルプリンタドライバを使用する場合、マイクロソフトのXPSドキュメントライタはクライアントプリンタとしてサポートされていますが、XPSプリンタドライバはサポートされていません。 dependent application serverからGO-Globalを管理するとき、異なるアカウントを使用して2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。 代わりに、relay serverでAdmin Consoleを実行してください。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしません。 Admin Consoleで[Apply Group Policy]が有効になっていると、セッションの開始に時間がかかります。 ユーザが統合Windows認証で認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。  ">
-<meta itemprop="dateModified" content="2021-02-16T15:10:09&#43;09:00" />
-<meta itemprop="wordCount" content="60">
+<meta itemprop="description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+  GO-Globalとウイルス対策製品は、Windowsの機能を拡張するために同様の技術を使用しています。そのため、GO-Globalとウイルス対策製品との間に互換性がない場合があります。以下の製品は、GO-Globalとの互換性がありません。
+ AVG アンチウイルス Kaspersky Antivirus (32ビットアプリケーションが起動しない) Sentinel One Antivirus Trend Micro Antivirus - ワークアラウンド。aps.exe および logon.exe をトレンド動作監視の対象外としてください。 CrowdStrike Falcon Antivirus（クラウドストライク ファルコン アンチウイルス Acronis Cyber Protect Cloud (Acronisバックアップソリューションに含まれる) Avast Antivirus (Windows 10では互換性がありません)    Windows 10でGO-Global Hostと一緒にMcAfee Total Protection 16.0 R1をインストールすると、セッションが開始できないことがあります。この場合、コンピュータを再起動するとセッションが開始されます。
+  Windows 10 で F-Secure Anti-Virus を GO-Global Host と一緒にインストールした場合、セッションの開始に 2 分以上かかります。この問題を回避するには、以下の方法があります。
+ F-Secure を開きます。 右ペインの [AntiVirus] タブを選択します。 設定] をクリックします。 DeepGuard］を選択します。 View excluded files］をクリックします。 Add new］をクリックします。 C:Windows%System32」を追加します。 C:Program Files\\\\\\⁾⁾を追加する。 F-Secureのウィンドウをすべて閉じます。 10.">
+<meta itemprop="dateModified" content="2021-04-20T09:05:19&#43;09:00" />
+<meta itemprop="wordCount" content="355">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="既知の制限事項"/>
-<meta name="twitter:description" content="以下はGO-Globalの既知の制限事項です。  GO-Globalは、グループポリシーログオンまたはログオフスクリプトをサポートしません。 MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてはサポートされていません。 既存のファイルを上書きしようとしているときに、GO-Globalホスト上のファイルをコピーしてクライアントに貼り付けると、うまくいかない場合があります。 GO-GlobalはParallels Virtuozzoをサポートしません。 GO-Globalは、GO-GlobalセッションでAdobe Acrobat 8.0をサポートします。 以前のバージョンのAcrobatはサポートされていません。 Macから印刷する場合、AppleのPreviewアプリケーションはサポートされていません。 Mac OS X Appを実行するときに印刷するには、Adobe Readerが必要です。 GO-Globalのユニバーサルプリンタドライバはポート9010を使用します。このポートは変更できません。 GO-Globalホスト上の他のソフトウェアがポート9010を使用している場合、ユーザはユニバーサルプリンタドライバで印刷できません。 ライセンスファイルを追加または削除するたびに、GO-Global License Managerサービスを再起動する必要があります。 日本語キーボードは、-kb ClientSideIMEオプションを指定したMac OS Xでのみサポートされています。 クライアントのタスクマネージャが[常に手前に表示]に設定されていると、塗装の問題が発生することがあります。 クライアントのディスプレイが256色に設定されていると、色が正しく表示されない場合があります。 ジャーナルレコードフックはサポートされていません。そのため、マクロはアプリケーションによっては記録に失敗することがあります。 クライアントサイドファイルに埋め込まれているOLEオブジェクトは編集できません。 OLEオブジェクトの編集に必要なアプリケーションがホスト上で使用可能な場合は、ファイルをホスト上のドライブにコピーして編集し、必要に応じてそれをクライアントにコピーします。 Windows以外のクライアントでは、クライアントで実行されているアプリケーションとホストで実行されているアプリケーションの間でコピーして貼り付けることができるのは、テキストと画像だけです。 GO-Global ホストがrelay serverに接続されている場合、そのホストの接続が切断されているという警告は表示されません。設定(公開アプリケーションなど)は、relay server,の設定に置き換えられます。 セッションがシャドウされている間、ユーザは切断されたセッションに再接続できません。 GO-Globalは、システムアカウント以外のアカウントでのApplication Publishing Serviceの実行をサポートしていません。 キーボードマッピングのコマンドライン引数-kbは、LinuxおよびMac OS Xでは大文字と小文字が区別されます。-KBは機能しません。 GO-Globalは/ 3GBスイッチをサポートしません。 pdfforgeのPDFCreatorはサポートされていません。 ユニバーサルプリンタドライバを使用する場合、マイクロソフトのXPSドキュメントライタはクライアントプリンタとしてサポートされていますが、XPSプリンタドライバはサポートされていません。 dependent application serverからGO-Globalを管理するとき、異なるアカウントを使用して2つのシステムに対話的にログオンしている場合、Admin Consoleを使用してrelay serverに接続することはできません。 代わりに、relay serverでAdmin Consoleを実行してください。 GO-Globalは、システムトレイと統合するアプリケーションをサポートしません。 Admin Consoleで[Apply Group Policy]が有効になっていると、セッションの開始に時間がかかります。 ユーザが統合Windows認証で認証し、サーバ側のパスワードキャッシュが無効になっている場合、ホストのテーマは適用されません。  "/>
+<meta name="twitter:description" content="このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、解決された問題に記載されていない限り次のビルドでも引き続き存在します。
+  GO-Globalとウイルス対策製品は、Windowsの機能を拡張するために同様の技術を使用しています。そのため、GO-Globalとウイルス対策製品との間に互換性がない場合があります。以下の製品は、GO-Globalとの互換性がありません。
+ AVG アンチウイルス Kaspersky Antivirus (32ビットアプリケーションが起動しない) Sentinel One Antivirus Trend Micro Antivirus - ワークアラウンド。aps.exe および logon.exe をトレンド動作監視の対象外としてください。 CrowdStrike Falcon Antivirus（クラウドストライク ファルコン アンチウイルス Acronis Cyber Protect Cloud (Acronisバックアップソリューションに含まれる) Avast Antivirus (Windows 10では互換性がありません)    Windows 10でGO-Global Hostと一緒にMcAfee Total Protection 16.0 R1をインストールすると、セッションが開始できないことがあります。この場合、コンピュータを再起動するとセッションが開始されます。
+  Windows 10 で F-Secure Anti-Virus を GO-Global Host と一緒にインストールした場合、セッションの開始に 2 分以上かかります。この問題を回避するには、以下の方法があります。
+ F-Secure を開きます。 右ペインの [AntiVirus] タブを選択します。 設定] をクリックします。 DeepGuard］を選択します。 View excluded files］をクリックします。 Add new］をクリックします。 C:Windows%System32」を追加します。 C:Program Files\\\\\\⁾⁾を追加する。 F-Secureのウィンドウをすべて閉じます。 10."/>
 
 
 
@@ -90,7 +103,7 @@
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7ba404104f8f78e1c5eb51f6488745004fb52abbdb26754c4bb75f9baf0e01a60d810d38fddba3e9f4d9e5b5240abd2610364723348565d44b751fe4e552d823.json"
+  data-offline-search-index-json-src="/offline-search-index.3bf4e702d95dbef291c1bf07e71b03c7bfd8b9f9ed155cc72a5442b078d84b497abe04f99522dd8b4f230675a02891e8054125f6c245d73f0a586cbe6d8f1c06.json"
   data-offline-search-base-href="/"
 >
 
@@ -1070,6 +1083,12 @@
       
       
       
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global6introductionrevisionhistory" href="/docs/go-global6/introduction/revisionhistory/">変更履歴</a>
+      
+      
+      
+      
+      
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global6introductiongo-global-features" href="/docs/go-global6/introduction/go-global-features/">GO-Globalの機能</a>
       
       
@@ -1077,6 +1096,12 @@
       
       
       <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global6introductionsystem-requirements" href="/docs/go-global6/introduction/system-requirements/">GO-Globalのシステム要件</a>
+      
+      
+      
+      
+      
+      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global6introductionissuefix" href="/docs/go-global6/introduction/issuefix/">解決された問題</a>
       
       
       
@@ -2825,7 +2850,166 @@
 <div class="td-content">
 	<h1>既知の制限事項</h1>
 	
-	<h2 id="以下はgo-globalの既知の制限事項です">以下はGO-Globalの既知の制限事項です。</h2>
+	<p>このページのGO-Globalの既知情報とVersion 6.1.0.30001とVersion 6.1.1.30272セクションで説明されている既知の問題は、<a href="/issuefix">解決された問題</a>に記載されていない限り次のビルドでも引き続き存在します。</p>
+<ul>
+<li>
+<p>GO-Globalとウイルス対策製品は、Windowsの機能を拡張するために同様の技術を使用しています。そのため、GO-Globalとウイルス対策製品との間に互換性がない場合があります。以下の製品は、GO-Globalとの互換性がありません。</p>
+<ul>
+<li>AVG アンチウイルス</li>
+<li>Kaspersky Antivirus (32ビットアプリケーションが起動しない)</li>
+<li>Sentinel One Antivirus</li>
+<li>Trend Micro Antivirus - ワークアラウンド。aps.exe および logon.exe をトレンド動作監視の対象外としてください。</li>
+<li>CrowdStrike Falcon Antivirus（クラウドストライク ファルコン アンチウイルス</li>
+<li>Acronis Cyber Protect Cloud (Acronisバックアップソリューションに含まれる)</li>
+<li>Avast Antivirus (Windows 10では互換性がありません)</li>
+</ul>
+</li>
+<li>
+<p>Windows 10でGO-Global Hostと一緒にMcAfee Total Protection 16.0 R1をインストールすると、セッションが開始できないことがあります。この場合、コンピュータを再起動するとセッションが開始されます。</p>
+</li>
+<li>
+<p>Windows 10 で F-Secure Anti-Virus を GO-Global Host と一緒にインストールした場合、セッションの開始に 2 分以上かかります。この問題を回避するには、以下の方法があります。</p>
+<ol>
+<li>F-Secure を開きます。</li>
+<li>右ペインの [AntiVirus] タブを選択します。</li>
+<li>設定] をクリックします。</li>
+<li>DeepGuard］を選択します。</li>
+<li>View excluded files］をクリックします。</li>
+<li>Add new］をクリックします。</li>
+<li>C:Windows%System32」を追加します。</li>
+<li>C:Program Files\\\\\\⁾⁾を追加する。</li>
+<li>F-Secureのウィンドウをすべて閉じます。
+10.コンピュータを再起動します。</li>
+</ol>
+</li>
+<li>
+<p>GO-Global Web AppをChrome 77以降でuseApp=true（デフォルト設定）で実行すると、GO-Global Appを実行するたびにユーザーに承認を求めるメッセージが表示されます。Chrome では、承認ダイアログを回避して常にアプリケーションを実行するオプションは提供されなくなりました。</p>
+</li>
+<li>
+<p>ユーザは、GO-Global セッションで実行している Chrome または Firefox からクライアント側のスマートカードにアクセスできません。</p>
+</li>
+<li>
+<p>環境変数 LM_LICENSE_FILE が設定されていると、GO-Globalホストがライセンスのチェックアウトに失敗する。</p>
+<ol>
+<li>存在していない</li>
+<li>何も設定されていない</li>
+<li>HKLM_SOFTWARE_FLEXlm License Manager\GGLicenseManager%%License
+レジストリの値と一致しない ライセンスの設定によっては（セントラルライセンスサーバーを使用している場合など）、APSは次のようなメッセージを記録します。&ldquo;Failed to obtain a [application_process_name] license for the following reason: ライセンスサーバーシステムがこの機能をサポートしていません&hellip;」というメッセージが記録されます。これらの
+これらのメッセージは問題ありません。</li>
+</ol>
+</li>
+<li>
+<p>グループポリシによるドライブやプリンタのマッピングはサポートされていません。この制限を回避するには、ログオンスクリプトでマッピングを実行します。</p>
+</li>
+<li>
+<p>HostProperties.xmlファイルでClientSideIMEEnabledがtrueに設定されている場合(デフォルト値)、Ctrl-ZおよびCtrl-Yを使用すると、一部のアプリケーションで異常な動作が発生することがあります。これらの問題を回避するには、ClientSideIMEEnabledをfalseに設定してください。</p>
+</li>
+<li>
+<p>ユーザがiOSまたはAndroidからSSLトランスポートが有効になっているGO-Globalホストに接続すると、SSL警告ダイアログが表示されます。この問題を回避するには、管理者が中間証明書とルート証明書の両方をサーバ証明書に連結し、ユーザが最初にホストに接続するときに証明書を検査し、正しい場合は[インストール]をクリックして証明書をデバイスにインストールする必要があります。</p>
+</li>
+<li>
+<p>Windows Server 2012 R2上でAdobe ReaderをGO-Globalセッションで実行すると、“AppContainer System Incompatibility “というレポートが表示されます。この問題を回避してメッセージが表示されないようにするには、Adobeの環境設定で「起動時に保護モードを有効にする」オプションのチェックを外すことができます。</p>
+</li>
+<li>
+<p>Web MSIが[ホストオプション]ダイアログボックスの[更新]タブを使用してインストールされ、対応するホストMSIがインストールされていない場合、GO-Global\Webディレクトリの内容は更新されますが、[更新]タブではインストールされた更新のリストにWeb MSIが含まれません。</p>
+</li>
+<li>
+<p>Adobe Acrobat ProがGO-Globalセッションで実行されると、ホストコンピューターがクラッシュします。この問題を回避するには、Adobe純正モニターサービスとAdobe純正ソフトウェア整合性サービスを無効にします。</p>
+</li>
+<li>
+<p>バージョン 6のGO-Globalホストの以前のリリースを最新のリリースにアップグレードしても、変更されていないファイルは置き換えられません。これは設計によるものです。</p>
+</li>
+<li>
+<p>Windowsアップデートが最新でない一部のシステムで、GO-Globalホストのインストールに失敗します。これは、MicrosoftのVisual Studio再配布可能ファイルの前提条件がインストールされていない場合に発生します。この問題を回避するには、Windows Updateを適用してください。</p>
+</li>
+<li>
+<p>ユーザがInternetExplorerでGO-GlobalWeb Appを実行し、AppControllerがインストールされていないか有効になっていない場合、ユーザーが最初にCTRL+X、CTRL+C、CTRL+Vを入力すると、Internet Explorerは次のメッセージを表示することがあります。「このWebページにクリップボードへのアクセスを許可しますか？」ユーザが[アクセスを許可する]または[許可しない]をクリックしてこのメッセージを閉じると、ユーザがキーを押すたびに二重文字が表示される場合があります。この問題を回避するには、CTRLキーを押して離します。また、ユーザがCTRL+Cを入力した場合、選択したテキストは&quot;c&quot;に置き換えられる場合があります。この問題を回避するには、アプリケーションの元に戻す機能(たとえば、CTRL+Zを入力)を使用して、削除されたテキストを復元します。上記のメッセージは、セッションごとに1回だけ表示されます。これらの問題は、ユーザがその後CTRL+X、CTRL+C、またはCTRL+Vを押して、GO-Global Web Appのインスタンス内でテキストを切り取り、コピー、または貼り付けた場合には発生しません。</p>
+</li>
+<li>
+<p>ユーザがGoogle ChromeまたはMozilla FirefoxでGO-Global Webアプリを実行し、CTRL+NまたはCTRL+Tを入力すると、それぞれ新しいウィンドウまたは新しいタブが開きます。同様に、ユーザがInternet ExplorerでGO-Global Web Appを実行し、CTRL+OまたはCTRL+Pを入力すると、Internet Explorerの[ファイルを開く]ダイアログボックスまたは[印刷]ダイアログボックスがそれぞれ開きます。これらのケースやその他のケースでは、ブラウザはGO-Global Web Appの既定の動作を抑制することを許可していません。</p>
+</li>
+<li>
+<p>Mac OS XのSafariでGO-Global Web Appをバックグラウンドタブに移動すると、クライアントはセッションから切断されます。</p>
+</li>
+<li>
+<p>ユーザがWindows 7のInternet Explorer 11からGO-Globalホストを参照すると、アプリがインストールされていてもGO-Global Appのインストールを促すプロンプトが表示されます。ユーザはこのプロンプトを無視することができます。</p>
+</li>
+<li>
+<p>GO-Global Web AppでDPIスケーリングが機能しないことがある。</p>
+</li>
+<li>
+<p>バージョン 6のGO-Globalホストがサイレントインストールされている場合、GO-Global Audio Driverがインストールされず、アップグレードされません。この問題を回避するには、GO-Globalホストのインストーラを実行した後、デバイスマネージャからGO-Global Audio Driverをインストールしてください。</p>
+</li>
+<li>
+<p>GO-Global Web Appがインストール後に自動的に起動しない場合があります。この問題が発生した場合は、[Reload]リンクをクリックしてください。</p>
+</li>
+<li>
+<p>GO-Globalホストのインストーラでは、ライセンス コンポーネントがインストールされていない場合でも、管理者にライセンス ファイルをホストにコピーするよう求めるプロンプトが表示されます。管理者はこのプロンプトを無視することができます。</p>
+</li>
+</ul>
+<p>-　クラウド トライアル ライセンスを使用してコンピュータ上で GO-Global を起動し、ライセンス ファイルをコンピュータ上の GraphOnGO-Global ディレクトリにコピーした場合、以下のいずれかが実行されるまでライセンス ファイルは使用されません。
+1. コンピュータを再起動する。
+2. GO-Global License Mangerサービスを開始した後、Application Publishing Serviceを再起動する。</p>
+<ul>
+<li>
+<p>Windows Server 2019上でGO-Global Hostのインストーラーを実行した場合、インストーラーの再起動］ボタンをクリックしても、コンピュータが再起動しないことがあります。この現象が発生した場合は、スタートメニューからコンピュータを再起動してください。</p>
+</li>
+<li>
+<p>GO-Globalのセッションでは、Microsoft Remote Desktop Clientはサポートされていません。</p>
+</li>
+<li>
+<p>64 ビット版の Firefox を GO-Global セッションで実行すると、一部の Web ページの表示時にハングアップすることがあります。</p>
+</li>
+<li>
+<p>GO-Global Web App を実行し、[場所]ボックスに https:// を指定する場合、Admin Console の[ホスト オプション]ダイアログの[セキュリティ]タブで SSL トランスポートが有効になっており、タブで指定された SSL 証明書のコモンネームが URL で指定されたホスト名と一致している必要があります。これらは、GO-Global 6の新しい要件です。以前のバージョンでは、GOGlobalのブラウザのプラグインやアドオン（ほとんどのブラウザがサポートしていない技術を使用していた）は、HTTPSでブラウザにダウンロードされたウェブページから実行された場合でも、TCPトランスポートを使用してGOGlobalホストに接続できました。しかし、GO-Globalのウェブアプリは、ブラウザのセキュリティ制限の対象となっており、ウェブアプリがHTTPS接続を介して読み込まれる場合には、WebSocket Secure接続を使用する必要があります。詳細については、『管理者ガイド』の「SSL トランスポートの選択」の項を参照してください。</p>
+</li>
+<li>
+<p>GO-Global Web App がホストへのセキュア (HTTPS/WSS) 接続を開き、ホストで [Notify users when connections are secure] オプションが有効になっている場合、接続がセキュアであることを示すメッセージはユーザーに表示されません。接続が安全であることを示すブラウザーのインジケーター（例：ブラウザーの「ロック」アイコン）のみが表示されます。</p>
+</li>
+<li>
+<p>Windows 10では、GO-Globalのセッションで実行しているWindows Explorerで作成したフォルダーやファイルが表示されないという問題がありました。この問題を回避するには、F5キーを押してください。</p>
+</li>
+<li>
+<p>GO-Global 6 は GO-Global ゲートウェイをサポートしていません。</p>
+</li>
+<li>
+<p>Chrome 78 (64-bit) は、Windows Server 2008 R2 および Windows 7 ではサポートされていません。</p>
+</li>
+<li>
+<p>Windows Server 2008 R2 または Windows 7 (64-bit) 以外のプラットフォームで Chrome を正常に使用するには、パフォーマンス自動調整機能を有効にする必要があります。詳細については、『管理者ガイド』の第7章を参照してください。</p>
+</li>
+<li>
+<p>Windows Server 2019 または Windows 10 では、サーバーサイド IME は機能しません。</p>
+</li>
+<li>
+<p>クライアントドライブへのファイル保存は、Windows Server 2019およびWindows 10上の一部のアプリケーションでは機能しません。</p>
+</li>
+<li>
+<p>クライアントのサウンド機能が動作するには、Windows Audio サービスが実行されている必要があります。</p>
+</li>
+<li>
+<p>Microsoft Edge および 32 ビット Chrome は GO-Global セッションで実行できません。</p>
+</li>
+<li>
+<p>GO-Global Web Appでは、一部のシナリオでコピー＆ペーストが機能しない。</p>
+</li>
+<li>
+<p>Windows 10ホスト上のGO-Globalセッションで実行されているMicrosoft Officeアプリケーションからクライアントコンピュータ上のディレクトリにファイルが保存されると、保存されたファイルと一緒に追加の一時ファイル（.tmp）がクライアントディレクトリに保存されます。</p>
+</li>
+<li>
+<p>管理者コンソールでスマートカードやシリアルポート、パラレルポートが有効になっていると、64ビット版のFirefoxが起動しないという問題がありました。</p>
+</li>
+<li>
+<p>ManageLicensesFrom］プロパティが［Relay］に設定されていると、依存するホストを［ホストアップデート］機能でアップグレードできませんでした。</p>
+</li>
+<li>
+<p>この問題を解決するには、6.0.4のホストインストーラをダウンロードして、依存するホストで実行します。</p>
+</li>
+<li>
+<p>依存関係にあるホストがバージョン6.0.4にアップグレードされると、管理者はホストアップデート機能を使ってそれ以降のリリースにアップグレードできるようになります。</p>
+</li>
+</ul>
+<h2 id="以下はgo-globalの既知の制限事項です">以下はGO-Globalの既知の制限事項です。</h2>
 <ul>
 <li>GO-Globalは、グループポリシーログオンまたはログオフスクリプトをサポートしません。</li>
 <li>MicrosoftのVBScriptは、バッチファイルで実行されない限り、ログオンスクリプトとしてはサポートされていません。</li>
@@ -2884,13 +3068,27 @@
   
     
       
+        
+        
+      
+    
+  
+    
+      
+        
+        
+      
+    
+  
+    
+      
     
   
 
   
 
   <div class="xPrevNextLink"><div class="xPrevNextLink_prev">
-        <a title="GO-Globalのシステム要件"href="/docs/go-global6/introduction/system-requirements/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
+        <a title="解決された問題"href="/docs/go-global6/introduction/issuefix/"><img src="/images/LC.svg" alt="left" width="30" height="30"></a>
       </div></div>
   
 
@@ -2956,7 +3154,7 @@
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 16, 2021: <a  href="https://github.com//commit/6a93d4bdc9a59ed2bee58b9ee10797b5f4b5fe09">time (6a93d4b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 April 20, 2021: <a  href="https://github.com//commit/730030d84341389ef290d71928ef34cc414ebb1e">ver6 add (730030d)</a>
 </div>
 </div>
 
