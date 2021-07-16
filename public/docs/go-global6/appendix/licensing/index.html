@@ -4,7 +4,7 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="google-site-verification" content="fsIuzgf_4ihss6I1A1r8hinoHD75F9e-EzqG6apyAEI" />
-<meta name="generator" content="Hugo 0.81.0-DEV" />
+<meta name="generator" content="Hugo 0.80.0" />
 
 <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
 
@@ -32,10 +32,8 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 複数のライセンス 顧客が時間をかけて追加のライセンスを注文するのは一般的です。GraphOnは、ライセンスの注文ごとに、アドオンライセンスごとに一意の新しいライセンスマスターを作成します。管理者はすでにインストールされているライセンスを変更または変更する必要はありません。
 アドオンライセンスをインストールする方法  アドオンライセンス製品コードを受け取った後。カスタマーポータルからライセンスをアクティベートします。 ライセンスファイル内の指示に従って、ライセンスサーバにライセンスをインストールします。 GO-Global License Managerサービスを再起動します。それ以外の場合、アドオンライセンスは認識されません。サービスを再起動しても、アクティブにログインしているエンドユーザが中断されることはありません。  複数のライセンスがインストールされている場合、小数点の左側の命名は固有でなければなりません。 GraphOnは、常に一意のライセンスIDを使用してライセンスファイルを配信します。管理者は調整する必要はなく、受け取ったライセンスをインストールするだけで済みます。ただし、システム管理上の理由から管理者がライセンスファイルの名前を変更する場合は、ライセンスファイル名が一意でファイル拡張子が.licである限り、これは許可されます。拡張子が「.lic」ではない場合、GO-Global License Managerサービスはそのライセンスを認識しません（例：License1.lic、License2.lic、License3.lic）。 GraphOnは、「LicenseID.lic」命名規則に従って配布されたとおりにライセンスをインストールすることをお勧めします。" />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="/docs/go-global6/appendix/licensing/" /><meta property="article:section" content="docs" />
-
-<meta property="article:modified_time" content="2021-02-16T15:10:09&#43;09:00" /><meta property="og:site_name" content="GO-Global Docs" />
-
+<meta property="og:url" content="/docs/go-global6/appendix/licensing/" />
+<meta property="article:modified_time" content="2021-07-02T17:08:59+09:00" /><meta property="og:site_name" content="GO-Global Docs" />
 <meta itemprop="name" content="Licensing">
 <meta itemprop="description" content="Licensing GO-Globalのライセンスは、必要な同時ユーザ数に基づいており、永続的です。GO-Globalライセンスファイルはノードロックされています。つまり、それらはホストのMACアドレス(ホストID)で明確に識別され、そのホストにインストールされている場合にのみ使用可能です。GO-Globalホストは、ライセンスサーバやアプリケーションサーバとして設定できます。ライセンスも含むGO-Globalホストは、ライセンスサーバと呼ばれます。
 一般的な小規模エンドユーザサイトは、アプリケーションサーバとライセンスサーバの両方として動作する1つのGO-Globalホストがあるという基本構成で動作します。一般的な大規模サイトでは、ライセンスがネットワーク上の中央のライセンスサーバにインストールされ、複数のGO-Globalアプリケーションサーバがネットワーク上の指定された中央のライセンスサーバからライセンスをチェックアウトするように設定されています。さらに、GO-Globalライセンスは冗長性と高可用性のためにいくつかの異なるライセンスサーバ設定をサポートします。これらはこのガイドの第2章で説明されています。
@@ -46,9 +44,13 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 ライセンスデータベース 製品コードまたはライセンスIDを使用して、ライセンシーはカスタマーポータルでライセンスの詳細とステータスを確認できます。ライセンスデータベースには、1つ以上のライセンスのステータス、バージョン、製品ファミリ、およびメンテナンスの有効期限が表示されます。
 複数のライセンス 顧客が時間をかけて追加のライセンスを注文するのは一般的です。GraphOnは、ライセンスの注文ごとに、アドオンライセンスごとに一意の新しいライセンスマスターを作成します。管理者はすでにインストールされているライセンスを変更または変更する必要はありません。
 アドオンライセンスをインストールする方法  アドオンライセンス製品コードを受け取った後。カスタマーポータルからライセンスをアクティベートします。 ライセンスファイル内の指示に従って、ライセンスサーバにライセンスをインストールします。 GO-Global License Managerサービスを再起動します。それ以外の場合、アドオンライセンスは認識されません。サービスを再起動しても、アクティブにログインしているエンドユーザが中断されることはありません。  複数のライセンスがインストールされている場合、小数点の左側の命名は固有でなければなりません。 GraphOnは、常に一意のライセンスIDを使用してライセンスファイルを配信します。管理者は調整する必要はなく、受け取ったライセンスをインストールするだけで済みます。ただし、システム管理上の理由から管理者がライセンスファイルの名前を変更する場合は、ライセンスファイル名が一意でファイル拡張子が.licである限り、これは許可されます。拡張子が「.lic」ではない場合、GO-Global License Managerサービスはそのライセンスを認識しません（例：License1.lic、License2.lic、License3.lic）。 GraphOnは、「LicenseID.lic」命名規則に従って配布されたとおりにライセンスをインストールすることをお勧めします。">
-<meta itemprop="dateModified" content="2021-02-16T15:10:09&#43;09:00" />
+<meta itemprop="dateModified" content="2021-07-02T17:08:59+09:00" />
 <meta itemprop="wordCount" content="26">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Licensing"/>
 <meta name="twitter:description" content="Licensing GO-Globalのライセンスは、必要な同時ユーザ数に基づいており、永続的です。GO-Globalライセンスファイルはノードロックされています。つまり、それらはホストのMACアドレス(ホストID)で明確に識別され、そのホストにインストールされている場合にのみ使用可能です。GO-Globalホストは、ライセンスサーバやアプリケーションサーバとして設定できます。ライセンスも含むGO-Globalホストは、ライセンスサーバと呼ばれます。
 一般的な小規模エンドユーザサイトは、アプリケーションサーバとライセンスサーバの両方として動作する1つのGO-Globalホストがあるという基本構成で動作します。一般的な大規模サイトでは、ライセンスがネットワーク上の中央のライセンスサーバにインストールされ、複数のGO-Globalアプリケーションサーバがネットワーク上の指定された中央のライセンスサーバからライセンスをチェックアウトするように設定されています。さらに、GO-Globalライセンスは冗長性と高可用性のためにいくつかの異なるライセンスサーバ設定をサポートします。これらはこのガイドの第2章で説明されています。
@@ -64,8 +66,8 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 
 
 
-<link rel="preload" href="/scss/main.min.c544bac59baf04dd77f70948b217ea6476a1d3aa0059a270f479f3766421fd4a.css" as="style">
-<link href="/scss/main.min.c544bac59baf04dd77f70948b217ea6476a1d3aa0059a270f479f3766421fd4a.css" rel="stylesheet" integrity="">
+<link rel="preload" href="/scss/main.min.44adae60aca989b57652c0a3e0a5727abbc074161ecfc55341c0124982c1070c.css" as="style">
+<link href="/scss/main.min.44adae60aca989b57652c0a3e0a5727abbc074161ecfc55341c0124982c1070c.css" rel="stylesheet" integrity="">
 
 
 <script
@@ -85,10 +87,11 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
         <a class="navbar-brand" href="/">
-		<span class="navbar-logo"><svg id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 500 500" style="enable-background:new 0 0 500 500"><g><path style="fill:#fff" d="M116.8525 421.9722c-5.7041.0-10.3442-4.3127-10.3442-9.6129V88.183c0-5.3002 4.6401-9.6117 10.3442-9.6117H320.858c3.0347.0 9.3959.5498 11.7506 2.6302l.3545.3442 58.905 63.2912c2.3101 2.491 2.9202 8.4928 2.9202 11.3184v256.2039c0 5.3002-4.6407 9.6129-10.3436 9.6129H116.8525z"/><g><g><g><path style="fill:#767676" d="M384.4445 423.2066H116.852c-6.3839.0-11.5786-4.8658-11.5786-10.8474V88.1831c0-5.9804 5.1947-10.8461 11.5786-10.8461h204.0062c.377.0 9.2786.0329 12.568 2.9389l.3947.3833 58.9508 63.337c3.2135 3.4652 3.2514 11.7924 3.2514 12.1593v256.2036C396.0231 418.3408 390.8284 423.2066 384.4445 423.2066zM116.5079 411.9189c.0848.0278.1999.0531.3441.0531h267.5925c.1442.0.2581-.0253.3441-.0531V156.1556c-.0076-.9033-.3593-3.7347-.7034-5.0037l-57.6527-61.9416c-1.4651-.3176-4.4533-.6389-5.5742-.6389H116.852c-.143.0-.2594.024-.3441.0531V411.9189zm267.4533-261.149zM327.0321 89.371v.0013V89.371z"/></g></g></g><g><g><path style="fill:#5b7fc0" d="M189.0874 210.1754l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4473C177.5953 212.627 183.0601 210.1742 189.0874 210.1754zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 234.1722 197.0804 232.033z"/><path style="opacity:.3;fill:#fff" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/><g><defs><path id="SVGID_1_" d="M194.7376 237.6875c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 234.2399 196.1861 236.239 194.7376 237.6875z"/></defs><clipPath id="SVGID_2_"><use xlink:href="#SVGID_1_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_2_);fill:#fff" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/><path style="opacity:.13;clip-path:url(#SVGID_2_);fill:#020202" d="M190.0704 225.0237c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 225.7247 191.9774 225.0237 190.0704 225.0237z"/></g><g><defs><path id="SVGID_3_" d="M189.0898 210.176c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 212.6276 183.0612 210.176 189.0898 210.176zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 236.239 197.0839 234.2399 197.0839 232.0372z"/></defs><clipPath id="SVGID_4_"><use xlink:href="#SVGID_3_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_4_);fill:#5b7fc0" d="M172.6595 215.6045c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8475-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 209.1953 176.6171 211.647 172.6595 215.6045z"/></g></g><rect x="198.8952" y="225.1043" style="fill:#5b7fc0" width="122.6266" height="13.8671"/></g><g><path style="fill:#d95140" d="M189.0874 155.7611l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.0249 2.454-11.4897 6.4116-15.4473C177.5953 158.2128 183.0601 155.7599 189.0874 155.7611zm7.993 21.8577c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.2508 181.7667 197.0816 179.758 197.0804 177.6188z"/><path style="opacity:.3;fill:#fff" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/><g><defs><path id="SVGID_5_" d="M194.7376 183.2733c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 179.8256 196.1861 181.8248 194.7376 183.2733z"/></defs><clipPath id="SVGID_6_"><use xlink:href="#SVGID_5_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_6_);fill:#fff" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/><path style="opacity:.13;clip-path:url(#SVGID_6_);fill:#020202" d="M190.0704 170.6095c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9546.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.663-2.8588-6.116.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C193.7885 171.3104 191.9774 170.6095 190.0704 170.6095z"/></g><g><defs><path id="SVGID_7_" d="M189.0898 155.7617c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8066-21.8612-21.8613.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 158.2134 183.0612 155.7617 189.0898 155.7617zm7.9941 21.8613c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 181.8248 197.0839 179.8256 197.0839 177.623z"/></defs><clipPath id="SVGID_8_"><use xlink:href="#SVGID_7_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_8_);fill:#d95140" d="M172.6595 161.1903c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 154.7811 176.6171 157.2327 172.6595 161.1903z"/></g><rect x="198.8952" y="170.69" style="fill:#d95140" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#56a55c" d="M189.5379 264.6147l.0012-.0012c7.7751.0012 15.0294 4.1862 18.932 10.9235 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3304-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032-5.8394.0-11.3281-2.2733-15.458-6.4032-4.13-4.13-6.4032-9.6186-6.4056-15.4628.0012-6.0249 2.454-11.4897 6.4116-15.4472C178.0458 267.0663 183.5105 264.6135 189.5379 264.6147zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6538 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403C196.7013 290.6202 197.5321 288.6115 197.5309 286.4723z"/><path style="opacity:.3;fill:#fff" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/><g><defs><path id="SVGID_9_" d="M195.1881 292.1268c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.9989 7.9942-7.9941 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.5344 288.6792 196.6366 290.6783 195.1881 292.1268z"/></defs><clipPath id="SVGID_10_"><use xlink:href="#SVGID_9_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_10_);fill:#fff" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/><path style="opacity:.13;clip-path:url(#SVGID_10_);fill:#020202" d="M190.5209 279.463c-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7446-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9941 2.3802-1e-4 4.616 1.0833 6.1218 2.8788C194.239 280.164 192.4279 279.463 190.5209 279.463z"/></g><g><defs><path id="SVGID_11_" d="M189.5403 264.6153c7.7763.0 15.0283 4.1826 18.926 10.9151 1.9201 3.3135 2.9377 7.0987 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8613-12.0547.0024-21.8636-9.8065-21.8612-21.8613.0-6.0285 2.4516-11.492 6.4116-15.452C178.0482 267.0669 183.5117 264.6153 189.5403 264.6153zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9941.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.6366 290.6783 197.5344 288.6792 197.5344 286.4765z"/></defs><clipPath id="SVGID_12_"><use xlink:href="#SVGID_11_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_12_);fill:#56a55c" d="M173.11 270.0439c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8613 12.0547.0024 21.8636-9.797 21.8613-21.8613.0024-3.8474-1.0151-7.6326-2.9353-10.9462-3.8977-6.7325-11.1497-10.9151-18.926-10.9151C182.5311 263.6346 177.0676 266.0863 173.11 270.0439z"/></g></g><rect x="199.3456" y="279.5436" style="fill:#56a55c" width="122.6266" height="13.8671"/></g><g><g><path style="fill:#f1bc42" d="M189.0874 318.7208l.0012-.0012c7.7751.0012 15.0295 4.1862 18.932 10.9234 1.9177 3.3159 2.9305 7.1011 2.9293 10.9378.0 5.8394-2.2733 11.3305-6.4032 15.4604-4.1288 4.1288-9.6186 6.4032-15.458 6.4032s-11.328-2.2733-15.458-6.4032-6.4032-9.6186-6.4056-15.4628c.0012-6.025 2.454-11.4897 6.4116-15.4472C177.5953 321.1724 183.0601 318.7196 189.0874 318.7208zm7.993 21.8576c.0012-1.4042-.3687-2.7868-1.063-3.9887-1.4293-2.4684-4.0833-3.9995-6.9299-4.0019-4.4077.0024-7.993 3.5877-7.993 7.993.0 2.1356.832 4.1431 2.3427 5.6539 1.5083 1.5083 3.5159 2.3403 5.6503 2.3415 2.1356.0 4.1443-.8308 5.6539-2.3403S197.0816 342.7176 197.0804 340.5784z"/><path style="opacity:.3;fill:#fff" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/><g><defs><path id="SVGID_13_" d="M194.7376 346.2329c-1.4461 1.4461-3.4452 2.3439-5.6479 2.3439-4.4077-.0024-7.9918-3.5865-7.9942-7.9942.0024-4.4125 3.5937-7.999 7.9942-7.9942 2.8443.0 5.497 1.5323 6.924 3.9983.6991 1.2067 1.0702 2.5881 1.0702 3.9959C197.0839 342.7853 196.1861 344.7844 194.7376 346.2329z"/></defs><clipPath id="SVGID_14_"><use xlink:href="#SVGID_13_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_14_);fill:#fff" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/><path style="opacity:.13;clip-path:url(#SVGID_14_);fill:#020202" d="M190.0704 333.5691c-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0011 1.9547.7088 3.7452 1.8782 5.1354-1.7447-1.4674-2.8575-3.6631-2.8588-6.1161.0024-4.4125 3.5936-7.999 7.9942-7.9942 2.3802-1e-4 4.616 1.0834 6.1218 2.8788C193.7885 334.2701 191.9774 333.5691 190.0704 333.5691z"/></g><g><defs><path id="SVGID_15_" d="M189.0898 318.7214c7.7763.0 15.0283 4.1826 18.926 10.915 1.9201 3.3136 2.9377 7.0988 2.9353 10.9462.0024 12.0643-9.8065 21.8636-21.8613 21.8612-12.0547.0024-21.8636-9.8065-21.8612-21.8612.0-6.0285 2.4516-11.4921 6.4116-15.452C177.5977 321.173 183.0612 318.7214 189.0898 318.7214zm7.9941 21.8612c0-1.4078-.3711-2.7892-1.0702-3.9959-1.4269-2.466-4.0797-3.9983-6.924-3.9983-4.4005-.0048-7.9918 3.5817-7.9942 7.9942.0024 4.4077 3.5865 7.9918 7.9942 7.9942 2.2027.0 4.2018-.8978 5.6479-2.3439C196.1861 344.7844 197.0839 342.7853 197.0839 340.5826z"/></defs><clipPath id="SVGID_16_"><use xlink:href="#SVGID_15_" style="overflow:visible"/></clipPath><path style="clip-path:url(#SVGID_16_);fill:#f1bc42" d="M172.6595 324.15c-3.96 3.96-6.4116 9.4235-6.4116 15.452-.0024 12.0547 9.8066 21.8636 21.8613 21.8612 12.0547.0024 21.8636-9.797 21.8613-21.8612.0024-3.8474-1.0151-7.6327-2.9353-10.9462-3.8977-6.7324-11.1497-10.9151-18.926-10.9151C182.0806 317.7407 176.6171 320.1924 172.6595 324.15z"/></g></g><rect x="198.8952" y="333.6497" style="fill:#f1bc42" width="122.6266" height="13.8671"/></g></g></svg></span><span class="font-weight-bold">GO-Global Docs</span>
+		<span class="navbar-logo"></span><span class="font-weight-bold">GO-Global Docs</span>
 	</a>
 	<div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
 		<ul class="navbar-nav mt-2 mt-lg-0">
+			
 			
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -115,7 +118,7 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
   aria-label="サイトを検索..."
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.3bf4e702d95dbef291c1bf07e71b03c7bfd8b9f9ed155cc72a5442b078d84b497abe04f99522dd8b4f230675a02891e8054125f6c245d73f0a586cbe6d8f1c06.json"
+  data-offline-search-index-json-src="/offline-search-index.99ea80aebf4fa26616cd0a4795900e66c189ebd7ef84eba6a43231062bf3eef2da253b3b49005728a36d70247a98c30be2f5bdb83c508512dcf8be41661491f7.json"
   data-offline-search-base-href="/"
 >
 
@@ -123,7 +126,11 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 
 </nav>
 
+      <section>
+  
+      </section>
     </header>
+
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
@@ -134,6 +141,26 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 
 
 <div id="td-sidebar-menu" class="td-sidebar__inner">
+  
+  <form class="td-sidebar__search d-flex align-items-center">
+    
+
+
+<input
+  type="search"
+  class="form-control td-search-input"
+  placeholder="&#xf002; サイトを検索..."
+  aria-label="サイトを検索..."
+  autocomplete="off"
+  
+  data-offline-search-index-json-src="/offline-search-index.99ea80aebf4fa26616cd0a4795900e66c189ebd7ef84eba6a43231062bf3eef2da253b3b49005728a36d70247a98c30be2f5bdb83c508512dcf8be41661491f7.json"
+  data-offline-search-base-href="/"
+>
+
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-docs-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
   
   <nav class="collapse td-sidebar-nav pt-2 pl-4" id="td-section-nav">
     
@@ -2040,646 +2067,6 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 
 <ul class="td-sidebar-nav__section pr-md-3">
   <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">GO-Global 5</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5">
-      
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/go-global-no/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">GO-Globalの概要</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5go-global-no">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-nogo-global-no" href="/docs/go-global5/go-global-no/go-global-no/">GO-Global の概要</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-noxin-neng" href="/docs/go-global5/go-global-no/xin-neng/">新機能</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-nogeng-lv" href="/docs/go-global5/go-global-no/geng-lv/">変更履歴</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-nogo-global-no-1" href="/docs/go-global5/go-global-no/go-global-no-1/">GO-Globalの機能</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-noshisutemu" href="/docs/go-global5/go-global-no/shisutemu/">システム要件</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/sbano/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">サーバーの設定</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5sbano">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanountitled" href="/docs/go-global5/sbano/untitled/">GO-Globalホストのインストール</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanoburauza-roguonno-go-global-server-no" href="/docs/go-global5/sbano/burauza-roguonno-go-global-server-no/">Webクライアント用のGO-Globalホストの設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanogo-global-webpjino" href="/docs/go-global5/sbano/go-global-webpjino/">GO-Global Webページの変更</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanogo-global-server-noshisutemuheno-web-fuirunoinsutru" href="/docs/go-global5/sbano/go-global-server-noshisutemuheno-web-fuirunoinsutru/">GO-Globalホスト以外のシステムへのWebファイルのインストール</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanoredundant-license-servers" href="/docs/go-global5/sbano/redundant-license-servers/">Redundant License Servers</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanoconfiguring-go-global-to-use-a-central-license-server" href="/docs/go-global5/sbano/configuring-go-global-to-use-a-central-license-server/">セントラルライセンスサーバを使用するためのGO-Globalの構成</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanokuraianto-kbdoime-saptono" href="/docs/go-global5/sbano/kuraianto-kbdoime-saptono/">クライアントキーボード/IME 用サポートの設定</a>
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/sbano/kbdotoimenoinsutru/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">キーボードとIMEの追加インストール</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5sbanokbdotoimenoinsutru">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanokbdotoimenoinsutrugo-globaldesarerukbdo-ime" href="/docs/go-global5/sbano/kbdotoimenoinsutru/go-globaldesarerukbdo-ime/">GO-Globalで使用されるキーボード/ IME識別子</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanokbdotoimenoinsutrukuraiantokbdoopushonno" href="/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdoopushonno/">クライアントキーボードオプションの設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanokbdotoimenoinsutrukuraiantokbdosapto" href="/docs/go-global5/sbano/kbdotoimenoinsutru/kuraiantokbdosapto/">自動クライアントキーボードサポート</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5sbanotma" href="/docs/go-global5/sbano/tma/">テーマ</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/yzaakauntono/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">ユーザーアカウントの管理</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5yzaakauntono">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5yzaakauntonoyza-akauntono" href="/docs/go-global5/yzaakauntono/yza-akauntono/">ユーザアカウントの管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5yzaakauntonoyza-purofuiruno" href="/docs/go-global5/yzaakauntono/yza-purofuiruno/">ユーザプロファイルの設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5yzaakauntonountitled" href="/docs/go-global5/yzaakauntono/untitled/">ネットワークプリンタの設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5yzaakauntonoyza-purofuirunofuiru-akusesuno" href="/docs/go-global5/yzaakauntono/yza-purofuiruno/fuiru-akusesuno/"></a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/cluster-manager/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Customer Manager</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5cluster-manager">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managercluster-manager" href="/docs/go-global5/cluster-manager/cluster-manager/">Customer Manager</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managerapurikshonno-2" href="/docs/go-global5/cluster-manager/apurikshonno-2/">アプリケーションの管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managersesshontopurosesuno" href="/docs/go-global5/cluster-manager/sesshontopurosesuno/">セッションとプロセスの管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managersekyurite-opushon" href="/docs/go-global5/cluster-manager/sekyurite-opushon/">セキュリティオプション</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-10" href="/docs/go-global5/cluster-manager/untitled-10/">パスワードの変更</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managersesshonno-1" href="/docs/go-global5/cluster-manager/sesshonno-1/">セッションの再接続</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-13" href="/docs/go-global5/cluster-manager/untitled-13/">共有アカウント</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-12" href="/docs/go-global5/cluster-manager/untitled-12/">クライアントのタイムゾーン</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-11" href="/docs/go-global5/cluster-manager/untitled-11/">サーバ活動の監視</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-20" href="/docs/go-global5/cluster-manager/untitled-20/">セッション起動オプション</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-23" href="/docs/go-global5/cluster-manager/untitled-23/">セッションのシャットダウンオプション</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-managerautomatic-host-updates" href="/docs/go-global5/cluster-manager/automatic-host-updates/">Automatic Host Updates</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-27" href="/docs/go-global5/cluster-manager/untitled-27/">クライアントマシンからのGO-Globalホストの管理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5cluster-manageruntitled-26" href="/docs/go-global5/cluster-manager/untitled-26/">Cluster Managerのキーボードショートカット</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/go-global-clientno/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">GO-Globalの実行</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5go-global-clientno">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnogo-globalno" href="/docs/go-global5/go-global-clientno/go-globalno/">GO-Globalの実行</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnoweb-akusesu-no-go-global-server-no" href="/docs/go-global5/go-global-clientno/web-akusesu-no-go-global-server-no/">WebブラウザからGO-Globalを起動する</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnogo-global-suttoappuparamta" href="/docs/go-global5/go-global-clientno/go-global-suttoappuparamta/">GO-Global スタートアップパラメータ</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnochromewo" href="/docs/go-global5/go-global-clientno/chromewo/">Chrome拡張機能を実行</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnogo-globalnoaninsutru" href="/docs/go-global5/go-global-clientno/go-globalnoaninsutru/">GO-Globalのアンインストール</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnoautomatic-client-updates" href="/docs/go-global5/go-global-clientno/automatic-client-updates/">Automatic Client Updates</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5go-global-clientnoupdating-the-activex-control-and-the-plug-in" href="/docs/go-global5/go-global-clientno/updating-the-activex-control-and-the-plug-in/">Updating the ActiveX Control and the Plug-in</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
-    <a  href="/docs/go-global5/topikku-1/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">上級者用トピック</a>
-  </li>
-  <ul>
-    <li class="collapse " id="docsgo-global5topikku-1">
-      
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1topikku" href="/docs/go-global5/topikku-1/topikku/">Load Balancing</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1go-global-server-pafumansu-kaunta" href="/docs/go-global5/topikku-1/go-global-server-pafumansu-kaunta/">GO-Globalホストパフォーマンスカウンタ</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1saptono" href="/docs/go-global5/topikku-1/saptono/">委任サポートの設定要件</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1untitled-1" href="/docs/go-global5/topikku-1/untitled-1/">クライアントの印刷処理</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintadoraibahenoakusesuno" href="/docs/go-global5/topikku-1/purintadoraibahenoakusesuno/">プリンタドライバへのアクセスの指定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintano" href="/docs/go-global5/topikku-1/purintano/">プリンタの構成</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintaapuretto" href="/docs/go-global5/topikku-1/purintaapuretto/">プリンタアプレット</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1deforutopurintano" href="/docs/go-global5/topikku-1/deforutopurintano/">デフォルトプリンタの設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintawosuru" href="/docs/go-global5/topikku-1/purintawosuru/">プリンタ設定を編集する</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1tesutopjiwosuru" href="/docs/go-global5/topikku-1/tesutopjiwosuru/">テストページを印刷する</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintanodoraibawo" href="/docs/go-global5/topikku-1/purintanodoraibawo/">プリンタのドライバを変更</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintnorisetto" href="/docs/go-global5/topikku-1/purintnorisetto/">プリンター設定のリセット</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purintdoraibumappingu" href="/docs/go-global5/topikku-1/purintdoraibumappingu/">プリンタードライブマッピング</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1kuraianto-purintanokasutamaizu" href="/docs/go-global5/topikku-1/kuraianto-purintanokasutamaizu/">クライアントプリンタ名のカスタマイズ</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1kurippubdonosapto" href="/docs/go-global5/topikku-1/kurippubdonosapto/">クリップボードのサポート</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1kuraiantonosaundo" href="/docs/go-global5/topikku-1/kuraiantonosaundo/">クライアントのサウンド</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1shiriaru-ptooyobiparareru-pto" href="/docs/go-global5/topikku-1/shiriaru-ptooyobiparareru-pto/">シリアルポートおよびパラレルポート</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1kuraiantonofuiru-akusesu" href="/docs/go-global5/topikku-1/kuraiantonofuiru-akusesu/">クライアントのファイルアクセス</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1mappingusaretadoraibu" href="/docs/go-global5/topikku-1/mappingusaretadoraibu/">マッピングされたドライブ</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1maruchimonita" href="/docs/go-global5/topikku-1/maruchimonita/">マルチモニタ</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1no-2" href="/docs/go-global5/topikku-1/no-2/">最大色深度の設定</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1no-1" href="/docs/go-global5/topikku-1/no-1/">画像圧縮の無効化</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1kuraianto-konpytano" href="/docs/go-global5/topikku-1/kuraianto-konpytano/">クライアントコンピュータ名の取得</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1apurikshon-sukuriputonosapto" href="/docs/go-global5/topikku-1/apurikshon-sukuriputonosapto/">アプリケーションスクリプトのサポート</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1nasesshonpurosesu" href="/docs/go-global5/topikku-1/nasesshonpurosesu/">Advanced Session Process Configuration</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1purokishinotonneringu" href="/docs/go-global5/topikku-1/purokishinotonneringu/">プロキシのトンネリング</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1ipv6nosapto" href="/docs/go-global5/topikku-1/ipv6nosapto/">IPv6のサポート</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1smart-cardnosapto" href="/docs/go-global5/topikku-1/smart-cardnosapto/">Smart cardのサポート</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1paenosaptowonisuru" href="/docs/go-global5/topikku-1/paenosaptowonisuru/">PAEのサポートを有効にする</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1pafumansu" href="/docs/go-global5/topikku-1/pafumansu/">パフォーマンス自動調整</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1automatic-windows-update-and-hotfix-compatibility" href="/docs/go-global5/topikku-1/automatic-windows-update-and-hotfix-compatibility/">Automatic Windows Update and Hotfix Compatibility</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1sairentoinsutru" href="/docs/go-global5/topikku-1/sairentoinsutru/">サイレントインストール</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1logfuiru" href="/docs/go-global5/topikku-1/logfuiru/">Logファイル</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1support-request-wizard" href="/docs/go-global5/topikku-1/support-request-wizard/">Support Request Wizard</a>
-      
-      
-      
-      
-      
-      <a class="td-sidebar-link td-sidebar-link__page " id="m-docsgo-global5topikku-1dpisukringu" href="/docs/go-global5/topikku-1/dpisukringu/">DPIスケーリング</a>
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-    </li>
-  </ul>
-</ul>
-
-      
-      
-      
-      
-
-
-
-
-
-
-<ul class="td-sidebar-nav__section pr-md-3">
-  <li class="td-sidebar-nav__section-title">
     <a  href="/docs/deployment-guide/" class="align-left pl-0 pr-2 collapsed td-sidebar-link td-sidebar-link__section">Deployment Guide</a>
   </li>
   <ul>
@@ -2804,6 +2191,28 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
           </div>
           <div class="d-none d-xl-block col-xl-2 td-toc d-print-none">
             
+
+
+
+
+
+
+<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
+
+
+
+
+
+<a href="https://github.com//edit/master/content/ja/docs/go-global6/appendix/Licensing.md" target="_blank"><i class="fa fa-edit fa-fw"></i> ページの編集</a>
+<a href="https://github.com//issues/new?title=Licensing" target="_blank"><i class="fab fa-github fa-fw"></i> ドキュメントのissueを作成</a>
+
+
+<a href="https://github.com/google/docsy/issues/new" target="_blank"><i class="fas fa-tasks fa-fw"></i> プロジェクトのissueを作成</a>
+
+</div>
+
+
+
 
 
 
@@ -3016,7 +2425,7 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 		<br />
 	
 	
-	<div class="text-muted mt-5 pt-3 border-top">最終更新 February 16, 2021: <a  href="https://github.com//commit/6a93d4bdc9a59ed2bee58b9ee10797b5f4b5fe09">time (6a93d4b)</a>
+	<div class="text-muted mt-5 pt-3 border-top">最終更新 July 2, 2021: <a  href="https://github.com//commit/3c47b0cc22f4f4a5ee6affd90c691527cf8a432e">first commit2 (3c47b0c)</a>
 </div>
 </div>
 
@@ -3030,8 +2439,36 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
     <div class="row">
       <div class="col-6 col-sm-4 text-xs-center order-sm-2">
         
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" href="https://example.org/twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
       </div>
       <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" href="">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
@@ -3059,7 +2496,7 @@ GraphOnは、ライセンスを購入するたびに、ライセンスマスタ�
 
 
 
-<script src="/js/main.min.76d515dfd36b9cd42d225ea0cd8cbbcf0515fa5b16dc7fbbe14dd6e8c3641ee5.js" integrity="sha256-dtUV39NrnNQtIl6gzYy7zwUV&#43;lsW3H&#43;74U3W6MNkHuU=" crossorigin="anonymous"></script>
+<script src="/js/main.min.3587468abafd7ee678f61330f7c574ba0376f12451f11e076f2283f1e0504095.js" integrity="sha256-NYdGirr9fuZ49hMw98V0ugN28SRR8R4HbyKD8eBQQJU=" crossorigin="anonymous"></script>
 
 
 

@@ -4,7 +4,7 @@ title = "GO-Global docs"
 enableRobotsTXT = true
 
 # Hugo allows theme composition (and inheritance). The precedence is from left to right.
-theme = [""]
+theme = ["docsy"]
 
 # Will give values to .Lastmod etc.
 enableGitInfo = true
@@ -76,7 +76,7 @@ privacy_policy = "https://policies.google.com/privacy"
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
-version_menu = "6.0.1"
+version_menu = "Releases"
 
 # Flag used in the "version-banner" partial to decide whether to display a
 # banner on every page indicating that this is an archived version of the docs.
@@ -86,13 +86,12 @@ archived_version = false
 # The version number for the version of the docs represented in this doc set.
 # Used in the "version-banner" partial to display a version number for the
 # current doc set.
-version = "6.0.1"
+version = "6.1"
 
 time_format_blog = "Monday, January 02, 2006"
 time_format_default = "January 2, 2006"
 # Sections to publish in the main RSS feed.
 rss_sections = ["blog"]
-
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
@@ -119,9 +118,9 @@ sidebar_menu_compact = true
 #  Set to true to disable breadcrumb navigation.
 breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
-sidebar_search_disable = true
+sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = true
+navbar_logo = false
 # Set to true to disable the About link in the site footer
 footer_about_disable = false
 
@@ -145,16 +144,15 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 #	name ="Twitter"
 #	url = "https://example.org/twitter"
 #	icon = "fab fa-twitter"
- #       desc = "Follow us on Twitter to get the latest news!"
+#  desc = "Follow us on Twitter to get the latest news!"
 #[[params.links.user]]
 ##	url = "https://example.org/stack"
 ##       desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 #[[params.links.developer]]
 #	name = "GitHub"
-#	url = "https://github.com/google/docsy"
 #	icon = "fab fa-github"
- #       desc = "Development takes place here!"
+#       desc = "Development takes place here!"
 #[[params.links.developer]]
 #	name = "Slack"
 #	url = "https://example.org/slack"

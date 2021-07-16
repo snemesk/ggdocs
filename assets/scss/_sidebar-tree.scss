@@ -45,7 +45,6 @@
 
         .active {
             font-weight: $font-weight-bold;
-            background-color: #30638E;
             border-radius: 7px;
             padding: 6px;
 
@@ -74,11 +73,8 @@
 
         &.active {
             font-weight: $font-weight-bold;
-            background-color: #30638E;
             border-radius: 7px;
-            color: white;
-            padding: 6px;
-            text-align: center;
+            color: #0073E7;
         }
 
     }
@@ -96,7 +92,7 @@
 
 .td-sidebar {
     @include media-breakpoint-up(md) {
-        padding-top: 4rem;
+        padding-top: 1srem;
         background-color: $td-sidebar-bg-color;
         padding-right: 1rem;
         border-right: 1px solid $td-sidebar-border-color;

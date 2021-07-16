@@ -1,6 +1,6 @@
 ---
-title: "Documentation"
-linkTitle: "Documentation"
+title: "GO-Global6.1"
+linkTitle: "GO-Global6.1"
 weight: 20
 menu:
   main:
